@@ -1,0 +1,4 @@
+[submodule "blog"]
+	path = blog
+	url = git@github.com:oubiwann/blog.git
+	branch = gh-pages
