@@ -104,34 +104,35 @@
         [twitter-api "1.8.0"]]}}
   :aliases {
     "init-content"
-      ^{:doc (str "Add blog content branch as a submodule")}
+      ^{:doc "Add blog content branch as a submodule"}
       ["shell" "git" "submodule" "update" "--init" "--recursive"]
     "repl"
-      ^{:doc (str "A custom REPL that overrides the default one")}
+      ^{:doc "A custom REPL that overrides the default one"}
       ["with-profile" "+test,+custom-repl,+cli" "repl"]
     "check-deps"
-      ^{:doc (str "Check if any deps have out-of-date versions")}
+      ^{:doc "Check if any deps have out-of-date versions"}
       ["with-profile" "+test" "ancient" "check" ":all"]
     "lint"
-      ^{:doc (str "Perform lint checking")}
+      ^{:doc "Perform lint checking"}
       ["with-profile" "+test" "kibit"]
     "ob"
-      ^{:doc (str "The blog CLI; type `lein ob help` or `ob help` "
-                  "for commands")}
+      ^{:doc "The blog CLI; type `lein ob help` or `ob help` for commands"}
       ["with-profile" "+cli"
        "run" "-m" "oubiwann.blog.main" "cli"]
     "gen"
-      ^{:doc (str "Generate static content for the blog")}
+      ^{:doc "Generate static content for the blog"}
       ["run" "-m" "oubiwann.blog.core/generate"]
     "web"
-      ^{:doc (str "Run a local web service for the blog")}
+      ^{:doc "Run a local web service for the blog"}
       ["run" "-m" "oubiwann.blog.core/web"]
     "dev"
-      ^{:doc (str "Generate blog content and run local web service")}
+      ^{:doc "Generate blog content and run local web service"}
       ["run" "-m" "oubiwann.blog.core/log+generate+web"]
+    "build-sass"
+      ^{:doc "Generate blog theme from SCSS files"}
+      ["shell" "sass" "blog/scss/theme.scss" "blog/css/theme.css"]
     "build"
-      ^{:doc (str "Perform build tasks for CI/CD & releases\n\n"
-                 "Additional aliases:")}
+      ^{:doc "Perform build tasks for CI/CD & releases\n\nAdditional aliases:"}
       ["with-profile" "+test,+cli" "do"
         ;["check-deps"]
         ;["lint"]
