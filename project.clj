@@ -11,12 +11,12 @@
        ns
        "\u001B[35m]\u001B[33m λ\u001B[m=> "))
 
-(defproject mx.roads.forgotten/blog "0.4.0-SNAPSHOT"
-  :description "Blog for Forgotten Roads MX"
-  :url "https://forgotten.roads.mx/blog/"
+(defproject oubiwann/blog "0.1.0-SNAPSHOT"
+  :description "The 21st century .plan for Duncan McGreggor"
+  :url "https://oubiwann.github.io/blog/"
   :scm {
     :name "git"
-    :url "https://github.com/forgotten-roads/blog"}
+    :url "https://github.com/oubiwann/blog"}
   :license {
     :name "Apache License, Version 2.0"
     :url "http://www.apache.org/licenses/LICENSE-2.0"}
@@ -43,10 +43,9 @@
     [stasis "2.4.0"]]
   :source-paths ["src/clj"]
   :dragon {
-    :domain "forgotten.roads.mx/blog"
-    :name "Forgotten Roads MX"
-    :description ~(str "Articles, Reviews, & Explorations for the Motorcycle "
-                       "Excursionist & Non-traditional Adventurer")
+    :domain "oubiwann.github.io/blog"
+    :name "oubiwann :: blog"
+    :description "The 21st century .plan for Duncan McGreggor")
     :port 5096
     :output-dir "."
     :base-path "/blog"
@@ -55,18 +54,18 @@
     :feed-count 20
     :cli {
       :log-level :info
-      :log-nss [mx.roads]}}
+      :log-nss [oubiwann.blog]}}
   :profiles {
     :uberjar {:aot :all}
     :custom-repl {
       :repl-options {
-        :init-ns mx.roads.forgotten.blog.dev
+        :init-ns oubiwann.blog.dev
         :prompt ~get-prompt
         ;:init ~(println (get-banner))
         }}
     :dev {
       :source-paths ["dev-resources/src"]
-      :main mx.roads.forgotten.blog.main
+      :main oubiwann.blog.main
       :plugins [
         [lein-simpleton "1.3.0"]]
       :dependencies [
