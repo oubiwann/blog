@@ -45,7 +45,7 @@
   :dragon {
     :domain "oubiwann.github.io/blog"
     :name "oubiwann :: blog"
-    :description "The 21st century .plan for Duncan McGreggor")
+    :description "The 21st century .plan for Duncan McGreggor"
     :port 5096
     :output-dir "."
     :base-path "/blog"
@@ -67,6 +67,7 @@
       :source-paths ["dev-resources/src"]
       :main oubiwann.blog.main
       :plugins [
+        [lein-shell "0.5.0"]
         [lein-simpleton "1.3.0"]]
       :dependencies [
         [http-kit "2.3.0"]
@@ -102,8 +103,11 @@
         [org.clojure/data.json "0.2.6"]
         [twitter-api "1.8.0"]]}}
   :aliases {
+    "init-content"
+      ^{:doc (str "Add blog content branch as a submodule")}
+      ["shell" "git" "submodule" "update" "--init" "--recursive"]
     "repl"
-      ^{:doc (str "A custom FRMX REPL that overrides the default one")}
+      ^{:doc (str "A custom REPL that overrides the default one")}
       ["with-profile" "+test,+custom-repl,+cli" "repl"]
     "check-deps"
       ^{:doc (str "Check if any deps have out-of-date versions")}
@@ -111,8 +115,8 @@
     "lint"
       ^{:doc (str "Perform lint checking")}
       ["with-profile" "+test" "kibit"]
-    "frmx"
-      ^{:doc (str "The FRMX Blog CLI; type `lein frmx help` or `frmx help` "
+    "ob"
+      ^{:doc (str "The blog CLI; type `lein ob help` or `ob help` "
                   "for commands")}
       ["with-profile" "+cli"
        "run" "-m" "oubiwann.blog.main" "cli"]
