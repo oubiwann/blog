@@ -24,23 +24,23 @@
     [org.clojure/clojure]
     [org.clojure/clojurescript]]
   :dependencies [
-    [clojusc/rfc5322 "0.4.0-SNAPSHOT"]
-    [clojusc/trifl "0.2.0-SNAPSHOT"]
-    [clojusc/twig "0.3.2-SNAPSHOT"]
+    [clojusc/rfc5322 "0.4.0"]
+    [clojusc/trifl "0.4.2"]
+    [clojusc/twig "0.4.0"]
     ;; XXX Remove the following once the next dragon snapshot is pushed to Clojars
     [com.datomic/clj-client "0.8.606"]
-    [com.taoensso/carmine "2.16.0"]
+    [com.taoensso/carmine "2.19.1"]
     ;; XXX END
-    [com.stuartsierra/component "0.3.2"]
-    [dragon "0.4.0-SNAPSHOT"]
-    [markdown-clj "1.0.1"]
-    [org.clojure/clojure "1.8.0"]
+    [com.stuartsierra/component "0.4.0"]
+    [dragon "0.5.0"]
+    [markdown-clj "1.0.7"]
+    [org.clojure/clojure "1.10.0"]
     [org.clojure/data.generators "0.1.2"]
     [org.clojure/data.xml "0.0.8"]
     [org.clojure/math.combinatorics "0.1.4"]
-    [ring/ring-core "1.6.2"]
-    [selmer "1.11.1"]
-    [stasis "2.3.0"]]
+    [ring/ring-core "1.7.1"]
+    [selmer "1.12.5"]
+    [stasis "2.4.0"]]
   :source-paths ["src/clj"]
   :dragon {
     :domain "forgotten.roads.mx/blog"
@@ -70,18 +70,15 @@
       :plugins [
         [lein-simpleton "1.3.0"]]
       :dependencies [
-        [http-kit "2.2.0"]
-        [leiningen-core "2.7.1"]
+        [http-kit "2.3.0"]
         [org.clojure/tools.namespace "0.2.11"]]
       ;:pedantic? :warn
       }
     :test {
       :plugins [
-        [lein-ancient "0.6.12"]
-        [jonase/eastwood "0.2.4" :exclusions [org.clojure/clojure]]
-        [lein-bikeshed "0.4.1" :exclusions [org.clojure/tools.namespace]]
-        [lein-kibit "0.1.5" :exclusions [org.clojure/clojure]]
-        [venantius/yagni "0.1.4"]]}
+        [lein-ancient "0.6.15"]
+        [jonase/eastwood "0.3.4" :exclusions [org.clojure/clojure]]
+        [lein-kibit "0.1.6" :exclusions [org.clojure/clojure]]]}
     :cli {
       :resource-paths ["posts"]
       :exclusions [
@@ -94,15 +91,15 @@
         org.clojure/clojurescript
         org.clojure/clojure]
       :dependencies [
-        [clj-http "2.0.1"]
-        [clojusc/cljs-tools "0.2.0-SNAPSHOT"]
-        [com.draines/postal "2.0.2"]
-        [com.google.api-client/google-api-client "1.22.0"]
-        [com.google.apis/google-api-services-plusDomains "v1-rev434-1.22.0"]
-        [commons-codec "1.10"]
+        [clj-http "3.9.1"]
+        [clojusc/cljs-tools "0.2.1"]
+        [com.draines/postal "2.0.3"]
+        [com.google.api-client/google-api-client "1.28.0"]
+        [com.google.apis/google-api-services-plusDomains "v1-rev20180805-1.28.0"]
+        [commons-codec "1.11"]
         [commons-logging "1.2"]
-        [joda-time "2.9.9"]
-        [org.apache.maven.wagon/wagon-http "2.10"]
+        [joda-time "2.10.1"]
+        [org.apache.maven.wagon/wagon-http "3.3.1"]
         [org.clojure/data.json "0.2.6"]
         [twitter-api "1.8.0"]]}}
   :aliases {
