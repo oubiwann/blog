@@ -1,0 +1,29 @@
+.navbar {
+	padding: $navbar-padding;
+	padding-bottom: $navbar-padding-bottom;
+}
+
+.bg-light {
+	background-image: linear-gradient($dark-gradient-top, $dark-gradient-bottom) !important;
+	background-color: none !important;
+}
+
+.navbar-brand-wrapper {
+	border-style: solid;
+	border-radius: 40px;
+	width: 40px;
+	border-width: 6px;
+	border-left-color: $success;
+	border-top-color: $success;
+	border-right-color: $primary;
+	border-bottom-color: $primary;
+	padding-left: 1px;
+}
+
+.navbar-brand {
+	line-height: 20px;
+	display: block;
+	text-align: center;
+	padding-top: 2px;
+	padding-right: 4px;
+}

@@ -9665,4 +9665,34 @@ h3 {
   color: #fff;
 }
 
+.navbar {
+  padding: 4px;
+  padding-bottom: 8px;
+}
+
+.bg-light {
+  background-image: linear-gradient(#333, #252525) !important;
+  background-color: none !important;
+}
+
+.navbar-brand-wrapper {
+  border-style: solid;
+  border-radius: 40px;
+  width: 40px;
+  border-width: 6px;
+  border-left-color: #00bc8c;
+  border-top-color: #00bc8c;
+  border-right-color: #375a7f;
+  border-bottom-color: #375a7f;
+  padding-left: 1px;
+}
+
+.navbar-brand {
+  line-height: 20px;
+  display: block;
+  text-align: center;
+  padding-top: 2px;
+  padding-right: 4px;
+}
+
 /*# sourceMappingURL=theme.css.map */
