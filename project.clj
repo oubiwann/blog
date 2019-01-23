@@ -115,16 +115,16 @@
       ^{:doc (str "The FRMX Blog CLI; type `lein frmx help` or `frmx help` "
                   "for commands")}
       ["with-profile" "+cli"
-       "run" "-m" "mx.roads.forgotten.blog.main" "cli"]
+       "run" "-m" "oubiwann.blog.main" "cli"]
     "gen"
       ^{:doc (str "Generate static content for the blog")}
-      ["run" "-m" "mx.roads.forgotten.blog.core/generate"]
+      ["run" "-m" "oubiwann.blog.core/generate"]
     "web"
       ^{:doc (str "Run a local web service for the blog")}
-      ["run" "-m" "mx.roads.forgotten.blog.core/web"]
+      ["run" "-m" "oubiwann.blog.core/web"]
     "dev"
       ^{:doc (str "Generate blog content and run local web service")}
-      ["run" "-m" "mx.roads.forgotten.blog.core/log+generate+web"]
+      ["run" "-m" "oubiwann.blog.core/log+generate+web"]
     "build"
       ^{:doc (str "Perform build tasks for CI/CD & releases\n\n"
                  "Additional aliases:")}

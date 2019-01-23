@@ -1,42 +1,42 @@
-# forgotten.roads.mx Blog
+# oubiwann :: blog
 
-*The Forgotten Roads Blog for Motorcycle Excursionists*
+*The 21st century .plan for Duncan McGreggor*
 
-Visit: http://forgotten.roads.mx/blog/
+Visit: https://oubiwann.github.io/blog/
 
 
 ## Prerequisites
 
 * GNU `make`
-* The `lessc` CSS compiler (which requires having `npm` installed)
+* The `sass` CSS compiler (which requires having `npm` installed)
 
 Set the `PATH` to include the project's executable and setup auto-completion:
 
 ```bash
 $ export PATH=$PATH:`pwd`/bin
-$ source dev-resources/shell/frmx-bash-autocompletion
+$ source dev-resources/shell/ob-bash-autocompletion
 ```
 
 
 ## Creating Post Stubs
 
 ```bash
-$ frmx new post md
+$ ob new post md
 ```
 
 or, for example,
 
 ```bash
-$ frmx new post rfc5322
+$ ob new post rfc5322
 ```
 
-For more options see `frmx new post help`.
+For more options see `ob new post help`.
 
 
 ## Generating Static Files
 
 ```bash
-$ frmx gen
+$ ob gen
 ```
 
 If you'd like to run a dev web server with the generated content served at the

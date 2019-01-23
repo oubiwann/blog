@@ -1,6 +1,6 @@
 setup: install-less
 
 install-less:
-	@sudo npm install -g less
+	@sudo npm install sass
 
 
