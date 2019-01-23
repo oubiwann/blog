@@ -2,3 +2,9 @@
 	path = blog
 	url = git@github.com:oubiwann/blog.git
 	branch = gh-pages
+[submodule "third-party/bootswatch"]
+	path = third-party/bootswatch
+	url = https://github.com/thomaspark/bootswatch.git
+[submodule "third-party/bootstrap"]
+	path = third-party/bootstrap
+	url = https://github.com/twbs/bootstrap.git
