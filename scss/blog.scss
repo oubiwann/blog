@@ -50,6 +50,10 @@ body {
 	padding: 0;
 }
 
+.page-content {
+	padding-top: 4em;
+}
+
 .page-column-side {
 	background-color: $table-active-bg;
 }
@@ -58,8 +62,15 @@ body {
 
 }
 
-footer {
-	background-color: $secondary;
+#footer {
+	background-color: $footer-bg-color;
 	margin: 0;
 	padding: 5em;
+	/*
+	border-radius: 5px;
+	border: 1px solid #666;
+	*/
+	border-top: 1px solid $footer-border-color;
+	border-bottom: 1px solid $footer-border-color;
+	margin-bottom: 2em;
 }

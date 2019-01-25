@@ -9717,14 +9717,25 @@ body {
   padding: 0;
 }
 
+.page-content {
+  padding-top: 4em;
+}
+
 .page-column-side {
   background-color: rgba(0, 0, 0, 0.075);
 }
 
-footer {
+#footer {
   background-color: #444;
   margin: 0;
   padding: 5em;
+  /*
+  border-radius: 5px;
+  border: 1px solid #666;
+  */
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  margin-bottom: 2em;
 }
 
 /*# sourceMappingURL=theme.css.map */
