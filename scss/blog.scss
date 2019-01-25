@@ -1,3 +1,8 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
 .navbar {
 	padding: $navbar-padding;
 	padding-bottom: $navbar-padding-bottom;
@@ -26,4 +31,35 @@
 	text-align: center;
 	padding-top: 2px;
 	padding-right: 4px;
+}
+
+.social-nav li {
+	padding: 4px;
+}
+
+.social-nav a {
+	color: $primary;
+}
+
+.social-nav a:hover {
+	color: $success;
+}
+
+.container-nopad {
+	margin: 0 ;
+	padding: 0;
+}
+
+.page-column-side {
+	background-color: $table-active-bg;
+}
+
+.page-column-main {
+
+}
+
+footer {
+	background-color: $secondary;
+	margin: 0;
+	padding: 5em;
 }

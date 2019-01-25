@@ -9665,6 +9665,11 @@ h3 {
   color: #fff;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .navbar {
   padding: 4px;
   padding-bottom: 8px;
@@ -9693,6 +9698,33 @@ h3 {
   text-align: center;
   padding-top: 2px;
   padding-right: 4px;
+}
+
+.social-nav li {
+  padding: 4px;
+}
+
+.social-nav a {
+  color: #375a7f;
+}
+
+.social-nav a:hover {
+  color: #00bc8c;
+}
+
+.container-nopad {
+  margin: 0;
+  padding: 0;
+}
+
+.page-column-side {
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+footer {
+  background-color: #444;
+  margin: 0;
+  padding: 5em;
 }
 
 /*# sourceMappingURL=theme.css.map */
