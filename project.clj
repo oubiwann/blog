@@ -12,7 +12,7 @@
        "\u001B[35m]\u001B[33m λ\u001B[m=> "))
 
 (defproject oubiwann/blog "0.1.0-SNAPSHOT"
-  :description "The 21st century .plan for Duncan McGreggor"
+  :description "A 21st century .plan for Duncan McGreggor"
   :url "https://oubiwann.github.io/blog/"
   :scm {
     :name "git"
@@ -123,8 +123,8 @@
       ^{:doc "Generate static content for the blog"}
       ["run" "-m" "oubiwann.blog.core/generate"]
     "web"
-      ^{:doc "Run a local web service for the blog"}
-      ["run" "-m" "oubiwann.blog.core/web"]
+      ^{:doc "Run a simple web server with docroot of generated content"}
+      ["simpleton" "5099" "file" ":from" "."]
     "dev"
       ^{:doc "Generate blog content and run local web service"}
       ["run" "-m" "oubiwann.blog.core/log+generate+web"]
