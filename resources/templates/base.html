@@ -152,7 +152,7 @@
       </div>
 
       <div class="col-md-4 footer-widget">
-        <h3> <i class="fa fa-star"></i> Great Resources</h3>
+        <h3> <i class="fa fa-star"></i>Great Resources</h3>
         <ul class="tales-list">
           <li><a href="https://www.fhwa.dot.gov/byways">Scenic Byways in the US</a></li>
           <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
@@ -200,6 +200,8 @@
 {% endblock %}
 
 {% block post-scripts %}
+    <script src="{{ page-data.base-path }}/assets/jquery/dist/js/jquery.min.js"></script>
+    <script src="{{ page-data.base-path }}/assets/popper.js/dist/umd/popper.min.js"></script>
     <script src="{{ page-data.base-path }}/assets/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="{{ page-data.base-path }}/assets/modernizr/modernizr-custom.js"></script>
+    <script src="{{ page-data.base-path }}/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
 {% endblock %}
