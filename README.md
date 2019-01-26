@@ -1,6 +1,6 @@
 # oubiwann :: blog
 
-*The 21st century .plan for Duncan McGreggor*
+*A 21st century .plan for Duncan McGreggor*
 
 Visit: https://oubiwann.github.io/blog/
 
