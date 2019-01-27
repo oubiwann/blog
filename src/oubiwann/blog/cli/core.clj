@@ -1,6 +1,5 @@
 (ns oubiwann.blog.cli.core
-  (:require [dragon.config :as config]
-            [dragon.event.system.core :as event]
+  (:require [dragon.event.system.core :as event]
             [dragon.event.tag :as tag]
             [oubiwann.blog.cli.new :as new]
             [oubiwann.blog.cli.show :as show]

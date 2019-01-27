@@ -26,8 +26,10 @@
     [org.clojure/clojure]
     [org.clojure/clojurescript]
     [org.clojure/core.async]
-    [org.clojure/tools.analyzer.jvm]]
+    [org.clojure/tools.analyzer.jvm]
+    [org.slf4j/slf4j-nop]]
   :dependencies [
+    [ch.qos.logback/logback-classic "1.2.3"]
     [clojusc/rfc5322 "0.4.0"]
     [clojusc/trifl "0.4.2"]
     [clojusc/twig "0.4.1"]

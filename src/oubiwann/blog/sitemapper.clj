@@ -1,7 +1,6 @@
 (ns oubiwann.blog.sitemapper
   (:require [clojure.data.xml :as xml]
             [clojusc.twig :refer [pprint]]
-            [dragon.config :as config]
             [dragon.util :as util]
             [taoensso.timbre :as log]))
 

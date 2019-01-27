@@ -2,9 +2,8 @@
   (:require [clojure.java.io :as io]
             [clojure.data.generators :as generators]
             [clojusc.twig :refer [pprint]]
-            [dragon.blog.content.core :as content]
             [dragon.blog.core :as blog]
-            [dragon.web.content :as template]
+            [dragon.selmer.core :as template]
             [oubiwann.blog.web.content.data :as data]
             [taoensso.timbre :as log]
             [trifl.fs :as fs]))
@@ -60,7 +59,7 @@
 (defn gen
   [system posts]
   (log/debug "Generating social content ...")
-  (log/trace "Got data:" (pprint (blog/data-minus-body posts)))
+  (log/trace "Got data:" (pprint (blog/data-for-logs posts)))
   (doseq [post-data posts]
     (gen-new-post-social system post-data))
   :ok)

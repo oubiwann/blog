@@ -2,7 +2,7 @@
   (:require [clojure.java.io :as io]
             [clojusc.twig :refer [pprint]]
             [dragon.blog.core :as blog]
-            [dragon.web.content :as content]
+            [dragon.selmer.core :as template]
             [oubiwann.blog.web.content.data :as data]
             [taoensso.timbre :as log]
             [trifl.fs :as fs]))
@@ -19,7 +19,7 @@
 
 (defn get-new-post-email-content
   [system post-data]
-  (content/render
+  (template/render
     (str "templates/emails/" new-post-file)
     (data/post system [] post-data)))
 
@@ -36,7 +36,7 @@
 (defn gen
   [system posts]
   (log/debug "Generating emails ...")
-  (log/trace "Got data:" (pprint (blog/data-minus-body posts)))
+  (log/trace "Got data:" (pprint (blog/data-for-logs posts)))
   (doseq [post-data posts]
     (gen-new-post-email system post-data))
   :ok)

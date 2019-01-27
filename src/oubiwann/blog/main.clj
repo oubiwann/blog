@@ -1,7 +1,6 @@
 (ns oubiwann.blog.main
   (:require [clojusc.twig :as logger]
-            [dragon.components.system :as components]
-            [dragon.config :as config]
+            [com.stuartsierra.component :as component]
             [dragon.main :as dragon]
             [oubiwann.blog.cli.core :as cli]
             [oubiwann.blog.core :as core]
@@ -22,8 +21,8 @@
   (logger/set-level! '[oubiwann.blog dragon] :fatal)
   (let [args (dragon/get-default-args raw-args)
         system (dragon/get-context-sensitive-system mode args)]
-   (log/infof "Running FRMX Blog application in %s mode ..." mode)
-   (log/debug "Inialized with system:" system)
+   (log/infof "Running blog application in %s mode ..." mode)
+   (log/debug "Initialized with system:" system)
    (cli/run system args)
    ;; Do a full shut-down upon ^c
-   (trifl/add-shutdown-handler #(components/stop system))))
+   (trifl/add-shutdown-handler #(component/stop system))))

@@ -1,23 +1,18 @@
 (ns oubiwann.blog.components.system
   (:require [com.stuartsierra.component :as component]
-            [dragon.components.config :as config]
-            [dragon.components.event :as event]
-            [dragon.components.httpd :as httpd]
-            [dragon.components.logging :as logging]
-            [dragon.components.system :as system]))
+            [dragon.components.system :as system]
+            [dragon.config.core :as config-lib]))
 
-(defn initialize [config-builder]
-  (component/system-map
-   :config (config/create-config-component config-builder)
-   :logging (component/using
-             (logging/create-logging-component)
-             [:config])
-   :event (component/using
-           (event/create-event-component)
-           [:config :logging])))
+(defn init
+  ([]
+    (init :default))
+  ([mode]
+    (init mode #'config-lib/build))
+  ([mode cfg-builder-fn]
+    ((mode system/init-lookup) cfg-builder-fn)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;   Managment Functions   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   Management Functions   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn stop
@@ -31,7 +26,7 @@
 
 (defn start
   ([]
-   (start (initialize)))
+   (start (init)))
   ([system]
    (component/start system))
   ([system component-key]

@@ -2,7 +2,6 @@
   (:require [clojusc.twig :as logger]
             [dragon.blog.core :as blog]
             [dragon.blog.generator :as gen]
-            [dragon.config :as config]
             [dragon.util :as util]
             [oubiwann.blog.email.content :as email-content]
             [oubiwann.blog.routes :refer [gen-routes routes]]

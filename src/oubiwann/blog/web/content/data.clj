@@ -2,7 +2,8 @@
   (:require [clojure.java.io :as io]
             [clojure.string :as string]
             [dragon.blog.core :as blog]
-            [dragon.config :as config]
+            [dragon.blog.tags :as tags]
+            [dragon.components.config :as config]
             [markdown.core :as markdown]
             [taoensso.timbre :as log]))
 
@@ -92,7 +93,6 @@
      :site-description (config/description system)
      :index "index"
      :about "about"
-     :community "community"
      :archives "archives"
      :categories "categories"
      :tags "tags"
@@ -134,13 +134,6 @@
                           (markdown-page)
                           (assoc :title "About")))))
 
-(defn community
-  [system posts]
-  (-> system
-      (common posts)
-      (assoc-in [:page-data :active] "community")
-      (assoc :content (assoc generic-page :title "Community"))))
-
 (defn contact
   [system posts]
   (-> system
@@ -168,24 +161,6 @@
                           (markdown-page)
                           (assoc :title "Content License")))))
 
-(defn privacy
-  [system posts]
-  (-> system
-      (common posts)
-      (assoc-in [:page-data :active] "about")
-      (assoc :content (-> "privacy.md"
-                          (markdown-page)
-                          (assoc :title "Privacy Policy")))))
-
-(defn disclosure
-  [system posts]
-  (-> system
-      (common posts)
-      (assoc-in [:page-data :active] "about")
-      (assoc :content (-> "disclosure.md"
-                          (markdown-page)
-                          (assoc :title "Disclosure Policy")))))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Dynamic Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -197,7 +172,7 @@
       (assoc-in [:page-data :active] "archives")
       (assoc :post-data post-data
              :blocks (get-blocks post-data)
-             :tags (blog/tags-unique [post-data]))))
+             :tags (tags/unique post-data))))
 
 (defn front-page
   [system all-posts top-posts & {:keys [above-fold-count below-fold-count column-count]}]
@@ -215,47 +190,13 @@
                                     "on the front page -- if you want to read "
                                     "an older post, <a href=\"/blog/archives\""
                                     ">check out the archives</a>.")
-               :tags (blog/tag-stats all-posts)
+               :tags (tags/get-stats all-posts)
                :headliner headliner
                :posts-data grouped-posts
                :posts-count (count top-posts)
                :above-count (count above-posts)
                :below-count (count below-posts)
                :below-fold-data below-posts))))
-
-(def map-base
-  {:google-endpoint "https://maps.googleapis.com/maps/api/js"
-   :google-api-key "AIzaSyCnCHagOgpmmE11nTCf9k99gZq6a3aLgnw"
-   :starting-lat 43.536389
-   :starting-long -96.731667
-   :starting-zoom 12
-   :disable-map-gui true})
-
-(def topo-base
-  (-> map-base
-      (assoc :starting-zoom 13)
-      (dissoc :disable-map-gui)))
-
-(defn map-minimal
-  [system map-data]
-  (-> (base system)
-      (assoc-in [:page-data :active] "maps")
-      (assoc :map-data (merge map-base map-data))))
-
-(defn map-common
-  [system posts map-data]
-  (-> system
-      (common posts)
-      (assoc-in [:page-data :active] "maps")
-      (assoc :map-data (merge map-base map-data))))
-
-(defn maps-index
-  [system posts maps-data]
-  (-> system
-      (common posts)
-      (assoc-in [:page-data :active] "maps")
-      (assoc :topo-data topo-base)
-      (assoc :maps-data (map #(merge map-base %) maps-data))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Listings Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -267,7 +208,7 @@
       (common posts)
       (assoc-in [:page-data :active] "archives")
       (assoc :content (assoc generic-page :title "Archives")
-             :posts-data (blog/data-for-archives posts))))
+             :posts-data (blog/group-data :archives posts))))
 
 (defn categories
   [system posts]
@@ -275,7 +216,7 @@
       (common posts)
       (assoc-in [:page-data :active] "categories")
       (assoc :content (assoc generic-page :title "Categories")
-             :posts-data (blog/data-for-categories posts))))
+             :posts-data (blog/group-data :categories posts))))
 
 (defn tags
   [system posts]
@@ -283,7 +224,7 @@
       (common posts)
       (assoc-in [:page-data :active] "tags")
       (assoc :content (assoc generic-page :title "Tags")
-             :posts-data (blog/data-for-tags posts))))
+             :posts-data (blog/group-data :tags posts))))
 
 (defn authors
   [system posts]
@@ -291,7 +232,7 @@
       (common posts)
       (assoc-in [:page-data :active] "authors")
       (assoc :content (assoc generic-page :title "Authors")
-             :posts-data (blog/data-for-authors posts))))
+             :posts-data (blog/group-data :authors posts))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Design Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,7 +1,7 @@
 (ns oubiwann.blog.reader
   (:require [clojure.data.xml :as xml]
             [clojusc.twig :refer [pprint]]
-            [dragon.config :as config]
+            [dragon.components.config :as config]
             [taoensso.timbre :as log]))
 
 (defn atom-entry
