@@ -1,11 +1,11 @@
-(ns oubiwann.blog.components.system
+(ns oubiwann.blog.components.core
   (:require [com.stuartsierra.component :as component]
             [dragon.components.system :as system]
             [dragon.config.core :as config-lib]))
 
 (defn init
   ([]
-    (init :default))
+    (init :web))
   ([mode]
     (init mode #'config-lib/build))
   ([mode cfg-builder-fn]

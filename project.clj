@@ -1,9 +1,8 @@
 (defn get-banner
   []
-  ; (str
-  ;   (slurp "resources/text/repl-banner.txt")
-  ;   (slurp "resources/text/repl-loading.txt")))
-  "")
+  (str
+    (slurp "resources/text/banner.txt")
+    #_(slurp "resources/text/loading.txt")))
 
 (defn get-prompt
   [ns]
@@ -31,6 +30,7 @@
   :dependencies [
     [ch.qos.logback/logback-classic "1.2.3"]
     [clojusc/rfc5322 "0.4.0"]
+    [clojusc/system-manager "0.3.0"]
     [clojusc/trifl "0.4.2"]
     [clojusc/twig "0.4.1"]
     [com.cognitect/transit-clj "0.8.313"]
@@ -70,10 +70,9 @@
       :aot :all}
     :custom-repl {
       :repl-options {
-        :init-ns oubiwann.blog.dev
+        :init-ns oubiwann.blog.repl
         :prompt ~get-prompt
-        ;:init ~(println (get-banner))
-        }}
+        :init ~(println (get-banner))}}
     :dev {
       :source-paths ["dev-resources/src"]
       :main oubiwann.blog.main
