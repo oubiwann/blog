@@ -22,26 +22,28 @@
     :url "http://www.apache.org/licenses/LICENSE-2.0"}
   :exclusions [
     [org.clojure/clojure]
-    [org.clojure/clojurescript]]
+    [org.clojure/clojurescript]
+    [org.clojure/tools.analyzer.jvm]]
   :dependencies [
     [clojusc/rfc5322 "0.4.0"]
     [clojusc/trifl "0.4.2"]
-    [clojusc/twig "0.4.0"]
+    [clojusc/twig "0.4.1"]
     ;; XXX Remove the following once the next dragon snapshot is pushed to Clojars
     [com.datomic/clj-client "0.8.606"]
     [com.taoensso/carmine "2.19.1"]
     ;; XXX END
     [com.stuartsierra/component "0.4.0"]
-    [dragon "0.5.0"]
+    [dragon "0.6.0-SNAPSHOT"]
     [markdown-clj "1.0.7"]
     [org.clojure/clojure "1.10.0"]
     [org.clojure/data.generators "0.1.2"]
     [org.clojure/data.xml "0.0.8"]
     [org.clojure/math.combinatorics "0.1.4"]
+    [org.clojure/tools.analyzer.jvm "0.7.2"]
     [ring/ring-core "1.7.1"]
     [selmer "1.12.5"]
     [stasis "2.4.0"]]
-  :source-paths ["src/clj"]
+  :source-paths ["src"]
   :dragon {
     :domain "oubiwann.github.io/blog"
     :name "oubiwann :: blog"
@@ -56,7 +58,8 @@
       :log-level :info
       :log-nss [oubiwann.blog]}}
   :profiles {
-    :uberjar {:aot :all}
+    :ubercompile {
+      :aot :all}
     :custom-repl {
       :repl-options {
         :init-ns oubiwann.blog.dev
@@ -70,15 +73,24 @@
         [lein-shell "0.5.0"]
         [lein-simpleton "1.3.0"]]
       :dependencies [
+        [expound "0.7.2"]
         [http-kit "2.3.0"]
+        [inspectable "0.2.2"]
         [org.clojure/tools.namespace "0.2.11"]]
       ;:pedantic? :warn
       }
+        :lint {
+      :plugins [
+        [jonase/eastwood "0.3.5"]
+        [lein-kibit "0.1.6"]]}
     :test {
+      :dependencies [
+        [clojusc/ltest "0.4.0-SNAPSHOT"]]
       :plugins [
         [lein-ancient "0.6.15"]
-        [jonase/eastwood "0.3.4" :exclusions [org.clojure/clojure]]
-        [lein-kibit "0.1.6" :exclusions [org.clojure/clojure]]]}
+        [lein-ltest "0.3.0"]]
+      :test-selectors {
+        :select :select}}
     :cli {
       :resource-paths ["posts"]
       :exclusions [
@@ -92,7 +104,6 @@
         org.clojure/clojure]
       :dependencies [
         [clj-http "3.9.1"]
-        [clojusc/cljs-tools "0.2.1"]
         [com.draines/postal "2.0.3"]
         [com.google.api-client/google-api-client "1.28.0"]
         [com.google.apis/google-api-services-plusDomains "v1-rev20180805-1.28.0"]
@@ -103,18 +114,29 @@
         [org.clojure/data.json "0.2.6"]
         [twitter-api "1.8.0"]]}}
   :aliases {
+    "ubercompile" ["with-profile" "+ubercompile" "compile"]
+    "check-vers" ["with-profile" "+test" "ancient" "check" ":all"]
+    "check-jars" ["with-profile" "+test" "do"
+      ["deps" ":tree"]
+      ["deps" ":plugin-tree"]]
+    "check-deps" ^{:doc "Check if any deps have out-of-date versions"}
+    ["do"
+      ["check-jars"]
+      ["check-vers"]]
+    "kibit" ["with-profile" "+lint" "kibit"]
+    "eastwood" ["with-profile" "+lint" "eastwood" "{:namespaces [:source-paths]}"]
+    "lint" ^{:doc "Perform lint checking"}
+      ["do"
+        ["kibit"]
+        ;["eastwood"]
+        ]
+    "ltest" ["with-profile" "+test" "ltest"]
     "init-content"
       ^{:doc "Add blog content branch as a submodule"}
       ["shell" "git" "submodule" "update" "--init" "--recursive"]
     "repl"
       ^{:doc "A custom REPL that overrides the default one"}
       ["with-profile" "+test,+custom-repl,+cli" "repl"]
-    "check-deps"
-      ^{:doc "Check if any deps have out-of-date versions"}
-      ["with-profile" "+test" "ancient" "check" ":all"]
-    "lint"
-      ^{:doc "Perform lint checking"}
-      ["with-profile" "+test" "kibit"]
     "ob"
       ^{:doc "The blog CLI; type `lein ob help` or `ob help` for commands"}
       ["with-profile" "+cli"
