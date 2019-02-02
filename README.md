@@ -1,8 +1,8 @@
-# oubiwann :: blog
+# oubiwann | blog
 
 *A 21st century .plan for Duncan McGreggor*
 
-Visit: https://oubiwann.github.io/blog/
+Visit: [https://oubiwann.github.io/blog/](https://oubiwann.github.io/blog/)
 
 
 ## Prerequisites
@@ -72,25 +72,3 @@ Edit files, reload the Clojure namespaces, and regenerate the content:
 (reload)
 (core/generate)
 ```
-
-
-## Publishing Content
-
-To (re-)publish all content to AWS:
-
-```
-$ make publish-aws
-```
-
-To sync only content that has changed (includes timestamp-only changes):
-
-```
-$ make sync-aws
-```
-
-Additional publishing `make` targets:
-
-* To only publish content that is currently in a "modified" state in `git` you
-  can use `make publish-aws-modified`
-* To publish the files from the last commit you can use
- `make publish-aws-committed`

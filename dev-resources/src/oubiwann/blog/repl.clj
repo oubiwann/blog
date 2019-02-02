@@ -18,7 +18,7 @@
     [dragon.blog.core :as blog]
     [dragon.blog.generator :as gen]
     [dragon.blog.post.core :as post]
-    [dragon.config.core :as config]
+    [dragon.config :as dragon-config]
     [dragon.util :as util]
     [expound.alpha :as expound]
     [inspectable.repl :refer [why browse-spec]]

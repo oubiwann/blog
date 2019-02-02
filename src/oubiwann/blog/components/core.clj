@@ -1,46 +1,29 @@
 (ns oubiwann.blog.components.core
   (:require [com.stuartsierra.component :as component]
-            [dragon.components.system :as system]
-            [dragon.config.core :as config-lib]))
+            [dragon.components.core :as dragon-components]
+            [oubiwann.blog.config :as config-lib]))
+
+(defn initialize-with-web
+  [cfg-data]
+  (component/map->SystemMap
+    (merge (dragon-components/cfg cfg-data)
+           dragon-components/log
+           dragon-components/redis
+           dragon-components/data
+           dragon-components/evt
+           dragon-components/http
+           dragon-components/wtchr
+           (dragon-components/rspndr))))
+
+(def init-lookup
+  {:default #'dragon-components/initialize-default
+   :basic #'dragon-components/initialize-bare-bones
+   :web #'initialize-with-web})
 
 (defn init
   ([]
     (init :web))
   ([mode]
-    (init mode #'config-lib/build))
-  ([mode cfg-builder-fn]
-    ((mode system/init-lookup) cfg-builder-fn)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;   Management Functions   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defn stop
-  ([system]
-   (component/stop system))
-  ([system component-key]
-   (->> system
-        (component-key)
-        (component/stop)
-        (assoc system component-key))))
-
-(defn start
-  ([]
-   (start (init)))
-  ([system]
-   (component/start system))
-  ([system component-key]
-   (->> system
-        (component-key)
-        (component/start)
-        (assoc system component-key))))
-
-(defn restart
-  ([system]
-   (-> system
-       (stop)
-       (start)))
-  ([system component-key]
-   (-> system
-       (stop component-key)
-       (start component-key))))
+    (init mode (config-lib/data)))
+  ([mode cfg-data]
+    ((mode init-lookup) cfg-data)))

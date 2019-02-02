@@ -52,19 +52,6 @@
     [selmer "1.12.5"]
     [stasis "2.4.0"]]
   :source-paths ["src"]
-  :dragon {
-    :domain "oubiwann.github.io/blog"
-    :name "oubiwann :: blog"
-    :description "The 21st century .plan for Duncan McGreggor"
-    :port 5096
-    :output-dir "."
-    :base-path "/blog"
-    :posts-path "/blog/archives"
-    :posts-path-src "./posts"
-    :feed-count 20
-    :cli {
-      :log-level :info
-      :log-nss [oubiwann.blog]}}
   :profiles {
     :ubercompile {
       :aot :all}
