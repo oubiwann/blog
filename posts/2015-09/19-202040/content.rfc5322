@@ -1,11 +1,13 @@
 Subject: lfecljapp v0.3.0 Release
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Releases
 Keywords: development, erlang, clojure, announcements, lfecljapp
 Comments:
 Content-Type: md
+Public?: true
 
 The project that kicked this whole thing off just got a series of updates.
 In fact, it got enough of them to warrant a new release. However, this will

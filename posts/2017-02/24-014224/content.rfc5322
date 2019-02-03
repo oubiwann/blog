@@ -1,11 +1,13 @@
 Subject: Clojang, JInterface, & core.async
 Subtitle: Passing Comments on Internals with Possible Future Development
+Header-Image: img/clojang.png
 Excerpt: Yesterday on the <a href="http://lfe.slack.com">LFE Slack</a>, Kyle Oba asked some interesting questions about Clojang and core.async. What followed was a mini brain-dump of current thinking on the topic, so I thought it might be good to record that somewhere more permanant and public.
 From: oubiwann
 Category: Information
 Keywords: lfecljapp, clojang, jinterface, zhang, clojure, core.async, internals
 Comments:
 Content-Type: md
+Public?: true
 
 The discussion on Slack the other day kicked off with a question about how
 messages are consumed in Clojang (and thus jiface and JInterface), and

@@ -1,11 +1,13 @@
 Subject: Followup: New Versions of Clojang Agent and API Published on Clojars
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Releases
 Keywords: development, erlang, clojure, announcements, libraries, java, agents
 Comments:
 Content-Type: md
+Public?: true
 
 As with the [post from the other day](/archives/2018-07/17-191932/new-versions-of-jinterface-and-jiface-published-on-clojars.html),
 tonight (this morning) has seen the two other core Clojang libraries get updates. The agent

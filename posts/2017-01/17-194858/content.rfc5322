@@ -1,11 +1,13 @@
 Subject: clojang & agent v0.3.0 Released
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Releases
 Keywords: announcements, clojang, agent
 Comments:
 Content-Type: md
+Public?: true
 
 The new releases are available here:
 

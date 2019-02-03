@@ -1,11 +1,13 @@
 Subject: New Versions of JInterface and jiface Published on Clojars
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Releases
 Keywords: development, erlang, clojure, announcements, libraries, java
 Comments:
 Content-Type: md
+Public?: true
 
 Since the last updates to the Clojure libraries, Erlang has had several major releases.
 Today, I was able to catch up and publish the following:

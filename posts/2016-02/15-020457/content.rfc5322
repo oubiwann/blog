@@ -1,11 +1,14 @@
 Subject: clojang v0.1.0 Released
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
+Twitter: clojang
 Category: Releases
 Keywords: announcements, clojang
 Comments:
 Content-Type: md
+Public?: true
 
 After two months of intense development, the first (alpha) release
 of clojang is out!

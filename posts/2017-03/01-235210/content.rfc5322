@@ -1,11 +1,13 @@
 Subject: Progress Towards the Next Releases
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Releases
 Keywords: announcements, jiface, clojang, lfecljapp, news
 Comments:
 Content-Type: md
+Public?: true
 
 An enormous amount of work has been going on in Clojang-land lately -- enough
 so that a new release is imminent. The work in jiface and clojang is being

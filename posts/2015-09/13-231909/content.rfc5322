@@ -1,11 +1,13 @@
 Subject: Clojang
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Prototypes
 Keywords: code, development, erlang, clojure, libraries, announcements
 Comments:
 Content-Type: md
+Public?: true
 
 After the initial work with Erlang, LFE, Clojure, and JInterface last year,
 I've been pursuing other options of simplifying BEAM development (LFE in

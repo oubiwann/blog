@@ -1,11 +1,13 @@
 Subject: New Clojang Blog
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Community
 Keywords: announcements, social, writing, history
 Comments:
 Content-Type: md
+Public?: true
 
 After a few weeks of hacking and furtive hosting of alpha code and alpha-er
 content, I think the blog's ready to have more eyeballs on it. It's mostly a

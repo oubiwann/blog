@@ -1,11 +1,13 @@
 Subject: Announcing jiface, clojang, & a Clojure OTP agent
 Subtitle:
+Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
 Category: Projects
 Keywords: erlang, clojure, java, lfe, libraries, announcements, jiface, clojang, agent
 Comments:
 Content-Type: md
+Public?: true
 
 After all the hacking on the Clojure/LFE/Erlang code -- a prototype version of
 Clojang -- it has become clear that Clojang really needs to be split into
