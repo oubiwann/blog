@@ -1,0 +1,38 @@
+Subject: Project Split: Clojang + Clozhang
+Subtitle:
+Header-Image: img/clozhang.png
+Excerpt:
+From: oubiwann
+Twitter: clozhang
+Category: Community
+Keywords: announcements, social, writing, projects, github
+Comments:
+Content-Type: md
+Public?: true
+
+After all the thinking last night, I woke up ready to tackle the new work
+on &pi;-Calculus in Clojure :-) First off, there's a new logo!
+
+<a href="https://raw.githubusercontent.com/clozhang/resources/master/images/logo-6-2100x.png">
+<img src="https://raw.githubusercontent.com/clozhang/resources/master/images/logo-6-250x.png">
+</a>
+
+Most obviously, there's the new blog you're reading :-)
+
+Addtionally, other new resources include:
+* a [Github org](https://github.com/clozhang)
+* a [Slack channel](http://clozhang.slack.com/)
+* the new [mail list](https://groups.google.com/forum/#!forum/clozhang)
+* a [Twitter account](http://twitter.com/clozhang)
+
+The changes to the old Clojang Github org include the following:
+* the resources repo has been moved into the Clozhang org (I didn't want
+  to fork it, since it has binary image files ... no sense in making
+  Github's life harder)
+* the zhang and zhang-agent repos have been moved into the Clozhang org
+* the old blog has been forked
+* the Clojang Codox theme has been forked
+
+At some point, I'll update the Clojang blog with a note about these changes
+as well, and point readers here (since this is almost certainly where
+99% of all future work will be occurring).

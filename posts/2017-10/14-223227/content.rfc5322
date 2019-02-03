@@ -1,0 +1,26 @@
+Subject: Some Ideas for a Clojure &pi;-Calculus Lab
+Subtitle:
+Header-Image: img/clozhang.png
+Excerpt:
+From: oubiwann
+Twitter: clozhang
+Category: Prototypes
+Keywords: ideas, r & d, plans
+Comments:
+Content-Type: md
+Public?: true
+
+I spent all night tonight reviewing my collection of &pi;-Calculus papers
+and thinking about the ways in which one could implement an extremely
+simple &pi;-Calculus for Clojure. In part, this involved reflecting on
+Erlang's general architecture (from the perspective of communicating
+nodes and processes).
+
+I think I've got a plan for tackling this in what is essentially a
+"&pi;-Calculus lab" -- two JVM instances and a simple distributed
+messaging/storage solution. This would allow mem to simply focus on the
+mechanics of communicating processes/functions without getting bogged
+down in developing a system. That can come later, once various avenues have
+been explored in the "lab".
+
+I'm pretty stoked to get started on this :-)

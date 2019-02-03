@@ -1,0 +1,32 @@
+Subject: Renewed Interest in the &pi;-Calculus
+Subtitle:
+Header-Image: img/clozhang.png
+Excerpt:
+From: oubiwann
+Twitter: clozhang
+Category: Community
+Keywords: conversations, social, conferences, talks, lisp, lfe, erlang
+Comments:
+Content-Type: md
+Public?: true
+
+Today after Guy Steele's keynote at Clojure/conj, and handful of folks went
+up to the stage to hang out and ask questions. It was quite a moment,
+really (so much so that I was pretty blissed out for several hours
+afterwards). I forget the question asked, but at one point Guy responded
+with an answer where he mentioned the &pi;-Calculus.
+
+In various previous and subsequent conversations, both LFE and Erlang
+came up where the points being made/joys being shared had to to with the
+very special strengths the BEAM provides due to its implementation of the
+&pi;-Calculus (admittedly, without &pi;-Calculus being mentioned per se).
+
+There's a particular Clojure project I have touched on and off for almost
+two years now whose goal has been to follow up on earlier work that blended
+Clojure and Erlang -- but to completely drop the dependency upon the Java
+implementation of the Erlang interface.
+
+Now that I'm thinking about this again, I'm having new ideas on how to
+tackly the problem, purely with Clojure.
+
+More soon ...
