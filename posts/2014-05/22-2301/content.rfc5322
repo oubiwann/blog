@@ -1,0 +1,17 @@
+Subject: LFE Microblog is Open for Business ...
+Subtitle: Another web property update
+Header-Image: img/lfe.png
+Excerpt:
+From: oubiwann
+Twitter: ErlangLisp
+Category: LFE
+Keywords: lfe, sites, web, news
+Source: http://blog.lfe.io/
+Comments:
+Content-Type: md
+Public?: true
+
+The LFE microblog site (powered by Jekyll and Bootstrap) is live and ready to go.
+
+We'll be posting pertinent content and links here on a regular basis, items
+which have some relation -- however tenuous -- with LFE, Lisps, or Erlang.

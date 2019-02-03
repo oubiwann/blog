@@ -1,0 +1,23 @@
+Subject: LFE Sunday Times
+Subtitle: LFE Daily moved to weekly release
+Header-Image: img/lfe.png
+Excerpt:
+From: oubiwann
+Twitter: ErlangLisp
+Category: LFE
+Keywords: news
+Source: http://blog.lfe.io/
+Comments:
+Content-Type: md
+Public?: true
+
+After watching the LFE Daily from <a href="http://paper.li">paper.li</a> for a few weeks,
+it became clear that more interesting material accumulates over the course of a week
+rather than 24 hours.
+
+As such, we've updated both the release schedule as well as the name: "LFE Daily" is now
+named "LFE Sunday Times".
+
+You can access the paper at any time <a href="https://paper.li/ErlangLisp/1397422779">here</a>.
+
+Enjoy your weekend reading!
