@@ -13,6 +13,7 @@
     [clojure.string :as string]
     [clojure.tools.namespace.repl :as repl]
     [clojure.walk :refer [macroexpand-all]]
+    [clojusc.blogger.xml.parser.export :as blogger]
     [clojusc.system-manager.core :refer :all]
     [clojusc.twig :as logger]
     [dragon.blog.core :as blog]

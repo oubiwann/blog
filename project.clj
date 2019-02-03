@@ -8,7 +8,7 @@
   [ns]
   (str "\u001B[35m[\u001B[34m"
        ns
-       "\u001B[35m]\u001B[33m λ\u001B[m=> "))
+       "\u001B[35m]\u001B[33m =>\u001B[m "))
 
 (defproject oubiwann/blog "0.1.0-SNAPSHOT"
   :description "A 21st century .plan for Duncan McGreggor"
