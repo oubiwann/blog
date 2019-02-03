@@ -3,8 +3,10 @@ Subtitle: Passing Comments on Internals with Possible Future Development
 Header-Image: img/clojang.png
 Excerpt: Yesterday on the <a href="http://lfe.slack.com">LFE Slack</a>, Kyle Oba asked some interesting questions about Clojang and core.async. What followed was a mini brain-dump of current thinking on the topic, so I thought it might be good to record that somewhere more permanant and public.
 From: oubiwann
+Twitter: clojang
 Category: Information
 Keywords: lfecljapp, clojang, jinterface, zhang, clojure, core.async, internals
+Source: http://clojang.lfe.io/
 Comments:
 Content-Type: md
 Public?: true

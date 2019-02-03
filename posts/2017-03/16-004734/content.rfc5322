@@ -3,8 +3,10 @@ Subtitle:
 Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
+Twitter: clojang
 Category: Community
 Keywords: announcements, social, writing, history
+Source: http://clojang.lfe.io/
 Comments:
 Content-Type: md
 Public?: true

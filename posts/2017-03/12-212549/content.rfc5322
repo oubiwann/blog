@@ -3,8 +3,10 @@ Subtitle: New Stuff!
 Header-Image: img/clojang.png
 Excerpt: Getting Project Communications Set Up
 From: oubiwann
+Twitter: clojang
 Category: Community
 Keywords: announcements, jiface, clojang, lfecljapp, news, social
+Source: http://clojang.lfe.io/
 Comments:
 Content-Type: md
 Public?: true

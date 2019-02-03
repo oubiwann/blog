@@ -3,8 +3,10 @@ Subtitle:
 Header-Image: img/clojang.png
 Excerpt:
 From: oubiwann
+Twitter: clojang
 Category: Prototypes
 Keywords: code, development, erlang, clojure, libraries, announcements
+Source: http://clojang.lfe.io/
 Comments:
 Content-Type: md
 Public?: true

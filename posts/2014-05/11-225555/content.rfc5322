@@ -3,6 +3,7 @@ Subtitle: Clojure and LFE Interop?
 Header-Image: img/clojang.png
 Excerpt: With the first few lines of code, hacking on a fork of Maxim Molchanov's erlang-java-node code, it seems there's a lot of potential here for LFE and Clojure.
 From: oubiwann
+Twitter: clojang
 Category: Prototypes
 Keywords: code, development, erlang, clojure
 Comments:
