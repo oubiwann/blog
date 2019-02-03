@@ -1,0 +1,9 @@
+  {:name "o|b"
+   :description "A 21st century .plan for Duncan McGreggor"
+   :domain "oubiwann.github.io/blog"
+   :port 5097
+   :paths {
+     :output "blog"}
+   :logging {
+     :level :debug
+     :nss [clojusc dragon oubiwann]}}
