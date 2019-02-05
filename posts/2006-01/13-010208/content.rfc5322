@@ -1,0 +1,14 @@
+Subject: SonicVault
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/01/sonicvault.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">music :: software :: python :: twisted</i><br/><br/><div class="entry"><br />On 13 Nov 2005, I posted to my blog about a "new project" but haven't <br />followed up with any further info. Well, I made some phenomenal <br />progress lately, and I can take a break to chat about it. The new <br />project is<br /><a href="http://tinyurl.com/cy8p5">SonicVault</a>, devised and <br />commissioned by<br /><a href="http://www.neosynapse.net/">Neosynapse</a> (a long-time <br />partner company with mine). As the stub on the wiki says, it is<br /><blockquote><br />a networked, encrypted MP3 library that supports fingerprinting <br />technology (to be used in determing file organization, detecting <br />duplicates, etc.)<br /></blockquote><p/>Originally, we were going to do full audio fingerprinting (using <br />spectral densities, Mel Cepstrum Coefficients, etc.), but found that <br />there is an open source version of the fingerprinting technology<br /><a href="http://tinyurl.com/97g3g">TRM</a> and since TRM is used with<br /><a href="http://musicbrainz.org/">MusicBrainz</a>, we decided to go <br />with that. I have since come across another open source solution called<br /><a href="http://www.w140.com/audio/">fdmf</a>, and am exploring it for <br />future use.<p/>We encountered some issues with the python bindings provided by <br />MusicBrainz, so we ended up writing our own client using the wonderful<br /><a href="http://rdflib.net">RDFLib</a> python package. We put up some <br />sample code on the<br /><a href="http://tinyurl.com/78x8s">RDFLib wiki</a> that you can check <br />out. (More on RDF later...)<p/>We now have a functional upload server that encrypts all <br />communications, an XML-RPC API for querying stored files, and a <br />built-in MusicBrainz client exposed to the XML-RPC API that provides <br />users with a facility for easily modifying MP3 metadata/ID3 tags.<p/></div><br/></div>

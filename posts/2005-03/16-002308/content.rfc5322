@@ -1,0 +1,14 @@
+Subject: Advogato Diary Archiver
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2005/03/advogato-diary-archiver.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">web :: python :: programming</i><br/><br/><p/><br /><div blog="entry"><p><br />Last night I finished the script to pull (XML-RPC) my diary entries on <br />Advogato into a custom archive format. I had to use an ugly sys.stdout <br />hack to use the cElementTree.dump() method... but discouraging it's <br />misuse was probably a motivating factor for Fredrik Lundh to send its <br />output to stdout in the first place. I just wanted the entire contents <br />of a particular div, and I didn't want to have to do all that text/tail <br />crap.<br /></p><br /><p>The really nice thing thing about this, though, is piece of mind: a <br />single server crash anywhere will no longer result in catastrophic loss <br />of blog entries. Because, you know, blog entries are so damned <br />important ;-)</p><p><br /><b>Update: </b>Duh. cElementTree.tostring(aElement). Say no more.</p><p><br /></p></div><br /></div>

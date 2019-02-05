@@ -1,0 +1,14 @@
+Subject: Future Shock: Eventually Consistent
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: null
+Comments:
+Content-Type: md
+Public?: true
+
+When reading&nbsp;Carl Hewitt's paper "The repeated demise of logic programming and why it will be reincarnated," it finally occurred to me how to sort out the arguments for and against eventually consistent data, particularly with regard to nosql databases.

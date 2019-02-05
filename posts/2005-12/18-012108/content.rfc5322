@@ -1,0 +1,14 @@
+Subject: pymon, ZConfig, Nevow, and pyparsing
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2005/12/pymon-zconfig-nevow-and-pyparsing.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted :: python :: web</i><br/><br/><p/><br />As I have published recently on the <a href="http://pymon.sf.net">pymon <br />site</a>, we're getting very close to a pre-release of pymon. The <br />latest changes involved migrating from a custom, home-grown <br />configuration scheme and API to ZConfig. I am very happy with the <br />Apahce-style config files of ZConfig. It has drastically simplified the <br />configuration files, thus lightening the work-loads of systems and <br />network administrators who use pymon. But even more, I like the ZConfig <br />python API for accessing configuration data. Our home-grown solution <br />had an API that was similar to, but not as clean as ZConfig's.<p>After getting pymon running with ZConfig, I turned to the web UI for <br />viewing monitored services states. I haven't touched Nevow since <br />version 0.4, and it was really nice to dive back in. I'd forgetten what <br />a joy Nevow is to work with. Now some significant progress is being <br />made on state data display, and some design choices need to be made <br />about Nevow render patterns and slots... fortunately neither rocket <br />science nor mind-numbing ;-) There's a good chance that the web UI will <br />be ready in time for the release.</p><p>Unfortunately, I don't think the first steps towards the pymon OS will <br />be. We've got some code prototyped in my sandbox. This will be a great <br />feature. You telnet/ssh into pymon, and run commands that control the <br />monitoring configuration, display monitored service states, etc., just <br />like you would on a firewall. We're using pyparsing to generate the <br />grammar and parse user commands. It's in a very early stage, but it is <br />one of the more exciting aspects of pymon, as it is interesting code <br />and there's nothing out there even remotely like it (to our knowledge). <br />As soon as the first release is out, though, we'll be merging the <br />prototype pymon OS into trunk, providing at the very least a glimpse <br />into pymon's bright future ;-)</p><p>As a couple of us have been using older versions of pymon for a couple <br />years now, and I have been using the new version for a year, we're <br />ready to start sharing with others, getting feedback, and developing a <br />user and contributor base. What's more is, even though I can't say much <br />now, we are demoing pymon for a couple companies, one of which <br />specializes in security solutions for the defense industry.</p><p>Look for a pymon release very soon!</p><br /></div>

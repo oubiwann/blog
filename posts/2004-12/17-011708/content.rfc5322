@@ -1,0 +1,14 @@
+Subject: freetype2 in fink (Mac OS X) is hosed
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2004/12/freetype2-in-fink-mac-os-x-is-hosed.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">macosx :: software</i><br/><br/><p/><br />However, there is a quick fix. This is all I did, and matplotlib compiled and installed without issue:<br /><br />sudo cp -rp /sw/lib/freetype2/include/* /sw/include<br /><br />Vio la.<br /></div>

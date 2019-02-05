@@ -1,0 +1,14 @@
+Subject: accountdb
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: distributed systems,services,python,twisted,mirco-apps
+Source: https://oubiwann.blogspot.com/2006/02/accountdb.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml">This week I made some great progress on the accountdb twisted/nevow micro app. The prototype is finished, complete with&nbsp;<a href="http://images.adytum.us/tags/accountdb">screenshots</a>. One&nbsp;of the nice things that happened while writing it was a personal issue&nbsp;resolution :-)<br /><br />And, yes, as a programmer, most of my personal issues&nbsp;are with software and software implementation or design.<br /><br /><div class="entry">Here's the issue: I think Nevow's stan is fantastic and ingenious. &nbsp;However, I tend to adhere pretty strictly to the principle that HTML doesn't belong in code, and should remain in templates. For that &nbsp;reason, I even try to steer away from programmatically generated HTML.<br /><br />Two things let me relax this position: 1) stan is *very* clean, and 2) when you have lots of "mini-templates", having them all in separate files *really* starts to affect performance negatively, especially if <br />you're creating objects to provide an interface for them.<br /><br />This work has given me some nice insight on how I can optimize imagedb as well. I'm looking forward to that, since I've been using imagedb a lot more, lately.<br /><br />Oh, I almost forgot: sales pitch for accountdb: this micro app is, as you can guess, responsible for storing users and providing web authentication as a service. Don't worry, there will be many more blog entries on this in the future, and I will describe how this is done and why this is so useful :-)<br /><br />But for now, back to coding!</div><br /><br /></div>

@@ -1,0 +1,14 @@
+Subject: Twisted and Divmod: A Cheater's Setup Guide
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: version-control,combinator,open source,software,subversion,twisted,howtos,divmod
+Source: null
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml">I've been helping a few folks out on IRC lately. They've wanted to know how to setup Twisted and Divmod without doing any installs, running directly from SVN. They've been in luck, because that's actually how we develop at Divmod :-)<br /><br />Here are the Cliff Notes (this stuff is available on the wikis, but it's spread out):<br /><br />Install the dependencies:<br /><blockquote>pycrypto 2.0<br />SQLite 3.2.1<br />PySQLite 2.0<br />PyTZ 2005m-1<br />PIL 1.1.6</blockquote>Get the Divmod code first (we'll get Twisted next):<br /><blockquote class="tr_bq"><pre>mkdir ~/lab<br />cd ~/lab<br />svn co <a href="http://divmod.org/svn/Divmod/trunk">http://divmod.org/svn/Divmod/trunk</a> Divmod/trunk</pre></blockquote>Set the Combinator env vars (if you want to persist this, then you'll need to put it in your .profile or shell .rc file):<br /><blockquote class="tr_bq"><pre>eval `python ~/lab/Divmod/trunk/Combinator/environment.py`</pre></blockquote>Have Combinator start "tracking" Divmod and Twisted, thus managing PYTHONPATH for them (note that chbranch will detect that Twisted has not been checked out and will do so automatically):<br /><blockquote class="tr_bq"><pre>chbranch Divmod trunk<br />chbranch Twisted trunk <a href="svn://svn.twistedmatrix.com/svn/Twisted/trunk">svn://svn.twistedmatrix.com/svn/Twisted/trunk</a></pre></blockquote>Get the new project dirs into the env:<br /><blockquote class="tr_bq"><pre>eval `python ~/lab/Divmod/trunk/Combinator/environment.py`</pre></blockquote>Executing the whbranch command should give you the following:<br /><blockquote class="tr_bq"><pre>Divmod: trunk<br />Twisted: trunk</pre></blockquote>If you start up a Python interpreter, you'll be able to import from twisted, mantissa, axiom, etc.<br /><br /><span style="font-weight: bold;">Update</span>: the instructions have been edited and shortened, thanks to insight from <a href="http://glyph.twistedmatrix.com/">Glyph</a>.<br /><br /><br /></div>

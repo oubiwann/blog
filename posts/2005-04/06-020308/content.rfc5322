@@ -1,0 +1,14 @@
+Subject: PyKon
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: distributed systems,images,services,software,python,twisted
+Source: https://oubiwann.blogspot.com/2005/04/pykon.html
+Comments:
+Content-Type: md
+Public?: true
+
+I got some more work done on PyKon last night after finishing a&nbsp;deadline for a client. I'm excited about having a modern, functional,&nbsp;python-based image gallery application. The first version will allow both:<br /><ul><li>manual image uploads (ftp/scp, i.e., changes you would make on the file system with a shell account) and the daemon that runs the web user interface will also regularly check for gallery/album/image changes and process added/changed files), as well as</li><li>through-the-web uploads.</li></ul>For the second release, I want to enable some work we've been doing on an object registry. This would essentially make PyKon like iPhoto for Mac OS X: a global repository for images, and the capability to create albums with multiple overlapping images (duplicates) with no extra space taken up by the images (as they would only be references/links to the image tagged in repository).<br /><br />We're hoping to make this better than IDS (written in perl), Gallery (in PHP), and JAlbum (in java). We really want this thing to kick ass and be very easy to use. We're a ways off, but progress so far is exciting.<br /><br />Oh, and Nevow (for Twisted) rocks. <br /><br /><br />

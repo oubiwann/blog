@@ -1,0 +1,14 @@
+Subject: Back to Subversion
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/02/back-to-subversion.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">version control :: software</i><br/><br/><div class="entry"><br /><p><br />Well, I experienced a spectacular failure when it came to distributing <br />darcs to multiple servers, and then pushing/pulling changes. I am <br />perfectly willing to accept that it was me, with a limited <br />understanding of darcs methodologies and an unwillingness to see the <br />problem through. But I just couldn't bring myself to loose two days on <br />it -- in the middle of projects with deadlines, one is enough, thank <br />you.</p><br /><p>So, back to subversion it is.</p><br /><br /><p>The nice thing, though, is that a few days before the move to darcs, I <br />had read the<br /><a href="http://divmod.org/trac/wiki/CombinatorTutorial">Combinator<br />wiki entry</a> on the<br /><a href="http://divmod.org/trac/wiki">Divmod trac</a><br />as well as the<br /><a href="http://divmod.org/trac/wiki/BranchBasedDevelopment">branch-based<br />development</a> entry there. This is really good stuff and offers the <br />cleanliness I like to see in software development process. Though this <br />is not quite patch-based development, it certainly fits with my <br />experience and intuition. (I didn't work with darcs enough to really <br />say whether the patch-based approach fit my brain.)</p><br /><br /><p>The other thing is distributed content. Since I didn't have any issues <br />with read-only pulls from darcs repositories, this is what I am <br />considering: every three hours, I will run my tailor scripts against <br />the latest svn changes (trunk only), and distribute these via rsync to <br />other servers where the code will be accessible via http and darcs http <br />checkout.</p><br /><p>But all this will have to wait until the sprinting at pycon is <br />finished...</p><br /></div><br/></div>

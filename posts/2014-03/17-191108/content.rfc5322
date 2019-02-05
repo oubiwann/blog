@@ -1,0 +1,14 @@
+Subject: New Web Platform: The YAWS of LFE
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: databases,erlang,lfe,clojure,web,hoplon,clojurescript,yaws,development frameworks,lisp,development,mnesia
+Source: null
+Comments:
+Content-Type: md
+Public?: true
+
+I've been out of the web dev world for a while, with occasional and moderately recent forays involving Clojure, CloujreScript, or Hoplon. I've found myself wandering back into webland, though, while putting together JS-based slidedecks for presentations or building team sites.<br /><br />I've loved the libraries and tools I've used, and as a Lisper, I greatly enjoy Clojure. However, I'm not a fan of memory management on the JVM (for all of it's amazing advances over the past 10 years, and it's incredible speed). Though almost certainly my own fault for lack of knowledge, I've had more JVM processes fall over under load in the past year than I care to think about; none of this makes me confident in production deployments (though I know many do it... and I also know that many who have high-volume ... <i>really</i> high-volume services actually <i>can't</i> use the JVM for them).<br /><br />More than web, my time is spent with engineers working on RESTful services or even SOAs built from these. I've helped architect a few of these, helped troubleshoot dev and deployment issues on various platforms/languages and frameworks. The one that I've been the most impressed with to date is actually YAWS. It starts fast, easy as hell to configure, never run into memory problems (even with 10s of 1000s of simultaneous connections).<br /><br />So, it should come as no surprise that, being so happy with YAWS at work, I have started using YAWS at play :-)<br /><br />...<br /><br /><br /><br />...<br /><br />Web Dev:<br />&nbsp;* simple web project with exemplar<br />&nbsp;* stylish web project with exemplar + bootstrap<br />&nbsp;* REST<br />&nbsp;* working with Mnesia<br /><br />...<br /><br />Great YAWS resources:<br />http://steve.vinoski.net/blog/2011/05/09/erlang-web-server-benchmarking/ <br /><br />Great Mnesia resources: <br />http://igorrs.blogspot.com/2010/05/mnesia-one-year-later.html<br />http://igorrs.blogspot.com/2010/05/mnesia-one-year-later-part-2.html<br />http://igorrs.blogspot.com/2010/05/mnesia-one-year-later-part-3.html<br />http://igorrs.blogspot.com/2009/11/consistent-hashing-for-mnesia-fragments.html

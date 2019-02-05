@@ -1,0 +1,14 @@
+Subject: The Future of Content Management
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: cms,zope3,content management,python,twisted,zope
+Source: https://oubiwann.blogspot.com/2006/01/future-of-content-management.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml">So this morning I read a&nbsp;<a href="http://radio.weblogs.com/0116506/2006/01/24.html#a388">great&nbsp;</a>&nbsp;<a href="http://radio.weblogs.com/0116506/2006/01/24.html#a388">post on</a>&nbsp;<a href="http://radio.weblogs.com/0116506/">Paul Everitt's blog</a>. He&nbsp;gives a quick run-down on a comprehensive paper by&nbsp;<a href="http://contenthere.blogspot.com/">Seth Gottlieb</a>, who I&nbsp;hadn't heard of but have since become very impressed by. Paul provides&nbsp;an excellent quote from the paper, and then makes this comment himself:<br /><div class="entry"><blockquote><i>Enterprise CMS, and most WCM, is organized like a mainframe. Everything </i><br /><i>is in one system and you bring the users to that system. Federated </i><br /><i>content management might be a growth opportunity in the market.</i></blockquote>I proceeded to post a comment on his blog to the effect of my support and long-standing enthusiasm for this paradigm shift. At the risk of harping on this theme, this is really what's behind the post&nbsp;<a href="http://oubiwann.blogspot.com/2004/03/dinosaurs-and-mammals.html">Dinosaurs<br />and Mammals</a> and more recently,&nbsp;<a href="http://oubiwann.blogspot.com/2005/12/king-is-dead-long-live-kinglets.html">The&nbsp;King is dead! Long live the Kinglets!</a>. I also said that I am patiently waiting for the day when the z3 libraries are available as a programming content managing framework, when I will be able to easily integrate z3 content management components into my twisted applications.<br /><br />While checking out Seth's blog, I came across several awesome posts&nbsp;where he discusses much the same thing, from different perspectives:<br /><ul><br /><li><a href="http://contenthere.blogspot.com/2006/01/two-very-good-posts-on-death-of.html">Two&nbsp;very good posts on the death of Enterprise Software</a></li><li><a href="http://contenthere.blogspot.com/2005/12/another-use-for-rss.html">Another&nbsp;use for RSS</a></li><li><a href="http://contenthere.blogspot.com/2005/08/more-users-simpler-cms.html">More&nbsp;Users = Simpler CMS</a></li><li><a href="http://contenthere.blogspot.com/2005/06/new-article-on-ecm.html">New&nbsp;Article on ECM</a></li></ul>My focus is more general than just content management, but let's face it: most of what we need to do on the network these days revolves&nbsp;around content. Between Paul and Seth, I feel very validated for the past two years of exploration and code I have been developing and am encouraged to continue along these<br />lines :-)</div><br /><br /></div>

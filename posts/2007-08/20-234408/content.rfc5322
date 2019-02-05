@@ -1,0 +1,14 @@
+Subject: Ubuntu 7.04 on iMac Core 2 Duo, 2G
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: ubuntu,apple,hardware,mac os x,canonical
+Source: https://oubiwann.blogspot.com/2007/08/ubuntu-704-on-imac-core-2-duo-2g.html
+Comments:
+Content-Type: md
+Public?: true
+
+Well, I busted me arse this afternoon and evening trying to get Ubuntu set up on my new iMac. It installed without issue (using the "alternate" x386 iso), but has the following critical issues:<br /><ol><li>No wireless</li><li>No widescreen support</li><li>No sound</li><li>Doesn't recognize CD/DVD drive after install and reboot</li></ol>I'm kind of bummed, since I'd planned on doing dev work on this box (can we even call the iMacs "boxes"?) in native Ubuntu, and now I'll have to use parallels until the driver support is developed. Or until someone sends me a link that I've managed to miss despite incessant googling today...<br /><br />Once I'm moved into the new place, I'll have a GB switch in the office and will be able to work in Ubuntu over copper. The resolution bugs me more than the lack of sound and DVD, but I can live with those for now. I guess.<br /><br />But, hey -- it plays WoW and UT2004 in OS X like a champ :-)<br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/apple" rel="tag">apple</a>, <a href="http://www.technorati.com/tag/ubuntu" rel="tag">ubuntu</a>, <a href="http://www.technorati.com/tag/mac%20os%20x" rel="tag">mac os x</a>, <a href="http://www.technorati.com/tag/linux" rel="tag">linux</a></p><!-- technorati tags end -->

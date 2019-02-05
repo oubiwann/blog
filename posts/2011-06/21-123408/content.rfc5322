@@ -1,0 +1,14 @@
+Subject: txStatsD Preview
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: announcements,asynchronous,python,twisted,tx
+Source: https://oubiwann.blogspot.com/2011/06/txstatsd-preview.html
+Comments:
+Content-Type: md
+Public?: true
+
+<p><a href="http://www.sidneidasilva.com/">Sidnei da Silva</a> (of Plone fame) has recently created a <a href="http://launchpad.net/txstatsd">Launchpad project</a> for an async StatsD implementation. He's got code in place for review by any Twisted kingpins who'd like to give it a glance.</p><p>statsD was originally created in 2008 as a <a href="https://github.com/iamcal/Flickr-StatsD">Perl implementation</a> at Flickr for their statistics <a href="http://code.flickr.com/blog/2008/10/27/counting-timing/">counting, timing</a>, and graphing needs. Engineers at Etsy ported this work to <a href="https://github.com/etsy/statsd">Node.js</a> (which Sidnei based his version on). A few months ago a regular <a href="https://github.com/sivy/py-statsd">Python implementation</a> was created (also based on Node.js).</p><p>More than another (excellent) addition to the <a href="https://launchpad.net/tx">tx family</a>, txStatsD will provide folks with the luxury of collecting stats using a Python server without having to write any blocking code :-) Sidnei also implemented a graphite protocol and client factory for passing the messages along.</p><p>Enjoy, and let him know what you think!</p>

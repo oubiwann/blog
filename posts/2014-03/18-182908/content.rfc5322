@@ -1,0 +1,14 @@
+Subject: lfetool 0.2 Released
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: utilities,erlang,lfe,features,tools,lisp,roadmap
+Source: https://oubiwann.blogspot.com/2014/03/lfetool-02-released.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-dDueiWxEPk4/UyYKf9Ddn4I/AAAAAAAAAJ0/ZcBGDqJdpO8/s1600/lfetool-4-white.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-dDueiWxEPk4/UyYKf9Ddn4I/AAAAAAAAAJ0/ZcBGDqJdpO8/s1600/lfetool-4-white.png" height="233" width="320" /></a></div>This release of lfetool has a bunch of new interesting features -- too much to cover in a tweet, so it's getting a little blog post ;-)<br /><br />Here are the high-level bits that should make users' lives better:<br /><ul><li>New <a href="http://yaws.hyber.org/">yaws</a> project type, provided for building basic web sites; includes the <a href="https://github.com/lfe/exemplar">exemplar</a> project as a dependency for generating HTML with S-expressions.</li><li>Every project now gets <a href="https://travis-ci.org/">TravisCI</a> support by default. </li><li>Unit tests, integration tests, and systems tests now each have their own dir.</li><li>Tests now get run in parallel for faster run times.</li><li>Added support for running on Linux and *BSD systems.</li><li>Added unit tests for lfetool itself (shUnit) (for checking skeleton-generation and tool options). </li><li>lfetool has a new logo :-)</li></ul>Note that the version jumped from 0.1.2 to 0.2.0 due to the strong improvements in quality and feature set of the tool. Forth-coming features include:<br /><ul><li>Support for an e2 service skeleton project. </li><li>Support for a YAWS-RESTful service skeleton project.</li><li>Support for YAWS embedded in a skeleton OTP application.</li><li>Support for YAWS + Exemplar + Bootstrap projects</li><li>Support for slide decks with Exemplare + Reveal.js </li></ul>If you've got more ideas for the lfetool wishlist, post a comment here or send an email to the <a href="https://groups.google.com/forum/#!forum/lisp-flavoured-erlang">LFE mailing list</a>.<br /><br /><br />

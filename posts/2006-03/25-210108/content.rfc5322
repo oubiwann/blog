@@ -1,0 +1,14 @@
+Subject: Twisted JSON-RPC
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/03/twisted-json-rpc.html
+Comments:
+Content-Type: md
+Public?: true
+
+My clients/partner companies use web services a great deal. To be honest, WS have made my life easier in many respects... but they can be a real pain. And implementations can be pretty lacking...<br /><br />For reasons I won't get into (business, politics, and AJAX), I discovered today that I needed to convert an XML-RPC server to a JSON-RPC server. I looked at several implementations and they were either not general enough for my use, or they were horrible. <br /><br />So, I hacked a copy of twisted.web.xmlrpc and turned it into jsonrpc using the simplejson library. Right now, it's doing JSON over HTTP, but I fully intend to write a TCP implementation as well. The problem, though, is this: as I was putting this together today, all I could think about was ways to make the code general enough to provide a common basis for use in implementing *-RPC. Ah, down that path lies madness. And it's one of those things you just can't avoid thinking about... <br /><br />I'm currently writing some twisted.trial tests for it, but I also need to add some more stuff to make this generally useful (not to mention easier to debug). Hmmm, I'm actually really looking forward to doing a twisted TCP implementation of JSON-RPC. That should be fairly fast. And clean. Maybe.<br /><br />And, of course, I'm sure I'll do a <span style="font-size: 9px; font-family: monospace;">twisted.web2</span> implementation as well.<br /><br />I have an amazing headache now, and need to get some food. <br /><br /><strong>Update</strong>: All twisted.trial tests are passing and I am running a twisted JSON-RPC server now.<br /><br /><strong>Update</strong>: For those wanting to use this code, please read the comments on this entry (dated May 5, 2006) and then see <a href="http://oubiwann.blogspot.com/2006/05/more-twisted-and-json-rpc.html">this post</a>.<br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/jsonrpc" rel="tag">jsonrpc</a>, <a href="http://www.technorati.com/tag/json" rel="tag">json</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a>, <a href="http://www.technorati.com/tag/web" rel="tag">web</a>, <a href="http://www.technorati.com/tag/xmlrpc" rel="tag">xmlrpc</a></p><!-- technorati tags end -->

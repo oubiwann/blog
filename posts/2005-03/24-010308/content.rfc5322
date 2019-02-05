@@ -1,0 +1,14 @@
+Subject: Ruby on Rails vs Nevow
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2005/03/ruby-on-rails-vs-nevow.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">nevow :: web :: programming :: python :: ruby</i><br/><br/><p/><br /><div blog="entry"><p><br />I've just read the post at <a href="http://www.blueskyonmars.com/archives/2005/03/23/ruby_on_rails_wins_the_marketing_war.html">Blue Sky on Mars</a>, and <br />I've got to agree 100%. In fact, earlier today, I posted a couple small <br />projects I am working on in the <a href="http://divmod.org/users/wiki.twistd/nevow/moin.cgi">Nevow <br />wiki</a>, and mentioned a personal preference for Nevow over Ruby on <br />Rails. Personally, I believe one has more power and capabilities at <br />one's finger tips with Nevow. And this in no way takes away from the <br />simplicity and elegance of Nevow.<br /></p><br /><p>First, let me say that I am a huge Zope/Plone, twisted/Nevow, <br /><b>and</b> PEAK fan. Each has its strengths. But as far as general web <br />development frameworks go in python, nothing compares to Nevow for <br />building custom applications from the ground up. I know there are lots <br />of tools to choose from (Quixote, WebWare, among others), but the <br />simplest, cleanest -- and in my view -- the most powerful, is Nevow.</p><p>Nevow <br />has a thriving, active community, so I propose we give <a href="http://www.loudthinking.com/">David <br />Heinemeier Hansson</a> and Ruby on Rails a run for their money. Nevow <br />and it's community can beat them hands-down. Let's get some amazing and <br />easy-to-read docs up. Let's get some videos. Let's show the world that <br />python has even more to offer than Ruby, and a clean web app dev <br />framework in Nevow is one of them.</p><p>Here are some Nevow resources:</p><p><a href="http://nevow.org">nevow.org</a><br/><br /><a href="http://tinyurl.com/4hykt">Nevow Manual</a><br/><br /><br /><a href="http://tinyurl.com/6v9z7">Nevow at Divmod</a><br/><br /><a href="http://tinyurl.com/529e9">Nevow Wiki</a><br/><br /><a href="http://tinyurl.com/6kbfj">Code Repository</a><br/><br /><a href="http://tinyurl.com/4x5vv">Nevow mail list archives</a><br/><br /><a href="http://del.icio.us/tag/nevow">Nevow at del.icio.us</a><br/><br /><a href="http://tinyurl.com/5wrep">Nevow at PyWebOff</a><br/><br /><a href="http://nevowexamples.adytum.us">Nevow examples</a> - these are <br />the examples that come with the Nevow distribution<br/></p><p/></div><br /></div>

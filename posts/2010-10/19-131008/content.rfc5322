@@ -1,0 +1,14 @@
+Subject: Probabilistic Input for uTouch?
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: multi-touch,hci,research,uds
+Source: https://oubiwann.blogspot.com/2010/10/probabilistic-input-for-utouch.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div><br />Well, it seems to be the season for a flurry of multi-touch posts. Guess that's helped along by the release of uTouch in Maverick and next week's Ubuntu Developer Summit multi-touch buffet :-)<br /></div><div><br /></div><div>One of the talks that John, Mark and I enjoyed greatly at UIST was <a href="http://juliaschwarz.net/">Julia Schwartz</a>'s presentation on "A Framework for Probabilistic Input". Julia's an HCI PhD student at <a href="http://www.hcii.cmu.edu/">Carnegie-Mellon</a> and works in their exciting <a href="http://devlaboratory.com/">dev lab</a>. The UIST paper was written by Julia, <a href="http://www.cs.cmu.edu/~hudson/">Professor Hudson</a>, <a href="http://www.cs.cmu.edu/~jmankoff">Professor Mankoff</a>, and <a href="http://research.microsoft.com/en-us/um/people/awilson/">Andrew Wilson</a> (the latter of Microsoft Research). </div><div><br /></div><div>One of the reasons I was personally so deeply appreciative of the paper was that when we were building the uTouch framework, Henrik Rydberg and Chase Douglas brought up issues around input uncertainty, and started proposing ways that might be employed to counter this. Getting plugged into folks who are working on this actively and thoroughly is phenomenal.</div><div><br /></div><div>Since UIST 2010, the uTouch team has been in contact with Julia, sharing ideas and asking questions. Today we had a call with her and Professor Scott Hudson; as such, we have now started exploring possible avenues of development for probabilistic input support in uTouch. Scott and Professor Jen Mankoff will be attending part of UDS this year, and we've <a href="https://blueprints.launchpad.net/ubuntu/+spec/appdevs-dx-n-probabilistic-input">set up a session</a> where they can share their research with us and engage in discussions, Q&amp;A, etc., about it, and explore ways in which we can start moving forward on this in Ubuntu (and Linux in general).</div><div><br /></div><div>The UIST talk slides and related paper are available here:</div><div><ul><li><span class="Apple-style-span" style="font-size: 11.8056px; "><a href="https://wiki.ubuntu.com/Multitouch#Probabilistic%20Input">https://wiki.ubuntu.com/Multitouch#Probabilistic%20Input</a></span></li></ul></div>

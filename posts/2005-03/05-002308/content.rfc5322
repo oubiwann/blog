@@ -1,0 +1,14 @@
+Subject: Generic Functions and Rule-Based Systems
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: pycon,business,pycon2004,python,pycon2005
+Source: https://oubiwann.blogspot.com/2005/03/generic-functions-and-rule-based.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml">Well, I've been pretty bummed that business is keeping me too occupied&nbsp;to attend PyCon 2005 this year. Last year's was so great, and I had a&nbsp;chance to sprint with <a href="http://plope.org/">Chris McDonough</a>&nbsp;and <a href="http://ulaluma.com/pyx/">Donovan Preston</a> and learned a&nbsp;great deal from them both.<br /><br />In fact, I was decompressing the data I took&nbsp;in during the python sprints for the following 6 months. I guess it&nbsp;shows what a geek I am too, that I bemoan too much business, as it's&nbsp;preventing me attending this year.<br /><div blog="entry"><br />I was checking out the presentations <a href="http://www.python.org/moin/PyConDC2005/Presentations">here</a>, and I came across <a href="http://dirtsimple.org/">Phillip Eby's</a> presentation <a href="http://peak.telecommunity.com/DevCenter/PyConGenericFunctions">here</a>. This really hit home, since one of the projects I am working on is for processing *massive* amounts of data produced while testing equipment at manufacturing plants. There are sets of sets of sets of ... tests. Thousands of the buggers. Many of them are very similar in nature, and they all have associated rules for pass&nbsp;and failure.<br /><br />I can't wait to tryout Phillip's generic functions in PyProtocol's... in fact, I haven't waited ;-) I'm already writing some prototype code for it...<br /><br />Python rocks.</div><br /><br /></div>

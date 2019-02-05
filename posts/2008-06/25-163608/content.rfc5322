@@ -1,0 +1,14 @@
+Subject: Safari 3.1.1 Installer Hosed on OS X 10.5.3
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: apple,mac os x,software,safari
+Source: https://oubiwann.blogspot.com/2008/06/safari-311-installer-hosed-on-os-x-1053.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div>I recently tried updating my Safari to the latest version, only to discover from <a href="http://discussions.apple.com/thread.jspa?threadID=1545570&amp;tstart=0">here</a> and <a href="http://discussions.apple.com/message.jspa?messageID=7423773#7423773">here</a> that Apple seems to have intentionally made this a 10.5.2-only update. I looked in the "Distribution" script and confirmed that this was, in fact, the case. The obvious symptom of this was that the installer told me I couldn't install Safari on any of my drives. Nice.<br /><br />On those forum posts, I also discovered this great tool: <a href="http://www.charlessoft.com/">Pacifist</a>. It's been on my backburner list for a while to find a tool that could open up and extract Mac OS X packages, so for that alone I was delighted. When combined with <a href="http://www.osxgnu.org/info/osxpackages.html">PackageMaker</a>, I was able to create my own installer. Even better.<br /><br />If this is useful for anyone else, I've put it up here: <a href="http://divmod.org/users/oubiwann/software/Safari311UpdLeo_Divmod.pkg">Safari311UpdLeo_Divmod.pkg</a>. Do note, however, that this installer has no brains: it just puts the files where they should be. It also doesn't check for your system version, so it could potentially really screw things up. Neither I, the Divmod community, nor Divmod, Inc. are responsible in any way if this installer takes your machine to the knacker's yard. However, I am using it on 10.5.3 with no issues (so far).<br /><br /><br /></div>

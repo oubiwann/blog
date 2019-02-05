@@ -1,0 +1,14 @@
+Subject: The Schro is Back
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2007/09/schro-is-back.html
+Comments:
+Content-Type: md
+Public?: true
+
+Well, after year and a half of no posts, Schrödinger's Böx is back, with three new entries:<p style="text-indent:1em;"><a href="http://schrobox.blogspot.com/">http://schrobox.blogspot.com/</a></p>The reason for the long gap is that <a href="http://feedster.com">feedster.com</a> had stopped publishing their top 500 list. The list was pretty convenient, since they provided RSS links of each blog's full recent entries. Parsing them was cake. When that went away, so did posts for SchroBox.<br /><br />I had a few minutes this morning to play, so I hacked on the really awful code to add support for parsing <a href="http://technorati.com/pop/blogs/">Technorati's top 100</a>. This should make <a href="http://www.blogger.com/profile/07167498662843416864">Greg</a> very happy, as he has oft lamented the early and sad demise of The Box.<br /><br />As for what this madness is and where it comes from, <a href="http://schrobox.blogspot.com/2006/01/intarduction.html">this post</a> tells all (hint: it uses <a href="http://nltk.sourceforge.net/">NLTK</a> extensively).

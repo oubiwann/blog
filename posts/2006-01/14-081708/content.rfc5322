@@ -1,0 +1,14 @@
+Subject: Madness Ensues...
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/01/madness-ensues.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">weblogs :: programming :: python :: natural language</i><br/><br/><div class="entry"><br /><p>Almost exactly a year ago, I proposed to do something akin to <br />eigenradio but with text. It was in<br /><a href="http://oubiwann.blogspot.com/2005/01/random-blog.html">this <br />blog entry</a>.</p><br /><p/>Well, tonight I decided to take a break from this week's regular coding <br />tasks, and pick webXcreta back up. I started from scratch again, and it took off... I couldn't stop programming :-) This was a LOT of fun. The<br /><a href="http://nltk.sourceforge.net/">Natural Language Toolkit <br />(NLTK)</a><br />has been greatly simplified since I used it last year. It's a dream -- everything I'd always hoped it would be.<p/>The first entry in this new "random blog" is forth-coming. I expect it <br />to be ready sometime Saturday evening. I've scrapped data from <br />bloglines' top-100 and have performed all the grammatical analysis on <br />it. Titles are analyzed and given weights. In fact, the title code is <br />ready for the first run and has produced the first title. Wanna see it? <br />;-) The first blog entry will be titled <b>"A Show Of Writer - <br />Right"</b>. All these entries of insanity will be published here:<p/><a href="http://schrobox.blogspot.com/">Schrodinger's Box</a>.<p/>The last bit I have to do is the weighting for sentences and construct <br />full entries (it's a little more complicated than generating the <br />titles).<p/>I may end up enjoying this more than "real" blogging...<p/><br /><br /><p><b>Update:</b> The first one is up! Check it out <a href="http://schrobox.blogspot.com/">here</a></p>.<br /><br /></div><br/><div class="now_playing"> Now playing:<br /> <pre>Depeche Mode - The Sweetest Condition</pre><br/></div></div>

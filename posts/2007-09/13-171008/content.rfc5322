@@ -1,0 +1,14 @@
+Subject: Nevow Athena: AJAX/COMET with Twisted
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2007/09/nevow-athena-ajaxcomet-with-twisted.html
+Comments:
+Content-Type: md
+Public?: true
+
+Some of you may remember when, given 5 seconds to say something about Nevow's AJAX capabilities at the PyCon Web Framework panel, I said "we were there first." I was serious about that. If you take the time to dig through the dusty attics of Twisted's and Divmod's svn repositories, you'll see it too.<br /><br />Not that I blame anyone for not knowing, though. If there are any two crimes that Twisted devs are guilty of (among potentially uncountably many) they would be:<br /><ol><li>being frighteningly clever, and</li><li>not sharing the useful bits of the cleverness with the world at large.</li></ol>We're trying hard to really start sharing the goodness, though, honest!<br /><br />Along these lines, we've got a series of tutorials about Athena that will be published "real soon, now." Initially, we're going to put out some intro text and two basic tutorials. Follow-on tutorials will cover advanced topics and/or basic ones in more detail.<br /><br />It will be very exciting, though, to bring the power and elegance of Athena to the masses :-)<br /><br />Personally, I've found that writing Athena apps (with its tightly bound Python and JS) provides ease of use and peace of deterministic structure in an arena (AJAX/COMET application development) that is usually littered with the bodies and casualties of poor planning, poorly established boundaries between application components (in requirements, architecture, and implementation), and poor education.<br /><br />I look forward to community feedback on the tutorials: it's a complicated topic that will be condensed into only a little code in each fully functional example. The need for clarity and the defeat of confusion is paramount. <br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/ajax" rel="tag">ajax</a>, <a href="http://www.technorati.com/tag/comet" rel="tag">comet</a>, <a href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a href="http://www.technorati.com/tag/documentation" rel="tag">documentation</a>, <a href="http://www.technorati.com/tag/howto" rel="tag">howto</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></p><!-- technorati tags end -->

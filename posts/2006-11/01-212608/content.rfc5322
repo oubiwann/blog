@@ -1,0 +1,14 @@
+Subject: Mac OS X --> Solaris via Serial
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: sun,serial,mac os x,minicom,solaris,howtos
+Source: null
+Comments:
+Content-Type: md
+Public?: true
+
+<div>My google foo was pretty low tonight, and I had a hell of a time connecting to a Netra 240. After lots of searching, trial, and error, I'm now in like Flynn. Here's what I ended up using:</div><ul><li>Sun Netra 240</li><li>Mac OS X 10.4, PowerBook G4</li><li>Keyspan USB/Serial adapter (P/N: USA-19HS)</li><li>Keyspan drivers</li><li>Sun-provided RJ-45 serial cable (I think the part number is 530-2093-01)</li><li>minicom (installed via Fink)</li></ul><div>Instructions for getting connected with minicom:<br /><ul><li>Start minicom from the command line</li><li>Hit "ctl-a" an then "z"</li><li>Hit "o" to adjust the configuration</li><li>Down-arrow to the "Serial port setup" menu and select</li><li>Make sure that you're pointed at the right serial device and that your speed/parity setting is "9600 8N1"</li><li>Hit "enter" to save and go back to the menu</li><li>Select "Modem and dialing" and change the "Init string" to "~^M~"</li><li>Hit "enter" and select "Save setup as dfl", exit, and restart minicom</li></ul>Here are the gotchas I ran into:</div><ul><li>be sure to reboot OS X after installing the adapter drivers</li><li>be sure to use the right cable (I was using a Cisco RJ-45 serial cable, and it seems to be pinned differently)</li><li>be sure to use minicom (I tried with ZTerm, but I just don't grok GUI apps)</li></ul><div>Once all these were in place, it was a piece of cake. With a BREAK (no keyboard for the Netra, so no "Stop-A") during boot-up, I'm ready to wipe this puppy and install Solaris 10.</div><div></div><div>Damn, Sun makes solid hardware. It's been years since I've played with their stuff. Even if Python apps don't run so well on Solaris, it's still going to be good to use these machines again.<br /><br /><span style="font-weight: bold;">Update</span>: Added step-by-step instructions for connecting with minicom.<br /><br /><br /></div>

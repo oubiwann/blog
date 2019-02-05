@@ -1,0 +1,14 @@
+Subject: Divmod Tech: Making the "Next Gen" Grade
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: nevow,community,twisted,divmod
+Source: https://oubiwann.blogspot.com/2008/07/divmod-tech-making-next-gen-grade.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div>Last night, after I already posted the latest <a href="http://labs.twistedmatrix.com/2008/07/twisted-in-news.html">Twisted in the News</a>, I came across <a href="http://psichron.za.net/wordpress/2008-07-02/next-gen-web-dev-playing-with-python-twistednevowathena/">another post</a> that would have made the list had I found it sooner. However, this is a good opportunity to give it a little extra attention.<br /><br />The title of the post is "Next Gen Web Dev: Playing with Python Twisted/Nevow/Athena" and I gotta say, that made my day :-) Between that post and Colin Alston's post that I mentioned in the News, Nevow had a good week. And people are appreciating it for the right reasons. It may not be the easiest web framework to use and certainly not the best documented, but when you need the flexibility to interact with your (Twisted) web server in particular ways as well as benefit from the functionality that COMET provides, Nevow comes out shining.<br /><br />It's also refreshing to see new developers entering the community who not only see the potential of these tools (designed with that potential in mind) but are capable of taking advantage of it immediately. If nothing else, the author of that post has motivated me to finally merge the Athena tutorial to trunk in order to bring the publicly available and published content in sync with the new code that's in the branch.<br /><br /><span style="font-weight: bold;">Update</span>: Along similar lines, but with more details, Tristan has provided <a href="http://mithrandi.vox.com/library/post/why-mantissa.html">an excellent write-up </a>for this motivation to use Twisted/Nevow/Axiom/Mantissa. Be sure to check it out!<br /><br /></div>

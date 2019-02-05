@@ -1,0 +1,14 @@
+Subject: The Joys of IRC
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/04/joys-of-irc.html
+Comments:
+Content-Type: md
+Public?: true
+
+<i blog="categories">twisted :: python :: internet</i><br><br><div blog="entry"><br /><p>And in particular, #twisted. Here's a great little story (and moral) <br />from Moshe Zadka:<br /></p><pre>[13:41]&lt;moshez&gt; dreid: did I tell you about the watchdog<br />[13:41]&lt;dreid&gt; moshez: no<br />[13:42]&lt;moshez&gt; dreid: oh, man it is awesome<br />[13:42]&lt;moshez&gt; dreid: ok, so it goes like that<br />[13:42]&lt;moshez&gt; dreid: there are a bunch of components<br />[13:42]&lt;moshez&gt; each component has any number of heart-beats<br />[13:43]&lt;moshez&gt; a heart-beat is a "heart" (opaque string) and a "beat" <br /> (a number)<br />[13:43]&lt;moshez&gt; the heart-strings are sent, as UDP packets, to the EKG <br /> port<br />[13:44]&lt;moshez&gt; the watchdog launches all the components, and then <br /> watches the EKG<br />[13:44]&lt;moshez&gt; if any component has a heart which doesn't beat, it <br /> starts fixing the problem<br />[13:44]&lt;moshez&gt; the first few times, it will shut down all components <br /> and bring them back up<br />[13:44]&lt;Tv&gt; moshez: when does the dog eat the heart?<br />[13:45]&lt;moshez&gt; if it sees it needs to do that too many times, it will <br /> decide "patient is dead" and reboot the system<br />[13:45]&lt;moshez&gt; if it sees it needs to reboot the system too many <br /> times, it will decide "patient is stupid" and stop curing <br /> efforts<br />[13:46]&lt;dreid&gt; hehe<br />[13:46]&lt;dreid&gt; i like that last part<br />[13:47]&lt;foom&gt; so stupid is worse than dead, eh?<br />[13:47]&lt;dash&gt; foom: there aren't any stories about voodoo curing stupid<br />[13:48]&lt;moshez&gt; foom: yes. you might be able to resuscitate, but you <br /> can't cure stupidity<br /><br /></pre><p></p></div><br><span blog="now_playing"> Now playing:<br /> <pre>The Bothy Band - Julia Delaney</pre></span>

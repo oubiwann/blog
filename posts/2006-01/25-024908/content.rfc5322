@@ -1,0 +1,14 @@
+Subject: PyRRD 0.1 on cheeseshop.python.org
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/01/pyrrd-01-on-cheeseshoppythonorg.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: software</i><br/><br/><div class="entry"><br /><p><br />Great news! We've released the first version of PyRRD -- you can get it <br />here:<br /></p><br /><a href="http://cheeseshop.python.org/pypi/PyRRD/">http:// <br />cheeseshop.python.org/pypi/PyRRD/</a><p/><br /><p>There are currently<br /><a href="http://projects.adytum.us/tracs/PyRRD/wiki/ FullWorkingExamples">four<br />examples of RRD-generation with python code</a><br />up on the project site. Be sure to check them out and send me your <br />questions so I can improve the docs and the code. My goal is to make <br />RRD easy to use for python programmers... but I can only do so much <br />with just my own mind and perspective ;-)<p/><br /><br />PyRRD currently has all of the features we need to do the development <br />we are focused on. TODOs have been stubbed out in the code were some of <br />the lesser known and used features of RRD haven't yet been implemented <br />in this OOP API. As development for the next version of<br /><a href="http://coyotemonitoring.com">CoyoteMonitoring</a><br />kicks into gear, I will be adding more of the obscure stuff to PyRRD.<p/>Enjoy!<p/></div><br/></div>

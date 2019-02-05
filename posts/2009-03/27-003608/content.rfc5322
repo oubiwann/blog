@@ -1,0 +1,14 @@
+Subject: New PyRRD Release: 0.0.7
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: pyrrd,rrd,python,rrdtool
+Source: https://oubiwann.blogspot.com/2009/03/new-pyrrd-release-007.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div><br />Version 0.1 is nearing as the 7th release made it out the door tonight. The latest features include RRD info/fetch methods, a simple RRD object mapper, and the ability to dump files programmatically. Various bug fixes have been applied, thanks to feedback and patches from the community. In particular, <form id="captcha" style="display: none;" method="get" action="#" autocomplete="off"> Type the characters you see in the picture below.<br /><img src="http://code.google.com/hosting/captcha?id=105039380&amp;si=1" style="padding: 4px;" height="70" width="200" /> <input name="ca" value="5fe8d54a01513ff6f032b64596cf5903" type="hidden"> <input name="aca" value="bc6af0c7e33c6a36b93abaf7a5c0ca8e" type="hidden"><br /><input name="cg" id="cg" value="" size="22" onkeyup="checksubmit()" autocomplete="off" type="text"> <a href="javascript:playCaptcha()" title="Listen and type the numbers you hear"><img src="http://www.gstatic.com/codesite/ph/images/accessibility.gif" /></a><br /><div style="color: rgb(102, 102, 102);">Letters are not case-sensitive</div> <script type="text/javascript"> function playCaptcha() { var wavURL = '/hosting/captcha?id=105913651&si=1'; var embedCode = '<embed src="' + wavURL + '" hidden="true" autostart="true"></embed>'; document.getElementById("playAudio").innerHTML = ""; document.getElementById("playAudio").innerHTML = embedCode; document.getElementById("cg").value=""; document.getElementById("cg").focus(); } </script> <input value="Submit" type="submit"> and<br /></form>Aaron Westendorf of Agora Games, Leem Smit, and nasvos.<br /><br />You can download from PyPI (or use setuptools to install it) at the expected location:<br /><a href="http://pypi.python.org/pypi/PyRRD/">http://pypi.python.org/pypi/PyRRD/</a><br /><br />Note that the the PyPI page has a quick run-down on the basic features and how to use them.<br /><br />The next feature to be implemented has already been planned out (it's just a matter of sitting down and writing the code now): adding support for the Python bindings. If this is important to you, be sure to star the issue in the bug tracker:<br /><a href="http://code.google.com/p/pyrrd/issues/detail?id=5&amp;can=1">http://code.google.com/p/pyrrd/issues/detail?id=5&amp;can=1</a><br /><br /><br /><br /></div>

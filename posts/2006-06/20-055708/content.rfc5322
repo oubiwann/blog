@@ -1,0 +1,14 @@
+Subject: Trac Spam
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/06/trac-spam.html
+Comments:
+Content-Type: md
+Public?: true
+
+It seems I was the last to find out about the "trac spam" phenomenon. I've got a bunch of projects that use trac <a href="http://projects.adytum.us/tracs">here</a>, and as a result, I've been cleaning up the huge mess these bastards left on the wiki. Gotta love page history, though...<br /><br />The pages that are most viewed are the ones with code examples on them, and the spammers were kind enough to delete that code, making the pages useless. The code is now restored and can be referenced again. In particular, the following projects were impacted most heavily:<br /><ul><br /><li><a href="http://tinyurl.com/lyg6l">AmazonDBDriver</a></li><br /><li><a href="http://tinyurl.com/jrc7w">NetCIDR</a></li><br /><li><a href="http://tinyurl.com/go85c">PyRRD</a></li><br /></ul><br /><br />I've now got the wiki set for auth users only. If you want to contribute to the wikis, just send me an email.<br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/internet" rel="tag">internet</a>, <a href="http://www.technorati.com/tag/spam" rel="tag">spam</a>, <a href="http://www.technorati.com/tag/trac" rel="tag">trac</a></p><!-- technorati tags end -->

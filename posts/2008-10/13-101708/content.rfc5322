@@ -1,0 +1,14 @@
+Subject: XX Biggest Gripes about Ubuntu
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: null
+Comments:
+Content-Type: md
+Public?: true
+
+NetworkManager sucks:<br />* change IP address, restart box<br />* named manual config requires explicit selection -- no default for automatic start<br />* sometimes after a restart, I have an IP address, but no network connection... can't reach gateway or DNS server<br /><br />Sound Management:<br />* only one application can access the sound card at a time -- what is this, Linux in the 90s?<br /><br />Firefox 3:<br />* It's crash-a-riffic; I've had Firefox take a dump 4 times in one minute<br /><br />

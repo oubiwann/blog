@@ -1,0 +1,14 @@
+Subject: The Lambda Calculus: Arithmetic
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: λ-calculus,erlang,lfe,programming,lisp,lambda calculus,math
+Source: null
+Comments:
+Content-Type: md
+Public?: true
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s/s1600/Lambda.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s/s1600/Lambda.png" height="200" width="200" /></a></div><b>The λ-Calculus Series</b><br /><ol><li><a href="http://technicae.cogitat.io/2013/04/the-lambda-calculus-brief-history.html">A Brief History</a></li><li>A Quick Primer for λ-Calculus</li><li>Reduction Explained</li><li>Church Numerals</li><li>Arithmetic</li><li>Logic</li><li>Pairs and Lists</li><li>Combinators</li></ol>

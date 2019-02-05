@@ -1,0 +1,14 @@
+Subject: twitter
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2007/11/twitter.html
+Comments:
+Content-Type: md
+Public?: true
+
+Yeah, so I'm late to the game.<br /><br />In fact, <a href="https://twitter.com">twitter</a>'s not really a game I was ever interested in. I only started using it today because of the work we're doing at Divmod. The reason I was never enthusiastic was I just couldn't see myself using yet another application or having yet another web page open all the time.<br /><br />But it hit me this morning at 3:00am when I couldn't sleep that with tying a single script's name at the command line, I could push whatever command I had just issued to my twitter. That script uses bash's <span style="font-family:monospace;font-size:9pt;">history</span> command as well as <a href="http://code.google.com/p/python-twitter/">python-twitter</a>. I wrote another simple script that I can use to push arbitrary text too. That coupled with the fact that 1) twitter supports an IM service and 2) I'm now using <a href="http://www.bitlbee.org">BitlBee</a>, I can now use twitter without context switching (since I spend 80-90% of my computer time in the terminal and my IRC client).<br /><br />I'll probably be using twitter mostly as an open-ended replacement for setting IM/IRC status. Interesting commits or revealing bash activity will make their way, too. And, of course, I will be using it for the as yet unannounced Divmod app we will be releasing :-)<br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a href="http://www.technorati.com/tag/internet" rel="tag">internet</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/social networking" rel="tag">social networking</a>, <a href="http://www.technorati.com/tag/software" rel="tag">software</a></p><!-- technorati tags end -->

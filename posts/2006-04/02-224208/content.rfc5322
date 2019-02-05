@@ -1,0 +1,14 @@
+Subject: Nevow + WYSIWYG Editors
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/04/nevow-wysiwyg-editors.html
+Comments:
+Content-Type: md
+Public?: true
+
+<i class="categories">nevow :: formal :: javascript</i><br/><br/><div class="entry"><br /><p><a href="http://images.adytum.us/image/img_060402.233609.1778.png"><br /><img style="margin: 0pt 10px 10px 0pt; float: left;" src="http://images.adytum.us/thumb/img_060402.233737.7802_tmb.jpg" border="0" /></a><br />Due to pressing needs of a couple projects, I finally sat down today<br />and reviewed some of the JavaScript WYSIWYG textarea widgets/HTML<br />editors. Because of my exposure to Zope and Plone,<br /><a href="http://codespeak.net/svn/kupu/trunk/">Kupu</a> and<br /><a href="http://epoz.sourceforge.net/">Epoz</a><br />were the ones that leapt most readily to mind. A quick google exposed <br />two others that I had forgotten about:<br /><a href="http://tinymce.moxiecode.com/">TinyMCE</a> and<br /><a href="http://www.fckeditor.net/">FCKEditor</a>.<br /></p><p/>The nice thing about the latter two is the fact that they can more or <br />less be used with any web-based application. Kupu is striving for that, <br />but (as far as I can tell) it's still somewhat of a pain integrating <br />it. Tiny and FCK have options for integration via simple JavaScript <br />hooks. My preference is for Tiny, given that it loads WAY faster, <br />provides exactly what I need, has a code base orders of magnitude <br />smaller (only kidding a little bit), and has a cleaner look.<p/><br /><br />I'm a pretty big fan of the<br /><a href="http://forms-project.pollenation.net/cgi-bin/trac.cgi/">formal</a><br />library (formerly know as "forms") by Matt Goodall of<br /><a href="http://www.pollenation.net/">pollenation</a>.<br />I've used it a fair amount when building Nevow apps and the only <br />limitation I've personally run across involved trying to get it to work <br />with cred logins (probably *my* limitation). Today, I needed to add <br />support for WYSIWYG editors, and it was super easy. I wrote up some <br />examples on the wiki<br /><a href="http://tinyurl.com/ofqc7">here</a>,<br />but it really just boils down to adding the JavaScript hooks in the<br />HTML "title" (using stan or *TML templates). The image attached to this<br />blog post is a screenshot of the "formal" example I put together to<br />demonstrate functionality. For the curious, here is my set of<br /><a href="http://tinyurl.com/grd2q">TinyMCE toolbar customizations</a>.<p/><br /><br />It really is the little things, though. Users of the Nevow apps where I<br />will be adding this are now ecstatic. And to be honest, I'm very stoked<br />too. It's almost as much fun as MochiKit, but that's for another blog<br />entry...<p/></div><br/>

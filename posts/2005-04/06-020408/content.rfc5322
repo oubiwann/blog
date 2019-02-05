@@ -1,0 +1,14 @@
+Subject: pymon
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2005/04/pymon.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: programming :: software</i><br/><br/><p/><br /><div blog="entry"><p><br />As so often happens, when working/playing on one thing, the miraculous <br />inner lights of the frail but mysterious human mind shed their <br />brilliance on another. Okay, so perhaps in this instance the areas are <br />not so far separated, nor the lumens so brilliant as those in a dying <br />plastic camping flashlight. Nonetheless, the fancy is tickled, and <br />besides actual development, that's what matters!<br /></p><br /><p>So what the hell am I talking about? APIs. I was working on the PyKon <br />Nevow code the other day, and some things I had written and prototyped <br />fermented in a corner of my brain, and popped into a completely new <br />perspective today, one that I could use with<br /><a href="http://pymon.sf.net">pymon</a>. I am addicted to good APIs. I <br />study twisted's internals as well as that of Phillip Eby's PEAK <br />framework(s). I hunger for elegant, efficient, and clever design <br />strategies. It's very Newtonian of me, but I love well-ordered systems. <br />The discussions that have been underway on the pymon maillist boiled <br />down (very quickly) to the following:<br /></p><ul><br />* The need for several mini-APIs to be used internally by pymon<br /><p> * The need to define user- and/or enternal-APIs<br /></p><p> * The need to get rid of a little cruft that had accumulated while in <br />branch (both old an new)<br /></p><p> * The need to utilize twisted component-based approach (adaptors) to <br />accomplish these goals<br /></p></ul><p>We're really excited about this, because we're trying to be true to the <br />art of programming. QualityRUs, not time-contraint, budget-driven, <br />happenstancery. I wrote some more about it on the 2005.04.06 news item <br />at <a href="http://pymon.sf.net">http://pymon.sf.net</a>. It's going to <br />be fun writing all the adaptors we will need :-)</p><p/></div><br /></div>

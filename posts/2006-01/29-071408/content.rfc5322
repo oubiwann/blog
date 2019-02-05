@@ -1,0 +1,14 @@
+Subject: NetCIDR 0.1 Released
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/01/netcidr-01-released.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">networking :: python :: programming</i><br/><br/><div class="entry"><br /><p>As part of the on-going work with<br /><a href="http://coyotemonitoring.com">CoyoteMonitoring</a>,<br /><a href="http://projects.adytum.us/tracs/NetCIDR">NetCIDR</a><br />was written to allow for a clean and logical approach when analyzing<br /><a href="http://en.wikipedia.org/wiki/Netflow">NetFlow</a><br /> captures. Primarily, it's use is for determining whether a given IP <br />address is in a given netblock or a collection of netblocks. Here are <br />some quick example usages from the wiki and doctests:<br /></p><p/><pre><br /> &gt;&gt;&gt; CIDR('10.4.1.2')<br /> 10.4.1.2<br /> &gt;&gt;&gt; CIDR('10.4.1.x')<br /> 10.4.1.0/24<br /> &gt;&gt;&gt; CIDR('10.*.*.*')<br /> 10.0.0.0/8<br /> &gt;&gt;&gt; CIDR('172.16.4.28/27')<br /> 172.16.4.28/27<br /> &gt;&gt;&gt; CIDR('172.16.4.28/27').getHostCount()<br /> 32<br /></pre><p/>Here's how you create a collection of networks:<p/><pre><br /> &gt;&gt;&gt; net_cidr = CIDR('192.168.4.0/24')<br /> &gt;&gt;&gt; corp_cidr = CIDR('10.5.0.0/16')<br /> &gt;&gt;&gt; vpn_cidr = CIDR('172.16.9.5/27')<br /> &gt;&gt;&gt; mynets = Networks([net_cidr, corp_cidr])<br /> &gt;&gt;&gt; mynets.append(vpn_cidr)<br /></pre><p/>And now, you can check for the presence of hosts in various networks <br />and/or collections of networks:<p/><pre><br /> &gt;&gt;&gt; home_router = CIDR('192.168.4.1')<br /> &gt;&gt;&gt; laptop1 = CIDR('192.168.4.100')<br /> &gt;&gt;&gt; webserver = CIDR('10.5.10.10')<br /> &gt;&gt;&gt; laptop2 = CIDR('172.16.9.17')<br /> &gt;&gt;&gt; laptop3 = CIDR('172.16.5.17')<br /> &gt;&gt;&gt; google = CIDR('64.233.187.99')<p/> &gt;&gt;&gt; home_router in mynets<br /> True<br /> &gt;&gt;&gt; laptop1 in mynets<br /> True<br /> &gt;&gt;&gt; webserver in mynets<br /> True<br /> &gt;&gt;&gt; laptop2 in mynets<br /> True<br /> &gt;&gt;&gt; laptop3 in mynets<br /> False<br /> &gt;&gt;&gt; google in mynets<br /> False<br /></pre><p/></div><br/></div>

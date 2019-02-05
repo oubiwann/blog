@@ -1,0 +1,14 @@
+Subject: Nevow + Twisted, or mod_python?
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2005/03/nevow-twisted-or-modpython.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: web :: programming</i><br/><br/><p/><br /><div blog="entry"><p><br />To twist or not to twist, this is always the question.<br /></p><br /><p>Or, rather, I always want to use twisted, but can I produce the numbers <br />and the tests for customers that show it performs as well as <br />mod_python?</p><p>Or, even better: how does one architect a killer twisted web app server <br />that performs insanely well with high concurrency and blinding speed? <br />Hmm, It's been a while since I checked out the Nevow code base, so I <br />just did an svn update, and I see there there is now a wsgi cgi for <br />mod_python in the examples directory. This is cool, I shall have to <br />test... Perhaps I can have my cake and eat it too.</p><p>Well, I just installed it on a server of mine and have been running <br />apache bench against the following:</p><p>nevow wsgi mod_python code<br />a nevow example running on the twisted daemon<br />the AdytumSolutions web page (custom mod_python/publisher mini-cms)<br />a tomcat example jsp page.</p><p>I ran 5000 requests, 20 concurrent requests for each. Here are some <br />results:</p><p/><pre>nevow wsgi - Requests per second: 48.96 [#/sec] (mean)<br />nevow twisted - Requests per second: 64.85 [#/sec] (mean)<br />simple mod_python app - Requests per second: 824.22 [#/sec] (mean)<br />tomcat - Requests per second: 288.01 [#/sec] (mean)<br /></pre><p>I've just spent about an hour reviewing the Nevow example apps (started <br />up the examples by cd'ing to the examples directory and <br />running 'twistd -noy examples.tac'). I must say: Donavan, <br />Matt, and company have done an amazing job in the last year. Truly <br />impressive. Lots of really good examples that get the creative juices <br />flowing and jump start one right into seeing how to solve all kinds of <br />problems with Nevow. In fact, I am so impressed that, if I can learn <br />how to get as much performance out of Nevow, I would gladly sacrifice <br />some raw running/processing speed for ease of development and <br />maintenance. And extensibility. And joy.</p><p>I wonder if I can get my clients to see things this way?</p><p>Perhaps it's time to hop back on #twisted.web and start asking <br />questions I'm sure they are quite tired of answering...</p><p/></div><br /></div>

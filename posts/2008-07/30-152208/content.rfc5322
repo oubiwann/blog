@@ -1,0 +1,14 @@
+Subject: Twisted and OpenSolaris: Success!
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: oscon,python,solaris,twisted,opensolaris
+Source: null
+Comments:
+Content-Type: md
+Public?: true
+
+<div><br />At OSCON this year, I had a chance to say "hello" to the OpenSolaris team in the bar of the Double Tree Hotel, where I proudly announced to them that I was a fanboy :-) LAter, after seeing several presentations that were done on top of OpenSolaris, I made a solemn promise to myself to make time to test Twisted on a fresh install of OpenSolaris.<br /><br /><font style="font-weight: bold;">Initial Setup</font><br /><br />My install was done on an iMac via Parallels, for which <a href="http://blogs.sun.com/lr/entry/opensolaris_in_parallels_vm_on">this post</a> was essential. With it, I was able to setup networking. I also needed to disable nwamd so that I could configure the network manually:<br /><br />-bash-3.2# svcadm disable svc:/network/physical:nwam<br />-bash-3.2# svcadm enable svc:/network/physical:default<br /><br />However, that post's instructions for full native resolution seem to be out of date. I don't have time to mess with it right now, so 1024x768 will have to do. When I get the exact steps, I'll post an update.<br /><br /><span style="font-weight: bold;">Packages</span><br /><br />Here are the commands I used to get my python development environment ready for Twisted:<br /><br />-bash-3.2# pkgadd -d http://www.blastwave.org/pkg_get.pkg<br />-bash-3.2# /opt/csw/bin/pkg-get -U<br />-bash-3.2# /opt/csw/bin/pkg-get -i pysvn<br />-bash-3.2# /opt/csw/bin/pkg-get -i gcc4g++<br /><br />Since pkg-get takes care of dependencies, pysvn installs python, svn, sqlite3, and openssl (among others). Similarly, gcc4g++ installs a bunch of stuff I need for dev too.<br /><br />I also needed to update my .bashrc with the following:<br /><br />export PATH=/opt/csw/bin:/opt/csw/sbin:/opt/csw/gcc4/bin:$PATH<br />export CC=gcc<br /><br /><span style="font-weight: bold;">Manual Installs</span><br /><br />pyOpenSSL<br /></div>

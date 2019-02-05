@@ -1,0 +1,14 @@
+Subject: Nevow Radio
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/02/nevow-radio.html
+Comments:
+Content-Type: md
+Public?: true
+
+<i blog="categories">nevow :: twisted :: music</i><br/><br/><br /><p>As *everyone* knows, PyCon is just around the corner. I'm quite <br />looking forward to it, since I missed last year's. Not only that, but <br />I'll be visiting a good friend whom I haven't seen in 10 years. <br />However, my housemate is getting nervous -- she relies upon me <br />completely for all things technological. With respect to my forthcoming <br />two-week absence, the biggest source of her concern has been music.</p><br /><p/><br />Over the past 9 years, I have migrated all of my Audio CDs to hard <br />drive and then to to MP3 CDs/DVDs. However, this trend has slowly <br />undergone a partial reverse as my ancient file server (running a fresh <br />Ubuntu) has found new purpose in life: serving MP3s from it copious <br />free space. I also happen to be the only one around who understands and <br />can operate such things. My housemate really doesn't want to be without <br />music for two weeks.<p/>Not wanting to leave my friend in the lurch during the conference and <br />sprints, I whipped up some python code to make it all better. First, I <br />wrote a little script that parses the iTunes Library XML file. This <br />allows me to now generate MuSE-readable playlist files for all of my <br />iTunes playlists with a single script (it seems that iTunes won't let <br />you batch-export all your playlists). With these generated, I wrote a <br />quick little Nevow app that globs these new playlist files and <br />interacts with MuSE (I wanted to run icecast, but it seems to only work <br />with ogg). All you have to do is select the desired playlist, hit <br />submit, and then open up the stream in iTunes. Selecting a new playlist <br />in the Nevow interface reloads MuSE and immediately starts streaming <br />the new choice.<p/>This was absurdly easy to put together. And it's only two files: one <br />for the playlist generator, and an all-in-one .tac file for Nevow. It's <br />even got a virtual host monster plugged in, on the off chance that I <br />want to put this app on its own little local domain. It's little things <br />like this that really confuses me: what's the big deal about people <br />freaking out with Twisted and Nevow? This stuff is brilliant, <br />well-designed, elegant and makes perfect sense. When I read Guido's <br />comments about how Nevow/Twisted scares him, I was at a complete loss. <br />It can only mean that he (and others with the same views) simply <br />haven't taken the time to site down and actually *use* the stuff.<p/>C'mon, guys -- tune in, already!<p/><br/><div blog="now_playing"> Now playing:<br /> <pre>Yann Tiersen - Soir de fÃªte</pre><br/></div>

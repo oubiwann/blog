@@ -1,0 +1,14 @@
+Subject: twisted.web2.xmlrpc How-To
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2006/03/twistedweb2xmlrpc-how-to.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted :: programming :: documentation</i><br/><br/><div class="entry"><br /><p><br />Last night, Sean Reifschneider and I sat together at<br /><a href="http://hackingsociety.org/">hacking society</a>. He got a new <br />release of<br /><a href="http://www.tummy.com/Products/vpostmaster/">vPostMaster</a> <br />ready, and I started converting the<br /><a href="http://tinyurl.com/6wl5r">twisted.web.xmlrpc How-to</a> to <br />twisted.web2.<br /></p><p/>It was pretty easy, really. The major difference in implementation is <br />that xmlrpc_*() methods now take the request object in their sigs. <br />Another minor change: we're dumping the .rpy stuff from the old docs, <br />and instead showing how to generally plug an XML-RPC resource into <br />twisted.web2 web server (i.e., other resources). It looks like dried's<br /><a href="http://tinyurl.com/pwhpy">http_auth branch</a><br /> will soon be reviewed for inclusion in trunk, so we will be adding <br />support and docs for authentication in t.w2.xmlrpc as well.<p/></div><br/></div>

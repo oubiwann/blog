@@ -1,0 +1,14 @@
+Subject: Ubuntu
+Subtitle: 
+Header-Image: 
+Excerpt: 
+From: oubiwann
+Twitter: oubiwann
+Category: 
+Keywords: 
+Source: https://oubiwann.blogspot.com/2005/12/ubuntu.html
+Comments:
+Content-Type: md
+Public?: true
+
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software :: linux</i><br/><br/><p/><br /><div blog="entry"><br />Well, I finally caved. After the past three years of running OS X at <br />home, I have need for a file server again. I tend to run SuSE in <br />production, as many of my customers like the administrative interface <br />of YaST, but after using Fink (apt-get) on the Mac, I have been very <br />curious to try a Debian distro. Ubuntu is the top of many peoples' <br />lists these days, and it's won several recent awards, so I thought I <br />would give it a shot. The short and long of it: Ubuntu as a server <br />rocks.<p>I use that qualification because I only used it briefly as a desktop <br />OS, running the LiveCD on my 17" PowerBook for a night. A most <br />enjoyable experience... if only there was support for the Broadcom <br />builtin wireless :-(</p><p>As a server, it is phenomenal. This is due not so much to Ubuntu, but <br />rather as a result of it being a Debian distro. Getting servers <br />installed, locked down, and running the network applications I need is <br />my top priority when selecting a platform these days. My second <br />priority is time: all of that has to happen within 1-3 hours of <br />beginning the process. I'm not a sysadmin anymore, and I can't spend my <br />time on that when it is better spent on development and R&amp;D.</p><p>We'll have to see how SuSE fares at Novell over the next year (due to <br />recent changes in the SuSE team and the Novell layoffs, I'm watching <br />closely). If things start looking bad -- or if Ubuntu gets a set of <br />killer admin UI apps -- future server upgrades may experience a distro <br />switch.</p><p>Oh, and as a side note: LVM is phenomenal. I'm running it on the file <br />server, and am just amazed at the progress that has been made in the <br />last 4 years. I see no reason to use Veritas Volume Manager anymore <br />(for any of my needs or any of my customers' current needs). If you've <br />got a ton of drives laying around, not pulling their weight, dump them <br />in a box and put them to dynamic use with LVM.</p><p/></div><br/><div blog="now_playing"> Now playing:<br /> <pre>Jon Brion - Monday (Sunday, 3:34pm MST)</pre><br/></div><br /></div>
