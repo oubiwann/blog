@@ -8,6 +8,8 @@
   (:import
     (java.time ZoneId)))
 
+(def ^{:dynamic true} *last-datestamp* #inst"1900-01-01T00:00:00.000-00:00")
+
 (defn dragon-headers
   [post-data]
   ;; XXX Create string for post headers
@@ -30,17 +32,22 @@
 
 (defn date-dirs
   [post-data]
-  (let [published (-> (:published post-data)
+  (let [raw-date (:published post-data)
+        published (-> raw-date
                       (.toInstant)
                       (.atZone (ZoneId/systemDefault)))
         s (.getSecond published)]
+    (when (= *last-datestamp* raw-date)
+      (log/warn "Duplicate post timestamp detected ...")
+      (log/error "Overwriting old post ..."))
+    (alter-var-root #'*last-datestamp* (constantly published))
     (format "%d-%02d/%02d-%02d%02d%02d"
             (.getYear published)
             (.getMonthValue published)
             (.getDayOfMonth published)
             (.getHour published)
             (.getMinute published)
-            (if (zero? s) 8))))
+            (if (zero? s) 8 s))))
 
 (defn write-post
   [post-data]
