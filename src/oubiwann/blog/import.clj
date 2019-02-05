@@ -4,7 +4,9 @@
     [clojure.string :as string]
     [clojusc.blogger.xml.parser.export :as blogger]
     [taoensso.timbre :as log]
-    [trifl.fs :as fs]))
+    [trifl.fs :as fs])
+  (:import
+    (java.time ZoneId)))
 
 (defn dragon-headers
   [post-data]
@@ -28,14 +30,16 @@
 
 (defn date-dirs
   [post-data]
-  (let [published (:published post-data)
-        s (.getSeconds published)]
+  (let [published (-> (:published post-data)
+                      (.toInstant)
+                      (.atZone (ZoneId/systemDefault)))
+        s (.getSecond published)]
     (format "%d-%02d/%02d-%02d%02d%02d"
-            (+ 1900 (.getYear published))
-            (inc (.getMonth published))
-            (.getDate published)
-            (.getHours published)
-            (.getMinutes published)
+            (.getYear published)
+            (.getMonthValue published)
+            (.getDayOfMonth published)
+            (.getHour published)
+            (.getMinute published)
             (if (zero? s) 8))))
 
 (defn write-post
@@ -54,6 +58,5 @@
   (->> "import/blog-01-22-2019.xml"
        blogger/xml-resource->zip
        blogger/extract-posts
-       (take 1)
        (mapv write-post)
        :ok))
