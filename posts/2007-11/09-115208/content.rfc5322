@@ -11,4 +11,31 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />As <a href="http://oubiwann.blogspot.com/2007/09/nevow-athena-ajaxcomet-with-twisted.html">promised earlier</a>, here is the <a href="http://www5.adytum.us/%7Eoubiwann/Work/Divmod/howto/chattutorial/index.html">new Athena tutorial</a>!<br /><br />Currently, the tutorial consists of a topical introduction and two example applications, built with the reader step-by-step. Note that this is still in branch and hasn't been reviewed for inclusion in trunk. Please feel free to leave comments to this blog post about the tutorial (good, bad and ugly). This will help us improve the content and prepare it for inclusion in trunk.<br /><br />The tutorial includes detailed instructions on setting up an environment, obtaining the source code, and running the applications. There are also pointers on how to conceptually approach development with Nevow/Athena.<br /><br />Due to concerns over code compactness, we pulled out the CSS that nicely styled the echo and chat tutorial apps. The curious can view the styled versions here:<br /><br /><a href="http://divmod.org/trac/attachment/ticket/2272/echo.png"><img border="0" height="100" src="http://divmod.org/trac/attachment/ticket/2272/echo.png?format=raw" width="100" /></a><br /><a href="http://divmod.org/trac/attachment/ticket/2272/chat.png"><img border="0" height="100" src="http://divmod.org/trac/attachment/ticket/2272/chat.png?format=raw" width="100" /></a><br /><br />And if you want to pretify your example apps, you can update the fragment templates per the links given below.<br /><br /><ul><li><a href="http://divmod.org/trac/browser/branches/athena-tutorials-2272-2/Nevow/doc/howto/chattutorial/part00/listings/echothing/template.xhtml?rev=13590">Echo App</a></li><li><a href="http://divmod.org/trac/browser/branches/athena-tutorials-2272-2/Nevow/doc/howto/chattutorial/part01/listings/chatthing/template.xhtml?rev=13592">Chat App</a></li></ul><br /><br /><br /></div>
+<div><br />As <a
+href="http://oubiwann.blogspot.com/2007/09/nevow-athena-ajaxcomet-with-twisted
+.html">promised earlier</a>, here is the <a
+href="http://www5.adytum.us/%7Eoubiwann/Work/Divmod/howto/chattutorial/index.h
+tml">new Athena tutorial</a>!<br /><br />Currently, the tutorial consists of a
+topical introduction and two example applications, built with the reader
+step-by-step. Note that this is still in branch and hasn't been reviewed for
+inclusion in trunk. Please feel free to leave comments to this blog post about
+the tutorial (good, bad and ugly). This will help us improve the content and
+prepare it for inclusion in trunk.<br /><br />The tutorial includes detailed
+instructions on setting up an environment, obtaining the source code, and
+running the applications. There are also pointers on how to conceptually
+approach development with Nevow/Athena.<br /><br />Due to concerns over code
+compactness, we pulled out the CSS that nicely styled the echo and chat
+tutorial apps. The curious can view the styled versions here:<br /><br /><a
+href="http://divmod.org/trac/attachment/ticket/2272/echo.png"><img border="0"
+height="100" src="http://divmod.org/trac/attachment/ticket/2272/echo.png?forma
+t=raw" width="100" /></a><br /><a
+href="http://divmod.org/trac/attachment/ticket/2272/chat.png"><img border="0"
+height="100" src="http://divmod.org/trac/attachment/ticket/2272/chat.png?forma
+t=raw" width="100" /></a><br /><br />And if you want to pretify your example
+apps, you can update the fragment templates per the links given below.<br
+/><br /><ul><li><a
+href="http://divmod.org/trac/browser/branches/athena-tutorials-2272-2/Nevow/do
+c/howto/chattutorial/part00/listings/echothing/template.xhtml?rev=13590">Echo 
+App</a></li><li><a href="http://divmod.org/trac/browser/branches/athena-tutori
+als-2272-2/Nevow/doc/howto/chattutorial/part01/listings/chatthing/template.xht
+ml?rev=13592">Chat App</a></li></ul><br /><br /><br /></div>

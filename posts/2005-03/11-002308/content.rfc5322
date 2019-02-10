@@ -11,4 +11,39 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">web :: programming :: python :: html</i><br/><br/><p/><br /><div blog="entry"><p><br />I don't know if I'm the only one who's trying to use Advogato in <br />non-ordinary ways (and I'd guess that at least Titus Brown is), but <br />I'm having a hell of a time getting <a href="http://wwwsearch.sourceforge.net/mechanize/">mechanize</a> to <br />work with the site. I love vi and I won't apologize for it ;-) I love <br />using it as my IDE as well as my CMS. I want to be able to edit <br />valuable information in a vi/vim terminal window. <a href="/person/jafo">Sean Reifschneider</a> wrote a nifty little python <br />script for editing messages in vi (I forget which RFC to which they <br />were compliant) and posting to websites. <a href="/person/mesozoic/">Alex Levy</a> did something related, where you <br />could edit pickled data files via command line editors. I just totally <br />dig that stuff. I've written three mini-CMSs in PHP, perl, and python <br />(over the past 5 years) that use the command line as the primary means <br />of adding and editing data. Now, I want to do the same thing with my <br />Advogato account.<br /></p><br /><p>Alas, this is proving very difficult so far. Advogato does not seem to <br />be using proper html! So far, none of the text input fields in the <br />forms I have looked at are labled type="text" -- they are missing the <br />"type" attribute all together. As a result (at least, I think the lack <br />of "type" is the cause), mechanize does not see these inputs as <br />controls, and I can therefore not manipulate them. This means that I <br />cannot login and I cannot update my account settings. Very troublesome. <br />Additionally, it would be <i>wonderful</i> if the forms could be given <br />name attributes for easy access. I would love for someone to point out <br />a way around this or my misunderstanding of mechanize.</p><p>Of course, there is always the hope that the Advogato XML-RPC API will <br />be extended to allow for the managing of account data as well as for <br />publishing articles. Then I wouldn't care how the html gets abused ;-)</p><p><br /><b>Update</b>:<br />It seems that I can, in fact, get controls for all the account form<br />elements in mechanize, even though the text boxes are missing the<br />"type" attribute. However, I am still unable to process the login form<br />via mechanize. I am able to login, but that requires passing the<br />passphrase for the account in a GET, the consequence being that the<br />account password will turn up in log files.</p><p><br /><br /></p></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">web ::
+programming :: python :: html</i><br/><br/><p/><br /><div blog="entry"><p><br
+/>I don't know if I'm the only one who's trying to use Advogato in <br
+/>non-ordinary ways (and I'd guess that at least Titus Brown is), but <br
+/>I'm having a hell of a time getting <a
+href="http://wwwsearch.sourceforge.net/mechanize/">mechanize</a> to <br />work
+with the site. I love vi and I won't apologize for it ;-) I love <br />using
+it as my IDE as well as my CMS. I want to be able to edit <br />valuable
+information in a vi/vim terminal window. <a href="/person/jafo">Sean
+Reifschneider</a> wrote a nifty little python <br />script for editing
+messages in vi (I forget which RFC to which they <br />were compliant) and
+posting to websites. <a href="/person/mesozoic/">Alex Levy</a> did something
+related, where you <br />could edit pickled data files via command line
+editors. I just totally <br />dig that stuff. I've written three mini-CMSs in
+PHP, perl, and python <br />(over the past 5 years) that use the command line
+as the primary means <br />of adding and editing data. Now, I want to do the
+same thing with my <br />Advogato account.<br /></p><br /><p>Alas, this is
+proving very difficult so far. Advogato does not seem to <br />be using proper
+html! So far, none of the text input fields in the <br />forms I have looked
+at are labled type="text" -- they are missing the <br />"type" attribute all
+together. As a result (at least, I think the lack <br />of "type" is the
+cause), mechanize does not see these inputs as <br />controls, and I can
+therefore not manipulate them. This means that I <br />cannot login and I
+cannot update my account settings. Very troublesome. <br />Additionally, it
+would be <i>wonderful</i> if the forms could be given <br />name attributes
+for easy access. I would love for someone to point out <br />a way around this
+or my misunderstanding of mechanize.</p><p>Of course, there is always the hope
+that the Advogato XML-RPC API will <br />be extended to allow for the managing
+of account data as well as for <br />publishing articles. Then I wouldn't care
+how the html gets abused ;-)</p><p><br /><b>Update</b>:<br />It seems that I
+can, in fact, get controls for all the account form<br />elements in
+mechanize, even though the text boxes are missing the<br />"type" attribute.
+However, I am still unable to process the login form<br />via mechanize. I am
+able to login, but that requires passing the<br />passphrase for the account
+in a GET, the consequence being that the<br />account password will turn up in
+log files.</p><p><br /><br /></p></div><br /></div>

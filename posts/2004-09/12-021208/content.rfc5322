@@ -11,4 +11,144 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml">In my <a href="http://oubiwann.blogspot.com/2004/09/python-linear-algebra-and-character.html">recent post</a> about generating personality types with python, I discussed a partial implementation of a Myers-Briggs module, using linear algebra to perform various operations on vectors that represent one's "Jungian" temperament.<br /><br /><p>I have finished all of the basic code and the module can be used to return the best matches for any given temperament. However, I would like to be able to provide a calculable method for a sliding-scale of compatibility. This could be used in games to simulate interactions between a player and an NPC. In a room full of NPCs, it could be used to establish flows of communication, charisma gradients throughout the room... it could be used to augment 2-dimensional random walks of NPCs (dispersion/Brownian Motion) to preferences for certain gradients established by field lines of compatibility between individuals.</p><p>Time to break out the books and dig back into multivariate calculus... </p><p>These thoughts arose after I wrote a simple implementation of <span style="font-family:courier new;">personality.generator.BasePerson</span>. That made it clear that the interaction of instantiated person objects is not too far away (conceptually; programatically, there will most likely involve a great deal of code and time). </p><p>This was the catalyst to start investigating what research has been done on the modeling of human behavior...</p><p>The first paper I read was a true gold-mine: "Human Behavior Models for Game-Theoretic Agents: Case of Crowd Tipping." It sent me off on tangents into alluring, siren-like world of <a href="http://mathworld.wolfram.com/" target="new">http://mathworld.wolfram.com/</a> and <a href="http://scienceworld.wolfram.com/physics/" target="new">http://scienceworld.wolfram.com/physics/</a>. It also referenced other excellent papers I was able to find online. Below I have listed some of the interesting papers I came across as well as some excerpts.</p><h3>Human Behavior Models for Game-Theoretic Agents: Case of Crowd Tipping (<a href="http://tinyurl.com/7xpqq" target="new">http://tinyurl.com/7xpqq</a>)<br /></h3><ul><li>Their emotional system uses the OCC model (originally formulated by Ortony, Clore and Collins, an emotional appraisal model).</li><li>Their cognitive framework is a modifed MDP (Markov Decision Process) that incorporates a BDI model (Belief-Desire-Intention).</li><li>They have a stress and physiological subsystem that "initially reacts to a set of stimuli that are perceived from and/or experienced in the environment." They "model eight physiological reservoirs or stressors, including: energy, sleep, nutrients, noise and light impacts, and other physical capacities..."</li><li>They discuss a simple motor subsystem for interaction in a microworld.</li></ul><h3>More Realistic Human Behavior Models for Agents in Virtual Worlds (<a href="http://tinyurl.com/5fy6p" target="new">http://tinyurl.com/5fy6p</a>)<br /></h3><p>"There are a number of specific agent research issues which arise such as, among others, building and deploying agents that can:<br /></p><ul><li>Acquire and maintain knowledge of the environment, of other agents actions (human or synthetic), and of their own experiences, successes and failures.</li><li>Create tactical plans and carry them out in a believable manner covering both reactive and deliberative behaviors in the presence of other players.</li><li>React appropriately to stress, fatigue, and anxiety and reflect their integrative impact on judgment and performance...</li><li>Construe emotional reactions and mood as stimuli to personal behavior and choice...</li><li>Cope with multi-stage activities (e.g.,campaigns), strategic plans, and survival and decide when to make tactical sacrifices (or not) for the betterment of larger contexts (meta-games)..."</li></ul>Excellent comment, and one of my biggest problems with the current state of games:<br /><br /><p>"The coding of the software by game-makers and military wargame modelers is usually created in the simplest manner and in response to a market or project deadline. Historically there has been little capability for deliberative reasoning by these agents and one doesn't encounter theoretically rigorous constructs that can be counted on to perform according to mathematical theory. Due to these constraints, perhaps the most popular construct for game creation and other simulations is the finite state machine (FSM) approach. FSMs offer the rudiments needed to implement Markov chains and MDPs, and to organize agents into iterative meta game-playing participants within a multi-stage, hierarchical network. However, the vast majority of FSM systems implemented to date are programmed from the bottom up, with little agent reasoning and without the concept of a larger theory to validate them against."</p><p>"Most of the games and artificial lifeforms out there are artistically and stylistically impressive (very impressive), but not entirely faithful to real human behavior. Usually, the game makers hire a psychologist to verify the behaviors seem plausible, but they rarely get down to actual fine-grained details and rarely implement models based on first principles (e.g., reflexes, reaction times, effects of stress, fatigue and adrenalin effects, judgment rates, etc.)."</p><p>And this puts a fine point on game theoretic issues:<br /><br />"Traditional game theory is mathematically rigorous but overly simplistic. The games that are most commonly studied involve fixed, highly constrained payoff tables; intellectually hobbled opponents; and single layer of play where metagaming and systemic thinking is not allowed."</p><p>I could just go on and on about this paper! I highly recommend reading it.</p><h3>Integrating the OCC Model of Emotions in Embodied Characters (<a href="http://tinyurl.com/67xcr" target="new">http://tinyurl.com/67xcr</a>)<br /></h3><p>This paper has a fantastic flow chart of the original OCC model; it's a perfect start for programmers. The author discusses five phases of emotional processing: Classification, Quantification, Interaction, Mapping, Expression.</p><h3>A Model for Personality and Emotion Simulation (<a href="http://tinyurl.com/42qf5" target="new">http://tinyurl.com/42qf5</a>)<br /></h3>From the abstract:<br /><p>"This paper describes a generic model for personality, mood and emotion simulation for conversational virtual humans."</p><ul><li>Discusses mathematics for PE model (Personality and Emotional State) as well as PME model (Personality, Emotional State, and Mood).</li><li>Discuss OCEAN model: Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism.<br /></li></ul><h3>Conversational Agents for Game-Like Virtual Environments (<a href="http://tinyurl.com/44yrg" target="new">http://tinyurl.com/44yrg</a>)<br /></h3><p>This paper has a well-developed architecture for its conversational agent software. I will definitely be adapting their insights...</p><p></p><h3>A Reliable Computational Model For BDI Agents (<a href="http://tinyurl.com/5bzvj" target="new">http://tinyurl.com/5bzvj</a>)<br /></h3><p>From the Introduction:<br /><br />"The BDI approach is based on the study of mental attitudes... and tackles the problems arising when trying to use traditional planning in situations requiring real-time reactivity. The Beliefs represent the informational state of a BDI agent, that is, what it knows about itself and the world. Desires or goals are its motivational state, that is, what the agent is trying to achieve. A typical BDI agent has a so-called procedural knowledge constituted by a set of Plans which<br />define sequences of actions and tests (steps) to be performed to achieve a certain goal or react to a specific situation. The Intentions represent the eliberative state of the agent, that is, which plans the agent has chosen for eventual execution."</p><p>In the abstract and later in the paper, they mention the "...many problems concerning concurrency control and recoverability..." and this made me think of Twisted (python) as a possible framework to address these issues. Twisted was a result of what is now called Imagination, a framework for building playable virtual realities. I haven't seen them<br />focus on behavior modeling, but may well have kept such things in mind.<br /></p><p>Reading about Markov/BDI agents got me thinking, so I went to the wolfram math site. I started at the Random walk page:<br /></p><ul><li><a href="http://mathworld.wolfram.com/RandomWalk.html" target="new">http://mathworld.wolfram.com/RandomWalk.html</a></li><li><a href="http://mathworld.wolfram.com/RandomWalk2-Dimensional.html" target="new">http://mathworld.wolfram.com/RandomWalk2-Dimensional.html</a><br /></li></ul><p>then the Brownian Motion page (possible inspiration for NPC movement in a crowd):<br /></p><ul><li><a href="http://scienceworld.wolfram.com/physics/BrownianMotion.html" target="new">http://scienceworld.wolfram.com/physics/BrownianMotion.html</a><br /></li></ul><p>then to Percolation Theory from fluid dynamics (Greg! we're getting close to your expertise here! possible inspiration for movement of memes, moods, etc., in a crowd of NPCs)<br /></p><ul><li><a href="http://mathworld.wolfram.com/PercolationTheory.html" target="new">http://mathworld.wolfram.com/PercolationTheory.html</a></li></ul><p>These two don't mean much to me, as I have no idea how to implement them practically. I'll have to find some source code that explores them:<br /></p><ul><li><a href="http://mathworld.wolfram.com/MarkovSequence.html" target="new">http://mathworld.wolfram.com/MarkovSequence.html</a></li><li><a href="http://mathworld.wolfram.com/MarkovChain.html" target="new">http://mathworld.wolfram.com/MarkovChain.html</a><br /></li></ul><br /></div><p style="text-align: right; font-size: 10px;">Technorati Tags: <a href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a href="http://www.technorati.com/tag/games" rel="tag">games</a>, <a href="http://www.technorati.com/tag/mathematics" rel="tag">mathematics</a>, <a href="http://www.technorati.com/tag/ai" rel="tag">ai</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a></p>
+<div xmlns="http://www.w3.org/1999/xhtml">In my <a
+href="http://oubiwann.blogspot.com/2004/09/python-linear-algebra-and-character
+.html">recent post</a> about generating personality types with python, I
+discussed a partial implementation of a Myers-Briggs module, using linear
+algebra to perform various operations on vectors that represent one's
+"Jungian" temperament.<br /><br /><p>I have finished all of the basic code and
+the module can be used to return the best matches for any given temperament.
+However, I would like to be able to provide a calculable method for a
+sliding-scale of compatibility. This could be used in games to simulate
+interactions between a player and an NPC. In a room full of NPCs, it could be
+used to establish flows of communication, charisma gradients throughout the
+room... it could be used to augment 2-dimensional random walks of NPCs
+(dispersion/Brownian Motion) to preferences for certain gradients established
+by field lines of compatibility between individuals.</p><p>Time to break out
+the books and dig back into multivariate calculus... </p><p>These thoughts
+arose after I wrote a simple implementation of <span
+style="font-family:courier new;">personality.generator.BasePerson</span>. That
+made it clear that the interaction of instantiated person objects is not too
+far away (conceptually; programatically, there will most likely involve a
+great deal of code and time). </p><p>This was the catalyst to start
+investigating what research has been done on the modeling of human
+behavior...</p><p>The first paper I read was a true gold-mine: "Human Behavior
+Models for Game-Theoretic Agents: Case of Crowd Tipping." It sent me off on
+tangents into alluring, siren-like world of <a
+href="http://mathworld.wolfram.com/" target="new">http://mathworld.wolfram.com
+/</a> and <a href="http://scienceworld.wolfram.com/physics/"
+target="new">http://scienceworld.wolfram.com/physics/</a>. It also referenced
+other excellent papers I was able to find online. Below I have listed some of
+the interesting papers I came across as well as some excerpts.</p><h3>Human
+Behavior Models for Game-Theoretic Agents: Case of Crowd Tipping (<a
+href="http://tinyurl.com/7xpqq" target="new">http://tinyurl.com/7xpqq</a>)<br
+/></h3><ul><li>Their emotional system uses the OCC model (originally
+formulated by Ortony, Clore and Collins, an emotional appraisal
+model).</li><li>Their cognitive framework is a modifed MDP (Markov Decision
+Process) that incorporates a BDI model (Belief-Desire-Intention).</li><li>They
+have a stress and physiological subsystem that "initially reacts to a set of
+stimuli that are perceived from and/or experienced in the environment." They
+"model eight physiological reservoirs or stressors, including: energy, sleep,
+nutrients, noise and light impacts, and other physical
+capacities..."</li><li>They discuss a simple motor subsystem for interaction
+in a microworld.</li></ul><h3>More Realistic Human Behavior Models for Agents
+in Virtual Worlds (<a href="http://tinyurl.com/5fy6p"
+target="new">http://tinyurl.com/5fy6p</a>)<br /></h3><p>"There are a number of
+specific agent research issues which arise such as, among others, building and
+deploying agents that can:<br /></p><ul><li>Acquire and maintain knowledge of
+the environment, of other agents actions (human or synthetic), and of their
+own experiences, successes and failures.</li><li>Create tactical plans and
+carry them out in a believable manner covering both reactive and deliberative
+behaviors in the presence of other players.</li><li>React appropriately to
+stress, fatigue, and anxiety and reflect their integrative impact on judgment
+and performance...</li><li>Construe emotional reactions and mood as stimuli to
+personal behavior and choice...</li><li>Cope with multi-stage activities
+(e.g.,campaigns), strategic plans, and survival and decide when to make
+tactical sacrifices (or not) for the betterment of larger contexts
+(meta-games)..."</li></ul>Excellent comment, and one of my biggest problems
+with the current state of games:<br /><br /><p>"The coding of the software by
+game-makers and military wargame modelers is usually created in the simplest
+manner and in response to a market or project deadline. Historically there has
+been little capability for deliberative reasoning by these agents and one
+doesn't encounter theoretically rigorous constructs that can be counted on to
+perform according to mathematical theory. Due to these constraints, perhaps
+the most popular construct for game creation and other simulations is the
+finite state machine (FSM) approach. FSMs offer the rudiments needed to
+implement Markov chains and MDPs, and to organize agents into iterative meta
+game-playing participants within a multi-stage, hierarchical network. However,
+the vast majority of FSM systems implemented to date are programmed from the
+bottom up, with little agent reasoning and without the concept of a larger
+theory to validate them against."</p><p>"Most of the games and artificial
+lifeforms out there are artistically and stylistically impressive (very
+impressive), but not entirely faithful to real human behavior. Usually, the
+game makers hire a psychologist to verify the behaviors seem plausible, but
+they rarely get down to actual fine-grained details and rarely implement
+models based on first principles (e.g., reflexes, reaction times, effects of
+stress, fatigue and adrenalin effects, judgment rates, etc.)."</p><p>And this
+puts a fine point on game theoretic issues:<br /><br />"Traditional game
+theory is mathematically rigorous but overly simplistic. The games that are
+most commonly studied involve fixed, highly constrained payoff tables;
+intellectually hobbled opponents; and single layer of play where metagaming
+and systemic thinking is not allowed."</p><p>I could just go on and on about
+this paper! I highly recommend reading it.</p><h3>Integrating the OCC Model of
+Emotions in Embodied Characters (<a href="http://tinyurl.com/67xcr"
+target="new">http://tinyurl.com/67xcr</a>)<br /></h3><p>This paper has a
+fantastic flow chart of the original OCC model; it's a perfect start for
+programmers. The author discusses five phases of emotional processing:
+Classification, Quantification, Interaction, Mapping, Expression.</p><h3>A
+Model for Personality and Emotion Simulation (<a
+href="http://tinyurl.com/42qf5" target="new">http://tinyurl.com/42qf5</a>)<br
+/></h3>From the abstract:<br /><p>"This paper describes a generic model for
+personality, mood and emotion simulation for conversational virtual
+humans."</p><ul><li>Discusses mathematics for PE model (Personality and
+Emotional State) as well as PME model (Personality, Emotional State, and
+Mood).</li><li>Discuss OCEAN model: Openness, Conscientiousness, Extraversion,
+Agreeableness, Neuroticism.<br /></li></ul><h3>Conversational Agents for
+Game-Like Virtual Environments (<a href="http://tinyurl.com/44yrg"
+target="new">http://tinyurl.com/44yrg</a>)<br /></h3><p>This paper has a
+well-developed architecture for its conversational agent software. I will
+definitely be adapting their insights...</p><p></p><h3>A Reliable
+Computational Model For BDI Agents (<a href="http://tinyurl.com/5bzvj"
+target="new">http://tinyurl.com/5bzvj</a>)<br /></h3><p>From the
+Introduction:<br /><br />"The BDI approach is based on the study of mental
+attitudes... and tackles the problems arising when trying to use traditional
+planning in situations requiring real-time reactivity. The Beliefs represent
+the informational state of a BDI agent, that is, what it knows about itself
+and the world. Desires or goals are its motivational state, that is, what the
+agent is trying to achieve. A typical BDI agent has a so-called procedural
+knowledge constituted by a set of Plans which<br />define sequences of actions
+and tests (steps) to be performed to achieve a certain goal or react to a
+specific situation. The Intentions represent the eliberative state of the
+agent, that is, which plans the agent has chosen for eventual
+execution."</p><p>In the abstract and later in the paper, they mention the
+"...many problems concerning concurrency control and recoverability..." and
+this made me think of Twisted (python) as a possible framework to address
+these issues. Twisted was a result of what is now called Imagination, a
+framework for building playable virtual realities. I haven't seen them<br
+/>focus on behavior modeling, but may well have kept such things in mind.<br
+/></p><p>Reading about Markov/BDI agents got me thinking, so I went to the
+wolfram math site. I started at the Random walk page:<br /></p><ul><li><a
+href="http://mathworld.wolfram.com/RandomWalk.html" target="new">http://mathwo
+rld.wolfram.com/RandomWalk.html</a></li><li><a href="http://mathworld.wolfram.
+com/RandomWalk2-Dimensional.html" target="new">http://mathworld.wolfram.com/Ra
+ndomWalk2-Dimensional.html</a><br /></li></ul><p>then the Brownian Motion page
+(possible inspiration for NPC movement in a crowd):<br /></p><ul><li><a
+href="http://scienceworld.wolfram.com/physics/BrownianMotion.html" target="new
+">http://scienceworld.wolfram.com/physics/BrownianMotion.html</a><br /></li></
+ul><p>then to Percolation Theory from fluid dynamics (Greg! we're getting
+close to your expertise here! possible inspiration for movement of memes,
+moods, etc., in a crowd of NPCs)<br /></p><ul><li><a
+href="http://mathworld.wolfram.com/PercolationTheory.html" target="new">http:/
+/mathworld.wolfram.com/PercolationTheory.html</a></li></ul><p>These two don't
+mean much to me, as I have no idea how to implement them practically. I'll
+have to find some source code that explores them:<br /></p><ul><li><a
+href="http://mathworld.wolfram.com/MarkovSequence.html" target="new">http://ma
+thworld.wolfram.com/MarkovSequence.html</a></li><li><a href="http://mathworld.
+wolfram.com/MarkovChain.html" target="new">http://mathworld.wolfram.com/Markov
+Chain.html</a><br /></li></ul><br /></div><p style="text-align: right;
+font-size: 10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a
+href="http://www.technorati.com/tag/games" rel="tag">games</a>, <a
+href="http://www.technorati.com/tag/mathematics" rel="tag">mathematics</a>, <a
+href="http://www.technorati.com/tag/ai" rel="tag">ai</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a></p>

@@ -11,4 +11,9 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">atom :: python :: blogging</i><br/><br/><div class="entry"><br />This is a test post from email -&gt; postfix -&gt; python -&gt; atom<p/>Let's see how it goes...<p/></div><br/><div class="now_playing"> Now playing:<br /> <pre>Yoko Kanno &amp; The Seatbelts - Call Me Call Me (Friday, 2:57am MST)</pre><br/></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">atom :: python
+:: blogging</i><br/><br/><div class="entry"><br />This is a test post from
+email -&gt; postfix -&gt; python -&gt; atom<p/>Let's see how it
+goes...<p/></div><br/><div class="now_playing"> Now playing:<br /> <pre>Yoko
+Kanno &amp; The Seatbelts - Call Me Call Me (Friday, 2:57am
+MST)</pre><br/></div></div>

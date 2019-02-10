@@ -11,4 +11,23 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">technology</i><br/><br/><p/><br /><p><br />Two years ago, I had the desire to build a small flying "robot"<br />that I could control remotely and connect to an X10 home automation<br />setup. Turns out that I probably couldn't have done it at the size I<br />wanted, seeing how Seiko Epson has just produced it and it has the<br />smallest, lightest gyro sensor in the world. (See <a href="http://news.bbc.co.uk/1/hi/technology/3579232.stm">http://news.bbc.co.uk/1/hi/technology/3579232.stm</a>.)<br />Hell, I probably couldn't have done it no matter what, seeing how I've<br />never built a robot in my life! To be useful for what I wanted, it had<br />to be wirelessly remoteable and capable of sending images (either<br />static snap shots or live video). This little critter meets such<br />requirements.</p><br /><br /><p>This is especially cool to me, far more cool than wheeled robots. It<br />receives messages via bluetooth, and with its micro camera, you could<br />remote it through your house, checking things like ovens, toasters,<br />irons, etc. It can operate for 3 hours before running out of juice in<br />its on-board batteries (rechargeable?). I would imagine that once you<br />had a device like this plugged up to your home automation system, new<br />ideas for useage would crop up by the hundreds...</p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i
+class="categories">technology</i><br/><br/><p/><br /><p><br />Two years ago, I
+had the desire to build a small flying "robot"<br />that I could control
+remotely and connect to an X10 home automation<br />setup. Turns out that I
+probably couldn't have done it at the size I<br />wanted, seeing how Seiko
+Epson has just produced it and it has the<br />smallest, lightest gyro sensor
+in the world. (See <a
+href="http://news.bbc.co.uk/1/hi/technology/3579232.stm">http://news.bbc.co.uk
+/1/hi/technology/3579232.stm</a>.)<br />Hell, I probably couldn't have done it
+no matter what, seeing how I've<br />never built a robot in my life! To be
+useful for what I wanted, it had<br />to be wirelessly remoteable and capable
+of sending images (either<br />static snap shots or live video). This little
+critter meets such<br />requirements.</p><br /><br /><p>This is especially
+cool to me, far more cool than wheeled robots. It<br />receives messages via
+bluetooth, and with its micro camera, you could<br />remote it through your
+house, checking things like ovens, toasters,<br />irons, etc. It can operate
+for 3 hours before running out of juice in<br />its on-board batteries
+(rechargeable?). I would imagine that once you<br />had a device like this
+plugged up to your home automation system, new<br />ideas for useage would
+crop up by the hundreds...</p><br /></div>

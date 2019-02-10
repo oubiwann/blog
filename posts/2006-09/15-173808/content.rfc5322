@@ -11,4 +11,30 @@ Comments:
 Content-Type: md
 Public?: true
 
-As I told Bill Karpovich today, I don't think I've ever had this happen before: add a feature to software and then have someone on a major news site <a href="http://blogs.zdnet.com/open-source/?p=788">blog about it</a>.<br /><br />To be fair, the <a href="http://zenoss.org/">Zenoss</a> objects-to-XML (and vice versa) code was written quite a while ago by Erik Dahl. What I finished this week was providing a means of exporting Zenoss templates (RRD and Nagios) and then importing them from the file system or a URL (as well as some initial UI plumbing).<br /><br />The code may sound mundane, but when you have a highly active, intense, and enthusiastic user base, writing code that makes their lives easier is a profoundly satisfying activity. Because, inevitably, you get emails and IRC comments like "you guys are awesome!" and "we love you!"<br /><br />The next level of deployment will likely include a dedicated mail list for users to share the systems management/monitoring templates (and download them directly into Zenoss). This will be a transitional feature while we continue working on the portal where users will have the ability to upload, edit, and publish (share) their templates, and then download these templates through the Zenoss management UI.<br /><br />I'm having a great time with these guys -- an awesome team with an incredible product and an amazing community :-)<br /><br />Now playing:<br /><pre>Muse - Darkshines<br /></pre><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/media" rel="tag">media</a>, <a href="http://www.technorati.com/tag/monitoring" rel="tag">monitoring</a>, <a href="http://www.technorati.com/tag/programming" rel="tag">programming</a>, <a href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a href="http://www.technorati.com/tag/work" rel="tag">work</a></p><!-- technorati tags end -->
+As I told Bill Karpovich today, I don't think I've ever had this happen
+before: add a feature to software and then have someone on a major news site
+<a href="http://blogs.zdnet.com/open-source/?p=788">blog about it</a>.<br
+/><br />To be fair, the <a href="http://zenoss.org/">Zenoss</a> objects-to-XML
+(and vice versa) code was written quite a while ago by Erik Dahl. What I
+finished this week was providing a means of exporting Zenoss templates (RRD
+and Nagios) and then importing them from the file system or a URL (as well as
+some initial UI plumbing).<br /><br />The code may sound mundane, but when you
+have a highly active, intense, and enthusiastic user base, writing code that
+makes their lives easier is a profoundly satisfying activity. Because,
+inevitably, you get emails and IRC comments like "you guys are awesome!" and
+"we love you!"<br /><br />The next level of deployment will likely include a
+dedicated mail list for users to share the systems management/monitoring
+templates (and download them directly into Zenoss). This will be a
+transitional feature while we continue working on the portal where users will
+have the ability to upload, edit, and publish (share) their templates, and
+then download these templates through the Zenoss management UI.<br /><br />I'm
+having a great time with these guys -- an awesome team with an incredible
+product and an amazing community :-)<br /><br />Now playing:<br /><pre>Muse -
+Darkshines<br /></pre><br /><!-- technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/media" rel="tag">media</a>, <a
+href="http://www.technorati.com/tag/monitoring" rel="tag">monitoring</a>, <a
+href="http://www.technorati.com/tag/programming" rel="tag">programming</a>, <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a
+href="http://www.technorati.com/tag/work" rel="tag">work</a></p><!--
+technorati tags end -->

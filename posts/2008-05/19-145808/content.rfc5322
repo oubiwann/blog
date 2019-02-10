@@ -11,4 +11,69 @@ Comments:
 Content-Type: md
 Public?: true
 
-At <a href="http://about.divmod.com/">Divmod</a>, we're always talking about the future of computing, software, and the network. This usually focuses on our work with <a href="http://twistedmatrix.com/trac/">Twisted</a> or the <a href="http://divmod.org/trac/">Divmod platform</a>. But we have also spent considerable time assessing research in the area of what is called "ultra large-scale systems." Our primary business interest with this revolves around development, deployment, and management. However, there is a great deal of work that needs to be done to make ULS systems a reality.<br /><br />I have a series of blog posts planned to discuss ULS systems in the areas where I have a vested interest. Despite the fact that a popular <a href="http://www.sei.cmu.edu/uls/the_report.html">study on the matter</a> was funded by the U.S. Department of Defense (conducted by the Carnegie Mellon Software Engineering Institute), I will not be discussing this technology in the context of war efforts nor national defense. Instead, I will be engaging in this discussion within the context of the medical/health services field, per the example given by Richard Gabriel in <a href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">his presentation</a> (PDF) to the Chinese University of Hong Kong.<br /><br />This is especially pertinent today, as Google prepares for its <a href="http://tinyurl.com/4ebkvo">Google Health</a> announcement. Even though there are by some estimates (optimistic ones, in my view) 25 years of research ahead of us, it is generally agreed that ULS systems will consist aggregate sub-systems, built incrementally over time. I don't believe anyone is under the illusion that Google does not want to produce the first ULS system in history, and they are making rapid progress towards this goal. Google Health brings this point home very clearly, in the context of the research that has been done in this area.<br /><br />The world is rapidly changing. The most important issues in technology and business are not who is going to create the next catchy "Web 2.0" application, or what mega corp games are being played in the Great Silicon Valley Soap Opera. The important issues are how the systems of the next 100-200 years are being built <em>now</em>, <em>who</em> they are being built by, and who as <em>access</em> to that technology.<br /><br />We are a powerful and creative community. We are concerned about distributing power to the people, education, privacy, and freedom -- open source is built upon these principles. If we want those who are building ULS systems to build them fairly and with our concerns in mind, then we must get involved now. We must start building the necessary tools.<br /><br />As for the reading, a couple of these were linked to in <a href="http://labs.twistedmatrix.com/2008/05/twisted-in-news_17.html">this blog post</a>. Here is a list that should get your brain revved up and ready to roll (these are all PDF files):<br /><ul><li><a href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">Design Beyond Human Abilities</a></li><li><a href="http://www.sei.cmu.edu/uls/files/ULS_Book2006.pdf">Ultra-Large-Scale Systems: The Software Challenge of the Future</a></li><li><a href="http://www.sei.cmu.edu/uls/files/OOPSLA06.pdf">Scale Changes Everything</a></li><li><a href="http://www.sei.cmu.edu/uls/files/roadmap.pdf">ULS Systems Research Roadmap</a></li></ul>I will have more specifics about the sorts of things we're exploring in future blog posts, but until then -- don't get left behind!<br /><div><br /></div><div><span class="Apple-style-span" style="font-weight: bold;">Update</span>: <a href="http://washort.twistedmatrix.com/">Allen Short</a> just pointed out some additional material that predates the Carnegie Mellon research: the <a href="http://www.agorics.com/Library/agoricpapers.html">Agoric Papers</a>, co-authored by <a href="http://www.caplet.com/">Mark Miller</a> who is a co-creator of the <a href="http://www.erights.org/">E programming language</a>.<br /><br /><span style="font-weight: bold;">Update 2</span>: <a href="http://glyph.twistedmatrix.com/">Glyph Lefkowitz</a> just sent me a link to the <a href="http://www.laputan.org/mud/">Big Ball of Mud</a> that discusses similar concepts.<br /><br /></div><div><div style="font-size: 10px; text-align: right;">Technorati Tags: <a href="http://www.technorati.com/tag/technology" rel="tag">technology</a>, <a href="http://www.technorati.com/tag/business" rel="tag">business</a>, <a href="http://www.technorati.com/tag/community" rel="tag"> community </a>, <a href="http://www.technorati.com/tag/open+source" rel="tag">open source</a>, <a href="http://www.technorati.com/tag/uls" rel="tag">uls</a></div></div>
+At <a href="http://about.divmod.com/">Divmod</a>, we're always talking about
+the future of computing, software, and the network. This usually focuses on
+our work with <a href="http://twistedmatrix.com/trac/">Twisted</a> or the <a
+href="http://divmod.org/trac/">Divmod platform</a>. But we have also spent
+considerable time assessing research in the area of what is called "ultra
+large-scale systems." Our primary business interest with this revolves around
+development, deployment, and management. However, there is a great deal of
+work that needs to be done to make ULS systems a reality.<br /><br />I have a
+series of blog posts planned to discuss ULS systems in the areas where I have
+a vested interest. Despite the fact that a popular <a
+href="http://www.sei.cmu.edu/uls/the_report.html">study on the matter</a> was
+funded by the U.S. Department of Defense (conducted by the Carnegie Mellon
+Software Engineering Institute), I will not be discussing this technology in
+the context of war efforts nor national defense. Instead, I will be engaging
+in this discussion within the context of the medical/health services field,
+per the example given by Richard Gabriel in <a
+href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">his pres
+entation</a> (PDF) to the Chinese University of Hong Kong.<br /><br />This is
+especially pertinent today, as Google prepares for its <a
+href="http://tinyurl.com/4ebkvo">Google Health</a> announcement. Even though
+there are by some estimates (optimistic ones, in my view) 25 years of research
+ahead of us, it is generally agreed that ULS systems will consist aggregate
+sub-systems, built incrementally over time. I don't believe anyone is under
+the illusion that Google does not want to produce the first ULS system in
+history, and they are making rapid progress towards this goal. Google Health
+brings this point home very clearly, in the context of the research that has
+been done in this area.<br /><br />The world is rapidly changing. The most
+important issues in technology and business are not who is going to create the
+next catchy "Web 2.0" application, or what mega corp games are being played in
+the Great Silicon Valley Soap Opera. The important issues are how the systems
+of the next 100-200 years are being built <em>now</em>, <em>who</em> they are
+being built by, and who as <em>access</em> to that technology.<br /><br />We
+are a powerful and creative community. We are concerned about distributing
+power to the people, education, privacy, and freedom -- open source is built
+upon these principles. If we want those who are building ULS systems to build
+them fairly and with our concerns in mind, then we must get involved now. We
+must start building the necessary tools.<br /><br />As for the reading, a
+couple of these were linked to in <a
+href="http://labs.twistedmatrix.com/2008/05/twisted-in-news_17.html">this blog
+post</a>. Here is a list that should get your brain revved up and ready to
+roll (these are all PDF files):<br /><ul><li><a
+href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">Design B
+eyond Human Abilities</a></li><li><a
+href="http://www.sei.cmu.edu/uls/files/ULS_Book2006.pdf">Ultra-Large-Scale Sys
+tems: The Software Challenge of the Future</a></li><li><a
+href="http://www.sei.cmu.edu/uls/files/OOPSLA06.pdf">Scale Changes
+Everything</a></li><li><a href="http://www.sei.cmu.edu/uls/files/roadmap.pdf">
+ULS Systems Research Roadmap</a></li></ul>I will have more specifics about the
+sorts of things we're exploring in future blog posts, but until then -- don't
+get left behind!<br /><div><br /></div><div><span class="Apple-style-span"
+style="font-weight: bold;">Update</span>: <a
+href="http://washort.twistedmatrix.com/">Allen Short</a> just pointed out some
+additional material that predates the Carnegie Mellon research: the <a
+href="http://www.agorics.com/Library/agoricpapers.html">Agoric Papers</a>,
+co-authored by <a href="http://www.caplet.com/">Mark Miller</a> who is a
+co-creator of the <a href="http://www.erights.org/">E programming
+language</a>.<br /><br /><span style="font-weight: bold;">Update 2</span>: <a
+href="http://glyph.twistedmatrix.com/">Glyph Lefkowitz</a> just sent me a link
+to the <a href="http://www.laputan.org/mud/">Big Ball of Mud</a> that
+discusses similar concepts.<br /><br /></div><div><div style="font-size: 10px;
+text-align: right;">Technorati Tags: <a
+href="http://www.technorati.com/tag/technology" rel="tag">technology</a>, <a
+href="http://www.technorati.com/tag/business" rel="tag">business</a>, <a
+href="http://www.technorati.com/tag/community" rel="tag"> community </a>, <a
+href="http://www.technorati.com/tag/open+source" rel="tag">open source</a>, <a
+href="http://www.technorati.com/tag/uls" rel="tag">uls</a></div></div>

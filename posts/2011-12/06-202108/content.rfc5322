@@ -11,4 +11,43 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-i2e1yBn68hU/Tt7Nmr3OdgI/AAAAAAAAAGk/lrjeA31S3og/s1600/logo-green.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-i2e1yBn68hU/Tt7Nmr3OdgI/AAAAAAAAAGk/lrjeA31S3og/s1600/logo-green.png" /></a></div>So I guess this is old news now, but <a href="http://dreamhost.com/">DreamHost</a> is really into <a href="http://openstack.org/">OpenStack</a> :-)<br /><br />(In fact, during recess, DreamHost asked if I would pass a note to OpenStack. I didn't look inside the note, but we can all guess what it said...)<br /><br />I was hired specifically to work on cloud stuff here at DreamHost, and we've got a new team that's super-excited about this -- they're starting to gear up for increased contributions and community engagement, gettin' themselves some cloud. We've now got our own <a href="https://launchpad.net/~dreamhost-openstack-team">Launchpad team</a>, we're working on a handful of <a href="https://blueprints.launchpad.net/~dreamhost-openstack-team">blueprints</a>, chatting it up on mail lists and IRC meetings -- you get the picture :-) Exciting times.<br /><br />For official blog posts and other news items that highlight DreamHost's interest and involvement in OpenStack, check these out:<br /><ul><li><a href="http://dreamhost.com/press-releases/dreamhost-pledges-support-to-openstack-project/">DreamHost Pledges Support to OpenStack Project</a></li><li><a href="http://blog.dreamhost.com/2011/06/23/dreamhost-and-openstack-sitting-in-a-tree/">DreamHost and OpenStack sitting in a tree...</a></li><li><a href="http://blog.dreamhost.com/2011/07/28/dreamhost-uses-dells-crowbar-as-a-lever-to-raise-automation/">DreamHost uses Dell’s Crowbar as a lever to raise automation</a> (more on Crowbar <a href="https://github.com/dellcloudedge/crowbar">here</a>)&nbsp;</li><li><a href="http://www.thewhir.com/web-hosting-news/062311_Web_Host_DreamHost_Contributing_Code_for_Ceph_File_System_to_OpenStack">Web Host DreamHost Contributing Code for Ceph File System to OpenStack</a></li><li><a href="http://www.oscon.com/oscon2011/public/schedule/detail/21174">Ceph and OpenStack at OSCON 2011</a> </li></ul>I'll be writing more about our OpenStack work later, but wanted to get a quick cloud-shout-out done before too much time passed...<br /><br />P.S. We're hiring Python rock-stars!<br /><br />P.P.S. Did I mention that DH is an AWESOME place to work? We got an award for that, <a href="http://www.ocregister.com/articles/leadership-327671-employees-company.html">two years in a row</a> :-)<br /><br /><br /><ul></ul>
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-i2e1yBn68hU/Tt7Nmr3OdgI/AAAAAAAAAGk/lrjeA31S3o
+g/s1600/logo-green.png" imageanchor="1" style="clear: left; float: left;
+margin-bottom: 1em; margin-right: 1em;"><img border="0"
+src="http://4.bp.blogspot.com/-i2e1yBn68hU/Tt7Nmr3OdgI/AAAAAAAAAGk/lrjeA31S3og
+/s1600/logo-green.png" /></a></div>So I guess this is old news now, but <a
+href="http://dreamhost.com/">DreamHost</a> is really into <a
+href="http://openstack.org/">OpenStack</a> :-)<br /><br />(In fact, during
+recess, DreamHost asked if I would pass a note to OpenStack. I didn't look
+inside the note, but we can all guess what it said...)<br /><br />I was hired
+specifically to work on cloud stuff here at DreamHost, and we've got a new
+team that's super-excited about this -- they're starting to gear up for
+increased contributions and community engagement, gettin' themselves some
+cloud. We've now got our own <a
+href="https://launchpad.net/~dreamhost-openstack-team">Launchpad team</a>,
+we're working on a handful of <a
+href="https://blueprints.launchpad.net/~dreamhost-openstack-team">blueprints</
+a>, chatting it up on mail lists and IRC meetings -- you get the picture :-)
+Exciting times.<br /><br />For official blog posts and other news items that
+highlight DreamHost's interest and involvement in OpenStack, check these
+out:<br /><ul><li><a
+href="http://dreamhost.com/press-releases/dreamhost-pledges-support-to-opensta
+ck-project/">DreamHost Pledges Support to OpenStack Project</a></li><li><a
+href="http://blog.dreamhost.com/2011/06/23/dreamhost-and-openstack-sitting-in-
+a-tree/">DreamHost and OpenStack sitting in a tree...</a></li><li><a
+href="http://blog.dreamhost.com/2011/07/28/dreamhost-uses-dells-crowbar-as-a-l
+ever-to-raise-automation/">DreamHost uses Dell’s Crowbar as a lever to raise
+automation</a> (more on Crowbar <a
+href="https://github.com/dellcloudedge/crowbar">here</a>)&nbsp;</li><li><a hre
+f="http://www.thewhir.com/web-hosting-news/062311_Web_Host_DreamHost_Contribut
+ing_Code_for_Ceph_File_System_to_OpenStack">Web Host DreamHost Contributing
+Code for Ceph File System to OpenStack</a></li><li><a
+href="http://www.oscon.com/oscon2011/public/schedule/detail/21174">Ceph and
+OpenStack at OSCON 2011</a> </li></ul>I'll be writing more about our OpenStack
+work later, but wanted to get a quick cloud-shout-out done before too much
+time passed...<br /><br />P.S. We're hiring Python rock-stars!<br /><br
+/>P.P.S. Did I mention that DH is an AWESOME place to work? We got an award
+for that, <a
+href="http://www.ocregister.com/articles/leadership-327671-employees-company.h
+tml">two years in a row</a> :-)<br /><br /><br /><ul></ul>

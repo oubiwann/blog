@@ -11,4 +11,102 @@ Comments:
 Content-Type: md
 Public?: true
 
-So what the hell does <span style="font-style: italic;">that</span> mean? Well, there's sort of a back story there (but you can skip to the last paragraph of this post for the punchline).<br /><br />Earlier this year, I blogged about the language patterns of twisted: <a href="http://oubiwann.blogspot.com/2005/06/thinking-in-twisted.html">Thinking in Twisted</a>. The use of and relationships between such things as protocols, clients, servers, and various factories in Twisted was really starting to make its way into my bones. These and other core aspects of Twisted best practices form the basis of a pattern language... one that is of immense value when writing network code and applications. Here are a couple quotes from that blog entry:<br /><blockquote>The tricky thing about Twisted is that its patterns are an integral part of its "language" (perhaps it would be better to stop using quotes, and just call it a meta-language...). This is not true of most other languages -- though I would venture to say it is true of good frameworks in general. You don't need to know the patterns to use the grammar/syntax/control structures of most languages. Patterns in a language are usually optional. [However, w]ith Twisted, if you aren't using the patterns, you aren't really using Twisted.<br /><br />When we learn to think in Twisted and write applications in Twisted, our solutions will be elegant and compact. Before that starts to happen, we try to use our "old" ways of python programming mixed in with the new one we are learning... and that, of course, defeats the purpose of the new "language."</blockquote>I've recently hit another level of awareness in pattern abstraction, and it has its roots in Twisted. In fact, I never would have been working on what I am now working on if it weren't for Twisted and all the work done by <a href="http://divmod.org/trac/">Divmod</a> and its crew. While at PyCon 2004, I met with Amir and Glyph and we discussed twisted's use in the industry at large, and in particular, opportunities for which the Divmod product line could be applicable.<br /><br />What I liked so much (and immediately) about what Divmod was doing was that they were integrating useful components into a single application (Quotient). It stuck a positive chord with my instincts about where software should be going, and it kept me thinking for months while I worked on other projects. These thoughts culminated in a series of blog entries and software projects. First, a post called <a href="http://oubiwann.blogspot.com/2004/03/dinosaurs-and-mammals.html">Dinosaurs and Mammals</a> explored this. In the intervening time, the projects I have worked on have helped me evolve these ideas usefully. There is now direction, code, and product (more about that later in this post).<br /><br />Then, in <a href="http://oubiwann.blogspot.com/2004/05/everything-as-distributed-resource.html">Everything as a Distributed Resource</a>, I took a more sci-fi, radical view... but one that is born out by current trends and tendencies, particularly in the cell phone market. There's a great deal we haven't thought about in regards to the cell phone market. Not so much about cell phones and mobile technology, but rather the usage patterns and demands that are being made and (sometimes) met in this sector.<br /><br />In an effort to follow through on the "mammal" paradigm, I did some exploration with URLdb and PyKon which I blogged briefly about in <a href="http://oubiwann.blogspot.com/2005/03/new-projects.html">New Projects</a>. The two projects mentioned there have since been merged into a project that we are calling Adytum's <a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollection/trunk/">Twisted Collection</a>. The latest addition to which is <a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollection/trunk/ImageDB/">ImageDB</a>.<br /><br />ImageDB is a repository for static graphic media. The images that people upload here can be viewed via it's web interface, but it is more likely the ImageDB would be used as a part of something else. For example, when I get around to finishing PyKon, it will make use of<br />ImageDB. PyKon will not store any images itself. It's simply going to be an nicely designed, usable image gallery interface. Users won't know that, though. They will use PyKon and be able to create galleries and albums in that gallery by uploading images (which will be stored --<br />transparently to the user -- in an ImageDB instance), by selecting individual images (JavaScript ImageDB selector/browser), or by selecting "tags" a la del.icio.us (and therefore whole groups of<br />images).<br /><br />Analogous to ImageDB is <a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollection/trunk/MessageDB/">MessageDB</a>, a repository for static text. It's next on the list to be developed. This micro-app will hardly ever be used directly, although it too will provide a basic web interface for viewing and editing stored content. MessageDB will be a storage app for&nbsp;RFC 2822-compliant "messages". For starters, various public mail list emails will get tagged and stored there.<br /><br />Non-dynamic text for web sites and blogs will be stored as RFC 2822 messages. So the forth-coming tools "SimpleSite" and "WeBlog" (also part of the collection) will actually store and pull their content from MessageDB. But even more, when you want to use a photo, clipart, or logo in your site or on your blog, you will click a "select image" link and an image thumbnail&nbsp;browser will pop up. You will select one of the thumbnails, the popup will go away, and a link to that resource in your ImageDB instance will be inserted for you, in your blog or site text.<br /><br />The idea is that by abstracting out general functionality into little micro-apps, you not only decrease the amount of work in maintenance and feature addition, you not only are reducing the amount of redundant work you have to do when building content-related applications, but you&nbsp;are providing an infinite amount of flexibility for using these various media in completely unplanned and unexpected ways.<br /><br />Your media, it's storage, it's access (XML-RPC), now live in self-contained little units. They can "survive" on their own, without a heavy dependence upon&nbsp;some huge CMS that was written for a particular project. The apps are project-agnostic. They can be set up once and then reused repeatedly in different contexts by building new apps that obtain their data from the component micro-apps via simple links and/or XML-RPC calls.<br /><br />And, again, the ways in which users and designers decide to combine these pieces and how they decide to use that is 100% flexible and thus fertile ground for the unexpected and creative :-)<br /><br />I say "To Hell!" with large apps, and banish them forever! Let's build tiny, little, single-purpose apps once! And then for larger needs, simply glue together various micro-apps as needed per the project requirements.<br /><br />As far as I'm concerned, the old King of the Bloated Application is dead. It's been replaced with tons of tiny, decentralized micro-apps. Long live the Kinglets!<br /><br /><br /><br />
+So what the hell does <span style="font-style: italic;">that</span> mean?
+Well, there's sort of a back story there (but you can skip to the last
+paragraph of this post for the punchline).<br /><br />Earlier this year, I
+blogged about the language patterns of twisted: <a
+href="http://oubiwann.blogspot.com/2005/06/thinking-in-twisted.html">Thinking 
+in Twisted</a>. The use of and relationships between such things as protocols,
+clients, servers, and various factories in Twisted was really starting to make
+its way into my bones. These and other core aspects of Twisted best practices
+form the basis of a pattern language... one that is of immense value when
+writing network code and applications. Here are a couple quotes from that blog
+entry:<br /><blockquote>The tricky thing about Twisted is that its patterns
+are an integral part of its "language" (perhaps it would be better to stop
+using quotes, and just call it a meta-language...). This is not true of most
+other languages -- though I would venture to say it is true of good frameworks
+in general. You don't need to know the patterns to use the
+grammar/syntax/control structures of most languages. Patterns in a language
+are usually optional. [However, w]ith Twisted, if you aren't using the
+patterns, you aren't really using Twisted.<br /><br />When we learn to think
+in Twisted and write applications in Twisted, our solutions will be elegant
+and compact. Before that starts to happen, we try to use our "old" ways of
+python programming mixed in with the new one we are learning... and that, of
+course, defeats the purpose of the new "language."</blockquote>I've recently
+hit another level of awareness in pattern abstraction, and it has its roots in
+Twisted. In fact, I never would have been working on what I am now working on
+if it weren't for Twisted and all the work done by <a
+href="http://divmod.org/trac/">Divmod</a> and its crew. While at PyCon 2004, I
+met with Amir and Glyph and we discussed twisted's use in the industry at
+large, and in particular, opportunities for which the Divmod product line
+could be applicable.<br /><br />What I liked so much (and immediately) about
+what Divmod was doing was that they were integrating useful components into a
+single application (Quotient). It stuck a positive chord with my instincts
+about where software should be going, and it kept me thinking for months while
+I worked on other projects. These thoughts culminated in a series of blog
+entries and software projects. First, a post called <a
+href="http://oubiwann.blogspot.com/2004/03/dinosaurs-and-mammals.html">Dinosau
+rs and Mammals</a> explored this. In the intervening time, the projects I have
+worked on have helped me evolve these ideas usefully. There is now direction,
+code, and product (more about that later in this post).<br /><br />Then, in <a
+href="http://oubiwann.blogspot.com/2004/05/everything-as-distributed-resource.
+html">Everything as a Distributed Resource</a>, I took a more sci-fi, radical
+view... but one that is born out by current trends and tendencies,
+particularly in the cell phone market. There's a great deal we haven't thought
+about in regards to the cell phone market. Not so much about cell phones and
+mobile technology, but rather the usage patterns and demands that are being
+made and (sometimes) met in this sector.<br /><br />In an effort to follow
+through on the "mammal" paradigm, I did some exploration with URLdb and PyKon
+which I blogged briefly about in <a
+href="http://oubiwann.blogspot.com/2005/03/new-projects.html">New Projects</a>
+. The two projects mentioned there have since been merged into a project that
+we are calling Adytum's <a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollecti
+on/trunk/">Twisted Collection</a>. The latest addition to which is <a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollecti
+on/trunk/ImageDB/">ImageDB</a>.<br /><br />ImageDB is a repository for static
+graphic media. The images that people upload here can be viewed via it's web
+interface, but it is more likely the ImageDB would be used as a part of
+something else. For example, when I get around to finishing PyKon, it will
+make use of<br />ImageDB. PyKon will not store any images itself. It's simply
+going to be an nicely designed, usable image gallery interface. Users won't
+know that, though. They will use PyKon and be able to create galleries and
+albums in that gallery by uploading images (which will be stored --<br
+/>transparently to the user -- in an ImageDB instance), by selecting
+individual images (JavaScript ImageDB selector/browser), or by selecting
+"tags" a la del.icio.us (and therefore whole groups of<br />images).<br /><br
+/>Analogous to ImageDB is <a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollecti
+on/trunk/MessageDB/">MessageDB</a>, a repository for static text. It's next on
+the list to be developed. This micro-app will hardly ever be used directly,
+although it too will provide a basic web interface for viewing and editing
+stored content. MessageDB will be a storage app for&nbsp;RFC 2822-compliant
+"messages". For starters, various public mail list emails will get tagged and
+stored there.<br /><br />Non-dynamic text for web sites and blogs will be
+stored as RFC 2822 messages. So the forth-coming tools "SimpleSite" and
+"WeBlog" (also part of the collection) will actually store and pull their
+content from MessageDB. But even more, when you want to use a photo, clipart,
+or logo in your site or on your blog, you will click a "select image" link and
+an image thumbnail&nbsp;browser will pop up. You will select one of the
+thumbnails, the popup will go away, and a link to that resource in your
+ImageDB instance will be inserted for you, in your blog or site text.<br /><br
+/>The idea is that by abstracting out general functionality into little
+micro-apps, you not only decrease the amount of work in maintenance and
+feature addition, you not only are reducing the amount of redundant work you
+have to do when building content-related applications, but you&nbsp;are
+providing an infinite amount of flexibility for using these various media in
+completely unplanned and unexpected ways.<br /><br />Your media, it's storage,
+it's access (XML-RPC), now live in self-contained little units. They can
+"survive" on their own, without a heavy dependence upon&nbsp;some huge CMS
+that was written for a particular project. The apps are project-agnostic. They
+can be set up once and then reused repeatedly in different contexts by
+building new apps that obtain their data from the component micro-apps via
+simple links and/or XML-RPC calls.<br /><br />And, again, the ways in which
+users and designers decide to combine these pieces and how they decide to use
+that is 100% flexible and thus fertile ground for the unexpected and creative
+:-)<br /><br />I say "To Hell!" with large apps, and banish them forever!
+Let's build tiny, little, single-purpose apps once! And then for larger needs,
+simply glue together various micro-apps as needed per the project
+requirements.<br /><br />As far as I'm concerned, the old King of the Bloated
+Application is dead. It's been replaced with tons of tiny, decentralized
+micro-apps. Long live the Kinglets!<br /><br /><br /><br />

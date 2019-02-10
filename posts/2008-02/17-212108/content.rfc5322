@@ -11,4 +11,51 @@ Comments:
 Content-Type: md
 Public?: true
 
-Glyph recently blogged about some of the <a href="http://glyf.livejournal.com/75142.html">buried treasure in Twisted</a>, the <span style="font-family: monospace; font-size: 9pt;">filepath</span> module in particular. Since working at <a href="http://divmod.org/trac">Divmod</a>, I've made use of this module quite a bit, and thought I'd share some of the features that I've found most useful (and intuitively nice to use).<br /><br />Assuming you've got <a href="http://twistedmatrix.com/trac/">Twisted</a> installed, let's fire up a python interpreter and import the <span style="font-family: monospace; font-size: 9pt;">FilePath</span> class and instantiate it with <span style="font-family: monospace; font-size: 9pt;">/tmp&nbsp;</span>and test some basic operations:<br /><br /><script src="https://gist.github.com/3887605.js?file=01-interactive.py"></script> <br />Isn't that nice? I love not having to import and use the <span style="font-family: monospace; font-size: 9pt;">os.path.exists</span> function; it's a method on the object representing a file or a path, as it should be. I also enjoy the convenience <span style="font-family: monospace; font-size: 9pt;">FilePath</span> offers when it comes to creating paths:<br /><br /><script src="https://gist.github.com/3887605.js?file=02-interactive.py"></script> <br />We had to call <span style="font-family: monospace; font-size: 9pt;">restat()</span> so that the object would check the file system again (since we just made some changes). Now, for some files:<br /><br /><script src="https://gist.github.com/3887605.js?file=03-interactive.py"></script> <br />And if you don't believe that, we can switch to shell:<br /><br /><script src="https://gist.github.com/3887605.js?file=04-stdout.txt"></script> <br />Reading and writing operations are the same as usual:<br /><br /><script src="https://gist.github.com/3887605.js?file=05-interactive.py"></script> <br />But you can use shortcuts like this, too:<br /><br /><script src="https://gist.github.com/3887605.js?file=06-interactive.py"></script> <br />Let's get the path and recheck the file size, just to make sure:<br /><br /><script src="https://gist.github.com/3887605.js?file=07-interactive.py"></script> <br />Or, again from shell:<br /><br /><script src="https://gist.github.com/3887605.js?file=08-stdout.txt"></script> <br />Hmm... for some reason, I really like this file and want to keep it. What do I do?<br /><br /><script src="https://gist.github.com/3887605.js?file=09-interactive.py"></script> <br />That's it! Nice, eh? Of course, we're careful, so we check to make sure it happened:<br /><br /><script src="https://gist.github.com/3887605.js?file=10-interactive.py"></script> <br />To see more, check out the source, or at least do <span style="font-family: monospace; font-size: 9pt;">dir(FilePath)</span> to see what other goodies this class has to offer, and enjoy :-)<br /><br /><!-- technorati tags start --><br /><div style="font-size: 10px; text-align: right;">Technorati Tags: <a href="http://www.technorati.com/tag/howto" rel="tag">howto</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></div><!-- technorati tags end -->
+Glyph recently blogged about some of the <a
+href="http://glyf.livejournal.com/75142.html">buried treasure in Twisted</a>,
+the <span style="font-family: monospace; font-size: 9pt;">filepath</span>
+module in particular. Since working at <a
+href="http://divmod.org/trac">Divmod</a>, I've made use of this module quite a
+bit, and thought I'd share some of the features that I've found most useful
+(and intuitively nice to use).<br /><br />Assuming you've got <a
+href="http://twistedmatrix.com/trac/">Twisted</a> installed, let's fire up a
+python interpreter and import the <span style="font-family: monospace;
+font-size: 9pt;">FilePath</span> class and instantiate it with <span
+style="font-family: monospace; font-size: 9pt;">/tmp&nbsp;</span>and test some
+basic operations:<br /><br /><script
+src="https://gist.github.com/3887605.js?file=01-interactive.py"></script> <br
+/>Isn't that nice? I love not having to import and use the <span
+style="font-family: monospace; font-size: 9pt;">os.path.exists</span>
+function; it's a method on the object representing a file or a path, as it
+should be. I also enjoy the convenience <span style="font-family: monospace;
+font-size: 9pt;">FilePath</span> offers when it comes to creating paths:<br
+/><br /><script
+src="https://gist.github.com/3887605.js?file=02-interactive.py"></script> <br
+/>We had to call <span style="font-family: monospace; font-size:
+9pt;">restat()</span> so that the object would check the file system again
+(since we just made some changes). Now, for some files:<br /><br /><script
+src="https://gist.github.com/3887605.js?file=03-interactive.py"></script> <br
+/>And if you don't believe that, we can switch to shell:<br /><br /><script
+src="https://gist.github.com/3887605.js?file=04-stdout.txt"></script> <br
+/>Reading and writing operations are the same as usual:<br /><br /><script
+src="https://gist.github.com/3887605.js?file=05-interactive.py"></script> <br
+/>But you can use shortcuts like this, too:<br /><br /><script
+src="https://gist.github.com/3887605.js?file=06-interactive.py"></script> <br
+/>Let's get the path and recheck the file size, just to make sure:<br /><br
+/><script src="https://gist.github.com/3887605.js?file=07-interactive.py"></sc
+ript> <br />Or, again from shell:<br /><br /><script
+src="https://gist.github.com/3887605.js?file=08-stdout.txt"></script> <br
+/>Hmm... for some reason, I really like this file and want to keep it. What do
+I do?<br /><br /><script
+src="https://gist.github.com/3887605.js?file=09-interactive.py"></script> <br
+/>That's it! Nice, eh? Of course, we're careful, so we check to make sure it
+happened:<br /><br /><script
+src="https://gist.github.com/3887605.js?file=10-interactive.py"></script> <br
+/>To see more, check out the source, or at least do <span style="font-family:
+monospace; font-size: 9pt;">dir(FilePath)</span> to see what other goodies
+this class has to offer, and enjoy :-)<br /><br /><!-- technorati tags start
+--><br /><div style="font-size: 10px; text-align: right;">Technorati Tags: <a
+href="http://www.technorati.com/tag/howto" rel="tag">howto</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a
+href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></div><!--
+technorati tags end -->

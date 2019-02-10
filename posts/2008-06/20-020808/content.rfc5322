@@ -11,4 +11,137 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-UFw-54CdHh8/T68u-c2ePsI/AAAAAAAAAKI/52Nm1aD3meM/s1600/2000px-Twisted_Logo_(software).png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://1.bp.blogspot.com/-UFw-54CdHh8/T68u-c2ePsI/AAAAAAAAAKI/52Nm1aD3meM/s200/2000px-Twisted_Logo_(software).png" width="188" /></a></div>While drafting a Divmod announcement last week, I had a quick chat with a dot-bomb-era colleague of mine. Turns out, his team wants to do some cool asynchronous batching jobs, so he's taking a look at Twisted. Because he's a good guy and I like Twisted, I drew up some examples for him that should get him jump-started. Each example covered something in more depth that it's predecessor, so is probably generally useful. Thus this blog post :-)<br /><br />I didn't get a chance to show him a <a href="http://twistedmatrix.com/trac/browser/trunk/twisted/internet/defer.py#L905">DeferredSemaphore</a> example nor one for the <a href="http://twistedmatrix.com/trac/browser/trunk/twisted/internet/task.py#L182">Cooperator</a>, so I will take this opportunity to do so. For each of the examples below, you can save the code as a text file and call it with "python filname.py", and the output will be displayed.<br /><br />These examples don't attempt to give any sort of introduction to the complexities of asynchronous programming nor the problem domain of highly concurrent applications. Deferreds are covered in more depth <a href="http://twistedmatrix.com/projects/core/documentation/howto/deferredindepth.html">here</a> and <a href="http://twistedmatrix.com/projects/core/documentation/howto/defer.html">here</a>. However, hopefully this mini-howto will inspire curiosity about those :-)<br /><br /><b><br /></b><b>Example 1: Just a DefferedList</b><br /><script src="https://gist.github.com/3886139.js?file=01-deferred-list.py"></script> <br />This is one of the simplest examples you'll ever see for a deferred list in action. Get two deferreds (the <span style="font-family: 'courier new';">getPage</span> function returns a deferred) and use them to created a deferred list. Add callbacks to the list, garnish with a lemon.<br /><br /><b><br /></b><b>Example 2: Simple Result Manipulation</b><br /><script src="https://gist.github.com/3886139.js?file=02-deferred-list-results.py"></script> <br />We make things a little more interesting in this example by doing some processing on the results. For this to make sense, just remember that a callback gets passed the result when the deferred action completes. If we look up the <a href="http://twistedmatrix.com/documents/8.1.0/api/twisted.internet.defer.DeferredList.html">API documentation</a> for <span style="font-family: 'courier new';">DeferredList</span>, we see that it returns a list of <span style="font-family: 'courier new';">(success, result) </span>tuples, where <span style="font-family: 'courier new';">success</span> is a Boolean and <span style="font-family: 'courier new';">result</span> is the result of a deferred that was put in the list (remember, we've got <span style="font-style: italic;">two</span> layers of deferreds here!).<br /><br /><b><br /></b><b>Example 3: Page Callbacks Too</b><br /><script src="https://gist.github.com/3886139.js?file=03-page-callbacks.py"></script> <br />Here, we mix things up a little bit. Instead of doing processing on all the results at once (in the deferred list callback), we're processing them when the <span style="font-style: italic;">page</span> callbacks fire. Our processing here is just a simple example of getting the length of the <span style="font-family: 'courier new';">getPage</span> deferred result: the HTML content of the page at the given URL.<br /><br /><b><br /></b><b>Example 4: Results with More Structure</b><br /><script src="https://gist.github.com/3886139.js?file=04-results-with-structure.py"></script> <br />A follow-up to the last example, here we put the data in which we are interested into a dictionary. We don't end up pulling any of the data out of the dictionary; we just stringify it and print it to stdout.<br /><br /><b><br /></b><b>Example 5: Passing Values to Callbacks</b><br /><script src="https://gist.github.com/3886139.js?file=05-passing-values.py"></script> <br />After all this playing, we start asking ourselves more serious questions, like: "I want to decide which values show up in my callbacks" or "Some information that is available here, isn't available there. How do I get it there?" This is how :-) Just pass the parameters you want to your callback. They'll be tacked on after the result (as you can see from the function signatures).<br /><br />In this example, we needed to create our own deferred-returning function, one that wraps the <span style="font-family: 'courier new';">getPage</span> function so that we can also pass the URL on to the callback.<br /><br /><b><br /></b><b>Example 6: Adding Some Error Checking</b><br /><script src="https://gist.github.com/3886139.js?file=06-error-checking.py"></script> <br />As we get closer to building real applications, we start getting concerned about things like catching/anticipating errors. We haven't added any errbacks to the deferred list, but we have added one to our page callback. We've added more URLs and put them in a list to ease the pains of duplicate code. As you can see, two of the URLs should return errors: one a 404, and the other should be a domain not resolving (we'll see this as a timeout).<br /><br /><b><br /></b><b>Example 7: Batching with DeferredSemaphore</b><br /><script src="https://gist.github.com/3886139.js?file=07-deferred-semaphore.py"></script> <br />These last two examples are for more advanced use cases. As soon as the reactor starts, deferreds that are ready, start "firing" -- their "jobs" start running. What if we've got 500 deferreds in a list? Well, they all start processing. As you can imagine, this is an easy way to run an accidental DoS against a friendly service. Not cool.<br /><br />For situations like this, what we want is a way to run only so many deferreds at a time. This is a great use for the deferred semaphore. When I repeated runs of the example above, the content lengths of the four pages returned after about 2.5 seconds. With the example rewritten to use just the deferred list (no deferred semaphore), the content lengths were returned after about 1.2 seconds. The extra time is due to the fact that I (for the sake of the example) forced only one deferred to run at a time, obviously not what you're going to want to do for a highly concurrent task ;-)<br /><br />Note that without changing the code and only setting maxRun to 4, the timings for getting the the content lengths is about the same, averaging for me 1.3 seconds (there's a little more overhead involved when using the deferred semaphore).<br /><br />One last subtle note (in anticipation of the next example): the <span style="font-family: 'courier new';">for</span> loop creates all the deferreds at once; the deferred semaphore simply limits how many get run at a time.<br /><br /><b><br /></b><b>Example 8: Throttling with Cooperator</b><br /><script src="https://gist.github.com/3886139.js?file=08-cooperator.py"></script> <br />This is the last example for this post, and it's is probably the most arcane :-) This example is taken from <a href="http://jcalderone.livejournal.com/24285.html">JP's blog post</a> from a couple years ago. Our observation in the previous example about the way that the deferreds were created in the for loop and how they were run is now our counter example. What if we want to limit when the deferreds are created? What if we're using deferred semaphore to create 1000 deferreds (but only running them 50 at a time), but running out of file descriptors? Cooperator to the rescue.<br /><br />This one is going to require a little more explanation :-) Let's see if we can move through the justifications for the strangeness clearly: <br /><ol><li>We need the deferreds to be yielded so that the callback is not created until it's actually needed (as opposed to the situation in the deferred semaphore example where all the deferreds were created at once). </li><li>We need to call <span style="font-family: 'courier new';">doWork</span> before the <span style="font-family: 'courier new';">for</span> loop so that the generator is created outside the loop. thus making our way through the URLs (calling it inside the loop would give us all four URLs every iteration).</li><li>We removed the result-processing callback on the deferred list because <span style="font-family: 'courier new';">coop.coiterate</span> swallows our results; if we need to process, we have to do it with <span style="font-family: 'courier new';">pageCallback</span>.</li><li>We still use a deferred list as the means to determine when all the batches have finished. </li></ol>This example could have been written much more concisely: the <span style="font-family: 'courier new';">doWork</span> function could have been left in <span style="font-family: 'courier new';">test</span> as a generator expression and <span style="font-family: 'courier new';">test</span>'s <span style="font-family: 'courier new';">for</span> loop could have been a list comprehension. However, the point is to show very clearly what is going on.<br /><br />I hope these examples were informative and provide some practical insight on working with deferreds in your Twisted projects :-)<br /><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><div class="separator" style="clear:
+both; text-align: center;"><a
+href="http://1.bp.blogspot.com/-UFw-54CdHh8/T68u-c2ePsI/AAAAAAAAAKI/52Nm1aD3me
+M/s1600/2000px-Twisted_Logo_(software).png" imageanchor="1" style="clear:
+left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+height="200" src="http://1.bp.blogspot.com/-UFw-54CdHh8/T68u-c2ePsI/AAAAAAAAAK
+I/52Nm1aD3meM/s200/2000px-Twisted_Logo_(software).png" width="188"
+/></a></div>While drafting a Divmod announcement last week, I had a quick chat
+with a dot-bomb-era colleague of mine. Turns out, his team wants to do some
+cool asynchronous batching jobs, so he's taking a look at Twisted. Because
+he's a good guy and I like Twisted, I drew up some examples for him that
+should get him jump-started. Each example covered something in more depth that
+it's predecessor, so is probably generally useful. Thus this blog post :-)<br
+/><br />I didn't get a chance to show him a <a
+href="http://twistedmatrix.com/trac/browser/trunk/twisted/internet/defer.py#L9
+05">DeferredSemaphore</a> example nor one for the <a
+href="http://twistedmatrix.com/trac/browser/trunk/twisted/internet/task.py#L18
+2">Cooperator</a>, so I will take this opportunity to do so. For each of the
+examples below, you can save the code as a text file and call it with "python
+filname.py", and the output will be displayed.<br /><br />These examples don't
+attempt to give any sort of introduction to the complexities of asynchronous
+programming nor the problem domain of highly concurrent applications.
+Deferreds are covered in more depth <a
+href="http://twistedmatrix.com/projects/core/documentation/howto/deferredindep
+th.html">here</a> and <a
+href="http://twistedmatrix.com/projects/core/documentation/howto/defer.html">h
+ere</a>. However, hopefully this mini-howto will inspire curiosity about those
+:-)<br /><br /><b><br /></b><b>Example 1: Just a DefferedList</b><br /><script
+src="https://gist.github.com/3886139.js?file=01-deferred-list.py"></script> <b
+r />This is one of the simplest examples you'll ever see for a deferred list
+in action. Get two deferreds (the <span style="font-family: 'courier
+new';">getPage</span> function returns a deferred) and use them to created a
+deferred list. Add callbacks to the list, garnish with a lemon.<br /><br
+/><b><br /></b><b>Example 2: Simple Result Manipulation</b><br /><script
+src="https://gist.github.com/3886139.js?file=02-deferred-list-results.py"></sc
+ript> <br />We make things a little more interesting in this example by doing
+some processing on the results. For this to make sense, just remember that a
+callback gets passed the result when the deferred action completes. If we look
+up the <a
+href="http://twistedmatrix.com/documents/8.1.0/api/twisted.internet.defer.Defe
+rredList.html">API documentation</a> for <span style="font-family: 'courier
+new';">DeferredList</span>, we see that it returns a list of <span
+style="font-family: 'courier new';">(success, result) </span>tuples, where
+<span style="font-family: 'courier new';">success</span> is a Boolean and
+<span style="font-family: 'courier new';">result</span> is the result of a
+deferred that was put in the list (remember, we've got <span
+style="font-style: italic;">two</span> layers of deferreds here!).<br /><br
+/><b><br /></b><b>Example 3: Page Callbacks Too</b><br /><script
+src="https://gist.github.com/3886139.js?file=03-page-callbacks.py"></script> <
+br />Here, we mix things up a little bit. Instead of doing processing on all
+the results at once (in the deferred list callback), we're processing them
+when the <span style="font-style: italic;">page</span> callbacks fire. Our
+processing here is just a simple example of getting the length of the <span
+style="font-family: 'courier new';">getPage</span> deferred result: the HTML
+content of the page at the given URL.<br /><br /><b><br /></b><b>Example 4:
+Results with More Structure</b><br /><script
+src="https://gist.github.com/3886139.js?file=04-results-with-structure.py"></s
+cript> <br />A follow-up to the last example, here we put the data in which we
+are interested into a dictionary. We don't end up pulling any of the data out
+of the dictionary; we just stringify it and print it to stdout.<br /><br
+/><b><br /></b><b>Example 5: Passing Values to Callbacks</b><br /><script
+src="https://gist.github.com/3886139.js?file=05-passing-values.py"></script> <
+br />After all this playing, we start asking ourselves more serious questions,
+like: "I want to decide which values show up in my callbacks" or "Some
+information that is available here, isn't available there. How do I get it
+there?" This is how :-) Just pass the parameters you want to your callback.
+They'll be tacked on after the result (as you can see from the function
+signatures).<br /><br />In this example, we needed to create our own
+deferred-returning function, one that wraps the <span style="font-family:
+'courier new';">getPage</span> function so that we can also pass the URL on to
+the callback.<br /><br /><b><br /></b><b>Example 6: Adding Some Error
+Checking</b><br /><script
+src="https://gist.github.com/3886139.js?file=06-error-checking.py"></script> <
+br />As we get closer to building real applications, we start getting
+concerned about things like catching/anticipating errors. We haven't added any
+errbacks to the deferred list, but we have added one to our page callback.
+We've added more URLs and put them in a list to ease the pains of duplicate
+code. As you can see, two of the URLs should return errors: one a 404, and the
+other should be a domain not resolving (we'll see this as a timeout).<br /><br
+/><b><br /></b><b>Example 7: Batching with DeferredSemaphore</b><br /><script
+src="https://gist.github.com/3886139.js?file=07-deferred-semaphore.py"></scrip
+t> <br />These last two examples are for more advanced use cases. As soon as
+the reactor starts, deferreds that are ready, start "firing" -- their "jobs"
+start running. What if we've got 500 deferreds in a list? Well, they all start
+processing. As you can imagine, this is an easy way to run an accidental DoS
+against a friendly service. Not cool.<br /><br />For situations like this,
+what we want is a way to run only so many deferreds at a time. This is a great
+use for the deferred semaphore. When I repeated runs of the example above, the
+content lengths of the four pages returned after about 2.5 seconds. With the
+example rewritten to use just the deferred list (no deferred semaphore), the
+content lengths were returned after about 1.2 seconds. The extra time is due
+to the fact that I (for the sake of the example) forced only one deferred to
+run at a time, obviously not what you're going to want to do for a highly
+concurrent task ;-)<br /><br />Note that without changing the code and only
+setting maxRun to 4, the timings for getting the the content lengths is about
+the same, averaging for me 1.3 seconds (there's a little more overhead
+involved when using the deferred semaphore).<br /><br />One last subtle note
+(in anticipation of the next example): the <span style="font-family: 'courier
+new';">for</span> loop creates all the deferreds at once; the deferred
+semaphore simply limits how many get run at a time.<br /><br /><b><br
+/></b><b>Example 8: Throttling with Cooperator</b><br /><script
+src="https://gist.github.com/3886139.js?file=08-cooperator.py"></script> <br
+/>This is the last example for this post, and it's is probably the most arcane
+:-) This example is taken from <a
+href="http://jcalderone.livejournal.com/24285.html">JP's blog post</a> from a
+couple years ago. Our observation in the previous example about the way that
+the deferreds were created in the for loop and how they were run is now our
+counter example. What if we want to limit when the deferreds are created? What
+if we're using deferred semaphore to create 1000 deferreds (but only running
+them 50 at a time), but running out of file descriptors? Cooperator to the
+rescue.<br /><br />This one is going to require a little more explanation :-)
+Let's see if we can move through the justifications for the strangeness
+clearly: <br /><ol><li>We need the deferreds to be yielded so that the
+callback is not created until it's actually needed (as opposed to the
+situation in the deferred semaphore example where all the deferreds were
+created at once). </li><li>We need to call <span style="font-family: 'courier
+new';">doWork</span> before the <span style="font-family: 'courier
+new';">for</span> loop so that the generator is created outside the loop. thus
+making our way through the URLs (calling it inside the loop would give us all
+four URLs every iteration).</li><li>We removed the result-processing callback
+on the deferred list because <span style="font-family: 'courier
+new';">coop.coiterate</span> swallows our results; if we need to process, we
+have to do it with <span style="font-family: 'courier
+new';">pageCallback</span>.</li><li>We still use a deferred list as the means
+to determine when all the batches have finished. </li></ol>This example could
+have been written much more concisely: the <span style="font-family: 'courier
+new';">doWork</span> function could have been left in <span
+style="font-family: 'courier new';">test</span> as a generator expression and
+<span style="font-family: 'courier new';">test</span>'s <span
+style="font-family: 'courier new';">for</span> loop could have been a list
+comprehension. However, the point is to show very clearly what is going on.<br
+/><br />I hope these examples were informative and provide some practical
+insight on working with deferreds in your Twisted projects :-)<br /><br
+/></div>

@@ -11,4 +11,34 @@ Comments:
 Content-Type: md
 Public?: true
 
-<a href="http://www.tummy.com/journals/users/jafo">Sean Reifschneider</a> of <a href="http://www.tummy.com/">tummy.com</a> (Twisted and PyCon sponsor) started up <a href="http://wiki.python.org/moin/FrontRangePythoneers">Front Range Pythoneers</a> here in Colorado about <a href="http://en.wikipedia.org/wiki/Pleistocene">a million years ago</a>. Last year at PyCon 2006 Jim Baker talked about breathing life back into it... and he has. Today was not only proof of this (and my first meeting) but yet more validation of the local python community: enthusiastic, motivated and highly intelligent . Sean presented his <a href="http://www.tummy.com/Community/Presentations/vimpython-20070225/vim.html">PyCon 2007 Vim+python talk</a> and Matt Boersma gave his <a href="http://us.pycon.org/zope/talks/2007/sun/track4/079/talkDetails2">wxPython and XRC talk</a>.<br /><br />Afterwards, I talked with Fernando Perez about <a href="http://ipython.scipy.org/moin/">IPython</a> and its distributed computing branch, lead by Brian Granger and Benjamin Kelly (yet another physics guy/python coder). They are doing interesting things with Twisted and IPython, stuff that was brought up at the Twisted BoFs at PyCon this year (and in which radix and I took an interest). I look forward to attending <a href="http://ipython.scipy.org/moin/Developer_Zone/Sprint">the sprint in April</a> and <a href="http://ipython.scipy.org/moin/BrianGranger">looking over Brian's shoulder</a>, getting up to speed on how they are using Twisted and what they want to be doing (possibly exploring the use of <a href="http://twistedmatrix.com/projects/conch/documentation/examples">twisted.conch.insults</a> in IPython).<br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/colorado" rel="tag">colorado</a>, <a href="http://www.technorati.com/tag/community" rel="tag">community</a>, <a href="http://www.technorati.com/tag/open source" rel="tag">open source</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></p><!-- technorati tags end -->
+<a href="http://www.tummy.com/journals/users/jafo">Sean Reifschneider</a> of
+<a href="http://www.tummy.com/">tummy.com</a> (Twisted and PyCon sponsor)
+started up <a href="http://wiki.python.org/moin/FrontRangePythoneers">Front
+Range Pythoneers</a> here in Colorado about <a
+href="http://en.wikipedia.org/wiki/Pleistocene">a million years ago</a>. Last
+year at PyCon 2006 Jim Baker talked about breathing life back into it... and
+he has. Today was not only proof of this (and my first meeting) but yet more
+validation of the local python community: enthusiastic, motivated and highly
+intelligent . Sean presented his <a
+href="http://www.tummy.com/Community/Presentations/vimpython-20070225/vim.html
+">PyCon 2007 Vim+python talk</a> and Matt Boersma gave his <a
+href="http://us.pycon.org/zope/talks/2007/sun/track4/079/talkDetails2">wxPytho
+n and XRC talk</a>.<br /><br />Afterwards, I talked with Fernando Perez about
+<a href="http://ipython.scipy.org/moin/">IPython</a> and its distributed
+computing branch, lead by Brian Granger and Benjamin Kelly (yet another
+physics guy/python coder). They are doing interesting things with Twisted and
+IPython, stuff that was brought up at the Twisted BoFs at PyCon this year (and
+in which radix and I took an interest). I look forward to attending <a
+href="http://ipython.scipy.org/moin/Developer_Zone/Sprint">the sprint in
+April</a> and <a href="http://ipython.scipy.org/moin/BrianGranger">looking
+over Brian's shoulder</a>, getting up to speed on how they are using Twisted
+and what they want to be doing (possibly exploring the use of <a
+href="http://twistedmatrix.com/projects/conch/documentation/examples">twisted.
+conch.insults</a> in IPython).<br /><!-- technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/colorado" rel="tag">colorado</a>, <a
+href="http://www.technorati.com/tag/community" rel="tag">community</a>, <a
+href="http://www.technorati.com/tag/open source" rel="tag">open source</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a
+href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></p><!--
+technorati tags end -->

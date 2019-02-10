@@ -11,4 +11,25 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div>For part of this week, I've been flown back to Annapolis, MD for a few days, ostensibly for the holiday party, but in addition, to coordinate in-person with <a href="http://encoreopus.com/">Mark Hinkle</a> and Rusty Wilson on the infrastructure and code needed for the next 6 month community push. In an effort to jump-start a whole set of community tools that Zenoss wants to provide, I've finished up some pretty sweet (yes, unit tests are sweet and so it automated web application/form processing/monitoring) additions to Zenoss Core and I am now switching gears to integrate community communications and work on the Super Secret Zenoss.net project (lots of Zope3 + Five + Plone hacking). Pretty fun stuff.</div><br /><div>It's been really cool being back with the Zenoss core team this week -- lots of changes have happened since August: additional (and pretty sweet) office space, lots more people, lots of awesome code being produced by Erik Dahl, Eric Newton and Chris Blunck that I haven't had a chance to see until now. There a bunch more stuff that I can't let out of the bag yet, but is most excitimentful. Well, it is if you're into monitoring and systems/network management... and the software that helps you do that :-)</div><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/business" rel="tag">business</a>, <a href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a href="http://www.technorati.com/tag/zope 3" rel="tag">zope 3</a></p><!-- technorati tags end -->
+<div>For part of this week, I've been flown back to Annapolis, MD for a few
+days, ostensibly for the holiday party, but in addition, to coordinate
+in-person with <a href="http://encoreopus.com/">Mark Hinkle</a> and Rusty
+Wilson on the infrastructure and code needed for the next 6 month community
+push. In an effort to jump-start a whole set of community tools that Zenoss
+wants to provide, I've finished up some pretty sweet (yes, unit tests are
+sweet and so it automated web application/form processing/monitoring)
+additions to Zenoss Core and I am now switching gears to integrate community
+communications and work on the Super Secret Zenoss.net project (lots of Zope3
++ Five + Plone hacking). Pretty fun stuff.</div><br /><div>It's been really
+cool being back with the Zenoss core team this week -- lots of changes have
+happened since August: additional (and pretty sweet) office space, lots more
+people, lots of awesome code being produced by Erik Dahl, Eric Newton and
+Chris Blunck that I haven't had a chance to see until now. There a bunch more
+stuff that I can't let out of the bag yet, but is most excitimentful. Well, it
+is if you're into monitoring and systems/network management... and the
+software that helps you do that :-)</div><br /><!-- technorati tags start
+--><p style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/business" rel="tag">business</a>, <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a
+href="http://www.technorati.com/tag/zope 3" rel="tag">zope 3</a></p><!--
+technorati tags end -->

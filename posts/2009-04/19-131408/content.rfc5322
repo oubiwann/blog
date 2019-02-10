@@ -11,4 +11,72 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><span style="font-weight: bold;">After the Cloud:</span><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-prelude.html">Prelude</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-so-far.html">So Far</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-new-big.html">The New Big</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-to-atomic-computation-and.html">To Atomic Computation and Beyond</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-open-heaps.html">Open Heaps</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-heaps-of-cash.html">Heaps of Cash</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-epilogue.html">Epilogue</a></li></ol><br /><span style="font-weight: bold;">Systems Engineering in a Box</span><br /><br />The recent redefinition of "the cloud" as a service and commodity is a brilliant bit of frugal resource management (making use of idle resources in an expensive data center) coupled with flawless marketing. Yes, from a business perspective, that's an amazing coup. But it's the 30,000 foot technical perspective that really impresses me:<br /><br />In the same way that software frameworks, their libraries, and best practices have, through the trials of last 40 tears, productized application engineering, the cloud has started to experience something similar. What everyone is now calling the cloud is really the productization of systems engineering.<br /><br />Systems engineering (and the management of related resources) has proven to be an expensive, time-consuming endeavor best left to the experts. Sadly, those that need it are often in the unenviable position of having to determine who the experts are without having the proper background to do so effectively. When the planning, building, and management of large systems works well, it's a labor of sweat and blood. When it doesn't, it's the same thing, with a nightmare tinge about the whole thing coupled with an odd time-dilation effect.<br /><br />It seems that in applicable circumstances, some businesses are spared that nightmare by using a <a href="http://www.ibm.com/ibm/cloud/">cloud service</a> or <a href="http://eucalyptus.cs.ucsb.edu/">product</a>.<br /><br /><span style="font-weight: bold;">Bionic CGI</span><br /><br />As someone with a long history and interest in application development, I was particularly keen on <a href="http://code.google.com/appengine/docs/whatisgoogleappengine.html">Google App Engine</a> when it came out. This was a different take on the cloud, one that <a href="http://www.mosso.com/cloud.jsp">Mosso</a> also seems to be embracing: upload an application that is capable of having it's data access and views distributed/load balanced across multiple systems (virtual or otherwise).<br /><br />This is essentially CGI's grandchild. You have an application that needs to be started up by any number of machines in response to demand. A CGI app in Mosso will probably need very few (if any) adjustments required in order to run "in the cloud." Google is a special case, since developers are using custom, black-box infrastructure built by Google (for insights into this, check out <a href="http://research.google.com/pubs/papers.html">these papers</a>), but I'd be willing to bet someone lunch that there is room for a CGI analogy at some level of Google App Engine.I guess with Google, we kind of have both application <span style="font-style: italic;">and</span> systems engineering in a box, in so far as the systems support your application.<br /><br />At any rate, it's CGI better than it was before. Better, stronger, faster.<br /><br /><span style="font-weight: bold;">The Rub</span><br /><br />However fascinating these cloud offerings may be, I find myself not getting what I need. As a developer of <a href="http://twistedmatrix.com/trac/">Twisted</a> applications, I'm interested in small apps. Hell, I don't even like running databases and full-blown web servers. A while ago, I spent a couple years working on some Twisted-based application components that could be run as independent services (thus load-balanceable) and completely replace the standard web server + database + lots of code routine for application development.<br /><br />So what about developers out there like me, who want to run tiny apps? We don't need "classic" web hosting, nor CGI in the cloud, nor cloud-virutualized versions of large machines.<br /><br />As a segment of the population, business consideration for developers such as myself might seem like a waste of time. But before dismissing us, consider this:<br /><ol><li>Exploring small niche's like this one often lead to interesting revelations.</li><li>Market segments that have proven quite vibrant may be able to expand into even greater territories (e.g., the iPhone apps phenomena).</li></ol><span style="font-style: italic;">Next up</span>: Tiny &gt; *<br /><br /><br /><br /></div>
+<div><br /><span style="font-weight: bold;">After the Cloud:</span><br
+/><ol><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-prelude.ht
+ml">Prelude</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cl
+oud-so-far.html">So Far</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/04/after-cloud-new-big.html">The New
+Big</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-to-a
+tomic-computation-and.html">To Atomic Computation and Beyond</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/05/after-cloud-open-heaps.html">Open H
+eaps</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-hea
+ps-of-cash.html">Heaps of Cash</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/05/after-cloud-epilogue.html">Epilogue
+</a></li></ol><br /><span style="font-weight: bold;">Systems Engineering in a
+Box</span><br /><br />The recent redefinition of "the cloud" as a service and
+commodity is a brilliant bit of frugal resource management (making use of idle
+resources in an expensive data center) coupled with flawless marketing. Yes,
+from a business perspective, that's an amazing coup. But it's the 30,000 foot
+technical perspective that really impresses me:<br /><br />In the same way
+that software frameworks, their libraries, and best practices have, through
+the trials of last 40 tears, productized application engineering, the cloud
+has started to experience something similar. What everyone is now calling the
+cloud is really the productization of systems engineering.<br /><br />Systems
+engineering (and the management of related resources) has proven to be an
+expensive, time-consuming endeavor best left to the experts. Sadly, those that
+need it are often in the unenviable position of having to determine who the
+experts are without having the proper background to do so effectively. When
+the planning, building, and management of large systems works well, it's a
+labor of sweat and blood. When it doesn't, it's the same thing, with a
+nightmare tinge about the whole thing coupled with an odd time-dilation
+effect.<br /><br />It seems that in applicable circumstances, some businesses
+are spared that nightmare by using a <a
+href="http://www.ibm.com/ibm/cloud/">cloud service</a> or <a
+href="http://eucalyptus.cs.ucsb.edu/">product</a>.<br /><br /><span
+style="font-weight: bold;">Bionic CGI</span><br /><br />As someone with a long
+history and interest in application development, I was particularly keen on <a
+href="http://code.google.com/appengine/docs/whatisgoogleappengine.html">Google
+App Engine</a> when it came out. This was a different take on the cloud, one
+that <a href="http://www.mosso.com/cloud.jsp">Mosso</a> also seems to be
+embracing: upload an application that is capable of having it's data access
+and views distributed/load balanced across multiple systems (virtual or
+otherwise).<br /><br />This is essentially CGI's grandchild. You have an
+application that needs to be started up by any number of machines in response
+to demand. A CGI app in Mosso will probably need very few (if any) adjustments
+required in order to run "in the cloud." Google is a special case, since
+developers are using custom, black-box infrastructure built by Google (for
+insights into this, check out <a
+href="http://research.google.com/pubs/papers.html">these papers</a>), but I'd
+be willing to bet someone lunch that there is room for a CGI analogy at some
+level of Google App Engine.I guess with Google, we kind of have both
+application <span style="font-style: italic;">and</span> systems engineering
+in a box, in so far as the systems support your application.<br /><br />At any
+rate, it's CGI better than it was before. Better, stronger, faster.<br /><br
+/><span style="font-weight: bold;">The Rub</span><br /><br />However
+fascinating these cloud offerings may be, I find myself not getting what I
+need. As a developer of <a href="http://twistedmatrix.com/trac/">Twisted</a>
+applications, I'm interested in small apps. Hell, I don't even like running
+databases and full-blown web servers. A while ago, I spent a couple years
+working on some Twisted-based application components that could be run as
+independent services (thus load-balanceable) and completely replace the
+standard web server + database + lots of code routine for application
+development.<br /><br />So what about developers out there like me, who want
+to run tiny apps? We don't need "classic" web hosting, nor CGI in the cloud,
+nor cloud-virutualized versions of large machines.<br /><br />As a segment of
+the population, business consideration for developers such as myself might
+seem like a waste of time. But before dismissing us, consider this:<br
+/><ol><li>Exploring small niche's like this one often lead to interesting
+revelations.</li><li>Market segments that have proven quite vibrant may be
+able to expand into even greater territories (e.g., the iPhone apps
+phenomena).</li></ol><span style="font-style: italic;">Next up</span>: Tiny
+&gt; *<br /><br /><br /><br /></div>

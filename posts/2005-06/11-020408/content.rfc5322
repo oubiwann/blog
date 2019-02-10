@@ -11,4 +11,20 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software</i><br/><br/><p/><br /><div blog="entry"><p><br />pymon is nearing its second public release (but first packaged <br />release). We've spent the past couple months doing a refactor by <br />examining the patters we were using or not using. In the process, we <br />have made MUCH better use of twisted's internals and are increasingly <br />more impressed with it as a networking application development <br />framework. To be honest, I would be very happy doing full-time twisted <br />development now.<br /></p><br /><p>Email alerts are turned on; ping hosts are running; HTTP status, HTTP <br />text checks, DNS dig checks, and MySQL admin queries are currently <br />being developed. We're going to try to knock out FTP and SMTP in the <br />next couple weeks, as well -- and then we'll bundle it up and release <br />it :-)</p><p>A tentative road map is up on the wiki, and we've got the beginnings of <br />developer docs on how to write "monitors" (like ping checks, HTTP <br />status checks, etc.).</p><p><br /><a href="http://pymon.sf.net">http://pymon.sf.net</a><br /></p><p/></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i
+class="categories">software</i><br/><br/><p/><br /><div blog="entry"><p><br
+/>pymon is nearing its second public release (but first packaged <br
+/>release). We've spent the past couple months doing a refactor by <br
+/>examining the patters we were using or not using. In the process, we <br
+/>have made MUCH better use of twisted's internals and are increasingly <br
+/>more impressed with it as a networking application development <br
+/>framework. To be honest, I would be very happy doing full-time twisted <br
+/>development now.<br /></p><br /><p>Email alerts are turned on; ping hosts
+are running; HTTP status, HTTP <br />text checks, DNS dig checks, and MySQL
+admin queries are currently <br />being developed. We're going to try to knock
+out FTP and SMTP in the <br />next couple weeks, as well -- and then we'll
+bundle it up and release <br />it :-)</p><p>A tentative road map is up on the
+wiki, and we've got the beginnings of <br />developer docs on how to write
+"monitors" (like ping checks, HTTP <br />status checks, etc.).</p><p><br /><a
+href="http://pymon.sf.net">http://pymon.sf.net</a><br /></p><p/></div><br
+/></div>

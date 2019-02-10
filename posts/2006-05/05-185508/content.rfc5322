@@ -11,4 +11,27 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted :: python :: web</i><br /><br /><br /><br /><br /><div class="entry"><br /><p><br />A recent comment on my<br /><a href="http://oubiwann.blogspot.com/2006/03/twisted-json-rpc.html">Twisted<br />JSON-RPC blog entry</a><br />put this near the top of my queue. I posted a comment in response to<br />the request for a download link (see my<br /><a href="http://tinyurl.com/gmfwl#c114686525719845589">comments</a><br />about that).<br /></p><p>Please read those comments before downloading this, so you are aware of<br />the connection (or lack thereof) to official twisted code, as well as<br />my reservations on the matter. In addition to providing this link, I<br />will do the following: create a twisted.web2 version of the JSON-RPC<br />code this weekend, make an attempt to define a sensible twisted<br />protocol for JSON-RPC over TCP, and (time-permitting) begin work on a<br />twisted TCP JSON-RPC server and client. I have created a project space<br />for this work<br /><a href="http://projects.adytum.us/tracs/JSON-RPC">here</a>.</p><p></p></div><span style="font-weight: bold;">Update</span>: There is now a twisted.web2 version of the JSON-RPC server available on the project page (all unit tests pass). There is an example server.tac file you can run as well as an example twisted client. Some time later tonight -- or rather, very early this morning (2006.05.06) -- I will put some eggs up and provide a link on the project page.<br /><br /><br /><br /><br /><div class="now_playing"> Now playing:<br /> <pre>Glenn Gould - The Art of Fugue, BWV 1080: Contrapunctus XI (a 4)</pre><br /></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted ::
+python :: web</i><br /><br /><br /><br /><br /><div class="entry"><br /><p><br
+/>A recent comment on my<br /><a
+href="http://oubiwann.blogspot.com/2006/03/twisted-json-rpc.html">Twisted<br /
+>JSON-RPC blog entry</a><br />put this near the top of my queue. I posted a
+comment in response to<br />the request for a download link (see my<br /><a
+href="http://tinyurl.com/gmfwl#c114686525719845589">comments</a><br />about
+that).<br /></p><p>Please read those comments before downloading this, so you
+are aware of<br />the connection (or lack thereof) to official twisted code,
+as well as<br />my reservations on the matter. In addition to providing this
+link, I<br />will do the following: create a twisted.web2 version of the
+JSON-RPC<br />code this weekend, make an attempt to define a sensible
+twisted<br />protocol for JSON-RPC over TCP, and (time-permitting) begin work
+on a<br />twisted TCP JSON-RPC server and client. I have created a project
+space<br />for this work<br /><a
+href="http://projects.adytum.us/tracs/JSON-RPC">here</a>.</p><p></p></div><spa
+n style="font-weight: bold;">Update</span>: There is now a twisted.web2
+version of the JSON-RPC server available on the project page (all unit tests
+pass). There is an example server.tac file you can run as well as an example
+twisted client. Some time later tonight -- or rather, very early this morning
+(2006.05.06) -- I will put some eggs up and provide a link on the project
+page.<br /><br /><br /><br /><br /><div class="now_playing"> Now playing:<br
+/> <pre>Glenn Gould - The Art of Fugue, BWV 1080: Contrapunctus XI (a
+4)</pre><br /></div></div>

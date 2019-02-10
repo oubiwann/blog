@@ -11,4 +11,34 @@ Comments:
 Content-Type: md
 Public?: true
 
-<a href="http://www.shirky.com/writings/evolve.html" title="Shirky: In Praise of Evolvable Systems">Shirky: In Praise of Evolvable Systems</a> first appeared in the ACM's net_worker, 1996, and there are some particularly thought-provoking comments that Clay Shirky makes:<br /><blockquote>...the Web's poorer engineering qualities seem not merely desirable but essential.</blockquote><blockquote>The effects of this ease of implementation, as opposed to the difficulties of launching a Gopher index or making a CD-ROM, are twofold: a huge increase in truly pointless and stupid content soaking up bandwidth; and, as a direct result, a rush to find ways to compete with all the noise through the creation of interesting work. The quality of the best work on the Web today has not happened in spite of the mass of garbage out there, but in part because of it.</blockquote><blockquote>Finally, Orgel's Rule, named for the evolutionary biologist Leslie Orgel -- "Evolution is cleverer than you are". As with the list of the Web's obvious deficiencies above, it is easy to point out what is wrong with any evolvable system at any point in its life... However, the ability to understand what is missing at any given moment does not mean that one person or a small central group can design a better system in the long haul.</blockquote><blockquote>Centrally designed protocols start out strong and improve logarithmically. Evolvable protocols start out weak and improve exponentially. It's dinosaurs vs. mammals, and the mammals win every time. The Web is not the perfect hypertext protocol, just the best one that's also currently practical. Infrastructure built on evolvable protocols will always be partially incomplete, partially wrong and ultimately better designed than its competition.<br /><br />As with the early Web, the 'glue' protocol subsumes the other protocols and produces a kind of weak integration, but weak integration is better than no integration at all, and it is far easier to move from weak integration to strong integration than from none to some. In 5 years, DVD, HDTV, voice-over-IP, and Java will all be able to interoperate because of some new set of protocols which, like HTTP and HTML, is going to be weak, relatively uncoordinated, imperfectly implemented and, in the end, invincible.</blockquote>
+<a href="http://www.shirky.com/writings/evolve.html" title="Shirky: In Praise
+of Evolvable Systems">Shirky: In Praise of Evolvable Systems</a> first
+appeared in the ACM's net_worker, 1996, and there are some particularly
+thought-provoking comments that Clay Shirky makes:<br /><blockquote>...the
+Web's poorer engineering qualities seem not merely desirable but
+essential.</blockquote><blockquote>The effects of this ease of implementation,
+as opposed to the difficulties of launching a Gopher index or making a CD-ROM,
+are twofold: a huge increase in truly pointless and stupid content soaking up
+bandwidth; and, as a direct result, a rush to find ways to compete with all
+the noise through the creation of interesting work. The quality of the best
+work on the Web today has not happened in spite of the mass of garbage out
+there, but in part because of it.</blockquote><blockquote>Finally, Orgel's
+Rule, named for the evolutionary biologist Leslie Orgel -- "Evolution is
+cleverer than you are". As with the list of the Web's obvious deficiencies
+above, it is easy to point out what is wrong with any evolvable system at any
+point in its life... However, the ability to understand what is missing at any
+given moment does not mean that one person or a small central group can design
+a better system in the long haul.</blockquote><blockquote>Centrally designed
+protocols start out strong and improve logarithmically. Evolvable protocols
+start out weak and improve exponentially. It's dinosaurs vs. mammals, and the
+mammals win every time. The Web is not the perfect hypertext protocol, just
+the best one that's also currently practical. Infrastructure built on
+evolvable protocols will always be partially incomplete, partially wrong and
+ultimately better designed than its competition.<br /><br />As with the early
+Web, the 'glue' protocol subsumes the other protocols and produces a kind of
+weak integration, but weak integration is better than no integration at all,
+and it is far easier to move from weak integration to strong integration than
+from none to some. In 5 years, DVD, HDTV, voice-over-IP, and Java will all be
+able to interoperate because of some new set of protocols which, like HTTP and
+HTML, is going to be weak, relatively uncoordinated, imperfectly implemented
+and, in the end, invincible.</blockquote>

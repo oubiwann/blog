@@ -11,4 +11,105 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml">I first started drafting this post a few months ago, out of excitement for the work that JP and Glyph have been doing in the Divmod open source stack codebase. I was planning on entering the acronym fray with a title like "*MAP: An Alterantive to LAMP" where *MAP (pronounced "starmap") would be "Any OS, Mantissa, Axiom, and Python." A good friend of mine whose opinion I value said that *MAP was a <i>terrible</i> name, and after chatting about it with Glyph, he commented "Why not keep it really simple? Just say 'Mantissa.'"<br /><br />And so it is :-)<br /><br />For those that don't know, <a href="http://divmod.org/trac/wiki/DivmodMantissa">Mantissa</a> is the Twisted application server and <a href="http://divmod.org/trac/wiki/DivmodAxiom">Axiom</a> is a Twisted-based object database. By virtue of what are called "<a href="http://twistedmatrix.com/projects/core/documentation/howto/deferredindepth.html">deferreds</a>," Twisted allows you to write highly concurrent applications. Mantissa -- the Divmod stack (Mantissa entails Python, Twisted, and Axiom because it requires them) -- provides developers a means of scaling their Twisted-based, asynchronous applications. This means that you can go from experiments or prototypes to multi-node production deployments with the same set of tools and code.<br /><br />As such, this is a direct competitor for LAMP. Here are some questions about that: What is the value of a full stack? Why is an alternative to LAMP good or needed? What <i>is</i> a good alternative?<br /><br /><b>Stacked Development Value</b><br /><br />What does a full stack give us, as developers? From a practical perspective, it:<br /><ul><li>eliminates the overheard involved in setting up a system in preparation for development</li><li>provides a development toolset</li><li>provides a context within which design patterns have been established and utilized </li></ul>In other words, we can do things like pop in a CD, install an OS, have it meet all the software dependencies for our development tasks (since we're talking about LAMP, we mean development for the web), and either know how to build what we need or who to ask that can point us in the right direction. LAMP gives us this and, thanks to OS distributions like Ubuntu, gives it to us cheaply through simple button-pushing.<br /><br />Do notice, however, that I said nothing about "going live" or "pushing to production"...<br /><br /><b>An Engineer's Perspective</b><br /><br />In a recent conversation, <a href="http://www.tummy.com/journals/users/jafo">Sean Reifschneider</a> of <a href="http://www.tummy.com/">tummy.com</a> had this to say about LAMP:<br /><blockquote>"The problem with the LAMP stack is that it's not a solution for the worst case scenarios. It's great for development: you throw it all together and start writing code. It's fairly okay for low-volume production use. But you need to plan for DoS attacks, search engine bot crawls, and spammer email address harvesting. Default LAMP installs fall over under such conditions."<br /></blockquote>This is a point that bears repeated belaboring: the network is violent and unpredictable. Connectivity can go away at any moment due to causes at pretty much all layers of the OSI model. The best practices for deploying applications in a production environment that keep this in mind are vast and varried. This is the domain of systems experts.<br /><br />Sean made further comments concerning Google, that App Engine is so great because you write your code and then just throw the whole thing in their grid, and bam! instant scalability, protected by the (hopefully) same mechanisms that protect all of Google's publicly-facing web assets.<br /><br />LAMP distributions productized and made freely available the otherwise painstaking process of compiling and installing a Linux kernel, Apache, a database, and your preferred programming language. The painstaking process was one that <i>developers</i> engaged in for <i>software development</i>. But what about the ones that <i>systems engineers</i> engage in for <i>production deployments</i>?<br /><br />Google has addressed this in a "small way": massive in infrastructure support, but small in features. Knowning Google's penchant for incremental and steady service improvements, they've got plans for additional features. But I think everyone can agree that they're not going to try to meet everyone's needs all the time. Regardless, they are moving in the right direction: innovating a new platform.<br /><br /><b>Something for Both</b><br /><br />On just this topic (innovating or finding a new platform), <a href="http://www.unionsquareventures.com/bios/albert.html">Albert Wenger</a> of <a href="http://www.unionsquareventures.com/">Union Square Ventures</a> said the following:<br /><blockquote>"What then is needed? A platform that is created from the ground up ... What would such a platform look like? It would be hosted and (nearly) infinitely scaleable. It would provide object storage that’s as simple as saying 'here’s an object, store it' ... user authentication, authorization and access control. Flexible processing of pretty URLs. Easy creation and maintenance of page templates. Ability to send emails and process bounces. Handling of RSS feeds (inbound and outbound). Support for mobile access and possibly even voice capabilities."<br /></blockquote><br />Anyone that knows the Divmod software will know why this tickled us so: we have an object database (Axiom) with built-in user authentication, we've got object publishing (even with <a href="http://oubiwann.blogspot.com/2007/02/object-publishing-with-nevow.html">pretty URLs</a>) and templating with <a href="http://divmod.org/trac/wiki/DivmodNevow">Nevow</a>, we've got mail services, feed support, mobile access and <a href="http://divmod.org/trac/wiki/DivmodSine">SIP</a>. However! This isn't an advertisement; it's an illustration. The platform is part of the network, and in a sense, it <i>is</i> the network. Considerations for rapid application development need to be regarded very highly; I think it's fairly uncontested common knowledge that LAMP has proved this. Just as highly, though, we need to consider the needs of systems and of the engineers that are integrating them.<br /><br />Google is making parts of its infrastructure available to developers now. With the dual ease of development and deployment, they are innovating engineering for us. They are only one of many, however. We need to be asking ourselves what our applications are, what the network is, what services are, and what our dev teams and engineers need.<br /><br /><b>Epilogue</b><br /><br />This brings me to what I want for my birhtday :-) Hey IBM! Sun! I want access to a <a href="http://domino.research.ibm.com/comm/research_projects.nsf/pages/bluegene.index.html">Blue Gene</a> (a la <a href="http://domino.research.ibm.com/comm/research_projects.nsf/pages/kittyhawk.index.html">Project Kittyhawk</a>) or a <a href="http://www.sun.com/service/sungrid/index.jsp">Sun Grid</a>. I want to prove the efficacy of LAMP alternatives in the changing internet, of Python's continued pertinence, Twisted's developmental power and Mantissa's deployment capabilities.<br /><br /><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml">I first started drafting this post a
+few months ago, out of excitement for the work that JP and Glyph have been
+doing in the Divmod open source stack codebase. I was planning on entering the
+acronym fray with a title like "*MAP: An Alterantive to LAMP" where *MAP
+(pronounced "starmap") would be "Any OS, Mantissa, Axiom, and Python." A good
+friend of mine whose opinion I value said that *MAP was a <i>terrible</i>
+name, and after chatting about it with Glyph, he commented "Why not keep it
+really simple? Just say 'Mantissa.'"<br /><br />And so it is :-)<br /><br
+/>For those that don't know, <a
+href="http://divmod.org/trac/wiki/DivmodMantissa">Mantissa</a> is the Twisted
+application server and <a
+href="http://divmod.org/trac/wiki/DivmodAxiom">Axiom</a> is a Twisted-based
+object database. By virtue of what are called "<a
+href="http://twistedmatrix.com/projects/core/documentation/howto/deferredindep
+th.html">deferreds</a>," Twisted allows you to write highly concurrent
+applications. Mantissa -- the Divmod stack (Mantissa entails Python, Twisted,
+and Axiom because it requires them) -- provides developers a means of scaling
+their Twisted-based, asynchronous applications. This means that you can go
+from experiments or prototypes to multi-node production deployments with the
+same set of tools and code.<br /><br />As such, this is a direct competitor
+for LAMP. Here are some questions about that: What is the value of a full
+stack? Why is an alternative to LAMP good or needed? What <i>is</i> a good
+alternative?<br /><br /><b>Stacked Development Value</b><br /><br />What does
+a full stack give us, as developers? From a practical perspective, it:<br
+/><ul><li>eliminates the overheard involved in setting up a system in
+preparation for development</li><li>provides a development
+toolset</li><li>provides a context within which design patterns have been
+established and utilized </li></ul>In other words, we can do things like pop
+in a CD, install an OS, have it meet all the software dependencies for our
+development tasks (since we're talking about LAMP, we mean development for the
+web), and either know how to build what we need or who to ask that can point
+us in the right direction. LAMP gives us this and, thanks to OS distributions
+like Ubuntu, gives it to us cheaply through simple button-pushing.<br /><br
+/>Do notice, however, that I said nothing about "going live" or "pushing to
+production"...<br /><br /><b>An Engineer's Perspective</b><br /><br />In a
+recent conversation, <a href="http://www.tummy.com/journals/users/jafo">Sean
+Reifschneider</a> of <a href="http://www.tummy.com/">tummy.com</a> had this to
+say about LAMP:<br /><blockquote>"The problem with the LAMP stack is that it's
+not a solution for the worst case scenarios. It's great for development: you
+throw it all together and start writing code. It's fairly okay for low-volume
+production use. But you need to plan for DoS attacks, search engine bot
+crawls, and spammer email address harvesting. Default LAMP installs fall over
+under such conditions."<br /></blockquote>This is a point that bears repeated
+belaboring: the network is violent and unpredictable. Connectivity can go away
+at any moment due to causes at pretty much all layers of the OSI model. The
+best practices for deploying applications in a production environment that
+keep this in mind are vast and varried. This is the domain of systems
+experts.<br /><br />Sean made further comments concerning Google, that App
+Engine is so great because you write your code and then just throw the whole
+thing in their grid, and bam! instant scalability, protected by the
+(hopefully) same mechanisms that protect all of Google's publicly-facing web
+assets.<br /><br />LAMP distributions productized and made freely available
+the otherwise painstaking process of compiling and installing a Linux kernel,
+Apache, a database, and your preferred programming language. The painstaking
+process was one that <i>developers</i> engaged in for <i>software
+development</i>. But what about the ones that <i>systems engineers</i> engage
+in for <i>production deployments</i>?<br /><br />Google has addressed this in
+a "small way": massive in infrastructure support, but small in features.
+Knowning Google's penchant for incremental and steady service improvements,
+they've got plans for additional features. But I think everyone can agree that
+they're not going to try to meet everyone's needs all the time. Regardless,
+they are moving in the right direction: innovating a new platform.<br /><br
+/><b>Something for Both</b><br /><br />On just this topic (innovating or
+finding a new platform), <a
+href="http://www.unionsquareventures.com/bios/albert.html">Albert Wenger</a>
+of <a href="http://www.unionsquareventures.com/">Union Square Ventures</a>
+said the following:<br /><blockquote>"What then is needed? A platform that is
+created from the ground up ... What would such a platform look like? It would
+be hosted and (nearly) infinitely scaleable. It would provide object storage
+that’s as simple as saying 'here’s an object, store it' ... user
+authentication, authorization and access control. Flexible processing of
+pretty URLs. Easy creation and maintenance of page templates. Ability to send
+emails and process bounces. Handling of RSS feeds (inbound and outbound).
+Support for mobile access and possibly even voice capabilities."<br
+/></blockquote><br />Anyone that knows the Divmod software will know why this
+tickled us so: we have an object database (Axiom) with built-in user
+authentication, we've got object publishing (even with <a
+href="http://oubiwann.blogspot.com/2007/02/object-publishing-with-nevow.html">
+pretty URLs</a>) and templating with <a
+href="http://divmod.org/trac/wiki/DivmodNevow">Nevow</a>, we've got mail
+services, feed support, mobile access and <a
+href="http://divmod.org/trac/wiki/DivmodSine">SIP</a>. However! This isn't an
+advertisement; it's an illustration. The platform is part of the network, and
+in a sense, it <i>is</i> the network. Considerations for rapid application
+development need to be regarded very highly; I think it's fairly uncontested
+common knowledge that LAMP has proved this. Just as highly, though, we need to
+consider the needs of systems and of the engineers that are integrating
+them.<br /><br />Google is making parts of its infrastructure available to
+developers now. With the dual ease of development and deployment, they are
+innovating engineering for us. They are only one of many, however. We need to
+be asking ourselves what our applications are, what the network is, what
+services are, and what our dev teams and engineers need.<br /><br
+/><b>Epilogue</b><br /><br />This brings me to what I want for my birhtday :-)
+Hey IBM! Sun! I want access to a <a
+href="http://domino.research.ibm.com/comm/research_projects.nsf/pages/bluegene
+.index.html">Blue Gene</a> (a la <a
+href="http://domino.research.ibm.com/comm/research_projects.nsf/pages/kittyhaw
+k.index.html">Project Kittyhawk</a>) or a <a
+href="http://www.sun.com/service/sungrid/index.jsp">Sun Grid</a>. I want to
+prove the efficacy of LAMP alternatives in the changing internet, of Python's
+continued pertinence, Twisted's developmental power and Mantissa's deployment
+capabilities.<br /><br /><br /></div>

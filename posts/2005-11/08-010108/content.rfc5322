@@ -11,4 +11,22 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software :: zope3</i><br/><br/><p/><br />Carlos de la Guardia posted a <a href="http://tinyurl.com/89l7s">recent <br />blog entry</a> that mentions the need for "rails-like" code-stubbing, <br />or the automatic generation of directories and files in z3. I think <br />there was one comment that wasn't spam, and then I posted one in <br />addition to that. So, I thought I'd post a long over-due entry here <br />myself.<p>A tool like that exists; I wrote it a while ago, but didn't get a <br />chance to clean it up (a little) and post it to the <a href="zope.org">zope.org</a> site until about a month ago. Here is the <br /><a href="http://tinyurl.com/83x4q">z3 project starter</a>.</p><p>It's alpha, and I need to encode the 1px.gif image so that a proper <br />binary file can be created. But that's pretty easy, I just haven't <br />gotten around to it. The basic css tabs are really only usable with <br />vhost. It has only been tested repeatedly in a narrow set of use, so it <br />needs more people playing with it. I'd love it if folks wanted to <br />contribute, helping to get it into shape suitable for entry into the z3 <br />repository. It'd be great to bring it in line with <a href="http://www.benjiyork.com/quick_start.txt">Benji's quickstart <br />guide</a>.</p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software ::
+zope3</i><br/><br/><p/><br />Carlos de la Guardia posted a <a
+href="http://tinyurl.com/89l7s">recent <br />blog entry</a> that mentions the
+need for "rails-like" code-stubbing, <br />or the automatic generation of
+directories and files in z3. I think <br />there was one comment that wasn't
+spam, and then I posted one in <br />addition to that. So, I thought I'd post
+a long over-due entry here <br />myself.<p>A tool like that exists; I wrote it
+a while ago, but didn't get a <br />chance to clean it up (a little) and post
+it to the <a href="zope.org">zope.org</a> site until about a month ago. Here
+is the <br /><a href="http://tinyurl.com/83x4q">z3 project
+starter</a>.</p><p>It's alpha, and I need to encode the 1px.gif image so that
+a proper <br />binary file can be created. But that's pretty easy, I just
+haven't <br />gotten around to it. The basic css tabs are really only usable
+with <br />vhost. It has only been tested repeatedly in a narrow set of use,
+so it <br />needs more people playing with it. I'd love it if folks wanted to
+<br />contribute, helping to get it into shape suitable for entry into the z3
+<br />repository. It'd be great to bring it in line with <a
+href="http://www.benjiyork.com/quick_start.txt">Benji's quickstart <br
+/>guide</a>.</p><br /></div>

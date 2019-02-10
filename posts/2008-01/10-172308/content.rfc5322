@@ -11,4 +11,64 @@ Comments:
 Content-Type: md
 Public?: true
 
-I've been using Thunderbird/Mozilla Mail/Netscape Communicator for quite some time now, with mbox files that date back to 1997. A few months back, however, I had some issues with Thunderbird handling my 7GB+ of archived email. This happened a couple years ago, too, when I added a near decade's worth of email to "Local Folders." Thunderbird took 10-15 minutes to load, every time I started it up.<br /><br />Recently, I started seeing a similar but worse problem: it never finished loading at all. Not having the time to investigate, I gave up and started using GMail exclusively. I'm a big fan of GMail for both personal and business communications, so I had no problem with this. My only annoyance is that GMail seems to really slow down FireFox after an extended period of time (after being open for a week, for instance).<br /><br />However, just the other day, I had desperate need of my archived mail. As such, I set about to find a way around the ThunderBird problem once and for all. What ended up working was adding one *.sbd folder at a time, checking it, quitting TB, restarting it, and adding the next one.<br /><br />After all the old data was added and TB was running smoothly, I noticed that many of my mail folders were several GB is size, despite the fact that they contained only a few KB worth of messages. Peeking inside the files, I saw some <em>really</em> old emails that ThunderBird wasn't displaying. On a hunch, I went to the "File" menu and noticed the "compact" item. Bingo, that did the trick.<br /><br />So far, everything is running great and I'm glad to be using TB again.<br /><br />But here's the point: I'm <em>really</em> glad to be using TB again. I can't tell you the bizarre amount of contentment and near-euphoria I felt after seeing all that mail in its "rightful place", where I can search and find what I need, where I can reminisce, get old business information, content from which I can draw new inspiration, etc. I felt some weird form of "cleanliness" about having my mail in its own app and out of the browser.<br /><br />I mean, hell yeah, Google's got a good thing going -- no denying that. But with the decreasing cost of storage, historical correspondence is something I want at my fingertips so that even if I have no internet connection, I can still get to it; even if I have no ThunderBird, I can still fire up vi and dig around.<br /><br />And this made me think: we're all looking at web apps, MMOs, Amazon's EC2/SimpleDB, etc., but what about users like me? How many are there of us? What kind of market do we form? What *other* tools might we like to have besides email clients? I want to manage <em>my</em> data on <em>my</em> hard drives under <em>my</em> conditions. I like little scripts and even GUI apps that do one or two things really well. I'd <em>love</em> to have little GUI apps like that could be combined with other apps, forming exactly what I need when I need it with little or no pain.<br /><br />Glyph was recently showing me the latest version of the <a href="http://glade.gnome.org/screenshots.html">Glade UI builder</a>, and I was really impressed. It reminded me of working with Apple's XCode a few years ago -- a wonderful experience. And now... I wonder. What it would take to build a "meta IDE"? Where instead of assembling pieces of code and GUI widgets, we're assembling little GUI apps that all communicate via a shared, open protocol. Apps that could be easily reskinned to look like one complete application...<br /><br />As a developer, the first thing that comes to mind is a tool that would be a combination of an IM/IRC client, a bug tracker, a wiki editor, an IDE, an email client, an svn client, and a time tracking tool. Each would be able to communicate with any other, allowing data to be correlated, tagged, cross-referenced, etc. Building that monstrosity from scratch would be heinous. But building each part wouldn't be too bad, really. What about having the flexibility to use any one of those as a stand-alone app, or combined with as few or as many of the others as you desired? That'd be killer. And wouldn't it be great not to have to use a web browser?<br /><br />There has *got* to be some demand for this sort of thing...<br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a href="http://www.technorati.com/tag/web" rel="tag">web</a></p><!-- technorati tags end -->
+I've been using Thunderbird/Mozilla Mail/Netscape Communicator for quite some
+time now, with mbox files that date back to 1997. A few months back, however,
+I had some issues with Thunderbird handling my 7GB+ of archived email. This
+happened a couple years ago, too, when I added a near decade's worth of email
+to "Local Folders." Thunderbird took 10-15 minutes to load, every time I
+started it up.<br /><br />Recently, I started seeing a similar but worse
+problem: it never finished loading at all. Not having the time to investigate,
+I gave up and started using GMail exclusively. I'm a big fan of GMail for both
+personal and business communications, so I had no problem with this. My only
+annoyance is that GMail seems to really slow down FireFox after an extended
+period of time (after being open for a week, for instance).<br /><br
+/>However, just the other day, I had desperate need of my archived mail. As
+such, I set about to find a way around the ThunderBird problem once and for
+all. What ended up working was adding one *.sbd folder at a time, checking it,
+quitting TB, restarting it, and adding the next one.<br /><br />After all the
+old data was added and TB was running smoothly, I noticed that many of my mail
+folders were several GB is size, despite the fact that they contained only a
+few KB worth of messages. Peeking inside the files, I saw some <em>really</em>
+old emails that ThunderBird wasn't displaying. On a hunch, I went to the
+"File" menu and noticed the "compact" item. Bingo, that did the trick.<br
+/><br />So far, everything is running great and I'm glad to be using TB
+again.<br /><br />But here's the point: I'm <em>really</em> glad to be using
+TB again. I can't tell you the bizarre amount of contentment and near-euphoria
+I felt after seeing all that mail in its "rightful place", where I can search
+and find what I need, where I can reminisce, get old business information,
+content from which I can draw new inspiration, etc. I felt some weird form of
+"cleanliness" about having my mail in its own app and out of the browser.<br
+/><br />I mean, hell yeah, Google's got a good thing going -- no denying that.
+But with the decreasing cost of storage, historical correspondence is
+something I want at my fingertips so that even if I have no internet
+connection, I can still get to it; even if I have no ThunderBird, I can still
+fire up vi and dig around.<br /><br />And this made me think: we're all
+looking at web apps, MMOs, Amazon's EC2/SimpleDB, etc., but what about users
+like me? How many are there of us? What kind of market do we form? What
+*other* tools might we like to have besides email clients? I want to manage
+<em>my</em> data on <em>my</em> hard drives under <em>my</em> conditions. I
+like little scripts and even GUI apps that do one or two things really well.
+I'd <em>love</em> to have little GUI apps like that could be combined with
+other apps, forming exactly what I need when I need it with little or no
+pain.<br /><br />Glyph was recently showing me the latest version of the <a
+href="http://glade.gnome.org/screenshots.html">Glade UI builder</a>, and I was
+really impressed. It reminded me of working with Apple's XCode a few years ago
+-- a wonderful experience. And now... I wonder. What it would take to build a
+"meta IDE"? Where instead of assembling pieces of code and GUI widgets, we're
+assembling little GUI apps that all communicate via a shared, open protocol.
+Apps that could be easily reskinned to look like one complete
+application...<br /><br />As a developer, the first thing that comes to mind
+is a tool that would be a combination of an IM/IRC client, a bug tracker, a
+wiki editor, an IDE, an email client, an svn client, and a time tracking tool.
+Each would be able to communicate with any other, allowing data to be
+correlated, tagged, cross-referenced, etc. Building that monstrosity from
+scratch would be heinous. But building each part wouldn't be too bad, really.
+What about having the flexibility to use any one of those as a stand-alone
+app, or combined with as few or as many of the others as you desired? That'd
+be killer. And wouldn't it be great not to have to use a web browser?<br /><br
+/>There has *got* to be some demand for this sort of thing...<br /><br /><!--
+technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a
+href="http://www.technorati.com/tag/web" rel="tag">web</a></p><!-- technorati
+tags end -->

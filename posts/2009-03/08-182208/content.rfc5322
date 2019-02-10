@@ -11,4 +11,62 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />A few months back, I received an email from someone at Packt publishing asking whether I'd like a complementary copy of their Expert Python Programming book, and if I would blog about it. I accepted and read the book immediately. However, their request caused me to deeply consider my personal position on grassroots marketing for corporations.<br /><br />Ultimately, I decided that it wasn't the publisher nor even the author that really mattered or entered into my assessment equation at all. Instead, it's the potential benefit that can be brought to members of the community. So, at long last, I am writing the review :-)<br /><br />The author of this work is <a href="http://tarekziade.wordpress.com/">Tarek Ziadé</a>, is a Python contributor, Plone contributor, CTO of <a href="http://www.ingeniweb.com/">Ingeniweb</a>, author of a <a href="https://www.amazon.fr/dp/2100508830">French Python book</a>, spoke at OSCON last year, and will be talking at PyCon this year. I don't know him personally, but given his credentials, he is a well-qualified and experienced programmer.<br /><br /><a href="https://www.amazon.com/dp/184719494X?tag=sharedlinks-20&amp;camp=0&amp;creative=0&amp;linkCode=as1&amp;creativeASIN=184719494X&amp;adid=0QSS8SFDN9X1E76EKGF3&amp;">Expert Python Programming</a> is actually a shorter book than I expected, coming in at 352 numbered pages. It's also a fairly different book than I expected as well. If these were times when books were given outrageously long titles, I might have suggested something along the lines of:<br /><br /><div style="text-align: center;"><span style="font-family:lucida grande;">Expert Python Programming</span><br /><br /><span style="font-family:lucida grande;">Wherein the Tools and Methodologies of the Experts</span><br /><br /><span style="font-family:lucida grande;">are Described and Discussed</span><br /></div><br />The amount of material that is covered between its covers, though, is impressive. Check out the <a href="http://www.amazon.com/gp/reader/184719494X/ref=sib_dp_pop_toc?ie=UTF8&amp;p=S00A#reader-link">table of contents</a> to confirm this. This is essentially a book of best practices and tools for Python developers wanting to move from an intermediate (or advanced beginner) stage towards the levels at which experienced programmers operate. In addition to discussing tools and methodologies, Tarek takes the reader on a quick tour of the entire development process -- an invaluable guide for programmers wanting to hit their stride in larger open source projects or on critical company software initiatives.<br /><br />In Tarek's <a href="http://tarekziade.wordpress.com/2008/09/24/expert-python-programming-book-more-details-sample-chapter/">introductory blog post</a>, he quoted <a href="http://jjinux.blogspot.com/">Shannon -jj Behrens</a> as saying the following:<br /><blockquote>"If you’re looking to progress from knowing Python to mastering Python, this is the book for you. In fact, this is exactly the type of book I wish I had had ﬁve years ago. What took me years to discover by steadfastly attending talks at PyCon and my local Python users’ group is now available in a succinct book form."</blockquote>This is well said... though I would add that this book <span style="font-style: italic;">in conjunction</span> with <a href="http://www.amazon.com/dp/0596007973">Python Cookbook</a> (especially the last several chapters) can get you this progress that Shannon mentions :-)<br /><br />One tiny little quibble ... Given that this book might be read by developers who have no experience with distributed version control systems, I would have liked to have seen Bazaar and Darcs mentioned in addition to Mercurial and Git. The reason being that a developer reading this book as her introduction to working with others in a distributed environment may be given the impression that Mercurial is "the Python way", and that's not necessarily the case ;-)<br /><br />I've already personally recommended this book to curious and motivated beginning Python programmer friends (as well as an intermediate programmer who felt like he was stuck in a skill rut). If you're one of these, consider this my recommendation to you too :-)<br /><br /><br /></div>
+<div><br />A few months back, I received an email from someone at Packt
+publishing asking whether I'd like a complementary copy of their Expert Python
+Programming book, and if I would blog about it. I accepted and read the book
+immediately. However, their request caused me to deeply consider my personal
+position on grassroots marketing for corporations.<br /><br />Ultimately, I
+decided that it wasn't the publisher nor even the author that really mattered
+or entered into my assessment equation at all. Instead, it's the potential
+benefit that can be brought to members of the community. So, at long last, I
+am writing the review :-)<br /><br />The author of this work is <a
+href="http://tarekziade.wordpress.com/">Tarek Ziadé</a>, is a Python
+contributor, Plone contributor, CTO of <a
+href="http://www.ingeniweb.com/">Ingeniweb</a>, author of a <a
+href="https://www.amazon.fr/dp/2100508830">French Python book</a>, spoke at
+OSCON last year, and will be talking at PyCon this year. I don't know him
+personally, but given his credentials, he is a well-qualified and experienced
+programmer.<br /><br /><a
+href="https://www.amazon.com/dp/184719494X?tag=sharedlinks-20&amp;camp=0&amp;c
+reative=0&amp;linkCode=as1&amp;creativeASIN=184719494X&amp;adid=0QSS8SFDN9X1E7
+6EKGF3&amp;">Expert Python Programming</a> is actually a shorter book than I
+expected, coming in at 352 numbered pages. It's also a fairly different book
+than I expected as well. If these were times when books were given
+outrageously long titles, I might have suggested something along the lines
+of:<br /><br /><div style="text-align: center;"><span
+style="font-family:lucida grande;">Expert Python Programming</span><br /><br
+/><span style="font-family:lucida grande;">Wherein the Tools and Methodologies
+of the Experts</span><br /><br /><span style="font-family:lucida grande;">are
+Described and Discussed</span><br /></div><br />The amount of material that is
+covered between its covers, though, is impressive. Check out the <a
+href="http://www.amazon.com/gp/reader/184719494X/ref=sib_dp_pop_toc?ie=UTF8&am
+p;p=S00A#reader-link">table of contents</a> to confirm this. This is
+essentially a book of best practices and tools for Python developers wanting
+to move from an intermediate (or advanced beginner) stage towards the levels
+at which experienced programmers operate. In addition to discussing tools and
+methodologies, Tarek takes the reader on a quick tour of the entire
+development process -- an invaluable guide for programmers wanting to hit
+their stride in larger open source projects or on critical company software
+initiatives.<br /><br />In Tarek's <a
+href="http://tarekziade.wordpress.com/2008/09/24/expert-python-programming-boo
+k-more-details-sample-chapter/">introductory blog post</a>, he quoted <a
+href="http://jjinux.blogspot.com/">Shannon -jj Behrens</a> as saying the
+following:<br /><blockquote>"If you’re looking to progress from knowing Python
+to mastering Python, this is the book for you. In fact, this is exactly the
+type of book I wish I had had ﬁve years ago. What took me years to discover by
+steadfastly attending talks at PyCon and my local Python users’ group is now
+available in a succinct book form."</blockquote>This is well said... though I
+would add that this book <span style="font-style: italic;">in
+conjunction</span> with <a href="http://www.amazon.com/dp/0596007973">Python
+Cookbook</a> (especially the last several chapters) can get you this progress
+that Shannon mentions :-)<br /><br />One tiny little quibble ... Given that
+this book might be read by developers who have no experience with distributed
+version control systems, I would have liked to have seen Bazaar and Darcs
+mentioned in addition to Mercurial and Git. The reason being that a developer
+reading this book as her introduction to working with others in a distributed
+environment may be given the impression that Mercurial is "the Python way",
+and that's not necessarily the case ;-)<br /><br />I've already personally
+recommended this book to curious and motivated beginning Python programmer
+friends (as well as an intermediate programmer who felt like he was stuck in a
+skill rut). If you're one of these, consider this my recommendation to you too
+:-)<br /><br /><br /></div>

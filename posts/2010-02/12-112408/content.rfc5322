@@ -11,4 +11,22 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><img src="https://launchpadlibrarian.net/26031738/twisted-amazon-192.png" border="0" align="left" />The first version of <a href="https://launchpad.net/txaws">txAWS</a> just made it out the door, thanks to prodding from <a href="https://launchpad.net/~smoser">Scott Moser</a>, who is helping to get txAWS into <a href="https://wiki.ubuntu.com/LucidReleaseSchedule">Ubuntu Lucid Lynx</a>. It's been uploaded to <a href="http://pypi.python.org/pypi/txAWS/">PyPI</a> now too, so you can do the usual (<span class="Apple-style-span" style="font-family:'courier new';">easy_install txAWS</span>), or you can download it from <a href="https://launchpad.net/txaws">Launchpad</a>.<div><br /></div><div>For those interested in writing async code for the cloud, txAWS is the library for you :-) What's more, if you're interested in contributing to a <a href="http://twistedmatrix.com/trac/">Twisted</a>-based project, this could be just the thing to get you started. The use of Twisted is pretty basic in txAWS (though we do adhere to various coding idioms pretty strongly, to enhance maintainability), and would be a nice introduction. What's more, there are lots of exciting features and work still to do, and you could really make a difference.</div><br /><br /><br /></div>
+<div><br /><img
+src="https://launchpadlibrarian.net/26031738/twisted
+amazon-192.png" border="0" align="left" />The first version of <a
+href="https://launchpad.net/txaws">txAWS</a> just made it out the door, thanks
+to prodding from <a href="https://launchpad.net/~smoser">Scott Moser</a>, who
+is helping to get txAWS into <a
+href="https://wiki.ubuntu.com/LucidReleaseSchedule">Ubuntu Lucid Lynx</a>.
+It's been uploaded to <a href="http://pypi.python.org/pypi/txAWS/">PyPI</a>
+now too, so you can do the usual (<span class="Apple-style-span"
+style="font-family:'courier new';">easy_install txAWS</span>), or you can
+download it from <a href="https://launchpad.net/txaws">Launchpad</a>.<div><br
+/></div><div>For those interested in writing async code for the cloud, txAWS
+is the library for you :-) What's more, if you're interested in contributing
+to a <a href="http://twistedmatrix.com/trac/">Twisted</a>-based project, this
+could be just the thing to get you started. The use of Twisted is pretty basic
+in txAWS (though we do adhere to various coding idioms pretty strongly, to
+enhance maintainability), and would be a nice introduction. What's more, there
+are lots of exciting features and work still to do, and you could really make
+a difference.</div><br /><br /><br /></div>

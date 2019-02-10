@@ -11,4 +11,11 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">zope 3 :: twisted :: programming</i><br/><br/><div class="entry"><br />I'm filing this under twisted as well as zope 3 because this is exactly <br />how I am going to use Zope 3 components. I was pretty excited/relieved <br />yesterday listening to Jim Fulton say that one of his top priorities is <br />working on the finer-grained architecture of Zope 3 such that <br />separation of components is possible. I would be using much more of z3 <br />if I could use them as independent components right now.<p/><br /></div><br/></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">zope 3 ::
+twisted :: programming</i><br/><br/><div class="entry"><br />I'm filing this
+under twisted as well as zope 3 because this is exactly <br />how I am going
+to use Zope 3 components. I was pretty excited/relieved <br />yesterday
+listening to Jim Fulton say that one of his top priorities is <br />working on
+the finer-grained architecture of Zope 3 such that <br />separation of
+components is possible. I would be using much more of z3 <br />if I could use
+them as independent components right now.<p/><br /></div><br/></div>

@@ -11,4 +11,48 @@ Comments:
 Content-Type: md
 Public?: true
 
-<p><img src="http://farm1.static.flickr.com/126/355048648_022bd81581_m_d.jpg" height="181" width="240" border="1" align="left" hspace="4" vspace="4" alt="Twisted Screenshot" title="Twisted Screenshot" />As some folks know, I worked with <a href="http://huw.ugbox.net">Huw Wilkins</a> on the new redesign of the <a href="http://twistedmatrix.com/trac/">Twisted site</a>. Huw did the design, CSS etc., and I hacked around on <a href="http://trac.edgewall.org/">trac</a> to make his vision work within that framework. He made my life very easy, though, as he produced the entire design to fit perfectly within trac.<br /></p><br /><p><br />The new Twisted site has been a success -- we're getting many more visitors and they are staying longer than ever. I believe that the design and the improving info architecture are the most significant contributors to this. And after seeing these changes and the assumed enjoyment that folks are deriving from them, all I could think was "This was so easy to do, there's no excuse not to have a good-looking trac instance."<br /></p><br /><p><br /><img src="http://farm1.static.flickr.com/147/355032831_5501552439_m_d.jpg" height="122" width="240" border="1" align="right" hspace="4" vspace="4" alt="Zenoss Trac Screenshot" title="Zenoss Trac Screenshot" />Having been inspired by Huw's great design for Twisted, I did the same thing for The <a href="http://www.zenoss.com/">Zenoss</a> internal trac instances. I had a great time doing this, having explored a lot with the Twisted site redesign. What's more, with the use of the trac dev branch (forth-coming version 0.11) the Genshi templates really simplify the process. With the process I had established with the Twisted work and the Zenoss work, I was have the courage to update my own massive number of trac projects: 3 domains with each one being a trac "multi-sites" setup. <br /></p><br /><p><br /><img src="http://farm1.static.flickr.com/132/355032827_ebeb9a759d_m.jpg" height="179" width="240" border="1" hspace="4" vspace="4" alt="355032827 Ebeb9A759D M" /><br /></p><br /><p><br />People don't realize how quickly you can take a generic trac and have something quite unique. Here's all you need to do:<br /><span style="font-size:0pt;"><br /></span><ul><li>install Genshi and 0.11 Trac from subversion</li><li>design your look and feel and then prepare your images</li><li>edit the trac.css file</li><li>update the site.html and layout.html Genshi template files</li></ul>Now, things do get a little complicated when you have trac multisites running. You have to write code that will render the sites index the way you want. Then you need to consider how to manage the templates across all the sites.<br /><br />As an example, I've put the trac customizations in subversion <a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Site/trunk/tracfiles/">here</a>.<br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/design" rel="tag">design</a>, <a href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a href="http://www.technorati.com/tag/web" rel="tag">web</a></p><!-- technorati tags end --><br /></p>
+<p><img src="http://farm1.static.flickr.com/126/355048648_022bd81581_m_d.jpg"
+height="181" width="240" border="1" align="left" hspace="4" vspace="4"
+alt="Twisted Screenshot" title="Twisted Screenshot" />As some folks know, I
+worked with <a href="http://huw.ugbox.net">Huw Wilkins</a> on the new redesign
+of the <a href="http://twistedmatrix.com/trac/">Twisted site</a>. Huw did the
+design, CSS etc., and I hacked around on <a
+href="http://trac.edgewall.org/">trac</a> to make his vision work within that
+framework. He made my life very easy, though, as he produced the entire design
+to fit perfectly within trac.<br /></p><br /><p><br />The new Twisted site has
+been a success -- we're getting many more visitors and they are staying longer
+than ever. I believe that the design and the improving info architecture are
+the most significant contributors to this. And after seeing these changes and
+the assumed enjoyment that folks are deriving from them, all I could think was
+"This was so easy to do, there's no excuse not to have a good-looking trac
+instance."<br /></p><br /><p><br /><img
+src="http://farm1.static.flickr.com/147/355032831_5501552439_m_d.jpg" height="
+122" width="240" border="1" align="right" hspace="4" vspace="4" alt="Zenoss
+Trac Screenshot" title="Zenoss Trac Screenshot" />Having been inspired by
+Huw's great design for Twisted, I did the same thing for The <a
+href="http://www.zenoss.com/">Zenoss</a> internal trac instances. I had a
+great time doing this, having explored a lot with the Twisted site redesign.
+What's more, with the use of the trac dev branch (forth-coming version 0.11)
+the Genshi templates really simplify the process. With the process I had
+established with the Twisted work and the Zenoss work, I was have the courage
+to update my own massive number of trac projects: 3 domains with each one
+being a trac "multi-sites" setup. <br /></p><br /><p><br /><img
+src="http://farm1.static.flickr.com/132/355032827_ebeb9a759d_m.jpg" height="17
+9" width="240" border="1" hspace="4" vspace="4" alt="355032827 Ebeb9A759D M"
+/><br /></p><br /><p><br />People don't realize how quickly you can take a
+generic trac and have something quite unique. Here's all you need to do:<br
+/><span style="font-size:0pt;"><br /></span><ul><li>install Genshi and 0.11
+Trac from subversion</li><li>design your look and feel and then prepare your
+images</li><li>edit the trac.css file</li><li>update the site.html and
+layout.html Genshi template files</li></ul>Now, things do get a little
+complicated when you have trac multisites running. You have to write code that
+will render the sites index the way you want. Then you need to consider how to
+manage the templates across all the sites.<br /><br />As an example, I've put
+the trac customizations in subversion <a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Site/trunk/tracfiles/">h
+ere</a>.<br /><br /><!-- technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/design" rel="tag">design</a>, <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a
+href="http://www.technorati.com/tag/web" rel="tag">web</a></p><!-- technorati
+tags end --><br /></p>

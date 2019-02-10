@@ -11,4 +11,18 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><b>The ULS Series</b><br /><ul><li><a href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra-large-systems.html">Required Reading: Ultra Large Systems</a></li><li><a href="http://oubiwann.blogspot.com/2008/06/ultra-large-systems-example.html">Ultra Large Systems: An Example</a></li><li><a href="http://oubiwann.blogspot.com/2008/07/soa-in-practice-handbook-for-early.html">SOA in Practice: A Handbook for Early-Stage ULS Systems (Part 1)</a></li><li>SOA in Practice: A Handbook for Early-Stage ULS Systems (Part 2)</li></ul><span style="font-weight: bold;">Previously, on Electric Duncan</span><br /><br />Part 1 of this blog post briefly introduced <a href="http://www.josuttis.com/">Nicolai M. Josuttis</a>'s book <a href="http://www.soa-in-practice.com/">SOA in Pactice: The Art of Distributed System Design</a>. The post then discussed the relationship between SOA and ULS. If you missed that post, I urge you to go read it (linked above), as it sets the context for this post.<br /><br /><br /><br /><br /></div>
+<div><br /><b>The ULS Series</b><br /><ul><li><a
+href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra-large-system
+s.html">Required Reading: Ultra Large Systems</a></li><li><a
+href="http://oubiwann.blogspot.com/2008/06/ultra-large-systems-example.html">U
+ltra Large Systems: An Example</a></li><li><a
+href="http://oubiwann.blogspot.com/2008/07/soa-in-practice-handbook-for-early.
+html">SOA in Practice: A Handbook for Early-Stage ULS Systems (Part
+1)</a></li><li>SOA in Practice: A Handbook for Early-Stage ULS Systems (Part
+2)</li></ul><span style="font-weight: bold;">Previously, on Electric
+Duncan</span><br /><br />Part 1 of this blog post briefly introduced <a
+href="http://www.josuttis.com/">Nicolai M. Josuttis</a>'s book <a
+href="http://www.soa-in-practice.com/">SOA in Pactice: The Art of Distributed
+System Design</a>. The post then discussed the relationship between SOA and
+ULS. If you missed that post, I urge you to go read it (linked above), as it
+sets the context for this post.<br /><br /><br /><br /><br /></div>

@@ -11,4 +11,37 @@ Comments:
 Content-Type: md
 Public?: true
 
-As I've mentioned before, the first time I had face-to-face time with Glyph and Amir was not too long after they'd formed Divmod, at pycon 2004. I'd toyed with <a href="http://twistedmatrix.com/trac/">Twisted</a> for about two years prior to that, and the stuff they were doing with Quotient was just amazing (better feature sets than gmail). So, when they reached out after I'd blogged about my Zenoss contract coming to an end, I was just thrilled. We had some exciting talks about current development and the future, and given my long-standing love of Twisted and <a href="http://divmod.org/trac">Divmod products</a> (such as <a href="http://divmod.org/trac/wiki/DivmodNevow">Nevow</a>), wild horses couldn't have dragged me away. <br /><br />I consider the <a href="http://twistedmatrix.com/trac/wiki/TwistedMatrixLaboratories">core Twisted developers</a> (and Divmod programmers) to be some of the best in the world. To be working with these guys is a dream come true and I am giddy with anticipation of both what we will be producing and all that I will be learning.<br /><br />And now, I would like to take a moment to give some love to the python community in general: you guys are awesome. <br /><br />I know you already know this, but one can never say it enough :-) I had all sorts of people and companies offer really cool positions when they heard I was available. There are some exciting startups that need developers and fantastic non-profits (that pay salaries) that would be great fun to work for (and feel good about). Also, my favorite dev team at my favorite Linux distribution's parent company reached out; they totally rock and I want to thank them for that (you know who you are!). <br /><br />Two things I learned: <a href="http://vmware.com/">VMware</a> uses python and even better, <a href="http://www.lucasfilm.com/">LucasFilm</a> uses Twisted. How totally cool is that? Hopefully we'll be talking to them on the <a href="http://twistedmatrix.com/trac/wiki/TheTwistedShow">TwistedShow</a> sometime in the near future...<br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a href="http://www.technorati.com/tag/work" rel="tag">work</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></p><!-- technorati tags end -->
+As I've mentioned before, the first time I had face-to-face time with Glyph
+and Amir was not too long after they'd formed Divmod, at pycon 2004. I'd toyed
+with <a href="http://twistedmatrix.com/trac/">Twisted</a> for about two years
+prior to that, and the stuff they were doing with Quotient was just amazing
+(better feature sets than gmail). So, when they reached out after I'd blogged
+about my Zenoss contract coming to an end, I was just thrilled. We had some
+exciting talks about current development and the future, and given my
+long-standing love of Twisted and <a href="http://divmod.org/trac">Divmod
+products</a> (such as <a
+href="http://divmod.org/trac/wiki/DivmodNevow">Nevow</a>), wild horses
+couldn't have dragged me away. <br /><br />I consider the <a
+href="http://twistedmatrix.com/trac/wiki/TwistedMatrixLaboratories">core Twist
+ed developers</a> (and Divmod programmers) to be some of the best in the
+world. To be working with these guys is a dream come true and I am giddy with
+anticipation of both what we will be producing and all that I will be
+learning.<br /><br />And now, I would like to take a moment to give some love
+to the python community in general: you guys are awesome. <br /><br />I know
+you already know this, but one can never say it enough :-) I had all sorts of
+people and companies offer really cool positions when they heard I was
+available. There are some exciting startups that need developers and fantastic
+non-profits (that pay salaries) that would be great fun to work for (and feel
+good about). Also, my favorite dev team at my favorite Linux distribution's
+parent company reached out; they totally rock and I want to thank them for
+that (you know who you are!). <br /><br />Two things I learned: <a
+href="http://vmware.com/">VMware</a> uses python and even better, <a
+href="http://www.lucasfilm.com/">LucasFilm</a> uses Twisted. How totally cool
+is that? Hopefully we'll be talking to them on the <a
+href="http://twistedmatrix.com/trac/wiki/TheTwistedShow">TwistedShow</a> somet
+ime in the near future...<br /><!-- technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a
+href="http://www.technorati.com/tag/work" rel="tag">work</a>, <a
+href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></p><!--
+technorati tags end -->

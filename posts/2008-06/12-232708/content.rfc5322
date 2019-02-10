@@ -11,4 +11,218 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><b>The ULS Series</b><br /><ul><li><a href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra-large-systems.html">Required Reading: Ultra Large-Scale Systems</a></li><li>Ultra Large-Scale Systems: An Example</li></ul><br /><b>Background</b><br /><br />My interest in this topic is as old as my love for science fiction. As a child who had not only just started teaching himself to program but had fallen deeply in love with <a href="http://www.flickr.com/photos/oubiwann/2557067724/">I, Robot</a>, I consumed everything I could by the Master of the Art himself, Isaac Asimov. Inevitably, an endless steam of science fiction began flowing into my brain: the harder the science, the more cherished it was.<br /><br />Then came the discovery that computers could actually talk to each other. Holy network, Batman, that changed everything! Oh, how I lamented my Kaypro II's inability to dial out. Science fiction novels began touching on this aspect of technology more and more frequently, while the Internet began taking shape in the "real" world around us. Now, look at it. Regardless of the mess and chaos, it's really quite amazing: beowulf clusters, distributed computing, cloud services, and of course the Internet in general. These advances are actually quite mind-blowing when we take the time to examine them from a historical perspectve.<br /><br />A lot has changed since those early days of the network. The past 10 years or so has seen the beginnings of a trend with regard to large systems. Certainly my views on the future of networks (and services that utilize them) have been pretty consistent:<br /><ul><li><a href="http://oubiwann.blogspot.com/2003/02/in-praise-of-evolvable-systems.html">In Praise of Evolvable Systems</a> (2003)</li><li><a href="http://oubiwann.blogspot.com/2004/03/dinosaurs-and-mammals.html">Dinosaurs and Mammals</a> (2004)</li><li><a href="http://oubiwann.blogspot.com/2004/04/evolving-networks.html">Evolving Networks</a> (2004)</li><li><a href="http://oubiwann.blogspot.com/2004/05/everything-as-distributed-resource.html">Everything as a Distributed Resource</a> (2004)</li><li><a href="http://oubiwann.blogspot.com/2005/12/king-is-dead-long-live-kinglets.html">The King is dead! Long live the Kinglets!</a> (2005)</li></ul>As I indicated in the more recent ULS blog post, I have been exposed to some excellent resources for ultra large-scale systems. For some of those I recently provided links, and others I will be referencing in future posts.<br /><br />Due to their nature, ULS systems pose interesting open source collaboration as well as business opportunities. They entail a massive collection of excellent problems to solve that cannot possibly be completely addressed in the next 6-12 months (where so many projects and businesses tend to put their focus, for obvious practical reasons). As such, there are a great number of research and development areas -- plenty for everyone, in fact. In this series of blog posts, my goal is to expose a wider audience to the topics and encourage folks to start thinking about both interim solutions as well as potential long-term ones.<br /><br /><br /><b>Characteristics of a ULS</b><br /><br />Let's start of with some semblance of a definition :-) What constitutes a ULS system? Here are some characteristics given by <a href="http://www.sei.cmu.edu/uls/files/OOPSLA06.pdf">Scale Changes Everything</a>:<br /><ul><li>an unbelievable amount of code (on the order of trillions of lines of code)</li><li>immense storage needs, network connections, processing</li><li>lots of hardware, lots of people, lots of purposes</li><li>decentralized components</li><li>created by aggregation, not design</li><li>unreliable components, reliable whole</li><li>ongoing and real-time upgrades, changes, and deployments</li><li>lots of functionality, likely in a focused area of concern</li></ul>Here's an illuminating quote from Richard Gabriel's <a href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">Design Beyond Human Abilities</a> presentation:<br /><blockquote>The components that make up a ULS system are diverse as well as many, ranging from servers and clusters down to small sensors, perhaps the size of motes of dust. Some of the components will self-organize like swarms, and others will be carefully designed. The components will not only be computationally active but also physically active, including sensors, actuators...</blockquote>Sounds like pure science fiction, doesn't it? Think about it, though. Is it really? Divmod's friend <a href="http://www.synthesisstudios.com/about/raffi">Raffi Krikorian</a> co-wrote <a href="http://www.media.mit.edu/physics/publications/papers/04.10.sciam/">this paper</a> at MIT. Check out the cheap network node that's smaller than a fingertip. At that size, hundreds of them would be innocuous. In a few years, we could have thousands of them in a room without even knowing it. Within a single home we could have the equivalents of what today are campus or regional networks. We probably can't even wrap our heads around how big these systems will be. But there is plenty of precedence for such natural short-sightedness. From Raffi's (et al.) 2004 paper:<br /><blockquote>The ARPAnet was ambitiously designed to handle up to 64 sites with up to 4 computers per site, far exceeding any perceived future requirement. Today there are more than 200 million registered hosts on the Internet, with still more computers connected to those.</blockquote>Here are some other choice quotes:<br /><blockquote>[Internet 0] is not a replacement for the current Internet (call that Internet 1); it is a set of principles for extending the Internet down to individual devices...<br /><br />An [Internet 0] network cannot be distinguished from the computers that it connects; it really <span style="font-style: italic;">is</span> the computer. Because it allows devices for communications, computation, storage, sensing, and display to exchange information in exactly the same representation, around the corner or around the world, the components of a system can be dynamically assembled based on the needs of a problem, rather than fixed by the boundaries of a box.</blockquote>We're already <span style="font-style: italic;">building</span> this stuff. It's <span style="font-style: italic;">not</span> science fiction. We may not have swarming, self-replicating nano machines... yet. But we're already heading in a direction where that's not just a possibility; it's a likelihood.<br /><br />So, we've got lots of code, machines, storage, sensing and people; much of it decentralized. What else do we need? Failure tolerance and maintenance on-the-fly. Check. Finally, a ULS system will have to actually be useful, or it will never get built. Who would want such a thing besides militaries, big governements, and Dr. Evils? Now we start getting to our example: Health Care. But let's not get ahead of ourselves. First, let's examine why the biggest system of networked devices that we know of isn't a ULS system.<br /><br /><br /><b>Why the Internet is not a ULS System</b><br /><br />Most obvious of the criteria listed above, the Internet is not focused on a single or related set of goals; it's used for everything. However, it does meet many of the criteria. From the <a href="http://www.sei.cmu.edu/uls/files/ULS_Book2006.pdf">Carnegie Mellon report</a>:<br /><blockquote>The Web foreshadows the characteristics of ULS systems. Its scale is much larger than that of any of today’s systems of systems. Its development, oversight, and operational control are decentralized. Its stakeholders have diverse, conﬂicting, complex, and changing requirements. The services it provides undergo continuous evolution. The actions of the people making use of the Web inﬂuence what services are provided, and the services provided inﬂuence the actions of people. It has been designed to avoid the worst problems deriving from the heterogeneity of its elements and to be insensitive to connection failures.<br /><br />But ... Security was not given much attention in its original design, and its use for purposes for which it was not initially intended ... has revealed exploitable vulnerabilities ... And although the Web is an important element of people’s work lives, it is not as critical as a ULS ... system would be.</blockquote>Now I think we're in a good place to talk about the health care system of the future...<br /><br /><br /><b>Health Services as a ULS</b><br /><br />Let's start this section with a quote from <a href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">the presentation</a> that inspired it. Richard Gabriel says:<br /><blockquote>An example of a ULS system (that doesn’t yet exist) would be a healthcare system that integrates not only all medical records, procedures, and institutions, but also gathers information about individual people continuously, monitoring their health and making recommendations about how to improve it or keep it good. Medical researchers would be hooked into the system, so that whenever new knowledge appeared, it could be applied to all who might need it. Imagining this system, though, requires also imagining that it is protected from the adversaries of governmental and commercial spying / abuse. </blockquote>Modern hospitals are packed with countless computing devices: everything from charting PDAs to physiological monitors for patients; from mainframes and patient record data warehouses, to terminals and desktops. Wireless medical sensors have already been developed by a <a href="http://www.eecs.harvard.edu/~mdw/proj/codeblue/">research project</a> at Harvard. What's more, despite the concerns over associated health risks, implant research at <a href="http://etienne.ece.jhu.edu/index.html">Johns Hopkins</a> and the <a href="http://www.isr.umd.edu/">University of Maryland</a> is on-going and may produce results that are one day standard practice in hospitals.<br /><br />As versions of theses decives are developed that produce no ill effects for humans, they will make their way into out-patient clinics, assited living facilities, and ulitmately HMO's, private practices, and our homes. The devices will grow in numbers, shrink in size, and provide more functionality at greater efficiency than their predecessors.<br /><br />The volumes of information that will be exhanged between devices, analyzed and correlated by other devices, and consumed by end-users, doctors, and researchers will be mind-boggling. It will bring new insights on everything from personal health to epidemiology.<br /><br />With this, though, will come the obvious need for security and privacy, for defense against information attack and denial of service. These devices will all have to dedicate compuational and storage resources for use by the whole system. Part of the system will have to monitor itself, properly escalate problems, observe and anticipate trends. Protection and defense capabilities will have to exist the likes of which barely exist in our every day lives at the marcoscopic level.<br /><br />All of this will take time. They will truly be modern wonders of the world. Given that such systems are anticipated to exist sometime in the next 20 years, and will have accreted the component systems over time, where might such a thing start?<br /><br /><br /><b>Google and a Health Care ULS</b><br /><br />If you read my last post (which I think was posted to blogger before the official announcement by Google), you already knew what I was going to say :-) <a href="https://www.google.com/health">Google Health</a>. Though obviously nowhere near a ULS system in and of itself, why might we suggest Google is moving in this direction?<br /><br />Here are some interesting bullet points from <a href="http://google.org/projects.html">google.org</a>:<br /><ul><li> <a href="http://instedd.org/">InSTEDD</a>: $5,000,000 multi-year grant to establish this nonprofit organization focused on improving early detection, preparedness, and response capabilities for global health threats and humanitarian crises </li><li> <a href="http://www.ghsi.org/">Global Health and Security Initiative</a>: $2,500,000 multi-year grant to strengthen national and sub-regional disease surveillance systems in the Mekong Basin area (Thailand, Vietnam, Cambodia, Lao PDR, Myanmar, and China-Yunnan province) </li><li> Clark University for <a href="http://www.clarklabs.org/">Clark Labs</a>: $617,457 to Clark University, with equal funding from the Gordon and Betty Moore Foundation, to support the development of a system to improve monitoring, analysis and prediction of the impacts of climate variability and change on ecosystems, food, and health in Africa and the Amazon </li><li> <a href="http://www.healthmap.org/">HealthMap</a>: $450,000 multi-year grant to conduct in-depth research into the use of online data sources for disease surveillance </li></ul>Does that sound familiar to anyone besides me? All paranoia-induced sinister thoughts and Google Ads jokes aside, it makes sense that this is where we're going with health. In fact, it makes sense this is where we're going with <span style="font-style: italic;">all</span> of our lives. If data privacy, personal ownership of that data, and security concerns can all be addressed, our lives' information will be better served by moving through systems specially designed to provide maximal use of that information with the least work. It won't just be nice to have, it will be <span style="font-style: italic;">essential</span>.<br /><br />The balance of power, from individuals all the way to the top of whatever organizations exist in the future will rest in information. Not like it is today, however. The "information economy" of the today (+/- 10 years) will look like kids' games and playgrounds. The information economies this will evolve into will be so completely integrated into human existence that they will resemble the basic necessities like water and food.<br /><br />If you could find yourself a corner of <span style="font-style: italic;">that</span> market, 20 years before everyone else got there, wouldn't that be a smart business move?<br /><br /><br /><b>Summary</b><br /><br />Our world is changing much more than we realize. We're too tied up in our jobs and gas prices to see the larger picture... to see that our future is already being made, that even in our unconscious actions we are propagating it no less than the cells in our bodies conspire to propagate what will become our children.<br /><br />In the same way that hominid nomadic/migratory patterns begat the distribution of villages and tribal communities, which in turn gave birth to civilization, our silly little Internet will one day have descendants that dwarf it in size, utility, complexity, and computational power. The amazing thing is that we are the ones that actually get to <span style="font-style: italic;">build</span> them!<br /><br />There is a lot to research, and just as much to prototype. There is a project for everyone, and by starting now, we can make sure that feudal lords of tomorrow don't have absolute control over our food and water. If you have ideas for collaboration, start talking! Get involved! If you have money, fund some research, sponsor some conferences. In simply writing this blog post, I have uncovered <span style="font-style: italic;">gobs</span> of new research I didn't know was out there. We should all be reading more, catching up, and coding. The projects near and dear to our hearts can get a whole new life within the context of ULS systems.<br /><br /><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><b>The ULS Series</b><br
+/><ul><li><a href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra
+-large-systems.html">Required Reading: Ultra Large-Scale
+Systems</a></li><li>Ultra Large-Scale Systems: An Example</li></ul><br
+/><b>Background</b><br /><br />My interest in this topic is as old as my love
+for science fiction. As a child who had not only just started teaching himself
+to program but had fallen deeply in love with <a
+href="http://www.flickr.com/photos/oubiwann/2557067724/">I, Robot</a>, I
+consumed everything I could by the Master of the Art himself, Isaac Asimov.
+Inevitably, an endless steam of science fiction began flowing into my brain:
+the harder the science, the more cherished it was.<br /><br />Then came the
+discovery that computers could actually talk to each other. Holy network,
+Batman, that changed everything! Oh, how I lamented my Kaypro II's inability
+to dial out. Science fiction novels began touching on this aspect of
+technology more and more frequently, while the Internet began taking shape in
+the "real" world around us. Now, look at it. Regardless of the mess and chaos,
+it's really quite amazing: beowulf clusters, distributed computing, cloud
+services, and of course the Internet in general. These advances are actually
+quite mind-blowing when we take the time to examine them from a historical
+perspectve.<br /><br />A lot has changed since those early days of the
+network. The past 10 years or so has seen the beginnings of a trend with
+regard to large systems. Certainly my views on the future of networks (and
+services that utilize them) have been pretty consistent:<br /><ul><li><a
+href="http://oubiwann.blogspot.com/2003/02/in-praise-of-evolvable-systems.html
+">In Praise of Evolvable Systems</a> (2003)</li><li><a
+href="http://oubiwann.blogspot.com/2004/03/dinosaurs-and-mammals.html">Dinosau
+rs and Mammals</a> (2004)</li><li><a
+href="http://oubiwann.blogspot.com/2004/04/evolving-networks.html">Evolving Ne
+tworks</a> (2004)</li><li><a
+href="http://oubiwann.blogspot.com/2004/05/everything-as-distributed-resource.
+html">Everything as a Distributed Resource</a> (2004)</li><li><a
+href="http://oubiwann.blogspot.com/2005/12/king-is-dead-long-live-kinglets.htm
+l">The King is dead! Long live the Kinglets!</a> (2005)</li></ul>As I
+indicated in the more recent ULS blog post, I have been exposed to some
+excellent resources for ultra large-scale systems. For some of those I
+recently provided links, and others I will be referencing in future posts.<br
+/><br />Due to their nature, ULS systems pose interesting open source
+collaboration as well as business opportunities. They entail a massive
+collection of excellent problems to solve that cannot possibly be completely
+addressed in the next 6-12 months (where so many projects and businesses tend
+to put their focus, for obvious practical reasons). As such, there are a great
+number of research and development areas -- plenty for everyone, in fact. In
+this series of blog posts, my goal is to expose a wider audience to the topics
+and encourage folks to start thinking about both interim solutions as well as
+potential long-term ones.<br /><br /><br /><b>Characteristics of a ULS</b><br
+/><br />Let's start of with some semblance of a definition :-) What
+constitutes a ULS system? Here are some characteristics given by <a
+href="http://www.sei.cmu.edu/uls/files/OOPSLA06.pdf">Scale Changes
+Everything</a>:<br /><ul><li>an unbelievable amount of code (on the order of
+trillions of lines of code)</li><li>immense storage needs, network
+connections, processing</li><li>lots of hardware, lots of people, lots of
+purposes</li><li>decentralized components</li><li>created by aggregation, not
+design</li><li>unreliable components, reliable whole</li><li>ongoing and
+real-time upgrades, changes, and deployments</li><li>lots of functionality,
+likely in a focused area of concern</li></ul>Here's an illuminating quote from
+Richard Gabriel's <a
+href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">Design B
+eyond Human Abilities</a> presentation:<br /><blockquote>The components that
+make up a ULS system are diverse as well as many, ranging from servers and
+clusters down to small sensors, perhaps the size of motes of dust. Some of the
+components will self-organize like swarms, and others will be carefully
+designed. The components will not only be computationally active but also
+physically active, including sensors, actuators...</blockquote>Sounds like
+pure science fiction, doesn't it? Think about it, though. Is it really?
+Divmod's friend <a href="http://www.synthesisstudios.com/about/raffi">Raffi
+Krikorian</a> co-wrote <a
+href="http://www.media.mit.edu/physics/publications/papers/04.10.sciam/">this 
+paper</a> at MIT. Check out the cheap network node that's smaller than a
+fingertip. At that size, hundreds of them would be innocuous. In a few years,
+we could have thousands of them in a room without even knowing it. Within a
+single home we could have the equivalents of what today are campus or regional
+networks. We probably can't even wrap our heads around how big these systems
+will be. But there is plenty of precedence for such natural short-sightedness.
+From Raffi's (et al.) 2004 paper:<br /><blockquote>The ARPAnet was ambitiously
+designed to handle up to 64 sites with up to 4 computers per site, far
+exceeding any perceived future requirement. Today there are more than 200
+million registered hosts on the Internet, with still more computers connected
+to those.</blockquote>Here are some other choice quotes:<br
+/><blockquote>[Internet 0] is not a replacement for the current Internet (call
+that Internet 1); it is a set of principles for extending the Internet down to
+individual devices...<br /><br />An [Internet 0] network cannot be
+distinguished from the computers that it connects; it really <span
+style="font-style: italic;">is</span> the computer. Because it allows devices
+for communications, computation, storage, sensing, and display to exchange
+information in exactly the same representation, around the corner or around
+the world, the components of a system can be dynamically assembled based on
+the needs of a problem, rather than fixed by the boundaries of a
+box.</blockquote>We're already <span style="font-style:
+italic;">building</span> this stuff. It's <span style="font-style:
+italic;">not</span> science fiction. We may not have swarming,
+self-replicating nano machines... yet. But we're already heading in a
+direction where that's not just a possibility; it's a likelihood.<br /><br
+/>So, we've got lots of code, machines, storage, sensing and people; much of
+it decentralized. What else do we need? Failure tolerance and maintenance
+on-the-fly. Check. Finally, a ULS system will have to actually be useful, or
+it will never get built. Who would want such a thing besides militaries, big
+governements, and Dr. Evils? Now we start getting to our example: Health Care.
+But let's not get ahead of ourselves. First, let's examine why the biggest
+system of networked devices that we know of isn't a ULS system.<br /><br /><br
+/><b>Why the Internet is not a ULS System</b><br /><br />Most obvious of the
+criteria listed above, the Internet is not focused on a single or related set
+of goals; it's used for everything. However, it does meet many of the
+criteria. From the <a
+href="http://www.sei.cmu.edu/uls/files/ULS_Book2006.pdf">Carnegie Mellon
+report</a>:<br /><blockquote>The Web foreshadows the characteristics of ULS
+systems. Its scale is much larger than that of any of today’s systems of
+systems. Its development, oversight, and operational control are
+decentralized. Its stakeholders have diverse, conﬂicting, complex, and
+changing requirements. The services it provides undergo continuous evolution.
+The actions of the people making use of the Web inﬂuence what services are
+provided, and the services provided inﬂuence the actions of people. It has
+been designed to avoid the worst problems deriving from the heterogeneity of
+its elements and to be insensitive to connection failures.<br /><br />But ...
+Security was not given much attention in its original design, and its use for
+purposes for which it was not initially intended ... has revealed exploitable
+vulnerabilities ... And although the Web is an important element of people’s
+work lives, it is not as critical as a ULS ... system would
+be.</blockquote>Now I think we're in a good place to talk about the health
+care system of the future...<br /><br /><br /><b>Health Services as a
+ULS</b><br /><br />Let's start this section with a quote from <a
+href="http://dreamsongs.com/Files/DesignBeyondHumanAbilitiesSimp.pdf">the pres
+entation</a> that inspired it. Richard Gabriel says:<br /><blockquote>An
+example of a ULS system (that doesn’t yet exist) would be a healthcare system
+that integrates not only all medical records, procedures, and institutions,
+but also gathers information about individual people continuously, monitoring
+their health and making recommendations about how to improve it or keep it
+good. Medical researchers would be hooked into the system, so that whenever
+new knowledge appeared, it could be applied to all who might need it.
+Imagining this system, though, requires also imagining that it is protected
+from the adversaries of governmental and commercial spying / abuse.
+</blockquote>Modern hospitals are packed with countless computing devices:
+everything from charting PDAs to physiological monitors for patients; from
+mainframes and patient record data warehouses, to terminals and desktops.
+Wireless medical sensors have already been developed by a <a
+href="http://www.eecs.harvard.edu/~mdw/proj/codeblue/">research project</a> at
+Harvard. What's more, despite the concerns over associated health risks,
+implant research at <a href="http://etienne.ece.jhu.edu/index.html">Johns
+Hopkins</a> and the <a href="http://www.isr.umd.edu/">University of
+Maryland</a> is on-going and may produce results that are one day standard
+practice in hospitals.<br /><br />As versions of theses decives are developed
+that produce no ill effects for humans, they will make their way into
+out-patient clinics, assited living facilities, and ulitmately HMO's, private
+practices, and our homes. The devices will grow in numbers, shrink in size,
+and provide more functionality at greater efficiency than their
+predecessors.<br /><br />The volumes of information that will be exhanged
+between devices, analyzed and correlated by other devices, and consumed by
+end-users, doctors, and researchers will be mind-boggling. It will bring new
+insights on everything from personal health to epidemiology.<br /><br />With
+this, though, will come the obvious need for security and privacy, for defense
+against information attack and denial of service. These devices will all have
+to dedicate compuational and storage resources for use by the whole system.
+Part of the system will have to monitor itself, properly escalate problems,
+observe and anticipate trends. Protection and defense capabilities will have
+to exist the likes of which barely exist in our every day lives at the
+marcoscopic level.<br /><br />All of this will take time. They will truly be
+modern wonders of the world. Given that such systems are anticipated to exist
+sometime in the next 20 years, and will have accreted the component systems
+over time, where might such a thing start?<br /><br /><br /><b>Google and a
+Health Care ULS</b><br /><br />If you read my last post (which I think was
+posted to blogger before the official announcement by Google), you already
+knew what I was going to say :-) <a
+href="https://www.google.com/health">Google Health</a>. Though obviously
+nowhere near a ULS system in and of itself, why might we suggest Google is
+moving in this direction?<br /><br />Here are some interesting bullet points
+from <a href="http://google.org/projects.html">google.org</a>:<br /><ul><li>
+<a href="http://instedd.org/">InSTEDD</a>: $5,000,000 multi-year grant to
+establish this nonprofit organization focused on improving early detection,
+preparedness, and response capabilities for global health threats and
+humanitarian crises </li><li> <a href="http://www.ghsi.org/">Global Health and
+Security Initiative</a>: $2,500,000 multi-year grant to strengthen national
+and sub-regional disease surveillance systems in the Mekong Basin area
+(Thailand, Vietnam, Cambodia, Lao PDR, Myanmar, and China-Yunnan province)
+</li><li> Clark University for <a href="http://www.clarklabs.org/">Clark
+Labs</a>: $617,457 to Clark University, with equal funding from the Gordon and
+Betty Moore Foundation, to support the development of a system to improve
+monitoring, analysis and prediction of the impacts of climate variability and
+change on ecosystems, food, and health in Africa and the Amazon </li><li> <a
+href="http://www.healthmap.org/">HealthMap</a>: $450,000 multi-year grant to
+conduct in-depth research into the use of online data sources for disease
+surveillance </li></ul>Does that sound familiar to anyone besides me? All
+paranoia-induced sinister thoughts and Google Ads jokes aside, it makes sense
+that this is where we're going with health. In fact, it makes sense this is
+where we're going with <span style="font-style: italic;">all</span> of our
+lives. If data privacy, personal ownership of that data, and security concerns
+can all be addressed, our lives' information will be better served by moving
+through systems specially designed to provide maximal use of that information
+with the least work. It won't just be nice to have, it will be <span
+style="font-style: italic;">essential</span>.<br /><br />The balance of power,
+from individuals all the way to the top of whatever organizations exist in the
+future will rest in information. Not like it is today, however. The
+"information economy" of the today (+/- 10 years) will look like kids' games
+and playgrounds. The information economies this will evolve into will be so
+completely integrated into human existence that they will resemble the basic
+necessities like water and food.<br /><br />If you could find yourself a
+corner of <span style="font-style: italic;">that</span> market, 20 years
+before everyone else got there, wouldn't that be a smart business move?<br
+/><br /><br /><b>Summary</b><br /><br />Our world is changing much more than
+we realize. We're too tied up in our jobs and gas prices to see the larger
+picture... to see that our future is already being made, that even in our
+unconscious actions we are propagating it no less than the cells in our bodies
+conspire to propagate what will become our children.<br /><br />In the same
+way that hominid nomadic/migratory patterns begat the distribution of villages
+and tribal communities, which in turn gave birth to civilization, our silly
+little Internet will one day have descendants that dwarf it in size, utility,
+complexity, and computational power. The amazing thing is that we are the ones
+that actually get to <span style="font-style: italic;">build</span> them!<br
+/><br />There is a lot to research, and just as much to prototype. There is a
+project for everyone, and by starting now, we can make sure that feudal lords
+of tomorrow don't have absolute control over our food and water. If you have
+ideas for collaboration, start talking! Get involved! If you have money, fund
+some research, sponsor some conferences. In simply writing this blog post, I
+have uncovered <span style="font-style: italic;">gobs</span> of new research I
+didn't know was out there. We should all be reading more, catching up, and
+coding. The projects near and dear to our hearts can get a whole new life
+within the context of ULS systems.<br /><br /><br /></div>

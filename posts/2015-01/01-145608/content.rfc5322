@@ -11,4 +11,71 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-vK0oqGP8CyA/VKWrI3TPjhI/AAAAAAAAAVM/9IPp21nS8XU/s1600/lsci-logo-1-large.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://4.bp.blogspot.com/-vK0oqGP8CyA/VKWrI3TPjhI/AAAAAAAAAVM/9IPp21nS8XU/s1600/lsci-logo-1-large.png" width="320" /></a></div>The <a href="https://github.com/lfex/lsci">scientific computing platform</a> for Erlang/LFE has just been announced on the <a href="http://blog.lfe.io/tutorials/2015/01/01/1215-scientific-computing-on-the-erlang-vm/">LFE blog</a>. Though written in the Erlang Lisp syntax of LFE, it's fully usable from pure Erlang. It wraps the new <a href="https://github.com/lfex/py/">py</a> library for Erlang/LFE, as well as the <a href="http://erlport.org/">ErlPort</a> project. More importantly, though, it wraps Python 3 libs (e.g., <a href="https://docs.python.org/3.4/library/math.html">math</a>, <a href="https://docs.python.org/3.4/library/cmath.html">cmath</a>, <a href="https://docs.python.org/3.4/library/statistics.html">statistics</a>, and more to come) and the ever-eminent <a href="http://docs.scipy.org/doc/numpy-dev/reference/">NumPy</a> and <a href="http://docs.scipy.org/doc/scipy-dev/reference/">SciPy</a> projects (those are in-progress, with <a href="http://matplotlib.org/">matplotlib</a> and others to follow).<br /><br />(That LFE blog post is actually a tutorial on how to use lsci for performing polynomial curve-fitting and linear regression, adapted from the previous post on <a href="http://technicae.cogitat.io/2014/11/scientific-computing-with-hy.html">Hy doing the same</a>.)<br /><br />With the release of <a href="https://github.com/lfex/lsci">lsci</a>, one can now start to easily and <i>efficiently</i> perform computationally intensive calculations in <a href="http://erlang.org/">Erlang</a>/<a href="http://lfe.io/">LFE</a> (and any other Erlang Core-compatible language, e.g., <a href="http://elixir-lang.org/">Elixir</a>, <a href="http://joxa.org/">Joxa</a>, etc.) That's super-cool, but it's not quite the point ...<br /><br />While working on lsci, I found myself experiencing a great deal of joy. It wasn't just the fact that supervision trees in a programming language are insanely great. Nor just the fact that scientific computing in Python is one of the best in any language. It wasn't only being able to use two syntaxes that I love (LFE and Python) cohesively, in the same project. And it wasn't the sum of these either -- you probably see where I'm going with this ;-) The joy of these and many other fantastic aspects of inter-operation between multiple powerful computing systems is truly greater than the sum of its parts.<br /><br />I've done a bunch of <a href="http://julialang.org/">Julia</a> lately and am a huge fan of this language as well. One of the things that Julia provides is explicit interop with Python. Julia is targeted at the world of scientific computing, aiming to be a compelling alternative to Fortran (hurray!), so their recognition of the enormous contribution the Python scientific computing community has made to the industry is quite wonderful to see.<br /><br />A year or so ago I did <a href="https://github.com/lfex/lfecljapp">some work with Clojure and LFE</a> using Erlang's <a href="http://www.erlang.org/doc/apps/jinterface/jinterface_users_guide.html">JInterface</a>. Around the same time I was using LFE on top of&nbsp; <a href="http://erjang.org/">Erjang</a>, calling directly into Java without JInterface. This is the same sort of Joy that users of <a href="http://www.jython.org/">Jython</a> have, and there are many more examples of languages and tools working to take advantage of the massive resources available in the computing community. <br /><br />Obviously, language inter-op is not new. Various FFIs have existed for quite some time (I'm a big fan of the Common Lisp <a href="http://common-lisp.net/project/cffi/">CFFI</a>), but what <i>is</i> new (relatively, that is ... as I age, anything in the past 10 years is new) is that we are seeing this not just for programs reaching down into C/C++, but reaching <i>across</i>, to other higher-level languages, taking advantage of their great achievements -- without having to reinvent so many wheels.<br /><br />When this level of cooperation, credit, etc., is done in the spirit of openness, peer-review, code-reuse, and standing on the shoulders of giants (or enough people to make giants!), we get joy. Beautiful, wonderful coding joy.<br /><br />And it's so much greater than the sum of the parts :-)<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-vK0oqGP8CyA/VKWrI3TPjhI/AAAAAAAAAVM/9IPp21nS8X
+U/s1600/lsci-logo-1-large.png" imageanchor="1" style="clear: left; float:
+left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320"
+src="http://4.bp.blogspot.com/-vK0oqGP8CyA/VKWrI3TPjhI/AAAAAAAAAVM/9IPp21nS8XU
+/s1600/lsci-logo-1-large.png" width="320" /></a></div>The <a
+href="https://github.com/lfex/lsci">scientific computing platform</a> for
+Erlang/LFE has just been announced on the <a
+href="http://blog.lfe.io/tutorials/2015/01/01/1215-scientific-computing-on-the
+-erlang-vm/">LFE blog</a>. Though written in the Erlang Lisp syntax of LFE,
+it's fully usable from pure Erlang. It wraps the new <a
+href="https://github.com/lfex/py/">py</a> library for Erlang/LFE, as well as
+the <a href="http://erlport.org/">ErlPort</a> project. More importantly,
+though, it wraps Python 3 libs (e.g., <a
+href="https://docs.python.org/3.4/library/math.html">math</a>, <a
+href="https://docs.python.org/3.4/library/cmath.html">cmath</a>, <a
+href="https://docs.python.org/3.4/library/statistics.html">statistics</a>, and
+more to come) and the ever-eminent <a
+href="http://docs.scipy.org/doc/numpy-dev/reference/">NumPy</a> and <a
+href="http://docs.scipy.org/doc/scipy-dev/reference/">SciPy</a> projects
+(those are in-progress, with <a href="http://matplotlib.org/">matplotlib</a>
+and others to follow).<br /><br />(That LFE blog post is actually a tutorial
+on how to use lsci for performing polynomial curve-fitting and linear
+regression, adapted from the previous post on <a
+href="http://technicae.cogitat.io/2014/11/scientific-computing-with-hy.html">H
+y doing the same</a>.)<br /><br />With the release of <a
+href="https://github.com/lfex/lsci">lsci</a>, one can now start to easily and
+<i>efficiently</i> perform computationally intensive calculations in <a
+href="http://erlang.org/">Erlang</a>/<a href="http://lfe.io/">LFE</a> (and any
+other Erlang Core-compatible language, e.g., <a
+href="http://elixir-lang.org/">Elixir</a>, <a
+href="http://joxa.org/">Joxa</a>, etc.) That's super-cool, but it's not quite
+the point ...<br /><br />While working on lsci, I found myself experiencing a
+great deal of joy. It wasn't just the fact that supervision trees in a
+programming language are insanely great. Nor just the fact that scientific
+computing in Python is one of the best in any language. It wasn't only being
+able to use two syntaxes that I love (LFE and Python) cohesively, in the same
+project. And it wasn't the sum of these either -- you probably see where I'm
+going with this ;-) The joy of these and many other fantastic aspects of
+inter-operation between multiple powerful computing systems is truly greater
+than the sum of its parts.<br /><br />I've done a bunch of <a
+href="http://julialang.org/">Julia</a> lately and am a huge fan of this
+language as well. One of the things that Julia provides is explicit interop
+with Python. Julia is targeted at the world of scientific computing, aiming to
+be a compelling alternative to Fortran (hurray!), so their recognition of the
+enormous contribution the Python scientific computing community has made to
+the industry is quite wonderful to see.<br /><br />A year or so ago I did <a
+href="https://github.com/lfex/lfecljapp">some work with Clojure and LFE</a>
+using Erlang's <a
+href="http://www.erlang.org/doc/apps/jinterface/jinterface_users_guide.html">J
+Interface</a>. Around the same time I was using LFE on top of&nbsp; <a
+href="http://erjang.org/">Erjang</a>, calling directly into Java without
+JInterface. This is the same sort of Joy that users of <a
+href="http://www.jython.org/">Jython</a> have, and there are many more
+examples of languages and tools working to take advantage of the massive
+resources available in the computing community. <br /><br />Obviously,
+language inter-op is not new. Various FFIs have existed for quite some time
+(I'm a big fan of the Common Lisp <a
+href="http://common-lisp.net/project/cffi/">CFFI</a>), but what <i>is</i> new
+(relatively, that is ... as I age, anything in the past 10 years is new) is
+that we are seeing this not just for programs reaching down into C/C++, but
+reaching <i>across</i>, to other higher-level languages, taking advantage of
+their great achievements -- without having to reinvent so many wheels.<br
+/><br />When this level of cooperation, credit, etc., is done in the spirit of
+openness, peer-review, code-reuse, and standing on the shoulders of giants (or
+enough people to make giants!), we get joy. Beautiful, wonderful coding
+joy.<br /><br />And it's so much greater than the sum of the parts :-)<br
+/><br /><br />

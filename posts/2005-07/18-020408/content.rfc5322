@@ -11,4 +11,52 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">operating systems :: solaris</i><br/><br/><p/><br /><div blog="entry"><br /><p><br />Since moving to Colorado, I have had many friends visit... and now <br />family members are signing up. This is actually very nice for me, as I <br />have always been the one visiting. People *like* coming to Colorado, <br />hiking in the mountains, breathing the incredible air at high <br />altitudes. However, every single commodity-based workstation I have <br />(and I have over 10 of these boxes) has failed. These two topics are <br />actually related.<br /></p><br /><p>Most of the x86 machines I have, I did not purchase new. All of them <br />have had replacement parts, after the originals had burned out or <br />become obsolete. And all have since died, in some fashion or another. <br />In fact, the only exception to this are two machines I have: a Gateway <br />PC from 1997 with most of it's original hardware running FreeBSD (with <br />3 extra NICs) as my firewall/router and a Gateway laptop from 1998.</p><p>As a result of all these dead machines, there are no machines available <br />for use by all the people visiting -- there are two Mac OS X laptops <br />for use, but I am on my 17" almost 90% of the time I am awake, and <br />there are often more than 3 people in the house. This means that 2 or <br />more people have to juggle one 15" PowerBook. I have considered buying <br />a Mac mini, but with the changes of architecture at Apple, I am <br />exploring other options (I *will* be buying a 17" x86 PowerBook).</p><p>One of those is Sun. In a past life, I was a systems administrator and <br />worked a great deal with Sun hardware and was pretty familiar with <br />SunOS and intimately familiar with Solaris 2.5 and up. Last night, I <br />discovered (a month late) that Solaris has been open sourced. I <br />remember discussing this possibility with fellow admins and developers <br />in the late 90s, where a few of us optimists were called crazy for <br />thinking this was a possibility. I had since given up hope, and haven't <br />worked with Solaris in about two years, and then only in passing.</p><p>I spent several hours yesterday reading developer blogs and browsing <br />the site <br />(<a href="http://www.opensolaris.org/os/">http://www.opensolaris.org/os/</a>),<br /> and I'm getting pretty <br />excited about the potential of this move by Sun. It is very likely that <br />this could move me back into not only using Solaris machines again, but <br />brushing up on my Solaris sysadmin skills, particularly catching up <br />with all the work they've done on virtual server technology. Running <br />python application servers in Solaris virtual machines will provide <br />many excellent solutions for application architectures.</p><p>Anyway, Sun is offering a "free" Opteron Sun box, with a 3-year support <br />subscription for about $30/month, and I'm heavily leaning towards <br />purchasing this box to fill the machine gap in the house:</p><p> <br /><a href="http://tinyurl.com/cf4j2">http://tinyurl.com/cf4j2</a></p><p>If that goes well, and I like it, I may get another one for a local <br />subversion repository/backup development server... If their new <br />hardware is as solid and reliable as their old stuff (I have a <br />still-working Sparc server from 1995 that I bought from a DiGEX <br />employee -- it was the original web server for Dole.com), then I will <br />be most happy and they will have a new hardware customer for developer <br />platforms.</p><p/></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">operating
+systems :: solaris</i><br/><br/><p/><br /><div blog="entry"><br /><p><br
+/>Since moving to Colorado, I have had many friends visit... and now <br
+/>family members are signing up. This is actually very nice for me, as I <br
+/>have always been the one visiting. People *like* coming to Colorado, <br
+/>hiking in the mountains, breathing the incredible air at high <br
+/>altitudes. However, every single commodity-based workstation I have <br
+/>(and I have over 10 of these boxes) has failed. These two topics are <br
+/>actually related.<br /></p><br /><p>Most of the x86 machines I have, I did
+not purchase new. All of them <br />have had replacement parts, after the
+originals had burned out or <br />become obsolete. And all have since died, in
+some fashion or another. <br />In fact, the only exception to this are two
+machines I have: a Gateway <br />PC from 1997 with most of it's original
+hardware running FreeBSD (with <br />3 extra NICs) as my firewall/router and a
+Gateway laptop from 1998.</p><p>As a result of all these dead machines, there
+are no machines available <br />for use by all the people visiting -- there
+are two Mac OS X laptops <br />for use, but I am on my 17" almost 90% of the
+time I am awake, and <br />there are often more than 3 people in the house.
+This means that 2 or <br />more people have to juggle one 15" PowerBook. I
+have considered buying <br />a Mac mini, but with the changes of architecture
+at Apple, I am <br />exploring other options (I *will* be buying a 17" x86
+PowerBook).</p><p>One of those is Sun. In a past life, I was a systems
+administrator and <br />worked a great deal with Sun hardware and was pretty
+familiar with <br />SunOS and intimately familiar with Solaris 2.5 and up.
+Last night, I <br />discovered (a month late) that Solaris has been open
+sourced. I <br />remember discussing this possibility with fellow admins and
+developers <br />in the late 90s, where a few of us optimists were called
+crazy for <br />thinking this was a possibility. I had since given up hope,
+and haven't <br />worked with Solaris in about two years, and then only in
+passing.</p><p>I spent several hours yesterday reading developer blogs and
+browsing <br />the site <br />(<a
+href="http://www.opensolaris.org/os/">http://www.opensolaris.org/os/</a>),<br 
+/> and I'm getting pretty <br />excited about the potential of this move by
+Sun. It is very likely that <br />this could move me back into not only using
+Solaris machines again, but <br />brushing up on my Solaris sysadmin skills,
+particularly catching up <br />with all the work they've done on virtual
+server technology. Running <br />python application servers in Solaris virtual
+machines will provide <br />many excellent solutions for application
+architectures.</p><p>Anyway, Sun is offering a "free" Opteron Sun box, with a
+3-year support <br />subscription for about $30/month, and I'm heavily leaning
+towards <br />purchasing this box to fill the machine gap in the house:</p><p>
+<br /><a href="http://tinyurl.com/cf4j2">http://tinyurl.com/cf4j2</a></p><p>If
+that goes well, and I like it, I may get another one for a local <br
+/>subversion repository/backup development server... If their new <br
+/>hardware is as solid and reliable as their old stuff (I have a <br
+/>still-working Sparc server from 1995 that I bought from a DiGEX <br
+/>employee -- it was the original web server for Dole.com), then I will <br
+/>be most happy and they will have a new hardware customer for developer <br
+/>platforms.</p><p/></div><br /></div>

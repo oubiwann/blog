@@ -11,4 +11,75 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-EuuMPRzpqrE/VG-_qpcc9qI/AAAAAAAAAS8/mXjY5cHjoPE/s1600/Erlang-Python-Greats.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://4.bp.blogspot.com/-EuuMPRzpqrE/VG-_qpcc9qI/AAAAAAAAAS8/mXjY5cHjoPE/s1600/Erlang-Python-Greats.png" height="190" width="320" /></a></div><b>Update 1</b>: This post has a sequel <a href="http://blog.lfe.io/tutorials/2014/12/03/1828-erlport-and-python-making-more-calls-from-lfe/">here</a>.<br /><br /><b>Update 2</b>: There is a <a href="https://github.com/lfex/py">new LFE library</a> that provides more idiomatic access to Python from LFE/Erlang by wrapping ErlPort and creating convenience functions. Lisp macros were, of course, involved in its making.<br /><br />This is a short little blog post I've been wanting to get out there ever since I ran across <a href="http://erlport.org/">the erlport project</a> a few years ago. Erlang was built for fault-tolerance. It had a goal of unprecedented uptimes, and these have been achieved. It powers 40% of our world's telecommunications traffic. It's capable of supporting amazing levels of concurrency (remember the <a href="https://www.sics.se/~joe/apachevsyaws.html">2007 announcement</a> about the performance of YAWS vs. Apache?).<br /><br />With this knowledge in mind, a common mistake by folks new to Erlang is to think these performance characteristics will be applicable to their own particular domain. This has often resulted in failure, disappointment, and the unjust blaming of Erlang. If you want to process huge files, do lots of string manipulation, or crunch tons of numbers, Erlang's not your bag, baby. Try <a href="https://www.python.org/">Python</a> or <a href="http://julialang.org/">Julia</a>.<br /><br />But then, you may be thinking: I like supervision trees. I have long-running processes that I want to be managed per the rules I establish. I want to run lots of jobs in parallel on my 64-core box. I want to run jobs in parallel over the network on 64 of my 64-core boxes. Python's the right tool for the jobs, but I wish I could manage them with Erlang.<br /><br />(There are sooo many other options for the use cases above, many of them really excellent. But this post is about Erlang/LFE :-)).<br /><br />Traditionally, if you want to run other languages with Erlang in a reliable way that doesn't bring your Erlang nodes down with badly behaved code, you use <a href="http://erlang.org/doc/reference_manual/ports.html">Ports</a>. (more info is available in the <a href="http://www.erlang.org/doc/tutorial/overview.html">Interoperability Guide</a>). This is what <a href="http://www.erlang.org/doc/apps/jinterface/jinterface_users_guide.html">JInterface</a> builds upon (and, incidentally, allows for some pretty cool <a href="https://github.com/oubiwann/lfecljapp">integration with Clojure</a>). However, this still leaves a pretty significant burden for the Python or Ruby developer for any serious application needs (quick one-offs that only use one or two data types are not that big a deal).<br /><br /><a href="https://github.com/hdima/erlport">erlport</a> was created by&nbsp;<a href="https://twitter.com/hdima">Dmitry Vasiliev</a> in 2009 in an effort to solve just this problem, making it easier to use of and integrate between Erlang and more common languages like Python and Ruby. The project is maintained, and in fact has just received a few updates. Below, we'll demonstrate some usage in <a href="http://lfe.io/">LFE</a>&nbsp;with <a href="https://docs.python.org/3/">Python 3</a>.<br /><br />If you want to follow along, there's a demo repo you can check out:<br /><script src="https://gist.github.com/61c939ec07d037e3c21c.js?file=01-checkout.txt"></script> Change into the repo directory and set up your Python environment:<br /><script src="https://gist.github.com/61c939ec07d037e3c21c.js?file=02-setuppython.txt"></script> Next, switch over to the LFE directory, and fire up a REPL:<br /><script src="https://gist.github.com/61c939ec07d037e3c21c.js?file=03-setuplfe.txt"></script> Note that this will first download the necessary dependencies and compile them (that's what the <span style="font-family: Courier New, Courier, monospace;">[snip]</span> is eliding).<br /><br />Now we're ready to take erlport for a quick trip down to the local:<br /><script src="https://gist.github.com/61c939ec07d037e3c21c.js?file=04-basicusage.lisp"></script> And that's all there is to it :-)<br /><br />Perhaps in a future post we can dive into the internals, showing you more of the glory that is erlport. Even better, we could look at more compelling example usage, approaching some of the functionality offered by such projects as <a href="http://discoproject.org/">Disco</a> or <a href="http://continuum.io/anaconda-server">Anaconda</a>.<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"></div><div
+class="separator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-EuuMPRzpqrE/VG-_qpcc9qI/AAAAAAAAAS8/mXjY5cHjoP
+E/s1600/Erlang-Python-Greats.png" imageanchor="1" style="clear: right; float:
+right; margin-bottom: 1em; margin-left: 1em;"><img border="0"
+src="http://4.bp.blogspot.com/-EuuMPRzpqrE/VG-_qpcc9qI/AAAAAAAAAS8/mXjY5cHjoPE
+/s1600/Erlang-Python-Greats.png" height="190" width="320"
+/></a></div><b>Update 1</b>: This post has a sequel <a
+href="http://blog.lfe.io/tutorials/2014/12/03/1828-erlport-and-python-making-m
+ore-calls-from-lfe/">here</a>.<br /><br /><b>Update 2</b>: There is a <a
+href="https://github.com/lfex/py">new LFE library</a> that provides more
+idiomatic access to Python from LFE/Erlang by wrapping ErlPort and creating
+convenience functions. Lisp macros were, of course, involved in its making.<br
+/><br />This is a short little blog post I've been wanting to get out there
+ever since I ran across <a href="http://erlport.org/">the erlport project</a>
+a few years ago. Erlang was built for fault-tolerance. It had a goal of
+unprecedented uptimes, and these have been achieved. It powers 40% of our
+world's telecommunications traffic. It's capable of supporting amazing levels
+of concurrency (remember the <a
+href="https://www.sics.se/~joe/apachevsyaws.html">2007 announcement</a> about
+the performance of YAWS vs. Apache?).<br /><br />With this knowledge in mind,
+a common mistake by folks new to Erlang is to think these performance
+characteristics will be applicable to their own particular domain. This has
+often resulted in failure, disappointment, and the unjust blaming of Erlang.
+If you want to process huge files, do lots of string manipulation, or crunch
+tons of numbers, Erlang's not your bag, baby. Try <a
+href="https://www.python.org/">Python</a> or <a
+href="http://julialang.org/">Julia</a>.<br /><br />But then, you may be
+thinking: I like supervision trees. I have long-running processes that I want
+to be managed per the rules I establish. I want to run lots of jobs in
+parallel on my 64-core box. I want to run jobs in parallel over the network on
+64 of my 64-core boxes. Python's the right tool for the jobs, but I wish I
+could manage them with Erlang.<br /><br />(There are sooo many other options
+for the use cases above, many of them really excellent. But this post is about
+Erlang/LFE :-)).<br /><br />Traditionally, if you want to run other languages
+with Erlang in a reliable way that doesn't bring your Erlang nodes down with
+badly behaved code, you use <a
+href="http://erlang.org/doc/reference_manual/ports.html">Ports</a>. (more info
+is available in the <a
+href="http://www.erlang.org/doc/tutorial/overview.html">Interoperability Guide
+</a>). This is what <a
+href="http://www.erlang.org/doc/apps/jinterface/jinterface_users_guide.html">J
+Interface</a> builds upon (and, incidentally, allows for some pretty cool <a
+href="https://github.com/oubiwann/lfecljapp">integration with Clojure</a>).
+However, this still leaves a pretty significant burden for the Python or Ruby
+developer for any serious application needs (quick one-offs that only use one
+or two data types are not that big a deal).<br /><br /><a
+href="https://github.com/hdima/erlport">erlport</a> was created by&nbsp;<a
+href="https://twitter.com/hdima">Dmitry Vasiliev</a> in 2009 in an effort to
+solve just this problem, making it easier to use of and integrate between
+Erlang and more common languages like Python and Ruby. The project is
+maintained, and in fact has just received a few updates. Below, we'll
+demonstrate some usage in <a href="http://lfe.io/">LFE</a>&nbsp;with <a
+href="https://docs.python.org/3/">Python 3</a>.<br /><br />If you want to
+follow along, there's a demo repo you can check out:<br /><script
+src="https://gist.github.com/61c939ec07d037e3c21c.js?file=01-checkout.txt"></s
+cript> Change into the repo directory and set up your Python environment:<br
+/><script src="https://gist.github.com/61c939ec07d037e3c21c.js?file=02-setuppy
+thon.txt"></script> Next, switch over to the LFE directory, and fire up a
+REPL:<br /><script
+src="https://gist.github.com/61c939ec07d037e3c21c.js?file=03-setuplfe.txt"></s
+cript> Note that this will first download the necessary dependencies and
+compile them (that's what the <span style="font-family: Courier New, Courier,
+monospace;">[snip]</span> is eliding).<br /><br />Now we're ready to take
+erlport for a quick trip down to the local:<br /><script
+src="https://gist.github.com/61c939ec07d037e3c21c.js?file=04-basicusage.lisp">
+</script> And that's all there is to it :-)<br /><br />Perhaps in a future
+post we can dive into the internals, showing you more of the glory that is
+erlport. Even better, we could look at more compelling example usage,
+approaching some of the functionality offered by such projects as <a
+href="http://discoproject.org/">Disco</a> or <a
+href="http://continuum.io/anaconda-server">Anaconda</a>.<br /><br /><br />

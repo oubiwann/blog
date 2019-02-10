@@ -11,4 +11,39 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />Last month we announced that there were only 30 days left to become a <a href="http://twistedmatrix.com/trac/wiki/TSF/FoundingSponsors">Founding Sponsor</a> of the <a href="http://twistedsoftwarefoundation.org/">Twisted Software Foundation</a>. There are only two days left, so get your donate on!<br /><br />We've had some really amazing sponsor conversations during this process, and we're excited about all the new Twisted stories that can be told. We've got enough material for 3 years of Twisted Shows, so I expect you'll be hearing more about how folks are using Twisted in the coming months.<br /><br />In particular, I want to give a shout out to two different organizations.<br /><br /><img src="http://twistedmatrix.com/trac/attachment/wiki/TSF/SponsorLogos/zenoss.gif?format=raw" align="left" />Zenoss recently published <a href="http://www.zenoss.com/news/archive/zenosspressrelease.2008-05-09.2364162990">a press release</a> about their sponsorship, exposing Twisted to an "enterprise" audience that may not have heard of it yet. From the release:<br /><br />"Twisted provides the foundation for Zenoss' scalable, agent-less collectors. It allows Zenoss daemons to talk to hundreds of enterprise systems simultaneously, with low overheads, using standard protocols like SNMP. In addition, Twisted provides the internal communications between distributed collectors."<br /><br /><p style="text-align: left;"><img src="http://twistedmatrix.com/trac/attachment/wiki/TSF/SponsorLogos/ubm.png?format=raw" align="right" /> <a href="http://www.unitedbusinessmedia.com/">United Business Media</a> (formerly known as <a href="http://cmp.com/">CMP</a>) has also donated to Twisted, becoming a recent Founding Sponsor. </p>This was a rather unexpected bit of good fortune... but it gets better: they hadn't heard of Twisted before, and after reading up on it, they were so impressed that they immediately agreed to have three of their research and publication organizations become founding sponsors. They were amazed at the sophistication and power that the Twisted framework provides to a community of developers who are creating the future trends in software. I expect we'll be hearing more from them in the future ;-)<p></p><span style="font-weight: bold;">Update</span>: The three UBM companies which sponsored the TSF are <a href="http://www.contentinople.com/">Contentinople</a>, <a href="http://www.internetevolution.com/">Internet Evolution</a>, and <a href="http://www.lightreading.com/">Light Reading</a>.<br /><br /><br /></div>
+<div><br />Last month we announced that there were only 30 days left to become
+a <a href="http://twistedmatrix.com/trac/wiki/TSF/FoundingSponsors">Founding
+Sponsor</a> of the <a href="http://twistedsoftwarefoundation.org/">Twisted
+Software Foundation</a>. There are only two days left, so get your donate
+on!<br /><br />We've had some really amazing sponsor conversations during this
+process, and we're excited about all the new Twisted stories that can be told.
+We've got enough material for 3 years of Twisted Shows, so I expect you'll be
+hearing more about how folks are using Twisted in the coming months.<br /><br
+/>In particular, I want to give a shout out to two different organizations.<br
+/><br /><img
+src="http://twistedmatrix.com/trac/attachment/wiki/TSF/SponsorLogos/zenoss.gif
+?format=raw" align="left" />Zenoss recently published <a
+href="http://www.zenoss.com/news/archive/zenosspressrelease.2008-05-09.2364162
+990">a press release</a> about their sponsorship, exposing Twisted to an
+"enterprise" audience that may not have heard of it yet. From the release:<br
+/><br />"Twisted provides the foundation for Zenoss' scalable, agent-less
+collectors. It allows Zenoss daemons to talk to hundreds of enterprise systems
+simultaneously, with low overheads, using standard protocols like SNMP. In
+addition, Twisted provides the internal communications between distributed
+collectors."<br /><br /><p style="text-align: left;"><img
+src="http://twistedmatrix.com/trac/attachment/wiki/TSF/SponsorLogos/ubm.png?fo
+rmat=raw" align="right" /> <a
+href="http://www.unitedbusinessmedia.com/">United Business Media</a> (formerly
+known as <a href="http://cmp.com/">CMP</a>) has also donated to Twisted,
+becoming a recent Founding Sponsor. </p>This was a rather unexpected bit of
+good fortune... but it gets better: they hadn't heard of Twisted before, and
+after reading up on it, they were so impressed that they immediately agreed to
+have three of their research and publication organizations become founding
+sponsors. They were amazed at the sophistication and power that the Twisted
+framework provides to a community of developers who are creating the future
+trends in software. I expect we'll be hearing more from them in the future
+;-)<p></p><span style="font-weight: bold;">Update</span>: The three UBM
+companies which sponsored the TSF are <a
+href="http://www.contentinople.com/">Contentinople</a>, <a
+href="http://www.internetevolution.com/">Internet Evolution</a>, and <a
+href="http://www.lightreading.com/">Light Reading</a>.<br /><br /><br /></div>

@@ -11,4 +11,163 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">community :: society</i><br/><br/><p/><br /><p>A good friend who has very little contact with the open source<br />movement asked me to offer ideas that could assist a non-technical<br />organziation for which we have both volunteered much time and energy.</p><br /><br /><p>As a result, I summarized (at length) ideas that other friends of<br />mine and I have been discussing. Though focus here is put on the open<br />source community, our deepest concern has been for society as a whole<br />and useful models of which small groups can take advantage and from<br />which they can learn.</p><br /><br /><p>I've been doing some serious analysis concerning societal paradigms,<br />especially in regard to evolving definitions of "tribe" over time.<br />Related, is the issue of group dynamics and group health. The<br />efficiencies and "health" of the massive open source community has been<br />especially puzzling until recently.</p><br /><br /><p>Let me start with background:</p><br /><br /><p>It is my current view that tribes existed as cohesive units due to<br />violent "external" conditions (including predators, enemies, and other<br />hinderances to survival). If the forces at play were external only,<br />we'd still have tribes today. However, I think there was a balance of<br />force at play: external threat vs. internal mutual dependance. Tribes<br />formed to increase chances of survival; they stayed together because,<br />even though others are a pain in the ass, they needed the lecherous<br />cobler, the violent warrior, the reclusive black smith, etc.</p><br /><br /><p>So why did the tribes start falling apart? I think it was<br />technology... in the form of roads, improved communication, better<br />farming techniques, whatever. With improved technology, comes increased<br />independence of individuals, greater power of each person to do things<br />on their own and be less dependent. Each advance in technology has<br />further empowered those capable of wielding it.</p><br /><br /><p>Technology also tends to abstract things. For instance, the modern<br />grocery store is an abstraction of a much longer, real-world process:<br />tilling, planting, harvesting, going to market. These things still<br />occur, but just not in the consciousness of the modern consumer... the<br />process has been replaced with a 5 minute zip down the road in an iron<br />"horse."</p><br /><br /><p>Furthermore, it is my opinion that the extended family is an eroded<br />form of the tribe, and the nuclear family an even further decay. This<br />has concerned me for some time, especially if you believe that society<br />tends to represent lower common denominators (I'm thinking of average<br />level of consciousness). These are related in that if group<br />consciousness is in the process of evolving, and we have "just now" (in<br />the past 2000 years) experienced a dissociation of the tribe, then we<br />are very far from evolving a healthy replacement. It could be anywhere<br />from several decades to hundreds of years before we see a large-scale<br />integration of whatever form the next healthy "tribe" will take.</p><br /><br /><p>However, like so many other things in nature that evolve slowly over<br />time, we may actually be right in the middle of it. More digression<br />first:</p><br /><br /><p>We drive on superhighways, lights cover the midnight city like a<br />spaceship... or an artist's rendition of electrons in a computer chip.<br />We can send people up into space... where they actually experience<br />relativistic changes in time (minute, but measurable). This is a world<br />of science fiction... become fact. In the 30s, 40s, and 50s, wacko<br />writers were envisioning crazy worlds that didn't do half the stuff we<br />can do now. One of those wackos was Asimov, whose early "predictions"<br />for the "far future" were outstripped within 20 years of some of his<br />short stories.</p><br /><br /><p>Our world is not the one our kind has known for millennia. It's<br />changing at every level. It was a crushing blow to me personally, when<br />this really hit home: there is no going back, there is only accepting<br />what we have become and making this work for us... us homo... what?<br />perhaps homo connectivus.</p><br /><br /><p>All this change sneaks up on us, though. Somehow we still function<br />as though parts of our minds and being were in the mid-1800s... or<br />800s... or 2800 B.C.E. With our changing world and the increased amount<br />of abstraction we are forced to deal with, I think we tend to seek safe<br />harbor in the human past. However, with each generation, artists,<br />poets, and musicians have been egging us onwards. Trying to tune our<br />ears, eyes, hearts, and minds to the demands that will be increasingly<br />made upon us and future generations.</p><br /><br /><p>Which brings me closer to the point of this whole thing. At the<br />beginning, I said how I think I am beginning to understand the open<br />source movement, a movement that, as one of its mottos, says "Use the<br />Source, Luke." The only way I was able to start getting it was through<br />abstraction.</p><br /><br /><p>Now mind you, open source was condemned to failure by some of the<br />biggest business minds in the world. It has baffled people for years:<br />how can it continue to exist? How does it grow? There is no money, what<br />is the economic model for this headless behemoth?</p><br /><br /><p>The secret of the open source community is that it works like a<br />brain. There is no ultimate hierarchy in a collection of billions of<br />neurons (perhaps an emerging pre-consciousness though?). More<br />importantly, it doesn't matter how many sick, unhealthy cells there are<br />in it (within obvious limits). If a set of neurons that were a major<br />conduit for certain signals break down, the signals get rerouted. The<br />brain is a highly redundant, fault-tolerant network.</p><br /><br /><p>The open source community is composed of millions of individuals all<br />over the globe. I work on projects with team members having multiple<br />PhDs, members who are university students, high school students and<br />middle schoolers, musicians, mathematicians, psychologists, blue-colors<br />workers, etc. The community is becoming all-pervasive. It is one of the<br />most tolerant, accepting, healthy and helpful communities I have ever<br />been involved in.</p><br /><br /><p>But that didn't make sense, when I thought about it. I *know* some<br />of those people, and many are not healthy, and some are down-right<br />mean. After thinking about it, I realized that the best way to consider<br />it was via an abstraction: Graph Theory from mathematics. Graph Theory<br />has nothing to do with pictures: many graph theoretic problems focus on<br />network connections and traversals. Weighted values. Navigating through<br />a "problem space" with the least expenditure of energy. Companies like<br />FedEx use graph theory calculations to determine the<br />fastest/cheapest/most productive delivery routes.</p><br /><br /><p>Communities with lots of members form vast networks. People are<br />nodes on the network and any possible means of interacting with those<br />people are the connections between the nodes. If someone in the open<br />source community treats me like shit, I don't get bent our of shape. I<br />make a mental note, and maybe tell my friends what a dick that person<br />is (thus giving that node a negative weight with less chance of<br />traversal). But I then try to find an alternate path to the information<br />I need or the information I need to share. Over time, I discover<br />faster, more efficient, path ways of interaction that improve my<br />quality of life while interacting with other members of the community.</p><br /><br /><p>This may seem like a cold distillation, but I am not trying to<br />capture or limit anything. I'm just trying to find accurate or useful<br />*approximations* of behavior. In highly trafficked networks, patterns<br />of usage begin to emerge. In networks of humans and their projects,<br />mini-networks tend to emerge in areas of higher-than-nornal usage.<br />These, mini-networks are little communities... or, shall we say,<br />"tribes". They are dynamic in nature and tend to develop patterns of<br />internal flux (immigration, emigration) as well as movement/migration<br />of the community/tribe as a whole. These communities often don't have<br />set leaders. However, the ones without leaders have very well-defined<br />goals and mechanisms for determining consensus. The ones with leaders<br />tend to have a very democratic approach to their leadership. The most<br />effective communities exchange an extraordinary amount of information:<br />constant communication and feedback is critical to success.</p><br /><br /><p>In networks, there is no "ultimate dependance": people and lines of<br />communication (nodes and connections) are only used to their abilities.<br />There is no round-hole-square-pegging -- that just takes too much time.<br />In public communication, people observe what others say and how they<br />say it. From that, they make initial guesses at who is good at what.<br />Initial guess plus trial and error. Sounds like differential<br />equations... and artificial intelligence ;-) You can have complete<br />losers, slackers, etc., in any group. They tend to add flavor ;-) They<br />just don't end up being used as part of the network when stuff has to<br />get done. They get used for whatever they are good at... like making us<br />laugh or letting us vent.</p><br /><br /><p>Once I saw this, it became clear how this could be a replacement for<br />the tribe. First a recap. Tribes (maybe) fell apart for the dual<br />reasons of:<br/><br />1) increased chances of survival outside the structure of the tribe, and<br/><br /><br />2) increased convenience of obtaining amenities without having to depend on tribe members.<br/><br />Since then, we've been wandering about, trying to rediscover the tribe,<br />trying to reinvent that which has already become extinct for the simple<br />fact that the causes and conditions no longer exist. Yet we evolved<br />with the need for the tribe; its lack is therefore part of the modern<br />human experience of longing.</p><br /><br /><p>As our educated population becomes increasingly more so, we are<br />finding it more and more difficult to be lead by people who represent<br />the lower common denominators. Perhaps not so much for what they are,<br />as what they represent: an outmoded form of governance. Intelligent<br />networks don't have to tell each node what to do. They just need a<br />purpose and the resources to accomplish their goals.</p><br /><br /><p>The need for Survival has evolved into the need for improved Quality<br />Of Life. In the same way the amenities support survival, Joy supports<br />Quality of Life. So, tribes may be able to reform under the conditions<br />that members experience improved quality of life and joy in their daily<br />activities. Joy is an amazing antidote to daily human annoyances. Joy<br />can bind groups with a common vision together where nothing else would<br />have.</p><br /><br /><p>The people working on open source projects do so out of love and<br />joy. We love what we do. Those of us that are truly fortunate get to<br />work on open source *as* our jobs. The rest, though, do their jobs, and<br />when off work, they increase their quality of life by working on that<br />which brings them joy... and they do so in an open, non-hierarchical<br />system, with excellent communication, working with others to accomplish<br />things that could not be done by one, lone person.<br/><br /></p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">community ::
+society</i><br/><br/><p/><br /><p>A good friend who has very little contact
+with the open source<br />movement asked me to offer ideas that could assist a
+non-technical<br />organziation for which we have both volunteered much time
+and energy.</p><br /><br /><p>As a result, I summarized (at length) ideas that
+other friends of<br />mine and I have been discussing. Though focus here is
+put on the open<br />source community, our deepest concern has been for
+society as a whole<br />and useful models of which small groups can take
+advantage and from<br />which they can learn.</p><br /><br /><p>I've been
+doing some serious analysis concerning societal paradigms,<br />especially in
+regard to evolving definitions of "tribe" over time.<br />Related, is the
+issue of group dynamics and group health. The<br />efficiencies and "health"
+of the massive open source community has been<br />especially puzzling until
+recently.</p><br /><br /><p>Let me start with background:</p><br /><br /><p>It
+is my current view that tribes existed as cohesive units due to<br />violent
+"external" conditions (including predators, enemies, and other<br
+/>hinderances to survival). If the forces at play were external only,<br
+/>we'd still have tribes today. However, I think there was a balance of<br
+/>force at play: external threat vs. internal mutual dependance. Tribes<br
+/>formed to increase chances of survival; they stayed together because,<br
+/>even though others are a pain in the ass, they needed the lecherous<br
+/>cobler, the violent warrior, the reclusive black smith, etc.</p><br /><br
+/><p>So why did the tribes start falling apart? I think it was<br
+/>technology... in the form of roads, improved communication, better<br
+/>farming techniques, whatever. With improved technology, comes increased<br
+/>independence of individuals, greater power of each person to do things<br
+/>on their own and be less dependent. Each advance in technology has<br
+/>further empowered those capable of wielding it.</p><br /><br /><p>Technology
+also tends to abstract things. For instance, the modern<br />grocery store is
+an abstraction of a much longer, real-world process:<br />tilling, planting,
+harvesting, going to market. These things still<br />occur, but just not in
+the consciousness of the modern consumer... the<br />process has been replaced
+with a 5 minute zip down the road in an iron<br />"horse."</p><br /><br
+/><p>Furthermore, it is my opinion that the extended family is an eroded<br
+/>form of the tribe, and the nuclear family an even further decay. This<br
+/>has concerned me for some time, especially if you believe that society<br
+/>tends to represent lower common denominators (I'm thinking of average<br
+/>level of consciousness). These are related in that if group<br
+/>consciousness is in the process of evolving, and we have "just now" (in<br
+/>the past 2000 years) experienced a dissociation of the tribe, then we<br
+/>are very far from evolving a healthy replacement. It could be anywhere<br
+/>from several decades to hundreds of years before we see a large-scale<br
+/>integration of whatever form the next healthy "tribe" will take.</p><br
+/><br /><p>However, like so many other things in nature that evolve slowly
+over<br />time, we may actually be right in the middle of it. More
+digression<br />first:</p><br /><br /><p>We drive on superhighways, lights
+cover the midnight city like a<br />spaceship... or an artist's rendition of
+electrons in a computer chip.<br />We can send people up into space... where
+they actually experience<br />relativistic changes in time (minute, but
+measurable). This is a world<br />of science fiction... become fact. In the
+30s, 40s, and 50s, wacko<br />writers were envisioning crazy worlds that
+didn't do half the stuff we<br />can do now. One of those wackos was Asimov,
+whose early "predictions"<br />for the "far future" were outstripped within 20
+years of some of his<br />short stories.</p><br /><br /><p>Our world is not
+the one our kind has known for millennia. It's<br />changing at every level.
+It was a crushing blow to me personally, when<br />this really hit home: there
+is no going back, there is only accepting<br />what we have become and making
+this work for us... us homo... what?<br />perhaps homo connectivus.</p><br
+/><br /><p>All this change sneaks up on us, though. Somehow we still
+function<br />as though parts of our minds and being were in the mid-1800s...
+or<br />800s... or 2800 B.C.E. With our changing world and the increased
+amount<br />of abstraction we are forced to deal with, I think we tend to seek
+safe<br />harbor in the human past. However, with each generation, artists,<br
+/>poets, and musicians have been egging us onwards. Trying to tune our<br
+/>ears, eyes, hearts, and minds to the demands that will be increasingly<br
+/>made upon us and future generations.</p><br /><br /><p>Which brings me
+closer to the point of this whole thing. At the<br />beginning, I said how I
+think I am beginning to understand the open<br />source movement, a movement
+that, as one of its mottos, says "Use the<br />Source, Luke." The only way I
+was able to start getting it was through<br />abstraction.</p><br /><br
+/><p>Now mind you, open source was condemned to failure by some of the<br
+/>biggest business minds in the world. It has baffled people for years:<br
+/>how can it continue to exist? How does it grow? There is no money, what<br
+/>is the economic model for this headless behemoth?</p><br /><br /><p>The
+secret of the open source community is that it works like a<br />brain. There
+is no ultimate hierarchy in a collection of billions of<br />neurons (perhaps
+an emerging pre-consciousness though?). More<br />importantly, it doesn't
+matter how many sick, unhealthy cells there are<br />in it (within obvious
+limits). If a set of neurons that were a major<br />conduit for certain
+signals break down, the signals get rerouted. The<br />brain is a highly
+redundant, fault-tolerant network.</p><br /><br /><p>The open source community
+is composed of millions of individuals all<br />over the globe. I work on
+projects with team members having multiple<br />PhDs, members who are
+university students, high school students and<br />middle schoolers,
+musicians, mathematicians, psychologists, blue-colors<br />workers, etc. The
+community is becoming all-pervasive. It is one of the<br />most tolerant,
+accepting, healthy and helpful communities I have ever<br />been involved
+in.</p><br /><br /><p>But that didn't make sense, when I thought about it. I
+*know* some<br />of those people, and many are not healthy, and some are
+down-right<br />mean. After thinking about it, I realized that the best way to
+consider<br />it was via an abstraction: Graph Theory from mathematics. Graph
+Theory<br />has nothing to do with pictures: many graph theoretic problems
+focus on<br />network connections and traversals. Weighted values. Navigating
+through<br />a "problem space" with the least expenditure of energy. Companies
+like<br />FedEx use graph theory calculations to determine the<br
+/>fastest/cheapest/most productive delivery routes.</p><br /><br
+/><p>Communities with lots of members form vast networks. People are<br
+/>nodes on the network and any possible means of interacting with those<br
+/>people are the connections between the nodes. If someone in the open<br
+/>source community treats me like shit, I don't get bent our of shape. I<br
+/>make a mental note, and maybe tell my friends what a dick that person<br
+/>is (thus giving that node a negative weight with less chance of<br
+/>traversal). But I then try to find an alternate path to the information<br
+/>I need or the information I need to share. Over time, I discover<br
+/>faster, more efficient, path ways of interaction that improve my<br
+/>quality of life while interacting with other members of the
+community.</p><br /><br /><p>This may seem like a cold distillation, but I am
+not trying to<br />capture or limit anything. I'm just trying to find accurate
+or useful<br />*approximations* of behavior. In highly trafficked networks,
+patterns<br />of usage begin to emerge. In networks of humans and their
+projects,<br />mini-networks tend to emerge in areas of higher-than-nornal
+usage.<br />These, mini-networks are little communities... or, shall we
+say,<br />"tribes". They are dynamic in nature and tend to develop patterns
+of<br />internal flux (immigration, emigration) as well as
+movement/migration<br />of the community/tribe as a whole. These communities
+often don't have<br />set leaders. However, the ones without leaders have very
+well-defined<br />goals and mechanisms for determining consensus. The ones
+with leaders<br />tend to have a very democratic approach to their leadership.
+The most<br />effective communities exchange an extraordinary amount of
+information:<br />constant communication and feedback is critical to
+success.</p><br /><br /><p>In networks, there is no "ultimate dependance":
+people and lines of<br />communication (nodes and connections) are only used
+to their abilities.<br />There is no round-hole-square-pegging -- that just
+takes too much time.<br />In public communication, people observe what others
+say and how they<br />say it. From that, they make initial guesses at who is
+good at what.<br />Initial guess plus trial and error. Sounds like
+differential<br />equations... and artificial intelligence ;-) You can have
+complete<br />losers, slackers, etc., in any group. They tend to add flavor
+;-) They<br />just don't end up being used as part of the network when stuff
+has to<br />get done. They get used for whatever they are good at... like
+making us<br />laugh or letting us vent.</p><br /><br /><p>Once I saw this, it
+became clear how this could be a replacement for<br />the tribe. First a
+recap. Tribes (maybe) fell apart for the dual<br />reasons of:<br/><br />1)
+increased chances of survival outside the structure of the tribe, and<br/><br
+/><br />2) increased convenience of obtaining amenities without having to
+depend on tribe members.<br/><br />Since then, we've been wandering about,
+trying to rediscover the tribe,<br />trying to reinvent that which has already
+become extinct for the simple<br />fact that the causes and conditions no
+longer exist. Yet we evolved<br />with the need for the tribe; its lack is
+therefore part of the modern<br />human experience of longing.</p><br /><br
+/><p>As our educated population becomes increasingly more so, we are<br
+/>finding it more and more difficult to be lead by people who represent<br
+/>the lower common denominators. Perhaps not so much for what they are,<br
+/>as what they represent: an outmoded form of governance. Intelligent<br
+/>networks don't have to tell each node what to do. They just need a<br
+/>purpose and the resources to accomplish their goals.</p><br /><br /><p>The
+need for Survival has evolved into the need for improved Quality<br />Of Life.
+In the same way the amenities support survival, Joy supports<br />Quality of
+Life. So, tribes may be able to reform under the conditions<br />that members
+experience improved quality of life and joy in their daily<br />activities.
+Joy is an amazing antidote to daily human annoyances. Joy<br />can bind groups
+with a common vision together where nothing else would<br />have.</p><br /><br
+/><p>The people working on open source projects do so out of love and<br
+/>joy. We love what we do. Those of us that are truly fortunate get to<br
+/>work on open source *as* our jobs. The rest, though, do their jobs, and<br
+/>when off work, they increase their quality of life by working on that<br
+/>which brings them joy... and they do so in an open, non-hierarchical<br
+/>system, with excellent communication, working with others to accomplish<br
+/>things that could not be done by one, lone person.<br/><br /></p><br
+/></div>

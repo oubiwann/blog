@@ -11,4 +11,98 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://farm9.staticflickr.com/8194/8132215505_bed518b214.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://farm9.staticflickr.com/8194/8132215505_bed518b214.jpg" width="200" /></a></div><a href="http://clojure.org/">Clojure</a> has a very interesting async primitive: the <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/agent">agent</a>. There is some good <a href="http://clojure.org/agents">documentation on agents</a>, but for those that come from a background such as mine (<a href="http://www.python.org/">Python</a> at <a href="http://twistedmatrix.com/">Twisted</a>), I thought it might be nice to present one way of using agents to mimic the familiar async + callback reactive-style programming. <br /><br />Do note, however, that Clojure agents run in one of two threadpools (one intended for CPU-intensive tasks, and the other for I/O-intensive tasks). As such, this is quite different than the event-loop approach that Twisted uses (or async frameworks that utilize libraries such as <a href="http://libevent.org/">libevent</a> or <a href="http://software.schmorp.de/pkg/libev.html">libev</a>). Twisted has the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">deferToThread</span></span> functionality, which is ... well, not exactly close, really. Regardless, let's get started.<br /><br />In the following examples, we're going to pretend we have huge files we'll be reading off a local disk.<br /><br /><b>What to Call</b><br />Clojure's <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">agent</span></span> function is very, very simple: you pass it a value (it's initial state) and some options, if needed. That's it.<br /><br /><script src="https://gist.github.com/3967254.js?file=01-agent.clj"></script> <br />To update its state, you use either the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send</span></span> or <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> functions. If you've got CPU-bound tasks whose state you want to manage with agents, then you should use the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send</span></span> function. If your tasks will be I/O-bound, then you should use<span style="font-size: small;"> <span style="font-size: small;">the </span></span><span style="font-size: small;"><span style="font-size: small;"><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> function for updating a<span style="font-size: small;">gent state.</span></span></span> (The threadpool dedicated for use by <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send</span></span> has a fixed size, based on the number of processors on your system. The threadpool for <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> is exapandable with thread caching and keep-alives.) Since our examples are focused on disk I/O, we'll be using <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span>. (they have the same signature, though, so the following usage information applies to both).<br /><br />When you <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> something to an agent, you pass if a few things:<br /><ul><li>an agent</li><li>the action or update function</li><li>any number of additional parameters you want the action function to consume</li></ul>Here's what that looks like: <br /><br /><script src="https://gist.github.com/3967254.js?file=02-send-off.clj"></script> <br /><b>What to Write</b> <br />So, we know what an agent looks like when bound and we know how we're going to send an update to the agent, but how might we construct the update itself? Perhaps like this:<br /><br /><script src="https://gist.github.com/3967254.js?file=03-action.clj"></script> <br />As you can see, the first value that an action function takes is the "old" value of the agent -- the value that the agent has prior to the action that will take place. Once this function returns, the agent's value will be set to the return value of the action function. (What's more, if we needed to access the agent itself inside the action function for any reason, we could do so using the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">*agent*</span></span> variable -- accessible within the scope of the action function).<br /><br />Before we go on, let's take a look at this in action from the REPL:<br /><br /><script src="https://gist.github.com/3967254.js?file=05-repl.txt"></script> <br />The first thing we do is switch from the default namespace to one dedicated to our examples (this makes managing scope in the REPL much cleaner). Then we load a file that has the agent and action function defined. Then we tell it to run our fake "big read" function, asking it to run for about 10 seconds. As you can see, send-off returns the agent immediately. We then get the current value of the agent by dereferencing it. Finally our big read finishes, and we see it print how long it took. We then look at the agent directly, and then dereference it again -- both showing us what we'd expect: that the value of the agent has been updated to the return value of our big read function. Finally, we shutdown the agent threads and exit the REPL.<br /><br />(The <span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">start-clojure</span></span> script is wrapped with <a href="http://utopia.knoware.nl/~hlub/rlwrap/#rlwrap">rlwrap</a> so that I have access to a command line history, persistent over different sessions. The script boils down to this: <span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">rlwrap java -cp /usr/local/clojure-1.4.0/clojure-1.4.0.jar clojure.main</span></span>.)<br /><br />We've seen the agent in action now, but there's a bit more we can do. We'll take a look at that in the next post.<br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+
+ref="http://farm9.staticflickr.com/8194/8132215505_bed518b214.jpg" imageanchor
+="1" style="clear: left; float: left; margin-bottom: 1em; margin-right:
+1em;"><img border="0" height="200"
+src="http://farm9.staticflickr.com/8194/8132215505_bed518b214.jpg" width="200"
+/></a></div><a href="http://clojure.org/">Clojure</a> has a very interesting
+async primitive: the <a
+href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/age
+nt">agent</a>. There is some good <a
+href="http://clojure.org/agents">documentation on agents</a>, but for those
+that come from a background such as mine (<a
+href="http://www.python.org/">Python</a> at <a
+href="http://twistedmatrix.com/">Twisted</a>), I thought it might be nice to
+present one way of using agents to mimic the familiar async + callback
+reactive-style programming. <br /><br />Do note, however, that Clojure agents
+run in one of two threadpools (one intended for CPU-intensive tasks, and the
+other for I/O-intensive tasks). As such, this is quite different than the
+event-loop approach that Twisted uses (or async frameworks that utilize
+libraries such as <a href="http://libevent.org/">libevent</a> or <a
+href="http://software.schmorp.de/pkg/libev.html">libev</a>). Twisted has the
+<span style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">deferToThread</span></span> functionality, which
+is ... well, not exactly close, really. Regardless, let's get started.<br
+/><br />In the following examples, we're going to pretend we have huge files
+we'll be reading off a local disk.<br /><br /><b>What to Call</b><br
+/>Clojure's <span style="font-size: x-small;"><span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">agent</span></span> function is
+very, very simple: you pass it a value (it's initial state) and some options,
+if needed. That's it.<br /><br /><script
+src="https://gist.github.com/3967254.js?file=01-agent.clj"></script> <br />To
+update its state, you use either the <span style="font-size: x-small;"><span
+style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">send</span></span> or <span style="font-size:
+x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">send-off</span></span> functions. If you've got
+CPU-bound tasks whose state you want to manage with agents, then you should
+use the <span style="font-size: x-small;"><span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">send</span></span> function. If
+your tasks will be I/O-bound, then you should use<span style="font-size:
+small;"> <span style="font-size: small;">the </span></span><span
+style="font-size: small;"><span style="font-size: small;"><span
+style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">send-off</span></span> function for updating
+a<span style="font-size: small;">gent state.</span></span></span> (The
+threadpool dedicated for use by <span style="font-size: x-small;"><span
+style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">send</span></span> has a fixed size, based on
+the number of processors on your system. The threadpool for <span
+style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">send-off</span></span> is exapandable with
+thread caching and keep-alives.) Since our examples are focused on disk I/O,
+we'll be using <span style="font-size: x-small;"><span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">send-off</span></span>. (they have
+the same signature, though, so the following usage information applies to
+both).<br /><br />When you <span style="font-size: x-small;"><span
+style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">send-off</span></span> something to an agent,
+you pass if a few things:<br /><ul><li>an agent</li><li>the action or update
+function</li><li>any number of additional parameters you want the action
+function to consume</li></ul>Here's what that looks like: <br /><br /><script
+src="https://gist.github.com/3967254.js?file=02-send-off.clj"></script> <br
+/><b>What to Write</b> <br />So, we know what an agent looks like when bound
+and we know how we're going to send an update to the agent, but how might we
+construct the update itself? Perhaps like this:<br /><br /><script
+src="https://gist.github.com/3967254.js?file=03-action.clj"></script> <br />As
+you can see, the first value that an action function takes is the "old" value
+of the agent -- the value that the agent has prior to the action that will
+take place. Once this function returns, the agent's value will be set to the
+return value of the action function. (What's more, if we needed to access the
+agent itself inside the action function for any reason, we could do so using
+the <span style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">*agent*</span></span> variable -- accessible
+within the scope of the action function).<br /><br />Before we go on, let's
+take a look at this in action from the REPL:<br /><br /><script
+src="https://gist.github.com/3967254.js?file=05-repl.txt"></script> <br />The
+first thing we do is switch from the default namespace to one dedicated to our
+examples (this makes managing scope in the REPL much cleaner). Then we load a
+file that has the agent and action function defined. Then we tell it to run
+our fake "big read" function, asking it to run for about 10 seconds. As you
+can see, send-off returns the agent immediately. We then get the current value
+of the agent by dereferencing it. Finally our big read finishes, and we see it
+print how long it took. We then look at the agent directly, and then
+dereference it again -- both showing us what we'd expect: that the value of
+the agent has been updated to the return value of our big read function.
+Finally, we shutdown the agent threads and exit the REPL.<br /><br />(The
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span
+style="font-size: x-small;">start-clojure</span></span> script is wrapped with
+<a href="http://utopia.knoware.nl/~hlub/rlwrap/#rlwrap">rlwrap</a> so that I
+have access to a command line history, persistent over different sessions. The
+script boils down to this: <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;"><span style="font-size: x-small;">rlwrap java
+-cp /usr/local/clojure-1.4.0/clojure-1.4.0.jar clojure.main</span></span>.)<br
+/><br />We've seen the agent in action now, but there's a bit more we can do.
+We'll take a look at that in the next post.<br /><br />

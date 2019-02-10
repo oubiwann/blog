@@ -11,4 +11,27 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: programming :: macosx</i><br/><br/><div class="entry"><br /><p><br />I had some trouble installing ctypes on a 10.4 server tonight, and found<br /><a href="http://www.usenetlinux.com/archive/topic.php/t-219001.html">this <br />little post</a><br />that gave a patch for it. Unfortunately, this was for the file in 2004 <br />and I had to manually edit the current 4000+ line file.<br /></p><p/>Apparently, this was in CVS in 2004 but hasn't made it into a distro <br />since...<p/>For the search engines, I will post the error message (where xxx are <br />your line numbers):<br /><pre><br />source/_ctypes.c:xxx: error: static declaration of 'Pointer_Type' <br />follows non-static declaration<br />source/ctypes.h:xxx: error: previous declaration of 'Pointer_Type' was <br />here<br /></pre><p/>And here's a copy of my diff against _ctypes.c in ctypes 0.9.6:<br /><pre><br />--- third-party/ctypes-0.9.6/source/_ctypes.c (revision 53)<br />+++ third-party/ctypes-0.9.6/source/_ctypes.c (working copy)<br />@@ -2449,7 +2449,7 @@<br /> "sO|O" - function name, dll object (with an integer handle)<br /> "is|O" - vtable index, method name, creates callable calling COM vtbl<br /> */<br />-static PyObject *<br />+PyObject *<br /> CFuncPtr_new(PyTypeObject *type, PyObject *args, PyObject *kwds)<br /> {<br /> CFuncPtrObject *self;<br />@@ -3880,7 +3880,7 @@<br /> (inquiry)Pointer_nonzero, /* nb_nonzero */<br /> };<p/>-static PyTypeObject Pointer_Type = {<br />+PyTypeObject Pointer_Type = {<br /> PyObject_HEAD_INIT(NULL)<br /> 0,<br /> "_ctypes._Pointer",<br /></pre><p/></div><br/></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python ::
+programming :: macosx</i><br/><br/><div class="entry"><br /><p><br />I had
+some trouble installing ctypes on a 10.4 server tonight, and found<br /><a
+href="http://www.usenetlinux.com/archive/topic.php/t-219001.html">this <br
+/>little post</a><br />that gave a patch for it. Unfortunately, this was for
+the file in 2004 <br />and I had to manually edit the current 4000+ line
+file.<br /></p><p/>Apparently, this was in CVS in 2004 but hasn't made it into
+a distro <br />since...<p/>For the search engines, I will post the error
+message (where xxx are <br />your line numbers):<br /><pre><br
+/>source/_ctypes.c:xxx: error: static declaration of 'Pointer_Type' <br
+/>follows non-static declaration<br />source/ctypes.h:xxx: error: previous
+declaration of 'Pointer_Type' was <br />here<br /></pre><p/>And here's a copy
+of my diff against _ctypes.c in ctypes 0.9.6:<br /><pre><br />---
+third-party/ctypes-0.9.6/source/_ctypes.c (revision 53)<br />+++
+third-party/ctypes-0.9.6/source/_ctypes.c (working copy)<br />@@ -2449,7
++2449,7 @@<br /> "sO|O" - function name, dll object (with an integer
+handle)<br /> "is|O" - vtable index, method name, creates callable calling COM
+vtbl<br /> */<br />-static PyObject *<br />+PyObject *<br />
+CFuncPtr_new(PyTypeObject *type, PyObject *args, PyObject *kwds)<br /> {<br />
+CFuncPtrObject *self;<br />@@ -3880,7 +3880,7 @@<br />
+(inquiry)Pointer_nonzero, /* nb_nonzero */<br /> };<p/>-static PyTypeObject
+Pointer_Type = {<br />+PyTypeObject Pointer_Type = {<br />
+PyObject_HEAD_INIT(NULL)<br /> 0,<br /> "_ctypes._Pointer",<br
+/></pre><p/></div><br/></div>

@@ -11,4 +11,28 @@ Comments:
 Content-Type: md
 Public?: true
 
-This is just a short post to give a shout out to some folks who are sprinting for OpenStack this year at PyCon. It's a small group, since the <a href="http://wiki.openstack.org/Summit/Folsom">Folsom Design Summit and Conference</a> is coming up in a few weeks. <br /><br />One big surprise came last night when I got an email about <a href="http://wiki.openstack.org/quantum-l3">Cisco's recent work with Layer 3</a>&nbsp;(<a href="https://blueprints.launchpad.net/quantum/+spec/quantum-l3-api">blueprint</a>) support in Quantum, and there were two Cisco folks here this morning to chat about that. Mark McClain (DreamHost) is digging deep into their work right now.<br /><br />Yahoo! is remote-sprinting today, and they hope to be in the house tomorrow, to continue working on current improvements in <a href="https://github.com/yahoo/Openstack-DevstackPy">DevstackPy</a>.&nbsp;Mike Pittaro (La Honda Research), Jonathan LaCour and Doug Hellmann (DreamHost) are working with Yahoo! on that.<br /><br />Mike Perez (DreamHost) is hacking on some additional improvements in Horizon for different storage backend representations. We've also chatted a bit about the latest efforts in Horizon for Quantum support (Michael Fork's work). Perez is also helping out tracking some bugs down in DevstackPy.<br /><br />Special thanks to Mike Pittaro for improving the <a href="http://wiki.openstack.org/Sprints/PyCon2012">sprinting pages</a> on the OpenStack wiki with links to previous work and discussions!<br /><br />If you're keen on OpenStack and would like to dive in with some fellow hackers into the deep ends of Nova, Quantum, or Horizon, be sure to come by or pop in at #openstack-pycon on Freenode :-)<br /><br /><br />
+This is just a short post to give a shout out to some folks who are sprinting
+for OpenStack this year at PyCon. It's a small group, since the <a
+href="http://wiki.openstack.org/Summit/Folsom">Folsom Design Summit and
+Conference</a> is coming up in a few weeks. <br /><br />One big surprise came
+last night when I got an email about <a
+href="http://wiki.openstack.org/quantum-l3">Cisco's recent work with Layer
+3</a>&nbsp;(<a href="https://blueprints.launchpad.net/quantum/+spec/quantum-l3
+-api">blueprint</a>) support in Quantum, and there were two Cisco folks here
+this morning to chat about that. Mark McClain (DreamHost) is digging deep into
+their work right now.<br /><br />Yahoo! is remote-sprinting today, and they
+hope to be in the house tomorrow, to continue working on current improvements
+in <a
+href="https://github.com/yahoo/Openstack-DevstackPy">DevstackPy</a>.&nbsp;Mike
+Pittaro (La Honda Research), Jonathan LaCour and Doug Hellmann (DreamHost) are
+working with Yahoo! on that.<br /><br />Mike Perez (DreamHost) is hacking on
+some additional improvements in Horizon for different storage backend
+representations. We've also chatted a bit about the latest efforts in Horizon
+for Quantum support (Michael Fork's work). Perez is also helping out tracking
+some bugs down in DevstackPy.<br /><br />Special thanks to Mike Pittaro for
+improving the <a href="http://wiki.openstack.org/Sprints/PyCon2012">sprinting
+pages</a> on the OpenStack wiki with links to previous work and
+discussions!<br /><br />If you're keen on OpenStack and would like to dive in
+with some fellow hackers into the deep ends of Nova, Quantum, or Horizon, be
+sure to come by or pop in at #openstack-pycon on Freenode :-)<br /><br /><br
+/>

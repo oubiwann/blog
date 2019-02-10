@@ -11,4 +11,85 @@ Comments:
 Content-Type: md
 Public?: true
 
-<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-xO-6jId0QVg/UMkqqDrhMqI/AAAAAAAAAB8/F8pjiP7E_bc/s1600/Logo_Python.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://4.bp.blogspot.com/-xO-6jId0QVg/UMkqqDrhMqI/AAAAAAAAAB8/F8pjiP7E_bc/s200/Logo_Python.png" width="200" /></a></div><b>Update</b>: Guido has been working on <a href="http://www.python.org/dev/peps/pep-3156/">PEP 3156</a>; check on it regularly for the latest! (In the last two hours I've seen it updated with three <b>big</b> content changes.)<br /><br />The buzz has died down a bit now, but the mellowing of the roaring flames has resulted in some nice embers in which an async for Python 3 is being forged. This is an exciting time for those of us who 1) love Python and 2) can't get us enough async.<br /><br />I wanted to take the time to record some of the goodness here before I forgot or got too busy working on something else. So here goes:<br /><br />The latest bout of Python async fever started in September of 2012 in <a href="http://mail.python.org/pipermail/python-ideas/2012-September/016185.html">this message</a> when&nbsp;Christian M. Amsüss emailed the Python-ideas mail list about the state of async in Python and the hopes that a roadmap could be decided upon for Python 3. Note that this is the latest (re)incarnation of conversations that have been going on for some time and for which there is even a <a href="http://www.python.org/dev/peps/pep-3153/">PEP</a>&nbsp;(with <a href="https://github.com/lvh/async-pep">related work</a>&nbsp;on github).<br /><br />After a few tens of messages were exchanged, Guido <a href="http://mail.python.org/pipermail/python-ideas/2012-October/016424.html">shared his thoughts</a>, starting with:<br /><blockquote class="tr_bq"><i>This is an incredibly important discussion.</i></blockquote>This seemed to really heat things up, eventually with core Twisted and Tornado folks chiming in. I learned a tremendous amount from the discussions that took place. There's probably a book deal in all that for a motivated archivist/interviewer...<br /><br />After this went on for chunks of September and October, <a href="http://mail.python.org/pipermail/python-ideas/2012-October/016849.html">Guido stated</a> that he'd like to break the discussion up into various sub-topics:<br /><ul><li>reactors</li><li>protocol implementations</li><li>Twisted (esp. Deferred)</li><li>Tornado</li><li>yield from vs. Futures</li></ul><br />This was done in order to prevent the original thread from going over 100 messages and to better organize the discussion... but wow, things completely exploded after that (in good ways. mostly). It was async open season, and the ringing of shots in the air seemed continuous. If you scroll&nbsp;to about the half-way point of the <a href="http://mail.python.org/pipermail/python-ideas/2012-October/thread.html">October &nbsp;archive page</a>, you will see the first of these new threads (<a href="http://mail.python.org/pipermail/python-ideas/2012-October/016851.html">[Python-ideas] The async API of the future: Reactors</a>). These messages essentially dominate the rest of the October archives. It's probably not unexpected that this continued into <a href="http://mail.python.org/pipermail/python-ideas/2012-November/thread.html">November</a>.&nbsp;A <a href="http://mail.python.org/pipermail/python-dev/2012-November/122881.html">related thread</a> was started on Python-dev and it seemed&nbsp;to revive an old thread <a href="http://mail.python.org/pipermail/python-dev/2012-December/123011.html">this month</a> (on the same list).<br /><br />All of this got mentioned <a href="http://www.reddit.com/r/Python/comments/11eqtd/from_guido_on_mailpythonorg_the_async_api_of_the/">on Reddit</a>, too. It inspired at least two blog posts of which I am aware: &nbsp;<a href="http://stevedower.id.au/blog/async-api-for-python/">one post</a>&nbsp;by Steve Dower, and <a href="http://washort.twistedmatrix.com/2012/10/coroutines-reduce-readability.html">another by</a>&nbsp;Allen Short. Even better, though, Guido started <a href="http://code.google.com/p/tulip/source/browse/README">an exploratory project</a> called Tulip to test out some of these ideas in actual running code.&nbsp;As he mentions in the README, <a href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/generators/yf_current/Examples/Scheduler/scheduler.txt">a tutorial</a> by Greg Ewing was influential in the initial implementation of Tulip and&nbsp;initial design notes were made in the message <a href="http://mail.python.org/pipermail/python-ideas/2012-October/017501.html">[Python-ideas] Async API: some code to review</a>.<br /><br />Shortly after that, some of the Twisted devs local to Guido met with him at his former office in San Francisco. This went amazingly well and revolved mostly around the pros and cons of separating the protocol and transport functionality. Guido started experimenting with that in Tulip on December 6th. Yesterday, a followup meeting took place at the Rackspace office, this time <a href="http://code.google.com/p/tulip/source/browse/NOTES">with notes</a>.<br /><br />There's a long way to go still, but I find myself&nbsp;compulsively&nbsp;checking&nbsp;the commit log for Tulip now :-) It's exciting to imagine a future where Twisted and Tornado could easily interoperate with async support in Python 3 with a minimum of fuss. In fact, Glyph has already sketched out two classes which might be all that's needed for 2-way interoperation between Twisted and Python 3.<br /><br />Here's to the future!<br /><br /><br /><br />
+<br /><div class="separator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-xO-6jId0QVg/UMkqqDrhMqI/AAAAAAAAAB8/F8pjiP7E_b
+c/s1600/Logo_Python.png" imageanchor="1" style="clear: left; float: left;
+margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200"
+src="http://4.bp.blogspot.com/-xO-6jId0QVg/UMkqqDrhMqI/AAAAAAAAAB8/F8pjiP7E_bc
+/s200/Logo_Python.png" width="200" /></a></div><b>Update</b>: Guido has been
+working on <a href="http://www.python.org/dev/peps/pep-3156/">PEP 3156</a>;
+check on it regularly for the latest! (In the last two hours I've seen it
+updated with three <b>big</b> content changes.)<br /><br />The buzz has died
+down a bit now, but the mellowing of the roaring flames has resulted in some
+nice embers in which an async for Python 3 is being forged. This is an
+exciting time for those of us who 1) love Python and 2) can't get us enough
+async.<br /><br />I wanted to take the time to record some of the goodness
+here before I forgot or got too busy working on something else. So here
+goes:<br /><br />The latest bout of Python async fever started in September of
+2012 in <a
+href="http://mail.python.org/pipermail/python-ideas/2012-September/016185.html
+">this message</a> when&nbsp;Christian M. Amsüss emailed the Python-ideas mail
+list about the state of async in Python and the hopes that a roadmap could be
+decided upon for Python 3. Note that this is the latest (re)incarnation of
+conversations that have been going on for some time and for which there is
+even a <a href="http://www.python.org/dev/peps/pep-3153/">PEP</a>&nbsp;(with
+<a href="https://github.com/lvh/async-pep">related work</a>&nbsp;on
+github).<br /><br />After a few tens of messages were exchanged, Guido <a
+href="http://mail.python.org/pipermail/python-ideas/2012-October/016424.html">
+shared his thoughts</a>, starting with:<br /><blockquote class="tr_bq"><i>This
+is an incredibly important discussion.</i></blockquote>This seemed to really
+heat things up, eventually with core Twisted and Tornado folks chiming in. I
+learned a tremendous amount from the discussions that took place. There's
+probably a book deal in all that for a motivated archivist/interviewer...<br
+/><br />After this went on for chunks of September and October, <a
+href="http://mail.python.org/pipermail/python-ideas/2012-October/016849.html">
+Guido stated</a> that he'd like to break the discussion up into various
+sub-topics:<br /><ul><li>reactors</li><li>protocol
+implementations</li><li>Twisted (esp. Deferred)</li><li>Tornado</li><li>yield
+from vs. Futures</li></ul><br />This was done in order to prevent the original
+thread from going over 100 messages and to better organize the discussion...
+but wow, things completely exploded after that (in good ways. mostly). It was
+async open season, and the ringing of shots in the air seemed continuous. If
+you scroll&nbsp;to about the half-way point of the <a
+href="http://mail.python.org/pipermail/python-ideas/2012-October/thread.html">
+October &nbsp;archive page</a>, you will see the first of these new threads
+(<a href="http://mail.python.org/pipermail/python-ideas/2012-October/016851.ht
+ml">[Python-ideas] The async API of the future: Reactors</a>). These messages
+essentially dominate the rest of the October archives. It's probably not
+unexpected that this continued into <a
+href="http://mail.python.org/pipermail/python-ideas/2012-November/thread.html"
+>November</a>.&nbsp;A <a
+href="http://mail.python.org/pipermail/python-dev/2012-November/122881.html">r
+elated thread</a> was started on Python-dev and it seemed&nbsp;to revive an
+old thread <a
+href="http://mail.python.org/pipermail/python-dev/2012-December/123011.html">t
+his month</a> (on the same list).<br /><br />All of this got mentioned <a
+href="http://www.reddit.com/r/Python/comments/11eqtd/from_guido_on_mailpythono
+rg_the_async_api_of_the/">on Reddit</a>, too. It inspired at least two blog
+posts of which I am aware: &nbsp;<a
+href="http://stevedower.id.au/blog/async-api-for-python/">one post</a>&nbsp;by
+Steve Dower, and <a
+href="http://washort.twistedmatrix.com/2012/10/coroutines-reduce-readability.h
+tml">another by</a>&nbsp;Allen Short. Even better, though, Guido started <a
+href="http://code.google.com/p/tulip/source/browse/README">an exploratory
+project</a> called Tulip to test out some of these ideas in actual running
+code.&nbsp;As he mentions in the README, <a
+href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/generators/yf_current
+/Examples/Scheduler/scheduler.txt">a tutorial</a> by Greg Ewing was
+influential in the initial implementation of Tulip and&nbsp;initial design
+notes were made in the message <a
+href="http://mail.python.org/pipermail/python-ideas/2012-October/017501.html">
+[Python-ideas] Async API: some code to review</a>.<br /><br />Shortly after
+that, some of the Twisted devs local to Guido met with him at his former
+office in San Francisco. This went amazingly well and revolved mostly around
+the pros and cons of separating the protocol and transport functionality.
+Guido started experimenting with that in Tulip on December 6th. Yesterday, a
+followup meeting took place at the Rackspace office, this time <a
+href="http://code.google.com/p/tulip/source/browse/NOTES">with notes</a>.<br
+/><br />There's a long way to go still, but I find
+myself&nbsp;compulsively&nbsp;checking&nbsp;the commit log for Tulip now :-)
+It's exciting to imagine a future where Twisted and Tornado could easily
+interoperate with async support in Python 3 with a minimum of fuss. In fact,
+Glyph has already sketched out two classes which might be all that's needed
+for 2-way interoperation between Twisted and Python 3.<br /><br />Here's to
+the future!<br /><br /><br /><br />

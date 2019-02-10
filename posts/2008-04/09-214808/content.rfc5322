@@ -11,4 +11,29 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><a href="http://www.flickr.com/photos/oubiwann/2402429980/"><img src="http://farm3.static.flickr.com/2134/2402429980_89f02d0374_m.jpg" align="left" /></a>A few hours ago, I had the chance to install <a href="http://www.nexenta.org/os">Nexenta/OpenSolaris</a> in Parallels. The install was pretty straight-forward and quick. Gnome isn't on the .iso, but this was easily addressed with a<span style="font-family:monospace;font-size:9pt;">/etc/apt/sources.list</span> update, and an <span style="font-family:monospace;font-size:9pt;">apt-get</span> (a ~450MB dependency download and install). With Gnome was up and running, I was amazed at its responsiveness: Gnome on Nexenta seems to be much snappier than Ubuntu 7.10. This is the first time I've seen something I could use instead of Ubuntu, and that's saying a lot.<br /><br />Next up was getting the Twisted and Divmod code installed. This required the following additional package installs:<br /><pre>sudo apt-get install python2.4-zopeinterface<br />sudo apt-get install python2.4-profiler<br />sudo apt-get install python2.4-pyopenssl<br />sudo apt-get install python2.4-crypto<br /></pre>With that done, I ran <span style="font-family:monospace;font-size:9pt;">trial twisted</span>, and watched the tests zip by. The end result? Only 1 failure and 2 errors; that's a pretty significant improvement over Twisted in Solaris 10. The failure was actually a little bit weird: the test can't find <span style="font-family:monospace;font-size:9pt;">/dev/tty</span>, however the device does exist (and I can open it from the python prompt). The two errors came from the UDP "multi listen" test, and were are result of the test timing out.<br /><br />If I can get those two tests sorted out, I'll start testing the Divmod code. If all goes well, this could very well end up being my new development platform.<br /><br /><br /></div>
+<div><br /><a href="http://www.flickr.com/photos/oubiwann/2402429980/"><img
+src="http://farm3.static.flickr.com/2134/2402429980_89f02d0374_m.jpg" align="l
+eft" /></a>A few hours ago, I had the chance to install <a
+href="http://www.nexenta.org/os">Nexenta/OpenSolaris</a> in Parallels. The
+install was pretty straight-forward and quick. Gnome isn't on the .iso, but
+this was easily addressed with a<span
+style="font-family:monospace;font-size:9pt;">/etc/apt/sources.list</span> upda
+te, and an <span style="font-family:monospace;font-size:9pt;">apt-get</span>
+(a ~450MB dependency download and install). With Gnome was up and running, I
+was amazed at its responsiveness: Gnome on Nexenta seems to be much snappier
+than Ubuntu 7.10. This is the first time I've seen something I could use
+instead of Ubuntu, and that's saying a lot.<br /><br />Next up was getting the
+Twisted and Divmod code installed. This required the following additional
+package installs:<br /><pre>sudo apt-get install python2.4-zopeinterface<br
+/>sudo apt-get install python2.4-profiler<br />sudo apt-get install
+python2.4-pyopenssl<br />sudo apt-get install python2.4-crypto<br /></pre>With
+that done, I ran <span style="font-family:monospace;font-size:9pt;">trial
+twisted</span>, and watched the tests zip by. The end result? Only 1 failure
+and 2 errors; that's a pretty significant improvement over Twisted in Solaris
+10. The failure was actually a little bit weird: the test can't find <span
+style="font-family:monospace;font-size:9pt;">/dev/tty</span>, however the
+device does exist (and I can open it from the python prompt). The two errors
+came from the UDP "multi listen" test, and were are result of the test timing
+out.<br /><br />If I can get those two tests sorted out, I'll start testing
+the Divmod code. If all goes well, this could very well end up being my new
+development platform.<br /><br /><br /></div>

@@ -11,4 +11,33 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted :: python :: internet</i><br /><br /><br /><br /><br /><div class="entry"><br /><p><br />Yesterday I finished the Twisted JSON-RPC server and proxy for TCP. I<br />decided to go with the<br /><a href="http://cr.yp.to/proto/netstrings.txt">Netstring protocol</a><br />for its simplicity and the security of declaring and limiting string<br />length.<br /></p><p>Usage is very simple and almost identical to the HTTP-based Twisted<br />JSON-RPC usage. Here is some server code:<br /></p><pre><br />from twisted.application import service, internet<p>from adytum.twisted import jsonrpc</p><p>class Example(jsonrpc.JSONRPC):<br /> """An example object to be published."""</p><p> def jsonrpc_echo(self, x):<br /> """Return all passed args."""<br /> return x</p><p>factory = jsonrpc.RPCFactory(Example)<br />application = service.Application("Example JSON-RPC Server")<br />jsonrpcServer = internet.TCPServer(7080, factory)<br />jsonrpcServer.setServiceParent(application)<br /></p></pre><br />And for the client:<br /><pre><br />from twisted.internet import reactor<br />from twisted.internet import defer<p>from adytum.twisted.jsonrpc import Proxy</p><p>def printValue(value):<br /> print "Result: %s" % str(value)</p><p>def printError(error):<br /> print 'error', error</p><p>def shutDown(data):<br /> print "Shutting down reactor..."<br /> reactor.stop()</p><p>print "Making remote calls..."<br />proxy = Proxy('127.0.0.1', 7080)</p><p>d = proxy.callRemote('echo', 'hey!')<br />d.addCallbacks(printValue, printError)<br />d.addCallback(shutDown)<br />reactor.run()<br /></p></pre><p>For a slightly more complex example (with subhandlers and<br />introspection) see:<br /><a href="http://tinyurl.com/kfwym">the wiki</a>.</p><p>Next on the list? For a truly secure solution, I am exploring the use<br />of the<br /><a href="http://tinyurl.com/hk4mr">Twisted<br />Perspective Broker</a> for JSON-RPC.</p><p></p></div><br /><div class="now_playing"> Now playing:<br /> <pre>Yoko Kanno &amp; The Seatbelts - Forever Broke</pre><br /></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted ::
+python :: internet</i><br /><br /><br /><br /><br /><div class="entry"><br
+/><p><br />Yesterday I finished the Twisted JSON-RPC server and proxy for TCP.
+I<br />decided to go with the<br /><a
+href="http://cr.yp.to/proto/netstrings.txt">Netstring protocol</a><br />for
+its simplicity and the security of declaring and limiting string<br
+/>length.<br /></p><p>Usage is very simple and almost identical to the
+HTTP-based Twisted<br />JSON-RPC usage. Here is some server code:<br
+/></p><pre><br />from twisted.application import service, internet<p>from
+adytum.twisted import jsonrpc</p><p>class Example(jsonrpc.JSONRPC):<br />
+"""An example object to be published."""</p><p> def jsonrpc_echo(self, x):<br
+/> """Return all passed args."""<br /> return x</p><p>factory =
+jsonrpc.RPCFactory(Example)<br />application = service.Application("Example
+JSON-RPC Server")<br />jsonrpcServer = internet.TCPServer(7080, factory)<br
+/>jsonrpcServer.setServiceParent(application)<br /></p></pre><br />And for the
+client:<br /><pre><br />from twisted.internet import reactor<br />from
+twisted.internet import defer<p>from adytum.twisted.jsonrpc import
+Proxy</p><p>def printValue(value):<br /> print "Result: %s" %
+str(value)</p><p>def printError(error):<br /> print 'error', error</p><p>def
+shutDown(data):<br /> print "Shutting down reactor..."<br />
+reactor.stop()</p><p>print "Making remote calls..."<br />proxy =
+Proxy('127.0.0.1', 7080)</p><p>d = proxy.callRemote('echo', 'hey!')<br
+/>d.addCallbacks(printValue, printError)<br />d.addCallback(shutDown)<br
+/>reactor.run()<br /></p></pre><p>For a slightly more complex example (with
+subhandlers and<br />introspection) see:<br /><a
+href="http://tinyurl.com/kfwym">the wiki</a>.</p><p>Next on the list? For a
+truly secure solution, I am exploring the use<br />of the<br /><a
+href="http://tinyurl.com/hk4mr">Twisted<br />Perspective Broker</a> for
+JSON-RPC.</p><p></p></div><br /><div class="now_playing"> Now playing:<br />
+<pre>Yoko Kanno &amp; The Seatbelts - Forever Broke</pre><br /></div></div>

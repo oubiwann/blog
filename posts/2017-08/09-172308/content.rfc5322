@@ -11,4 +11,91 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-t6djJucJIQM/WYt6wLms3UI/AAAAAAAAB24/Ur3nVSU0W1IKzzD6tzNua-rQYc_ZsEo0ACLcBGAs/s1600/1237px-NASA_logo.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" data-original-height="1024" data-original-width="1237" height="264" src="https://3.bp.blogspot.com/-t6djJucJIQM/WYt6wLms3UI/AAAAAAAAB24/Ur3nVSU0W1IKzzD6tzNua-rQYc_ZsEo0ACLcBGAs/s320/1237px-NASA_logo.png" width="320" /></a></div><h2>Update</h2>It's been a few years since I posted on this blog -- most of the technical content I've been contributing to in the past couple years has been in the following:<br /><blockquote><ul style="padding-left: 1em;"><li><a href="http://blog.lfe.io/">The LFE Blog</a></li><li><a href="http://clojang.lfe.io/">The Clojang Blog</a></li></ul></blockquote>But since the publication of the <a href="https://www.amazon.com/gp/product/1783987545/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1783987545&amp;linkCode=as2&amp;tag=forgottenroad-20&amp;linkId=9bf1fc9b1edf875130800eead4c925b2" target="_blank">Mastering matplotlib</a> book, I've gotten more and more into satellite data. The book, it goes without saying, focused on Python for the analysis and interpretation of satellite data (in one of the many topics covered). After that I spent some time working with satellite and GIS data in general using Erlang and LFE. Ultimately though, I found that more and more projects were using the JVM for this sort of work, and in particular, I noted that Clojure had begun to show up in a surprising number of Github projects.<br /><br /><h2 class="separator" style="clear: both; text-align: left;"><a href="https://2.bp.blogspot.com/-Yv097EqrTEo/WYuCpxJ1XhI/AAAAAAAAB3U/Mmgae_Gb5dcNaFeDgzZcUtPBybBHDuw2ACEwYBhgL/s1600/eosdis-logo.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" data-original-height="507" data-original-width="1600" height="101" src="https://2.bp.blogspot.com/-Yv097EqrTEo/WYuCpxJ1XhI/AAAAAAAAB3U/Mmgae_Gb5dcNaFeDgzZcUtPBybBHDuw2ACEwYBhgL/s320/eosdis-logo.png" width="320" /></a>EOSDIS</h2>Enter NASA's <a href="https://earthdata.nasa.gov/about">Earth Observing System Data and Information System</a> (see also <a href="http://earthdata.nasa.gov/">earthdata.nasa.gov</a> and <a href="https://en.wikipedia.org/wiki/EOSDIS">EOSDIS on Wikipedia</a>), a key part of the agency's Earth Science Data Systems Program. It's essentially a concerted effort to bring together the mind-blowing amounts of earth-related data being collected throughout, around, and above the world so that scientists may easily access and correlate earth science data for their research.<br /><br />Related NASA projects include the following:<br /><ul><li><a href="https://eospso.nasa.gov/">EOS</a></li><li><a href="https://earthdata.nasa.gov/about/esdis-project">ESDIS</a></li><li><a href="https://espd.gsfc.nasa.gov/esmo.html">ESMO</a></li></ul>The acronym menagerie can be bewildering, but digging into the various NASA projects is ultimately quite rewarding (greater insights, previously unknown resources, amazing research, etc.).<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-6wXWCH0a44U/WYuIz7DNAgI/AAAAAAAAB4A/ixveCzQkymwa31AqEK7QULXgNMuQFVZMgCLcBGAs/s1600/Clojure-logo-tiny.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" data-original-height="128" data-original-width="128" src="https://1.bp.blogspot.com/-6wXWCH0a44U/WYuIz7DNAgI/AAAAAAAAB4A/ixveCzQkymwa31AqEK7QULXgNMuQFVZMgCLcBGAs/s1600/Clojure-logo-tiny.png" /></a></div><h2>Clojure</h2>Back to the Clojure reference I made above:&nbsp; I've been contributing to the <a href="https://github.com/nasa/Common-Metadata-Repository">nasa/Common-Metadata-Repository</a> open source project (hosted on Github) for a few months now, and it's been amazing to see how all this data from so many different sources gets added, indexed, updated, and generally made so much more available to any who want to work with it. The private sector always seems to be so far ahead of large projects in terms of tech and continuously improving updates to existing software, so its been pretty cool to see a large open source project in the NASA Github org make so many changes that find ways to keep helping their users do better research. More so that users are regularly delivered new features in a large, complex collection of libraries and services thanks in part to the benefits that come from using a functional programming language.<br /><br />It may seem like nothing to you, but the fact that there are now <a href="https://cmr.earthdata.nasa.gov/search/site/collections/directory/eosdis" target="_blank">directory pages</a> for various data providers (e.g., <a href="https://cmr.earthdata.nasa.gov/search/site/collections/directory/GES_DISC/gov.nasa.eosdis" target="_blank">GES_DISC</a>, i.e., <a href="https://earthdata.nasa.gov/about/daacs/daac-ges-disc" target="_blank">Goddard Earth Sciences Data and Information Services Center</a>) makes a big difference for users of this data. The data provider pages now also offer easy access to collection links such as <a href="https://cmr.earthdata.nasa.gov/search/concepts/C1273348625-GES_DISC.html" target="_blank">UARS Solar Ultraviolet Spectral Irradiance Monitor</a>. Admittedly, the directory pages still take a while to load, but there are improvements on the way for page load times and other related tasks. If you're reading this a month after this post was written, there's a good chance it's already been fixed by now.<br /><br /><h2>Summary </h2>In summary, it's been a fun personal journey from looking at Landsat data for writing a book to working with open source projects that really help scientists to do their jobs better :-) And while I have enjoyed using the other programming languages to explore this problem space, Clojure in particular has been a delightfully powerful tool for delivering new features to the science community.
+<div class="separator" style="clear: both; text-align: center;"><a
+href="https://3.bp.blogspot.com/-t6djJucJIQM/WYt6wLms3UI/AAAAAAAAB24/Ur3nVSU0W
+1IKzzD6tzNua-rQYc_ZsEo0ACLcBGAs/s1600/1237px-NASA_logo.png" imageanchor="1"
+style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img
+border="0" data-original-height="1024" data-original-width="1237" height="264"
+src="https://3.bp.blogspot.com/-t6djJucJIQM/WYt6wLms3UI/AAAAAAAAB24/Ur3nVSU0W1
+IKzzD6tzNua-rQYc_ZsEo0ACLcBGAs/s320/1237px-NASA_logo.png" width="320"
+/></a></div><h2>Update</h2>It's been a few years since I posted on this blog
+-- most of the technical content I've been contributing to in the past couple
+years has been in the following:<br /><blockquote><ul style="padding-left:
+1em;"><li><a href="http://blog.lfe.io/">The LFE Blog</a></li><li><a
+href="http://clojang.lfe.io/">The Clojang Blog</a></li></ul></blockquote>But
+since the publication of the <a
+href="https://www.amazon.com/gp/product/1783987545/ref=as_li_tl?ie=UTF8&amp;ca
+mp=1789&amp;creative=9325&amp;creativeASIN=1783987545&amp;linkCode=as2&amp;tag
+=forgottenroad-20&amp;linkId=9bf1fc9b1edf875130800eead4c925b2" target="_blank"
+>Mastering matplotlib</a> book, I've gotten more and more into satellite data.
+The book, it goes without saying, focused on Python for the analysis and
+interpretation of satellite data (in one of the many topics covered). After
+that I spent some time working with satellite and GIS data in general using
+Erlang and LFE. Ultimately though, I found that more and more projects were
+using the JVM for this sort of work, and in particular, I noted that Clojure
+had begun to show up in a surprising number of Github projects.<br /><br /><h2
+class="separator" style="clear: both; text-align: left;"><a
+href="https://2.bp.blogspot.com/-Yv097EqrTEo/WYuCpxJ1XhI/AAAAAAAAB3U/Mmgae_Gb5
+dcNaFeDgzZcUtPBybBHDuw2ACEwYBhgL/s1600/eosdis-logo.png" imageanchor="1"
+style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img
+border="0" data-original-height="507" data-original-width="1600" height="101"
+src="https://2.bp.blogspot.com/-Yv097EqrTEo/WYuCpxJ1XhI/AAAAAAAAB3U/Mmgae_Gb5d
+cNaFeDgzZcUtPBybBHDuw2ACEwYBhgL/s320/eosdis-logo.png" width="320"
+/></a>EOSDIS</h2>Enter NASA's <a href="https://earthdata.nasa.gov/about">Earth
+Observing System Data and Information System</a> (see also <a
+href="http://earthdata.nasa.gov/">earthdata.nasa.gov</a> and <a
+href="https://en.wikipedia.org/wiki/EOSDIS">EOSDIS on Wikipedia</a>), a key
+part of the agency's Earth Science Data Systems Program. It's essentially a
+concerted effort to bring together the mind-blowing amounts of earth-related
+data being collected throughout, around, and above the world so that
+scientists may easily access and correlate earth science data for their
+research.<br /><br />Related NASA projects include the following:<br
+/><ul><li><a href="https://eospso.nasa.gov/">EOS</a></li><li><a
+href="https://earthdata.nasa.gov/about/esdis-project">ESDIS</a></li><li><a hre
+f="https://espd.gsfc.nasa.gov/esmo.html">ESMO</a></li></ul>The acronym
+menagerie can be bewildering, but digging into the various NASA projects is
+ultimately quite rewarding (greater insights, previously unknown resources,
+amazing research, etc.).<br /><br /><div class="separator" style="clear: both;
+text-align: center;"></div><div class="separator" style="clear: both;
+text-align: center;"></div><div class="separator" style="clear: both;
+text-align: center;"><a
+href="https://1.bp.blogspot.com/-6wXWCH0a44U/WYuIz7DNAgI/AAAAAAAAB4A/ixveCzQky
+mwa31AqEK7QULXgNMuQFVZMgCLcBGAs/s1600/Clojure-logo-tiny.png" imageanchor="1"
+style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img
+border="0" data-original-height="128" data-original-width="128"
+src="https://1.bp.blogspot.com/-6wXWCH0a44U/WYuIz7DNAgI/AAAAAAAAB4A/ixveCzQkym
+wa31AqEK7QULXgNMuQFVZMgCLcBGAs/s1600/Clojure-logo-tiny.png" /></a></div><h2>Cl
+ojure</h2>Back to the Clojure reference I made above:&nbsp; I've been
+contributing to the <a
+href="https://github.com/nasa/Common-Metadata-Repository">nasa/Common-Metadata
+-Repository</a> open source project (hosted on Github) for a few months now,
+and it's been amazing to see how all this data from so many different sources
+gets added, indexed, updated, and generally made so much more available to any
+who want to work with it. The private sector always seems to be so far ahead
+of large projects in terms of tech and continuously improving updates to
+existing software, so its been pretty cool to see a large open source project
+in the NASA Github org make so many changes that find ways to keep helping
+their users do better research. More so that users are regularly delivered new
+features in a large, complex collection of libraries and services thanks in
+part to the benefits that come from using a functional programming
+language.<br /><br />It may seem like nothing to you, but the fact that there
+are now <a
+href="https://cmr.earthdata.nasa.gov/search/site/collections/directory/eosdis"
+target="_blank">directory pages</a> for various data providers (e.g., <a
+href="https://cmr.earthdata.nasa.gov/search/site/collections/directory/GES_DIS
+C/gov.nasa.eosdis" target="_blank">GES_DISC</a>, i.e., <a
+href="https://earthdata.nasa.gov/about/daacs/daac-ges-disc" target="_blank">Go
+ddard Earth Sciences Data and Information Services Center</a>) makes a big
+difference for users of this data. The data provider pages now also offer easy
+access to collection links such as <a
+href="https://cmr.earthdata.nasa.gov/search/concepts/C1273348625-GES_DISC.html
+" target="_blank">UARS Solar Ultraviolet Spectral Irradiance Monitor</a>.
+Admittedly, the directory pages still take a while to load, but there are
+improvements on the way for page load times and other related tasks. If you're
+reading this a month after this post was written, there's a good chance it's
+already been fixed by now.<br /><br /><h2>Summary </h2>In summary, it's been a
+fun personal journey from looking at Landsat data for writing a book to
+working with open source projects that really help scientists to do their jobs
+better :-) And while I have enjoyed using the other programming languages to
+explore this problem space, Clojure in particular has been a delightfully
+powerful tool for delivering new features to the science community.

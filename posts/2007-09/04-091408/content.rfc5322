@@ -11,4 +11,78 @@ Comments:
 Content-Type: md
 Public?: true
 
-When I was on the development team for Zenoss, I tried to get them to use branch-based development, including <a href="http://divmod.org/trac/wiki/DivmodCombinator">Divmod Combinator</a>. They eventually did switch to using branches for any big changes, but they didn't embrace Combinator. When I'd taken over development of the Zenoss community code, there were only two developers, so I only implemented a very basic branch management process. But having used Combinator a lot recently, I wish that I'd taken that opportunity to get them using Combinator... man, their lives would be so much easier right now if I'd taken that step.<br /><br />I am now managing <em>all</em> of my svn-based projects with Combinator. Even the ones were I am sole developer. The time saved and convenience gained is <em>enormous</em>.<br /><br />Below is a perfectly good example of how Combinator makes svn management less painful. I don't know about you, but every time I have to manually to push new trunk changes into my current development branch, my brain does a little freak-out dance. I stress, thinking "Crap; I have to get this right. What are the exact commands I have to use again?" Thanks to Combinator, this is no longer a problem, and my brain does a happy dance instead. <br /><br />These days, I am using Combinator on an almost hourly basis. It's very simple (to get setup with Combinator, see the <a href="http://www.divmod.org/trac/wiki/CombinatorTutorial">tutorial</a> and <a href="http://www.divmod.org/trac/wiki/UltimateQualityDevelopmentSystem">other example usage</a>).<br /><br /><br /><strong>Background</strong><br /><br /><br />Assuming you've got a Combinator-managed project called "Project", let's do some background first. Say you want to branch trunk for a new feature, one that you're tracking in ticket #836. Here's how:<br /><pre>$ mkbranch Project viking-feature-836<br /></pre>Now, just to make sure that you are no longer in trunk, check which branch you are in:<br /><pre>$ whbranch<br />Project: viking-feature-836<br />Divmod: trunk<br />Twisted: trunk<br /></pre>(Note that every project that you are managing with Combinator will be listed.)<br /><br />Say you've got another ticket you're working on, #1066. You created the branch with this command, just like the other branch:<br /><pre>$ mkbranch Project norman-feature-1066<br /></pre>After starting this branch, you complete 836 and merge to trunk:<br /><pre>$ chbranch Project viking-feature-836<br />$ unbranch Project<br />$ svn commit -m "Completed 836."<br /></pre><span style="font-family:monospace;font-size:9pt;">unbranch</span> updates trunk with the latest changes and then merges the branch it just came from (viking-feature-836) into trunk. Running <span style="font-family:monospace;font-size:9pt;">svn diff</span> will show you just how true this is.<br /><br /><br /><strong>Merging</strong><br /><br /><br />So much for the background! Now for the merging I'd promised:<br /><br />If the norman feature depends on the viking feature, we need to "merge" trunk to branch. Using Divmod Combinator, this is how that is accomplished:<br /><pre>$ chbranch Project norman-feature-1066<br />$ unbranch Project<br />$ mkbranch Project norman-feature-1066-2<br />$ cd ~/Project/branches/norman-feature-1066-2<br />$ svn commit -m "Merged changes from norman-feature-1066."<br /></pre>In other words, we: <br /><ol><li>merge our work to date from norman-feature-1066 to trunk (without committing!)</li><li>make a new branch, based on that trunk, which includes the norman feature to-date and all the latest changes made to trunk</li><li>commit the branch changes to our new branch</li></ol>We're using trunk to get what we need by only making changes to trunk in the working directory, without making any changes in the repository. Keep in mind that the changes from the first branch were added (and not committed) to trunk before creating the second branch. Since the second branch was created from this modified trunk, we will need to commit those additions. Also, you will most definitely want to revert your tweaked trunk once you have finished creating your new, updated branch!<br /><br /><br /><strong>Paths</strong><br /><br /><br />As a side note, Combinator is especially excellent for python projects, because of its python path management features. Any python tools, scripts, pluggins, or applications that use the code in your Combinator-managed projects will import from the current, active code (whatever shows up in <span style="font-family:monospace;font-size:9pt;">whbranch</span>). So when you're working in branch and you run your unit tests, you know that it's the branch code that's getting tested. When you switch back to trunk, all your code is running against trunk. Very nice :-)<br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/branch-based development" rel="tag">branch-based development</a>, <a href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a>, <a href="http://www.technorati.com/tag/version control" rel="tag">version control</a></p><!-- technorati tags end -->
+When I was on the development team for Zenoss, I tried to get them to use
+branch-based development, including <a
+href="http://divmod.org/trac/wiki/DivmodCombinator">Divmod Combinator</a>.
+They eventually did switch to using branches for any big changes, but they
+didn't embrace Combinator. When I'd taken over development of the Zenoss
+community code, there were only two developers, so I only implemented a very
+basic branch management process. But having used Combinator a lot recently, I
+wish that I'd taken that opportunity to get them using Combinator... man,
+their lives would be so much easier right now if I'd taken that step.<br /><br
+/>I am now managing <em>all</em> of my svn-based projects with Combinator.
+Even the ones were I am sole developer. The time saved and convenience gained
+is <em>enormous</em>.<br /><br />Below is a perfectly good example of how
+Combinator makes svn management less painful. I don't know about you, but
+every time I have to manually to push new trunk changes into my current
+development branch, my brain does a little freak-out dance. I stress, thinking
+"Crap; I have to get this right. What are the exact commands I have to use
+again?" Thanks to Combinator, this is no longer a problem, and my brain does a
+happy dance instead. <br /><br />These days, I am using Combinator on an
+almost hourly basis. It's very simple (to get setup with Combinator, see the
+<a href="http://www.divmod.org/trac/wiki/CombinatorTutorial">tutorial</a> and
+<a href="http://www.divmod.org/trac/wiki/UltimateQualityDevelopmentSystem">oth
+er example usage</a>).<br /><br /><br /><strong>Background</strong><br /><br
+/><br />Assuming you've got a Combinator-managed project called "Project",
+let's do some background first. Say you want to branch trunk for a new
+feature, one that you're tracking in ticket #836. Here's how:<br /><pre>$
+mkbranch Project viking-feature-836<br /></pre>Now, just to make sure that you
+are no longer in trunk, check which branch you are in:<br /><pre>$ whbranch<br
+/>Project: viking-feature-836<br />Divmod: trunk<br />Twisted: trunk<br
+/></pre>(Note that every project that you are managing with Combinator will be
+listed.)<br /><br />Say you've got another ticket you're working on, #1066.
+You created the branch with this command, just like the other branch:<br
+/><pre>$ mkbranch Project norman-feature-1066<br /></pre>After starting this
+branch, you complete 836 and merge to trunk:<br /><pre>$ chbranch Project
+viking-feature-836<br />$ unbranch Project<br />$ svn commit -m "Completed
+836."<br /></pre><span
+style="font-family:monospace;font-size:9pt;">unbranch</span> updates trunk
+with the latest changes and then merges the branch it just came from
+(viking-feature-836) into trunk. Running <span
+style="font-family:monospace;font-size:9pt;">svn diff</span> will show you
+just how true this is.<br /><br /><br /><strong>Merging</strong><br /><br
+/><br />So much for the background! Now for the merging I'd promised:<br /><br
+/>If the norman feature depends on the viking feature, we need to "merge"
+trunk to branch. Using Divmod Combinator, this is how that is accomplished:<br
+/><pre>$ chbranch Project norman-feature-1066<br />$ unbranch Project<br />$
+mkbranch Project norman-feature-1066-2<br />$ cd
+~/Project/branches/norman-feature-1066-2<br />$ svn commit -m "Merged changes
+from norman-feature-1066."<br /></pre>In other words, we: <br /><ol><li>merge
+our work to date from norman-feature-1066 to trunk (without
+committing!)</li><li>make a new branch, based on that trunk, which includes
+the norman feature to-date and all the latest changes made to
+trunk</li><li>commit the branch changes to our new branch</li></ol>We're using
+trunk to get what we need by only making changes to trunk in the working
+directory, without making any changes in the repository. Keep in mind that the
+changes from the first branch were added (and not committed) to trunk before
+creating the second branch. Since the second branch was created from this
+modified trunk, we will need to commit those additions. Also, you will most
+definitely want to revert your tweaked trunk once you have finished creating
+your new, updated branch!<br /><br /><br /><strong>Paths</strong><br /><br
+/><br />As a side note, Combinator is especially excellent for python
+projects, because of its python path management features. Any python tools,
+scripts, pluggins, or applications that use the code in your
+Combinator-managed projects will import from the current, active code
+(whatever shows up in <span
+style="font-family:monospace;font-size:9pt;">whbranch</span>). So when you're
+working in branch and you run your unit tests, you know that it's the branch
+code that's getting tested. When you switch back to trunk, all your code is
+running against trunk. Very nice :-)<br /><br /><!-- technorati tags start
+--><p style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/branch-based development"
+rel="tag">branch-based development</a>, <a
+href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a
+href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a>, <a
+href="http://www.technorati.com/tag/version control" rel="tag">version
+control</a></p><!-- technorati tags end -->

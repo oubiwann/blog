@@ -11,4 +11,25 @@ Comments:
 Content-Type: md
 Public?: true
 
-<p>As if things haven't been busy enough, with work, etc., I've got a couple python/twisted/Nevow projects in the works.</p><p>The first one is <a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollection/trunk/PyKon/">PyKon</a> (Python Ikon), a gallery application for managing galleries, photo albums, and images. It's just getting started, so there's nothing to show yet, but it uses <a href="http://nevow.org/">Nevow</a> and the <a href="http://effbot.org/downloads#imaging">Python Imaging Library</a>. This project actually comes at the request of many friends who have been bugging me about this for quite some time. You know who you are ;-) This will be the first non-technical, user-oriented app I have built with Nevow, and am therefore quite looking forward to it. I will also be delighted to not have to install, run, and manage any more PHP-based galleries.</p><p>The second project is a complete whim: I want to be able to provide fellow developers on mail lists and irc channels with a means of using something like TinyURL, but with the additional ability of being able to add an optional, distinguishing string at the end. This will make it more clear when reading a post to a mail list or seeing a bunch of URLs pop up on IRC. I'm calling it URLdb. I started by copying the Nevow pastebin example app (which totally rocks, btw). The code is <a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollection/trunk/UrlDB/">here</a>.</p><p><br /><span style="text-decoration: underline;"></span><a href="http://projects.adytum.us/tracs/URLdb"></a></p>
+<p>As if things haven't been busy enough, with work, etc., I've got a couple
+python/twisted/Nevow projects in the works.</p><p>The first one is <a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollecti
+on/trunk/PyKon/">PyKon</a> (Python Ikon), a gallery application for managing
+galleries, photo albums, and images. It's just getting started, so there's
+nothing to show yet, but it uses <a href="http://nevow.org/">Nevow</a> and the
+<a href="http://effbot.org/downloads#imaging">Python Imaging Library</a>. This
+project actually comes at the request of many friends who have been bugging me
+about this for quite some time. You know who you are ;-) This will be the
+first non-technical, user-oriented app I have built with Nevow, and am
+therefore quite looking forward to it. I will also be delighted to not have to
+install, run, and manage any more PHP-based galleries.</p><p>The second
+project is a complete whim: I want to be able to provide fellow developers on
+mail lists and irc channels with a means of using something like TinyURL, but
+with the additional ability of being able to add an optional, distinguishing
+string at the end. This will make it more clear when reading a post to a mail
+list or seeing a bunch of URLs pop up on IRC. I'm calling it URLdb. I started
+by copying the Nevow pastebin example app (which totally rocks, btw). The code
+is <a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Projects/TwistedCollecti
+on/trunk/UrlDB/">here</a>.</p><p><br /><span style="text-decoration:
+underline;"></span><a href="http://projects.adytum.us/tracs/URLdb"></a></p>

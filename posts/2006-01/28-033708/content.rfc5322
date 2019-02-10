@@ -11,4 +11,96 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">networking :: management :: software</i><br/><br/><div class="entry"><br /><p>For the past year, I have resisted speculation and development on <br />CoyMon 3. But in the past few months, many pieces have begun falling <br />into place -- each removing objections and concerns, and some providing <br />a clear path of development where before there was none.</p><p/><a href="http://coyotemonitoring.com">CoyoteMonitoring</a><br /> is a free, open-source network management tool. Specifically, it glues <br />together many open-source and difficult-to-configure subsystems for <br />obtaining and viewing<br /><a href="http://en.wikipedia.org/wiki/Netflow">NetFlow</a><br />data used in network analysis. It is comparable to operating system <br />distributions in this regard: it is a NetFlow management distro. The <br />Department of Veterans affairs has actually been using CoyMon 2 for <br />about a year now, with astounding results. We are thrilled with the <br />success it has been for them, with the tremendous time and money it has <br />saved them.<p/>The development of CoyMon 2 was sponsored in part by the VA, and due to <br />the timeline, much of the code was specific to their needs. However, <br />because of the time it would take to audit the code, CoyMon 2 has never <br />been publicly released. I have had many email conversations with WAN <br />managers and network engineerings very distressed at this. They too <br />have found a sad lack in the open source world when it comes to useful, <br />easy-to-use tools for querying, viewing, and analyzing NetFlow data. <br />Because of this continued interest, input, and moral support from these <br />hard-working individuals, I have been considering how this need could <br />best be addressed and met.<p/>To be honest, my biggest technical concern has been with the current <br />NetFlow tools. The perl code that people have depended upon for this <br />(since the late 90s!) is krufty, hard to maintain, overly uses <br />almost-unnecessary and out-of-date perl modules, and as a group, were <br />not designed with maximal extensibility in mind. They have been genuine <br />gems in the field -- none of us could have done what we have done for <br />the past several years without this wonderful contribution. The <br />combination of these (and their dependencies!) with all the other <br />pieces that require configuration and glue is a difficult thing to <br />provide. It took an ENORMOUS amount of time and energy to get CoyMon 2 <br />into a place where it could be deployed efficiently. CoyMon 2 runs like <br />a tank, though. It's a real champ and a testament to all that hard work <br />and organization.<p/>However, it is time to fix the system at its roots. Enter CoyMon 3.<p/>The biggest stumbling block to forward movement on CoyMon 3 has been <br />the available APIs for to tools upon which we depend, with one of the <br />most important being RRDTool. The python bindings for RRDTool are <br />archaic and decidedly non-OOP. Attempting to design a system that is <br />robust, effortless to maintain, and easily adapts new features but that <br />has composite components with difficult APIs is a recipe for <br />frustration, delay, and ultimately, non-delivery. The first step <br />towards addressing this problem came with the recent release of<br /><a href="http://projects.adytum.us/tracs/PyRRD">PyRRD</a>.<br />It is a fully OOP wrapper for RRDTool in python that removes this pain <br />from the equation.<p/>The next biggest hurdle was the old perl code called FlowScan. After <br />much discussion and analysis, a clean and elegant way to provide this <br />functionality was arrived at, and we will soon have a new product to <br />show for it, freely available for download. CoyoteMonitoring will <br />depend heavily on this piece of software and related libraries. We are <br />making excellent progress on this, but ultimately, the problem to solve <br />here is one of modularity and configuration. How do you provide an <br />easy, non-programmatic method of extensibility for any number of <br />potential rules? We've got some great ideas, but only the natural <br />selection of actual use to prove the best approach. This is our current <br />top-priority.<p/>With the advances that have been made in the past several months, we <br />are not only comfortable making an announcement about a new version of <br />CoyoteMonitoring, we are down-right confident :-) For the interested, <br />here are more detailed points on CoyMon 3:<p/><ul><li> CoyMon 3 will be developed completely independently of any <br />third-parties or businesses. This will mean slower development times, <br />but cleaner more easily managed code. With the absence of sensitive <br />customer code and/or configurations, you will see regularly available <br />downloads.</li><br /><li>Supporting libraries will all have extensive unit tests for each <br />piece of functionality.</li><br /><li>CoyMon 3 will have a 100% true component architecture.</li><br /><li>CoyMon 3 will continue to use flow-tools and will make full use of <br />the python bindings for fast processing of NetFlow captures.</li><br /><li>CoyMon 3 will make use of Zope 3 technology for through-the-web <br />management of such resources as collectors, protocols, queries, <br />resulting data and graphics, as well as arbitrary content that is <br />important to end users.</li><br /><li>CoyMon 3 will make use of the Twisted Python framework for all of <br />its specialized networking needs, including (but not limited to) CMOB/X <br />(a recently developed "object broker" for distributed collectors <br />managed at a central location).</li><br /><li>CoyMon 3 will have completely re-factored supporting libraries, <br />written and maintained by the CoyoteMonnitoring community. All the old <br />Perl code will be replaced with light-weight, easy-to-maintain python <br />libraries and scripts. These will include NetCIDR, PyRRD, and <br />PyFlowCatch.</li><br /><li>CoyMon 3 will have consistent configuration across all its <br />composite applications and it will make use of the famous, the useful, <br />and the ever-concise Apache-style configuration files.</li><br /><li>And last, but not least, CoyMon 3 will abide by Chapter 4 of Eric <br />Raymond's "The The Cathedral and the Bazaar": Release Early, Release <br />Often. CoyMon 3 development snapshots will be available for download <br />regularly. </li><br /></ul><p/>Project spaces to keep your eyes on:<p/><a href="http://projects.adytum.us/tracs/CoyMon">CoyMon</a><br/><br /><a href="http://projects.adytum.us/tracs/PyFlowCatch">PyFlowCatch</a><br/><br /><a href="http://projects.adytum.us/tracs/PyRRD">PyRRD</a><br/><br /><a href="http://projects.adytum.us/tracs/NetCIDR">NetCIDR</a><br/><p/></div><br/></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">networking ::
+management :: software</i><br/><br/><div class="entry"><br /><p>For the past
+year, I have resisted speculation and development on <br />CoyMon 3. But in
+the past few months, many pieces have begun falling <br />into place -- each
+removing objections and concerns, and some providing <br />a clear path of
+development where before there was none.</p><p/><a
+href="http://coyotemonitoring.com">CoyoteMonitoring</a><br /> is a free,
+open-source network management tool. Specifically, it glues <br />together
+many open-source and difficult-to-configure subsystems for <br />obtaining and
+viewing<br /><a href="http://en.wikipedia.org/wiki/Netflow">NetFlow</a><br
+/>data used in network analysis. It is comparable to operating system <br
+/>distributions in this regard: it is a NetFlow management distro. The <br
+/>Department of Veterans affairs has actually been using CoyMon 2 for <br
+/>about a year now, with astounding results. We are thrilled with the <br
+/>success it has been for them, with the tremendous time and money it has <br
+/>saved them.<p/>The development of CoyMon 2 was sponsored in part by the VA,
+and due to <br />the timeline, much of the code was specific to their needs.
+However, <br />because of the time it would take to audit the code, CoyMon 2
+has never <br />been publicly released. I have had many email conversations
+with WAN <br />managers and network engineerings very distressed at this. They
+too <br />have found a sad lack in the open source world when it comes to
+useful, <br />easy-to-use tools for querying, viewing, and analyzing NetFlow
+data. <br />Because of this continued interest, input, and moral support from
+these <br />hard-working individuals, I have been considering how this need
+could <br />best be addressed and met.<p/>To be honest, my biggest technical
+concern has been with the current <br />NetFlow tools. The perl code that
+people have depended upon for this <br />(since the late 90s!) is krufty, hard
+to maintain, overly uses <br />almost-unnecessary and out-of-date perl
+modules, and as a group, were <br />not designed with maximal extensibility in
+mind. They have been genuine <br />gems in the field -- none of us could have
+done what we have done for <br />the past several years without this wonderful
+contribution. The <br />combination of these (and their dependencies!) with
+all the other <br />pieces that require configuration and glue is a difficult
+thing to <br />provide. It took an ENORMOUS amount of time and energy to get
+CoyMon 2 <br />into a place where it could be deployed efficiently. CoyMon 2
+runs like <br />a tank, though. It's a real champ and a testament to all that
+hard work <br />and organization.<p/>However, it is time to fix the system at
+its roots. Enter CoyMon 3.<p/>The biggest stumbling block to forward movement
+on CoyMon 3 has been <br />the available APIs for to tools upon which we
+depend, with one of the <br />most important being RRDTool. The python
+bindings for RRDTool are <br />archaic and decidedly non-OOP. Attempting to
+design a system that is <br />robust, effortless to maintain, and easily
+adapts new features but that <br />has composite components with difficult
+APIs is a recipe for <br />frustration, delay, and ultimately, non-delivery.
+The first step <br />towards addressing this problem came with the recent
+release of<br /><a href="http://projects.adytum.us/tracs/PyRRD">PyRRD</a>.<br
+/>It is a fully OOP wrapper for RRDTool in python that removes this pain <br
+/>from the equation.<p/>The next biggest hurdle was the old perl code called
+FlowScan. After <br />much discussion and analysis, a clean and elegant way to
+provide this <br />functionality was arrived at, and we will soon have a new
+product to <br />show for it, freely available for download. CoyoteMonitoring
+will <br />depend heavily on this piece of software and related libraries. We
+are <br />making excellent progress on this, but ultimately, the problem to
+solve <br />here is one of modularity and configuration. How do you provide an
+<br />easy, non-programmatic method of extensibility for any number of <br
+/>potential rules? We've got some great ideas, but only the natural <br
+/>selection of actual use to prove the best approach. This is our current <br
+/>top-priority.<p/>With the advances that have been made in the past several
+months, we <br />are not only comfortable making an announcement about a new
+version of <br />CoyoteMonitoring, we are down-right confident :-) For the
+interested, <br />here are more detailed points on CoyMon 3:<p/><ul><li>
+CoyMon 3 will be developed completely independently of any <br />third-parties
+or businesses. This will mean slower development times, <br />but cleaner more
+easily managed code. With the absence of sensitive <br />customer code and/or
+configurations, you will see regularly available <br />downloads.</li><br
+/><li>Supporting libraries will all have extensive unit tests for each <br
+/>piece of functionality.</li><br /><li>CoyMon 3 will have a 100% true
+component architecture.</li><br /><li>CoyMon 3 will continue to use flow-tools
+and will make full use of <br />the python bindings for fast processing of
+NetFlow captures.</li><br /><li>CoyMon 3 will make use of Zope 3 technology
+for through-the-web <br />management of such resources as collectors,
+protocols, queries, <br />resulting data and graphics, as well as arbitrary
+content that is <br />important to end users.</li><br /><li>CoyMon 3 will make
+use of the Twisted Python framework for all of <br />its specialized
+networking needs, including (but not limited to) CMOB/X <br />(a recently
+developed "object broker" for distributed collectors <br />managed at a
+central location).</li><br /><li>CoyMon 3 will have completely re-factored
+supporting libraries, <br />written and maintained by the CoyoteMonnitoring
+community. All the old <br />Perl code will be replaced with light-weight,
+easy-to-maintain python <br />libraries and scripts. These will include
+NetCIDR, PyRRD, and <br />PyFlowCatch.</li><br /><li>CoyMon 3 will have
+consistent configuration across all its <br />composite applications and it
+will make use of the famous, the useful, <br />and the ever-concise
+Apache-style configuration files.</li><br /><li>And last, but not least,
+CoyMon 3 will abide by Chapter 4 of Eric <br />Raymond's "The The Cathedral
+and the Bazaar": Release Early, Release <br />Often. CoyMon 3 development
+snapshots will be available for download <br />regularly. </li><br
+/></ul><p/>Project spaces to keep your eyes on:<p/><a
+href="http://projects.adytum.us/tracs/CoyMon">CoyMon</a><br/><br /><a
+href="http://projects.adytum.us/tracs/PyFlowCatch">PyFlowCatch</a><br/><br /><
+a href="http://projects.adytum.us/tracs/PyRRD">PyRRD</a><br/><br /><a
+href="http://projects.adytum.us/tracs/NetCIDR">NetCIDR</a><br/><p/></div><br/>
+</div>

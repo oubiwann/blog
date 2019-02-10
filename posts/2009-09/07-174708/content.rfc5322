@@ -11,4 +11,38 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-N8pwrIvgxYA/UHoU2RmFf7I/AAAAAAAAALg/znN9zuTbOcI/s1600/wma.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-N8pwrIvgxYA/UHoU2RmFf7I/AAAAAAAAALg/znN9zuTbOcI/s1600/wma.png" /></a></div>For the past couple years, my girlfriend has been amazingly (astonishingly) patient about a whole slew of .wma files that we've got on the network drive... backups of her CD collection made when she was a Windows user. We managed to save them right before the computer died, but she hasn't been able to listen to them when she's booted into Ubuntu or Mac OS X.<br /><br />Late last month, after getting back from two weeks abroad, Marjorie said that she'd really like to have access to her music collection again (the CDs are cumbersome and stored away in boxes for our impending move back to Colorado). With that said, I did some digging around, and found some immediately helpful links (two years ago, a few google searches had turned up results that indicated too much effort was involved).<br /><br />I started out by trying a couple free Mac OS X GUI applications, but these ended up being quite horrible: either they did not offer the functionality I desired, they were buggy to the point of being unusable, or they rendered audio with unlistenable artifacts.<br /><br />In the end, I had to use <a href="http://www.mplayerhq.hu/">mplayer</a> and <a href="http://lame.sourceforge.net/">lame</a> in combination. After googling around and some trial and error, I discovered the combination of mplayer options that would successfully extract the audio data from .wma files and dump them as .wav files.<br /><br />I started with a shell script, but quickly changed to Python, since there were several locations for the .wma files, and none of them on nice paths. I've used this script several times since then, when more .wma files were discovered, and have yet to encounter any issues in sound quality. Once nice-to-have would be to extract .wma metadata and save it in the new .mp3 files as id3 tags...<br /><br />Anyway, here's the code:<br /><br /><script src="https://gist.github.com/3886894.js?file=convert.py"></script></div><br /><br />Hope someone else finds this useful and their significant others don't have to wait 2 years for their music!<br /><br /><br />
+<div><br /><div class="separator" style="clear: both; text-align:
+center;"></div><div class="separator" style="clear: both; text-align:
+center;"><a href="http://4.bp.blogspot.com/-N8pwrIvgxYA/UHoU2RmFf7I/AAAAAAAAAL
+g/znN9zuTbOcI/s1600/wma.png" imageanchor="1" style="clear: left; float: left;
+margin-bottom: 1em; margin-right: 1em;"><img border="0"
+src="http://4.bp.blogspot.com/-N8pwrIvgxYA/UHoU2RmFf7I/AAAAAAAAALg/znN9zuTbOcI
+/s1600/wma.png" /></a></div>For the past couple years, my girlfriend has been
+amazingly (astonishingly) patient about a whole slew of .wma files that we've
+got on the network drive... backups of her CD collection made when she was a
+Windows user. We managed to save them right before the computer died, but she
+hasn't been able to listen to them when she's booted into Ubuntu or Mac OS
+X.<br /><br />Late last month, after getting back from two weeks abroad,
+Marjorie said that she'd really like to have access to her music collection
+again (the CDs are cumbersome and stored away in boxes for our impending move
+back to Colorado). With that said, I did some digging around, and found some
+immediately helpful links (two years ago, a few google searches had turned up
+results that indicated too much effort was involved).<br /><br />I started out
+by trying a couple free Mac OS X GUI applications, but these ended up being
+quite horrible: either they did not offer the functionality I desired, they
+were buggy to the point of being unusable, or they rendered audio with
+unlistenable artifacts.<br /><br />In the end, I had to use <a
+href="http://www.mplayerhq.hu/">mplayer</a> and <a
+href="http://lame.sourceforge.net/">lame</a> in combination. After googling
+around and some trial and error, I discovered the combination of mplayer
+options that would successfully extract the audio data from .wma files and
+dump them as .wav files.<br /><br />I started with a shell script, but quickly
+changed to Python, since there were several locations for the .wma files, and
+none of them on nice paths. I've used this script several times since then,
+when more .wma files were discovered, and have yet to encounter any issues in
+sound quality. Once nice-to-have would be to extract .wma metadata and save it
+in the new .mp3 files as id3 tags...<br /><br />Anyway, here's the code:<br
+/><br /><script
+src="https://gist.github.com/3886894.js?file=convert.py"></script></div><br />
+<br />Hope someone else finds this useful and their significant others don't
+have to wait 2 years for their music!<br /><br /><br />

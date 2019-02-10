@@ -11,4 +11,41 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: programming :: music</i><br/><br/><p/><br /><div blog="entry"><p><br />When we moved to Colorado from Maryland in January, a Tibetan friend of <br />ours who is a monk helped us pack, drive, unpack, and setup house when <br />we got here. During the drive, we spent many hours practicing English, <br />Tibetan, and listening to "injee" music on my iPod. There were certain <br />songs that he could listen to more easily than others. It was sometimes <br />surprising to me the songs where lyrics were enunciated well enough to <br />be mimicked without understanding the content. The one that made me <br />laugh the hardest was "Cold As Ice" by Foreigner... there is something <br />totally hilarious about driving cross-country with a Tibetan monk, both <br />of you singing "She's as cold as ice!" at the top of your lungs. It's <br />one of those moments you know will stick with you forever. Another good <br />one was KC &amp; the Sunshine Band's "Shake Your Booty" -- it turns out <br />English "shake" is cognate with a Tibetan colloquial word of similar <br />pronunciation and meaning.<br /></p><br /><p>Anyway, I was supposed to build CDs of photos and music from our <br />several weeks together and send them back home to Lama Gyaltsen. iTunes <br />exports playlists in several formats, including XML. This was a perfect <br />excuse to play with ElementTree some more, while the CDs burned (that's <br />another cool thing about iTunes: got a play list that's 3 and a half <br />hours worth of music and you want to burn to CD? No problem! It splits <br />them up for you. Save your brain cells for the important stuff like <br />playing with python).</p><p>Here's the code:<br /></p><pre>import cElementTree as et<br />filename = '/Users/oubiwann/Desktop/Mix - Lama Gyaltsen.xml'<br />tree = et.parser(filename)<br />root = tree.getroot()<br />template = '%s: %s'<br />for i in root.find('./*/dict').getchildren():<br /> if i.tag == 'dict':<br /> data = i.getchildren()<br /> for j in range(0,len(data)):<br /> if data[j].tag == 'key':<br /> if data[j].text == 'Name':<br /> print template % ('Song Name', data[j+1].text)<br /> if data[j].text == 'Artist':<br /> print template % ('Band Name', data[j+1].text)<br /> if data[j].text == 'Total Time':<br /> converted = '%s:%.2s' % <br />divmod(int(data[j+1].text), 60000)<br /> print template % ('Length', converted)<br /></pre><p><br /><b>Update:</b> Fredrik Lundh has just blogged about this :-) He has a<br />added simpler loader for for iTunes playlists to ElementTree. Read<br />about it <a href="http://online.effbot.org/2005_03_01_archive.htm#elementplist">here</a>.<br /></p></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python ::
+programming :: music</i><br/><br/><p/><br /><div blog="entry"><p><br />When we
+moved to Colorado from Maryland in January, a Tibetan friend of <br />ours who
+is a monk helped us pack, drive, unpack, and setup house when <br />we got
+here. During the drive, we spent many hours practicing English, <br />Tibetan,
+and listening to "injee" music on my iPod. There were certain <br />songs that
+he could listen to more easily than others. It was sometimes <br />surprising
+to me the songs where lyrics were enunciated well enough to <br />be mimicked
+without understanding the content. The one that made me <br />laugh the
+hardest was "Cold As Ice" by Foreigner... there is something <br />totally
+hilarious about driving cross-country with a Tibetan monk, both <br />of you
+singing "She's as cold as ice!" at the top of your lungs. It's <br />one of
+those moments you know will stick with you forever. Another good <br />one was
+KC &amp; the Sunshine Band's "Shake Your Booty" -- it turns out <br />English
+"shake" is cognate with a Tibetan colloquial word of similar <br
+/>pronunciation and meaning.<br /></p><br /><p>Anyway, I was supposed to build
+CDs of photos and music from our <br />several weeks together and send them
+back home to Lama Gyaltsen. iTunes <br />exports playlists in several formats,
+including XML. This was a perfect <br />excuse to play with ElementTree some
+more, while the CDs burned (that's <br />another cool thing about iTunes: got
+a play list that's 3 and a half <br />hours worth of music and you want to
+burn to CD? No problem! It splits <br />them up for you. Save your brain cells
+for the important stuff like <br />playing with python).</p><p>Here's the
+code:<br /></p><pre>import cElementTree as et<br />filename =
+'/Users/oubiwann/Desktop/Mix - Lama Gyaltsen.xml'<br />tree =
+et.parser(filename)<br />root = tree.getroot()<br />template = '%s: %s'<br
+/>for i in root.find('./*/dict').getchildren():<br /> if i.tag == 'dict':<br
+/> data = i.getchildren()<br /> for j in range(0,len(data)):<br /> if
+data[j].tag == 'key':<br /> if data[j].text == 'Name':<br /> print template %
+('Song Name', data[j+1].text)<br /> if data[j].text == 'Artist':<br /> print
+template % ('Band Name', data[j+1].text)<br /> if data[j].text == 'Total
+Time':<br /> converted = '%s:%.2s' % <br />divmod(int(data[j+1].text),
+60000)<br /> print template % ('Length', converted)<br /></pre><p><br
+/><b>Update:</b> Fredrik Lundh has just blogged about this :-) He has a<br
+/>added simpler loader for for iTunes playlists to ElementTree. Read<br
+/>about it <a
+href="http://online.effbot.org/2005_03_01_archive.htm#elementplist">here</a>.<
+br /></p></div><br /></div>

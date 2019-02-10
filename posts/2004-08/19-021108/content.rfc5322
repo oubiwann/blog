@@ -11,4 +11,36 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: html :: web</i><br/><br/><p/><br /><p><br />Well, I've been working with some ancient code base (1995) to produce HTML for <a href="http://pyhtmlwidgets.sf.net">PyHTMLWidgets</a>.... and thanks to a friend of mine (Paul Taney), I have realized that the proper tool has been in front of me the whole time: <a href="http://starship.python.net/crew/friedrich/HTMLgen/html/index.html" target="new">HTMLgen</a>.</p><br /><br /><p>Once I am finished with the looming projects (two weeks, I hope!), I<br />will update the code base for PyHTMLWidgets and provide a download.<br />It's not rocket science... in fact, it's not science at all: it's<br />convenience. In the world of awesome templating systems and complete<br />tool sets for projects, there are customers out there that want things<br />in a particular way... sometimes, this precludes the use of some of the<br />better tools sets out there, and the need arises for something<br />completely independant and without dependancies on a larger system.</p><br /><br /><p>Thus, the ever-present need for separate tools with the ability to loosely bind them together...</p><br /><br /><p>Update:</p><br /><br /><p>A <a href="http://online.effbot.org/2004_08_01_archive.htm#20040820" target="new">benchmark of different xml tools in python</a> led me to the <a href="http://effbot.org/zone/element-index.htm" target="new">ElementTree</a> web site and I am excited to see what this tool can do. There are a couple possibilities for PyHTMLWidgets:</p><br /><br /><p>* Use HTMLgen<br/><br />* Use ElementTree instead<br/><br /><br />* Rewrite HTMLgen to use ElementTree</p><br /><br /><p>I'll have to spend more time thinking about potential features (mmm,<br />candy... mmm, scope creep) as well as running some benchmarks, but this<br />could actually be an interesting project...</p><br /><br /><p>Update:</p><br /><br /><p>Well, I had a chance to look at the source for HTMLgen, and it's<br />really not what I need. On the other hand, I've been playing with<br />ElementTree and that is a fantastic tool set. I am very pleased with<br />it's potential, and I think that it will provide *very* significant<br />increases in speed over what we are currently using.</p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: html
+:: web</i><br/><br/><p/><br /><p><br />Well, I've been working with some
+ancient code base (1995) to produce HTML for <a
+href="http://pyhtmlwidgets.sf.net">PyHTMLWidgets</a>.... and thanks to a
+friend of mine (Paul Taney), I have realized that the proper tool has been in
+front of me the whole time: <a
+href="http://starship.python.net/crew/friedrich/HTMLgen/html/index.html" targe
+t="new">HTMLgen</a>.</p><br /><br /><p>Once I am finished with the looming
+projects (two weeks, I hope!), I<br />will update the code base for
+PyHTMLWidgets and provide a download.<br />It's not rocket science... in fact,
+it's not science at all: it's<br />convenience. In the world of awesome
+templating systems and complete<br />tool sets for projects, there are
+customers out there that want things<br />in a particular way... sometimes,
+this precludes the use of some of the<br />better tools sets out there, and
+the need arises for something<br />completely independant and without
+dependancies on a larger system.</p><br /><br /><p>Thus, the ever-present need
+for separate tools with the ability to loosely bind them together...</p><br
+/><br /><p>Update:</p><br /><br /><p>A <a
+href="http://online.effbot.org/2004_08_01_archive.htm#20040820" target="new">b
+enchmark of different xml tools in python</a> led me to the <a
+href="http://effbot.org/zone/element-index.htm" target="new">ElementTree</a>
+web site and I am excited to see what this tool can do. There are a couple
+possibilities for PyHTMLWidgets:</p><br /><br /><p>* Use HTMLgen<br/><br />*
+Use ElementTree instead<br/><br /><br />* Rewrite HTMLgen to use
+ElementTree</p><br /><br /><p>I'll have to spend more time thinking about
+potential features (mmm,<br />candy... mmm, scope creep) as well as running
+some benchmarks, but this<br />could actually be an interesting
+project...</p><br /><br /><p>Update:</p><br /><br /><p>Well, I had a chance to
+look at the source for HTMLgen, and it's<br />really not what I need. On the
+other hand, I've been playing with<br />ElementTree and that is a fantastic
+tool set. I am very pleased with<br />it's potential, and I think that it will
+provide *very* significant<br />increases in speed over what we are currently
+using.</p><br /></div>

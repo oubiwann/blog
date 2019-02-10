@@ -11,4 +11,30 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />This came up in the blog comments yesterday, but it really deserves a post of its own. A few days back, I was googling for code and articles that have been written regarding the use of Python 2.5 generators to build coroutines. All I got were many dead ends. Nothing really seemed to have any substance nor did materials dive into the depths in the manner I wanted and was hoping to find. I was at a loss... until I came across <a href="http://jeremyhylton.blogspot.com/2009/03/coroutines-in-python.html">a blog post</a> by Jeremy Hylton.<br /><br />This was heaven-sent. Until then, I'd never looked at David Beazley's instruction materials, but immediately was dumbstruck at the beautiful directness, clarity, and simplicity of his style. He was both lucid in the topics while conveying great enthusiasm for them. With Python 2.5 generator-based coroutines, this is something that few have been able to do a fraction as well as David has. I cannot recommend the content of these two presentations highly enough:<br /><ul><li><a href="http://www.dabeaz.com/generators-uk/">Generator Tricks for Systems Programmers</a></li><li><a href="http://www.dabeaz.com/coroutines/index.html">A Curious Course on Coroutines and Concurrency</a></li></ul>Even though I've never been to one of his classes, after reading his <a href="http://www.dabeaz.com/cv.html">fascinating background</a>, I'd love the chance to pick his brain... for about a year or two (class or no!).<br /><br />I've done a little bit of prototyping using greenlets before, and will soon need to do much more than that with Python 2.5 generators. My constant companion in this work will be David's <a href="http://www.dabeaz.com/coroutines/index.html">Curious Course</a>. Also, don't give the other slides a pass, simply because you already understand generators. David's not just about conveying information: he's gifted at sharing and shifting perspective.<br /><br /><br /><br /></div>
+<div><br />This came up in the blog comments yesterday, but it really deserves
+a post of its own. A few days back, I was googling for code and articles that
+have been written regarding the use of Python 2.5 generators to build
+coroutines. All I got were many dead ends. Nothing really seemed to have any
+substance nor did materials dive into the depths in the manner I wanted and
+was hoping to find. I was at a loss... until I came across <a
+href="http://jeremyhylton.blogspot.com/2009/03/coroutines-in-python.html">a bl
+og post</a> by Jeremy Hylton.<br /><br />This was heaven-sent. Until then, I'd
+never looked at David Beazley's instruction materials, but immediately was
+dumbstruck at the beautiful directness, clarity, and simplicity of his style.
+He was both lucid in the topics while conveying great enthusiasm for them.
+With Python 2.5 generator-based coroutines, this is something that few have
+been able to do a fraction as well as David has. I cannot recommend the
+content of these two presentations highly enough:<br /><ul><li><a
+href="http://www.dabeaz.com/generators-uk/">Generator Tricks for Systems
+Programmers</a></li><li><a href="http://www.dabeaz.com/coroutines/index.html">
+A Curious Course on Coroutines and Concurrency</a></li></ul>Even though I've
+never been to one of his classes, after reading his <a
+href="http://www.dabeaz.com/cv.html">fascinating background</a>, I'd love the
+chance to pick his brain... for about a year or two (class or no!).<br /><br
+/>I've done a little bit of prototyping using greenlets before, and will soon
+need to do much more than that with Python 2.5 generators. My constant
+companion in this work will be David's <a
+href="http://www.dabeaz.com/coroutines/index.html">Curious Course</a>. Also,
+don't give the other slides a pass, simply because you already understand
+generators. David's not just about conveying information: he's gifted at
+sharing and shifting perspective.<br /><br /><br /><br /></div>

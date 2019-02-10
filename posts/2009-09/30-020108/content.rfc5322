@@ -11,4 +11,107 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />I have several friends who are incredibly intelligent. And they are not coders. At all. I mean, these guys are totally insanely smart enough to be core Twisted developers. And they're definitely twisted enough ;-) One's a mechanic, one does finishing construction, and the other is a carpenter.<br /><br />They all have the ability, brains, technical skills, and desire to work on either really large or very intricate projects.<br /><br />But they don't.<br /><br />And it occurred to me tonight, while getting ready for bed, why that is. And with that, a deep gratitude for the environments that we have as open source developers. These guys are young and full of great ideas on the Way Things Should Be Done, so I haven't tried to give them any advice about their work... but if I could share just one thing, it would be these two:<br /><ol><li>Proper Motivation</li><li>Proper Process</li></ol>I use the term "proper" in a particular way... not in a dogmatic or pedantic sense, but rather one imbued with a sense of poise, purpose, careful consideration, and art.<br /><br />When engaging in any undertaking, it's not a matter of getting from point A to B to C. Very often, we have no idea what the points are. Or they change mid-way. Or we can only see one at a time. Or we can see two or three ahead of where we are, but not the next one. And by the time we get to the others, we've already forgotten them, and we're lost again.<br /><br />It's a matter of observing a natural flow or tendency of the components of the system in question, being frugal with energy expenditure, applying the minimal system perturbance to maximize a desired outcome, and finally, being prepared to iterate that process in the event of unexpected results.<br /><br />Sounds simple enough, but... each of those things could be analyzed in several volumes of inter-disciplinary texts. And probably already have. Regardless, let's see if it's possible to usefully simplify the problem domain. Let's start with restating the problem:<br /><blockquote>I would love to do X, but I don't have the time. I'd be ecstatic to do it, but it'd be really complicated, nothing else would get done, and I'm not even sure if I could finish it.<br /></blockquote><font style="font-weight: bold;">Motivation</font><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://despair.com/motivation.html"><img style="margin: 0pt 10px 10px 0pt; float: left; cursor: pointer;" src="http://farm3.static.flickr.com/2462/3967877635_185b7a1376_o.png" alt="" border="0"></a>Anyone who has ambitions of getting anything done should probably spend a lot of time pondering motivation. "What's the impetus behind this desire to accomplish X? What force is present that could sustain my interest in X through to completion? Would Y be possible in order for that to happen? If there's not enough sustaining power for X, can I creatively transform some or all of X into some Z such that there <font style="font-style: italic;">is</font> enough sustaining power for completion?<br /><br />In the Python community, I have found that the users of my software are the single-most potent force behind the consistent transmutation of ideas and plans into usable bytes. The second most powerful motivator is fun. The more I enjoy the byte-shuffle, the more bytes I write. The third big motivator for me is the engineer's aesthetic... the mathematicians need for elegance... an over-developed sense of software justice. I've gotten an enormous amount of work done on various software projects when there was code that triggered a vision for unrealized potential.<br /><br />Projects which lacked any one of these did not receive as much attention as those that did. Sometimes these were rescued, but only after shifting the problem space's frame of reference around until there was sufficient byte-generating energy available. "This is doable if we only do part 1 and 3 of X." "X doesn't really excite me, even though I like it. I'd rather work on A, but no one will pay me for that. Hrm... Q is a little like a and a lot like X, I could work on that!"<br /><br />Sometimes, even though X was really cool, I didn't quite care enough to do anything about it. But then I found out that Alice was passionate about X and would write some code. Bob freakin' loved it and blogged about it, even though I had no idea who he was. The power of friends and communities is inestimable at a very basic level in the mind of the developer when it comes to creating bytes.<br /><br />Then there were the times where even all the motivation was good, lots of energy in the system, and the projects still didn't get accomplished.<br /><br />How were these different than the ones that were successful?<br /><br /><font style="font-weight: bold;">Process</font><br /><br /><img style="margin: 0pt 10px 10px 0pt; float: right; cursor: pointer;" src="http://farm3.static.flickr.com/2670/3967879289_a67066e59c.jpg" alt="" border="0">You said it, man. Effective process is the ultimate secret weapon. I have witnessed my craftsmen friends in their successes as well as failures. Failures were much more common when they worked alone or when they didn't follow a process. However, their successes were not as frequent as those I witness in equally gifted programmer friends. The overriding difference is that the programmer counterparts engage in various processes that codify steps known to bring repeatable and desirable results.<br /><br />To be fair, I don't know any master carpenters personally. Doubtless they have rigorous processes in place for large projects... but my tradesfriends don't have access to them. This is a profound advantage aspiring programmers have in the open source community.<br /><br />The development environment is a perfect and possible subtle example of a process that can lead to success. It is crucial consistent system for writing code, keeping track of changes, keeping track of tasks, communicating with fellow developers. A crappy workshop is going to provide all sorts of barriers to accomplishment that a fantastic workshop won't. Once the system works, stick with it. Never separate yourself from it. Evolve it carefully, but only as needed.<br /><br />Understand how you learn, how you problem-solve, what your blind spots are. Integrating these into your development process will improve your code and help you emerge into higher levels of excellence.<br /><br />Another critical process is the analytical thinking required to breakdown a project into tasks and subtasks, the ability to prioritize these according to the final result (making sure to plan for worst-case scenarios as well as best-case ones).<br /><br />Then there's unit tests... a lot has been said about these, but still I don't think it's been enough. And I don't think it will be until it's common practice for programmers to memorize sonnets that enumerate the limitless virtues of writing unit tests.<br /><br />Of the many problems I have seen my non-programmer friends run into with their projects, nearly all of them could have been -- at some level -- minimized or prevented through the use of something comparable to unit tests. Unit tests aren't just for debugging. They're not only an insurance policy. Or a CYA. When approached with an open mind, they are a tool that encourages critical thinking, one that sends a developer deep into her code to resurface with a profound understanding of what was actually written and ideas on how to make that better.<br /><br />Of all the many benefits of test-driven development, few compare to their subtler influences: refactoring for better introspection<br /><br /><br /></div>
+<div><br />I have several friends who are incredibly intelligent. And they are
+not coders. At all. I mean, these guys are totally insanely smart enough to be
+core Twisted developers. And they're definitely twisted enough ;-) One's a
+mechanic, one does finishing construction, and the other is a carpenter.<br
+/><br />They all have the ability, brains, technical skills, and desire to
+work on either really large or very intricate projects.<br /><br />But they
+don't.<br /><br />And it occurred to me tonight, while getting ready for bed,
+why that is. And with that, a deep gratitude for the environments that we have
+as open source developers. These guys are young and full of great ideas on the
+Way Things Should Be Done, so I haven't tried to give them any advice about
+their work... but if I could share just one thing, it would be these two:<br
+/><ol><li>Proper Motivation</li><li>Proper Process</li></ol>I use the term
+"proper" in a particular way... not in a dogmatic or pedantic sense, but
+rather one imbued with a sense of poise, purpose, careful consideration, and
+art.<br /><br />When engaging in any undertaking, it's not a matter of getting
+from point A to B to C. Very often, we have no idea what the points are. Or
+they change mid-way. Or we can only see one at a time. Or we can see two or
+three ahead of where we are, but not the next one. And by the time we get to
+the others, we've already forgotten them, and we're lost again.<br /><br
+/>It's a matter of observing a natural flow or tendency of the components of
+the system in question, being frugal with energy expenditure, applying the
+minimal system perturbance to maximize a desired outcome, and finally, being
+prepared to iterate that process in the event of unexpected results.<br /><br
+/>Sounds simple enough, but... each of those things could be analyzed in
+several volumes of inter-disciplinary texts. And probably already have.
+Regardless, let's see if it's possible to usefully simplify the problem
+domain. Let's start with restating the problem:<br /><blockquote>I would love
+to do X, but I don't have the time. I'd be ecstatic to do it, but it'd be
+really complicated, nothing else would get done, and I'm not even sure if I
+could finish it.<br /></blockquote><font style="font-weight:
+bold;">Motivation</font><br /><br /><a onblur="try
+{parent.deselectBloggerImageGracefully();} catch(e) {}"
+href="http://despair.com/motivation.html"><img style="margin: 0pt 10px 10px
+0pt; float: left; cursor: pointer;"
+src="http://farm3.static.flickr.com/2462/3967877635_185b7a1376_o.png" alt=""
+border="0"></a>Anyone who has ambitions of getting anything done should
+probably spend a lot of time pondering motivation. "What's the impetus behind
+this desire to accomplish X? What force is present that could sustain my
+interest in X through to completion? Would Y be possible in order for that to
+happen? If there's not enough sustaining power for X, can I creatively
+transform some or all of X into some Z such that there <font
+style="font-style: italic;">is</font> enough sustaining power for
+completion?<br /><br />In the Python community, I have found that the users of
+my software are the single-most potent force behind the consistent
+transmutation of ideas and plans into usable bytes. The second most powerful
+motivator is fun. The more I enjoy the byte-shuffle, the more bytes I write.
+The third big motivator for me is the engineer's aesthetic... the
+mathematicians need for elegance... an over-developed sense of software
+justice. I've gotten an enormous amount of work done on various software
+projects when there was code that triggered a vision for unrealized
+potential.<br /><br />Projects which lacked any one of these did not receive
+as much attention as those that did. Sometimes these were rescued, but only
+after shifting the problem space's frame of reference around until there was
+sufficient byte-generating energy available. "This is doable if we only do
+part 1 and 3 of X." "X doesn't really excite me, even though I like it. I'd
+rather work on A, but no one will pay me for that. Hrm... Q is a little like a
+and a lot like X, I could work on that!"<br /><br />Sometimes, even though X
+was really cool, I didn't quite care enough to do anything about it. But then
+I found out that Alice was passionate about X and would write some code. Bob
+freakin' loved it and blogged about it, even though I had no idea who he was.
+The power of friends and communities is inestimable at a very basic level in
+the mind of the developer when it comes to creating bytes.<br /><br />Then
+there were the times where even all the motivation was good, lots of energy in
+the system, and the projects still didn't get accomplished.<br /><br />How
+were these different than the ones that were successful?<br /><br /><font
+style="font-weight: bold;">Process</font><br /><br /><img style="margin: 0pt
+10px 10px 0pt; float: right; cursor: pointer;"
+src="http://farm3.static.flickr.com/2670/3967879289_a67066e59c.jpg" alt=""
+border="0">You said it, man. Effective process is the ultimate secret weapon.
+I have witnessed my craftsmen friends in their successes as well as failures.
+Failures were much more common when they worked alone or when they didn't
+follow a process. However, their successes were not as frequent as those I
+witness in equally gifted programmer friends. The overriding difference is
+that the programmer counterparts engage in various processes that codify steps
+known to bring repeatable and desirable results.<br /><br />To be fair, I
+don't know any master carpenters personally. Doubtless they have rigorous
+processes in place for large projects... but my tradesfriends don't have
+access to them. This is a profound advantage aspiring programmers have in the
+open source community.<br /><br />The development environment is a perfect and
+possible subtle example of a process that can lead to success. It is crucial
+consistent system for writing code, keeping track of changes, keeping track of
+tasks, communicating with fellow developers. A crappy workshop is going to
+provide all sorts of barriers to accomplishment that a fantastic workshop
+won't. Once the system works, stick with it. Never separate yourself from it.
+Evolve it carefully, but only as needed.<br /><br />Understand how you learn,
+how you problem-solve, what your blind spots are. Integrating these into your
+development process will improve your code and help you emerge into higher
+levels of excellence.<br /><br />Another critical process is the analytical
+thinking required to breakdown a project into tasks and subtasks, the ability
+to prioritize these according to the final result (making sure to plan for
+worst-case scenarios as well as best-case ones).<br /><br />Then there's unit
+tests... a lot has been said about these, but still I don't think it's been
+enough. And I don't think it will be until it's common practice for
+programmers to memorize sonnets that enumerate the limitless virtues of
+writing unit tests.<br /><br />Of the many problems I have seen my
+non-programmer friends run into with their projects, nearly all of them could
+have been -- at some level -- minimized or prevented through the use of
+something comparable to unit tests. Unit tests aren't just for debugging.
+They're not only an insurance policy. Or a CYA. When approached with an open
+mind, they are a tool that encourages critical thinking, one that sends a
+developer deep into her code to resurface with a profound understanding of
+what was actually written and ideas on how to make that better.<br /><br />Of
+all the many benefits of test-driven development, few compare to their subtler
+influences: refactoring for better introspection<br /><br /><br /></div>

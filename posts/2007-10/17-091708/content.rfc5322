@@ -11,4 +11,32 @@ Comments:
 Content-Type: md
 Public?: true
 
-I've been meaning to blog about this for a couple weeks: <a href="http://rst2a.com/">rst2a</a>. I think this is a hot little site for the following reasons, in order of what my brain experiences when visiting the site:<br /><ul><li>Visually, this is a very "clean" (and good looking) application; in a world of over-featured web junk, this is most refreshing.</li><li>Similarly, the functionality of the application is represented excellently by the clear design and layout: I always know where to go and what button to click.</li><li>I use ReStructured Text all the time; any notes I take for <em>everything,</em> I write using rst (and I have already used rst2a a great deal).</li><li>This applications is most useful: it can output my rst text to styled HTML or PDFs, it handles unicode well, and new styles can be defined and uploaded.</li></ul>Finding a nice web application that does one thing useful and doesn't try to be everything to everyone, looks good, and actually freakin' works feels like a one in a million occurrence. Having a web tool that converts your rst may not seem very "big" or sexy, but try it -- I think you'll find it surprisingly useful. And the way that they have designed this thing, you will enjoy the actual usage experience in addition to the result (or at the very least, won't have the pain associated with poorly- or over-designed apps).<br /><br />Now, to encourage them to commit a crime which I have just decried, perhaps they could a feature I would use: <a href="http://docutils.sourceforge.net/docs/user/slide-shows.html">slide show output</a>. This would increase the output formats from two to three: HTML, HTML Slideshow, and PDF. That's not too bad, is it?<br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/web" rel="tag">web</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/software" rel="tag">software</a></p><!-- technorati tags end -->
+I've been meaning to blog about this for a couple weeks: <a
+href="http://rst2a.com/">rst2a</a>. I think this is a hot little site for the
+following reasons, in order of what my brain experiences when visiting the
+site:<br /><ul><li>Visually, this is a very "clean" (and good looking)
+application; in a world of over-featured web junk, this is most
+refreshing.</li><li>Similarly, the functionality of the application is
+represented excellently by the clear design and layout: I always know where to
+go and what button to click.</li><li>I use ReStructured Text all the time; any
+notes I take for <em>everything,</em> I write using rst (and I have already
+used rst2a a great deal).</li><li>This applications is most useful: it can
+output my rst text to styled HTML or PDFs, it handles unicode well, and new
+styles can be defined and uploaded.</li></ul>Finding a nice web application
+that does one thing useful and doesn't try to be everything to everyone, looks
+good, and actually freakin' works feels like a one in a million occurrence.
+Having a web tool that converts your rst may not seem very "big" or sexy, but
+try it -- I think you'll find it surprisingly useful. And the way that they
+have designed this thing, you will enjoy the actual usage experience in
+addition to the result (or at the very least, won't have the pain associated
+with poorly- or over-designed apps).<br /><br />Now, to encourage them to
+commit a crime which I have just decried, perhaps they could a feature I would
+use: <a
+href="http://docutils.sourceforge.net/docs/user/slide-shows.html">slide show
+output</a>. This would increase the output formats from two to three: HTML,
+HTML Slideshow, and PDF. That's not too bad, is it?<br /><br /><!-- technorati
+tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/web" rel="tag">web</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a></p><!--
+technorati tags end -->

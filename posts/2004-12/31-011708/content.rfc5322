@@ -11,4 +11,13 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: programming :: weblogs</i><br/><br/><p/><br /><p>I've been playing with Abe Fettig's twisted application <a href="http://fettig.net/projects/hep/">Hep</a><br />for a couple months now, and I really like it: some nifty integration<br />of concepts and utility. Playing with Hep also got me looking at <a href="http://fettig.net/projects/yarn/">Yarn</a>, and that got me thinking: what would it take to roll my own little app that would let me post to MovableType via email?<br/><br /></p><br /><p>(rest of entry truncated/lost)</p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python ::
+programming :: weblogs</i><br/><br/><p/><br /><p>I've been playing with Abe
+Fettig's twisted application <a
+href="http://fettig.net/projects/hep/">Hep</a><br />for a couple months now,
+and I really like it: some nifty integration<br />of concepts and utility.
+Playing with Hep also got me looking at <a
+href="http://fettig.net/projects/yarn/">Yarn</a>, and that got me thinking:
+what would it take to roll my own little app that would let me post to
+MovableType via email?<br/><br /></p><br /><p>(rest of entry
+truncated/lost)</p><br /></div>

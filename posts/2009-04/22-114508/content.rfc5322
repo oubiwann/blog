@@ -11,4 +11,33 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />Over the past couple years or so I've toyed with functional programming, dabbling in Lisp, Scheme, Erlang, and most recently, Haskell. I've really enjoyed the little bit I've done and have broadened my experience and understanding in the process.<br /><br />Curious as to what folks have done with Python and functional programming, I recently did a google search I should have run years ago and discovered some community classics. I'm posting them here, in the event that I might spare others such an error in oversight :-)<br /><ul><li><a href="http://gnosis.cx/publish/programming/charming_python_13.txt">Functional Programming in Python</a> (2001)</li><li><a href="http://gnosis.cx/publish/programming/charming_python_16.txt">More Functional Programming in Python</a> (2001)</li><li><a href="http://gnosis.cx/publish/programming/charming_python_19.txt">Even More Functional Programming in Python</a> (2001)</li><li><a href="http://gnosis.cx/publish/programming/charming_python_b13.txt">Functional programming in Python becomes lazy</a> (2003)</li><li><a href="http://www.amk.ca/python/writing/functional">Functional Programming HOWTO</a> (updated 2006)</li><li>The <a href="http://oakwinter.com/code/functional/documentation/">functional</a> module (updated 2007)</li></ul>I've always enjoyed David's writing style, though I've never read his FP articles until now. They were quite enjoyable and have aged well, despite referencing older versions of Python. Andrew's HOWTO provides a wonderful, modern summary.<br /><br />I make fairly regular use of <a href="http://docs.python.org/library/itertools.html">itertools</a> but have never used the <a href="http://docs.python.org/library/operator.html">operator</a> module -- though I now look forward to some FP idiomatic Python playtime with it :-) I've never used <a href="http://docs.python.org/library/functools.html">functools</a>, either.<br /><br />Enjoy!<br /><br /><br /><br /></div>
+<div><br />Over the past couple years or so I've toyed with functional
+programming, dabbling in Lisp, Scheme, Erlang, and most recently, Haskell.
+I've really enjoyed the little bit I've done and have broadened my experience
+and understanding in the process.<br /><br />Curious as to what folks have
+done with Python and functional programming, I recently did a google search I
+should have run years ago and discovered some community classics. I'm posting
+them here, in the event that I might spare others such an error in oversight
+:-)<br /><ul><li><a
+href="http://gnosis.cx/publish/programming/charming_python_13.txt">Functional 
+Programming in Python</a> (2001)</li><li><a
+href="http://gnosis.cx/publish/programming/charming_python_16.txt">More Functi
+onal Programming in Python</a> (2001)</li><li><a
+href="http://gnosis.cx/publish/programming/charming_python_19.txt">Even More
+Functional Programming in Python</a> (2001)</li><li><a
+href="http://gnosis.cx/publish/programming/charming_python_b13.txt">Functional
+programming in Python becomes lazy</a> (2003)</li><li><a
+href="http://www.amk.ca/python/writing/functional">Functional Programming
+HOWTO</a> (updated 2006)</li><li>The <a
+href="http://oakwinter.com/code/functional/documentation/">functional</a> modu
+le (updated 2007)</li></ul>I've always enjoyed David's writing style, though
+I've never read his FP articles until now. They were quite enjoyable and have
+aged well, despite referencing older versions of Python. Andrew's HOWTO
+provides a wonderful, modern summary.<br /><br />I make fairly regular use of
+<a href="http://docs.python.org/library/itertools.html">itertools</a> but have
+never used the <a
+href="http://docs.python.org/library/operator.html">operator</a> module --
+though I now look forward to some FP idiomatic Python playtime with it :-)
+I've never used <a
+href="http://docs.python.org/library/functools.html">functools</a>, either.<br
+/><br />Enjoy!<br /><br /><br /><br /></div>

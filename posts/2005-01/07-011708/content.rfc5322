@@ -11,4 +11,66 @@ Comments:
 Content-Type: md
 Public?: true
 
-<a href="http://www.flickr.com/photos/oubiwann/sets/72157622994874590/" border=""><img src="http://farm5.static.flickr.com/4010/4182381979_56e27034a8.jpg" align="left" /></a><span class="Apple-style-span" style="font-family:verdana;">This post is actually taken from and email that I wrote to some friends (late last December) who like this kind of stuff. I went searching through my email, looking for what it was that I did with pydot and graphviz just a while back, and I realized I never blogged about it, and I should have ;-)<br /><br />A few days after the Winter Solstice, I was screwing around with pydot (graphviz) and a custom traceroute python wrapper I threw together (Update: this is now available </span><a href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Libs/annotate/head:/trunk/adytum/net/traceroute.py"><span class="Apple-style-span" style="font-family:verdana;">here</span></a><span class="Apple-style-span" style="font-family:verdana;">). I wanted to graphically visualize multiple traceroutes and see the paths shared in common. This is part of a proof-of-concept for some monitoring ideas I have.<br /><br /></span><div><span class="Apple-style-span" style="font-family:verdana;">The end result was rather cool, the images for which are available <a href="http://www.flickr.com/photos/oubiwann/sets/72157622994874590/">here</a>. Here's the Python code that generated the images (though all the heavy lifting is done by the traceroute module, linked to above):</span></div><div></div><br /><br /><div class="highlight"><pre><span class="k">import</span> <span class="nn">pydot</span><br /><br /><span class="k">from</span> <span class="nn">adytum.net</span> <span class="k">import</span> <span class="n">traceroute</span><br /><br /><br /><span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">"www.google.com"</span><span class="p">,</span> <span class="s">"www.amazon.com"</span><span class="p">,</span> <span class="s">"www.aol.com"</span><span class="p">,</span> <span class="s">"www.cnet.com"</span><span class="p">,</span><br /> <span class="s">"www.yahoo.com"</span><span class="p">]</span><br /><span class="n">linkedHosts</span> <span class="o">=</span> <span class="p">[]</span><br /><br /><span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span><br /> <span class="n">trace</span> <span class="o">=</span> <span class="n">traceroute</span><span class="o">.</span><span class="n">Trace</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">useDNS</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">queries</span><span class="o">=</span><span class="mf">5</span><span class="p">)</span><br /> <span class="n">trace</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><br /> <span class="n">domains</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">getLinkedDomains</span><span class="p">(</span><span class="n">subdomainLimit</span><span class="o">=</span><span class="mf">2</span><span class="p">)</span><br /> <span class="n">linkedHosts</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">domains</span><span class="p">)</span><br /><br /><span class="n">graph</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">graph_from_edges</span><span class="p">(</span><span class="n">linkedHosts</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><br /><span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s">"traceroutes.png"</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s">"dot"</span><span class="p">)</span><br /></pre></div>
+<a href="http://www.flickr.com/photos/oubiwann/sets/72157622994874590/"
+border=""><img src="http://farm5.static.flickr.com/4010/4182381979_56e27034a8.
+jpg" align="left" /></a><span class="Apple-style-span"
+style="font-family:verdana;">This post is actually taken from and email that I
+wrote to some friends (late last December) who like this kind of stuff. I went
+searching through my email, looking for what it was that I did with pydot and
+graphviz just a while back, and I realized I never blogged about it, and I
+should have ;-)<br /><br />A few days after the Winter Solstice, I was
+screwing around with pydot (graphviz) and a custom traceroute python wrapper I
+threw together (Update: this is now available </span><a
+href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Libs/annotate/he
+ad:/trunk/adytum/net/traceroute.py"><span class="Apple-style-span"
+style="font-family:verdana;">here</span></a><span class="Apple-style-span"
+style="font-family:verdana;">). I wanted to graphically visualize multiple
+traceroutes and see the paths shared in common. This is part of a
+proof-of-concept for some monitoring ideas I have.<br /><br
+/></span><div><span class="Apple-style-span" style="font-family:verdana;">The
+end result was rather cool, the images for which are available <a
+href="http://www.flickr.com/photos/oubiwann/sets/72157622994874590/">here</a>.
+Here's the Python code that generated the images (though all the heavy lifting
+is done by the traceroute module, linked to above):</span></div><div></div><br
+/><br /><div class="highlight"><pre><span class="k">import</span> <span
+class="nn">pydot</span><br /><br /><span class="k">from</span> <span
+class="nn">adytum.net</span> <span class="k">import</span> <span
+class="n">traceroute</span><br /><br /><br /><span class="n">hosts</span>
+<span class="o">=</span> <span class="p">[</span><span
+class="s">"www.google.com"</span><span class="p">,</span> <span
+class="s">"www.amazon.com"</span><span class="p">,</span> <span
+class="s">"www.aol.com"</span><span class="p">,</span> <span
+class="s">"www.cnet.com"</span><span class="p">,</span><br /> <span
+class="s">"www.yahoo.com"</span><span class="p">]</span><br /><span
+class="n">linkedHosts</span> <span class="o">=</span> <span
+class="p">[]</span><br /><br /><span class="k">for</span> <span
+class="n">host</span> <span class="ow">in</span> <span
+class="n">hosts</span><span class="p">:</span><br /> <span
+class="n">trace</span> <span class="o">=</span> <span
+class="n">traceroute</span><span class="o">.</span><span
+class="n">Trace</span><span class="p">(</span><span class="n">host</span><span
+class="p">,</span> <span class="n">useDNS</span><span class="o">=</span><span
+class="bp">True</span><span class="p">,</span> <span
+class="n">queries</span><span class="o">=</span><span class="mf">5</span><span
+class="p">)</span><br /> <span class="n">trace</span><span
+class="o">.</span><span class="n">run</span><span class="p">()</span><br />
+<span class="n">domains</span> <span class="o">=</span> <span
+class="n">trace</span><span class="o">.</span><span
+class="n">results</span><span class="o">.</span><span
+class="n">getLinkedDomains</span><span class="p">(</span><span
+class="n">subdomainLimit</span><span class="o">=</span><span
+class="mf">2</span><span class="p">)</span><br /> <span
+class="n">linkedHosts</span><span class="o">.</span><span
+class="n">extend</span><span class="p">(</span><span
+class="n">domains</span><span class="p">)</span><br /><br /><span
+class="n">graph</span> <span class="o">=</span> <span
+class="n">pydot</span><span class="o">.</span><span
+class="n">graph_from_edges</span><span class="p">(</span><span
+class="n">linkedHosts</span><span class="p">,</span> <span
+class="n">directed</span><span class="o">=</span><span
+class="bp">True</span><span class="p">)</span><br /><span
+class="n">graph</span><span class="o">.</span><span
+class="n">write_png</span><span class="p">(</span><span
+class="s">"traceroutes.png"</span><span class="p">,</span> <span
+class="n">prog</span><span class="o">=</span><span class="s">"dot"</span><span
+class="p">)</span><br /></pre></div>

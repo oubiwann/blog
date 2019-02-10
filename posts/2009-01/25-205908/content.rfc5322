@@ -11,4 +11,45 @@ Comments:
 Content-Type: md
 Public?: true
 
-This blog post comes on the heels of the blog post about Window Maker, thanks to the recommendation that <name> made in the comments. I took a couple nights last week to poke around in the tiling window manger ecosystem, and ended up settling on XMonad. I used is intensely all weekend, barely stepping away from the computer (this included lots of script hacking <xmonad configs link> for dzen <dzen link>). <br /><br />I was stunned to discover that though the customization of XMonad involves hacking some Haskell, that this was the most literate experience I've had of window manager configuation in a long time. Whereupon I immediately began examine my interaction with XMonad more carefully. Why was I having so much fun? It wasn't because key bindings were refreshingly easy, nor that the system has a tiny footprint and is highly responsive. Nor was it the fun I've had scripting my own status bar applets with bash. It boils down to this:<br /><br />I have *complete* and *intimate* control over my work environment. It's not more complicated than I need. Not is it less so. I have all the tools necessary to change and improve the most important tool I use on a daily basis: the window manager.<br /><br />Don't get me wrong: I'm still loving Window Maker. However, as <one? maybe use his name again> observant reader said, I'm already half-way there with the manner in which I make use of gvim. (In fact, a few months agao I'd even asked some geek friends if they knew of a GUI app that let you create arbitrary paned windows and then embedded applications in them -- in essence, I was asking for a tiling window manager).<br /><br />This brings me to a very surprising (and delightful) subplot. At the end of this weekend of exploration, I realized the best way to customize the UI the way I wanted was to start writing some Haskell extensions. Which lead be to a fantastic introduction <O'Reilly online book link> (and I'll be buying the book). After an hour of not being able to set aside the tutorial, I realized that I was experiencing a level of joy and fun, one with a particularly sweet flavor, that I've not had since I decided to learn Python. I loved this language.<br /><br />I've toyed with somewhere on the order of 30 languages (I originally wrote "20", but then I stopped to count). I've enjoyed several of those immensely (Smalltalk, Objective-C, Lisp dialects stand out in the crowd), but Python is the one that has always fit my brain the best and allowed me to get the most done. But Python has always felt lonely in my brain; it wanted a friend, but the closest it could get was Lisp. However, if I'm reading the signs right, then it now has a new best friend: Haskell.<br /><br />1. BASIC<br />2. DOS batch<br />3. Logo<br />4. C<br />5. Pascal<br />6. VMS shell<br />7. UNIX shells<br />8. QuakeC<br />9. Matlab<br />10. Mathematica<br />11. PHP<br />12. VB/VBA/VBScript<br />13. SQL<br />14. x86 Assembly<br />15. Perl<br />16. Python<br />17. C++<br />18. Tcl<br />19. JavaScript<br />20. AppleScript<br />21. Java<br />22. R<br />23. Smalltalk<br />24. Objective-C<br />25. Oz<br />26. Lisp/Scheme<br />27. Ruby<br />28. Lua<br />29. Erlang<br />30. Haskell
+This blog post comes on the heels of the blog post about Window Maker, thanks
+to the recommendation that <name> made in the comments. I took a couple nights
+last week to poke around in the tiling window manger ecosystem, and ended up
+settling on XMonad. I used is intensely all weekend, barely stepping away from
+the computer (this included lots of script hacking <xmonad configs link> for
+dzen <dzen link>). <br /><br />I was stunned to discover that though the
+customization of XMonad involves hacking some Haskell, that this was the most
+literate experience I've had of window manager configuation in a long time.
+Whereupon I immediately began examine my interaction with XMonad more
+carefully. Why was I having so much fun? It wasn't because key bindings were
+refreshingly easy, nor that the system has a tiny footprint and is highly
+responsive. Nor was it the fun I've had scripting my own status bar applets
+with bash. It boils down to this:<br /><br />I have *complete* and *intimate*
+control over my work environment. It's not more complicated than I need. Not
+is it less so. I have all the tools necessary to change and improve the most
+important tool I use on a daily basis: the window manager.<br /><br />Don't
+get me wrong: I'm still loving Window Maker. However, as <one? maybe use his
+name again> observant reader said, I'm already half-way there with the manner
+in which I make use of gvim. (In fact, a few months agao I'd even asked some
+geek friends if they knew of a GUI app that let you create arbitrary paned
+windows and then embedded applications in them -- in essence, I was asking for
+a tiling window manager).<br /><br />This brings me to a very surprising (and
+delightful) subplot. At the end of this weekend of exploration, I realized the
+best way to customize the UI the way I wanted was to start writing some
+Haskell extensions. Which lead be to a fantastic introduction <O'Reilly online
+book link> (and I'll be buying the book). After an hour of not being able to
+set aside the tutorial, I realized that I was experiencing a level of joy and
+fun, one with a particularly sweet flavor, that I've not had since I decided
+to learn Python. I loved this language.<br /><br />I've toyed with somewhere
+on the order of 30 languages (I originally wrote "20", but then I stopped to
+count). I've enjoyed several of those immensely (Smalltalk, Objective-C, Lisp
+dialects stand out in the crowd), but Python is the one that has always fit my
+brain the best and allowed me to get the most done. But Python has always felt
+lonely in my brain; it wanted a friend, but the closest it could get was Lisp.
+However, if I'm reading the signs right, then it now has a new best friend:
+Haskell.<br /><br />1. BASIC<br />2. DOS batch<br />3. Logo<br />4. C<br />5.
+Pascal<br />6. VMS shell<br />7. UNIX shells<br />8. QuakeC<br />9. Matlab<br
+/>10. Mathematica<br />11. PHP<br />12. VB/VBA/VBScript<br />13. SQL<br />14.
+x86 Assembly<br />15. Perl<br />16. Python<br />17. C++<br />18. Tcl<br />19.
+JavaScript<br />20. AppleScript<br />21. Java<br />22. R<br />23. Smalltalk<br
+/>24. Objective-C<br />25. Oz<br />26. Lisp/Scheme<br />27. Ruby<br />28.
+Lua<br />29. Erlang<br />30. Haskell

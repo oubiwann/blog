@@ -11,4 +11,53 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><span style="font-weight: bold;">Update</span>: The saga now has a conclusion! See <a href="http://oubiwann.blogspot.com/2009/01/twisted-mail-server-conclusion.html">this blog post</a> for details.<br /><br />Well, these last two months have been hell. Working on sucky projects just plain sucks. It ate up so much of my time that I've got an unhealthy backlog of blog posts waiting for release into the wild.<br /><br />The first post I am compelled to write is on my new mail server. In the past, I've used sendmail, qmail and postfix. I have not been happy with any of those (though I did really like qmail, until it got too cumbersome to keep it updated). I didn't have the level of control I wanted -- and this was solely because I couldn't fit my brain into those applications (though, again, qmail came the closest).<br /><br />I decided to chuck it all, and write my own mail server in twisted, using the pre-built lego code that twisted offers for this sort of thing. I've been running the server for about a month now, and all I can say is "wow". Just WOW.<br /><br />The level of control I have over the operation of my mail server is insane. I can get this thing to do exactly what I want, when I want. I've got a bazillion domain names for which I (or others) receive email. I was able to write the code that lets me handle that the way that makes sense for ME (and *not* the author(s) of Postfix, etc.).<br /><br />Today, I needed to add support for aliases that were actually lists of recipients. One "if" statement and an additional implementation of smtp.IMessage later, it was operational. I don't know how I ever ran a mail server any other way.<br /><br />I've been testing my mail server all month, and it's running beautifully. It has continued to be free of relay issues and spammer attacks. I couldn't be happier with the results.<br /><br />Now that I am feeling more secure in the custom code, I'm ready to start adding additional features I need:<br /><ul><li>white listing: automatically updated with the address of people to whom I send email</li><li>black listing: I am starting to maintain a list of the most heinous offenders in my junk mail box; these will be regularly pushed to the mail server</li><li>greylisting: I have begun planning an implementation of greylisting, but this will take some time to get right</li><li>spammer databases: I am considering using one or more of these. My only problem with them is that I don't trust them. I don't want to block someone inadvertantly just because they were unlucky enough to have one of their boxes raped into becoming an open relay 3 years ago.</li></ul>Having a mail server that runs on twisted seemed a little daunting at first. I feared maintenance and security burdens, however, I have already begun reaping the benefits and my fears have been shown to be baseless. I spend 1/10th the maintenance time on the twisted version. I have *fun* while updating the server or configurations. I can plug my own code into it instead of using third party applications I don't like or patches I don't understand.<br /><br />My first exposure to twisted was late 2002 as I was writing my first "real" python script (a networking script, naturally). Since that time, twisted has integrated itself into my life such that I can't imagine living without it. I literally use it for all of my coding activities: my professional life depends upon it nearly 100%, and 50% of my entertainment is derived from programming activities, all of which incorporate some aspect of twisted.<br /><br />I, for one, welcome our twisted overlords.<br /><br />Now playing:<br /><pre>Bagpipes - Flow Gently Sweet Afton<br /></pre></div>
+<div><br /><span style="font-weight: bold;">Update</span>: The saga now has a
+conclusion! See <a
+href="http://oubiwann.blogspot.com/2009/01/twisted-mail-server-conclusion.html
+">this blog post</a> for details.<br /><br />Well, these last two months have
+been hell. Working on sucky projects just plain sucks. It ate up so much of my
+time that I've got an unhealthy backlog of blog posts waiting for release into
+the wild.<br /><br />The first post I am compelled to write is on my new mail
+server. In the past, I've used sendmail, qmail and postfix. I have not been
+happy with any of those (though I did really like qmail, until it got too
+cumbersome to keep it updated). I didn't have the level of control I wanted --
+and this was solely because I couldn't fit my brain into those applications
+(though, again, qmail came the closest).<br /><br />I decided to chuck it all,
+and write my own mail server in twisted, using the pre-built lego code that
+twisted offers for this sort of thing. I've been running the server for about
+a month now, and all I can say is "wow". Just WOW.<br /><br />The level of
+control I have over the operation of my mail server is insane. I can get this
+thing to do exactly what I want, when I want. I've got a bazillion domain
+names for which I (or others) receive email. I was able to write the code that
+lets me handle that the way that makes sense for ME (and *not* the author(s)
+of Postfix, etc.).<br /><br />Today, I needed to add support for aliases that
+were actually lists of recipients. One "if" statement and an additional
+implementation of smtp.IMessage later, it was operational. I don't know how I
+ever ran a mail server any other way.<br /><br />I've been testing my mail
+server all month, and it's running beautifully. It has continued to be free of
+relay issues and spammer attacks. I couldn't be happier with the results.<br
+/><br />Now that I am feeling more secure in the custom code, I'm ready to
+start adding additional features I need:<br /><ul><li>white listing:
+automatically updated with the address of people to whom I send
+email</li><li>black listing: I am starting to maintain a list of the most
+heinous offenders in my junk mail box; these will be regularly pushed to the
+mail server</li><li>greylisting: I have begun planning an implementation of
+greylisting, but this will take some time to get right</li><li>spammer
+databases: I am considering using one or more of these. My only problem with
+them is that I don't trust them. I don't want to block someone inadvertantly
+just because they were unlucky enough to have one of their boxes raped into
+becoming an open relay 3 years ago.</li></ul>Having a mail server that runs on
+twisted seemed a little daunting at first. I feared maintenance and security
+burdens, however, I have already begun reaping the benefits and my fears have
+been shown to be baseless. I spend 1/10th the maintenance time on the twisted
+version. I have *fun* while updating the server or configurations. I can plug
+my own code into it instead of using third party applications I don't like or
+patches I don't understand.<br /><br />My first exposure to twisted was late
+2002 as I was writing my first "real" python script (a networking script,
+naturally). Since that time, twisted has integrated itself into my life such
+that I can't imagine living without it. I literally use it for all of my
+coding activities: my professional life depends upon it nearly 100%, and 50%
+of my entertainment is derived from programming activities, all of which
+incorporate some aspect of twisted.<br /><br />I, for one, welcome our twisted
+overlords.<br /><br />Now playing:<br /><pre>Bagpipes - Flow Gently Sweet
+Afton<br /></pre></div>

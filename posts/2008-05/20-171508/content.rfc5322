@@ -11,4 +11,26 @@ Comments:
 Content-Type: md
 Public?: true
 
-<p>This is a quick self-response to my <a href="http://pownce.com/oubiwann/notes/2217258/">tweet to the lazyweb</a> (is it still a tweet when it's <a href="http://pownce.com/">Pownce</a> and not Twitter?) today. I couldn't remember the name of a really handy network monitoring tool I used to use. It was similar to <a href="http://www.ntop.org/overview.html">ntop</a> but used a fraction of the resources and had a very limited yet perfectly satisfactory feature set. I've been having some crazy network utilization weirdness at the office lately, and I've wanted to peek at some trends without setting up NetFlow for my router or messing with ntop.</p><p>The answer was <a href="http://dmr.ath.cx/net/darkstat/">darkstat</a>. It was my own memory that eventually came to the rescue, not Keyword Roulette on Google. Version 3.x is out and available for Mac OS X 10.5 via the latest <a href="http://www.macports.org/">MacPorts</a> version (1.6).</p><p>This is all I needed to get it running:</p><pre>sudo port selfupdate<br />sudo port install darkstat<br />sudo /opt/local/sbin/darkstat --debug -i en0 -l 192.168.4.0/255.255.255.0<br /></pre><p>Then, I just had to hit <a href="http://127.0.0.1:667/">localhost:667</a>...</p><p>I don't know what's up with the Google Juice for this guy's page, but it took me for<span style="font-style: italic;">ever</span> to find! I was searching for all the keywords like "ntop" (which was mentioned on his site at one point, I think), "network", "dark", "lightweight", "monitoring", etc. You get the picture. Hopefully this blog post will help when others are looking for it, too.</p>
+<p>This is a quick self-response to my <a
+href="http://pownce.com/oubiwann/notes/2217258/">tweet to the lazyweb</a> (is
+it still a tweet when it's <a href="http://pownce.com/">Pownce</a> and not
+Twitter?) today. I couldn't remember the name of a really handy network
+monitoring tool I used to use. It was similar to <a
+href="http://www.ntop.org/overview.html">ntop</a> but used a fraction of the
+resources and had a very limited yet perfectly satisfactory feature set. I've
+been having some crazy network utilization weirdness at the office lately, and
+I've wanted to peek at some trends without setting up NetFlow for my router or
+messing with ntop.</p><p>The answer was <a
+href="http://dmr.ath.cx/net/darkstat/">darkstat</a>. It was my own memory that
+eventually came to the rescue, not Keyword Roulette on Google. Version 3.x is
+out and available for Mac OS X 10.5 via the latest <a
+href="http://www.macports.org/">MacPorts</a> version (1.6).</p><p>This is all
+I needed to get it running:</p><pre>sudo port selfupdate<br />sudo port
+install darkstat<br />sudo /opt/local/sbin/darkstat --debug -i en0 -l
+192.168.4.0/255.255.255.0<br /></pre><p>Then, I just had to hit <a
+href="http://127.0.0.1:667/">localhost:667</a>...</p><p>I don't know what's up
+with the Google Juice for this guy's page, but it took me for<span
+style="font-style: italic;">ever</span> to find! I was searching for all the
+keywords like "ntop" (which was mentioned on his site at one point, I think),
+"network", "dark", "lightweight", "monitoring", etc. You get the picture.
+Hopefully this blog post will help when others are looking for it, too.</p>

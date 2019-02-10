@@ -11,4 +11,125 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADk/YZs-7OwO608/s1600/LispFlavoredErlang-medium.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="200" src="http://2.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADk/YZs-7OwO608/s200/LispFlavoredErlang-medium.png" width="168" /></a></div>In the <a href="http://technicae.cogitat.io/2013/04/getting-started-with-lfe-on-ubuntu.html">last post</a>, you learned how to get LFE running on Ubuntu. This one will give you some insight into how LFE can be used in something approaching real-world problems. In the next post, we're going to jump back into <a href="http://technicae.cogitat.io/search/label/%CE%BB-calculus">the lambda calculus</a>, and we'll see some more LFE shortly after that.<br /><br />Because <a href="http://lfe.github.io/">Lisp Flavored Erlang</a> is 100% compatible with Erlang Core, it has access to all the Erlang libraries, OTP, and many third-party modules, etc.&nbsp; Naturally, this includes the Erlang HTTP client, <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">httpc</span>. Today we're going to be taking a look at how to use <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">httpc</span> from LFE. Do note, however that this post is only going to provide a taste, just enough to give you a sense of the flavor, as it were. <br /><br />If you would like more details, be sure to not only give the <a href="http://erlang.org/doc/man/httpc.html">official docs</a> a thorough reading, but to take a look at the <a href="http://erlang.org/doc/apps/inets/http_client.html">HTTP Client section</a> of the <a href="http://erlang.org/doc/apps/inets/"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">inets</span> Reference Manual</a>.<br /><br />Note that for the returned values below, I elide large data structures. If you run them in the LFE REPL yourself, you can view them in all of the line-consuming glory. <br /><br /><b>Synchronous <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">GET</span></b><br /><br />Let's get started with a simple example. The first thing we need to do is start the <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">inets</span> application. With that done, we'll then be able to make client requests:<br /><script src="https://gist.github.com/5381504.js?file=http-sync-1.lfe.lisp"></script> Now we can perform an HTTP <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">GET</span>: <script src="https://gist.github.com/5381504.js?file=http-sync-2.lfe.lisp"></script> This just makes a straight-forward HTTP request (defaults to <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">GET</span>) and returns a bunch of associated data:<br /><ul><li>HTTP version</li><li>status code</li><li>reason phrase</li><li>headers</li><li>body</li></ul>All of that data is dumped into our <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">result</span> variable. Here's the same <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">GET</span> but with pattern matching set up so that we can easily access all that data:<br /><script src="https://gist.github.com/5381504.js?file=http-sync-3.lfe.lisp"></script> For those not familiar with Erlang patterns, we've just told LFE the following:<br /><ul><li>the return value of the function we're going to call is going to be a tuple composed of an atom (<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">'ok</span>) and another tuple</li><li>the nested tuple is going to be composed of a tuple, some headers, and a body</li><li>the <i>next</i> nested tuple is going to be composed of the HTTP version, status code, and status code phrase</li></ul>If you'd like to learn more about using patterns in LFE, be sure to view the <a href="http://lfe.github.io/user-guide/diving/5.html">patterns page</a> of the LFE User Guide. <br /><br />Once the request returns, we can check out the variables we set in the pattern:<br /><script src="https://gist.github.com/5381504.js?file=http-sync-4.lfe.lisp"></script> <br />That's great if everything goes as expected and we get a response from the server. What happens if we don't?<br /><br />Well, errors don't have the same nested data structure that the non-error results have, so we're going to have to make some changes to our pattern if we want to extract parts of the error reason. Pattern matching for just the <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">'error</span> atom and the error reason, we can get a sense of what that data structure looks like:<br /><script src="https://gist.github.com/5381504.js?file=http-sync-5.lfe.lisp"></script> <br />Looking at just the data stored in the reason variable, we see:<br /><script src="https://gist.github.com/5381504.js?file=http-sync-6.lfe.lisp"></script> If you check out the <a href="http://erlang.org/doc/man/httpc.html#request-1">docs for <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">httpc</span> <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">request</span></a> and look under "Types", you will see that the error returned can be one of three things:<br /><ul><li>a tuple of <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">connect_failed</span> and additional data</li><li>a tuple of <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send_failed</span> and additional data</li><li>or just unspecified additional data</li></ul>In our example our additional data is a tuple of the address we were trying to connect to and the specific error type that for our failed connection.<br /><br /><br /><b>Async <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">GET</span></b><br /><br />Now that we've taken a quick look at the synchronous example, let's make a foray into async. We'll still be using <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">httpc</span>'s <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">request</span> function, but we'll need to use one of the longer forms were extra options need to be passed, since that's how you tell the <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">request</span> function to perform the request asynchronously and not synchronously.<br /><br />For clarity of introducing the additional options, we're going to define some variables first: <script src="https://gist.github.com/5381591.js?file=http-async-1.lfe.lisp"></script>You can read more about the options in the <a href="http://erlang.org/doc/man/httpc.html#request-1"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">httpc</span> docs</a>.<br /><br />With the variables defined, let's make our async call: <script src="https://gist.github.com/5381591.js?file=http-async-2.lfe.lisp"></script> The sender receives the results, and since we sent from the LFE REPL, that's the process that will receive the data. Let's keep our pattern simple at first -- just the request id and the result data:<br /><script src="https://gist.github.com/5381591.js?file=http-async-3.lfe.lisp"></script> Needless to say, parsing the returned data is a waste of Erlang's pattern matching, so let's go back and do that again, this time with a nice pattern to capture the results. We'll need to do another request, though, so that something gets sent to the shell:<br /><script src="https://gist.github.com/5381591.js?file=http-async-4.lfe.lisp"></script> Now we can set up a pattern that will allow us to extract and print just the bits that we're looking for. The thing to keep in mind here is that the scope for the variables is within the receive call, so we'll need to display the values within that scope:<br /><script src="https://gist.github.com/5381591.js?file=http-async-5.lfe.lisp"></script> This should demonstrate the slight differences in usage and result patterns between the sync and async modes.<br /><br />Well, that about sums it up for an intro to the HTTP client in LFE! But one last thing, for the sake of completeness. Once we're done, we can shut down inets:<br /><script src="https://gist.github.com/5381591.js?file=http-async-6.lfe.lisp"></script> <br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://2.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADk/YZs-7OwO60
+8/s1600/LispFlavoredErlang-medium.png" imageanchor="1" style="clear: right;
+float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0"
+height="200" src="http://2.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAAD
+k/YZs-7OwO608/s200/LispFlavoredErlang-medium.png" width="168" /></a></div>In
+the <a
+href="http://technicae.cogitat.io/2013/04/getting-started-with-lfe-on-ubuntu.h
+tml">last post</a>, you learned how to get LFE running on Ubuntu. This one
+will give you some insight into how LFE can be used in something approaching
+real-world problems. In the next post, we're going to jump back into <a
+href="http://technicae.cogitat.io/search/label/%CE%BB-calculus">the lambda
+calculus</a>, and we'll see some more LFE shortly after that.<br /><br
+/>Because <a href="http://lfe.github.io/">Lisp Flavored Erlang</a> is 100%
+compatible with Erlang Core, it has access to all the Erlang libraries, OTP,
+and many third-party modules, etc.&nbsp; Naturally, this includes the Erlang
+HTTP client, <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">httpc</span>. Today we're going to be taking a
+look at how to use <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">httpc</span> from LFE. Do note, however that
+this post is only going to provide a taste, just enough to give you a sense of
+the flavor, as it were. <br /><br />If you would like more details, be sure to
+not only give the <a href="http://erlang.org/doc/man/httpc.html">official
+docs</a> a thorough reading, but to take a look at the <a
+href="http://erlang.org/doc/apps/inets/http_client.html">HTTP Client
+section</a> of the <a href="http://erlang.org/doc/apps/inets/"><span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">inets</span>
+Reference Manual</a>.<br /><br />Note that for the returned values below, I
+elide large data structures. If you run them in the LFE REPL yourself, you can
+view them in all of the line-consuming glory. <br /><br /><b>Synchronous <span
+style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">GET</span></b><br /><br />Let's get started with
+a simple example. The first thing we need to do is start the <span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">inets</span>
+application. With that done, we'll then be able to make client requests:<br
+/><script src="https://gist.github.com/5381504.js?file=http-sync-1.lfe.lisp"><
+/script> Now we can perform an HTTP <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">GET</span>: <script
+src="https://gist.github.com/5381504.js?file=http-sync-2.lfe.lisp"></script> T
+his just makes a straight-forward HTTP request (defaults to <span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">GET</span>)
+and returns a bunch of associated data:<br /><ul><li>HTTP
+version</li><li>status code</li><li>reason
+phrase</li><li>headers</li><li>body</li></ul>All of that data is dumped into
+our <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">result</span> variable. Here's the same <span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">GET</span> but
+with pattern matching set up so that we can easily access all that data:<br
+/><script src="https://gist.github.com/5381504.js?file=http-sync-3.lfe.lisp"><
+/script> For those not familiar with Erlang patterns, we've just told LFE the
+following:<br /><ul><li>the return value of the function we're going to call
+is going to be a tuple composed of an atom (<span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">'ok</span>) and another
+tuple</li><li>the nested tuple is going to be composed of a tuple, some
+headers, and a body</li><li>the <i>next</i> nested tuple is going to be
+composed of the HTTP version, status code, and status code phrase</li></ul>If
+you'd like to learn more about using patterns in LFE, be sure to view the <a
+href="http://lfe.github.io/user-guide/diving/5.html">patterns page</a> of the
+LFE User Guide. <br /><br />Once the request returns, we can check out the
+variables we set in the pattern:<br /><script
+src="https://gist.github.com/5381504.js?file=http-sync-4.lfe.lisp"></script> <
+br />That's great if everything goes as expected and we get a response from
+the server. What happens if we don't?<br /><br />Well, errors don't have the
+same nested data structure that the non-error results have, so we're going to
+have to make some changes to our pattern if we want to extract parts of the
+error reason. Pattern matching for just the <span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">'error</span> atom and the error
+reason, we can get a sense of what that data structure looks like:<br
+/><script src="https://gist.github.com/5381504.js?file=http-sync-5.lfe.lisp"><
+/script> <br />Looking at just the data stored in the reason variable, we
+see:<br /><script
+src="https://gist.github.com/5381504.js?file=http-sync-6.lfe.lisp"></script> I
+f you check out the <a
+href="http://erlang.org/doc/man/httpc.html#request-1">docs for <span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">httpc</span>
+<span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">request</span></a> and look under "Types", you
+will see that the error returned can be one of three things:<br /><ul><li>a
+tuple of <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">connect_failed</span> and additional
+data</li><li>a tuple of <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">send_failed</span> and additional
+data</li><li>or just unspecified additional data</li></ul>In our example our
+additional data is a tuple of the address we were trying to connect to and the
+specific error type that for our failed connection.<br /><br /><br /><b>Async
+<span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">GET</span></b><br /><br />Now that we've taken a
+quick look at the synchronous example, let's make a foray into async. We'll
+still be using <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">httpc</span>'s <span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">request</span> function, but we'll
+need to use one of the longer forms were extra options need to be passed,
+since that's how you tell the <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">request</span> function to perform the request
+asynchronously and not synchronously.<br /><br />For clarity of introducing
+the additional options, we're going to define some variables first: <script
+src="https://gist.github.com/5381591.js?file=http-async-1.lfe.lisp"></script>Y
+ou can read more about the options in the <a
+href="http://erlang.org/doc/man/httpc.html#request-1"><span style="font-family
+: &quot;Courier New&quot;,Courier,monospace;">httpc</span> docs</a>.<br /><br
+/>With the variables defined, let's make our async call: <script
+src="https://gist.github.com/5381591.js?file=http-async-2.lfe.lisp"></script> 
+The sender receives the results, and since we sent from the LFE REPL, that's
+the process that will receive the data. Let's keep our pattern simple at first
+-- just the request id and the result data:<br /><script
+src="https://gist.github.com/5381591.js?file=http-async-3.lfe.lisp"></script> 
+Needless to say, parsing the returned data is a waste of Erlang's pattern
+matching, so let's go back and do that again, this time with a nice pattern to
+capture the results. We'll need to do another request, though, so that
+something gets sent to the shell:<br /><script
+src="https://gist.github.com/5381591.js?file=http-async-4.lfe.lisp"></script> 
+Now we can set up a pattern that will allow us to extract and print just the
+bits that we're looking for. The thing to keep in mind here is that the scope
+for the variables is within the receive call, so we'll need to display the
+values within that scope:<br /><script
+src="https://gist.github.com/5381591.js?file=http-async-5.lfe.lisp"></script> 
+This should demonstrate the slight differences in usage and result patterns
+between the sync and async modes.<br /><br />Well, that about sums it up for
+an intro to the HTTP client in LFE! But one last thing, for the sake of
+completeness. Once we're done, we can shut down inets:<br /><script
+src="https://gist.github.com/5381591.js?file=http-async-6.lfe.lisp"></script> 
+<br /><br />

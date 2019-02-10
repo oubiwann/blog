@@ -11,4 +11,63 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />I rarely work seriously with databases, but I've been building an API for a contract with <a href="http://www.pbs.org/">PBS.org</a>, and though we have DBAs tasked for the project, everyone's pretty busy. So I dusted off my decade-old DB (formerly known as) skills, and did the work myself.<br /><br />I've worked with the <a href="https://storm.canonical.com/">Storm ORM</a> a fair amount since it was released, but only on small projects. Any time I've needed to use relationships with Storm, I've been using SQLite and so it was all faked. Due to the impact of the PBS gig (which is almost done now!), I really needed to sit down and map everything out. The first thing I needed to do was get a quick refresher on MySQL's dialect with regard to foreign keys. The next thing I needed to clarify was exactly how to ensure that what I've been doing with Storm relationships in SQLite was valid for MySQL and suitable for production use at PBS. It was :-)<br /><br />Given how infrequently I use this stuff, I thought that my notes would be good to document, for future quick-reference. Given that there are likely users out there who would also benefit from this, a blog post seemed a nice way to do this :-)<br /><br />The SQL below is modified from an <a href="http://dev.mysql.com/doc/refman/5.0/en/innodb-foreign-key-constraints.html">example in the MySQL documentation</a>, slightly tweaked to be a smidge more interesting. The two <span style="font-family: courier new;">CREATE TABLE</span> statements define the schemas for a one-to-many table relationship:<br /><script src="https://gist.github.com/3886932.js?file=01-one-to-many.sql"></script> <br />Next, to be able to play with this in Storm, we need to define some classes and set up some references:<br /><script src="https://gist.github.com/3886932.js?file=02-models.py"></script> <br />The <span style="font-family: courier new;">parent</span> attribute on the <span style="font-family: courier new;">Child</span> class is a Storm reference to whatever parent object is associated with the child object that gets created; the <span style="font-family: courier new;">parent_id</span> attribute is what is actually mapped to the MySQL field <span style="font-family: courier new;">parent_id</span> (which, in turn, MySQL references to the <span style="font-family: courier new;">parent</span> table). I hope I just didn't make that more of a confusing mess than it needed to be :-)<br /><br />The <span style="font-family: courier new;">children</span> attribute that gets added to the <span style="font-family: courier new;">Parent</span> class is a reference to all <span style="font-family: courier new;">Child</span> instances that are associated with a particular <span style="font-family: courier new;">Parent</span> instance. I've got some usage below, if that's not clear.<br /><br />Let's create a parent:<br /><script src="https://gist.github.com/3886932.js?file=03-interactive.py"></script> <br />Note that if you add an <span style="font-family: courier new;">__init__</span> method to your <span style="font-family: courier new;">Storm</span> classes, you can save a step or two of typing in these usage examples (see the <a href="https://storm.canonical.com/Tutorial">Storm tutorial</a> for more information).<br /><br />Next, we'll create and associate a child:<br /><script src="https://gist.github.com/3886932.js?file=04-interactive.py"></script> <br />There's more than one way to do this, though, given the way in which Storm has encoded relationships. Above, we created the child and then set the child's parent attribute. Below, we create the child and then use the <span style="font-family: courier new;">chilren</span>'s <span style="font-family: courier new;">add</span> method to associate it with a parent:<br /><script src="https://gist.github.com/3886932.js?file=05-interactive.py"></script> <br />We're doing all that <span style="font-family: courier new;">flush</span>ing so that the created objects refresh with their new <span style="font-family: courier new;">id</span>s.<br /><br />Lastly, let's take a look at what's we've just added to the database:<br /><script src="https://gist.github.com/3886932.js?file=06-interactive.py"></script> And that should just about do it :-)<br /><br /><br /></div>
+<div><br />I rarely work seriously with databases, but I've been building an
+API for a contract with <a href="http://www.pbs.org/">PBS.org</a>, and though
+we have DBAs tasked for the project, everyone's pretty busy. So I dusted off
+my decade-old DB (formerly known as) skills, and did the work myself.<br /><br
+/>I've worked with the <a href="https://storm.canonical.com/">Storm ORM</a> a
+fair amount since it was released, but only on small projects. Any time I've
+needed to use relationships with Storm, I've been using SQLite and so it was
+all faked. Due to the impact of the PBS gig (which is almost done now!), I
+really needed to sit down and map everything out. The first thing I needed to
+do was get a quick refresher on MySQL's dialect with regard to foreign keys.
+The next thing I needed to clarify was exactly how to ensure that what I've
+been doing with Storm relationships in SQLite was valid for MySQL and suitable
+for production use at PBS. It was :-)<br /><br />Given how infrequently I use
+this stuff, I thought that my notes would be good to document, for future
+quick-reference. Given that there are likely users out there who would also
+benefit from this, a blog post seemed a nice way to do this :-)<br /><br />The
+SQL below is modified from an <a
+href="http://dev.mysql.com/doc/refman/5.0/en/innodb-foreign-key-constraints.ht
+ml">example in the MySQL documentation</a>, slightly tweaked to be a smidge
+more interesting. The two <span style="font-family: courier new;">CREATE
+TABLE</span> statements define the schemas for a one-to-many table
+relationship:<br /><script
+src="https://gist.github.com/3886932.js?file=01-one-to-many.sql"></script> <br
+/>Next, to be able to play with this in Storm, we need to define some classes
+and set up some references:<br /><script
+src="https://gist.github.com/3886932.js?file=02-models.py"></script> <br />The
+<span style="font-family: courier new;">parent</span> attribute on the <span
+style="font-family: courier new;">Child</span> class is a Storm reference to
+whatever parent object is associated with the child object that gets created;
+the <span style="font-family: courier new;">parent_id</span> attribute is what
+is actually mapped to the MySQL field <span style="font-family: courier
+new;">parent_id</span> (which, in turn, MySQL references to the <span
+style="font-family: courier new;">parent</span> table). I hope I just didn't
+make that more of a confusing mess than it needed to be :-)<br /><br />The
+<span style="font-family: courier new;">children</span> attribute that gets
+added to the <span style="font-family: courier new;">Parent</span> class is a
+reference to all <span style="font-family: courier new;">Child</span>
+instances that are associated with a particular <span style="font-family:
+courier new;">Parent</span> instance. I've got some usage below, if that's not
+clear.<br /><br />Let's create a parent:<br /><script
+src="https://gist.github.com/3886932.js?file=03-interactive.py"></script> <br
+/>Note that if you add an <span style="font-family: courier
+new;">__init__</span> method to your <span style="font-family: courier
+new;">Storm</span> classes, you can save a step or two of typing in these
+usage examples (see the <a href="https://storm.canonical.com/Tutorial">Storm
+tutorial</a> for more information).<br /><br />Next, we'll create and
+associate a child:<br /><script
+src="https://gist.github.com/3886932.js?file=04-interactive.py"></script> <br
+/>There's more than one way to do this, though, given the way in which Storm
+has encoded relationships. Above, we created the child and then set the
+child's parent attribute. Below, we create the child and then use the <span
+style="font-family: courier new;">chilren</span>'s <span style="font-family:
+courier new;">add</span> method to associate it with a parent:<br /><script
+src="https://gist.github.com/3886932.js?file=05-interactive.py"></script> <br
+/>We're doing all that <span style="font-family: courier new;">flush</span>ing
+so that the created objects refresh with their new <span style="font-family:
+courier new;">id</span>s.<br /><br />Lastly, let's take a look at what's we've
+just added to the database:<br /><script
+src="https://gist.github.com/3886932.js?file=06-interactive.py"></script> And
+that should just about do it :-)<br /><br /><br /></div>

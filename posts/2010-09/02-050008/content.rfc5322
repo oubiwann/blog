@@ -11,4 +11,102 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><b>uTouch</b><br /><br />Back in March, I blogged about <a href="http://oubiwann.blogspot.com/2010/03/some-thoughts-on-mobile-device.html">future possibilities</a> (in a blue-sky sense) of multi-touch, mentioning the project management I was doing for MT hardware kernel driver support in Lucid (and then proceeding to dive into the deep end of speculation). It's now an Ubuntu cycle later, and holy crap... I'm having a hard time finding the words. I think the blog title says it all. But I'll try to elaborate :-)<br /><br />Unless you've been living under a rock, you've probably noticed the big announcements we made a few weeks ago: <div><ul><li><a href="https://lists.launchpad.net/multi-touch-dev/msg00218.html">uTouch mail list announcement</a></li><li><a href="http://www.markshuttleworth.com/archives/455">Mark Shuttleworth's blog post</a></li><li><a href="http://blog.canonical.com/?p=414">The Canonical uTouch announcement</a></li><li><a href="http://blog.canonical.com/?p=414"></a>Chase's blogging extravaganza (<a href="http://voices.canonical.com/chase.douglas/2010/08/16/multitouch-gestures-project/">uTouch</a>, <a href="http://voices.canonical.com/chase.douglas/2010/08/16/thoughts-on-the-architecture-of-multitouch-in-ubuntu/">MT architecture</a>, <a href="http://voices.canonical.com/chase.douglas/2010/08/16/decoding-apples-magic-trackpad/">Magic Trackpad</a>, <a href="http://voices.canonical.com/chase.douglas/2010/08/25/news-on-the-magic-trackpad-driver/">Trackpad update</a>)</li></ul>For the next few days, we were all over Google news. This was quite a shock, given that we'd been heads-down into the project for so long and hadn't really come up for air nor fully anticipated the impact (to others <i>or</i> ourselves). Needless to say, after the intense amount of work that the team had engaged in over the previous couple months, this was quite gratifying, if somewhat unexpected.</div><div><br />There has been a lot of discussion in blog posts, mail lists, IRC (#ubuntu-touch on freenode.net), Launchpad bugs and merge proposals, etc., so much so that touchscreens now pursue me feverishly when I sleep at night. I'm really not interested in writing more of the same :-)<br /><br />As such, I want to mix things up a bit...<br /><br /><b>HCI Remixed</b><br /><br />I've been reading an amazing anthology of essays on human-computer interaction. I still haven't finished the book (yeah, I've got about 10 in-progress titles on my nightstand), but am relishing every word in this particular collection. The book is <a href="http://www.amazon.com/dp/0262050889">HCI Remixed: Reflections on Works That Have Influenced the HCI Community</a>. </div><div><br /></div><div>While doing some research at the beginning of the Maverick development cycle, I came across <i>HCI Remixed</i> at the local library -- the title intrigued me and I couldn't resist. Weeks later, after having maxed out the number of times I could renew the book, I just purchased it -- I simply couldn't get enough of the book. Every essay I'd read up to that point was fantastic; each one provided volumes of information, experiences, insights, ideas for follow-up, etc. Whenever I finished one essay, I spent <i>days</i> and sometimes <i>weeks</i> reading up on references, pondering the past and future of human-computer interaction.<br /><br />Due to the unusual nature of the book, describing it is surprisingly difficult. That being said, <a href="http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&amp;tid=11330">the MIT Press page</a> gives you a great taste:<br /><blockquote><i>Over almost three decades, the field of human-computer interaction (HCI) has produced a rich and varied literature. Although the focus of attention today is naturally on new work, older contributions that played a role in shaping the trajectory and character of the field have much to tell us. The contributors to HCI Remixed were asked to reflect on a single work at least ten years old that influenced their approach to HCI. The result is this collection of fifty-one short, engaging, and idiosyncratic essays, reflections on a range of works in a variety of forms that chart the emergence of a new field.</i></blockquote>If you're into HCI, learning from others, and discovering new sources of inspiration for your own work, this is simply a must-have book :-)<br /><br /><b>A Small Piece of History</b><br /><br />By the time I checked the book out of the Golden public library, it was May and we had begun building the MT team. By July -- once it became clear how astounding the team's work was -- I realized that in 10 or 20 years I could very well be writing an article about Henrik, Chase, Stephen, Ikbel, and Rafi. Much like those in the book, I could be sharing the conversations I'd had with Stéphane Chatty, Mark Shuttleworth, Neil Patel, David Siegel, and John Lea. And that's only the crew which which I was collaborating or discussing directly. There are a lot of folks who've been working very hard on multi-touch infrastructure solutions and exploring ways of integrating these for several years (e.g., Peter Hutterer and Carlos Garnacho). </div><div><br /></div><div>Though many foundations have been laid, as of yet (to the best of my knowledge), no Linux distribution has released a multi-touch stack that integrated gestures in a unified manner across everything from applications to window managers and beyond. This was something that Mark wanted us to provide to the open source world. In this spirit, the multitouch team hasn't just hacked things together to get a product out in time. A <i>lot</i> of generative, creative thought and care has gone into <a href="https://edge.launchpad.net/canonical-multitouch/">uTouch</a>. A lot of original problem solving has taken place. Physics PhDs, kernel hackers, X.org hackers, driver creators, application integrators, toolkit gurus -- all of this knowledge was concentrated, applied, and used to distill a first approximation of what a gesture stack in Linux could look like, using the latest available technology and methodologies.</div></div><div><br /></div><div>To be honest, we weren't really sure we could pull it off. There was a very good chance we could have failed at our task, quietly chalking up the loss as a lesson learned. Now that we've managed to shape these ideas into actual software, taken the threads of dreams and woven something real, we are thrilled to be engaging with others to see where all of us can take multi-touch and gestures from here.</div><div><br /></div><div>Thanks to expert input from the wider open source community, we're already looking at ways in which we can improve upon the first version, ways of bringing new ideas and experiences to developers and users of multi-touch hardware running Linux. Things are only just warming up, and the greatest contributions have yet to be made. Every single person in the community has before them a world of possibilities for getting involved and creating the future human-computer interfaces for the free and open source world in the coming weeks and months. These are indeed exciting times.</div>
+<div><br /><b>uTouch</b><br /><br />Back in March, I blogged about <a
+href="http://oubiwann.blogspot.com/2010/03/some-thoughts-on-mobile-device.html
+">future possibilities</a> (in a blue-sky sense) of multi-touch, mentioning
+the project management I was doing for MT hardware kernel driver support in
+Lucid (and then proceeding to dive into the deep end of speculation). It's now
+an Ubuntu cycle later, and holy crap... I'm having a hard time finding the
+words. I think the blog title says it all. But I'll try to elaborate :-)<br
+/><br />Unless you've been living under a rock, you've probably noticed the
+big announcements we made a few weeks ago: <div><ul><li><a
+href="https://lists.launchpad.net/multi-touch-dev/msg00218.html">uTouch mail
+list announcement</a></li><li><a
+href="http://www.markshuttleworth.com/archives/455">Mark Shuttleworth's blog
+post</a></li><li><a href="http://blog.canonical.com/?p=414">The Canonical
+uTouch announcement</a></li><li><a
+href="http://blog.canonical.com/?p=414"></a>Chase's blogging extravaganza (<a
+href="http://voices.canonical.com/chase.douglas/2010/08/16/multitouch-gestures
+-project/">uTouch</a>, <a
+href="http://voices.canonical.com/chase.douglas/2010/08/16/thoughts-on-the-arc
+hitecture-of-multitouch-in-ubuntu/">MT architecture</a>, <a
+href="http://voices.canonical.com/chase.douglas/2010/08/16/decoding-apples-mag
+ic-trackpad/">Magic Trackpad</a>, <a
+href="http://voices.canonical.com/chase.douglas/2010/08/25/news-on-the-magic-t
+rackpad-driver/">Trackpad update</a>)</li></ul>For the next few days, we were
+all over Google news. This was quite a shock, given that we'd been heads-down
+into the project for so long and hadn't really come up for air nor fully
+anticipated the impact (to others <i>or</i> ourselves). Needless to say, after
+the intense amount of work that the team had engaged in over the previous
+couple months, this was quite gratifying, if somewhat
+unexpected.</div><div><br />There has been a lot of discussion in blog posts,
+mail lists, IRC (#ubuntu-touch on freenode.net), Launchpad bugs and merge
+proposals, etc., so much so that touchscreens now pursue me feverishly when I
+sleep at night. I'm really not interested in writing more of the same :-)<br
+/><br />As such, I want to mix things up a bit...<br /><br /><b>HCI
+Remixed</b><br /><br />I've been reading an amazing anthology of essays on
+human-computer interaction. I still haven't finished the book (yeah, I've got
+about 10 in-progress titles on my nightstand), but am relishing every word in
+this particular collection. The book is <a
+href="http://www.amazon.com/dp/0262050889">HCI Remixed: Reflections on Works
+That Have Influenced the HCI Community</a>. </div><div><br /></div><div>While
+doing some research at the beginning of the Maverick development cycle, I came
+across <i>HCI Remixed</i> at the local library -- the title intrigued me and I
+couldn't resist. Weeks later, after having maxed out the number of times I
+could renew the book, I just purchased it -- I simply couldn't get enough of
+the book. Every essay I'd read up to that point was fantastic; each one
+provided volumes of information, experiences, insights, ideas for follow-up,
+etc. Whenever I finished one essay, I spent <i>days</i> and sometimes
+<i>weeks</i> reading up on references, pondering the past and future of
+human-computer interaction.<br /><br />Due to the unusual nature of the book,
+describing it is surprisingly difficult. That being said, <a
+href="http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&amp;tid=11330">
+the MIT Press page</a> gives you a great taste:<br /><blockquote><i>Over
+almost three decades, the field of human-computer interaction (HCI) has
+produced a rich and varied literature. Although the focus of attention today
+is naturally on new work, older contributions that played a role in shaping
+the trajectory and character of the field have much to tell us. The
+contributors to HCI Remixed were asked to reflect on a single work at least
+ten years old that influenced their approach to HCI. The result is this
+collection of fifty-one short, engaging, and idiosyncratic essays, reflections
+on a range of works in a variety of forms that chart the emergence of a new
+field.</i></blockquote>If you're into HCI, learning from others, and
+discovering new sources of inspiration for your own work, this is simply a
+must-have book :-)<br /><br /><b>A Small Piece of History</b><br /><br />By
+the time I checked the book out of the Golden public library, it was May and
+we had begun building the MT team. By July -- once it became clear how
+astounding the team's work was -- I realized that in 10 or 20 years I could
+very well be writing an article about Henrik, Chase, Stephen, Ikbel, and Rafi.
+Much like those in the book, I could be sharing the conversations I'd had with
+Stéphane Chatty, Mark Shuttleworth, Neil Patel, David Siegel, and John Lea.
+And that's only the crew which which I was collaborating or discussing
+directly. There are a lot of folks who've been working very hard on
+multi-touch infrastructure solutions and exploring ways of integrating these
+for several years (e.g., Peter Hutterer and Carlos Garnacho). </div><div><br
+/></div><div>Though many foundations have been laid, as of yet (to the best of
+my knowledge), no Linux distribution has released a multi-touch stack that
+integrated gestures in a unified manner across everything from applications to
+window managers and beyond. This was something that Mark wanted us to provide
+to the open source world. In this spirit, the multitouch team hasn't just
+hacked things together to get a product out in time. A <i>lot</i> of
+generative, creative thought and care has gone into <a
+href="https://edge.launchpad.net/canonical-multitouch/">uTouch</a>. A lot of
+original problem solving has taken place. Physics PhDs, kernel hackers, X.org
+hackers, driver creators, application integrators, toolkit gurus -- all of
+this knowledge was concentrated, applied, and used to distill a first
+approximation of what a gesture stack in Linux could look like, using the
+latest available technology and methodologies.</div></div><div><br
+/></div><div>To be honest, we weren't really sure we could pull it off. There
+was a very good chance we could have failed at our task, quietly chalking up
+the loss as a lesson learned. Now that we've managed to shape these ideas into
+actual software, taken the threads of dreams and woven something real, we are
+thrilled to be engaging with others to see where all of us can take
+multi-touch and gestures from here.</div><div><br /></div><div>Thanks to
+expert input from the wider open source community, we're already looking at
+ways in which we can improve upon the first version, ways of bringing new
+ideas and experiences to developers and users of multi-touch hardware running
+Linux. Things are only just warming up, and the greatest contributions have
+yet to be made. Every single person in the community has before them a world
+of possibilities for getting involved and creating the future human-computer
+interfaces for the free and open source world in the coming weeks and months.
+These are indeed exciting times.</div>

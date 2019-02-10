@@ -11,4 +11,122 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADk/YZs-7OwO608/s3200/LispFlavoredErlang-medium.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADk/YZs-7OwO608/s3200/LispFlavoredErlang-medium.png" height="200" width="168" /></a></div>As you may have heard, hash maps are coming to Erlang in R17. We're all pretty excited about this. The LFE community (yes, we have one... hey, being headquartered on <a href="http://en.wikipedia.org/wiki/Gotland">Gutland</a> keeps us lean!) has been abuzz with excitement: do we get some new syntax for Erlang maps? Or just record-like macros?<br /><br />That's still an open question. There's a good chance that if we find an elegant solution, we'll get some new syntax.<br /><br />In an effort to <a href="https://groups.google.com/d/msg/lisp-flavoured-erlang/zAU_z2i6lis/0yVECxo3JNIJ">(re)start</a> this <a href="https://groups.google.com/d/msg/lisp-flavoured-erlang/k3hbyyeg9oM/p4PM3UQt1WUJ">conversation</a> and get us thinking about the possibilities, I've drawn together some examples from various Lisps. At the end of the post, we'll review some related data structures in LFE... as a point of contrast and possible guidance.<br /><br />Note that I've tried to keep the code grouped in larger gists, not split up with prose wedged between them. This should make it easier to compare and contrast whole examples at a glance.<br /><br />Before we dive into the Lisps, let's take a look at maps in Erlang:<br /><br /><b>Erlang Maps</b><br /><div><script src="https://gist.github.com/9701054.js?file=01-maps.erl"></script></div><br /><b>Common Lisp Hash Tables</b><br /><div><script src="https://gist.github.com/9701054.js?file=02-maps.lisp"></script></div><br /><b>Racket Hash Tables</b><br /><div><script src="https://gist.github.com/9701054.js?file=03-maps.rkt"></script></div><br /><b>Clojure Hash Maps</b><br /><div><script src="https://gist.github.com/9701054.js?file=04-maps.clj"></script></div><br /><b>Shen Property Lists</b><br /><div><script src="https://gist.github.com/9701054.js?file=05-plists.shen.lisp"></script></div><br /><b>OpenLisp Hash Tables</b><br /><div><script src="https://gist.github.com/9701054.js?file=06-openlisp-maps.lisp"></script></div><br /><b>LFE Property Lists</b><br /><div><script src="https://gist.github.com/9701054.js?file=08-plists.lfe"></script></div><br /><b>LFE orddicts</b><br /><div><script src="https://gist.github.com/9701054.js?file=09-orddicts.lfe"></script></div><br />I summarized some very basic usability and aesthetic thoughts on the LFE mail list, but I'll restate them here:<br /><ul><li>Erlang syntax really is quite powerful; I continue to be impressed.</li><li>Clojure was by far the most enjoyable to work with... however, doing something similar in LFE would require quite a bit of additions for language or macro infrastructure. My concern here is that we'd end up with a Clojure clone rather than something distinctly Erlang-Lispy.</li><li>Racket had the fullest and most useful set of hash functions (and best docs).</li><li>Chicken Scheme was probably second.</li><li>Common Lisp was probably (I hate to say it) the most awkward of the bunch). I'm hoping we can avoid pretty much everything the way it was done there :-/</li></ul>One of the things that makes Clojure such a joy to work with is the unified aspect of core functions and how one uses these to manipulate data structures of different types. Most other implementations have functions/macros that are dedicated to working with just maps. While that's clean and definitely has a strong appeal, Clojure reflects a great deal of elegance.<br /><br />That being said, I don't think today is the day to propose unifying features for LFE/Erlang data types ;-) (To be honest, though, it's <i>certainly</i> in the back of my mind... this is probably also true for many folks on the mail list.)<br /><br />Given my positive experience with maps (hash tables) in Racket, and Robert's initial proposed functions like <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">map-new</span>, <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">map-set</span>, I'd encourage us to look to Racket for some inspiration:<br /><ul><li><a href="http://docs.racket-lang.org/reference/hashtables.html" target="_blank">http://docs.racket-lang.org/<wbr></wbr>reference/hashtables.html</a></li></ul>Additional thoughts:<br /><ul><li>"map" has a specific meaning in FPs <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">(: lists map)</span>, and there's a little bit of cognitive dissonance for me when I look at <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">map-*</span></li><li>In my experience, applications generally don't have too many records; however, I've known apps with 100s and 1000s of instances of hash maps; as such, the idea of creating macros for each hash-map (e.g., <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">my-map-get</span>, <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">my-map-set</span>, ...) terrifies me a little. I don't believe this has been proposed, and I don't know enough about LFE's internals (much less, Erlang's) to be able to discuss this with any certainty.</li><li>The thought did occur that we could put all the map functions in a module e.g.,<span style="font-family: &quot;Courier New&quot;,Courier,monospace;"> (: maps new ... )</span>, etc. I haven't actually looked at the Erlang source and don't know how maps are implemented in R17 yet (nor how that functionality is presented to the developer). Obviously, once I have, this point will be more clear for me.</li></ul>With this done, I then did a <a href="https://groups.google.com/d/msg/lisp-flavoured-erlang/zAU_z2i6lis/0yVECxo3JNIJ">thought experiment</a> in potential syntax additions for LFE. Below are the series of gists that demonstrate this.<br /><br />Looking at this Erlang syntax: <br /><div><script src="https://gist.github.com/9938515.js?file=01-maps.erl"></script></div><br />My fingers want to do something like this in LFE: <br /><div><script src="https://gist.github.com/9938515.js?file=02-maps.lfe"></script></div><br />That feels pretty natural, from the LFE perspective. However, it looks like it might require hacking on the tuple-parsing logic (or splitting that into two code paths: one for regular tuple-parsing, and the other for maps...?). <br /><br />The above syntax also lends itself nicely to these: <br /><div><script src="https://gist.github.com/9938515.js?file=03-maps.lfe"></script></div><br />The question that arises for me is "how would we do this when calling functions?" Perhaps one of these: <br /><div><script src="https://gist.github.com/9938515.js?file=04-maps.lfe"></script></div><br />Then, for Joe's other example: <br /><div><script src="https://gist.github.com/9938515.js?file=05-maps.erl"></script></div><br />We'd have this for LFE: <br /><div><script src="https://gist.github.com/9938515.js?file=06-maps.lfe"></script></div><br />Before we pattern match on this, let's look at Erlang pattern matching for tuples: <br /><div><script src="https://gist.github.com/9938515.js?file=07-maps.erl"></script></div><br />Compare this with pattern matching elements of a tuple in LFE: <br /><div><script src="https://gist.github.com/9938515.js?file=08-maps.lfe"></script></div><br />With that in our minds, we turn to Joe's matching example against a specific map element: <br /><div><script src="https://gist.github.com/9938515.js?file=09-maps.erl"></script></div><br />And we could do the same in LFE like this: <br /><div><script src="https://gist.github.com/9938515.js?file=10-maps.lfe"></script></div><br />I'm <i>really</i> uncertain about <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">add-pair</span> and <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">update-pair</span>, both the need for them and the names. Interested to hear from others who know how map is implemented in Erlang and the best way to work with that in LFE... <br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADk/YZs-7OwO60
+8/s3200/LispFlavoredErlang-medium.png" imageanchor="1" style="clear: left;
+float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+src="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADk/YZs-7OwO608
+/s3200/LispFlavoredErlang-medium.png" height="200" width="168" /></a></div>As
+you may have heard, hash maps are coming to Erlang in R17. We're all pretty
+excited about this. The LFE community (yes, we have one... hey, being
+headquartered on <a href="http://en.wikipedia.org/wiki/Gotland">Gutland</a>
+keeps us lean!) has been abuzz with excitement: do we get some new syntax for
+Erlang maps? Or just record-like macros?<br /><br />That's still an open
+question. There's a good chance that if we find an elegant solution, we'll get
+some new syntax.<br /><br />In an effort to <a
+href="https://groups.google.com/d/msg/lisp-flavoured-erlang/zAU_z2i6lis/0yVECx
+o3JNIJ">(re)start</a> this <a
+href="https://groups.google.com/d/msg/lisp-flavoured-erlang/k3hbyyeg9oM/p4PM3U
+Qt1WUJ">conversation</a> and get us thinking about the possibilities, I've
+drawn together some examples from various Lisps. At the end of the post, we'll
+review some related data structures in LFE... as a point of contrast and
+possible guidance.<br /><br />Note that I've tried to keep the code grouped in
+larger gists, not split up with prose wedged between them. This should make it
+easier to compare and contrast whole examples at a glance.<br /><br />Before
+we dive into the Lisps, let's take a look at maps in Erlang:<br /><br
+/><b>Erlang Maps</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=01-maps.erl"></script></div><br /
+><b>Common Lisp Hash Tables</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=02-maps.lisp"></script></div><br 
+/><b>Racket Hash Tables</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=03-maps.rkt"></script></div><br /
+><b>Clojure Hash Maps</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=04-maps.clj"></script></div><br /
+><b>Shen Property Lists</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=05-plists.shen.lisp"></script></d
+iv><br /><b>OpenLisp Hash Tables</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=06-openlisp-maps.lisp"></script><
+/div><br /><b>LFE Property Lists</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=08-plists.lfe"></script></div><br
+/><b>LFE orddicts</b><br /><div><script
+src="https://gist.github.com/9701054.js?file=09-orddicts.lfe"></script></div><
+br />I summarized some very basic usability and aesthetic thoughts on the LFE
+mail list, but I'll restate them here:<br /><ul><li>Erlang syntax really is
+quite powerful; I continue to be impressed.</li><li>Clojure was by far the
+most enjoyable to work with... however, doing something similar in LFE would
+require quite a bit of additions for language or macro infrastructure. My
+concern here is that we'd end up with a Clojure clone rather than something
+distinctly Erlang-Lispy.</li><li>Racket had the fullest and most useful set of
+hash functions (and best docs).</li><li>Chicken Scheme was probably
+second.</li><li>Common Lisp was probably (I hate to say it) the most awkward
+of the bunch). I'm hoping we can avoid pretty much everything the way it was
+done there :-/</li></ul>One of the things that makes Clojure such a joy to
+work with is the unified aspect of core functions and how one uses these to
+manipulate data structures of different types. Most other implementations have
+functions/macros that are dedicated to working with just maps. While that's
+clean and definitely has a strong appeal, Clojure reflects a great deal of
+elegance.<br /><br />That being said, I don't think today is the day to
+propose unifying features for LFE/Erlang data types ;-) (To be honest, though,
+it's <i>certainly</i> in the back of my mind... this is probably also true for
+many folks on the mail list.)<br /><br />Given my positive experience with
+maps (hash tables) in Racket, and Robert's initial proposed functions like
+<span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">map-new</span>, <span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">map-set</span>, I'd encourage us
+to look to Racket for some inspiration:<br /><ul><li><a
+href="http://docs.racket-lang.org/reference/hashtables.html" target="_blank">h
+ttp://docs.racket-lang.org/<wbr></wbr>reference/hashtables.html</a></li></ul>A
+dditional thoughts:<br /><ul><li>"map" has a specific meaning in FPs <span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">(: lists
+map)</span>, and there's a little bit of cognitive dissonance for me when I
+look at <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">map-*</span></li><li>In my experience,
+applications generally don't have too many records; however, I've known apps
+with 100s and 1000s of instances of hash maps; as such, the idea of creating
+macros for each hash-map (e.g., <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">my-map-get</span>, <span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">my-map-set</span>, ...) terrifies
+me a little. I don't believe this has been proposed, and I don't know enough
+about LFE's internals (much less, Erlang's) to be able to discuss this with
+any certainty.</li><li>The thought did occur that we could put all the map
+functions in a module e.g.,<span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;"> (: maps new ... )</span>, etc. I haven't
+actually looked at the Erlang source and don't know how maps are implemented
+in R17 yet (nor how that functionality is presented to the developer).
+Obviously, once I have, this point will be more clear for me.</li></ul>With
+this done, I then did a <a
+href="https://groups.google.com/d/msg/lisp-flavoured-erlang/zAU_z2i6lis/0yVECx
+o3JNIJ">thought experiment</a> in potential syntax additions for LFE. Below
+are the series of gists that demonstrate this.<br /><br />Looking at this
+Erlang syntax: <br /><div><script
+src="https://gist.github.com/9938515.js?file=01-maps.erl"></script></div><br /
+>My fingers want to do something like this in LFE: <br /><div><script
+src="https://gist.github.com/9938515.js?file=02-maps.lfe"></script></div><br /
+>That feels pretty natural, from the LFE perspective. However, it looks like
+it might require hacking on the tuple-parsing logic (or splitting that into
+two code paths: one for regular tuple-parsing, and the other for maps...?).
+<br /><br />The above syntax also lends itself nicely to these: <br
+/><div><script src="https://gist.github.com/9938515.js?file=03-maps.lfe"></scr
+ipt></div><br />The question that arises for me is "how would we do this when
+calling functions?" Perhaps one of these: <br /><div><script
+src="https://gist.github.com/9938515.js?file=04-maps.lfe"></script></div><br /
+>Then, for Joe's other example: <br /><div><script
+src="https://gist.github.com/9938515.js?file=05-maps.erl"></script></div><br /
+>We'd have this for LFE: <br /><div><script
+src="https://gist.github.com/9938515.js?file=06-maps.lfe"></script></div><br /
+>Before we pattern match on this, let's look at Erlang pattern matching for
+tuples: <br /><div><script
+src="https://gist.github.com/9938515.js?file=07-maps.erl"></script></div><br /
+>Compare this with pattern matching elements of a tuple in LFE: <br
+/><div><script src="https://gist.github.com/9938515.js?file=08-maps.lfe"></scr
+ipt></div><br />With that in our minds, we turn to Joe's matching example
+against a specific map element: <br /><div><script
+src="https://gist.github.com/9938515.js?file=09-maps.erl"></script></div><br /
+>And we could do the same in LFE like this: <br /><div><script
+src="https://gist.github.com/9938515.js?file=10-maps.lfe"></script></div><br /
+>I'm <i>really</i> uncertain about <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">add-pair</span> and <span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">update-pair</span>, both the need
+for them and the names. Interested to hear from others who know how map is
+implemented in Erlang and the best way to work with that in LFE... <br /><br
+/>

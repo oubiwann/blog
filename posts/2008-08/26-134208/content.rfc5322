@@ -11,4 +11,81 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><b>The ULS Series</b><br /><ul><li><a href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra-large-systems.html">Required Reading: Ultra Large Systems</a></li><li><a href="http://oubiwann.blogspot.com/2008/06/ultra-large-systems-example.html">Ultra Large Systems: An Example</a></li><li>SOA in Practice: A Handbook for Early-Stage ULS Systems (Part 1)</li></ul><b>A Book Review</b><br /><br />First off, this is an O'Reilly publication. What's more, if O'Reilly had something like a "criterion collection," this work would be in it. This title is what it says it is, "SOA in Pactice: The Art of Distributed System Design." Authored by <a href="http://www.josuttis.com/">Nicolai M. Josuttis</a>, this is one of the best written technical overview works I have ever read, both for writing style and content. For anyone interested in ULS and/or SOA, I have one thing to say: <a href="http://www.soa-in-practice.com/">buy this book immediately</a>, with expedited shipping.<br /><br />I'm not going to write a formal review with pros, cons, deep analysis about message, etc. However, what I will do is spend some time discussing the crossover from SOA to ULS, covering details with quotes from "SOA in Practice." I will not cover the book in detail and reveal all of its precious nuggets, but I will give a taste of what it has to offer and how it applies to ultra large-scale systems.<br /><br /><span style="font-weight: bold;">Divergence</span><br /><br />Since most of what I want to discuss is about what we can gain by taking lessons learned from SOA and applying them to efforts in exploring or prototyping ULS systems, I want to initially outline the stark differences between those systems and SOA.<br /><br />The most obvious difference is scale. To put things in perspective, imagine implementing a large SOA for a large organization. Imagine the requirements, the project planning, the logistics, the code, the bugs, the setbacks, the short-term failures, and finally, the successful delivery. Now multiply that: two related but semi-autonomous SOA projects. And again, with four. How about a third time for eight?<br /><br />Any reader with experience in working with large projects is probably having heart palpitations right now (and for that, I apologize). You have first hand experience of the difficulties and the pain: with a linear increase in the size of a project, there is an exponential increase in the difficulty of managing that project (people, code, timelines, etc.), asymptotically approaching 100% unmanageability, regardless of the amount of resources you throw at the project.<br /><br />The point just past the asymptote is where ULS systems and SOA meet. In other words, a ULS system <span style="font-style: italic;">as a whole</span> -- by definition -- cannot be built. Such a system can accrete over time, but is simply too large to be designed, built and managed. Rather, it is emergent. Efforts being made in ULS systems research right now are focused on how we can best facilitate that emergence.<br /><br /><span style="font-weight: bold;">Convergence</span><br /><br />One of the profound problem solving skills that maths like analytic geometry teach us is understanding potentially intractable problems by examining discrete and meaningful chunks. It's easy to chop something up; it's quite a different matter to chop such that the pieces are useful and provide further insight.<br /><br />If working with ULS systems is like integrating over the volume of a complex solid in 11-space, then SOAs provide us with the tools of breaking part of that work up into a manageable chunk, one that we can wrap our heads around. Many of the same problems that technicians are anticipated to encounter when working with ULS systems exist at a smaller scale and are well understood within the context of SOA.<br /><br />And this is where our friend Nicolai's book comes in.<br /><br /><span style="font-weight: bold;">ULS Systems Review</span><br /><br />Before we continue, let's take a quick look back at some of the ULS basics laid out by <a href="http://www.sei.cmu.edu/uls/the_report.html">the report</a> of the <a href="http://www.sei.cmu.edu/">Software Engineering Institute</a> (SEI) of Carnegie Mellon:<br /><ul><li>ULS systems are systems of systems at internet scale. </li><li>ULS systems will be interdependent webs of software-intensive systems, people, policies, cultures, and economics.</li></ul>In order to become a functional reality, these systems will require extensive research in the following areas:<br /><ul><li>Human Interaction</li><li>Computational Emergence</li><li>Design</li><li>Computational Engineering</li><li>Adaptive System Infrastructure</li><li>Adaptable and Predictable System Quality</li><li>Policy, Acquisition, and Management</li></ul>This means exploring for use in ultra-large scale systems such things as potential mechanisms for user interfaces, genetic algorithms/programming, new patterns in systems design, behavioral simulations of systems components in varying compositions, decentralized infrastructure, ultra-high availability, and integration with countless third-party support systems. Just to name a very bare minimum.<br /><br /><span style="font-weight: bold;">Intersection</span><br /><br />Of those research areas, lessons learned from SOA can be applied to ULS systems research most predominantly in the following areas:<br /><ul><li>Human Interaction</li><li>Design</li><li>Adaptive System Infrastructure</li><li>Adaptable and Predictable System Quality</li></ul>In Part 2, it is with an eye towards these that I will comment on Nicolai Josuttis' excellent work.<br /><br /><br /></div>
+<div><br /><b>The ULS Series</b><br /><ul><li><a
+href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra-large-system
+s.html">Required Reading: Ultra Large Systems</a></li><li><a
+href="http://oubiwann.blogspot.com/2008/06/ultra-large-systems-example.html">U
+ltra Large Systems: An Example</a></li><li>SOA in Practice: A Handbook for
+Early-Stage ULS Systems (Part 1)</li></ul><b>A Book Review</b><br /><br
+/>First off, this is an O'Reilly publication. What's more, if O'Reilly had
+something like a "criterion collection," this work would be in it. This title
+is what it says it is, "SOA in Pactice: The Art of Distributed System Design."
+Authored by <a href="http://www.josuttis.com/">Nicolai M. Josuttis</a>, this
+is one of the best written technical overview works I have ever read, both for
+writing style and content. For anyone interested in ULS and/or SOA, I have one
+thing to say: <a href="http://www.soa-in-practice.com/">buy this book
+immediately</a>, with expedited shipping.<br /><br />I'm not going to write a
+formal review with pros, cons, deep analysis about message, etc. However, what
+I will do is spend some time discussing the crossover from SOA to ULS,
+covering details with quotes from "SOA in Practice." I will not cover the book
+in detail and reveal all of its precious nuggets, but I will give a taste of
+what it has to offer and how it applies to ultra large-scale systems.<br /><br
+/><span style="font-weight: bold;">Divergence</span><br /><br />Since most of
+what I want to discuss is about what we can gain by taking lessons learned
+from SOA and applying them to efforts in exploring or prototyping ULS systems,
+I want to initially outline the stark differences between those systems and
+SOA.<br /><br />The most obvious difference is scale. To put things in
+perspective, imagine implementing a large SOA for a large organization.
+Imagine the requirements, the project planning, the logistics, the code, the
+bugs, the setbacks, the short-term failures, and finally, the successful
+delivery. Now multiply that: two related but semi-autonomous SOA projects. And
+again, with four. How about a third time for eight?<br /><br />Any reader with
+experience in working with large projects is probably having heart
+palpitations right now (and for that, I apologize). You have first hand
+experience of the difficulties and the pain: with a linear increase in the
+size of a project, there is an exponential increase in the difficulty of
+managing that project (people, code, timelines, etc.), asymptotically
+approaching 100% unmanageability, regardless of the amount of resources you
+throw at the project.<br /><br />The point just past the asymptote is where
+ULS systems and SOA meet. In other words, a ULS system <span
+style="font-style: italic;">as a whole</span> -- by definition -- cannot be
+built. Such a system can accrete over time, but is simply too large to be
+designed, built and managed. Rather, it is emergent. Efforts being made in ULS
+systems research right now are focused on how we can best facilitate that
+emergence.<br /><br /><span style="font-weight: bold;">Convergence</span><br
+/><br />One of the profound problem solving skills that maths like analytic
+geometry teach us is understanding potentially intractable problems by
+examining discrete and meaningful chunks. It's easy to chop something up; it's
+quite a different matter to chop such that the pieces are useful and provide
+further insight.<br /><br />If working with ULS systems is like integrating
+over the volume of a complex solid in 11-space, then SOAs provide us with the
+tools of breaking part of that work up into a manageable chunk, one that we
+can wrap our heads around. Many of the same problems that technicians are
+anticipated to encounter when working with ULS systems exist at a smaller
+scale and are well understood within the context of SOA.<br /><br />And this
+is where our friend Nicolai's book comes in.<br /><br /><span
+style="font-weight: bold;">ULS Systems Review</span><br /><br />Before we
+continue, let's take a quick look back at some of the ULS basics laid out by
+<a href="http://www.sei.cmu.edu/uls/the_report.html">the report</a> of the <a
+href="http://www.sei.cmu.edu/">Software Engineering Institute</a> (SEI) of
+Carnegie Mellon:<br /><ul><li>ULS systems are systems of systems at internet
+scale. </li><li>ULS systems will be interdependent webs of software-intensive
+systems, people, policies, cultures, and economics.</li></ul>In order to
+become a functional reality, these systems will require extensive research in
+the following areas:<br /><ul><li>Human Interaction</li><li>Computational
+Emergence</li><li>Design</li><li>Computational Engineering</li><li>Adaptive
+System Infrastructure</li><li>Adaptable and Predictable System
+Quality</li><li>Policy, Acquisition, and Management</li></ul>This means
+exploring for use in ultra-large scale systems such things as potential
+mechanisms for user interfaces, genetic algorithms/programming, new patterns
+in systems design, behavioral simulations of systems components in varying
+compositions, decentralized infrastructure, ultra-high availability, and
+integration with countless third-party support systems. Just to name a very
+bare minimum.<br /><br /><span style="font-weight:
+bold;">Intersection</span><br /><br />Of those research areas, lessons learned
+from SOA can be applied to ULS systems research most predominantly in the
+following areas:<br /><ul><li>Human
+Interaction</li><li>Design</li><li>Adaptive System
+Infrastructure</li><li>Adaptable and Predictable System Quality</li></ul>In
+Part 2, it is with an eye towards these that I will comment on Nicolai
+Josuttis' excellent work.<br /><br /><br /></div>

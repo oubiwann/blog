@@ -11,4 +11,151 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-abnl0nKNsk8/T2n32Y9dZDI/AAAAAAAAAHk/3uPi4r8h_es/s1600/Screen+shot+2012-03-21+at+11.42.56+AM+(2).png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="245" src="http://4.bp.blogspot.com/-abnl0nKNsk8/T2n32Y9dZDI/AAAAAAAAAHk/3uPi4r8h_es/s320/Screen+shot+2012-03-21+at+11.42.56+AM+(2).png" width="320" /></a></div>In a <a href="http://oubiwann.blogspot.com/2012/03/pycon-2012-to-be-continued.html">previous post</a>, I promised to share some of my PyCon conversations from this year -- this is the first in that series :-)<br /><br />As I'm sure many folks noticed, during <a href="http://pyvideo.org/video/956/keynote-guido-van-rossum">Guido van Rossum's keynote address</a> at PyCon 2012, he mentioned that he likes the way that <a href="http://www.gevent.org/">gevent</a> presents asynchronous usage to developers taking advantage of that framework.<br /><br />What's more, though, is that he said he's not a fan of anything that requires him to write a callback (at which point, <a href="http://twistedmatrix.com/trac/">I shed a tear</a>). He continued with: "Whenever I see I callback, I <i>know</i> that I'm going to get it wrong. So I like other approaches."<br /><br />As a great lover of the callback approach, I didn't quite know how to take this, even after pondering it for a while. But it really&nbsp;intrigued&nbsp;me that he didn't have the confidence in being able to get it right. This is Guido we're talking about, so there was <i>definitely</i> more to this than met the eye.<br /><br />As such, when I saw Guido in the hall at the sprints, I took that opportunity to ask him about this. He was quite generous with his time and experiences, and was very patient as I scribbled some notes. His perspective is a valuable one, and gave me lots of food for thought throughout the sprints and well into this week. I've spent that intervening time reflecting on callbacks, why I like them, how I use them, as well as the in-line style of eventlet and gevent [1].<br /><b><br /></b><br /><b><span style="font-size: large;">The Conversation</span></b><br /><br />I only asked a few initial questions, and Guido was off to the races. I wanted to listen more than write, so what I'm sharing is a condensed (and hopefully correct!) version of what he said.<br /><br />The essence is this: Guido developed an aesthetic for reading a series of <span style="font-family: 'Courier New', Courier, monospace;">if</span> statements that represented async operations, as this helped him see -- at a glance -- what the overall logical flow was for that block of code. When he used the callback style, logic was distributed across a series of callback functions -- not something that one can see at a glance.<br /><br />However, more than the ability to perceive the intent of what was written with a glance is something even more pragmatic: the ability to avoid bugs, and when they arise, debug them clearly. A common place for bugs is in the edge cases, and for Guido those are harder to detect in callbacks than a series of <span style="font-family: 'Courier New', Courier, monospace;">if</span> statements. His logic is pretty sound, and probably generally true for most programmers out there.<br /><br />He then proceded to give more details, using a memcache-like database as an example. With such a database, there are some basic operations possible:<br /><br /><ul><li>check the cache for a value</li><li>get the value if present</li><li>add a value if not present</li><li>delete a value</li></ul><div>At first approach, this is pretty straight-forward for both approaches, with in-line yielding code being more concise. However, what about the following conditions? What will the code look like in these circumstances?</div><div><ul><li>an attempt to connect to the database failed, and we have to implement reconnecting logic</li><li>an attempt to get a lock, but a key is already locked</li><li>in the case of a failed lock, do re-trys/backoff, eventually raise an exception</li><li>storing to multiple database servers, but one or more might not contain updated data</li><li>this leaves the system in an inconsistent state and requires a all sorts of checking, etc.</li></ul><div>I couldn't remember all of Guido's excellent points, so I made some up in that last set of bullets, but the intent should be clear: each of those cases requires code branching (<span style="font-family: 'Courier New', Courier, monospace;">if</span> statements or callbacks). In the case of callbacks, you end up with quite a jungle [2]... a veritable net of interlacing callbacks, and the logic can be hard to follow.</div></div><div><br /></div><div>One final point that Guido made was that batching/pooling is much simpler with the in-line style, a point I conceded readily.</div><div><br /></div><div><b><span style="font-size: large;">A Tangent: Thinking Styles</span></b></div><div><br /></div><div>As mentioned already, this caused me to evaluate closely my use of and preference for callbacks.&nbsp;Should I use them?&nbsp;Do I really like them that much? Okay, it looks like I really do -- but why?</div><div><br /></div><div>Meditating on that question revealed some interesting insights, yet it might be difficult to convey -- please leave comments if I fail to describe this effectively!</div><div><br /></div><div>There are many ways to describe how one thinks, stores information in memory, retrieves data and thoughts from memory, and applies these to the solutions of problems. I'm a visual thinker with a keen &nbsp;spacial sense, so my metaphors tend follow those lines, and when reflecting on this in the context of using and creating callbacks, I saw why I liked them:</div><div><br /></div><div>The code that I read is just a placeholder for me. It happens to be the same thing that the Python interpreter reads, but that's a happy accident [3]; it references the <i>real</i> code... the constructs that live in my brain. The chains of callbacks that conditionally execute portions of the total-possible-callbacks net are like the interconnected deer paths through a forest, like the reticulating sherpa trails tracing a high mountain side, like the twisty mazes of an underground adventure (though not all alike...).&nbsp;</div><div><br /></div><div>As I read the code, my eyes scan the green curves and lines on a black background&nbsp;and these trigger a highly associative memory, which then assembles a landscape before me, and it's <i>there</i> where I walk through the possibilities, explore new pathways, plan new architectures, and attempt to debug unexpected culs-de-sac.&nbsp;</div><div><br /></div><div>Even stranger is this: when I attempt to write "clean" in-line async code, I get stuck. My mental processes don't fire correctly. My creative juices don't flow. The "inner eye" that looks into problem spaces can't focus, or can't get binocular vision.&nbsp;</div><div><br /></div><div>The first thing I do in such a situation? Figure out how I can I turn silly in-line control structures into callback functions :-) &nbsp;(see footnote [1]),</div><div><br /></div><div><b><span style="font-size: large;">Now What?</span></b></div><div><br /></div><div>Is Guido's astute assessment the death of callbacks? Well, of course not. Does it indicate the future of the predominant style for writing async Python code? Most likely, yes.</div><div><br /></div><div>However, there are lots of frameworks that use callbacks and there are lots of people that still prefer that approach (including myself!). What's more, I'd bet that the callbacks vs. in-line async style comes down to a matter of 1) what one is used to, and possibly, 2) the manner in which one thinks about code and uses that code to solve problems in a concurrent, event-driven world.</div><div><br /></div><div>But what, as Guido asked, am I going to do with this information?</div><div><br /></div><div>Share it! And then chat with fellow members of the Twisted community. How can we better educate newcomers to Twisted? What best practices can we establish for creating APIs that use callbacks? What patterns result in the most readable code? What patterns are easiest to debug? What is the best way <i>to</i> debug code comprised of layers of callbacks?</div><div><br /></div><div>What's more, we're pushing the frontiers of Twisted code right now, exploring reactors implemented on <a href="http://twistedmatrix.com/trac/ticket/5526">software transaction memory</a>, digging through <a href="http://www.twistedmatrix.com/users/oubiwann/actorModel/papers">both early and recent research</a> on <a href="http://twistedmatrix.com/trac/ticket/5565">concurrency and actor models</a>, <a href="https://launchpad.net/corotwine">exploring coroutines</a>, etc. (but don't use inlineCallbacks! Sorry, radix...). In other words, there's so much more to Twisted than what's been created; there's much more that lies ahead of us.</div><div><br /></div><div>Regardless, Guido's perspective has highlighted the following needs within the Twisted community around the callback approach to writing asynchronous code:&nbsp;</div><div><ul><li>education</li><li>establishing clear best practices</li><li>recording and publicizing definitive design patterns</li><li>continued research</li></ul><div>These provide exciting opportunities for big-picture thinkers for both those new to Twisted, as well as the more jaded old-timers. Twisted has always pushed the edge of the envelope (in more ways than one...), and I see no signs of that stopping anytime soon :-)</div></div><br /><br /><b><span style="font-size: large;">Footnotes</span></b><br /><br />[1]&nbsp;In a rather comical twist of fate, I actually have a drafted blog post on how to write gevent code using its support for callbacks :-) The intent of that post will be to give folks who have been soaked in the callback style of Twisted a way of accepting gevent into their lives, in the event that they have such a need (we've started experimenting with gevent at DreamHost, so that need has arisen for me).<br /><br />[2] There's actually a pretty <a href="http://bazaar.launchpad.net/~juju/txzookeeper/trunk/view/head:/txzookeeper/queue.py#L294">well-done example of this</a> in txzookeeper by <a href="http://twitter.com/#!/kapilvt">Kapil Thangavelu</a>. Kapil defined a series of callbacks within the scope of a method, organizing his code locally and cleanly. As much as I like this code, it is probably a better argument for Guido's point ;-)<br /><br />[3] Oh, happy accident, let me count the hours, days, and weeks thy radiant presence has saved me ...<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-abnl0nKNsk8/T2n32Y9dZDI/AAAAAAAAAHk/3uPi4r8h_e
+s/s1600/Screen+shot+2012-03-21+at+11.42.56+AM+(2).png" imageanchor="1"
+style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img
+border="0" height="245"
+src="http://4.bp.blogspot.com/-abnl0nKNsk8/T2n32Y9dZDI/AAAAAAAAAHk/3uPi4r8h_es
+/s320/Screen+shot+2012-03-21+at+11.42.56+AM+(2).png" width="320"
+/></a></div>In a <a
+href="http://oubiwann.blogspot.com/2012/03/pycon-2012-to-be-continued.html">pr
+evious post</a>, I promised to share some of my PyCon conversations from this
+year -- this is the first in that series :-)<br /><br />As I'm sure many folks
+noticed, during <a
+href="http://pyvideo.org/video/956/keynote-guido-van-rossum">Guido van
+Rossum's keynote address</a> at PyCon 2012, he mentioned that he likes the way
+that <a href="http://www.gevent.org/">gevent</a> presents asynchronous usage
+to developers taking advantage of that framework.<br /><br />What's more,
+though, is that he said he's not a fan of anything that requires him to write
+a callback (at which point, <a href="http://twistedmatrix.com/trac/">I shed a
+tear</a>). He continued with: "Whenever I see I callback, I <i>know</i> that
+I'm going to get it wrong. So I like other approaches."<br /><br />As a great
+lover of the callback approach, I didn't quite know how to take this, even
+after pondering it for a while. But it really&nbsp;intrigued&nbsp;me that he
+didn't have the confidence in being able to get it right. This is Guido we're
+talking about, so there was <i>definitely</i> more to this than met the
+eye.<br /><br />As such, when I saw Guido in the hall at the sprints, I took
+that opportunity to ask him about this. He was quite generous with his time
+and experiences, and was very patient as I scribbled some notes. His
+perspective is a valuable one, and gave me lots of food for thought throughout
+the sprints and well into this week. I've spent that intervening time
+reflecting on callbacks, why I like them, how I use them, as well as the
+in-line style of eventlet and gevent [1].<br /><b><br /></b><br /><b><span
+style="font-size: large;">The Conversation</span></b><br /><br />I only asked
+a few initial questions, and Guido was off to the races. I wanted to listen
+more than write, so what I'm sharing is a condensed (and hopefully correct!)
+version of what he said.<br /><br />The essence is this: Guido developed an
+aesthetic for reading a series of <span style="font-family: 'Courier New',
+Courier, monospace;">if</span> statements that represented async operations,
+as this helped him see -- at a glance -- what the overall logical flow was for
+that block of code. When he used the callback style, logic was distributed
+across a series of callback functions -- not something that one can see at a
+glance.<br /><br />However, more than the ability to perceive the intent of
+what was written with a glance is something even more pragmatic: the ability
+to avoid bugs, and when they arise, debug them clearly. A common place for
+bugs is in the edge cases, and for Guido those are harder to detect in
+callbacks than a series of <span style="font-family: 'Courier New', Courier,
+monospace;">if</span> statements. His logic is pretty sound, and probably
+generally true for most programmers out there.<br /><br />He then proceded to
+give more details, using a memcache-like database as an example. With such a
+database, there are some basic operations possible:<br /><br /><ul><li>check
+the cache for a value</li><li>get the value if present</li><li>add a value if
+not present</li><li>delete a value</li></ul><div>At first approach, this is
+pretty straight-forward for both approaches, with in-line yielding code being
+more concise. However, what about the following conditions? What will the code
+look like in these circumstances?</div><div><ul><li>an attempt to connect to
+the database failed, and we have to implement reconnecting logic</li><li>an
+attempt to get a lock, but a key is already locked</li><li>in the case of a
+failed lock, do re-trys/backoff, eventually raise an exception</li><li>storing
+to multiple database servers, but one or more might not contain updated
+data</li><li>this leaves the system in an inconsistent state and requires a
+all sorts of checking, etc.</li></ul><div>I couldn't remember all of Guido's
+excellent points, so I made some up in that last set of bullets, but the
+intent should be clear: each of those cases requires code branching (<span
+style="font-family: 'Courier New', Courier, monospace;">if</span> statements
+or callbacks). In the case of callbacks, you end up with quite a jungle [2]...
+a veritable net of interlacing callbacks, and the logic can be hard to
+follow.</div></div><div><br /></div><div>One final point that Guido made was
+that batching/pooling is much simpler with the in-line style, a point I
+conceded readily.</div><div><br /></div><div><b><span style="font-size:
+large;">A Tangent: Thinking Styles</span></b></div><div><br /></div><div>As
+mentioned already, this caused me to evaluate closely my use of and preference
+for callbacks.&nbsp;Should I use them?&nbsp;Do I really like them that much?
+Okay, it looks like I really do -- but why?</div><div><br
+/></div><div>Meditating on that question revealed some interesting insights,
+yet it might be difficult to convey -- please leave comments if I fail to
+describe this effectively!</div><div><br /></div><div>There are many ways to
+describe how one thinks, stores information in memory, retrieves data and
+thoughts from memory, and applies these to the solutions of problems. I'm a
+visual thinker with a keen &nbsp;spacial sense, so my metaphors tend follow
+those lines, and when reflecting on this in the context of using and creating
+callbacks, I saw why I liked them:</div><div><br /></div><div>The code that I
+read is just a placeholder for me. It happens to be the same thing that the
+Python interpreter reads, but that's a happy accident [3]; it references the
+<i>real</i> code... the constructs that live in my brain. The chains of
+callbacks that conditionally execute portions of the total-possible-callbacks
+net are like the interconnected deer paths through a forest, like the
+reticulating sherpa trails tracing a high mountain side, like the twisty mazes
+of an underground adventure (though not all alike...).&nbsp;</div><div><br
+/></div><div>As I read the code, my eyes scan the green curves and lines on a
+black background&nbsp;and these trigger a highly associative memory, which
+then assembles a landscape before me, and it's <i>there</i> where I walk
+through the possibilities, explore new pathways, plan new architectures, and
+attempt to debug unexpected culs-de-sac.&nbsp;</div><div><br /></div><div>Even
+stranger is this: when I attempt to write "clean" in-line async code, I get
+stuck. My mental processes don't fire correctly. My creative juices don't
+flow. The "inner eye" that looks into problem spaces can't focus, or can't get
+binocular vision.&nbsp;</div><div><br /></div><div>The first thing I do in
+such a situation? Figure out how I can I turn silly in-line control structures
+into callback functions :-) &nbsp;(see footnote [1]),</div><div><br
+/></div><div><b><span style="font-size: large;">Now
+What?</span></b></div><div><br /></div><div>Is Guido's astute assessment the
+death of callbacks? Well, of course not. Does it indicate the future of the
+predominant style for writing async Python code? Most likely,
+yes.</div><div><br /></div><div>However, there are lots of frameworks that use
+callbacks and there are lots of people that still prefer that approach
+(including myself!). What's more, I'd bet that the callbacks vs. in-line async
+style comes down to a matter of 1) what one is used to, and possibly, 2) the
+manner in which one thinks about code and uses that code to solve problems in
+a concurrent, event-driven world.</div><div><br /></div><div>But what, as
+Guido asked, am I going to do with this information?</div><div><br
+/></div><div>Share it! And then chat with fellow members of the Twisted
+community. How can we better educate newcomers to Twisted? What best practices
+can we establish for creating APIs that use callbacks? What patterns result in
+the most readable code? What patterns are easiest to debug? What is the best
+way <i>to</i> debug code comprised of layers of callbacks?</div><div><br
+/></div><div>What's more, we're pushing the frontiers of Twisted code right
+now, exploring reactors implemented on <a
+href="http://twistedmatrix.com/trac/ticket/5526">software transaction
+memory</a>, digging through <a
+href="http://www.twistedmatrix.com/users/oubiwann/actorModel/papers">both earl
+y and recent research</a> on <a
+href="http://twistedmatrix.com/trac/ticket/5565">concurrency and actor
+models</a>, <a href="https://launchpad.net/corotwine">exploring
+coroutines</a>, etc. (but don't use inlineCallbacks! Sorry, radix...). In
+other words, there's so much more to Twisted than what's been created; there's
+much more that lies ahead of us.</div><div><br /></div><div>Regardless,
+Guido's perspective has highlighted the following needs within the Twisted
+community around the callback approach to writing asynchronous
+code:&nbsp;</div><div><ul><li>education</li><li>establishing clear best
+practices</li><li>recording and publicizing definitive design
+patterns</li><li>continued research</li></ul><div>These provide exciting
+opportunities for big-picture thinkers for both those new to Twisted, as well
+as the more jaded old-timers. Twisted has always pushed the edge of the
+envelope (in more ways than one...), and I see no signs of that stopping
+anytime soon :-)</div></div><br /><br /><b><span style="font-size:
+large;">Footnotes</span></b><br /><br />[1]&nbsp;In a rather comical twist of
+fate, I actually have a drafted blog post on how to write gevent code using
+its support for callbacks :-) The intent of that post will be to give folks
+who have been soaked in the callback style of Twisted a way of accepting
+gevent into their lives, in the event that they have such a need (we've
+started experimenting with gevent at DreamHost, so that need has arisen for
+me).<br /><br />[2] There's actually a pretty <a
+href="http://bazaar.launchpad.net/~juju/txzookeeper/trunk/view/head:/txzookeep
+er/queue.py#L294">well-done example of this</a> in txzookeeper by <a
+href="http://twitter.com/#!/kapilvt">Kapil Thangavelu</a>. Kapil defined a
+series of callbacks within the scope of a method, organizing his code locally
+and cleanly. As much as I like this code, it is probably a better argument for
+Guido's point ;-)<br /><br />[3] Oh, happy accident, let me count the hours,
+days, and weeks thy radiant presence has saved me ...<br /><br /><br />

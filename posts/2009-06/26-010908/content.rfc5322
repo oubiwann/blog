@@ -11,4 +11,35 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><font style="font-weight: bold;">A Sinfonia on Messaging:</font><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp.html">The Voice of Business</a><br /></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-part.html">The Voice of Architecture</a></li><li>RabbitMQ and txAMQP<br /></li><li>The Voice of Code</li><li>The Voice of Code, continued</li></ol><br />In the last post, we started to get into some Twisted AMQP code, converting our architecture into implementation. We conclude those efforts here with order validation, billing, and status in MacGrudder's kilt store.<br /><br /><br /><font style="font-weight: bold;">Validation and Billing</font><br /><br />pass it onto the next step in our business process: order validation and billing<br /><br />[valid orders]<br /><br />[invalid orders]<br /><br />[push to internal tracking and communicate with other services]<br /><br /><br /><font style="font-weight: bold;">Status</font><br /><br />Now that we've got a message indicating that a kilt is approved for manufacture, the meat of the business happens: creating the kilt. The core component here is MacGrudder, his tailoring skills, and the push of a button on an internal app when he completes the order. That button push starts the last leg of an order's journey though our messaging system.<br /><br />[publish subscribe]<br /><br />[message translators for various endpoints]<br /><br /><br /><font style="font-weight: bold;">Recap</font><br /><br />What we've done in the examples above is taken some basic use cases in a messaging scenario and then explored possible implementations using some basic patterns in enterprise messaging.<br /><br /><br /><font style="font-weight: bold;">References</font><br /><ul><li><a href="http://www.soa-in-practice.com/">Enterprise Integration Patterns, </a><a href="http://www.enterpriseintegrationpatterns.com/Chapter1.html">Chapter 1</a></li><li>The <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?version=1">AMQP Spec</a></li><li>The <a href="https://launchpad.net/txamqp">async Python library</a> for AMQP</li></ul><br /><br /></div>
+<div><br /><font style="font-weight: bold;">A Sinfonia on Messaging:</font><br
+/><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-
+with-txamqp.html">The Voice of Business</a><br /></li><li><a
+href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p
+art.html">The Voice of Architecture</a></li><li>RabbitMQ and txAMQP<br
+/></li><li>The Voice of Code</li><li>The Voice of Code, continued</li></ol><br
+/>In the last post, we started to get into some Twisted AMQP code, converting
+our architecture into implementation. We conclude those efforts here with
+order validation, billing, and status in MacGrudder's kilt store.<br /><br
+/><br /><font style="font-weight: bold;">Validation and Billing</font><br
+/><br />pass it onto the next step in our business process: order validation
+and billing<br /><br />[valid orders]<br /><br />[invalid orders]<br /><br
+/>[push to internal tracking and communicate with other services]<br /><br
+/><br /><font style="font-weight: bold;">Status</font><br /><br />Now that
+we've got a message indicating that a kilt is approved for manufacture, the
+meat of the business happens: creating the kilt. The core component here is
+MacGrudder, his tailoring skills, and the push of a button on an internal app
+when he completes the order. That button push starts the last leg of an
+order's journey though our messaging system.<br /><br />[publish subscribe]<br
+/><br />[message translators for various endpoints]<br /><br /><br /><font
+style="font-weight: bold;">Recap</font><br /><br />What we've done in the
+examples above is taken some basic use cases in a messaging scenario and then
+explored possible implementations using some basic patterns in enterprise
+messaging.<br /><br /><br /><font style="font-weight:
+bold;">References</font><br /><ul><li><a
+href="http://www.soa-in-practice.com/">Enterprise Integration Patterns, </a><a
+href="http://www.enterpriseintegrationpatterns.com/Chapter1.html">Chapter 1</a
+></li><li>The <a
+href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?
+version=1">AMQP Spec</a></li><li>The <a
+href="https://launchpad.net/txamqp">async Python library</a> for
+AMQP</li></ul><br /><br /></div>

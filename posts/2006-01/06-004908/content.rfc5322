@@ -11,4 +11,69 @@ Comments:
 Content-Type: md
 Public?: true
 
-<i class="categories">blogging :: software :: python :: twisted</i><br/><br/><p/><br /><a href="http://www.advogato.org/person/oubiwann/">Advogato</a> has served me well over the past year, and I will continue to use it for blogging. I email a special account on one of my servers with my blog entries, and it gets published within seconds on <a href="http://www.advogato.org/person/oubiwann/">Advogato</a>. I have nightly cronjobs that run XML-RPC queries against <a href="http://www.advogato.org/person/oubiwann/">Advogato</a> and save backups (in addition to the originals which are in my "Sent" folder). This makes me very happy, as I suffered a traumatic server crash over a year ago, wherein I lost over a year's worth of world-changing blog posts.<br /><br />However, I believe I am ready to take blogging back into my own hands. I managed to rescue some of the data on the drive, including early posts from 2003 and part of 2004. These are currently archived <a href="http://olded.crossrodes.org/">here</a>, but I would like to unify all old posts, <a href="http://www.advogato.org/person/oubiwann/">Advogato</a> posts, and future posts in a single framework, look-and-feel.<br /><br />As a result, I have finally broken down and started writing a collection of user-land networked applications: <br /><ul> <li><a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreenshots">ImageDB</a>, a small web micro-app which provides a backend upon which one could write an image gallery application like <a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcPyKon">this one</a><a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcPyKon"></a>; uses image-tagging like <a href="http://del.icio.us/oubiwann">del.icio.us</a>;</li> <li><a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcAccountsDB">AccountsDB</a>, which will provide distributed user and group management, authentication, as well as fine-grained permissioning with ACLs (access control lists) and ACL management for applications;</li> <li><a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcMessageDB">MessageDB</a>, which will store and index <a href="http://www.faqs.org/rfcs/rfc2822.html">RFC 2822</a>-compliant messages, will allow users to tag them like <a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreenshots">ImageDB</a> and <a href="http://del.icio.us/oubiwann">del.icio.us</a>, as well as providing many convenient means for users and parent applications to add messages;<br /> </li> <li><a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcWeBlog">WeBlog</a>, which will be composed of the micro-applications <a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcMessageDB">MessageDB</a>, <a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcAccountsDB">AccountsDB</a>, and <a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreenshots">ImageDB</a> and provide a nice user interface for blog posts, blogs, and groups of blogs (community spaces).</li> </ul> This is just a handful of the full suite we are working on <a href="http://projects.adytum.us/tracs/TwistedCollection">here</a>.<br /><br />All of these applications are small, networked, light-weight, and run independently of heavy software like Apache, MySQL, PostgreSQL, etc. They are <a href="http://python.org/">python</a>- and <a href="http://twistedmatrix.com/">twisted</a>-powered. We have plans of implementing peering (using <a href="http://www.divmod.org/users/glyph/q2qpresentation.pdf">Q2Q</a>/<a href="http://divmod.org/trac/wiki/DivmodVertex">Vertex</a>) so that, for example, a trusted network of <a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreenshots">ImageDB</a> installations could provide images for each other (like a private, distributed, images.google.com). There are so many possible ways that this could go, it's just insanely exciting. We're talking new paradigm here, folks.<br /><br />So, stay tuned. This blog-space and my account on <a href="http://www.advogato.org/person/oubiwann/">Advogato</a> will eventually become re-publishers of ElectricDuncan running on WeBlog ;-) And then I'll have two more backups of these techno-babble ramblings...
+<i class="categories">blogging :: software :: python ::
+twisted</i><br/><br/><p/><br /><a
+href="http://www.advogato.org/person/oubiwann/">Advogato</a> has served me
+well over the past year, and I will continue to use it for blogging. I email a
+special account on one of my servers with my blog entries, and it gets
+published within seconds on <a
+href="http://www.advogato.org/person/oubiwann/">Advogato</a>. I have nightly
+cronjobs that run XML-RPC queries against <a
+href="http://www.advogato.org/person/oubiwann/">Advogato</a> and save backups
+(in addition to the originals which are in my "Sent" folder). This makes me
+very happy, as I suffered a traumatic server crash over a year ago, wherein I
+lost over a year's worth of world-changing blog posts.<br /><br />However, I
+believe I am ready to take blogging back into my own hands. I managed to
+rescue some of the data on the drive, including early posts from 2003 and part
+of 2004. These are currently archived <a
+href="http://olded.crossrodes.org/">here</a>, but I would like to unify all
+old posts, <a href="http://www.advogato.org/person/oubiwann/">Advogato</a>
+posts, and future posts in a single framework, look-and-feel.<br /><br />As a
+result, I have finally broken down and started writing a collection of
+user-land networked applications: <br /><ul> <li><a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreens
+hots">ImageDB</a>, a small web micro-app which provides a backend upon which
+one could write an image gallery application like <a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcPyKon">this on
+e</a><a href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcPyKon"
+></a>; uses image-tagging like <a
+href="http://del.icio.us/oubiwann">del.icio.us</a>;</li> <li><a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcAccountsDB">Ac
+countsDB</a>, which will provide distributed user and group management,
+authentication, as well as fine-grained permissioning with ACLs (access
+control lists) and ACL management for applications;</li> <li><a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcMessageDB">Mes
+sageDB</a>, which will store and index <a
+href="http://www.faqs.org/rfcs/rfc2822.html">RFC 2822</a>-compliant messages,
+will allow users to tag them like <a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreens
+hots">ImageDB</a> and <a href="http://del.icio.us/oubiwann">del.icio.us</a>,
+as well as providing many convenient means for users and parent applications
+to add messages;<br /> </li> <li><a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcWeBlog">WeBlog
+</a>, which will be composed of the micro-applications <a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcMessageDB">Mes
+sageDB</a>, <a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcAccountsDB">Ac
+countsDB</a>, and <a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreens
+hots">ImageDB</a> and provide a nice user interface for blog posts, blogs, and
+groups of blogs (community spaces).</li> </ul> This is just a handful of the
+full suite we are working on <a
+href="http://projects.adytum.us/tracs/TwistedCollection">here</a>.<br /><br
+/>All of these applications are small, networked, light-weight, and run
+independently of heavy software like Apache, MySQL, PostgreSQL, etc. They are
+<a href="http://python.org/">python</a>- and <a
+href="http://twistedmatrix.com/">twisted</a>-powered. We have plans of
+implementing peering (using <a
+href="http://www.divmod.org/users/glyph/q2qpresentation.pdf">Q2Q</a>/<a href="
+http://divmod.org/trac/wiki/DivmodVertex">Vertex</a>) so that, for example, a
+trusted network of <a
+href="http://projects.adytum.us/tracs/TwistedCollection/wiki/AtcImageDBScreens
+hots">ImageDB</a> installations could provide images for each other (like a
+private, distributed, images.google.com). There are so many possible ways that
+this could go, it's just insanely exciting. We're talking new paradigm here,
+folks.<br /><br />So, stay tuned. This blog-space and my account on <a
+href="http://www.advogato.org/person/oubiwann/">Advogato</a> will eventually
+become re-publishers of ElectricDuncan running on WeBlog ;-) And then I'll
+have two more backups of these techno-babble ramblings...

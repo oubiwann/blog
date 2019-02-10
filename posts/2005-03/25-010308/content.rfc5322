@@ -11,4 +11,20 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml">Well, I am really, really impressed with Nevow. It really grows on you as you code. I've been posting little tidbits that I learn on the Nevow&nbsp;wiki, the kinds of things that beginners should have easy access to.<br /><div blog="entry"><br />Today, I dug really deep into the nevow libs and followed the path of form posts (configurables, validation, etc.). Very interesting stuff. Not only do I like the way Nevow behaves and handles for developers, I like its guts, too. That's actually fairly uncommon when it comes to web app frameworks.<br /><br />Anyway, today was very successful: my TinyURL knockoff (URLdb) is "fully" functional. It has a form interface for posting/creating shorter URLs as well as a URL you can post to via javascript, etc. The reason that I put "fully" in quotes, is that there is no persistent backend storage yet: it's all in memory. This was for simplifying the development/learning process only, and I have already started on writing the Atop classes.<br /><br />I look forward to using Nevow in the future -- immediately, on the PyKon project; but in general, for any web app that doesn't require the pre-built functionality of a full-blown CMS.</div><br /><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml">Well, I am really, really impressed
+with Nevow. It really grows on you as you code. I've been posting little
+tidbits that I learn on the Nevow&nbsp;wiki, the kinds of things that
+beginners should have easy access to.<br /><div blog="entry"><br />Today, I
+dug really deep into the nevow libs and followed the path of form posts
+(configurables, validation, etc.). Very interesting stuff. Not only do I like
+the way Nevow behaves and handles for developers, I like its guts, too. That's
+actually fairly uncommon when it comes to web app frameworks.<br /><br
+/>Anyway, today was very successful: my TinyURL knockoff (URLdb) is "fully"
+functional. It has a form interface for posting/creating shorter URLs as well
+as a URL you can post to via javascript, etc. The reason that I put "fully" in
+quotes, is that there is no persistent backend storage yet: it's all in
+memory. This was for simplifying the development/learning process only, and I
+have already started on writing the Atop classes.<br /><br />I look forward to
+using Nevow in the future -- immediately, on the PyKon project; but in
+general, for any web app that doesn't require the pre-built functionality of a
+full-blown CMS.</div><br /><br /></div>

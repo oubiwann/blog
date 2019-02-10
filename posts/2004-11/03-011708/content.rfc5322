@@ -11,4 +11,59 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">web :: software</i><br/><br/><p/><br /><p>Like nearly everyone on the planet who has ever had to write<br />HTML, I abhore it. When I started working for the University of<br />Maryland as a developer in 1998, I learned to hate it more than ever. I<br />has responsible for multiple, complex sites, all with regularly<br />changing content. Maintaining all that HTML was a nightmare.</p><br /><br /><p>A few months later, I discovered Zope and began my long love affair<br />with Python and an abiding interest in Content Management Systems. Yet,<br />all the "long" years (1 human year is 7 years in software ;-) ) since<br />then, there hasn't been a great deal of progress with open source CMSs.<br />Sure, there has been a great deal of refinement and improvement in user<br />interface, in feature sets, etc., but when it comes right down to it,<br />what does it mean?</p><br /><br /><br /><p>I started my search for a CMS at UMCP because I need to save time<br />more than anything else. I needed a way to easily edit files, to not<br />have to play browser compatibility wars with every change to the site,<br />to easily generate new content.</p><br /><br /><p>For large, complex sites, I now use Zope and Plone, especially when<br />customers will need to manage their own content. However, I have found<br />that through a combination of simple technologies, I can acheive all<br />the speed and convenience I have ever needed without any of the tedium<br />-- including HTML.</p><br /><br /><p>I have many friends who are emacs lovers, and I have heard all the<br />arguments, yet I have been a vi/vim user for many years and do not ever<br />see that changing. Additionally, I am a huge fan of python and the<br />software version control system called Subversion. These three things<br />have become merged into a seamless CMS that fits many of my content<br />management needs.</p><br /><br /><p>Here are the components that I use:</p><br /><br /><p>* HTML templates<br/><br />* Ini-style config files for menus, stories, and other content (very easy to create/update)<br/><br />* Very simple python code to apply the content to templates and render HTML output<br/><br />* Subversion to manage site changes, versions, rollbacks, etc.<br/><br />* vim as a command-line tool to manage the content</p><br /><br /><p>The thing that really did it for me was a feature of vim I had never<br />played with until recently: windows. Windows in vim are panes. they can<br />be arranged vertically, horizontally, or any combination. They are easy<br />to create (:vne, :new) and easy to maniuplate (^xw, etc.). I typically<br />have 4-5 panes in a single terminal window open at any given time, and<br />I can access all the buffers in any pane. This means that I can compare<br />two python libraries side-by-side, edit the project web site (all in<br />ini-file format!), update the ChangeLog and add to the TODO file all<br />without haveing to change mental modes.</p><br /><br /><p>And that's the big key and biggest show stopper for any software<br />from a user perspective: does the tool you use cost you time in mental<br />adjustment while operating the standard tools of your trade? If so,<br />it's time to re-evaluate.</p><br /><br /><p>For me, I discovered that I was saving time. Huge chunks of lost<br />time were regained and I was able to start doing many more tasks<br />simultaneously, since I didn't have to shift mental modes. I have an<br />irc session open on the development channel, an interactive python<br />session for debugging and generating doc tests, and my ultra-vim<br />terminal for code and content.</p><br /><br /><p>It's a beautiful thing.</p><br /><br /><p>I did try to run interactive python sessions in vim -- and with<br />success, too. A very nice plugin called vimsh developed by Brian Sturk.<br />However, I found that this actually slowed me down, so I switched back<br />to an independant terminal window.</p><br /><br /><p>I guess the moral of the story is explore and don't listen to The Man; use the tool that's best for you ;-)</p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">web ::
+software</i><br/><br/><p/><br /><p>Like nearly everyone on the planet who has
+ever had to write<br />HTML, I abhore it. When I started working for the
+University of<br />Maryland as a developer in 1998, I learned to hate it more
+than ever. I<br />has responsible for multiple, complex sites, all with
+regularly<br />changing content. Maintaining all that HTML was a
+nightmare.</p><br /><br /><p>A few months later, I discovered Zope and began
+my long love affair<br />with Python and an abiding interest in Content
+Management Systems. Yet,<br />all the "long" years (1 human year is 7 years in
+software ;-) ) since<br />then, there hasn't been a great deal of progress
+with open source CMSs.<br />Sure, there has been a great deal of refinement
+and improvement in user<br />interface, in feature sets, etc., but when it
+comes right down to it,<br />what does it mean?</p><br /><br /><br /><p>I
+started my search for a CMS at UMCP because I need to save time<br />more than
+anything else. I needed a way to easily edit files, to not<br />have to play
+browser compatibility wars with every change to the site,<br />to easily
+generate new content.</p><br /><br /><p>For large, complex sites, I now use
+Zope and Plone, especially when<br />customers will need to manage their own
+content. However, I have found<br />that through a combination of simple
+technologies, I can acheive all<br />the speed and convenience I have ever
+needed without any of the tedium<br />-- including HTML.</p><br /><br /><p>I
+have many friends who are emacs lovers, and I have heard all the<br
+/>arguments, yet I have been a vi/vim user for many years and do not ever<br
+/>see that changing. Additionally, I am a huge fan of python and the<br
+/>software version control system called Subversion. These three things<br
+/>have become merged into a seamless CMS that fits many of my content<br
+/>management needs.</p><br /><br /><p>Here are the components that I
+use:</p><br /><br /><p>* HTML templates<br/><br />* Ini-style config files for
+menus, stories, and other content (very easy to create/update)<br/><br />*
+Very simple python code to apply the content to templates and render HTML
+output<br/><br />* Subversion to manage site changes, versions, rollbacks,
+etc.<br/><br />* vim as a command-line tool to manage the content</p><br /><br
+/><p>The thing that really did it for me was a feature of vim I had never<br
+/>played with until recently: windows. Windows in vim are panes. they can<br
+/>be arranged vertically, horizontally, or any combination. They are easy<br
+/>to create (:vne, :new) and easy to maniuplate (^xw, etc.). I typically<br
+/>have 4-5 panes in a single terminal window open at any given time, and<br
+/>I can access all the buffers in any pane. This means that I can compare<br
+/>two python libraries side-by-side, edit the project web site (all in<br
+/>ini-file format!), update the ChangeLog and add to the TODO file all<br
+/>without haveing to change mental modes.</p><br /><br /><p>And that's the big
+key and biggest show stopper for any software<br />from a user perspective:
+does the tool you use cost you time in mental<br />adjustment while operating
+the standard tools of your trade? If so,<br />it's time to re-evaluate.</p><br
+/><br /><p>For me, I discovered that I was saving time. Huge chunks of lost<br
+/>time were regained and I was able to start doing many more tasks<br
+/>simultaneously, since I didn't have to shift mental modes. I have an<br
+/>irc session open on the development channel, an interactive python<br
+/>session for debugging and generating doc tests, and my ultra-vim<br
+/>terminal for code and content.</p><br /><br /><p>It's a beautiful
+thing.</p><br /><br /><p>I did try to run interactive python sessions in vim
+-- and with<br />success, too. A very nice plugin called vimsh developed by
+Brian Sturk.<br />However, I found that this actually slowed me down, so I
+switched back<br />to an independant terminal window.</p><br /><br /><p>I
+guess the moral of the story is explore and don't listen to The Man; use the
+tool that's best for you ;-)</p><br /></div>

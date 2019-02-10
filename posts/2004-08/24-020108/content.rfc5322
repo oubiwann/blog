@@ -11,4 +11,15 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software</i><br /><br /><p>It's been a couple years since I checked out freemind (a free "mind mapping" software for oganizing text/notes in loose relationships), and I just downloaded the latest version for Mac OS X. I must say, I'm impressed. </p>The software is very stable, provides *exactly* what I need, and is free :-) I highly recommend interested parties check it out:<br /><p style="text-indent: 1em;"><a href="http://freemind.sourceforge.net/" target="new">http://freemind.sourceforge.net/</a>.<p>Now, if they could only develop a live wiki version of the same thing ;-) Well, it's java, so I imagine it wouldn't be too hard to turn this into a servelet... of course, I'm not a java programmer and I have no right to make that statement!<p>Python port, anyone?</p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i
+class="categories">software</i><br /><br /><p>It's been a couple years since I
+checked out freemind (a free "mind mapping" software for oganizing text/notes
+in loose relationships), and I just downloaded the latest version for Mac OS
+X. I must say, I'm impressed. </p>The software is very stable, provides
+*exactly* what I need, and is free :-) I highly recommend interested parties
+check it out:<br /><p style="text-indent: 1em;"><a
+href="http://freemind.sourceforge.net/" target="new">http://freemind.sourcefor
+ge.net/</a>.<p>Now, if they could only develop a live wiki version of the same
+thing ;-) Well, it's java, so I imagine it wouldn't be too hard to turn this
+into a servelet... of course, I'm not a java programmer and I have no right to
+make that statement!<p>Python port, anyone?</p><br /></div>

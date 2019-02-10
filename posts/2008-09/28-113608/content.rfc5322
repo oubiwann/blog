@@ -11,4 +11,74 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />Sorry there's been so much radio silence at this end lately... a lot has been going on, and it looks like it's going to stay that way for a while. I just need to get used to it and start posting again :-)<br /><br /><span class="Apple-style-span" style="font-weight: bold;">Canonical</span><div><span class="Apple-style-span" style="font-weight: bold;"><br /></span>The big news is that <a href="http://www.canonical.com/">Canonical</a> quite took me by surprise :-) I had planned on doing consulting work again, but I was made an offer of camaraderie, to come join a team at Canonical that I know well, and I couldn't resist. I'm now working on the <a href="http://www.canonical.com/projects/landscape">Landscape</a> team at Canonical, the same folks who brought you the much beloved <a href="https://storm.canonical.com/">Storm ORM</a> :-)</div><div><br /></div><div>Already, I've been working there for two weeks and it's been a delight. They use a lot of the same processes that we did at Divmod and in the Twisted project (in fact, three of us on the team are Twisted developers), so that was very smooth. Another thing that made the transition very easy was manner in which they engage in a beautiful mix of group discussion and rapid development. The open source community roots at Canonical are very deep... and you can see them very clearly without digging :-)</div><div><br /></div><div>At Canonical, I've repeated run across old friends from my Zope days, from Hacking Society in Colorado, and other places/associations from my past. I am somewhat stunned at the job Canonical has done in acquiring a talented and dedicated workforce. I've never seen a company embrace open source at the level and to the degree that this company does, while at the same time retaining all of the most excellent qualities of the community within the corporate culture. Someone should do a socio-technological/business PhD thesis on these guys...</div><div><br /></div><div>In preparation for the many (and intense) marathon sprints that this team runs in a year, I've purchased a new laptop. It's the first dedicated Ubuntu dev machine/Desktop I've had... I've been running all my Ubuntu instances as virtual machines in Parallels and VMWare Fusion (or as remote servers at colos and virtual host providers). My love for the Evolution mail client continues to grow and I've found the only reason I miss the Mac is for the automatic handling of sound and to play Spore :-) </div><div><br /></div><div><span class="Apple-style-span" style="font-weight: bold;">SOA Conference</span></div><div><br /></div><div>Now on to some future stuff. I've been invited to speak about dynamic languages (Python) and ultra-large scale (ULS) systems at <a href="http://www.sda-india.com/conferences/soaindia2008/">SOA-India</a> this year in Bangalore. The industry that has grown up around service oriented architectures (SOA) overwhelmingly tends towards Java, so this is a really great sign. I think the efforts that the <a href="http://www.sun.com/">Java Mothership</a> has made in building bridges with dynamic languages such as Ruby and Python is having a tremendous impact throughout the programming world. I've got an eye on Ted Leung and the Jython team :-)</div><div><br /></div><div>Anyway, the conference promises to be quite interesting, with speakers from around the world and with diverse backgrounds. I'm expecting to return from Bangalore with a multitude of new ideas and lots of new avenues to explore.</div><div><br /></div><div><span class="Apple-style-span" style="font-weight: bold;">Blog </span></div><div><span class="Apple-style-span" style="font-weight: bold;"><br /></span></div><div>Speaking of SOA, I am still working on the second part of the book review for Josuttis' book <a href="http://www.soa-in-practice.com/">SOA in Practice</a>. Perhaps before I finish that one, though, I will blog about another O'Reilly title I have been enjoying immensely: Van Lindberg's <a href="http://oreilly.com/catalog/9780596517960/">Intellectual Property and Open Source</a>. Note that Van has been quite active in the Python community and is contributing his expertise at many levels for the benefit of us all. Regardless, the book is <span class="Apple-style-span" style="font-style: italic;">very</span> well written and I will have nothing but good to say about it :-)</div><div><br /></div><div>After that, I'm going to finish up the draft I have for a blog post on metaclasses, based on notes I took while working with <a href="http://www.incrediblepear.com/">Incredible Pear</a> on the <a href="http://www.pbs.org/">PBS</a> <a href="http://www.dtv.gov/">DTV</a> project.</div><div><br /></div><div>And finally, there have been more requests for me to write about setting up a <a href="http://oubiwann.blogspot.com/2006/07/twisted-mail-server.html">Twisted Mail server</a>... so, as one reader puts it, I will conclude the telling of that tale in an up-coming post as well :-)</div><br /><br /><br /></div>
+<div><br />Sorry there's been so much radio silence at this end lately... a
+lot has been going on, and it looks like it's going to stay that way for a
+while. I just need to get used to it and start posting again :-)<br /><br
+/><span class="Apple-style-span" style="font-weight:
+bold;">Canonical</span><div><span class="Apple-style-span" style="font-weight:
+bold;"><br /></span>The big news is that <a
+href="http://www.canonical.com/">Canonical</a> quite took me by surprise :-) I
+had planned on doing consulting work again, but I was made an offer of
+camaraderie, to come join a team at Canonical that I know well, and I couldn't
+resist. I'm now working on the <a
+href="http://www.canonical.com/projects/landscape">Landscape</a> team at
+Canonical, the same folks who brought you the much beloved <a
+href="https://storm.canonical.com/">Storm ORM</a> :-)</div><div><br
+/></div><div>Already, I've been working there for two weeks and it's been a
+delight. They use a lot of the same processes that we did at Divmod and in the
+Twisted project (in fact, three of us on the team are Twisted developers), so
+that was very smooth. Another thing that made the transition very easy was
+manner in which they engage in a beautiful mix of group discussion and rapid
+development. The open source community roots at Canonical are very deep... and
+you can see them very clearly without digging :-)</div><div><br
+/></div><div>At Canonical, I've repeated run across old friends from my Zope
+days, from Hacking Society in Colorado, and other places/associations from my
+past. I am somewhat stunned at the job Canonical has done in acquiring a
+talented and dedicated workforce. I've never seen a company embrace open
+source at the level and to the degree that this company does, while at the
+same time retaining all of the most excellent qualities of the community
+within the corporate culture. Someone should do a socio-technological/business
+PhD thesis on these guys...</div><div><br /></div><div>In preparation for the
+many (and intense) marathon sprints that this team runs in a year, I've
+purchased a new laptop. It's the first dedicated Ubuntu dev machine/Desktop
+I've had... I've been running all my Ubuntu instances as virtual machines in
+Parallels and VMWare Fusion (or as remote servers at colos and virtual host
+providers). My love for the Evolution mail client continues to grow and I've
+found the only reason I miss the Mac is for the automatic handling of sound
+and to play Spore :-) </div><div><br /></div><div><span
+class="Apple-style-span" style="font-weight: bold;">SOA
+Conference</span></div><div><br /></div><div>Now on to some future stuff. I've
+been invited to speak about dynamic languages (Python) and ultra-large scale
+(ULS) systems at <a
+href="http://www.sda-india.com/conferences/soaindia2008/">SOA-India</a> this
+year in Bangalore. The industry that has grown up around service oriented
+architectures (SOA) overwhelmingly tends towards Java, so this is a really
+great sign. I think the efforts that the <a href="http://www.sun.com/">Java
+Mothership</a> has made in building bridges with dynamic languages such as
+Ruby and Python is having a tremendous impact throughout the programming
+world. I've got an eye on Ted Leung and the Jython team :-)</div><div><br
+/></div><div>Anyway, the conference promises to be quite interesting, with
+speakers from around the world and with diverse backgrounds. I'm expecting to
+return from Bangalore with a multitude of new ideas and lots of new avenues to
+explore.</div><div><br /></div><div><span class="Apple-style-span"
+style="font-weight: bold;">Blog </span></div><div><span
+class="Apple-style-span" style="font-weight: bold;"><br
+/></span></div><div>Speaking of SOA, I am still working on the second part of
+the book review for Josuttis' book <a
+href="http://www.soa-in-practice.com/">SOA in Practice</a>. Perhaps before I
+finish that one, though, I will blog about another O'Reilly title I have been
+enjoying immensely: Van Lindberg's <a
+href="http://oreilly.com/catalog/9780596517960/">Intellectual Property and
+Open Source</a>. Note that Van has been quite active in the Python community
+and is contributing his expertise at many levels for the benefit of us all.
+Regardless, the book is <span class="Apple-style-span" style="font-style:
+italic;">very</span> well written and I will have nothing but good to say
+about it :-)</div><div><br /></div><div>After that, I'm going to finish up the
+draft I have for a blog post on metaclasses, based on notes I took while
+working with <a href="http://www.incrediblepear.com/">Incredible Pear</a> on
+the <a href="http://www.pbs.org/">PBS</a> <a
+href="http://www.dtv.gov/">DTV</a> project.</div><div><br /></div><div>And
+finally, there have been more requests for me to write about setting up a <a
+href="http://oubiwann.blogspot.com/2006/07/twisted-mail-server.html">Twisted M
+ail server</a>... so, as one reader puts it, I will conclude the telling of
+that tale in an up-coming post as well :-)</div><br /><br /><br /></div>

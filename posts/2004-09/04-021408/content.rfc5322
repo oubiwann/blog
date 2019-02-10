@@ -11,4 +11,44 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml">So, a few things:<br /><br /><ol><li>I was bored last night working on the AOL project (QA phase... blech!)</li><li>I therefore played some NWN with my new level 15 samurai (12 fighter, 3 weapons master prestige class).<br /></li><li>I wanted to relax after that, so I played some simcity4 and ran my city into serious backruptcy.</li><li>Then I wanted to challenge my mind :-) So, back to python!</li></ol><p>Though not an avid player (too little time and too few friends into old-school RPGing), my favorite part of D&amp;D is character development. I absolutely love it. As a by-product of this, I would also like to see much greater complexity of interaction and response་between players and NPCs. Thus, a while ago I decided to start thinking་about that, and one of the results was the seasonal system for Rook:<br /><br /><a href="http://rooksaga.net/plan/wiki/RookTimeAndPlanetStats" target="new">Rook Seasons and Planets</a><br /><br />and then system of astrology used on Rook:<br /><br /><a href="http://rooksaga.net/plan/wiki/RookAstrology" target="new">Rook Astrology</a></p>Categorizing that stuff and breaking it down for compatibilities and་temperments is going to be quite a task. However, it will be a fun one.<br /><p>I think a cool side affect of writing that code is that we will then be་able to translate between Rook signs and Earth signs, and thus we could་actually "use it" or at the very least, refer to it meaningfully. (More་than just I'm an Igou, Karthik is a Kvuang, and Greg is a Rookwuni.<br />Heh, that's still pretty cool.)</p><p>The code I <b>did</b> write:<br /><br />Last night, I wrote the first code. I decided to start with something་known and easily classifiable, temperaments as well as compatibilities:་Myers-Briggs. The initial delvings are now in the subversion repository.</p><p>This stuff is really cool, because I decided to use some tricks from་quantum mechanics math (the stuff we did with eigenvectors/values,་etc.) and use matrices and vectors composed of signed values (+/-1).་Under certain operations, patterns begin to emerge (nullifications and<br />doublings). I haven't explored this fully yet, but the dot products་with one's personality vecotor and a compatible type seem to result in་'2'. I have to exhaustively show all dot products to really establish a་pattern. But at the very least, this is interesting information and<br />methodology.</p>The fact that it may be reducible to operations in linear algebra is་good! Computable = predictable = appropriate system for gaming and་computations.<br /></div><br /><br /><p style="text-align: right; font-size: 10px;">Technorati Tags: <a href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a href="http://www.technorati.com/tag/games" rel="tag">games</a>, <a href="http://www.technorati.com/tag/mathematics" rel="tag">mathematics</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a></p>
+<div xmlns="http://www.w3.org/1999/xhtml">So, a few things:<br /><br
+/><ol><li>I was bored last night working on the AOL project (QA phase...
+blech!)</li><li>I therefore played some NWN with my new level 15 samurai (12
+fighter, 3 weapons master prestige class).<br /></li><li>I wanted to relax
+after that, so I played some simcity4 and ran my city into serious
+backruptcy.</li><li>Then I wanted to challenge my mind :-) So, back to
+python!</li></ol><p>Though not an avid player (too little time and too few
+friends into old-school RPGing), my favorite part of D&amp;D is character
+development. I absolutely love it. As a by-product of this, I would also like
+to see much greater complexity of interaction and response་between players and
+NPCs. Thus, a while ago I decided to start thinking་about that, and one of the
+results was the seasonal system for Rook:<br /><br /><a
+href="http://rooksaga.net/plan/wiki/RookTimeAndPlanetStats" target="new">Rook
+Seasons and Planets</a><br /><br />and then system of astrology used on
+Rook:<br /><br /><a href="http://rooksaga.net/plan/wiki/RookAstrology"
+target="new">Rook Astrology</a></p>Categorizing that stuff and breaking it
+down for compatibilities and་temperments is going to be quite a task. However,
+it will be a fun one.<br /><p>I think a cool side affect of writing that code
+is that we will then be་able to translate between Rook signs and Earth signs,
+and thus we could་actually "use it" or at the very least, refer to it
+meaningfully. (More་than just I'm an Igou, Karthik is a Kvuang, and Greg is a
+Rookwuni.<br />Heh, that's still pretty cool.)</p><p>The code I <b>did</b>
+write:<br /><br />Last night, I wrote the first code. I decided to start with
+something་known and easily classifiable, temperaments as well as
+compatibilities:་Myers-Briggs. The initial delvings are now in the subversion
+repository.</p><p>This stuff is really cool, because I decided to use some
+tricks from་quantum mechanics math (the stuff we did with
+eigenvectors/values,་etc.) and use matrices and vectors composed of signed
+values (+/-1).་Under certain operations, patterns begin to emerge
+(nullifications and<br />doublings). I haven't explored this fully yet, but
+the dot products་with one's personality vecotor and a compatible type seem to
+result in་'2'. I have to exhaustively show all dot products to really
+establish a་pattern. But at the very least, this is interesting information
+and<br />methodology.</p>The fact that it may be reducible to operations in
+linear algebra is་good! Computable = predictable = appropriate system for
+gaming and་computations.<br /></div><br /><br /><p style="text-align: right;
+font-size: 10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a
+href="http://www.technorati.com/tag/games" rel="tag">games</a>, <a
+href="http://www.technorati.com/tag/mathematics" rel="tag">mathematics</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a></p>

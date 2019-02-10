@@ -11,4 +11,17 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />I've been getting lots of emails from folks asking for the Twisted JSON-RPC code that I had put up a while ago. They weren't able to find it due to my having to bring down the trac instances I was running. Good news: I've moved the repository up to Google:<br /><blockquote><a href="http://code.google.com/p/twisted-jsonrpc/">http://code.google.com/p/twisted-jsonrpc/</a></blockquote>The front page has a link to the wiki which in turn has all the usage info. You can get recent eggs here:<br /><blockquote><a href="http://twisted-jsonrpc.googlecode.com/svn/releases/">http://twisted-jsonrpc.googlecode.com/svn/releases/</a></blockquote>If you want to contribute to this code base and bring it up to date, email me.<br /><br />Enjoy!<br /><br /><b>Update: </b>Primary development has moved to <a href="https://launchpad.net/txjsonrpc">Launchpad</a>. Documentation is maintained on the Ubuntu.com wiki page <a href="https://wiki.ubuntu.com/txJSON-RPC">here</a>.<br /><br /><br /></div>
+<div><br />I've been getting lots of emails from folks asking for the Twisted
+JSON-RPC code that I had put up a while ago. They weren't able to find it due
+to my having to bring down the trac instances I was running. Good news: I've
+moved the repository up to Google:<br /><blockquote><a
+href="http://code.google.com/p/twisted-jsonrpc/">http://code.google.com/p/twis
+ted-jsonrpc/</a></blockquote>The front page has a link to the wiki which in
+turn has all the usage info. You can get recent eggs here:<br /><blockquote><a
+href="http://twisted-jsonrpc.googlecode.com/svn/releases/">http://twisted-json
+rpc.googlecode.com/svn/releases/</a></blockquote>If you want to contribute to
+this code base and bring it up to date, email me.<br /><br />Enjoy!<br /><br
+/><b>Update: </b>Primary development has moved to <a
+href="https://launchpad.net/txjsonrpc">Launchpad</a>. Documentation is
+maintained on the Ubuntu.com wiki page <a
+href="https://wiki.ubuntu.com/txJSON-RPC">here</a>.<br /><br /><br /></div>

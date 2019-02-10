@@ -11,4 +11,12 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: programming</i><br/><br/><p/><br /><div blog="entry"><p><br />Okay, two developers that I <b>highly</b> regard are working on <br />something very, very cool: a package/utility that works around <br />distutils limitations and will be able to provide the same <br />functionality as java .jar files do, but for python. And then some. <br />They are called python .egg files, and you can read about them here:<br /></p><br /><p><a href="http://tinyurl.com/58m22">Python Eggs</a><br/><br /><a href="http://tinyurl.com/6fqxo">DirtSimple</a><br/></p><p/></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python ::
+programming</i><br/><br/><p/><br /><div blog="entry"><p><br />Okay, two
+developers that I <b>highly</b> regard are working on <br />something very,
+very cool: a package/utility that works around <br />distutils limitations and
+will be able to provide the same <br />functionality as java .jar files do,
+but for python. And then some. <br />They are called python .egg files, and
+you can read about them here:<br /></p><br /><p><a
+href="http://tinyurl.com/58m22">Python Eggs</a><br/><br /><a
+href="http://tinyurl.com/6fqxo">DirtSimple</a><br/></p><p/></div><br /></div>

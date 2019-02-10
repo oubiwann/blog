@@ -11,4 +11,124 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-bQVLzktn0qU/VZ_nvqNDrsI/AAAAAAAABos/KkBfsd7ycVM/s1600/7542OS_Mastering%2BMatplotlib.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="https://2.bp.blogspot.com/-bQVLzktn0qU/VZ_nvqNDrsI/AAAAAAAABos/KkBfsd7ycVM/s320/7542OS_Mastering%2BMatplotlib.jpg" width="259" /></a></div><h2>The Book</h2>Well, after nine months of hard work, the book is finally out! It's available both on <a href="https://www.packtpub.com/big-data-and-business-intelligence/mastering-matplotlib">Packt's site</a> and <a href="https://www.amazon.com/gp/product/1783987545/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1783987545&amp;linkCode=as2&amp;tag=forgottenroad-20&amp;linkId=9bf1fc9b1edf875130800eead4c925b2" target="_blank">Amazon.com</a>. Getting up early every morning to write takes a lot of discipline, it takes even more to say "no" to enticing rabbit holes or herds of Yak with luxurious coats ripe for shaving ... (truth be told, I still did a bit of that).<br /><br />The team I worked with at Packt was just amazing. Highly professional and deeply supportive, they were a complete pleasure with which to collaborate. It was the best experience I could have hoped for. Thanks, guys!<br /><br />The technical reviewers for the book were just <i>fantastic.</i>&nbsp;I've stated elsewhere that my one regret was that the process with the reviewers did not have a tighter feedback loop. I would have <i>really</i> enjoyed collaborating with them from the beginning so that some of their really good ideas could have been integrated into the book. Regardless, their feedback as I got it later in the process helped make this book more approachable by readers, more consistent, and more accurate. The reviewers have bios at the beginning of the book -- read them, and look them up! These folks are all amazing!<br /><br />The one thing that slipped in the final crunch was the acknowledgements, and I hope to make up for that here, as well as through various emails to everyone who provided their support, either directly or indirectly.<br /><br /><h2>Acknowledgments</h2>The first two folks I reached out to when starting the book were both physics professors who had published very nice matplotlib problems -- one set for undergraduate students and another from work at the <a href="http://www.nrao.edu/">National Radio Astronomy Observatory</a>. I asked for their permission to adapt these problems to the API chapter, and they graciously granted it. What followed were some very nice conversations about matplotlib, programming, physics, education, and publishing. Thanks to <a href="http://www.redlands.edu/academics/college-of-arts-sciences/undergraduate-studies/physics/2234.aspx#.VZ_t79NVhBc">Professor Alan DeWeerd</a>,&nbsp;University of Redlands and&nbsp;<a href="http://www.hsc.edu/Academics/Academic-Majors/Physics-and-Astronomy/Professors/Jonathan-Keohane.html">Professor&nbsp;Jonathan W. Keohane</a>, Hampden Sydney College. Note that Dr.&nbsp;Keohane has a <a href="https://www.linkedin.com/pub/jonathan-keohane/42/713/667">book coming out in the fall</a>&nbsp;from Yale University Press entitled&nbsp;<i>Classical Electrodynamics</i> -- it&nbsp;will contain examples in matplotlib.<br /><br />Other examples adapted for use in the API chapter included one by&nbsp;<a href="http://www.physics.utoronto.ca/~dbailey/">Professor David Bailey</a>, University of Toronto. Though his example didn't make it into the book, it gets full coverage in the Chapter 3 IPython notebook.<br /><br />For one of the EM examples I needed to derive a particular equation for an electromagnetic field in two wires traveling in opposite directions. It's been nearly 20 years since my post-Army college physics, so I was very grateful for the existence and excellence of <a href="http://www.sympy.org/en/index.html">SymPy</a> which enabled me to check my work with its symbolic computations. A special thanks to the SymPy creators and maintainers.<br /><br />Please note that if there are errors in the equations, they are my fault! Not that of the esteemed professors or of SymPy :-)<br /><br />Many of the examples throughout the book were derived from work done by the matplotlib and Seaborn contributors. The work they have done on the documentation in the past 10 years has been amazing -- the community is truly lucky to have such resources at their fingertips.<br /><br />In particular, <a href="https://github.com/WeatherGod">Benjamin Root</a> is an astounding community supporter on the matplotlib mail list, helping users of every level with all of their needs. Benjamin and I had several very nice email exchanges during the writing of this book, and he provided some excellent pointers, as he was finishing his own title for Packt:&nbsp;<a href="https://www.packtpub.com/application-development/interactive-applications-using-matplotlib" style="font-style: italic;">Interactive Applications Using Matplotlib</a>. It was geophysicist and matplotlib savant <a href="https://github.com/joferkington">Joe Kington</a> who originally put us in touch, and I'd like to thank Joe -- on everyone's behalf -- for his <i>amazing</i>&nbsp;answers to matplotlib and related questions on StackOverflow. Joe inspired many changes and adjustments in the sample code for this book. In fact, I had originally intended to feature his work in the chapter on advanced customization (but ran out of space), since Joe has one of the best examples out there for matplotlib transforms. If you don't believe me, check out his work on <a href="https://github.com/joferkington/mplstereonet/tree/master/mplstereonet">stereonets</a>. There are many of us who hope that Joe will be authoring his own matplotlib book in the future ...<br /><br /><a href="http://www.olgabotvinnik.com/#linkedin-resume">Olga Botvinnik</a>, a contributor to Seaborn and PhD candidate at UC San Diego (and BioEng/Math double major at MIT), provided fantastic support for my Seaborn questions. Her knowledge, skills, and spirit of open source will help build the community around Seaborn in the years to come. Thanks, Olga!<br /><br />While on the topic of matplotlib contributors, I'd like to give a special thanks to John Hunter for his inspiration, hard work, and passionate contributions which made matplotlib a reality. My deepest condolences to his family and friends for their tremendous loss.<br /><br />Quite possibly the tool that had the single-greatest impact on the authoring of this book was IPython and its notebook feature. This brought back all the best memories from using Mathematica in school. Combined with the Python programming language, I can't imagine a better platform for collaborating on math-related problems or producing teaching materials for the same. These compliments are not limited to the user experience, either: the new architecture using ZeroMQ is a work of art. Nicely done, IPython community! The IPython notebook index for the book is available in the book's Github org <a href="https://github.com/masteringmatplotlib/notebooks">here</a>.<br /><br />In Chapters 7 and 8 I encountered a bit of a crisis when trying to work with Python 3 in cloud environments. What was almost a disaster ended up being rescued by the work that Barry Warsaw and the rest of the Ubuntu team did in Ubuntu 15.04, getting Python 3.4.2 into the release and available on Amazon EC2. You guys saved my bacon!<br /><br />Chapter 7's fictional case study examining the Landsat 8 data for part of Greenland was based on one of Milos Miljkovic's tutorials from PyData 2014, "<a href="https://github.com/HyperionAnalytics/PyDataNYC2014">Analyzing Satellite Images With Python Scientific Stack</a>". I hope readers have just as much fun working with satellite data as I did. Huge thanks to NASA, USGS, the Landsat 8 teams, and the EROS facility in Sioux Falls, SD.<br /><br />My favourite section in Chapter 8 was the one on HDF5. This was greatly inspired by Yves Hilpisch's presentation "<a href="http://hilpisch.com/TPQ_Out_of_Memory_Analytics.html#/">Out-of-Memory Data Analytics with Python</a>". Many thanks to Yves for putting that together and sharing with the world. We should all be doing more with HDF5.<br /><br />Finally, and this almost goes without saying, the work that the Python community has done to create Python 3 has been just phenomenal. Guido's vision for the evolution of the language, combined with the efforts of the community, have made something great. I had more fun working on Python 3 than I have had in many years.<br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://2.bp.blogspot.com/-bQVLzktn0qU/VZ_nvqNDrsI/AAAAAAAABos/KkBfsd7ycV
+M/s1600/7542OS_Mastering%2BMatplotlib.jpg" imageanchor="1" style="clear: left;
+float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+height="320" src="https://2.bp.blogspot.com/-bQVLzktn0qU/VZ_nvqNDrsI/AAAAAAAAB
+os/KkBfsd7ycVM/s320/7542OS_Mastering%2BMatplotlib.jpg" width="259"
+/></a></div><h2>The Book</h2>Well, after nine months of hard work, the book is
+finally out! It's available both on <a
+href="https://www.packtpub.com/big-data-and-business-intelligence/mastering-ma
+tplotlib">Packt's site</a> and <a
+href="https://www.amazon.com/gp/product/1783987545/ref=as_li_tl?ie=UTF8&amp;ca
+mp=1789&amp;creative=9325&amp;creativeASIN=1783987545&amp;linkCode=as2&amp;tag
+=forgottenroad-20&amp;linkId=9bf1fc9b1edf875130800eead4c925b2" target="_blank"
+>Amazon.com</a>. Getting up early every morning to write takes a lot of
+discipline, it takes even more to say "no" to enticing rabbit holes or herds
+of Yak with luxurious coats ripe for shaving ... (truth be told, I still did a
+bit of that).<br /><br />The team I worked with at Packt was just amazing.
+Highly professional and deeply supportive, they were a complete pleasure with
+which to collaborate. It was the best experience I could have hoped for.
+Thanks, guys!<br /><br />The technical reviewers for the book were just
+<i>fantastic.</i>&nbsp;I've stated elsewhere that my one regret was that the
+process with the reviewers did not have a tighter feedback loop. I would have
+<i>really</i> enjoyed collaborating with them from the beginning so that some
+of their really good ideas could have been integrated into the book.
+Regardless, their feedback as I got it later in the process helped make this
+book more approachable by readers, more consistent, and more accurate. The
+reviewers have bios at the beginning of the book -- read them, and look them
+up! These folks are all amazing!<br /><br />The one thing that slipped in the
+final crunch was the acknowledgements, and I hope to make up for that here, as
+well as through various emails to everyone who provided their support, either
+directly or indirectly.<br /><br /><h2>Acknowledgments</h2>The first two folks
+I reached out to when starting the book were both physics professors who had
+published very nice matplotlib problems -- one set for undergraduate students
+and another from work at the <a href="http://www.nrao.edu/">National Radio
+Astronomy Observatory</a>. I asked for their permission to adapt these
+problems to the API chapter, and they graciously granted it. What followed
+were some very nice conversations about matplotlib, programming, physics,
+education, and publishing. Thanks to <a
+href="http://www.redlands.edu/academics/college-of-arts-sciences/undergraduate
+-studies/physics/2234.aspx#.VZ_t79NVhBc">Professor Alan
+DeWeerd</a>,&nbsp;University of Redlands and&nbsp;<a
+href="http://www.hsc.edu/Academics/Academic-Majors/Physics-and-Astronomy/Profe
+ssors/Jonathan-Keohane.html">Professor&nbsp;Jonathan W. Keohane</a>, Hampden
+Sydney College. Note that Dr.&nbsp;Keohane has a <a
+href="https://www.linkedin.com/pub/jonathan-keohane/42/713/667">book coming
+out in the fall</a>&nbsp;from Yale University Press entitled&nbsp;<i>Classical
+Electrodynamics</i> -- it&nbsp;will contain examples in matplotlib.<br /><br
+/>Other examples adapted for use in the API chapter included one by&nbsp;<a
+href="http://www.physics.utoronto.ca/~dbailey/">Professor David Bailey</a>,
+University of Toronto. Though his example didn't make it into the book, it
+gets full coverage in the Chapter 3 IPython notebook.<br /><br />For one of
+the EM examples I needed to derive a particular equation for an
+electromagnetic field in two wires traveling in opposite directions. It's been
+nearly 20 years since my post-Army college physics, so I was very grateful for
+the existence and excellence of <a
+href="http://www.sympy.org/en/index.html">SymPy</a> which enabled me to check
+my work with its symbolic computations. A special thanks to the SymPy creators
+and maintainers.<br /><br />Please note that if there are errors in the
+equations, they are my fault! Not that of the esteemed professors or of SymPy
+:-)<br /><br />Many of the examples throughout the book were derived from work
+done by the matplotlib and Seaborn contributors. The work they have done on
+the documentation in the past 10 years has been amazing -- the community is
+truly lucky to have such resources at their fingertips.<br /><br />In
+particular, <a href="https://github.com/WeatherGod">Benjamin Root</a> is an
+astounding community supporter on the matplotlib mail list, helping users of
+every level with all of their needs. Benjamin and I had several very nice
+email exchanges during the writing of this book, and he provided some
+excellent pointers, as he was finishing his own title for Packt:&nbsp;<a
+href="https://www.packtpub.com/application-development/interactive-application
+s-using-matplotlib" style="font-style: italic;">Interactive Applications Using
+Matplotlib</a>. It was geophysicist and matplotlib savant <a
+href="https://github.com/joferkington">Joe Kington</a> who originally put us
+in touch, and I'd like to thank Joe -- on everyone's behalf -- for his
+<i>amazing</i>&nbsp;answers to matplotlib and related questions on
+StackOverflow. Joe inspired many changes and adjustments in the sample code
+for this book. In fact, I had originally intended to feature his work in the
+chapter on advanced customization (but ran out of space), since Joe has one of
+the best examples out there for matplotlib transforms. If you don't believe
+me, check out his work on <a
+href="https://github.com/joferkington/mplstereonet/tree/master/mplstereonet">s
+tereonets</a>. There are many of us who hope that Joe will be authoring his
+own matplotlib book in the future ...<br /><br /><a
+href="http://www.olgabotvinnik.com/#linkedin-resume">Olga Botvinnik</a>, a
+contributor to Seaborn and PhD candidate at UC San Diego (and BioEng/Math
+double major at MIT), provided fantastic support for my Seaborn questions. Her
+knowledge, skills, and spirit of open source will help build the community
+around Seaborn in the years to come. Thanks, Olga!<br /><br />While on the
+topic of matplotlib contributors, I'd like to give a special thanks to John
+Hunter for his inspiration, hard work, and passionate contributions which made
+matplotlib a reality. My deepest condolences to his family and friends for
+their tremendous loss.<br /><br />Quite possibly the tool that had the
+single-greatest impact on the authoring of this book was IPython and its
+notebook feature. This brought back all the best memories from using
+Mathematica in school. Combined with the Python programming language, I can't
+imagine a better platform for collaborating on math-related problems or
+producing teaching materials for the same. These compliments are not limited
+to the user experience, either: the new architecture using ZeroMQ is a work of
+art. Nicely done, IPython community! The IPython notebook index for the book
+is available in the book's Github org <a
+href="https://github.com/masteringmatplotlib/notebooks">here</a>.<br /><br
+/>In Chapters 7 and 8 I encountered a bit of a crisis when trying to work with
+Python 3 in cloud environments. What was almost a disaster ended up being
+rescued by the work that Barry Warsaw and the rest of the Ubuntu team did in
+Ubuntu 15.04, getting Python 3.4.2 into the release and available on Amazon
+EC2. You guys saved my bacon!<br /><br />Chapter 7's fictional case study
+examining the Landsat 8 data for part of Greenland was based on one of Milos
+Miljkovic's tutorials from PyData 2014, "<a
+href="https://github.com/HyperionAnalytics/PyDataNYC2014">Analyzing Satellite
+Images With Python Scientific Stack</a>". I hope readers have just as much fun
+working with satellite data as I did. Huge thanks to NASA, USGS, the Landsat 8
+teams, and the EROS facility in Sioux Falls, SD.<br /><br />My favourite
+section in Chapter 8 was the one on HDF5. This was greatly inspired by Yves
+Hilpisch's presentation "<a
+href="http://hilpisch.com/TPQ_Out_of_Memory_Analytics.html#/">Out-of-Memory Da
+ta Analytics with Python</a>". Many thanks to Yves for putting that together
+and sharing with the world. We should all be doing more with HDF5.<br /><br
+/>Finally, and this almost goes without saying, the work that the Python
+community has done to create Python 3 has been just phenomenal. Guido's vision
+for the evolution of the language, combined with the efforts of the community,
+have made something great. I had more fun working on Python 3 than I have had
+in many years.<br /><br />

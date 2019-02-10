@@ -11,4 +11,31 @@ Comments:
 Content-Type: md
 Public?: true
 
-Nevow needs a screencast. Because it's so damned hot and people need to see it in action. They need to see how frickin' amazing it is.<br /><br /><br />Case in point: on a *whim* I decided to migrate a site I built last year in z3 to nevow. I had a spare hour, so what the hell. It took me *minutes*. And I don't mean 6487 minutes -- I mean 30 minutes. Here's what I did:<br /><ul><br /><li>Copied HTML output from the other site and used as the basis for an XHTML template</li><br /><li>Copied CSS and images from the other site</li><br /><li>Wrote a backend data store that uses RFC 2822 (python's email package)</li><br /><li>Wrote a ui.UI class, subclassing nevow.rend.Page (including children, data calls, etc)</li><br /><li>Added data and render calls in the XHTML template</li><br /><li>Wrote a .tac file</li><br /><li>Populated 5 RFC 2822-compliant files with data and headers for the content</li><br /><li>Started up the server and watched the new site scream</li><br /></ul><br /><br />Let me emphasize a crucial point here: *none* of that was stubbed. No helper-scripts. No installers. There was pre-existsing HTML, CSS and images, and that's it. I did some dicking around and tweaking in the process, so I'm *sure* I could do the whole thing -- from start to finish -- in less than 20 minutes. Probably 15.<br /><br />I don't understand why more developers aren't using Nevow. It just kicks ass. Yeah, every platform has its issues, and Nevow's no exception. But DAMN. I get record-setting development times with it, it runs fast, and it's insanely flexible.<br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a href="http://www.technorati.com/tag/nevow" rel="tag">nevow</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></p><!-- technorati tags end -->
+Nevow needs a screencast. Because it's so damned hot and people need to see it
+in action. They need to see how frickin' amazing it is.<br /><br /><br />Case
+in point: on a *whim* I decided to migrate a site I built last year in z3 to
+nevow. I had a spare hour, so what the hell. It took me *minutes*. And I don't
+mean 6487 minutes -- I mean 30 minutes. Here's what I did:<br /><ul><br
+/><li>Copied HTML output from the other site and used as the basis for an
+XHTML template</li><br /><li>Copied CSS and images from the other site</li><br
+/><li>Wrote a backend data store that uses RFC 2822 (python's email
+package)</li><br /><li>Wrote a ui.UI class, subclassing nevow.rend.Page
+(including children, data calls, etc)</li><br /><li>Added data and render
+calls in the XHTML template</li><br /><li>Wrote a .tac file</li><br
+/><li>Populated 5 RFC 2822-compliant files with data and headers for the
+content</li><br /><li>Started up the server and watched the new site
+scream</li><br /></ul><br /><br />Let me emphasize a crucial point here:
+*none* of that was stubbed. No helper-scripts. No installers. There was
+pre-existsing HTML, CSS and images, and that's it. I did some dicking around
+and tweaking in the process, so I'm *sure* I could do the whole thing -- from
+start to finish -- in less than 20 minutes. Probably 15.<br /><br />I don't
+understand why more developers aren't using Nevow. It just kicks ass. Yeah,
+every platform has its issues, and Nevow's no exception. But DAMN. I get
+record-setting development times with it, it runs fast, and it's insanely
+flexible.<br /><!-- technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/divmod" rel="tag">divmod</a>, <a
+href="http://www.technorati.com/tag/nevow" rel="tag">nevow</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a
+href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a></p><!--
+technorati tags end -->

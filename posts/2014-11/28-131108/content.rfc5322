@@ -11,4 +11,117 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Nwk7ljTWXws/VHi18FUA7dI/AAAAAAAAATU/9K9bUHHmhss/s1600/Hy_Lang_Logo_x2000.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-Nwk7ljTWXws/VHi18FUA7dI/AAAAAAAAATU/9K9bUHHmhss/s1600/Hy_Lang_Logo_x2000.png" height="200" width="200" /></a></div>This blog post is a bit different than other technical posts I've done in the past in that the majority of the content is not on the blog in or gists; instead, it is in an <a href="http://ipython.org/">IPython</a> notebook. Having adored Mathematica back in the 90s, you can imagine how much I love the <a href="http://ipython.org/notebook.html">IPython Notebook</a> app. I'll have more to say on that at a future date.<br /><br />I've been doing a great deal of <a href="http://www.numpy.org/">NumPy</a> and <a href="http://matplotlib.org/">matplotlib</a> again lately, every day for hours a day. In conjunction with <a href="https://us.pycon.org/2013/schedule/presentation/117/">the new features in Python 3</a>, this has been quite a lot of fun -- the most fun I've had with Python in years (thanks Guido, et al!). As you might have guessed, I'm also using it with Erlang (specifically, <a href="http://lfe.io/">LFE</a>), but that too is for a post yet to come.<br /><br />With all this matplotlib and numpy work in standard Python, I've been going through Lisp withdrawals and needed to work with it from a fresh perspective. Needless to say, I had an enormous amount of fun doing this. Naturally, I decided to share with folks how one can do the latest and greatest with the tools of Python scientific computing, but in the syntax of the Python community's best kept secret: <a href="http://hylang.org/">Clojure-Flavoured Python</a>&nbsp;(<a href="https://github.com/hylang/hy">Github</a>, <a href="https://twitter.com/hylang">Twitter</a>, <a href="http://en.wikipedia.org/wiki/Hy">Wikipedia</a>).<br /><br /><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: right; margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align: center;"><a href="http://3.bp.blogspot.com/-vYxH5anFtQA/VHi6l4ZhF6I/AAAAAAAAATg/EYa8CSkE1lg/s1600/Final-Image.png" imageanchor="1" style="clear: right; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" src="http://3.bp.blogspot.com/-vYxH5anFtQA/VHi6l4ZhF6I/AAAAAAAAATg/EYa8CSkE1lg/s1600/Final-Image.png" height="200" width="198" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Spoiler: observed data and<br />polynomial&nbsp;curve fitting</td></tr></tbody></table>Looking about for ideas, I decided to see what <a href="http://clojure.org/">Clojure</a>'s <a href="http://data-sorcery.org/">Incanter</a> project had for tutorials, and immediately found what I was looking for:&nbsp;<a href="http://data-sorcery.org/2009/06/04/linear-regression-with-higher-order-terms/">Linear regression with higher-order terms</a>, a 2009 post by&nbsp;<a href="https://twitter.com/liebke">David Edgar Liebke</a>.<br /><br />Nearly every cell in the tutorial notebook is in Hy, and for that we owe a huge thanks to&nbsp;<a href="https://github.com/yardsale8">yardsale8</a> for his <a href="https://github.com/yardsale8/hymagic">Hy IPython magics code</a>. For those that love Python and Lisp equally, who are familiar with the ecosystems' tools, Hy offers a wonderful option for being highly productive with a language supporting Lisp- and Clojure-style macros. You can get your work done, have a great time doing it, and let that inner code artist out!<br /><br />(In fact, I've started writing a macro for one of the examples in the tutorial, offering a more Lisp-like syntax for creating class methods. We'll see what <a href="https://twitter.com/paultag">Paul Tagliamonte</a> has to say about it when it's done ... !)<br /><br />If you want to check out the notebook code and run it locally, just do the following:<br /><script src="https://gist.github.com/oubiwann/4ce8ee7100ff90d3d3d1.js?file=checkout.txt"></script> <br />This will do the following:<br /><br /><ul><li>Create a virtualenv using Python 3</li><li>Download all the dependencies, and then</li><li>Start up the notebook using a local IPython HTTP server</li></ul><br />If you just want to read along, you're more than welcome to do that as well, thanks to the <a href="http://nbviewer.ipython.org/">IPython NBViewer service</a>. Here's the link:&nbsp;<a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb">Scientific Computing with Hy: Linear Regressions</a>.<br /><br />One thing I couldn't get working was the community-provided code for <a href="https://github.com/minrk/ipython_extensions">generating tables of contents in IPython notebooks</a>. If you have any expertise in this area, I'd <i>love</i>&nbsp;to get your feedback to see how I need to configure the custom <a href="https://github.com/oubiwann/linear-regression-tutorial/tree/master/.ipython/profile_ihy">ihy IPython profile</a> for this tutorial.<br /><br />Without that, I've opted for the manual approach and have provided a table of contents here:<br /><ul><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Introduction">Introduction</a></li><ul><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Curve-Fitting-and-Linear-Regressions">Curve Fitting and Linear Regressions</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Scientific-Computing-in-Python">Scientific Computing in Python</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#About-Hy">About Hy</a></li></ul><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Preparation">Preparation</a></li><ul><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Getting-the-Code">Getting the Code</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Using-Hy">Using Hy</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#IPython-Setup">IPython Setup</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Imports-and-Color-Palette-Config">Imports and Color Palette Config</a></li></ul><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Loading-the-Observed-Data">Loading the Observed Data</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Viewing-the-Data">Viewing the Data</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Curve-Fitting">Curve-Fitting</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Polynomial-Linear-Regression">Polynomial Linear Regression</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#A-Linear-Model-Class">A Linear Model Class</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Plotting-the-Model-with-the-Observed-Data">Plotting the Model with the Observed Data</a></li></ul><div>If all goes well, you will enjoy that as much as I did :-)</div><div><br /></div><div>More soon ...</div><div><br /></div><div><br /></div>
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://1.bp.blogspot.com/-Nwk7ljTWXws/VHi18FUA7dI/AAAAAAAAATU/9K9bUHHmhs
+s/s1600/Hy_Lang_Logo_x2000.png" imageanchor="1" style="clear: left; float:
+left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+src="http://1.bp.blogspot.com/-Nwk7ljTWXws/VHi18FUA7dI/AAAAAAAAATU/9K9bUHHmhss
+/s1600/Hy_Lang_Logo_x2000.png" height="200" width="200" /></a></div>This blog
+post is a bit different than other technical posts I've done in the past in
+that the majority of the content is not on the blog in or gists; instead, it
+is in an <a href="http://ipython.org/">IPython</a> notebook. Having adored
+Mathematica back in the 90s, you can imagine how much I love the <a
+href="http://ipython.org/notebook.html">IPython Notebook</a> app. I'll have
+more to say on that at a future date.<br /><br />I've been doing a great deal
+of <a href="http://www.numpy.org/">NumPy</a> and <a
+href="http://matplotlib.org/">matplotlib</a> again lately, every day for hours
+a day. In conjunction with <a
+href="https://us.pycon.org/2013/schedule/presentation/117/">the new features
+in Python 3</a>, this has been quite a lot of fun -- the most fun I've had
+with Python in years (thanks Guido, et al!). As you might have guessed, I'm
+also using it with Erlang (specifically, <a href="http://lfe.io/">LFE</a>),
+but that too is for a post yet to come.<br /><br />With all this matplotlib
+and numpy work in standard Python, I've been going through Lisp withdrawals
+and needed to work with it from a fresh perspective. Needless to say, I had an
+enormous amount of fun doing this. Naturally, I decided to share with folks
+how one can do the latest and greatest with the tools of Python scientific
+computing, but in the syntax of the Python community's best kept secret: <a
+href="http://hylang.org/">Clojure-Flavoured Python</a>&nbsp;(<a
+href="https://github.com/hylang/hy">Github</a>, <a
+href="https://twitter.com/hylang">Twitter</a>, <a
+href="http://en.wikipedia.org/wiki/Hy">Wikipedia</a>).<br /><br /><table
+cellpadding="0" cellspacing="0" class="tr-caption-container" style="float:
+right; margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align:
+center;"><a href="http://3.bp.blogspot.com/-vYxH5anFtQA/VHi6l4ZhF6I/AAAAAAAAAT
+g/EYa8CSkE1lg/s1600/Final-Image.png" imageanchor="1" style="clear: right;
+margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0"
+src="http://3.bp.blogspot.com/-vYxH5anFtQA/VHi6l4ZhF6I/AAAAAAAAATg/EYa8CSkE1lg
+/s1600/Final-Image.png" height="200" width="198" /></a></td></tr><tr><td
+class="tr-caption" style="text-align: center;">Spoiler: observed data and<br
+/>polynomial&nbsp;curve fitting</td></tr></tbody></table>Looking about for
+ideas, I decided to see what <a href="http://clojure.org/">Clojure</a>'s <a
+href="http://data-sorcery.org/">Incanter</a> project had for tutorials, and
+immediately found what I was looking for:&nbsp;<a
+href="http://data-sorcery.org/2009/06/04/linear-regression-with-higher-order-t
+erms/">Linear regression with higher-order terms</a>, a 2009 post by&nbsp;<a
+href="https://twitter.com/liebke">David Edgar Liebke</a>.<br /><br />Nearly
+every cell in the tutorial notebook is in Hy, and for that we owe a huge
+thanks to&nbsp;<a href="https://github.com/yardsale8">yardsale8</a> for his <a
+href="https://github.com/yardsale8/hymagic">Hy IPython magics code</a>. For
+those that love Python and Lisp equally, who are familiar with the ecosystems'
+tools, Hy offers a wonderful option for being highly productive with a
+language supporting Lisp- and Clojure-style macros. You can get your work
+done, have a great time doing it, and let that inner code artist out!<br /><br
+/>(In fact, I've started writing a macro for one of the examples in the
+tutorial, offering a more Lisp-like syntax for creating class methods. We'll
+see what <a href="https://twitter.com/paultag">Paul Tagliamonte</a> has to say
+about it when it's done ... !)<br /><br />If you want to check out the
+notebook code and run it locally, just do the following:<br /><script
+src="https://gist.github.com/oubiwann/4ce8ee7100ff90d3d3d1.js?file=checkout.tx
+t"></script> <br />This will do the following:<br /><br /><ul><li>Create a
+virtualenv using Python 3</li><li>Download all the dependencies, and
+then</li><li>Start up the notebook using a local IPython HTTP
+server</li></ul><br />If you just want to read along, you're more than welcome
+to do that as well, thanks to the <a
+href="http://nbviewer.ipython.org/">IPython NBViewer service</a>. Here's the
+link:&nbsp;<a href="http://nbviewer.ipython.org/github/oubiwann/linear-regress
+ion-tutorial/blob/master/notebooks/tutorial.ipynb">Scientific Computing with
+Hy: Linear Regressions</a>.<br /><br />One thing I couldn't get working was
+the community-provided code for <a
+href="https://github.com/minrk/ipython_extensions">generating tables of
+contents in IPython notebooks</a>. If you have any expertise in this area, I'd
+<i>love</i>&nbsp;to get your feedback to see how I need to configure the
+custom <a
+href="https://github.com/oubiwann/linear-regression-tutorial/tree/master/.ipyt
+hon/profile_ihy">ihy IPython profile</a> for this tutorial.<br /><br />Without
+that, I've opted for the manual approach and have provided a table of contents
+here:<br /><ul><li><a
+href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/b
+lob/master/notebooks/tutorial.ipynb#Introduction">Introduction</a></li><ul><li
+><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutori
+al/blob/master/notebooks/tutorial.ipynb#Curve-Fitting-and-Linear-Regressions">
+Curve Fitting and Linear Regressions</a></li><li><a
+href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/b
+lob/master/notebooks/tutorial.ipynb#Scientific-Computing-in-Python">Scientific
+Computing in Python</a></li><li><a
+href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/b
+lob/master/notebooks/tutorial.ipynb#About-Hy">About Hy</a></li></ul><li><a
+href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/b
+lob/master/notebooks/tutorial.ipynb#Preparation">Preparation</a></li><ul><li><
+a href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial
+/blob/master/notebooks/tutorial.ipynb#Getting-the-Code">Getting the
+Code</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-r
+egression-tutorial/blob/master/notebooks/tutorial.ipynb#Using-Hy">Using Hy</a>
+</li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regressio
+n-tutorial/blob/master/notebooks/tutorial.ipynb#IPython-Setup">IPython Setup</
+a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-regress
+ion-tutorial/blob/master/notebooks/tutorial.ipynb#Imports-and-Color-Palette-Co
+nfig">Imports and Color Palette Config</a></li></ul><li><a
+href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/b
+lob/master/notebooks/tutorial.ipynb#Loading-the-Observed-Data">Loading the
+Observed Data</a></li><li><a
+href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/b
+lob/master/notebooks/tutorial.ipynb#Viewing-the-Data">Viewing the
+Data</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-r
+egression-tutorial/blob/master/notebooks/tutorial.ipynb#Curve-Fitting">Curve-F
+itting</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear
+-regression-tutorial/blob/master/notebooks/tutorial.ipynb#Polynomial-Linear-Re
+gression">Polynomial Linear Regression</a></li><li><a
+href="http://nbviewer.ipython.org/github/oubiwann/linear-regression-tutorial/b
+lob/master/notebooks/tutorial.ipynb#A-Linear-Model-Class">A Linear Model
+Class</a></li><li><a href="http://nbviewer.ipython.org/github/oubiwann/linear-
+regression-tutorial/blob/master/notebooks/tutorial.ipynb#Plotting-the-Model-wi
+th-the-Observed-Data">Plotting the Model with the Observed
+Data</a></li></ul><div>If all goes well, you will enjoy that as much as I did
+:-)</div><div><br /></div><div>More soon ...</div><div><br /></div><div><br
+/></div>

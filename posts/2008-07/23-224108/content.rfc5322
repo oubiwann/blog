@@ -11,4 +11,84 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><img src="http://farm4.static.flickr.com/3260/2697026451_c855e2a517_o.jpg" align="left" />The OSCON Tuesday Night Extravaganza was just fabulous: awards, laughter, brain-bending, and affirmation. The primary speakers were Mark Shuttleworth, r0ml, and Damian Conway; but I'm going to be focusing on r0ml's talk right now :-) Well, in part, anyway.<br /><br />Let's back up to Monday night, first: Alex Martelli and I had a chance to wax philosophical about programming and software. It was wonderful. Both because it revealed Alex's code-spirit and because of the sympatico I felt as his passionate idealism resonated with mine. While Alex talked of the holy architecture of mosques and cathedrals, of the contributions that such artisans as stonecutters, masons, sculptors, and calligraphers made, he emphasized how each individual played an essential role in bringing these wondrous works into being, that each act was an offering to the ideals that formed the basis of the respective belief system.<br /><br />What's more, though, Alex extended the analogy from religion to mysticism, saying that even more than builders of such great structures, coders are alchemists engaged in the magum opus. We are the transmutators. In our crucibles, the opposites of function and beauty unite; performance and elegance are commingled to produce the perfection of our art. Alex was careful to point out that he intended perfection in both an abstract and practical sense. On one hand, being able to create and actually deliver code that others found useful, regardless of the sex appeal (or lack thereof), can be viewed as a form of perfection. It is accomplishment; attainment of the goal. On the other hand, it's just something that someone wanted us to write; it's not a proof of Fermat's Last Theorem. It's useful; it serves a specific function.<br /><br />Before I get to r0ml's talk, I want to mention <a href="http://divmod.org/trac/wiki/UltimateQualityDevelopmentSystem">UQDS</a> as employed by the <a href="http://twistedmatrix.com/trac/wiki/TwistedDevelopment">Twisted and Divmod</a> communities. I think it's phenomenal and I enjoy working with that system. It's a well thought-out and proven process that tends to produce code of an extremely high quality. However, it's not my natural tendency. I like quick and dirty prototypes; a little messy code goes a long way. I like to throw something out there and then fix it up and apply polish incrementally, as dictated by need.<br /><br />This is why I've been enjoying the <a href="https://launchpad.net/tx">Twisted Community Code</a> project/group on Launchpad. Not only do you have the benefits of using a tool like bazaar that lets one branch other projects on a whim, but you've got a community space to put these explorations, where others can easily see what you're doing, check it out, and try something of their own. (There's a whole 'nother blog post I have coming about that.) However, this finally brings me to r0ml's talk: a new spin on the development process.<br /><br /><a href="http://www.flickr.com/photos/damianspain/2710101794/"><img src="http://farm3.static.flickr.com/2067/2710101794_0b9ced0b81_m.jpg" align="right"/></a>For those of you that have seen his phenomenal rhetoric talks, you'd be delighted to see what he did :-) He established a nice mapping from both Microsoft's development process as well as the one defined by Rational. He used the five canons of classical rhetoric: inventio, dispositio, elocutio, memoria, and pronuntiatio. However, the really brilliant thing was where he started the process: smack in the middle, right where I like to do it :-) And he justified this beautifully. His mapping was the following:<br /><ul><li>Memoria = Commit / Update</li><li>Pronuntiatio = Run / Use</li><li>Inventio = Bug Reporting / Patch Submission</li><li>Dispositio = Triage</li><li>Elocutio = Integration</li></ul><br /><br /><a href="http://www.flickr.com/photos/bkjones/2694431607/"><img src="http://farm4.static.flickr.com/3260/2714464821_a5defb8f8d_o.jpg" align="left"/></a>The idea here being this: get what you've got done out there and in front of people's eyes. Everyone knows its crap; don't worry about it. Get it running and get others running it. Work on what matters most and integrate the changes. Repeat and continue.<br /><br />I like to tease other Twisted devs that I tend not to do test-driven development, but bug-driven testing. What's interesting is that we both start with a requirements doc: for them, it's a development plan; for me, it's a bug/TODO list. The difference is that they then engage in Inventio whereas I start with Memoria. As r0ml said, with this model there is no development, there is only maintenance.<br /><br />One of the other great things that r0ml mentioned about this process is that it not only gets you the developer started more quickly, it gets others started at the same time. Each programmer is engaged in a macroscopic genetic programming effort: everyone takes the source, mutates it, evolves it, reviews it, and the best implementations (or parts thereof) survive to become the basis for the next generation. Everyone gets to write at the same time; no one is blocked.<br /><br />This development approach evokes images of philosophers from the Middle Ages sending letters to each other in cryptic alchemical symbols and diagrams, with all the implicit and explicit layers of meaning. I see this methodology as establishing the true foundation of the open source art: a gnostic, spirit-(of-open-souce)-ual transformation that brings us to improved states of mind and clarity.<br /><br />The perfection of our art, whether sublime or mundane, can be merged in the mind of the developer as one... this union being our philosopher's stone. With each release of software engaged in this manner, we iterate the Great Work.<br /><br /></div>
+<div><br /><img
+src="http://farm4.static.flickr.com/3260/2697026451_c
+55e2a517_o.jpg" align="left" />The OSCON Tuesday Night Extravaganza was just
+fabulous: awards, laughter, brain-bending, and affirmation. The primary
+speakers were Mark Shuttleworth, r0ml, and Damian Conway; but I'm going to be
+focusing on r0ml's talk right now :-) Well, in part, anyway.<br /><br />Let's
+back up to Monday night, first: Alex Martelli and I had a chance to wax
+philosophical about programming and software. It was wonderful. Both because
+it revealed Alex's code-spirit and because of the sympatico I felt as his
+passionate idealism resonated with mine. While Alex talked of the holy
+architecture of mosques and cathedrals, of the contributions that such
+artisans as stonecutters, masons, sculptors, and calligraphers made, he
+emphasized how each individual played an essential role in bringing these
+wondrous works into being, that each act was an offering to the ideals that
+formed the basis of the respective belief system.<br /><br />What's more,
+though, Alex extended the analogy from religion to mysticism, saying that even
+more than builders of such great structures, coders are alchemists engaged in
+the magum opus. We are the transmutators. In our crucibles, the opposites of
+function and beauty unite; performance and elegance are commingled to produce
+the perfection of our art. Alex was careful to point out that he intended
+perfection in both an abstract and practical sense. On one hand, being able to
+create and actually deliver code that others found useful, regardless of the
+sex appeal (or lack thereof), can be viewed as a form of perfection. It is
+accomplishment; attainment of the goal. On the other hand, it's just something
+that someone wanted us to write; it's not a proof of Fermat's Last Theorem.
+It's useful; it serves a specific function.<br /><br />Before I get to r0ml's
+talk, I want to mention <a
+href="http://divmod.org/trac/wiki/UltimateQualityDevelopmentSystem">UQDS</a> a
+s employed by the <a
+href="http://twistedmatrix.com/trac/wiki/TwistedDevelopment">Twisted and
+Divmod</a> communities. I think it's phenomenal and I enjoy working with that
+system. It's a well thought-out and proven process that tends to produce code
+of an extremely high quality. However, it's not my natural tendency. I like
+quick and dirty prototypes; a little messy code goes a long way. I like to
+throw something out there and then fix it up and apply polish incrementally,
+as dictated by need.<br /><br />This is why I've been enjoying the <a
+href="https://launchpad.net/tx">Twisted Community Code</a> project/group on
+Launchpad. Not only do you have the benefits of using a tool like bazaar that
+lets one branch other projects on a whim, but you've got a community space to
+put these explorations, where others can easily see what you're doing, check
+it out, and try something of their own. (There's a whole 'nother blog post I
+have coming about that.) However, this finally brings me to r0ml's talk: a new
+spin on the development process.<br /><br /><a
+href="http://www.flickr.com/photos/damianspain/2710101794/"><img src="http://f
+arm3.static.flickr.com/2067/2710101794_0b9ced0b81_m.jpg" align="right"/></a>Fo
+r those of you that have seen his phenomenal rhetoric talks, you'd be
+delighted to see what he did :-) He established a nice mapping from both
+Microsoft's development process as well as the one defined by Rational. He
+used the five canons of classical rhetoric: inventio, dispositio, elocutio,
+memoria, and pronuntiatio. However, the really brilliant thing was where he
+started the process: smack in the middle, right where I like to do it :-) And
+he justified this beautifully. His mapping was the following:<br
+/><ul><li>Memoria = Commit / Update</li><li>Pronuntiatio = Run /
+Use</li><li>Inventio = Bug Reporting / Patch Submission</li><li>Dispositio =
+Triage</li><li>Elocutio = Integration</li></ul><br /><br /><a
+href="http://www.flickr.com/photos/bkjones/2694431607/"><img src="http://farm4
+.static.flickr.com/3260/2714464821_a5defb8f8d_o.jpg" align="left"/></a>The
+idea here being this: get what you've got done out there and in front of
+people's eyes. Everyone knows its crap; don't worry about it. Get it running
+and get others running it. Work on what matters most and integrate the
+changes. Repeat and continue.<br /><br />I like to tease other Twisted devs
+that I tend not to do test-driven development, but bug-driven testing. What's
+interesting is that we both start with a requirements doc: for them, it's a
+development plan; for me, it's a bug/TODO list. The difference is that they
+then engage in Inventio whereas I start with Memoria. As r0ml said, with this
+model there is no development, there is only maintenance.<br /><br />One of
+the other great things that r0ml mentioned about this process is that it not
+only gets you the developer started more quickly, it gets others started at
+the same time. Each programmer is engaged in a macroscopic genetic programming
+effort: everyone takes the source, mutates it, evolves it, reviews it, and the
+best implementations (or parts thereof) survive to become the basis for the
+next generation. Everyone gets to write at the same time; no one is
+blocked.<br /><br />This development approach evokes images of philosophers
+from the Middle Ages sending letters to each other in cryptic alchemical
+symbols and diagrams, with all the implicit and explicit layers of meaning. I
+see this methodology as establishing the true foundation of the open source
+art: a gnostic, spirit-(of-open-souce)-ual transformation that brings us to
+improved states of mind and clarity.<br /><br />The perfection of our art,
+whether sublime or mundane, can be merged in the mind of the developer as
+one... this union being our philosopher's stone. With each release of software
+engaged in this manner, we iterate the Great Work.<br /><br /></div>

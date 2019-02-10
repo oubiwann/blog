@@ -11,4 +11,31 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml">This is a rant -- a positive one.&nbsp;<a href="http://tinyurl.com/qtyga">twisted.cred</a>&nbsp;is freaking brilliant. I've had to use it in the past to write my own&nbsp;credential checkers, so I've dabbled a bit. I was thrilled then because of the ease with which I was able to glue systems together.&nbsp;But tonight, I needed to add last-minute support for group access&nbsp;control to a twisted/nevow application and nevow resources that use&nbsp;JSON-RPC. The customer now wants different page views/menus for&nbsp;different classes of user; in addition, they have a new set of RPC<br /><div class="entry">methods that should only be accessible to privileged users.<br /><br />Typical nightmare situation, when it comes to last-minute tasks, right?<br /><br />Not with&nbsp;<a href="http://tinyurl.com/orzrz">twisted.cred</a>,&nbsp;it isn't. Basically, all I had to do was create an interface for each group that needed to be represented. I then did the following:<br /><ul><li>updated the function that instantiates the RPC parent and subhandlers, instantiating the right ones based on the passed interfaces</li><li>updated the avatar realm to choose the correct interface for a given group type</li><li>subclassed the root page for each group that needed a different page</li></ul>I didn't have to touch the credential checker since it was already&nbsp;getting the group info (I *knew* the customer was going to ask for&nbsp;something like this, even though it wasn't in the reqs).<br /><br />The interfaces, a few methods (implements/implementer, providedBy), and the amazing functionality provided by twisted.cred -- that's all that was needed. I've never written my own access control code before, and it took less time with cred to actually implement the thing than the "simple" mere configuration that other systems take. Really. It went so quickly and smoothly that I spent the time saved adding some nifty features that take advantage of these changes.</div><br /><div class="now_playing"><br /></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml">This is a rant -- a positive
+one.&nbsp;<a href="http://tinyurl.com/qtyga">twisted.cred</a>&nbsp;is freaking
+brilliant. I've had to use it in the past to write my own&nbsp;credential
+checkers, so I've dabbled a bit. I was thrilled then because of the ease with
+which I was able to glue systems together.&nbsp;But tonight, I needed to add
+last-minute support for group access&nbsp;control to a twisted/nevow
+application and nevow resources that use&nbsp;JSON-RPC. The customer now wants
+different page views/menus for&nbsp;different classes of user; in addition,
+they have a new set of RPC<br /><div class="entry">methods that should only be
+accessible to privileged users.<br /><br />Typical nightmare situation, when
+it comes to last-minute tasks, right?<br /><br />Not with&nbsp;<a
+href="http://tinyurl.com/orzrz">twisted.cred</a>,&nbsp;it isn't. Basically,
+all I had to do was create an interface for each group that needed to be
+represented. I then did the following:<br /><ul><li>updated the function that
+instantiates the RPC parent and subhandlers, instantiating the right ones
+based on the passed interfaces</li><li>updated the avatar realm to choose the
+correct interface for a given group type</li><li>subclassed the root page for
+each group that needed a different page</li></ul>I didn't have to touch the
+credential checker since it was already&nbsp;getting the group info (I *knew*
+the customer was going to ask for&nbsp;something like this, even though it
+wasn't in the reqs).<br /><br />The interfaces, a few methods
+(implements/implementer, providedBy), and the amazing functionality provided
+by twisted.cred -- that's all that was needed. I've never written my own
+access control code before, and it took less time with cred to actually
+implement the thing than the "simple" mere configuration that other systems
+take. Really. It went so quickly and smoothly that I spent the time saved
+adding some nifty features that take advantage of these changes.</div><br
+/><div class="now_playing"><br /></div></div>

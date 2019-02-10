@@ -11,4 +11,18 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: programming</i><br/><br/><p/><br /><div blog="entry"><br /><p>First it was PEAK, then it was PyProtocols/generic functions (which has <br />now been split from PyProtocols in to its own package called <br />RuleDispatch). Now, it's EasyInstall. Everyone has been raving about <br />it, but I hadn't tried it out until tonight. Holy crap. This is crack <br />for python programmers. I built my first python egg when Bob Ippolito <br />first started writing about the alpha code he and Phillip Eby were <br />working on. Pretty cool stuff, but it didn't really hit me as to how <br />great eggs were until I actually saw it in action today with my upgrade <br />of setuptools, my first use of EasyInstall, and my upgrade of <br />PyProto/RuleDispatch (each creates an egg and dumps the file in <br />site-packages).</p><p>It blew my mind when I saw these two luminaries getting together. I <br />knew that it didn't matter what the hell these guys did together, it <br />would rock the world. Awesome. And thanks :-)</p><p/></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python ::
+programming</i><br/><br/><p/><br /><div blog="entry"><br /><p>First it was
+PEAK, then it was PyProtocols/generic functions (which has <br />now been
+split from PyProtocols in to its own package called <br />RuleDispatch). Now,
+it's EasyInstall. Everyone has been raving about <br />it, but I hadn't tried
+it out until tonight. Holy crap. This is crack <br />for python programmers. I
+built my first python egg when Bob Ippolito <br />first started writing about
+the alpha code he and Phillip Eby were <br />working on. Pretty cool stuff,
+but it didn't really hit me as to how <br />great eggs were until I actually
+saw it in action today with my upgrade <br />of setuptools, my first use of
+EasyInstall, and my upgrade of <br />PyProto/RuleDispatch (each creates an egg
+and dumps the file in <br />site-packages).</p><p>It blew my mind when I saw
+these two luminaries getting together. I <br />knew that it didn't matter what
+the hell these guys did together, it <br />would rock the world. Awesome. And
+thanks :-)</p><p/></div><br /></div>

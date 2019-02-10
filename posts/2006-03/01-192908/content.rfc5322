@@ -11,4 +11,38 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">pycon :: pymon :: networking :: programming</i><br/><br/><div class="entry"><br /><p><br />For the past two days, I've been working on a Cisco-inspired shell for <br />pymon. The purpose being: provide a user interface familiar to network <br />engineers, allowing them to update/control a running pymon instance. <br />Ravi and I worked on the shell last year, with Ravi writing a<br /><a href="http://pyparsing.sf.net">pyparsing</a><br />grammar. However, since then, the specs have evolved considerably: they <br />are now much better defined and understood. As a result of these <br />changes, I had to chuck the old code and start over. Which isn't a bad <br />thing, especially since we didn't get very far. Things have gone very <br />well and I am excited about the direction and rapid movement.<br /></p><p/>Here's the current status of the current pyparsing grammar work:<p/><i>complete</i><br /><ul><br /><li>node (add, update, del, etc.)</li><br /><li>memory (write, clear)</li><br /><li>show (nodes, services, lists)</li><br /></ul><p/><i>almost done</i><br /><ul><br /><li>services (add, update, del, etc.)</li><br /></ul><p/><i>not started</i><br /><ul><br /><li>lists (email/notification list management)</li><br /></ul><p/>During lunch today,<br /><a href="http://www.tummy.com/journals/users/jafo">Sean<br />Reifschneider</a> from<br /><a href="http://tummy.com">tummy.com</a><br />had some great input and had the following requests:<br /><ul><br /><li>acknowledgments via web gui (and maybe also email? irc?)</li><br /><li>scheduled downtime (existing feature)</li><br /><li>dependencies (e.g., if the router is down, only notify about the <br />router and not all the hosts behind the router) -- because of they way <br />I have designed the rules engine, I don't think this will be too <br />difficult... and I may even be able to use the NetCIDR package I wrote <br />for CoyMon to do this very cleanly</li><br /><li>read-only SNMP (gets for remote load average and disk usage); this <br />should be fairly trivial. We might be able to push this out with the <br />next release. It will just use the local agent, like ping does</li><br /><li>escalations (partially implemented)</li><br /><li>zsh-like functionality in pymon shell (tab-completion at least)</li><br /></ul><p/>This gives the project some nice near-term focus which we will be <br />working on once I restructure the factories and clients and add unit <br />tests for twisted.trial.<p/><br /></div><br/></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">pycon :: pymon
+:: networking :: programming</i><br/><br/><div class="entry"><br /><p><br
+/>For the past two days, I've been working on a Cisco-inspired shell for <br
+/>pymon. The purpose being: provide a user interface familiar to network <br
+/>engineers, allowing them to update/control a running pymon instance. <br
+/>Ravi and I worked on the shell last year, with Ravi writing a<br /><a
+href="http://pyparsing.sf.net">pyparsing</a><br />grammar. However, since
+then, the specs have evolved considerably: they <br />are now much better
+defined and understood. As a result of these <br />changes, I had to chuck the
+old code and start over. Which isn't a bad <br />thing, especially since we
+didn't get very far. Things have gone very <br />well and I am excited about
+the direction and rapid movement.<br /></p><p/>Here's the current status of
+the current pyparsing grammar work:<p/><i>complete</i><br /><ul><br /><li>node
+(add, update, del, etc.)</li><br /><li>memory (write, clear)</li><br
+/><li>show (nodes, services, lists)</li><br /></ul><p/><i>almost done</i><br
+/><ul><br /><li>services (add, update, del, etc.)</li><br /></ul><p/><i>not
+started</i><br /><ul><br /><li>lists (email/notification list
+management)</li><br /></ul><p/>During lunch today,<br /><a
+href="http://www.tummy.com/journals/users/jafo">Sean<br />Reifschneider</a>
+from<br /><a href="http://tummy.com">tummy.com</a><br />had some great input
+and had the following requests:<br /><ul><br /><li>acknowledgments via web gui
+(and maybe also email? irc?)</li><br /><li>scheduled downtime (existing
+feature)</li><br /><li>dependencies (e.g., if the router is down, only notify
+about the <br />router and not all the hosts behind the router) -- because of
+they way <br />I have designed the rules engine, I don't think this will be
+too <br />difficult... and I may even be able to use the NetCIDR package I
+wrote <br />for CoyMon to do this very cleanly</li><br /><li>read-only SNMP
+(gets for remote load average and disk usage); this <br />should be fairly
+trivial. We might be able to push this out with the <br />next release. It
+will just use the local agent, like ping does</li><br /><li>escalations
+(partially implemented)</li><br /><li>zsh-like functionality in pymon shell
+(tab-completion at least)</li><br /></ul><p/>This gives the project some nice
+near-term focus which we will be <br />working on once I restructure the
+factories and clients and add unit <br />tests for twisted.trial.<p/><br
+/></div><br/></div>

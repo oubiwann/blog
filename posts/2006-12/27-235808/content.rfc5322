@@ -11,4 +11,36 @@ Comments:
 Content-Type: md
 Public?: true
 
-<p><br /><a href="http://encoreopus.com/">Mark Hinkle</a> has been exploring <a href="http://www.flock.com/">Flock</a> (Mac OS X) for use with the forth-coming Zenoss blogs, and that reminded me of a brief conversation with <a href="http://radeex.blogspot.com/">radix</a> about a year ago where we were discussing blog editors. Thus re-motivated, I did a little research and evaluation of blog editing/posting software. The one that seems to be the most complete and featureful (to me) is <a href="http://ecto.kung-foo.tv/">ecto</a>. Getting it set up with the new blogger seems a little awkward (the default "access point" doesn't work), but there's another version in the works where the kinks will be worked out (or be moot).<br /></p><br /><p><br />Here's what I had to do to get it (version 2.4.1 Universal + blogger beta support) to work with the new blogger API:<br /></p><br /><ul><li>Hit the "Add Account" button on the Accounts window</li><li>Give my blog URL, as requested</li><li>Set the System as "Blogger"</li><li>Set the API as "Atom"</li><li>Set the Access Point as http://www.blogger.com/feeds/default/blogs</li><li>Be sure that all the RSS feeds are "full" (blog settings in Blogger admin UI)</li></ul><p>ecto was then able to get a list of my blogs for various account names as well as recent entries for each one.<br /></p><br /><p><br />One problem I have run into, however, is the multiple accounts thing. I have to quit ecto and restart it in order to post to blogger under a different user name. It seems to be caching login info and not using the user name and password that the particular account is configured with.<br /></p><br /><p><br />Despite that minor inconvenience, I will probably purchase the full version of this software and begin using it extensively. The single driving motivation for this is the multiple account management feature: seeing all the accounts and blogs I have within one application acts as a reminder; I will be more likely to post to my other blogs now :-)<br /></p><br /><!-- technorati tags start --><p style="text-align: right; font-size: 10px;">Technorati Tags: <a href="http://www.technorati.com/tag/macosx" rel="tag">macosx</a>, <a href="http://www.technorati.com/tag/blogging" rel="tag">blogging</a>, <a href="http://www.technorati.com/tag/software" rel="tag">software</a></p><!-- technorati tags end -->
+<p><br /><a href="http://encoreopus.com/">Mark Hinkle</a> has been exploring
+<a href="http://www.flock.com/">Flock</a> (Mac OS X) for use with the
+forth-coming Zenoss blogs, and that reminded me of a brief conversation with
+<a href="http://radeex.blogspot.com/">radix</a> about a year ago where we were
+discussing blog editors. Thus re-motivated, I did a little research and
+evaluation of blog editing/posting software. The one that seems to be the most
+complete and featureful (to me) is <a
+href="http://ecto.kung-foo.tv/">ecto</a>. Getting it set up with the new
+blogger seems a little awkward (the default "access point" doesn't work), but
+there's another version in the works where the kinks will be worked out (or be
+moot).<br /></p><br /><p><br />Here's what I had to do to get it (version
+2.4.1 Universal + blogger beta support) to work with the new blogger API:<br
+/></p><br /><ul><li>Hit the "Add Account" button on the Accounts
+window</li><li>Give my blog URL, as requested</li><li>Set the System as
+"Blogger"</li><li>Set the API as "Atom"</li><li>Set the Access Point as
+http://www.blogger.com/feeds/default/blogs</li><li>Be sure that all the RSS
+feeds are "full" (blog settings in Blogger admin UI)</li></ul><p>ecto was then
+able to get a list of my blogs for various account names as well as recent
+entries for each one.<br /></p><br /><p><br />One problem I have run into,
+however, is the multiple accounts thing. I have to quit ecto and restart it in
+order to post to blogger under a different user name. It seems to be caching
+login info and not using the user name and password that the particular
+account is configured with.<br /></p><br /><p><br />Despite that minor
+inconvenience, I will probably purchase the full version of this software and
+begin using it extensively. The single driving motivation for this is the
+multiple account management feature: seeing all the accounts and blogs I have
+within one application acts as a reminder; I will be more likely to post to my
+other blogs now :-)<br /></p><br /><!-- technorati tags start --><p
+style="text-align: right; font-size: 10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/macosx" rel="tag">macosx</a>, <a
+href="http://www.technorati.com/tag/blogging" rel="tag">blogging</a>, <a
+href="http://www.technorati.com/tag/software" rel="tag">software</a></p><!--
+technorati tags end -->

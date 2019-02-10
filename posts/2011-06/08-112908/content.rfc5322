@@ -11,4 +11,99 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><b>The Next Step</b></div><div><b><br /></b></div>A few years ago, I wrote a post about the <a href="http://oubiwann.blogspot.com/2008/06/future-of-personal-data.html">Future of Personal Data</a> as a result of all the ultra large-scale systems reading and exploration I was doing. Google was foremost in my mind when writing that, but Apple has since come into the spotlight here as well.<br /><div><br /></div><div>Recently, <a href="http://mdzlog.alcor.net/">Matt Zimmerman</a> has <a href="http://mdzlog.alcor.net/2011/05/27/why-im-excited-about-joining-singly/">decided to leave Canonical</a> and join forces with <a href="http://www.singly.com/">Singly</a>, an exciting startup company focused on secure user data storage and the socialization of (and development around) that data. In <a href="http://blog.lockerproject.org/brainstorming-tlp-core-values">this blog post</a>, the following core values were given about the software underlying Singly:</div><div><ul><li>I own my personal data</li><li>I want my data to be useful to me</li><li>I make the decisions to protect or share my</li></ul><div>I would like to see the following added:</div></div><div><ul><li>I make the decisions on how my data is used</li><li>If my data is sold, I should get a return for this</li></ul><div>This is not petulance speaking :-) This comes from a historical perspective on social and economic fairness. Witness the changes in individual rights and personal finance since the industrial revolution...</div><div><br /><br /></div><div><b>Fair Market Value</b></div><div><br /></div><div>There are probably many solvent entities out there who would claim users are already getting a return for the use of their data: free email and office docs from Google, free cloud services from Apple, etc. But I would imagine that there are massive margins being made on user data, and services (as valuable as they may be) are a paltry return for such a gold mine. I cannot help but be reminded of the selling price of Manhattan Island or Alaska (in 2011 values, the Lenape Indians got around $29.61/square mile; the Russians got about $150.77/square mile).</div><div><br /></div><div>Money makes a good point, but personal data (and this post) isn't about the almighty coin. This is about clearly defining who owns what and ensuring that those who don't want to be taken advantage of, aren't. This is about identifying exploitation, and building something better and longer-lasting in its place.</div><div><br /><br /></div><div><b>Who's Going to Pay for What?</b></div><div><br /></div><div>In David Pakman's "Disruption" <a href="http://www.pakman.com/2011/05/31/the-power-of-a-transformative-idea-presenting-singly/">blog post about Singly</a>, he makes the following comment:</div><div><blockquote>"I cannot see consumers getting into the business of selling their data to marketers so they can see personalized advertising. Instead, I believe marketers will be encouraged to offer value to us in exchange for access to our data."</blockquote></div><div>I have to agree with him... but I can only offer a qualified agreement. True, I find it hard to believe that users will be selling their data directly to marketers. From the user-side, the pain of inconvenience would not likely be worth the payoff; at the marketer end, individual data is useless, and munging an in-house-built collection would incur a lot of overhead not part of their core business.</div><div><br /></div><div>However, users' data stored in lockers, updated regularly, pre-processed, has enormous value in the market. Right now, Apple and Google are making eye-crossing amounts of money from data just like this. Again, I would imagine that this data is only really valuable in large quantities and for interesting, identifiable demographics</div><div><br /></div><div><div>If users provide their data, but in exchange only get a "nicer app" or a "useful utility" I'm going to cry "foul!" (unless someone can show me the actual numbers involved and unequivocally prove that fair exchange is occurring). </div><div><br /><br /></div><div><b>You Say Disruption, I Say Revolution</b></div><div><b><br /></b></div><div>Instead, if a service such as Singly, were to offer a co-op style dividend payment system to all of its users, that would seem to be much more fair. Not only that, it would be the beginning of a market revolution. This is not to say that co-ops are some perfect economic model, but rather that the data we, as users, generate is of immense value. The more that Singly has, the greater potential for revenue. The more buzz that builds around Singly users generating revenue from their data, the more users they get. With mass-adoption, a new sub-economy is born.</div><div><br /></div><div>Perhaps a better model than co-op is that of a mutual fund investment firm. Each Singly user has a portfolio of data. Depending upon each user's preferences, any or all of that data could be used by Singly to generate revenue. Some groups of users will generate more than others, and users in these groups would get greater returns. </div><div><br /></div><div>Whichever analogy you prefer, with a little exploration it seems fairly clear that opportunities for a large payout are present. For instance, I like to imagine a world where entities like Apple and Google can't harvest user data, but must go through brokers whom users have given their permission to sell their data for the most profit. I also imagine there's a lot of lawmaking that would have to take place... and even more lobbying.</div><div><br /></div><div>Even with that, Google and Apple would still make money hand over fist (or they'd become brokers themselves) -- enough to continue providing free services. Yet at the same time, users would be in control of their data; they'd be financing (or financially augmenting) their data-consumption lives with said data.</div><div><br /></div><div>With the right press coverage, Singly could find themselves not only swamped with a massively growing user base, but at the very center of a new economy. With the right level of negotiation and coordination, businesses could buy into this new paradigm without losing their shirts in the disruption.</div></div><div><br /><br /></div><div><b>A Plea</b></div><div><br /></div><div>In summary, I applaud the goals and vision of Singly. I, for one, would deeply appreciate writing applications against their data locker (to any Facebook or any of its dubious applications), where a user's rights are clear and protected. That being said, Sinlgy would have my eternal allegiance if they also took up the cause of rights for user data in the market place; if they helped transform the current nascent data economy into a world economy capable of achieving as-yet unimagined financial heights.</div><div><br /></div><div>And if not Singly, my loyalty would be given to whomever <i>did</i> do this.</div><div><br /></div><div><br /></div></div>
+<div><b>The Next Step</b></div><div><b><br /></b></div>A few years ago, I
+wrote a post about the <a
+href="http://oubiwann.blogspot.com/2008/06/future-of-personal-data.html">Futur
+e of Personal Data</a> as a result of all the ultra large-scale systems
+reading and exploration I was doing. Google was foremost in my mind when
+writing that, but Apple has since come into the spotlight here as well.<br
+/><div><br /></div><div>Recently, <a href="http://mdzlog.alcor.net/">Matt
+Zimmerman</a> has <a
+href="http://mdzlog.alcor.net/2011/05/27/why-im-excited-about-joining-singly/"
+>decided to leave Canonical</a> and join forces with <a
+href="http://www.singly.com/">Singly</a>, an exciting startup company focused
+on secure user data storage and the socialization of (and development around)
+that data. In <a
+href="http://blog.lockerproject.org/brainstorming-tlp-core-values">this blog
+post</a>, the following core values were given about the software underlying
+Singly:</div><div><ul><li>I own my personal data</li><li>I want my data to be
+useful to me</li><li>I make the decisions to protect or share
+my</li></ul><div>I would like to see the following
+added:</div></div><div><ul><li>I make the decisions on how my data is
+used</li><li>If my data is sold, I should get a return for
+this</li></ul><div>This is not petulance speaking :-) This comes from a
+historical perspective on social and economic fairness. Witness the changes in
+individual rights and personal finance since the industrial
+revolution...</div><div><br /><br /></div><div><b>Fair Market
+Value</b></div><div><br /></div><div>There are probably many solvent entities
+out there who would claim users are already getting a return for the use of
+their data: free email and office docs from Google, free cloud services from
+Apple, etc. But I would imagine that there are massive margins being made on
+user data, and services (as valuable as they may be) are a paltry return for
+such a gold mine. I cannot help but be reminded of the selling price of
+Manhattan Island or Alaska (in 2011 values, the Lenape Indians got around
+$29.61/square mile; the Russians got about $150.77/square mile).</div><div><br
+/></div><div>Money makes a good point, but personal data (and this post) isn't
+about the almighty coin. This is about clearly defining who owns what and
+ensuring that those who don't want to be taken advantage of, aren't. This is
+about identifying exploitation, and building something better and
+longer-lasting in its place.</div><div><br /><br /></div><div><b>Who's Going
+to Pay for What?</b></div><div><br /></div><div>In David Pakman's "Disruption"
+<a href="http://www.pakman.com/2011/05/31/the-power-of-a-transformative-idea-p
+resenting-singly/">blog post about Singly</a>, he makes the following
+comment:</div><div><blockquote>"I cannot see consumers getting into the
+business of selling their data to marketers so they can see personalized
+advertising. Instead, I believe marketers will be encouraged to offer value to
+us in exchange for access to our data."</blockquote></div><div>I have to agree
+with him... but I can only offer a qualified agreement. True, I find it hard
+to believe that users will be selling their data directly to marketers. From
+the user-side, the pain of inconvenience would not likely be worth the payoff;
+at the marketer end, individual data is useless, and munging an in-house-built
+collection would incur a lot of overhead not part of their core
+business.</div><div><br /></div><div>However, users' data stored in lockers,
+updated regularly, pre-processed, has enormous value in the market. Right now,
+Apple and Google are making eye-crossing amounts of money from data just like
+this. Again, I would imagine that this data is only really valuable in large
+quantities and for interesting, identifiable demographics</div><div><br
+/></div><div><div>If users provide their data, but in exchange only get a
+"nicer app" or a "useful utility" I'm going to cry "foul!" (unless someone can
+show me the actual numbers involved and unequivocally prove that fair exchange
+is occurring). </div><div><br /><br /></div><div><b>You Say Disruption, I Say
+Revolution</b></div><div><b><br /></b></div><div>Instead, if a service such as
+Singly, were to offer a co-op style dividend payment system to all of its
+users, that would seem to be much more fair. Not only that, it would be the
+beginning of a market revolution. This is not to say that co-ops are some
+perfect economic model, but rather that the data we, as users, generate is of
+immense value. The more that Singly has, the greater potential for revenue.
+The more buzz that builds around Singly users generating revenue from their
+data, the more users they get. With mass-adoption, a new sub-economy is
+born.</div><div><br /></div><div>Perhaps a better model than co-op is that of
+a mutual fund investment firm. Each Singly user has a portfolio of data.
+Depending upon each user's preferences, any or all of that data could be used
+by Singly to generate revenue. Some groups of users will generate more than
+others, and users in these groups would get greater returns. </div><div><br
+/></div><div>Whichever analogy you prefer, with a little exploration it seems
+fairly clear that opportunities for a large payout are present. For instance,
+I like to imagine a world where entities like Apple and Google can't harvest
+user data, but must go through brokers whom users have given their permission
+to sell their data for the most profit. I also imagine there's a lot of
+lawmaking that would have to take place... and even more
+lobbying.</div><div><br /></div><div>Even with that, Google and Apple would
+still make money hand over fist (or they'd become brokers themselves) --
+enough to continue providing free services. Yet at the same time, users would
+be in control of their data; they'd be financing (or financially augmenting)
+their data-consumption lives with said data.</div><div><br /></div><div>With
+the right press coverage, Singly could find themselves not only swamped with a
+massively growing user base, but at the very center of a new economy. With the
+right level of negotiation and coordination, businesses could buy into this
+new paradigm without losing their shirts in the
+disruption.</div></div><div><br /><br /></div><div><b>A Plea</b></div><div><br
+/></div><div>In summary, I applaud the goals and vision of Singly. I, for one,
+would deeply appreciate writing applications against their data locker (to any
+Facebook or any of its dubious applications), where a user's rights are clear
+and protected. That being said, Sinlgy would have my eternal allegiance if
+they also took up the cause of rights for user data in the market place; if
+they helped transform the current nascent data economy into a world economy
+capable of achieving as-yet unimagined financial heights.</div><div><br
+/></div><div>And if not Singly, my loyalty would be given to whomever
+<i>did</i> do this.</div><div><br /></div><div><br /></div></div>

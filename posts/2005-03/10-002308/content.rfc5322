@@ -11,4 +11,15 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python :: programming :: networking</i><br/><br/><p/><br /><div blog="entry"><p><br />Well, after several months, I've finally had a chance to sit down and <br />work on <a href="http://pymon.sf.net">pymon</a> again. We're plugging <br />away, slowly but surely, on the next alpha release. Every time I dig <br />into twisted code, I am just delighted. Those guys just rock. The <br />flexibility it provides in writing network-oriented apps is just <br />amazing. I'm really excited to see how this project matures.<br /></p><br /><p>However, I'm getting tons of Zope/Plone work now, and that's stuff's <br />currently paying the bills, so pymon might have to wait for a few more <br />weeks. Until I get crazy with working with Zope/Plone and need a real <br />coding break ;-)</p><p/></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">python ::
+programming :: networking</i><br/><br/><p/><br /><div blog="entry"><p><br
+/>Well, after several months, I've finally had a chance to sit down and <br
+/>work on <a href="http://pymon.sf.net">pymon</a> again. We're plugging <br
+/>away, slowly but surely, on the next alpha release. Every time I dig <br
+/>into twisted code, I am just delighted. Those guys just rock. The <br
+/>flexibility it provides in writing network-oriented apps is just <br
+/>amazing. I'm really excited to see how this project matures.<br /></p><br
+/><p>However, I'm getting tons of Zope/Plone work now, and that's stuff's <br
+/>currently paying the bills, so pymon might have to wait for a few more <br
+/>weeks. Until I get crazy with working with Zope/Plone and need a real <br
+/>coding break ;-)</p><p/></div><br /></div>

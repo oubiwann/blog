@@ -11,4 +11,214 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s/s1600/Lambda.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s/s1600/Lambda.png" height="320" width="320" /></a></div><i>Series Links</i></div><ul><li><a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-overview.html">An Overview</a></li><li><a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-oscon-themes.html">Themes at OSCON 2014</a></li><li><a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.html">Adopting the Functional Paradigm?</a></li><li>Retrospective on Paradigms</li><li>The Rise of Polyglotism</li><li>Preparing for the Future</li></ul><div><br /></div><div><b>Survivors' Breakfast</b></div><div><b><br /></b></div><div>The <a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-oscon-themes.html">previous post</a> covered some thoughts on the future-looking programming themes present at OSCON 2014.</div><div><br /></div><div>Following that wonderful conference, long-time Open Source advocate, Pythonista, and instructor <a href="http://holdenweb.blogspot.com/">Steve Holden</a>, was kind enough to host his third annual "OSCON Survivors' Breakfast" with tens of esteemed attendees, speakers, and organizers enjoying great company and conversation, relaxing together after the flurry of conference activity, planning a leisurely day in Portland, and -- most immediately -- having some much-needed breakfast.</div><div><br /></div><div>The view from the 23rd floor was quite an eyeful, and the conversation ranged across equally panoramic topics. Sitting with <a href="http://en.wikipedia.org/wiki/Alex_Martelli">Alex Martelli</a>, <a href="http://www.oreilly.com/pub/au/2079">Anna Ravenscroft</a>, and <a href="http://www.codemiller.com/about/">Katie Miller</a>, the conversation inevitably turned to thoughts programmatical. One thread of the discussion was so compelling that it helped crystallize this series of blog posts. That was kicked off with Katie's question:</div><div><br /></div><blockquote class="tr_bq"><span style="font-size: large;">Why [have some large companies] not embraced functional programming to the extent that other large ones have?</span></blockquote><div><br /></div><div>Multiple points of discussion spawned from this, some of which still continue. The rest of this post explores these.&nbsp;</div><div><br /></div><div><br /></div><div><b>Large Companies?</b></div><div><b><br /></b></div><div>What constitutes a large company? We settled on discussing Fortune 500 companies, which, by definition are:</div><div><ul><li>U.S. Companies</li><li>Ranked by gross revenue (after adjustments for excise taxes).</li></ul></div><div><br /></div><div>Afterwards, I looked up the 2013 top <a href="http://www.crn.com/slide-shows/channel-programs/240154736/the-25-biggest-tech-companies-on-the-fortune-500.htm">25 tech companies in the Fortune 500</a>. I've listed them below; in parentheses is the Fortune 500 ranking. After the dash are the functional programming languages used on various company projects -- these are listed only if I have talked to someone who has worked on a project (or interviewed for a job that used the language), or if I have read an article by an employee who has stated that they use the listed language(s) <a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.html#footnote-1">[1]</a>.</div><div><ol><li>Apple (6) - Swift, Clojure, Scala</li><li>AT&amp;T (11) - Haskell</li><li>HP (15) - F#, Scala</li><li>Verizon Communications (16) - Scala</li><li>IBM (20) - Scala</li><li>Microsoft (35) - F#, F*</li><li>Comcast (46) - Scala</li><li>Amazon (49) - Haskell, Scala, Erlang</li><li>Dell (51) - Erlang, Scala</li><li>Intel (54) - Haskell, SML, PLT Scheme</li><li>Google (55) - Haskell <a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.html#footnote-2">[2]</a></li><li>Cisco (60) - Scala</li><li>Ingram Micro (76) - ?</li><li>Oracle (80) - Scala</li><li>Avnet (117) - ?</li><li>Tech Data (119) - ?</li><li>Emerson Electric (123) - ?</li><li>Xerox (131) - Scala</li><li>EMC (133) - Scala</li><li>Arrow Electronics (141) - ?</li><li>Century Link (150)&nbsp;- ?</li><li>Computer Sciences Corp. (176)&nbsp;- ?</li><li>eBay (196) - Scala&nbsp;</li><li>TI (218)&nbsp;- ?</li><li>Western Digital (222)&nbsp;- ?</li></ol><div><br /></div></div><div>The companies which have committed to projects guessed to be of significant business value written in FP languages include: Apple, HP, and eBay. Possibly also Oracle and Intel. So, a rough estimate of between 3 to 5 of the top 25 U.S. tech companies have made a significant investment in FP.</div><div><br /></div><div>Why not Google?</div><div><br /></div><div>The next two sections offer summaries of some views on this.</div><div><br /></div><div><br /></div><div><b>Ideal Use Case?</b></div><div><br /></div><div>Is an FP language suitable for large organisations? Are smaller companies better served by them? During breakfast, It was postulated that dealing with such things as immutable data, handling I/O in pure FP languages, and creating/using higher order functions is easier for small startups due to the shorter amount of time required to hire or train a critical mass of skilled programmers.</div><div><br /></div><div>It is certainly true that it will take larger organisations longer to train its personnel simply due to sheer numbers and, even with enough trainers, logistics. But this argument can be made for any corporate level of instruction; in my book, this cancels out on both sides and is not an argument unique to hard topics, even less, specifically pertinent to FP adoption.</div><div><br /></div><div><br /></div><div><b>Brain Fit?</b></div><div><br /></div><div>I've heard this one a bit: "Some people just don't think in FP terms." They need loops and iteration, not higher order functions and recursion. Joel Spolsky makes reference to this in his article <a href="http://www.joelonsoftware.com/articles/fog0000000073.html">The Guerrilla Guide to Interviewing</a>. In particular, he says that "For some reason most people seem to be born without the part of the brain that understands pointers." This has been applied to topics in FP as well as C.</div><div><br /></div><div>To be fair, Joel's comment was probably made with a bit of lightness and not meant to be a statement on the nature of mind or a theory of cognition. The context of the article is a very practical one: hiring. When trying to identify whether a programmer would be an asset for your team, you're not living in the space of cognitive theory, rather you inhabit the realm of quick approximations, gut instincts, and fast, economical decisions.</div><div><br /></div><div>Regardless, I find this perspective -- Type Physicalism <a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.html#footnote-3">[3]</a> -- fairly objectionable. This is because I see it as a kind of intellectual "racism." Early social sciences utilized this form of reasoning to justify all sorts of discriminatory thinking in the name of "science", reinforcing a rigid mentality of "us" vs. "them." In my own experience, I've seen this sort of approach used to shutdown exploration, to enforce elitism, and dismiss ideas that threaten the authority of the status quo.</div><div><br />Rather than seeing the problem of comprehending FP as a <i>physical</i> limitation of the individual, I see <i>instructional </i>failure as the obstacle to overcome. If we start with the proposition that certain brains are deficient, we are essentially abandoning education. It is the responsibility of the instructor to engage creatively with each student's learning style. When adhering to the idea that certain brains are limited, one discards creative engagement; one doesn't even consider working with the students and their learning styles. This is a view that, however implicitly, can be used to shun diversity and dismiss potential.</div><div><br /></div><div>I believe the essence of what Joel was shooting for can be approached in a much kinder fashion (adapted for an FP discussion):</div><div><br /></div><div>None of us was born knowing <span style="font-family: Courier New, Courier, monospace;">GOTO</span> statements, global state, mutable data, or <span style="font-family: Courier New, Courier, monospace;">for</span> loops. There are many programmers alive, though, whose first contact with programming involved one or more of these. That's their "home town", as it were; their programmatic birth place. Having utilized -- as well as taught -- imperative, OOP, and functional styles of programming, I do not feel that one is intrinsically any harder than another. However, they are sometimes so vastly different from each other in style or syntax or semantics that once a student has solidified around the concepts of a particular paradigm, it can be a challenge retraining to work easily in another.</div><div><br /></div><div><br /></div><div><b>Why the Objections?</b></div><div><b><br /></b>If both "ideal use case" and "brain fit" are given as arguments against adopting FP (or any other new paradigm) in large organisations, and neither are considered logically or philosophically valid, what's at the root of the resistance?<br /><br /></div><div>It is not uncommon for changes in an industry or field of study to be met with resistance. The bigger or more different the change from the status quo, very often is proportional to the amount of resistance. I suspect that this is really what we're seeing when companies take a stance against FP. There are very often valid business concerns: "we've made an investment in OOP" or "it will cost too much to train/hire/migrate to FP."&nbsp;</div><div><br /></div><div>I would remind those company leaders, though, that new sources of revenue, that product innovation and changes in market adoption do not often come from maintaining or enforcing the current state. Instead, that is an identifying characteristic of companies whose relevance is fading.</div><div><br /></div><div>Even if your company has market dominance or is a monopoly, there is still a good incentive for exploring alternative paradigms. At the very least, one can uncover inefficiencies and apply new knowledge to remove duplication of efforts, increase margins, etc.</div><div><br /></div><div><br /></div><div><b>Careers</b></div><div><br /></div><div>As a manager, I have found that about half of the senior engineers up for promotion have very little to no interest in taking on different (new to them) programmatic paradigms. They consider current burdens sufficient (or too much) and would rather spend what little free time they have available to them in improving existing systems.</div><div><br /></div><div>Senior engineers who have a more academic or research bent (or are easily bored) are much more likely to embrace this sort of change. Interestingly, senior engineers who have little to no competitive drive will more readily pick up something new if the need arises. This may be due to such things as not perceiving accumulated knowledge as territory to defend, for example.</div><div><br /></div><div>Younger engineers with less experience (and less of an investment made in a particular school of thought) are much more willing to take on new challenges. I believe there are many reasons for this, one of which may include an interest in becoming more professionally competitive with their peers.</div><div><br /></div><div>Junior or senior, I have found that programmers who are currently looking to find new employment are nearly invariably not only willing to take on the challenge of learning different paradigms, but are usually going about that proactively and engaging in self-study.</div><div><br /><div>I want to work with programmers who can take on any problem space in any paradigm and find creative solutions, contributing as valued members of a team. This is certainly an ideal set of characteristics, but one that I have seen in the wilds of the workplace on multiple occasions. It has nothing to do with FP or OOP paradigms, but rather with the people themselves.</div><div><br /></div></div><div>Even if a company is locked into well-established processes and views on programming, they may find it in their best interests to provide a more open-minded approach with their employees who would enjoy that. Their retention rates could very well increase dramatically.</div><div><br /></div><div><br /></div><div><b>Do We <i>Need</i> To?</b></div><div><br /></div><div>Philosophy and hiring strategies aside, do we -- as programmers, software projects, or organizations that support programming -- need to take on the burden of learning or adopting functional programming? Quite possibly not.</div><div><br /></div><div>If Google's plans around Go involve building a new operating system (in the spirit of 1970s C and UNIX), the systems programmers may find pure functions too cumbersome to work with. FP may be too burdensome a fit for that type of work.</div><div><br /></div><div>If one is not tied to a historical analogy with UNIX, as Mozilla is not with Rust, doing something like creating a new browser engine (or running a remote services company) may be a good fit for FP, especially if one has data showing reduced error counts when using type systems.</div><div><br /></div><div>As we shall see illustrated in the next post, the usual advice continues to apply: the decision of which paradigm to employ for any given project should be dictated by the best fit and not ideological inflexibility. The bearing this has on programming is <i>innovation</i>: it is the early adopters who have the best chance of leading us into the future.</div><div><br /><i>Up next</i>: Retrospective on Programming Paradigms<br /><i>Previously</i>: <a href="http://technicae.cogitat.io/2014/07/the-future-of-programming-oscon-themes.html">Themes at OSCON 2014</a><br /><br /></div><div><br /></div><div><b>Footnotes</b></div><div><br /><a href="https://www.blogger.com/null" name="footnote-1"></a>[1] If anyone has additional information as to which FP languages are used by these top 25 companies, please let me know, and I will include that information. Bonus points for knowing of business-critical applications.</div><div><br /><a href="https://www.blogger.com/null" name="footnote-2"></a>[2] Google Switzerland are using Haskell.</div><div><br /><a href="https://www.blogger.com/null" name="footnote-3"></a>[3] Type Physicality is a form of reductive materialism, also known as the Mind-Brain Identity Theory that does not allow for mental states to be realized in organisms or computational systems that do not have a brain. See "Criticisms of Type Physicality" at <a href="http://en.wikipedia.org/wiki/Identity_theory_of_mind#Multiple_realizability">http://en.wikipedia.org/wiki/Identity_theory_of_mind#Multiple_realizability</a>.</div><div><br /></div>
+<div><div class="separator" style="clear: both; text-align: center;"><a
+href="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9
+s/s1600/Lambda.png" imageanchor="1" style="clear: right; float: right;
+margin-bottom: 1em; margin-left: 1em;"><img border="0"
+src="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s
+/s1600/Lambda.png" height="320" width="320" /></a></div><i>Series
+Links</i></div><ul><li><a href="http://technicae.cogitat.io/2014/07/the-future
+-of-programming-overview.html">An Overview</a></li><li><a
+href="http://technicae.cogitat.io/2014/07/the-future-of-programming-oscon-them
+es.html">Themes at OSCON 2014</a></li><li><a
+href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.h
+tml">Adopting the Functional Paradigm?</a></li><li>Retrospective on
+Paradigms</li><li>The Rise of Polyglotism</li><li>Preparing for the
+Future</li></ul><div><br /></div><div><b>Survivors'
+Breakfast</b></div><div><b><br /></b></div><div>The <a
+href="http://technicae.cogitat.io/2014/07/the-future-of-programming-oscon-them
+es.html">previous post</a> covered some thoughts on the future-looking
+programming themes present at OSCON 2014.</div><div><br /></div><div>Following
+that wonderful conference, long-time Open Source advocate, Pythonista, and
+instructor <a href="http://holdenweb.blogspot.com/">Steve Holden</a>, was kind
+enough to host his third annual "OSCON Survivors' Breakfast" with tens of
+esteemed attendees, speakers, and organizers enjoying great company and
+conversation, relaxing together after the flurry of conference activity,
+planning a leisurely day in Portland, and -- most immediately -- having some
+much-needed breakfast.</div><div><br /></div><div>The view from the 23rd floor
+was quite an eyeful, and the conversation ranged across equally panoramic
+topics. Sitting with <a href="http://en.wikipedia.org/wiki/Alex_Martelli">Alex
+Martelli</a>, <a href="http://www.oreilly.com/pub/au/2079">Anna
+Ravenscroft</a>, and <a href="http://www.codemiller.com/about/">Katie
+Miller</a>, the conversation inevitably turned to thoughts programmatical. One
+thread of the discussion was so compelling that it helped crystallize this
+series of blog posts. That was kicked off with Katie's question:</div><div><br
+/></div><blockquote class="tr_bq"><span style="font-size: large;">Why [have
+some large companies] not embraced functional programming to the extent that
+other large ones have?</span></blockquote><div><br /></div><div>Multiple
+points of discussion spawned from this, some of which still continue. The rest
+of this post explores these.&nbsp;</div><div><br /></div><div><br
+/></div><div><b>Large Companies?</b></div><div><b><br /></b></div><div>What
+constitutes a large company? We settled on discussing Fortune 500 companies,
+which, by definition are:</div><div><ul><li>U.S. Companies</li><li>Ranked by
+gross revenue (after adjustments for excise taxes).</li></ul></div><div><br
+/></div><div>Afterwards, I looked up the 2013 top <a
+href="http://www.crn.com/slide-shows/channel-programs/240154736/the-25-biggest
+-tech-companies-on-the-fortune-500.htm">25 tech companies in the Fortune
+500</a>. I've listed them below; in parentheses is the Fortune 500 ranking.
+After the dash are the functional programming languages used on various
+company projects -- these are listed only if I have talked to someone who has
+worked on a project (or interviewed for a job that used the language), or if I
+have read an article by an employee who has stated that they use the listed
+language(s) <a
+href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.h
+tml#footnote-1">[1]</a>.</div><div><ol><li>Apple (6) - Swift, Clojure,
+Scala</li><li>AT&amp;T (11) - Haskell</li><li>HP (15) - F#,
+Scala</li><li>Verizon Communications (16) - Scala</li><li>IBM (20) -
+Scala</li><li>Microsoft (35) - F#, F*</li><li>Comcast (46) -
+Scala</li><li>Amazon (49) - Haskell, Scala, Erlang</li><li>Dell (51) - Erlang,
+Scala</li><li>Intel (54) - Haskell, SML, PLT Scheme</li><li>Google (55) -
+Haskell <a
+href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.h
+tml#footnote-2">[2]</a></li><li>Cisco (60) - Scala</li><li>Ingram Micro (76) -
+?</li><li>Oracle (80) - Scala</li><li>Avnet (117) - ?</li><li>Tech Data (119)
+- ?</li><li>Emerson Electric (123) - ?</li><li>Xerox (131) - Scala</li><li>EMC
+(133) - Scala</li><li>Arrow Electronics (141) - ?</li><li>Century Link
+(150)&nbsp;- ?</li><li>Computer Sciences Corp. (176)&nbsp;- ?</li><li>eBay
+(196) - Scala&nbsp;</li><li>TI (218)&nbsp;- ?</li><li>Western Digital
+(222)&nbsp;- ?</li></ol><div><br /></div></div><div>The companies which have
+committed to projects guessed to be of significant business value written in
+FP languages include: Apple, HP, and eBay. Possibly also Oracle and Intel. So,
+a rough estimate of between 3 to 5 of the top 25 U.S. tech companies have made
+a significant investment in FP.</div><div><br /></div><div>Why not
+Google?</div><div><br /></div><div>The next two sections offer summaries of
+some views on this.</div><div><br /></div><div><br /></div><div><b>Ideal Use
+Case?</b></div><div><br /></div><div>Is an FP language suitable for large
+organisations? Are smaller companies better served by them? During breakfast,
+It was postulated that dealing with such things as immutable data, handling
+I/O in pure FP languages, and creating/using higher order functions is easier
+for small startups due to the shorter amount of time required to hire or train
+a critical mass of skilled programmers.</div><div><br /></div><div>It is
+certainly true that it will take larger organisations longer to train its
+personnel simply due to sheer numbers and, even with enough trainers,
+logistics. But this argument can be made for any corporate level of
+instruction; in my book, this cancels out on both sides and is not an argument
+unique to hard topics, even less, specifically pertinent to FP
+adoption.</div><div><br /></div><div><br /></div><div><b>Brain
+Fit?</b></div><div><br /></div><div>I've heard this one a bit: "Some people
+just don't think in FP terms." They need loops and iteration, not higher order
+functions and recursion. Joel Spolsky makes reference to this in his article
+<a href="http://www.joelonsoftware.com/articles/fog0000000073.html">The
+Guerrilla Guide to Interviewing</a>. In particular, he says that "For some
+reason most people seem to be born without the part of the brain that
+understands pointers." This has been applied to topics in FP as well as
+C.</div><div><br /></div><div>To be fair, Joel's comment was probably made
+with a bit of lightness and not meant to be a statement on the nature of mind
+or a theory of cognition. The context of the article is a very practical one:
+hiring. When trying to identify whether a programmer would be an asset for
+your team, you're not living in the space of cognitive theory, rather you
+inhabit the realm of quick approximations, gut instincts, and fast, economical
+decisions.</div><div><br /></div><div>Regardless, I find this perspective --
+Type Physicalism <a
+href="http://technicae.cogitat.io/2014/07/the-future-of-programming-adopting.h
+tml#footnote-3">[3]</a> -- fairly objectionable. This is because I see it as a
+kind of intellectual "racism." Early social sciences utilized this form of
+reasoning to justify all sorts of discriminatory thinking in the name of
+"science", reinforcing a rigid mentality of "us" vs. "them." In my own
+experience, I've seen this sort of approach used to shutdown exploration, to
+enforce elitism, and dismiss ideas that threaten the authority of the status
+quo.</div><div><br />Rather than seeing the problem of comprehending FP as a
+<i>physical</i> limitation of the individual, I see <i>instructional
+</i>failure as the obstacle to overcome. If we start with the proposition that
+certain brains are deficient, we are essentially abandoning education. It is
+the responsibility of the instructor to engage creatively with each student's
+learning style. When adhering to the idea that certain brains are limited, one
+discards creative engagement; one doesn't even consider working with the
+students and their learning styles. This is a view that, however implicitly,
+can be used to shun diversity and dismiss potential.</div><div><br
+/></div><div>I believe the essence of what Joel was shooting for can be
+approached in a much kinder fashion (adapted for an FP
+discussion):</div><div><br /></div><div>None of us was born knowing <span
+style="font-family: Courier New, Courier, monospace;">GOTO</span> statements,
+global state, mutable data, or <span style="font-family: Courier New, Courier,
+monospace;">for</span> loops. There are many programmers alive, though, whose
+first contact with programming involved one or more of these. That's their
+"home town", as it were; their programmatic birth place. Having utilized -- as
+well as taught -- imperative, OOP, and functional styles of programming, I do
+not feel that one is intrinsically any harder than another. However, they are
+sometimes so vastly different from each other in style or syntax or semantics
+that once a student has solidified around the concepts of a particular
+paradigm, it can be a challenge retraining to work easily in
+another.</div><div><br /></div><div><br /></div><div><b>Why the
+Objections?</b></div><div><b><br /></b>If both "ideal use case" and "brain
+fit" are given as arguments against adopting FP (or any other new paradigm) in
+large organisations, and neither are considered logically or philosophically
+valid, what's at the root of the resistance?<br /><br /></div><div>It is not
+uncommon for changes in an industry or field of study to be met with
+resistance. The bigger or more different the change from the status quo, very
+often is proportional to the amount of resistance. I suspect that this is
+really what we're seeing when companies take a stance against FP. There are
+very often valid business concerns: "we've made an investment in OOP" or "it
+will cost too much to train/hire/migrate to FP."&nbsp;</div><div><br
+/></div><div>I would remind those company leaders, though, that new sources of
+revenue, that product innovation and changes in market adoption do not often
+come from maintaining or enforcing the current state. Instead, that is an
+identifying characteristic of companies whose relevance is
+fading.</div><div><br /></div><div>Even if your company has market dominance
+or is a monopoly, there is still a good incentive for exploring alternative
+paradigms. At the very least, one can uncover inefficiencies and apply new
+knowledge to remove duplication of efforts, increase margins,
+etc.</div><div><br /></div><div><br /></div><div><b>Careers</b></div><div><br
+/></div><div>As a manager, I have found that about half of the senior
+engineers up for promotion have very little to no interest in taking on
+different (new to them) programmatic paradigms. They consider current burdens
+sufficient (or too much) and would rather spend what little free time they
+have available to them in improving existing systems.</div><div><br
+/></div><div>Senior engineers who have a more academic or research bent (or
+are easily bored) are much more likely to embrace this sort of change.
+Interestingly, senior engineers who have little to no competitive drive will
+more readily pick up something new if the need arises. This may be due to such
+things as not perceiving accumulated knowledge as territory to defend, for
+example.</div><div><br /></div><div>Younger engineers with less experience
+(and less of an investment made in a particular school of thought) are much
+more willing to take on new challenges. I believe there are many reasons for
+this, one of which may include an interest in becoming more professionally
+competitive with their peers.</div><div><br /></div><div>Junior or senior, I
+have found that programmers who are currently looking to find new employment
+are nearly invariably not only willing to take on the challenge of learning
+different paradigms, but are usually going about that proactively and engaging
+in self-study.</div><div><br /><div>I want to work with programmers who can
+take on any problem space in any paradigm and find creative solutions,
+contributing as valued members of a team. This is certainly an ideal set of
+characteristics, but one that I have seen in the wilds of the workplace on
+multiple occasions. It has nothing to do with FP or OOP paradigms, but rather
+with the people themselves.</div><div><br /></div></div><div>Even if a company
+is locked into well-established processes and views on programming, they may
+find it in their best interests to provide a more open-minded approach with
+their employees who would enjoy that. Their retention rates could very well
+increase dramatically.</div><div><br /></div><div><br /></div><div><b>Do We
+<i>Need</i> To?</b></div><div><br /></div><div>Philosophy and hiring
+strategies aside, do we -- as programmers, software projects, or organizations
+that support programming -- need to take on the burden of learning or adopting
+functional programming? Quite possibly not.</div><div><br /></div><div>If
+Google's plans around Go involve building a new operating system (in the
+spirit of 1970s C and UNIX), the systems programmers may find pure functions
+too cumbersome to work with. FP may be too burdensome a fit for that type of
+work.</div><div><br /></div><div>If one is not tied to a historical analogy
+with UNIX, as Mozilla is not with Rust, doing something like creating a new
+browser engine (or running a remote services company) may be a good fit for
+FP, especially if one has data showing reduced error counts when using type
+systems.</div><div><br /></div><div>As we shall see illustrated in the next
+post, the usual advice continues to apply: the decision of which paradigm to
+employ for any given project should be dictated by the best fit and not
+ideological inflexibility. The bearing this has on programming is
+<i>innovation</i>: it is the early adopters who have the best chance of
+leading us into the future.</div><div><br /><i>Up next</i>: Retrospective on
+Programming Paradigms<br /><i>Previously</i>: <a
+href="http://technicae.cogitat.io/2014/07/the-future-of-programming-oscon-them
+es.html">Themes at OSCON 2014</a><br /><br /></div><div><br
+/></div><div><b>Footnotes</b></div><div><br /><a
+href="https://www.blogger.com/null" name="footnote-1"></a>[1] If anyone has
+additional information as to which FP languages are used by these top 25
+companies, please let me know, and I will include that information. Bonus
+points for knowing of business-critical applications.</div><div><br /><a
+href="https://www.blogger.com/null" name="footnote-2"></a>[2] Google
+Switzerland are using Haskell.</div><div><br /><a
+href="https://www.blogger.com/null" name="footnote-3"></a>[3] Type Physicality
+is a form of reductive materialism, also known as the Mind-Brain Identity
+Theory that does not allow for mental states to be realized in organisms or
+computational systems that do not have a brain. See "Criticisms of Type
+Physicality" at <a
+href="http://en.wikipedia.org/wiki/Identity_theory_of_mind#Multiple_realizabil
+ity">http://en.wikipedia.org/wiki/Identity_theory_of_mind#Multiple_realizabili
+ty</a>.</div><div><br /></div>

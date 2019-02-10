@@ -11,4 +11,61 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-Ch1fYPe6t7I/U3j-8YZWsBI/AAAAAAAAANg/GDzDKDQk7iQ/s1600/lfest.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-Ch1fYPe6t7I/U3j-8YZWsBI/AAAAAAAAANg/GDzDKDQk7iQ/s1600/lfest.jpg" height="223" width="400" /></a></div>The Clojure community (in particular, <a href="https://github.com/weavejester">James Reeves</a>) has produced one of the best APIs I've seen for creating RESTful services, or any application using path dispatching (routing), really: <a href="https://github.com/weavejester/compojure">Compojure</a>.<br /><br />I've been really missing this in LFE. Despite the fact that creating <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>ful apps in <a href="http://lfe.github.io/">LFE</a> with <a href="http://yaws.hyber.org/">YAWS</a> is so simple it doesn't even need a framework, the routes can be a bit difficult to read, due to some of the destructuring that's done (e.g., URL paths).<br /><br />Take the following route declaration from the <a href="https://github.com/lfex/yaws-rest-starter">yaws-rest-starter</a> project:<br /><div><script src="https://gist.github.com/499adcbff96383f50e8a.js?file=01-manual-routes.lfe"></script></div><br />Note that this example delegates additional routing to other functions, since all the routing in one function was pretty difficult to read. This, however, detracts from the overall readability in a different way: there's not one place to look to see what functions map to the complete URL-space for this service.<br /><br />I wanted to be able to do something like what you can do in Clojure:<br /><div><script src="https://gist.github.com/499adcbff96383f50e8a.js?file=02-clojure-routes.clj"></script></div><br />LFE is a Lisp with macros, so why not? Also, <a href="https://github.com/nox">nox</a>&nbsp;or mheise (I forget who) on the #erlang-lisp channel had previously noted <a href="https://github.com/lfex">all the lfe* projects</a>&nbsp;(and <a href="https://github.com/lfe">these too</a>), and suggested that someone create the inevitable "lfest" repo on Github. <br /><br />Enter <a href="https://github.com/lfex/lfest">lfest</a>. After a weekend of hacking and debugging some tiny macros, <a href="https://github.com/lfex/lfest/blob/master/include/macros.lfe">surprisingly little code</a> now supports routes definitions like the following&nbsp;in LFE+YAWS web apps:<br /><div><script src="https://gist.github.com/499adcbff96383f50e8a.js?file=03-macro-routes.lfe"></script></div><br />If you're curious to see what this actually expands to before getting compiled in a <span style="font-family: Courier New, Courier, monospace;">.beam</span> file, you can <a href="https://github.com/lfex/lfest#concepts">view it here</a>.<br /><br />Bonus for LFE webdevs: this project also has a <a href="https://github.com/lfex/lfest/blob/master/src/lfest-codes.lfe">module of HTTP status codes</a>, for easy re-use in other projects.<br /><br />The recent work I've been doing with macros has really helped shape the section I've been planning to write in the <a href="http://lfe.github.io/user-guide/intro/1.html">LFE User Guide</a>. I haven't wanted it to be yet another dry description of macros in a Lisp-2. Instead, my hope is to help jump-start people into how to think about macros, how to start writing them immediately (without years of study first), and how to debug them.<br /><br />The trick, as with all complicated subjects, is how to remove the barrier to entry and get folks that necessary hands-on experience <i>without</i> dumbing-down the material. It's almost ready...<br /><br />Also, it's <a href="http://www.baytobreakers.com/">Bay to Breakers</a> today, and Ocean Beach is <i>bumpin</i>. The synchronicity is just eery. May you party just as hard with routes in LFE.<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://2.bp.blogspot.com/-Ch1fYPe6t7I/U3j-8YZWsBI/AAAAAAAAANg/GDzDKDQk7i
+Q/s1600/lfest.jpg" imageanchor="1" style="clear: left; float: left;
+margin-bottom: 1em; margin-right: 1em;"><img border="0"
+src="http://2.bp.blogspot.com/-Ch1fYPe6t7I/U3j-8YZWsBI/AAAAAAAAANg/GDzDKDQk7iQ
+/s1600/lfest.jpg" height="223" width="400" /></a></div>The Clojure community
+(in particular, <a href="https://github.com/weavejester">James Reeves</a>) has
+produced one of the best APIs I've seen for creating RESTful services, or any
+application using path dispatching (routing), really: <a
+href="https://github.com/weavejester/compojure">Compojure</a>.<br /><br />I've
+been really missing this in LFE. Despite the fact that creating <a
+href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>fu
+l apps in <a href="http://lfe.github.io/">LFE</a> with <a
+href="http://yaws.hyber.org/">YAWS</a> is so simple it doesn't even need a
+framework, the routes can be a bit difficult to read, due to some of the
+destructuring that's done (e.g., URL paths).<br /><br />Take the following
+route declaration from the <a
+href="https://github.com/lfex/yaws-rest-starter">yaws-rest-starter</a> project
+:<br /><div><script
+src="https://gist.github.com/499adcbff96383f50e8a.js?file=01-manual-routes.lfe
+"></script></div><br />Note that this example delegates additional routing to
+other functions, since all the routing in one function was pretty difficult to
+read. This, however, detracts from the overall readability in a different way:
+there's not one place to look to see what functions map to the complete
+URL-space for this service.<br /><br />I wanted to be able to do something
+like what you can do in Clojure:<br /><div><script
+src="https://gist.github.com/499adcbff96383f50e8a.js?file=02-clojure-routes.cl
+j"></script></div><br />LFE is a Lisp with macros, so why not? Also, <a
+href="https://github.com/nox">nox</a>&nbsp;or mheise (I forget who) on the
+#erlang-lisp channel had previously noted <a
+href="https://github.com/lfex">all the lfe* projects</a>&nbsp;(and <a
+href="https://github.com/lfe">these too</a>), and suggested that someone
+create the inevitable "lfest" repo on Github. <br /><br />Enter <a
+href="https://github.com/lfex/lfest">lfest</a>. After a weekend of hacking and
+debugging some tiny macros, <a
+href="https://github.com/lfex/lfest/blob/master/include/macros.lfe">surprising
+ly little code</a> now supports routes definitions like the following&nbsp;in
+LFE+YAWS web apps:<br /><div><script
+src="https://gist.github.com/499adcbff96383f50e8a.js?file=03-macro-routes.lfe"
+></script></div><br />If you're curious to see what this actually expands to
+before getting compiled in a <span style="font-family: Courier New, Courier,
+monospace;">.beam</span> file, you can <a
+href="https://github.com/lfex/lfest#concepts">view it here</a>.<br /><br
+/>Bonus for LFE webdevs: this project also has a <a
+href="https://github.com/lfex/lfest/blob/master/src/lfest-codes.lfe">module of
+HTTP status codes</a>, for easy re-use in other projects.<br /><br />The
+recent work I've been doing with macros has really helped shape the section
+I've been planning to write in the <a
+href="http://lfe.github.io/user-guide/intro/1.html">LFE User Guide</a>. I
+haven't wanted it to be yet another dry description of macros in a Lisp-2.
+Instead, my hope is to help jump-start people into how to think about macros,
+how to start writing them immediately (without years of study first), and how
+to debug them.<br /><br />The trick, as with all complicated subjects, is how
+to remove the barrier to entry and get folks that necessary hands-on
+experience <i>without</i> dumbing-down the material. It's almost ready...<br
+/><br />Also, it's <a href="http://www.baytobreakers.com/">Bay to Breakers</a>
+today, and Ocean Beach is <i>bumpin</i>. The synchronicity is just eery. May
+you party just as hard with routes in LFE.<br /><br /><br />

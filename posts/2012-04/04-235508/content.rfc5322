@@ -11,4 +11,47 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS8/s1600/openstack-logo512.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS8/s200/openstack-logo512.png" width="200" /></a></div><span style="font-size: large;"><b>Meetup</b></span><br /><br />Tomorrow is OpenStack Atlanta's second event (the first being a <a href="http://oubiwann.blogspot.com/2012/03/successful-hack-in-01-mar-2012.html">HackIn</a>). &nbsp;Ken Pepple is going to be talking about deploying OpenStack, something he should feel very comfortable doing, given <a href="http://shop.oreilly.com/product/0636920021674.do">his book</a> as well as <a href="http://www.networkworld.com/news/2011/102811-openstack-internap-252517.html">Internap's latest announcement</a> :-)<br /><br />There's more info about tomorrow's event at the <a href="http://www.meetup.com/openstack-atlanta/events/54612622/">Meetup page</a>.<br /><br /><span style="font-size: large;"><b>OpenStack Design Summit</b></span><br /><br />In a couple weeks, a bunch of us from <a href="http://dreamhost.com/">DreamHost</a> are going to be heading to the <a href="http://openstack.org/conference/san-francisco-2012/">OpenStack Summit and Conference</a> in San Francisco. There's a lot of buzz about it both inside the company, in the offices of our fellow OpenStack&nbsp;collaborators, and in the wider open source community. With Citrix's recent announcement, Internap's deployment, Eucalyptus' approval by Amazon, there's plenty of Cloud Drama to go around.&nbsp;Fortunately, the focus of the Summit and Conference is on the important positives: how to improve an extraordinary piece of software and disseminating expertise. Can't wait!<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-sriiGAihT6s/T30lsx3fJwI/AAAAAAAAAIQ/x5WvITOtnh8/s1600/github-logo-2x120.gif" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="http://1.bp.blogspot.com/-sriiGAihT6s/T30lsx3fJwI/AAAAAAAAAIQ/x5WvITOtnh8/s1600/github-logo-2x120.gif" /></a></div><span style="font-size: large;"><b>GitHub Love</b></span><br /><br />Last but not least, the Dev team at DreamHost has been using <a href="https://github.com/dreamhost">Github</a> in conjunction with <a href="https://launchpad.net/">Launchpad</a> in a manner similar to how the OpenStack project does it. The increased interest in open source software in our offices is starting to make its way out to our customers, and we've got a <a href="http://dreamhost.github.com/">new web presence</a> that is the first step in supporting this new direction. We're cooking up a bunch more stuff, so be sure to check in on our repos from time to time :-)<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS
+8/s1600/openstack-logo512.png" imageanchor="1" style="clear: left; float:
+left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200"
+src="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS8
+/s200/openstack-logo512.png" width="200" /></a></div><span style="font-size:
+large;"><b>Meetup</b></span><br /><br />Tomorrow is OpenStack Atlanta's second
+event (the first being a <a
+href="http://oubiwann.blogspot.com/2012/03/successful-hack-in-01-mar-2012.html
+">HackIn</a>). &nbsp;Ken Pepple is going to be talking about deploying
+OpenStack, something he should feel very comfortable doing, given <a
+href="http://shop.oreilly.com/product/0636920021674.do">his book</a> as well
+as <a
+href="http://www.networkworld.com/news/2011/102811-openstack-internap-252517.h
+tml">Internap's latest announcement</a> :-)<br /><br />There's more info about
+tomorrow's event at the <a
+href="http://www.meetup.com/openstack-atlanta/events/54612622/">Meetup page</a
+>.<br /><br /><span style="font-size: large;"><b>OpenStack Design
+Summit</b></span><br /><br />In a couple weeks, a bunch of us from <a
+href="http://dreamhost.com/">DreamHost</a> are going to be heading to the <a
+href="http://openstack.org/conference/san-francisco-2012/">OpenStack Summit
+and Conference</a> in San Francisco. There's a lot of buzz about it both
+inside the company, in the offices of our fellow OpenStack&nbsp;collaborators,
+and in the wider open source community. With Citrix's recent announcement,
+Internap's deployment, Eucalyptus' approval by Amazon, there's plenty of Cloud
+Drama to go around.&nbsp;Fortunately, the focus of the Summit and Conference
+is on the important positives: how to improve an extraordinary piece of
+software and disseminating expertise. Can't wait!<br /><br /><div
+class="separator" style="clear: both; text-align: center;"></div><div
+class="separator" style="clear: both; text-align: center;"><a
+href="http://1.bp.blogspot.com/-sriiGAihT6s/T30lsx3fJwI/AAAAAAAAAIQ/x5WvITOtnh
+8/s1600/github-logo-2x120.gif" imageanchor="1" style="clear: right; float:
+right; margin-bottom: 1em; margin-left: 1em;"><img border="0"
+src="http://1.bp.blogspot.com/-sriiGAihT6s/T30lsx3fJwI/AAAAAAAAAIQ/x5WvITOtnh8
+/s1600/github-logo-2x120.gif" /></a></div><span style="font-size:
+large;"><b>GitHub Love</b></span><br /><br />Last but not least, the Dev team
+at DreamHost has been using <a href="https://github.com/dreamhost">Github</a>
+in conjunction with <a href="https://launchpad.net/">Launchpad</a> in a manner
+similar to how the OpenStack project does it. The increased interest in open
+source software in our offices is starting to make its way out to our
+customers, and we've got a <a href="http://dreamhost.github.com/">new web
+presence</a> that is the first step in supporting this new direction. We're
+cooking up a bunch more stuff, so be sure to check in on our repos from time
+to time :-)<br /><br /><br />

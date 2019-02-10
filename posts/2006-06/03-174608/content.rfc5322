@@ -11,4 +11,40 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><i class="categories">python :: programming :: math</i><br/><br/><div class="entry"><br /><p> <br />A few years ago I was working on a sub-project of CoyoteMonitoring<br />where we were writing a database "layer" for the file system, <br />essentially allowing us to query for files using standard SQL commands.<br />We needed to do some exclusionary logic for filtering bad user input. <br />Though mathematically equivalent, I deal with Set Theory and Logic very<br />differently: I'm a set guy, and I really hate using series of if/else <br />statements for problems that lend themselves easily to an approach that<br />is "set theoretic" (we're talking super-mundane set stuff -- nothing <br />really sexy).<br /></p><p/>On IRC, I was gently preparing a fellow project developer for some code<br />changes I had made that eliminated a series of ugly ifs:<p/><pre> <br />[03-Oct-2004 02:02] <oubiwann> you know, we could do this really<br />quickly with sets :-)<br />[03-Oct-2004 02:02] <oubiwann> check this out:<br />[03-Oct-2004 02:02] <oubiwann> lets say our table has 4 fields:<br />[03-Oct-2004 02:03] <oubiwann> ['A','B','C','D']<br />[03-Oct-2004 02:03] <oubiwann> and we're doing a select for ['D', 'A', <br />'C']<br />[03-Oct-2004 02:05] <oubiwann> and lets say we've got a bad query <br />['Z', 'B', 'C']<br />[03-Oct-2004 02:07] <oubiwann> then, if we perform a set difference on<br />select<br /> tables against defs, the returned set will be zero<br />[03-Oct-2004 02:07] <oubiwann> and if we do the same with bad against<br />defs,<br /> we'll get a non-empty set, in this case a set with one element, 'Z'<br /></pre><p/><br />I then shared some python 2.3 code (no built-in set object) that<br />basically illustrated the changes I had made. For me, the results were<br />much more readable. The code was certainly much shorter.<p/>Since then, I've found all sorts of uses for this approach. I've<br />recently made use of this in a Nevow project that has to authenticate<br />off of a Zope instance. There are a series of group and role names that<br />can be qualified under one of three "group-groups" (tiers):<p/><pre><br /># setup sets for each class of user<br />admins = set(cfg.user_database.admin_roles)<br />libs = set(cfg.user_database.tiertwo_roles)<br />vols = set(cfg.user_database.tierone_roles)<br /># and then a convenience collection<br />legal_roles = admins.union(libs).union(vols)<br /></pre><p/>Later in the code, we do checks like this:<p/><pre><br />if admins.intersection(avatarRoles):<br /> return IAdministratorResource<br /></pre><p/>I like this much more than explicitly checking for the presence of<br />elements in lists.<p/></div><br/></div>
+<div><i class="categories">python :: programming :: math</i><br/><br/><div
+class="entry"><br /><p> <br />A few years ago I was working on a sub-project
+of CoyoteMonitoring<br />where we were writing a database "layer" for the file
+system, <br />essentially allowing us to query for files using standard SQL
+commands.<br />We needed to do some exclusionary logic for filtering bad user
+input. <br />Though mathematically equivalent, I deal with Set Theory and
+Logic very<br />differently: I'm a set guy, and I really hate using series of
+if/else <br />statements for problems that lend themselves easily to an
+approach that<br />is "set theoretic" (we're talking super-mundane set stuff
+-- nothing <br />really sexy).<br /></p><p/>On IRC, I was gently preparing a
+fellow project developer for some code<br />changes I had made that eliminated
+a series of ugly ifs:<p/><pre> <br />[03-Oct-2004 02:02] <oubiwann> you know,
+we could do this really<br />quickly with sets :-)<br />[03-Oct-2004 02:02]
+<oubiwann> check this out:<br />[03-Oct-2004 02:02] <oubiwann> lets say our
+table has 4 fields:<br />[03-Oct-2004 02:03] <oubiwann> ['A','B','C','D']<br
+/>[03-Oct-2004 02:03] <oubiwann> and we're doing a select for ['D', 'A', <br
+/>'C']<br />[03-Oct-2004 02:05] <oubiwann> and lets say we've got a bad query
+<br />['Z', 'B', 'C']<br />[03-Oct-2004 02:07] <oubiwann> then, if we perform
+a set difference on<br />select<br /> tables against defs, the returned set
+will be zero<br />[03-Oct-2004 02:07] <oubiwann> and if we do the same with
+bad against<br />defs,<br /> we'll get a non-empty set, in this case a set
+with one element, 'Z'<br /></pre><p/><br />I then shared some python 2.3 code
+(no built-in set object) that<br />basically illustrated the changes I had
+made. For me, the results were<br />much more readable. The code was certainly
+much shorter.<p/>Since then, I've found all sorts of uses for this approach.
+I've<br />recently made use of this in a Nevow project that has to
+authenticate<br />off of a Zope instance. There are a series of group and role
+names that<br />can be qualified under one of three "group-groups"
+(tiers):<p/><pre><br /># setup sets for each class of user<br />admins =
+set(cfg.user_database.admin_roles)<br />libs =
+set(cfg.user_database.tiertwo_roles)<br />vols =
+set(cfg.user_database.tierone_roles)<br /># and then a convenience
+collection<br />legal_roles = admins.union(libs).union(vols)<br
+/></pre><p/>Later in the code, we do checks like this:<p/><pre><br />if
+admins.intersection(avatarRoles):<br /> return IAdministratorResource<br
+/></pre><p/>I like this much more than explicitly checking for the presence
+of<br />elements in lists.<p/></div><br/></div>

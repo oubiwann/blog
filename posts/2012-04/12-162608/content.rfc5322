@@ -11,4 +11,225 @@ Comments:
 Content-Type: md
 Public?: true
 
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: right; margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align: center;"><a href="http://www.flickr.com/photos/stewiedewie/5356165419/" style="margin-left: auto; margin-right: auto;" target="_blank"><img border="0" height="212" src="http://2.bp.blogspot.com/-SPRSlhT8-1E/T4NjLMes1wI/AAAAAAAAAJE/u2VcGSRTcBI/s320/52-billion-YBPPH.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Original, source photo by&nbsp;Stewart Leiwakabessy</td></tr></tbody></table>On a long, rural drive back from the <a href="http://www.flickr.com/photos/oubiwann/sets/72157629418063102/" target="_blank">Indian wedding</a>&nbsp;(for my college roommate and long-time friend) this weekend in beautiful Savannah, GA, some silliness occurred to me. I chuckled as I imagined the speed limit being cast in terms of bits per hour instead of the usual. Not being one to shy away from idle musings, I continued with the thought, exploring the various angles. <br /><br />It wasn't long before I was deep into wondering about the bits&nbsp;encoded&nbsp;in the bacterial DNA of my large intestines and the number of possible states for all the interacting systems at the quantum level. When I got home, I brushed the dust off some links I hadn't visited in a while, and things got even more interesting.<br /><br /><br /><b>A Naïve Snap-shot in Time</b><br /><br />The first draft of this paragraph was details on the bits contained in the genomes of humans, resident bacteria and viruses, CAD drawings for the car (everything from bolts, screws, and parts to the engine, electrical system, and GPS). Needless to say, there was lots of boring multiplication, addition, and hand-wavy guesses for when I couldn't find hard data.<br /><br />I also started exploring the visual data of the landscape, coming in through the windows and review mirrors... and this opens up the "perception" can of worms.<br /><br />The end result was an estimate of 427 terabits of "blueprint" data implicitly hurtling down the highway at 70 mph.<br /><br />But what about data in time?<br /><br /><br /><b>A One-second Interval</b><br /><br />We can do obvious things, like calculating the data being pushed into the ambient environment by a CD (1,411,200 bits per second [2]) or a DVD (27,000,000 bits per second for (HDTV [3]) being viewed by passengers. Of course, since we're dealing with averages, we've only got .3 passengers (27,000,000 * 0.3 bps).<br /><br />We can also turn those the snapshots of the scenery out the windows into "streaming, high-resolution media." Imagining 6 windows and 3 mirrors and calculating assuming that each is "generating" (allowing to pass) HDTV quality visual data, we have&nbsp;9 *&nbsp;27,000,000 * 1.3.<br /><br />However, before we go too much further, there are some problems:<br /><ol><li>we no longer have the simple static data problem: have included time, so now we get changes in state</li><li>we're still referring to the data of the objects as the minimum required to "assemble" them, not the data of the completed units themselves, replete with possibly uncountable phenomenal interactions</li><li>we have assumed that generators of information are something we should&nbsp;measure</li><li>we have ignored perceivers of information</li><li>we are ignoring scale</li></ol>The scale one is a doozy...<br /><br /><br /><b>The Coast of Norway Problem</b><br /><br />If we take the full spectrum of data-generating events into account, there is a LOT of information to be accounted for. Here is a brief overview of some of the data entering the car or being generated inside of it:<br /><ul><li>viewing the stars (astronomical scale)</li><li>viewing mountains in the distance</li><li>watching the environment near the car (animals, other cars, trees)</li><li>listening to conversation, music, or passengers watching a movie</li><li>the presence and activity of&nbsp;bugs, dust, lint in the car</li><li>similarly, bacteria and air moisture in the car</li><li>air-borne viruses</li></ul><div>That takes the external environment into account. Now, the internal:</div><ul><li>body organs</li><li>internal flora and fauna, cells</li><li>neurological, mechanical (microtubules), and chemical signals</li><li>molecules</li><li>atoms</li><li>subatomic particles</li><li>plank-level interactions and quantum foam</li></ul><div>These conceptually fractal fjords portray an obvious case of vastly increasing rates of data when additional levels of scale are taken into consideration.</div><div><br /></div><div>So when do we stop? At what point do we say "that's enough data" and abandon further explorations up and down the&nbsp;spectrum&nbsp;of scale? Is there such a thing as a "good approximation" of data in a finite portion of spacetime? Is there an upper bound we can use?</div><br />Indeed there is. Sort of. For the quantum states within a particular volume, anyway.<br /><br /><br /><b>Working with Maximum Info</b><br /><br />Based upon his work in 1972 on black holes, Jacob Bekenstein demonstrated that there is a maximum amount of information that can be stored in a finite region of spacetime using a finite amount of energy. He phrased this bound in terms of entropy with the following:<br /><div class="separator" style="background: #fff; clear: both; margin: 5px; text-align: center;"><a href="http://1.bp.blogspot.com/-tRJb7MfDxg0/T4MPu-I-71I/AAAAAAAAAIc/aQZKbqihwbA/s1600/bekenstein_bound_entropy.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-tRJb7MfDxg0/T4MPu-I-71I/AAAAAAAAAIc/aQZKbqihwbA/s1600/bekenstein_bound_entropy.jpg" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">When recast in information-theoretic terms and after performing some algebraic substitutions, we have this inequality:</div><div class="separator" style="background: #fff; clear: both; margin: 5px; text-align: center;"><a href="http://2.bp.blogspot.com/-1rt3juoLYXk/T4MegQDqCyI/AAAAAAAAAIs/hjtkxm9QYYI/s1600/bekenstein_bound_information-2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-1rt3juoLYXk/T4MegQDqCyI/AAAAAAAAAIs/hjtkxm9QYYI/s1600/bekenstein_bound_information-2.png" /></a></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: left;">With this, we can estimate the total possible information carried within an average car, the passengers, and some stuff in the car:</div><div class="separator" style="clear: both; text-align: left;"></div><ul><li>2000 kg car, 4 cubic meters = 5e+46 bits</li><li>1.3 * 70 kg human, 0.005 cubic meters = 2e+44 bits</li><li>50 kg of junk, 0.001 cubic meters = bits 1e+44</li></ul><div>If we just add them all together (which I'm not sure is kosher since the distribution of information is decidedly non-uniform and almost certainly interdependent), that's 4.7e+37 gigabits, or 5.9e+36 gigabytes. The highest we go in our naming scale for numbers right now is 5.2e+21 yottabytes. That's 52 <i>billion</i> gigabytes. The mind truly boggles.<br /><br />That's just a Sunday drive. What about the road? The landscape? The entire planet?</div><div><br />The famous gravitational physicist Wheeler said it well in his paper <i>Information, Physics, Quantum: The Search for Links</i>:<br /><blockquote class="tr_bq"><span class="s1">"Enough&nbsp;</span><span class="s2">bits&nbsp;</span><span class="s3">to&nbsp;</span>structure&nbsp;<span class="s4">a&nbsp;</span><span class="s5">universe&nbsp;</span><span class="s6">so&nbsp;</span><span class="s7">rich&nbsp;</span><span class="s2">in&nbsp;</span><span class="s8">features&nbsp;</span><span class="s6">as&nbsp;</span><span class="s9">we&nbsp;</span><span class="s10">know&nbsp;</span><span class="s2">this world&nbsp;</span><span class="s11">to&nbsp;</span><span class="s5">be?&nbsp;</span>Preposterous!&nbsp;<span class="s8">Mice&nbsp;</span><span class="s12">and&nbsp;</span><span class="s13">men&nbsp;</span><span class="s7">and&nbsp;</span><span class="s14">all&nbsp;</span><span class="s15">on&nbsp;</span><span class="s16">Earth&nbsp;</span><span class="s8">who&nbsp;</span><span class="s17">may&nbsp;</span><span class="s18">ever&nbsp;</span><span class="s19">come&nbsp;</span><span class="s5">to&nbsp;</span><span class="s2">rank&nbsp;</span><span class="s20">as&nbsp;</span><span class="s21">intercornmunicating&nbsp;</span><span class="s1">meaning-establishing&nbsp;</span>observer-participants&nbsp;<span class="s22">will&nbsp;</span><span class="s23">never&nbsp;</span><span class="s11">mount&nbsp;</span><span class="s20">a&nbsp;</span><span class="s24">bit&nbsp;</span><span class="s25">count&nbsp;</span><span class="s8">sufficient&nbsp;</span><span class="s11">to&nbsp;</span><span class="s26">bear&nbsp;</span><span class="s6">so&nbsp;</span><span class="s27">great&nbsp;</span><span class="s13">a&nbsp;</span><span class="s12">burden."</span></blockquote>Back to the car, though: we're talking about maximum possible states at the quantum level, and bits per second no longer makes any sense. &nbsp;But we'll continue anyway :-)<br /><br /><br /></div><b>Falling Trees and the Participatory Universe</b><br /><br />What about subjective information? Perception? memories? The total inhabitants of the vehicle and their constituents, including their complete microbiome? What about anything capable of sensing the environment, processing data, consuming information -- at any scale?<br /><br />If I have interpreted Bekenstein properly, one could state that if the maximum amount of information "stored" in a human body is 2e+44 bits, then that data would have to represent all possible data entering the gates of perception and all memory of and reaction to said data. As such, it doesn't really matter how much perceiving is going on inside the car or our bodies -- the bits already have that covered.<br /><br />So no matter what I'm seeing -- inside the car or out -- is already taken into consideration with the Bekenstein bound. But there's a mighty big tangential here: what role does perception and cognition play in a&nbsp;universe&nbsp;of bits? Wheeler's got an answer for this, too:<br /><blockquote class="tr_bq">"... every 'it'—every particle, every field of force, even the space-time continuum itself—derives its function, its meaning, its very existence entirely ... from the apparatus-elicited answers to yes-or-no questions, binary choices, bits... that which we call reality arises in the last analysis from the posing of yes–no questions ... in short, that all things physical are information-theoretic in origin and that this is a participatory universe."</blockquote><br /><b>Inevitably, M-Theory</b><br /><br /><br />http://en.wikipedia.org/wiki/Holographic_principle<br /><br />Bekenstein Bound -&gt; black holes -&gt; volumes encoded on 2D surfaces<br /><br />"The holographic principle is a property of quantum gravity and string theories which states that the description of a volume of space can be thought of as encoded on a boundary to the region—preferably a light-like boundary like a gravitational horizon. "<br /><br />"First proposed by Gerard 't Hooft, it was given a precise string-theory interpretation by Leonard Susskind[1] who combined his ideas with previous ones of 't Hooft and Charles Thorn.[1][2] As pointed out by Raphael Bousso,[3] Thorn observed in 1978 that string theory admits a lower dimensional description in which gravity emerges from it in what would now be called a holographic way.In a larger and more speculative sense, the theory suggests that the entire universe can be seen as a two-dimensional information structure "painted" on the cosmological horizon, such that the three dimensions we observe are only an effective description at macroscopic scales and at low energies. Cosmological holography has not been made mathematically precise, partly because the cosmological horizon has a finite area and grows with time.[4][5]"<br /><br />"The holographic principle was inspired by black hole thermodynamics, which implies that the maximal entropy in any region scales with the radius squared, and not cubed as might be expected. In the case of a black hole, the insight was that the informational content of all the objects which have fallen into the hole can be entirely contained in surface fluctuations of the event horizon. The holographic principle resolves the black hole information paradox within the framework of string theory.[6]"<br /><br />"The holographic principle states that the entropy of ordinary mass (not just black holes) is also proportional to surface area and not volume; that volume itself is illusory and the universe is really a hologram which is isomorphic to the information "inscribed" on the surface of its boundary."<br /><br />"In 1995, Susskind, along with collaborators Tom Banks, Willy Fischler, and Stephen Shenker, presented a formulation of the new M-theory using a holographic description in terms of charged point black holes, the D0 branes of type IIA string theory. The Matrix theory they proposed was first suggested as a description of two branes in 11-dimensional supergravity by Bernard de Wit, Jens Hoppe, and Hermann Nicolai. The later authors reinterpreted the same matrix models as a description of the dynamics of point black holes in particular limits. Holography allowed them to conclude that the dynamics of these black holes give a complete non-perturbative formulation of M-theory. In 1997, Juan Maldacena gave the first holographic descriptions of a higher dimensional object, the 3+1 dimensional type IIB membrane, which resolved a long-standing problem of finding a string description which describes a gauge theory.These developments simultaneously explained how string theory is related to quantum chromodynamics."<br /><br /><br /><b>Into Being</b><br /><br />A random musing about information velocity has provided an unexpected impetus for exploring these murky edges of physics, metaphysics, and&nbsp;philosophy. The musings have lead quite unexpecrtedly to the question posed by Wheeler "Why existence" (in the context of "it from bit").<br /><br />Experts in the fields of quantum mechanics, cosmology, and the various string theoretic pursuits seem to be setting a tred of upholding the Anthropic Principle. Initially, I found this rather shocking, and having grown up on a steady diet of the scientific method, it seemed rather&nbsp;grotesque&nbsp;at first glance. However, as Leanord Suskind puts it, the Anthropic Principle is really just a matter of common sense:<br /><blockquote class="tr_bq">"what is it that decides which kind of environment we live in—the temperature, chemistry and so on? ... The answer is that nothing does... Nothing determines the nature of our environment—except for the fact that we are here to ask the question! The temperature is between freezing and boiling because life (at least our kind) requires liquid water. That's it. That's all. There is no other explanation."</blockquote>But Wheeler takes this even further:<br /><br />I've spent a couple nights pondering Wheeler's paper, having felt from the first reading that he was hitting upon something so subtle it was hard to capture... and even harder to communicate. Today, this is what I think he was trying to convey:<br /><br />"Observers are necessary to bring the Universe into being."Barrow and Tipler believe that this is a valid conclusion from quantum mechanics, as John Archibald Wheeler has suggested, especially via his participatory universe and Participatory Anthropic Principle (PAP).<br /><br /><br /><b>Links</b><br /><br />[1] http://en.wikipedia.org/wiki/Fuel_efficiency_in_transportation#Automobiles<br />[2]&nbsp;http://en.wikipedia.org/wiki/KiB/s#Examples<br /><br />http://www.wired.com/wiredenterprise/2012/03/ibm-networking/<br /><br />[]&nbsp;http://en.wikipedia.org/wiki/Genome#Comparison_of_different_genome_sizes<br /><br />[]&nbsp;http://en.wikipedia.org/wiki/Human_microbiome<br /><br />[]&nbsp;http://en.wikipedia.org/wiki/Human_microbiome_project
+<table align="center" cellpadding="0" cellspacing="0"
+class="tr-caption-container" style="float: right; margin-left: 1em;
+text-align: right;"><tbody><tr><td style="text-align: center;"><a
+href="http://www.flickr.com/photos/stewiedewie/5356165419/" style="margin-left
+: auto; margin-right: auto;" target="_blank"><img border="0" height="212"
+src="http://2.bp.blogspot.com/-SPRSlhT8-1E/T4NjLMes1wI/AAAAAAAAAJE/u2VcGSRTcBI
+/s320/52-billion-YBPPH.jpg" width="320" /></a></td></tr><tr><td
+class="tr-caption" style="text-align: center;">Original, source photo
+by&nbsp;Stewart Leiwakabessy</td></tr></tbody></table>On a long, rural drive
+back from the <a
+href="http://www.flickr.com/photos/oubiwann/sets/72157629418063102/" target="_
+blank">Indian wedding</a>&nbsp;(for my college roommate and long-time friend)
+this weekend in beautiful Savannah, GA, some silliness occurred to me. I
+chuckled as I imagined the speed limit being cast in terms of bits per hour
+instead of the usual. Not being one to shy away from idle musings, I continued
+with the thought, exploring the various angles. <br /><br />It wasn't long
+before I was deep into wondering about the bits&nbsp;encoded&nbsp;in the
+bacterial DNA of my large intestines and the number of possible states for all
+the interacting systems at the quantum level. When I got home, I brushed the
+dust off some links I hadn't visited in a while, and things got even more
+interesting.<br /><br /><br /><b>A Naïve Snap-shot in Time</b><br /><br />The
+first draft of this paragraph was details on the bits contained in the genomes
+of humans, resident bacteria and viruses, CAD drawings for the car (everything
+from bolts, screws, and parts to the engine, electrical system, and GPS).
+Needless to say, there was lots of boring multiplication, addition, and
+hand-wavy guesses for when I couldn't find hard data.<br /><br />I also
+started exploring the visual data of the landscape, coming in through the
+windows and review mirrors... and this opens up the "perception" can of
+worms.<br /><br />The end result was an estimate of 427 terabits of
+"blueprint" data implicitly hurtling down the highway at 70 mph.<br /><br
+/>But what about data in time?<br /><br /><br /><b>A One-second
+Interval</b><br /><br />We can do obvious things, like calculating the data
+being pushed into the ambient environment by a CD (1,411,200 bits per second
+[2]) or a DVD (27,000,000 bits per second for (HDTV [3]) being viewed by
+passengers. Of course, since we're dealing with averages, we've only got .3
+passengers (27,000,000 * 0.3 bps).<br /><br />We can also turn those the
+snapshots of the scenery out the windows into "streaming, high-resolution
+media." Imagining 6 windows and 3 mirrors and calculating assuming that each
+is "generating" (allowing to pass) HDTV quality visual data, we have&nbsp;9
+*&nbsp;27,000,000 * 1.3.<br /><br />However, before we go too much further,
+there are some problems:<br /><ol><li>we no longer have the simple static data
+problem: have included time, so now we get changes in state</li><li>we're
+still referring to the data of the objects as the minimum required to
+"assemble" them, not the data of the completed units themselves, replete with
+possibly uncountable phenomenal interactions</li><li>we have assumed that
+generators of information are something we should&nbsp;measure</li><li>we have
+ignored perceivers of information</li><li>we are ignoring scale</li></ol>The
+scale one is a doozy...<br /><br /><br /><b>The Coast of Norway Problem</b><br
+/><br />If we take the full spectrum of data-generating events into account,
+there is a LOT of information to be accounted for. Here is a brief overview of
+some of the data entering the car or being generated inside of it:<br
+/><ul><li>viewing the stars (astronomical scale)</li><li>viewing mountains in
+the distance</li><li>watching the environment near the car (animals, other
+cars, trees)</li><li>listening to conversation, music, or passengers watching
+a movie</li><li>the presence and activity of&nbsp;bugs, dust, lint in the
+car</li><li>similarly, bacteria and air moisture in the car</li><li>air-borne
+viruses</li></ul><div>That takes the external environment into account. Now,
+the internal:</div><ul><li>body organs</li><li>internal flora and fauna,
+cells</li><li>neurological, mechanical (microtubules), and chemical
+signals</li><li>molecules</li><li>atoms</li><li>subatomic particles</li><li>pl
+ank-level interactions and quantum foam</li></ul><div>These conceptually
+fractal fjords portray an obvious case of vastly increasing rates of data when
+additional levels of scale are taken into consideration.</div><div><br
+/></div><div>So when do we stop? At what point do we say "that's enough data"
+and abandon further explorations up and down the&nbsp;spectrum&nbsp;of scale?
+Is there such a thing as a "good approximation" of data in a finite portion of
+spacetime? Is there an upper bound we can use?</div><br />Indeed there is.
+Sort of. For the quantum states within a particular volume, anyway.<br /><br
+/><br /><b>Working with Maximum Info</b><br /><br />Based upon his work in
+1972 on black holes, Jacob Bekenstein demonstrated that there is a maximum
+amount of information that can be stored in a finite region of spacetime using
+a finite amount of energy. He phrased this bound in terms of entropy with the
+following:<br /><div class="separator" style="background: #fff; clear: both;
+margin: 5px; text-align: center;"><a
+href="http://1.bp.blogspot.com/-tRJb7MfDxg0/T4MPu-I-71I/AAAAAAAAAIc/aQZKbqihwb
+A/s1600/bekenstein_bound_entropy.jpg" imageanchor="1" style="margin-left: 1em;
+margin-right: 1em;"><img border="0"
+src="http://1.bp.blogspot.com/-tRJb7MfDxg0/T4MPu-I-71I/AAAAAAAAAIc/aQZKbqihwbA
+/s1600/bekenstein_bound_entropy.jpg" /></a></div><div class="separator"
+style="clear: both; text-align: center;"><br /></div><div class="separator"
+style="clear: both; text-align: left;">When recast in information-theoretic
+terms and after performing some algebraic substitutions, we have this
+inequality:</div><div class="separator" style="background: #fff; clear: both;
+margin: 5px; text-align: center;"><a
+href="http://2.bp.blogspot.com/-1rt3juoLYXk/T4MegQDqCyI/AAAAAAAAAIs/hjtkxm9QYY
+I/s1600/bekenstein_bound_information-2.png" imageanchor="1"
+style="margin-left: 1em; margin-right: 1em;"><img border="0"
+src="http://2.bp.blogspot.com/-1rt3juoLYXk/T4MegQDqCyI/AAAAAAAAAIs/hjtkxm9QYYI
+/s1600/bekenstein_bound_information-2.png" /></a></div><div class="separator"
+style="clear: both; text-align: center;"><br /></div><div class="separator"
+style="clear: both; text-align: left;">With this, we can estimate the total
+possible information carried within an average car, the passengers, and some
+stuff in the car:</div><div class="separator" style="clear: both; text-align:
+left;"></div><ul><li>2000 kg car, 4 cubic meters = 5e+46 bits</li><li>1.3 * 70
+kg human, 0.005 cubic meters = 2e+44 bits</li><li>50 kg of junk, 0.001 cubic
+meters = bits 1e+44</li></ul><div>If we just add them all together (which I'm
+not sure is kosher since the distribution of information is decidedly
+non-uniform and almost certainly interdependent), that's 4.7e+37 gigabits, or
+5.9e+36 gigabytes. The highest we go in our naming scale for numbers right now
+is 5.2e+21 yottabytes. That's 52 <i>billion</i> gigabytes. The mind truly
+boggles.<br /><br />That's just a Sunday drive. What about the road? The
+landscape? The entire planet?</div><div><br />The famous gravitational
+physicist Wheeler said it well in his paper <i>Information, Physics, Quantum:
+The Search for Links</i>:<br /><blockquote class="tr_bq"><span
+class="s1">"Enough&nbsp;</span><span class="s2">bits&nbsp;</span><span
+class="s3">to&nbsp;</span>structure&nbsp;<span class="s4">a&nbsp;</span><span
+class="s5">universe&nbsp;</span><span class="s6">so&nbsp;</span><span
+class="s7">rich&nbsp;</span><span class="s2">in&nbsp;</span><span
+class="s8">features&nbsp;</span><span class="s6">as&nbsp;</span><span
+class="s9">we&nbsp;</span><span class="s10">know&nbsp;</span><span
+class="s2">this world&nbsp;</span><span class="s11">to&nbsp;</span><span
+class="s5">be?&nbsp;</span>Preposterous!&nbsp;<span class="s8">Mice&nbsp;</spa
+n><span class="s12">and&nbsp;</span><span class="s13">men&nbsp;</span><span
+class="s7">and&nbsp;</span><span class="s14">all&nbsp;</span><span
+class="s15">on&nbsp;</span><span class="s16">Earth&nbsp;</span><span
+class="s8">who&nbsp;</span><span class="s17">may&nbsp;</span><span
+class="s18">ever&nbsp;</span><span class="s19">come&nbsp;</span><span
+class="s5">to&nbsp;</span><span class="s2">rank&nbsp;</span><span
+class="s20">as&nbsp;</span><span class="s21">intercornmunicating&nbsp;</span><
+span class="s1">meaning-establishing&nbsp;</span>observer-participants&nbsp;<s
+pan class="s22">will&nbsp;</span><span class="s23">never&nbsp;</span><span
+class="s11">mount&nbsp;</span><span class="s20">a&nbsp;</span><span
+class="s24">bit&nbsp;</span><span class="s25">count&nbsp;</span><span
+class="s8">sufficient&nbsp;</span><span class="s11">to&nbsp;</span><span
+class="s26">bear&nbsp;</span><span class="s6">so&nbsp;</span><span
+class="s27">great&nbsp;</span><span class="s13">a&nbsp;</span><span
+class="s12">burden."</span></blockquote>Back to the car, though: we're talking
+about maximum possible states at the quantum level, and bits per second no
+longer makes any sense. &nbsp;But we'll continue anyway :-)<br /><br /><br
+/></div><b>Falling Trees and the Participatory Universe</b><br /><br />What
+about subjective information? Perception? memories? The total inhabitants of
+the vehicle and their constituents, including their complete microbiome? What
+about anything capable of sensing the environment, processing data, consuming
+information -- at any scale?<br /><br />If I have interpreted Bekenstein
+properly, one could state that if the maximum amount of information "stored"
+in a human body is 2e+44 bits, then that data would have to represent all
+possible data entering the gates of perception and all memory of and reaction
+to said data. As such, it doesn't really matter how much perceiving is going
+on inside the car or our bodies -- the bits already have that covered.<br
+/><br />So no matter what I'm seeing -- inside the car or out -- is already
+taken into consideration with the Bekenstein bound. But there's a mighty big
+tangential here: what role does perception and cognition play in
+a&nbsp;universe&nbsp;of bits? Wheeler's got an answer for this, too:<br
+/><blockquote class="tr_bq">"... every 'it'—every particle, every field of
+force, even the space-time continuum itself—derives its function, its meaning,
+its very existence entirely ... from the apparatus-elicited answers to
+yes-or-no questions, binary choices, bits... that which we call reality arises
+in the last analysis from the posing of yes–no questions ... in short, that
+all things physical are information-theoretic in origin and that this is a
+participatory universe."</blockquote><br /><b>Inevitably, M-Theory</b><br
+/><br /><br />http://en.wikipedia.org/wiki/Holographic_principle<br /><br
+/>Bekenstein Bound -&gt; black holes -&gt; volumes encoded on 2D surfaces<br
+/><br />"The holographic principle is a property of quantum gravity and string
+theories which states that the description of a volume of space can be thought
+of as encoded on a boundary to the region—preferably a light-like boundary
+like a gravitational horizon. "<br /><br />"First proposed by Gerard 't Hooft,
+it was given a precise string-theory interpretation by Leonard Susskind[1] who
+combined his ideas with previous ones of 't Hooft and Charles Thorn.[1][2] As
+pointed out by Raphael Bousso,[3] Thorn observed in 1978 that string theory
+admits a lower dimensional description in which gravity emerges from it in
+what would now be called a holographic way.In a larger and more speculative
+sense, the theory suggests that the entire universe can be seen as a
+two-dimensional information structure "painted" on the cosmological horizon,
+such that the three dimensions we observe are only an effective description at
+macroscopic scales and at low energies. Cosmological holography has not been
+made mathematically precise, partly because the cosmological horizon has a
+finite area and grows with time.[4][5]"<br /><br />"The holographic principle
+was inspired by black hole thermodynamics, which implies that the maximal
+entropy in any region scales with the radius squared, and not cubed as might
+be expected. In the case of a black hole, the insight was that the
+informational content of all the objects which have fallen into the hole can
+be entirely contained in surface fluctuations of the event horizon. The
+holographic principle resolves the black hole information paradox within the
+framework of string theory.[6]"<br /><br />"The holographic principle states
+that the entropy of ordinary mass (not just black holes) is also proportional
+to surface area and not volume; that volume itself is illusory and the
+universe is really a hologram which is isomorphic to the information
+"inscribed" on the surface of its boundary."<br /><br />"In 1995, Susskind,
+along with collaborators Tom Banks, Willy Fischler, and Stephen Shenker,
+presented a formulation of the new M-theory using a holographic description in
+terms of charged point black holes, the D0 branes of type IIA string theory.
+The Matrix theory they proposed was first suggested as a description of two
+branes in 11-dimensional supergravity by Bernard de Wit, Jens Hoppe, and
+Hermann Nicolai. The later authors reinterpreted the same matrix models as a
+description of the dynamics of point black holes in particular limits.
+Holography allowed them to conclude that the dynamics of these black holes
+give a complete non-perturbative formulation of M-theory. In 1997, Juan
+Maldacena gave the first holographic descriptions of a higher dimensional
+object, the 3+1 dimensional type IIB membrane, which resolved a long-standing
+problem of finding a string description which describes a gauge theory.These
+developments simultaneously explained how string theory is related to quantum
+chromodynamics."<br /><br /><br /><b>Into Being</b><br /><br />A random musing
+about information velocity has provided an unexpected impetus for exploring
+these murky edges of physics, metaphysics, and&nbsp;philosophy. The musings
+have lead quite unexpecrtedly to the question posed by Wheeler "Why existence"
+(in the context of "it from bit").<br /><br />Experts in the fields of quantum
+mechanics, cosmology, and the various string theoretic pursuits seem to be
+setting a tred of upholding the Anthropic Principle. Initially, I found this
+rather shocking, and having grown up on a steady diet of the scientific
+method, it seemed rather&nbsp;grotesque&nbsp;at first glance. However, as
+Leanord Suskind puts it, the Anthropic Principle is really just a matter of
+common sense:<br /><blockquote class="tr_bq">"what is it that decides which
+kind of environment we live in—the temperature, chemistry and so on? ... The
+answer is that nothing does... Nothing determines the nature of our
+environment—except for the fact that we are here to ask the question! The
+temperature is between freezing and boiling because life (at least our kind)
+requires liquid water. That's it. That's all. There is no other
+explanation."</blockquote>But Wheeler takes this even further:<br /><br />I've
+spent a couple nights pondering Wheeler's paper, having felt from the first
+reading that he was hitting upon something so subtle it was hard to capture...
+and even harder to communicate. Today, this is what I think he was trying to
+convey:<br /><br />"Observers are necessary to bring the Universe into
+being."Barrow and Tipler believe that this is a valid conclusion from quantum
+mechanics, as John Archibald Wheeler has suggested, especially via his
+participatory universe and Participatory Anthropic Principle (PAP).<br /><br
+/><br /><b>Links</b><br /><br />[1]
+http://en.wikipedia.org/wiki/Fuel_efficiency_in_transportation#Automobiles<br 
+/>[2]&nbsp;http://en.wikipedia.org/wiki/KiB/s#Examples<br /><br
+/>http://www.wired.com/wiredenterprise/2012/03/ibm-networking/<br /><br
+/>[]&nbsp;http://en.wikipedia.org/wiki/Genome#Comparison_of_different_genome_s
+izes<br /><br />[]&nbsp;http://en.wikipedia.org/wiki/Human_microbiome<br /><br
+/>[]&nbsp;http://en.wikipedia.org/wiki/Human_microbiome_project

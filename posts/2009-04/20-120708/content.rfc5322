@@ -11,4 +11,122 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><span style="font-weight: bold;">After the Cloud:</span><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-prelude.html">Prelude</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-so-far.html">So Far</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-new-big.html">The New Big</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-to-atomic-computation-and.html">To Atomic Computation and Beyond</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-open-heaps.html">Open Heaps</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-heaps-of-cash.html">Heaps of Cash</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-epilogue.html">Epilogue</a></li></ol><br /><span style="font-weight: bold;">Intermission</span><br /><br />I've made a few hints so far about what cloud service I'd like to see come into being, and at the end of this post, we'll get closer to discussing that. Hang in there: the post after this one will describe that in more detail. Then, after that, there will be at least one post which will take a peek at some of the many business opportunities that could come from this.<br /><br /><span style="font-weight: bold;">A Passing Comment</span><br /><br />At PyCon 2006 in Dallas, TX, an after-hours event was held in a local bookstore. At one point during that evening, <a href="http://itamarst.org/">Itamar</a>, <a href="http://moshez.wordpress.com/">Moshe</a> and I got into a discussion about miniaturization and Moshe went off on a hilarious rant that Itamar and I just sat back and enjoyed. His whole tirade was based on the beauty and perfection of <a href="http://www.gumstix.com/">gumstix</a>. This was the first I'd heard of them; I had no idea a product like that was on the market, and it hit me like a ton of bricks.<br /><br />For the next day or so all I could think about was buying a boxload of gumstix computers and doing something with them -- anything! And not just because they were the coolest toys ever, but because there was something about them that I could just <span style="font-style: italic;">feel</span> was a part of the future of computing (see my 2004 post on <a href="http://oubiwann.blogspot.com/2004/03/dinosaurs-and-mammals.html">Dinosaurs and Mammals</a>). It seemed that these miniture devices could help prototype what was destined to be one of the most exciting fields in the coming years for both systems and application engineers.<br /><br />Sadly, I never did get that box :-) But I neither did I stop thinking about them. Confronted with the problem of small distributed services sitting on big, barely-used iron, gumstix haunted my musings.<br /><br /><span style="font-weight: bold;">Tiny Apps in the Cloud?</span><br /><br />When at Divmod, one of the strategies that Glyph and I were working on concerned Twisted adoption in web hosting and cloud environments. The differences between CGI and Twisted applications are magnified when one considers a cloud environment like <a href="http://www.mosso.com/">Mosso</a> and one that would suitably support Twisted design principals. I spent a <span style="font-style: italic;">lot</span> of time pondering the ramifcations of that one, let me tell you. A potential merger permanently postponed those business possibilities, but a nice side benefit was the forking of <a href="http://pythondirector.sourceforge.net/">Python Director</a> into a pure-Twisted conversion, <a href="https://edge.launchpad.net/txloadbalancer">txLoadBalancer</a> (with the beginnings of native, in-app load-balancing support).<br /><br />Thoughts of adjusting tiny apps to be able to run on big cloud hardware still grated, though. It felt dangerously close to pounding round pegs into square holes. What I really wanted was something closer to the future hinted at by <a href="http://www.sei.cmu.edu/uls/">Ultra Large-Scale Systems</a> research: massively distributed, fault-tolerant services running on everything :-) Until then, though, I would have been satisfied with tiny apps on tiny hardware, consuming only the resources they need in order to provide the service they were designed for.<br /><br />This brought up ideas of distributed storage, memory, and processing as well as the need for redundacy and failover. But tiny. All I could see was tiny hardware, tiny apps, tiny protocols, tiny power consumption. For me, tiny was big. The easiest "tiny" problem to address with small devices was storage. And I already knew the guys that were working on the problem.<br /><br /><span style="font-weight: bold;">Distributed Storage Done Right</span><br /><br />There's an odd, rather abstract parallel between EC2 and <a href="http://allmydata.org/trac/tahoe">Tahoe</a> (a secure, decentralized, fault-tolerant filesystem). EC2 arose in part from a corporation acting out of its best interests: turn a liability into an asset. For Tahoe, the "body" in question isn't a corporation, but rather a community. And the commodity is not bottom lines, but rather data owned and treasured by members of a data-consuming community.<br /><br />Here's a quick description of Tahoe from a <a href="http://allmydata.org/~zooko/lafs.pdf">2008 paper</a>:<br /><blockquote>Tahoe is a storage grid designed to provide secure, long-term storage, such as for backup applications. It consists of userspace processes running on commodity PC hardware and communicating with [other Tahoe nodes] over TCP/IP.</blockquote>Tahoe is written in Python using Twisted and a <a href="http://foolscap.lothar.com/trac">capabilities system</a> inspired by those defined by <a href="http://www.erights.org/">E</a>. But what does this mean to a user? It means that anyone can setup and run a storage grid on their personal computers. All data is encrypted and redundant, so you don't need to trust members of the community (your data grid), you just need to set aside some disk space on your machines for them.<br /><br />In <a href="http://allmydata.org/pipermail/tahoe-dev/2008-July/000657.html">a message</a> to the Tahoe mail list, I responded to an associate who was exploring Tahoe for in-memory use by Python mapreduce applications. I wanted in-memory distributed storage for a different use case (tiny apps on tiny devices!) but our interests were similar. It turned out one of the primary Tahoe developers was working on related code; something that could be used as the basis for future support for distributed, solid-state devices.<br /><br />Here's some nice dessert: Twisted coder <a href="http://blog.dreid.org/">David Reid</a> was reported to have gotten Tahoe runnig on his iPhone. <span style="font-style: italic;">Now</span> we're talking ;-) (Update: David has informed me that <a href="http://allmydata.com/">Allmydata</a> has a Tahoe client that runs on his iPhone).<br /><br /><span style="font-weight: bold;">Processing in the Right Direction</span><br /><br />But what about the CPU? Running daemons? Can we do something similar with processing power? If a whole virtual machine is too much for users, can we get a virtual processing space? I want to be able to run my process (e.g., a Twisted daemon) on someone else's machine, but in such a way that they feel perfectly safe running it. I want Tahoe for processes :-)<br /><br />As part of some recent experiments in setting up a virtual lab of running gumstix ARM images, I needed to be able to connect mutliple gumstix instances in a virtual network for testing purposes. In a search for such a solution, I discovered <a href="http://vde.sourceforge.net/">VDE</a>. Then, unexpectedly, I ran across a couple fascinating wiki pages on the site of related super-project Virtual Square Networking. Their domain is currently not resolving for me, so I can't pull the exact text, but here's a blurb from a <a href="http://sourceforge.net/projects/view-os/">sister project</a> on SourceForge:<br /><blockquote>View OS is a user configurable, modular process virtual machine, or system call hypervisor. For each process the user is able to define a "view of the world" in terms of file system, networking, devices, permissions, users, time and so on.</blockquote>Man, that's so close, I can almost <span style="font-style: italic;">taste</span> it!<br /><br />Where is all this techno-rambling going? Well, I'm sure some of you have long since guessed by now :-) Regardless, I will save that for the next post.<br /><br />Oh, and yes: tiny is the new big.<br /><span style="font-style: italic;"><br />Next Up:</span> A Passing Message<br /><br /><br /><br /></div>
+<div><br /><span style="font-weight: bold;">After the Cloud:</span><br
+/><ol><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-prelude.ht
+ml">Prelude</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cl
+oud-so-far.html">So Far</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/04/after-cloud-new-big.html">The New
+Big</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-to-a
+tomic-computation-and.html">To Atomic Computation and Beyond</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/05/after-cloud-open-heaps.html">Open H
+eaps</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-hea
+ps-of-cash.html">Heaps of Cash</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/05/after-cloud-epilogue.html">Epilogue
+</a></li></ol><br /><span style="font-weight: bold;">Intermission</span><br
+/><br />I've made a few hints so far about what cloud service I'd like to see
+come into being, and at the end of this post, we'll get closer to discussing
+that. Hang in there: the post after this one will describe that in more
+detail. Then, after that, there will be at least one post which will take a
+peek at some of the many business opportunities that could come from this.<br
+/><br /><span style="font-weight: bold;">A Passing Comment</span><br /><br
+/>At PyCon 2006 in Dallas, TX, an after-hours event was held in a local
+bookstore. At one point during that evening, <a
+href="http://itamarst.org/">Itamar</a>, <a
+href="http://moshez.wordpress.com/">Moshe</a> and I got into a discussion
+about miniaturization and Moshe went off on a hilarious rant that Itamar and I
+just sat back and enjoyed. His whole tirade was based on the beauty and
+perfection of <a href="http://www.gumstix.com/">gumstix</a>. This was the
+first I'd heard of them; I had no idea a product like that was on the market,
+and it hit me like a ton of bricks.<br /><br />For the next day or so all I
+could think about was buying a boxload of gumstix computers and doing
+something with them -- anything! And not just because they were the coolest
+toys ever, but because there was something about them that I could just <span
+style="font-style: italic;">feel</span> was a part of the future of computing
+(see my 2004 post on <a
+href="http://oubiwann.blogspot.com/2004/03/dinosaurs-and-mammals.html">Dinosau
+rs and Mammals</a>). It seemed that these miniture devices could help
+prototype what was destined to be one of the most exciting fields in the
+coming years for both systems and application engineers.<br /><br />Sadly, I
+never did get that box :-) But I neither did I stop thinking about them.
+Confronted with the problem of small distributed services sitting on big,
+barely-used iron, gumstix haunted my musings.<br /><br /><span
+style="font-weight: bold;">Tiny Apps in the Cloud?</span><br /><br />When at
+Divmod, one of the strategies that Glyph and I were working on concerned
+Twisted adoption in web hosting and cloud environments. The differences
+between CGI and Twisted applications are magnified when one considers a cloud
+environment like <a href="http://www.mosso.com/">Mosso</a> and one that would
+suitably support Twisted design principals. I spent a <span style="font-style:
+italic;">lot</span> of time pondering the ramifcations of that one, let me
+tell you. A potential merger permanently postponed those business
+possibilities, but a nice side benefit was the forking of <a
+href="http://pythondirector.sourceforge.net/">Python Director</a> into a
+pure-Twisted conversion, <a
+href="https://edge.launchpad.net/txloadbalancer">txLoadBalancer</a> (with the
+beginnings of native, in-app load-balancing support).<br /><br />Thoughts of
+adjusting tiny apps to be able to run on big cloud hardware still grated,
+though. It felt dangerously close to pounding round pegs into square holes.
+What I really wanted was something closer to the future hinted at by <a
+href="http://www.sei.cmu.edu/uls/">Ultra Large-Scale Systems</a> research:
+massively distributed, fault-tolerant services running on everything :-) Until
+then, though, I would have been satisfied with tiny apps on tiny hardware,
+consuming only the resources they need in order to provide the service they
+were designed for.<br /><br />This brought up ideas of distributed storage,
+memory, and processing as well as the need for redundacy and failover. But
+tiny. All I could see was tiny hardware, tiny apps, tiny protocols, tiny power
+consumption. For me, tiny was big. The easiest "tiny" problem to address with
+small devices was storage. And I already knew the guys that were working on
+the problem.<br /><br /><span style="font-weight: bold;">Distributed Storage
+Done Right</span><br /><br />There's an odd, rather abstract parallel between
+EC2 and <a href="http://allmydata.org/trac/tahoe">Tahoe</a> (a secure,
+decentralized, fault-tolerant filesystem). EC2 arose in part from a
+corporation acting out of its best interests: turn a liability into an asset.
+For Tahoe, the "body" in question isn't a corporation, but rather a community.
+And the commodity is not bottom lines, but rather data owned and treasured by
+members of a data-consuming community.<br /><br />Here's a quick description
+of Tahoe from a <a href="http://allmydata.org/~zooko/lafs.pdf">2008
+paper</a>:<br /><blockquote>Tahoe is a storage grid designed to provide
+secure, long-term storage, such as for backup applications. It consists of
+userspace processes running on commodity PC hardware and communicating with
+[other Tahoe nodes] over TCP/IP.</blockquote>Tahoe is written in Python using
+Twisted and a <a href="http://foolscap.lothar.com/trac">capabilities
+system</a> inspired by those defined by <a
+href="http://www.erights.org/">E</a>. But what does this mean to a user? It
+means that anyone can setup and run a storage grid on their personal
+computers. All data is encrypted and redundant, so you don't need to trust
+members of the community (your data grid), you just need to set aside some
+disk space on your machines for them.<br /><br />In <a
+href="http://allmydata.org/pipermail/tahoe-dev/2008-July/000657.html">a messag
+e</a> to the Tahoe mail list, I responded to an associate who was exploring
+Tahoe for in-memory use by Python mapreduce applications. I wanted in-memory
+distributed storage for a different use case (tiny apps on tiny devices!) but
+our interests were similar. It turned out one of the primary Tahoe developers
+was working on related code; something that could be used as the basis for
+future support for distributed, solid-state devices.<br /><br />Here's some
+nice dessert: Twisted coder <a href="http://blog.dreid.org/">David Reid</a>
+was reported to have gotten Tahoe runnig on his iPhone. <span
+style="font-style: italic;">Now</span> we're talking ;-) (Update: David has
+informed me that <a href="http://allmydata.com/">Allmydata</a> has a Tahoe
+client that runs on his iPhone).<br /><br /><span style="font-weight:
+bold;">Processing in the Right Direction</span><br /><br />But what about the
+CPU? Running daemons? Can we do something similar with processing power? If a
+whole virtual machine is too much for users, can we get a virtual processing
+space? I want to be able to run my process (e.g., a Twisted daemon) on someone
+else's machine, but in such a way that they feel perfectly safe running it. I
+want Tahoe for processes :-)<br /><br />As part of some recent experiments in
+setting up a virtual lab of running gumstix ARM images, I needed to be able to
+connect mutliple gumstix instances in a virtual network for testing purposes.
+In a search for such a solution, I discovered <a
+href="http://vde.sourceforge.net/">VDE</a>. Then, unexpectedly, I ran across a
+couple fascinating wiki pages on the site of related super-project Virtual
+Square Networking. Their domain is currently not resolving for me, so I can't
+pull the exact text, but here's a blurb from a <a
+href="http://sourceforge.net/projects/view-os/">sister project</a> on
+SourceForge:<br /><blockquote>View OS is a user configurable, modular process
+virtual machine, or system call hypervisor. For each process the user is able
+to define a "view of the world" in terms of file system, networking, devices,
+permissions, users, time and so on.</blockquote>Man, that's so close, I can
+almost <span style="font-style: italic;">taste</span> it!<br /><br />Where is
+all this techno-rambling going? Well, I'm sure some of you have long since
+guessed by now :-) Regardless, I will save that for the next post.<br /><br
+/>Oh, and yes: tiny is the new big.<br /><span style="font-style: italic;"><br
+/>Next Up:</span> A Passing Message<br /><br /><br /><br /></div>

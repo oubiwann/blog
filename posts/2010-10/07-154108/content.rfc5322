@@ -11,4 +11,79 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />The up-coming UDS in October is looking to be quite fantastic. The community around the Ubuntu distro is, as always, deeply involved, passionate, and eager to break new ground... but lately there seems to be even more than the usual anticipation. We're seeing folks getting involved for more than Ubuntu, and this is an interesting change. </div><div><br /></div><div>At UDS people tend to focus on Ubuntu and the Ubuntu community. As the "Ubuntu Developer Summit" this makes obvious sense :-) Maybe it's just my own perceptions, but it seems that when we engineers get deeply involved in something, less and less of the outside world makes it through the filters, potentially leading to situations of isolated development. Reflecting on how our interests are connected to others' can open the view back up, and I think lots more people are doing that these days. </div><div><br /></div><div>Ubuntu is not <i>just</i> a community; it's also <i>part</i> of a community. Part of many communities, in fact -- very large and thriving ones. The obvious candidates come to mind: Linux, GNOME, KDE, GTK, Qt, the massive collection of upstream applications. But there are more and subtler ones. </div><div><br /></div><div>All the work that <a href="http://www.ivankamajic.com/">Ivanka</a> and the <a href="http://design.canonical.com/">Design team</a> have done over the past year and a half has brought open source software into a new place with regard to aesthetics and how to make our applications more appealing to people across the globe, folks who don't have the same engineering-based perspective on software that we have. This is <i>hugely</i> important and I personally feel that I owe the Design team a HUGE debt of gratitude for what they are doing for something I hold dear to my heart: open source software.</div><div><br /></div><div>The other big change I've noticed (perhaps mostly because I'm neck-deep in it!) is the rallying that has happened around multi-touch. Hackers, academics, industrial researchers, casual enthusiasts and business folk alike are interacting on IRC and the <a href="http://launchpad.net/~multi-touch-dev">multi-touch mail list</a> to a greater and greater degree. Amazing cross-project cooperation is taking place, and setting really excellent precedences. It seems that the field of Human-Computer Interaction is starting to find and hold its own in the larger open source community. And we're reaching out more, too -- some of us from Ubuntu recently attended <a href="http://www.acm.org/uist/uist2010/">UIST 2010 in NYC</a> and had fantastic discussions with the other attendees there. I expect that we'll be more and more present at events like these.</div><div><br /></div><div>There are other examples of this sort of thing happening elsewhere in the open source world, within projects as well as companies that sponsor them. It's very encouraging to see such new forms of growth and evolution in our midst :-)</div><div><br /></div><div>Now down to business! If you can make it to UDS, you'll be in for a treat. The Platform team has been hard at work refactoring the UDS experience. Tracks are no longer based on and named after teams inside Canonical who are primarily responsible for the tech. Instead, a series of brainstorms have resulted in a very natural and organic approach to community discussions: areas of interest. This was done in such a way as to encourage very strong cross-pollination of ideas and development strategies. Projects from all across the open source world, team members inside and outside of Canonical, and passionate individuals will have new opportunities to impact decisions about the software that not only goes into Ubuntu, but which gets incorporated into many other distros and projects as well.</div><div><br /></div><div>The tracks are listed at <a href="http://uds.ubuntu.com/tracks/">this UDS page</a>, but I will duplicate that here for the lazy :-)</div><div><ul><li>Application Developers</li><li>Cloud Infrastructure</li><li>Performance</li><li>Multimedia</li><li>Hardware Compatibility</li><li>Application Selection and Defaults</li><li>Ubuntu the Project</li><li>Other</li></ul>As a particular example, the sessions focusing on multi-touch technology in Linux and its toolkits, applications, etc., intersect with many of these (Application Developers, Performance, Multimedia, Hardware Compatibility, Ubuntu the Project, etc.). The same is true for other projects. Tracks that used to be dedicated to Desktop, Server, Foundations, etc., are now going to be exposed to a more diverse audience that focuses on individual's interests, brining community members even closer to the goodness they love :-)</div><div><br /></div><div>If you're interested in tracking multi-touch sessions, you can watch our session planning evolve at the link below:</div><div> <a href="https://blueprints.launchpad.net/ubuntu?searchtext=hci-n">https://blueprints.launchpad.net/ubuntu?searchtext=hci-n</a></div><div><br /></div><div>We've still got one more blueprint coming: A Gesture Language. I haven't had a chance to compile my notes about this yet, but when I do, there will likely be another blog post just discussing the exploration we want to do around the idea of such a language at UDS.</div><div><br /></div><div>If you can't make it to UDS, remember that we broadcast live streaming audio and project IRC channels for each room up on a screen so that all present can read remote comments and respond to listeners' questions.</div><div><br /></div><div>Hope to see you there!</div>
+<div><br />The up-coming UDS in October is looking to be quite fantastic. The
+community around the Ubuntu distro is, as always, deeply involved, passionate,
+and eager to break new ground... but lately there seems to be even more than
+the usual anticipation. We're seeing folks getting involved for more than
+Ubuntu, and this is an interesting change. </div><div><br /></div><div>At UDS
+people tend to focus on Ubuntu and the Ubuntu community. As the "Ubuntu
+Developer Summit" this makes obvious sense :-) Maybe it's just my own
+perceptions, but it seems that when we engineers get deeply involved in
+something, less and less of the outside world makes it through the filters,
+potentially leading to situations of isolated development. Reflecting on how
+our interests are connected to others' can open the view back up, and I think
+lots more people are doing that these days. </div><div><br /></div><div>Ubuntu
+is not <i>just</i> a community; it's also <i>part</i> of a community. Part of
+many communities, in fact -- very large and thriving ones. The obvious
+candidates come to mind: Linux, GNOME, KDE, GTK, Qt, the massive collection of
+upstream applications. But there are more and subtler ones. </div><div><br
+/></div><div>All the work that <a
+href="http://www.ivankamajic.com/">Ivanka</a> and the <a
+href="http://design.canonical.com/">Design team</a> have done over the past
+year and a half has brought open source software into a new place with regard
+to aesthetics and how to make our applications more appealing to people across
+the globe, folks who don't have the same engineering-based perspective on
+software that we have. This is <i>hugely</i> important and I personally feel
+that I owe the Design team a HUGE debt of gratitude for what they are doing
+for something I hold dear to my heart: open source software.</div><div><br
+/></div><div>The other big change I've noticed (perhaps mostly because I'm
+neck-deep in it!) is the rallying that has happened around multi-touch.
+Hackers, academics, industrial researchers, casual enthusiasts and business
+folk alike are interacting on IRC and the <a
+href="http://launchpad.net/~multi-touch-dev">multi-touch mail list</a> to a
+greater and greater degree. Amazing cross-project cooperation is taking place,
+and setting really excellent precedences. It seems that the field of
+Human-Computer Interaction is starting to find and hold its own in the larger
+open source community. And we're reaching out more, too -- some of us from
+Ubuntu recently attended <a href="http://www.acm.org/uist/uist2010/">UIST 2010
+in NYC</a> and had fantastic discussions with the other attendees there. I
+expect that we'll be more and more present at events like these.</div><div><br
+/></div><div>There are other examples of this sort of thing happening
+elsewhere in the open source world, within projects as well as companies that
+sponsor them. It's very encouraging to see such new forms of growth and
+evolution in our midst :-)</div><div><br /></div><div>Now down to business! If
+you can make it to UDS, you'll be in for a treat. The Platform team has been
+hard at work refactoring the UDS experience. Tracks are no longer based on and
+named after teams inside Canonical who are primarily responsible for the tech.
+Instead, a series of brainstorms have resulted in a very natural and organic
+approach to community discussions: areas of interest. This was done in such a
+way as to encourage very strong cross-pollination of ideas and development
+strategies. Projects from all across the open source world, team members
+inside and outside of Canonical, and passionate individuals will have new
+opportunities to impact decisions about the software that not only goes into
+Ubuntu, but which gets incorporated into many other distros and projects as
+well.</div><div><br /></div><div>The tracks are listed at <a
+href="http://uds.ubuntu.com/tracks/">this UDS page</a>, but I will duplicate
+that here for the lazy :-)</div><div><ul><li>Application
+Developers</li><li>Cloud Infrastructure</li><li>Performance</li><li>Multimedia
+</li><li>Hardware Compatibility</li><li>Application Selection and
+Defaults</li><li>Ubuntu the Project</li><li>Other</li></ul>As a particular
+example, the sessions focusing on multi-touch technology in Linux and its
+toolkits, applications, etc., intersect with many of these (Application
+Developers, Performance, Multimedia, Hardware Compatibility, Ubuntu the
+Project, etc.). The same is true for other projects. Tracks that used to be
+dedicated to Desktop, Server, Foundations, etc., are now going to be exposed
+to a more diverse audience that focuses on individual's interests, brining
+community members even closer to the goodness they love :-)</div><div><br
+/></div><div>If you're interested in tracking multi-touch sessions, you can
+watch our session planning evolve at the link below:</div><div> <a
+href="https://blueprints.launchpad.net/ubuntu?searchtext=hci-n">https://bluepr
+ints.launchpad.net/ubuntu?searchtext=hci-n</a></div><div><br /></div><div>We'v
+e still got one more blueprint coming: A Gesture Language. I haven't had a
+chance to compile my notes about this yet, but when I do, there will likely be
+another blog post just discussing the exploration we want to do around the
+idea of such a language at UDS.</div><div><br /></div><div>If you can't make
+it to UDS, remember that we broadcast live streaming audio and project IRC
+channels for each room up on a screen so that all present can read remote
+comments and respond to listeners' questions.</div><div><br /></div><div>Hope
+to see you there!</div>

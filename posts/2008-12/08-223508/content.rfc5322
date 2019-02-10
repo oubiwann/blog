@@ -11,4 +11,55 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />There is a sad need for standardization of graphs in Python. The topic has come up numerous times on various mail lists, news groups, forums, etc. There is even <a href="http://wiki.python.org/moin/PythonGraphApi">a wiki page</a> dedicated to the discussion of the topic on python.org. Ach, when will the madness end?<br /><br />As far as I can tell, Guido van Rossum essentially solved this issue 10 years ago when he published his paper on <a href="http://www.python.org/doc/essays/graphs.html">Python Patterns - Implementing Graphs</a>. The graph representation is a simple dict and he provided a few functions for demonstration purposes. In 2004, UC Irvine professor David Eppstein started making public his Python graph-theoretic efforts (with a functional programming approach). Both of these represent a direct approach that appeals to my aesthetic sense.<br /><br />Now, after years of tracking the lack of progress made in standardizing graph representations in Python, I've recently had strong need of them. I did some checking around, and found projects that potentially met my needs. Sadly, none of them had the simplicity of Guido's original implementation (and therefore, anticipated speed benefits).<br /><br />I was looking for graph implementations with no cruft, no external dependencies, no afterthoughts. I need something that balances runtime performance with a usable API, preferably created using PEP-8 (or similar) coding style.<br /><br />Here's what I found, with some notes that I used to make a decision for my own needs:<br /><ul><li><a href="http://www.ics.uci.edu/%7Eeppstein/PADS/">PADS</a> - David Eppstein's work; functional programming style; very strong math; leaves the implementation of the graph up to the developer-user<br /></li><li><a href="http://svn.pythonmac.org/altgraph/altgraph/trunk/altgraph/">altgraph</a> - too many utility and special-purpose methods for my taste; uses a custom graph object</li><li><a href="http://code.google.com/p/python-graph/source/browse/#svn/trunk/graph">python-graph</a> - a new implementation; uses its own objects; seems to take the "framework" approach to graph implementation</li><li><a href="http://ziyang.ece.northwestern.edu/%7Edickrp/python/graph.html">graph</a> - requires the use of custom vertex and edge objects</li><li><a href="https://networkx.lanl.gov/trac/browser/networkx/trunk/networkx/classes">NetworkX</a> - fairly complete; lots of redundant code; covers more than just a graph implementation (I only include it here because it seems to be fairly highly used)<br /></li></ul>If you know me, then you've guessed what's coming next. Yes, I'm going to contribute to the general chaos and announce yet another graph library. What I hope to accomplish with this is provide a very simple implementation based on Guido van Rossum's approach (dictionary-based) that doesn't consume much memory, can be operated on quickly, and can be used anywhere.<br /><br />In keeping with this motivation, I've started a new project on Launchpad and named it <a href="https://launchpad.net/simplegraph">simple-graph</a>. My initial efforts will be aimed at implementing a dict-based graph per Guido's paper, with the possible inclusion of some of David's functions (updated to operate on a dict object). I will then spend some time taking inspiration from the best of what the other graph libraries have to offer while keeping things simple.<br /><br />As I stated on the web panel at PyCon 2007, diversity is a good thing; it gives us a rich gene pool from which a full and healthy process of natural selection may occur. Let's hope that the efforts of so many Python programmers eventually lead to the inclusion of a graph object in the Python standard library.<br /><br /><br /></div>
+<div><br />There is a sad need for standardization of graphs in Python. The
+topic has come up numerous times on various mail lists, news groups, forums,
+etc. There is even <a href="http://wiki.python.org/moin/PythonGraphApi">a wiki
+page</a> dedicated to the discussion of the topic on python.org. Ach, when
+will the madness end?<br /><br />As far as I can tell, Guido van Rossum
+essentially solved this issue 10 years ago when he published his paper on <a
+href="http://www.python.org/doc/essays/graphs.html">Python Patterns -
+Implementing Graphs</a>. The graph representation is a simple dict and he
+provided a few functions for demonstration purposes. In 2004, UC Irvine
+professor David Eppstein started making public his Python graph-theoretic
+efforts (with a functional programming approach). Both of these represent a
+direct approach that appeals to my aesthetic sense.<br /><br />Now, after
+years of tracking the lack of progress made in standardizing graph
+representations in Python, I've recently had strong need of them. I did some
+checking around, and found projects that potentially met my needs. Sadly, none
+of them had the simplicity of Guido's original implementation (and therefore,
+anticipated speed benefits).<br /><br />I was looking for graph
+implementations with no cruft, no external dependencies, no afterthoughts. I
+need something that balances runtime performance with a usable API, preferably
+created using PEP-8 (or similar) coding style.<br /><br />Here's what I found,
+with some notes that I used to make a decision for my own needs:<br
+/><ul><li><a href="http://www.ics.uci.edu/%7Eeppstein/PADS/">PADS</a> - David
+Eppstein's work; functional programming style; very strong math; leaves the
+implementation of the graph up to the developer-user<br /></li><li><a
+href="http://svn.pythonmac.org/altgraph/altgraph/trunk/altgraph/">altgraph</a>
+- too many utility and special-purpose methods for my taste; uses a custom
+graph object</li><li><a
+href="http://code.google.com/p/python-graph/source/browse/#svn/trunk/graph">py
+thon-graph</a> - a new implementation; uses its own objects; seems to take the
+"framework" approach to graph implementation</li><li><a
+href="http://ziyang.ece.northwestern.edu/%7Edickrp/python/graph.html">graph</a
+> - requires the use of custom vertex and edge objects</li><li><a
+href="https://networkx.lanl.gov/trac/browser/networkx/trunk/networkx/classes">
+NetworkX</a> - fairly complete; lots of redundant code; covers more than just
+a graph implementation (I only include it here because it seems to be fairly
+highly used)<br /></li></ul>If you know me, then you've guessed what's coming
+next. Yes, I'm going to contribute to the general chaos and announce yet
+another graph library. What I hope to accomplish with this is provide a very
+simple implementation based on Guido van Rossum's approach (dictionary-based)
+that doesn't consume much memory, can be operated on quickly, and can be used
+anywhere.<br /><br />In keeping with this motivation, I've started a new
+project on Launchpad and named it <a
+href="https://launchpad.net/simplegraph">simple-graph</a>. My initial efforts
+will be aimed at implementing a dict-based graph per Guido's paper, with the
+possible inclusion of some of David's functions (updated to operate on a dict
+object). I will then spend some time taking inspiration from the best of what
+the other graph libraries have to offer while keeping things simple.<br /><br
+/>As I stated on the web panel at PyCon 2007, diversity is a good thing; it
+gives us a rich gene pool from which a full and healthy process of natural
+selection may occur. Let's hope that the efforts of so many Python programmers
+eventually lead to the inclusion of a graph object in the Python standard
+library.<br /><br /><br /></div>

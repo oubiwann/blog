@@ -11,4 +11,25 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">version control :: software</i><br/><br/><div class="entry"><br /><p>I have *finally* made the move now. I've been experimenting with <br />darcs for about 6 months now, on and off. At the hackathon in December <br />(sponsored by tummy.com), I was really into it and ran tons of tests. I <br />used tailor to convert several repositories, etc. I really loved the <br />patch approach that darcs uses, but I just couldn't motivate to migrate <br />the 47 repositories that I have in svn.</p><p/>However, I have recently migrated all of my Subversion repositories <br />from one server to another, and it was the perfect opportunity. I spent <br />two days migrating to darcs and testing the results, and am delighted. <br />The scripts that I set up to do all the work can now be run easily at <br />any time (if the need arises for any reason). With darcs, the projects' <br />source code is now easily available for anonymous checkout, and what's <br />more, easy mirroring.<p/>I have hacked trac to point to the darcsweb cgi, but I'm still pushing <br />darcs partials from the main server out to the first mirror... so there <br />will be some 404s for a little while, but I expect by the weekend to <br />have all repos viewable in darcsweb as well as available for anonymous <br />checkout. I like the look and functionality of darcsweb, though it is <br />slow. However, I find the query parameters obnoxious; I'll be rewriting <br />it as a stand-alone Nevow app...<p/></div><br/><div class="now_playing"> Now playing:<br /> <pre>Yes - It Can Happen</pre><br/></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">version
+control :: software</i><br/><br/><div class="entry"><br /><p>I have *finally*
+made the move now. I've been experimenting with <br />darcs for about 6 months
+now, on and off. At the hackathon in December <br />(sponsored by tummy.com),
+I was really into it and ran tons of tests. I <br />used tailor to convert
+several repositories, etc. I really loved the <br />patch approach that darcs
+uses, but I just couldn't motivate to migrate <br />the 47 repositories that I
+have in svn.</p><p/>However, I have recently migrated all of my Subversion
+repositories <br />from one server to another, and it was the perfect
+opportunity. I spent <br />two days migrating to darcs and testing the
+results, and am delighted. <br />The scripts that I set up to do all the work
+can now be run easily at <br />any time (if the need arises for any reason).
+With darcs, the projects' <br />source code is now easily available for
+anonymous checkout, and what's <br />more, easy mirroring.<p/>I have hacked
+trac to point to the darcsweb cgi, but I'm still pushing <br />darcs partials
+from the main server out to the first mirror... so there <br />will be some
+404s for a little while, but I expect by the weekend to <br />have all repos
+viewable in darcsweb as well as available for anonymous <br />checkout. I like
+the look and functionality of darcsweb, though it is <br />slow. However, I
+find the query parameters obnoxious; I'll be rewriting <br />it as a
+stand-alone Nevow app...<p/></div><br/><div class="now_playing"> Now
+playing:<br /> <pre>Yes - It Can Happen</pre><br/></div></div>

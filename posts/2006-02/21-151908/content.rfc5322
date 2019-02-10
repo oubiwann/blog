@@ -11,4 +11,54 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><p>Every year or so, I search online for the latest CP/M emulators and the source code for my favorite childhood games: <a href="http://www.barnsdle.demon.co.uk/game/starlanes.html">Star Traders</a> (also Star Lanes), <a href="http://en.wikipedia.org/wiki/Ladder_%28computer_game%29">Ladder</a>, <a href="http://en.wikipedia.org/wiki/Kaypro_II">Catchum</a>, <a href="http://en.wikipedia.org/wiki/Hunt_the_Wumpus">Hunt the Wumpus</a>, <a href="http://en.wikipedia.org/wiki/Star_Trek_%28text_game%29">Star Trek</a>, <a href="http://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Adventure</a>, etc. These and others were either ASCII "graphics" or just text-only. Like a vulture waiting for the all-clear, I would regularly circle the den where my dad used the Kaypro II we had, and would "sneak" in as soon as it was available. So many fond memories. So fond, in fact, that when I was in school studying phsyics, I bought an old Kaypro on eBay as a fixer-upper. I still have it... but I haven't fixed her up yet ;-) (I got it booting, but I need to fix the wiring in the keyboard).</p><p>Recently on a private mail list, I was reminiscing with friends how I started programming as a result of these games: finishing them and not wanting them to end, so I'd write extensions for them and then play those. After that email, I went on my annual google binge, and this year's was the most successful yet. Here's some good stuff I found:</p><ul><li>A <a href="http://ostermiller.org/ladder/">java port</a> of Ladder</li><li>An <a href="http://tinyurl.com/hl3ym">ncurses C port</a> of Ladder (which compiled fairly easily on Mac OS X)</li><li>The BASIC source code for<a href="http://tinyurl.com/qpkeb"> Star Trader<br /></a></li><li><a href="http://tinyurl.com/qpkeb"> CP/M games</a> and<a href="http://tinyurl.com/ppq6e"> more games</a> (few years ago, this was hosted in a different domain... maybe walnut creek? I forget)</li><li><a href="http://tinyurl.com/elaul">CP/M OS Files</a></li><li>Some <a href="http://tinyurl.com/gbsgp">cryptic instructions</a> for running Kaypro CP/M in the<a href="http://www.mess.org/"> MESS emulator</a></li></ul><p>For those unfamiliar with the classics, here are the<a href="http://tinyurl.com/jo3g2"> Linux ports</a> of the famous BSD games -- if you're running Ubuntu or Debian, just do <span style="font-family:courier new;">apt-get install bsdgames</span> and enjoy :-)</p><p>Last August,<a href="http://jcalderone.livejournal.com/"> JP Calderone</a> (exarkun) blogged about <a href="http://jcalderone.livejournal.com/2005/08/07/">some test code</a> of twisted.conch.insults he was writing for potential twisted terminal-based apps. I only saw this recently, and it got me to thinking about my favorite old games:<br /></p><ol><li>I could fairly easily port them, and <br /></li><li>some of them might do very well as multiplayer apps.<br /></li></ol><p>Ah, the thought of that was pure heaven: old friends, playing old games over the network, reminiscing and reliving old times... and doing it all together. I think my nostalgia circuits over-loaded, because I just sat there for a while with a wistful grin on my face... it could have been for hours, but I'll never say...</p><p>So, yet <span style="font-style: italic;">another</span> set of projects has been initiated, and I am having an immense amount of fun -- nay, joy! -- working on them. I love the terminal. I live it. I wish all applications were terminal based, but it's a rare opportunity to have a project with those requirements. This is a wonderful childhood reprise :-)</p><p>As with my other projects, I will post updates here on the progress of the Twisted games I'm porting.</p><p></p></div>
+<div><br /><p>Every year or so, I search online for the latest CP/M emulators
+and the source code for my favorite childhood games: <a
+href="http://www.barnsdle.demon.co.uk/game/starlanes.html">Star Traders</a>
+(also Star Lanes), <a
+href="http://en.wikipedia.org/wiki/Ladder_%28computer_game%29">Ladder</a>, <a
+href="http://en.wikipedia.org/wiki/Kaypro_II">Catchum</a>, <a
+href="http://en.wikipedia.org/wiki/Hunt_the_Wumpus">Hunt the Wumpus</a>, <a
+href="http://en.wikipedia.org/wiki/Star_Trek_%28text_game%29">Star Trek</a>,
+<a href="http://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Adventure</a>,
+etc. These and others were either ASCII "graphics" or just text-only. Like a
+vulture waiting for the all-clear, I would regularly circle the den where my
+dad used the Kaypro II we had, and would "sneak" in as soon as it was
+available. So many fond memories. So fond, in fact, that when I was in school
+studying phsyics, I bought an old Kaypro on eBay as a fixer-upper. I still
+have it... but I haven't fixed her up yet ;-) (I got it booting, but I need to
+fix the wiring in the keyboard).</p><p>Recently on a private mail list, I was
+reminiscing with friends how I started programming as a result of these games:
+finishing them and not wanting them to end, so I'd write extensions for them
+and then play those. After that email, I went on my annual google binge, and
+this year's was the most successful yet. Here's some good stuff I
+found:</p><ul><li>A <a href="http://ostermiller.org/ladder/">java port</a> of
+Ladder</li><li>An <a href="http://tinyurl.com/hl3ym">ncurses C port</a> of
+Ladder (which compiled fairly easily on Mac OS X)</li><li>The BASIC source
+code for<a href="http://tinyurl.com/qpkeb"> Star Trader<br /></a></li><li><a
+href="http://tinyurl.com/qpkeb"> CP/M games</a> and<a
+href="http://tinyurl.com/ppq6e"> more games</a> (few years ago, this was
+hosted in a different domain... maybe walnut creek? I forget)</li><li><a
+href="http://tinyurl.com/elaul">CP/M OS Files</a></li><li>Some <a
+href="http://tinyurl.com/gbsgp">cryptic instructions</a> for running Kaypro
+CP/M in the<a href="http://www.mess.org/"> MESS emulator</a></li></ul><p>For
+those unfamiliar with the classics, here are the<a
+href="http://tinyurl.com/jo3g2"> Linux ports</a> of the famous BSD games -- if
+you're running Ubuntu or Debian, just do <span style="font-family:courier
+new;">apt-get install bsdgames</span> and enjoy :-)</p><p>Last August,<a
+href="http://jcalderone.livejournal.com/"> JP Calderone</a> (exarkun) blogged
+about <a href="http://jcalderone.livejournal.com/2005/08/07/">some test
+code</a> of twisted.conch.insults he was writing for potential twisted
+terminal-based apps. I only saw this recently, and it got me to thinking about
+my favorite old games:<br /></p><ol><li>I could fairly easily port them, and
+<br /></li><li>some of them might do very well as multiplayer apps.<br
+/></li></ol><p>Ah, the thought of that was pure heaven: old friends, playing
+old games over the network, reminiscing and reliving old times... and doing it
+all together. I think my nostalgia circuits over-loaded, because I just sat
+there for a while with a wistful grin on my face... it could have been for
+hours, but I'll never say...</p><p>So, yet <span style="font-style:
+italic;">another</span> set of projects has been initiated, and I am having an
+immense amount of fun -- nay, joy! -- working on them. I love the terminal. I
+live it. I wish all applications were terminal based, but it's a rare
+opportunity to have a project with those requirements. This is a wonderful
+childhood reprise :-)</p><p>As with my other projects, I will post updates
+here on the progress of the Twisted games I'm porting.</p><p></p></div>

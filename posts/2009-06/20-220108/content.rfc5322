@@ -11,4 +11,68 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://farm4.static.flickr.com/3393/3645070827_f425131ea6_o.png"><img style="margin: 0pt 10px 10px 0pt; float: left; cursor: pointer; width: 240px; height: 167px;" src="http://farm4.static.flickr.com/3393/3645070827_de16ec1c9b_m.jpg" alt="" border="0" /></a>My main development machine is a custom PowerBook running Ubuntu natively. I use it when I'm sitting on the couch, my office comfy chair, the futon, floor, etc. Every once in a while, though, I want to work at a desk from my 24" iMac. Just to mix it up a little. However, that box is my gaming and web-browsing machine: it runs Mac OS X and that's the way I want to keep it. So, if I'm going to do work on the iMac, I need to ssh into the machines that have the environments set up for development.<br /><br />In the course of an average day of writing code, I'll connect to anywhere from 1 to 5 remote machines open up 5-10 ssh sessions in a terminal to each machine. If I'm at the iMac, this get's tedious. Today, it got tedious enough for me to do somthing about it. Here's what I want: to click on a Terminal icon and have an ssh connection automatically established to the box I need to work on. This it pretty easy on Linux and Windows, but I had no idea how to accomplish this on a Mac until tonight.<br /><br />I thought I'd share my solution; others may like it... but I'm betting there are some pretty cool ways of doing this that didn't occur to me -- so feel free to share yours!<br /><br /><br /><span style="font-weight: bold;">Profile Hack</span><br /><br />From previous messing about with the <span style="font-family:courier new;">open</span> command, I knew I could open Terminal.app from the terminal:<br /><div class="highlight"><pre>open -n <span class="s2">"/Applications/Utilities/Terminal.app"</span><br /></pre></div>This got me part way there... if only I could dynamically execute a command upon login... so, yeah, I did something nasty:<br /><div class="highlight"><pre>vi ~/.bash_profile<br /></pre></div>And then:<br /><div class="highlight"><pre><span class="k">if</span> <span class="o">[</span> ! -z <span class="s2">"$REMOTE_CONNECTION"</span> <span class="o">]</span>; <span class="k">then</span><br /><span class="k"> </span>ssh <span class="nv">$REMOTE_CONNECTION</span><br /><span class="nv"> REMOTE_CONNECTION</span><span class="o">=</span><span class="s2">""</span><br /><span class="k">fi</span><br /></pre></div><span style="font-weight: bold;"><br />.command Files</span><br /><br />I was stumped at that point, until some googling revealed a nifty trick I didn't know about:<br /><ul><li>Create a new file in your favorite editor, using the <span style="font-family:courier new;">.command</span> extension<br /></li><li>Add the commands you want executed<br /></li><li>Save it and <span style="font-family:courier new;">chmod 755</span><br /></li><li>Double-click it and enjoy</li></ul>So here's what I added to <span style="font-family:courier new;">rhosgobel.command</span>:<br /><div class="highlight"><pre><span class="nv">REMOTE_CONNECTION</span><span class="o">=</span>rhosgobel <span class="se">\</span><br /> open -n <span class="s2">"/Applications/Utilities/Terminal.app"</span><br /></pre></div><span style="font-weight: bold;"><br />The Obligatory Icon Tweak</span><br /><br />I then used the standard "Get Info" trick of icon copying: "Get Info" for Terminal.app, copy icon, "Get Info" for all my <span style="font-family:courier new;">.command</span> files, paste icon.<br /><br /><span style="font-weight: bold;"><br />Usage</span><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://farm4.static.flickr.com/3381/3645070981_3a2dc3e58c_o.png"><img style="margin: 0pt 10px 10px 0pt; float: right; cursor: pointer; width: 240px; height: 115px;" src="http://farm4.static.flickr.com/3381/3645070981_edb963e877_m.jpg" alt="" border="0" /></a>Now, I just click my "Shells" menu, choose the destination, and start working on that machine. A new window or new tab opened with that instance of Terminal.app will give me a new session to that server, without having to manually ssh into it -- this is even more convenient than having an icon to double-click!<br /><br />One bit of ugly I haven't figured out how to remove: when I open a shell to a remote server, there's another shell opened at the same time with a <span style="font-family:courier new;">[Process completed]</span> message.<br /><br /><br /></div>
+<div><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();}
+catch(e) {}"
+href="http://farm4.static.flickr.com/3393/3645070827_f425131ea6_o.png"><img st
+yle="margin: 0pt 10px 10px 0pt; float: left; cursor: pointer; width: 240px;
+height: 167px;"
+src="http://farm4.static.flickr.com/3393/3645070827_de16ec1c9b_m.jpg" alt=""
+border="0" /></a>My main development machine is a custom PowerBook running
+Ubuntu natively. I use it when I'm sitting on the couch, my office comfy
+chair, the futon, floor, etc. Every once in a while, though, I want to work at
+a desk from my 24" iMac. Just to mix it up a little. However, that box is my
+gaming and web-browsing machine: it runs Mac OS X and that's the way I want to
+keep it. So, if I'm going to do work on the iMac, I need to ssh into the
+machines that have the environments set up for development.<br /><br />In the
+course of an average day of writing code, I'll connect to anywhere from 1 to 5
+remote machines open up 5-10 ssh sessions in a terminal to each machine. If
+I'm at the iMac, this get's tedious. Today, it got tedious enough for me to do
+somthing about it. Here's what I want: to click on a Terminal icon and have an
+ssh connection automatically established to the box I need to work on. This it
+pretty easy on Linux and Windows, but I had no idea how to accomplish this on
+a Mac until tonight.<br /><br />I thought I'd share my solution; others may
+like it... but I'm betting there are some pretty cool ways of doing this that
+didn't occur to me -- so feel free to share yours!<br /><br /><br /><span
+style="font-weight: bold;">Profile Hack</span><br /><br />From previous
+messing about with the <span style="font-family:courier new;">open</span>
+command, I knew I could open Terminal.app from the terminal:<br /><div
+class="highlight"><pre>open -n <span
+class="s2">"/Applications/Utilities/Terminal.app"</span><br /></pre></div>This
+got me part way there... if only I could dynamically execute a command upon
+login... so, yeah, I did something nasty:<br /><div class="highlight"><pre>vi
+~/.bash_profile<br /></pre></div>And then:<br /><div
+class="highlight"><pre><span class="k">if</span> <span class="o">[</span> ! -z
+<span class="s2">"$REMOTE_CONNECTION"</span> <span class="o">]</span>; <span
+class="k">then</span><br /><span class="k"> </span>ssh <span
+class="nv">$REMOTE_CONNECTION</span><br /><span class="nv">
+REMOTE_CONNECTION</span><span class="o">=</span><span class="s2">""</span><br
+/><span class="k">fi</span><br /></pre></div><span style="font-weight:
+bold;"><br />.command Files</span><br /><br />I was stumped at that point,
+until some googling revealed a nifty trick I didn't know about:<br
+/><ul><li>Create a new file in your favorite editor, using the <span
+style="font-family:courier new;">.command</span> extension<br /></li><li>Add
+the commands you want executed<br /></li><li>Save it and <span
+style="font-family:courier new;">chmod 755</span><br /></li><li>Double-click
+it and enjoy</li></ul>So here's what I added to <span
+style="font-family:courier new;">rhosgobel.command</span>:<br /><div
+class="highlight"><pre><span class="nv">REMOTE_CONNECTION</span><span
+class="o">=</span>rhosgobel <span class="se">\</span><br /> open -n <span
+class="s2">"/Applications/Utilities/Terminal.app"</span><br /></pre></div><spa
+n style="font-weight: bold;"><br />The Obligatory Icon Tweak</span><br /><br
+/>I then used the standard "Get Info" trick of icon copying: "Get Info" for
+Terminal.app, copy icon, "Get Info" for all my <span
+style="font-family:courier new;">.command</span> files, paste icon.<br /><br
+/><span style="font-weight: bold;"><br />Usage</span><br /><br /><a
+onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"
+href="http://farm4.static.flickr.com/3381/3645070981_3a2dc3e58c_o.png"><img st
+yle="margin: 0pt 10px 10px 0pt; float: right; cursor: pointer; width: 240px;
+height: 115px;"
+src="http://farm4.static.flickr.com/3381/3645070981_edb963e877_m.jpg" alt=""
+border="0" /></a>Now, I just click my "Shells" menu, choose the destination,
+and start working on that machine. A new window or new tab opened with that
+instance of Terminal.app will give me a new session to that server, without
+having to manually ssh into it -- this is even more convenient than having an
+icon to double-click!<br /><br />One bit of ugly I haven't figured out how to
+remove: when I open a shell to a remote server, there's another shell opened
+at the same time with a <span style="font-family:courier new;">[Process
+completed]</span> message.<br /><br /><br /></div>

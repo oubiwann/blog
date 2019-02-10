@@ -11,4 +11,13 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted :: python :: web</i><br/><br/><p/><br />There are now pymon web ui <a href="http://tinyurl.com/8xkbm">screenshots</a> up on the project trac <br />site. These are two status views (summary and detailed) for monitored <br />services. They are 100% Nevow and load super fast. I'm very happy with <br />the progress so far. For this first release, I think we'll just make <br />some adjustments to the admin landing page, and call it ready to go.<p/><br/><div blog="now_playing"> Now playing:<br /> <pre>Deep Forest with Peter Gabriel - While The Earth Sleeps (Sunday, 11:48pm MST)</pre></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">twisted ::
+python :: web</i><br/><br/><p/><br />There are now pymon web ui <a
+href="http://tinyurl.com/8xkbm">screenshots</a> up on the project trac <br
+/>site. These are two status views (summary and detailed) for monitored <br
+/>services. They are 100% Nevow and load super fast. I'm very happy with <br
+/>the progress so far. For this first release, I think we'll just make <br
+/>some adjustments to the admin landing page, and call it ready to
+go.<p/><br/><div blog="now_playing"> Now playing:<br /> <pre>Deep Forest with
+Peter Gabriel - While The Earth Sleeps (Sunday, 11:48pm MST)</pre></div><br
+/></div>

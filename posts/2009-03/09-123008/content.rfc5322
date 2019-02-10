@@ -11,4 +11,42 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />This year's PyCon talks look absolutely fabulous, and should be a real treat for attendees. I'm probably not going to be able to make it (working for a startup last year put me in a financial position I'm only slowly recovering from). Since it looks like the Landscape team won't be sprinting there this year, Canonical won't be footing the bill.<br /><br />Were I to attend, though, the talks I have my eyes on are the following (listed in visual scanning order of the <a href="http://us.pycon.org/2009/conference/schedule/">schedule</a>):<br /><ul><li><a class="eventinfo" id="TT28" href="http://us.pycon.org/2009/conference/schedule/event/28/">Twisted, AMQP and Thrift: Bridging messaging and RPC for building scalable distributed applications (#40)</a></li><li><a class="eventinfo" id="TT21" href="http://us.pycon.org/2009/conference/schedule/event/21/">Panel: Python VMs (#15)</a></li><li><a class="eventinfo" id="TT30" href="http://us.pycon.org/2009/conference/schedule/event/30/">Building tests for large, untested codebases (#112)</a></li><li><a class="eventinfo" id="TT31" href="http://us.pycon.org/2009/conference/schedule/event/31/">Introduction to Multiprocessing in Python (#6)</a></li><li><a class="eventinfo" id="TT33" href="http://us.pycon.org/2009/conference/schedule/event/33/">The State of the Python Community: Leading the Python tribe (#118)</a></li><li><a class="eventinfo" id="TT59" href="http://us.pycon.org/2009/conference/schedule/event/59/">PyPy status talk. (#72)</a></li><li><a class="eventinfo" id="TT69" href="http://us.pycon.org/2009/conference/schedule/event/69/">Concurrency and Distributed Computing with Python Today (#49)</a></li><li><a class="eventinfo" id="TT73" href="http://us.pycon.org/2009/conference/schedule/event/73/">Batteries Included! Python on Low Cost Tiny Embedded Wireless Devices (#28)</a></li><li><a class="eventinfo" id="TT71" href="http://us.pycon.org/2009/conference/schedule/event/71/">Easy AI with Python (#115)</a></li><li><a class="eventinfo" id="TT75" href="http://us.pycon.org/2009/conference/schedule/event/75/">Abstraction as Leverage (#110)</a></li><li><a class="eventinfo" id="TT72" href="http://us.pycon.org/2009/conference/schedule/event/72/">Metaprogramming with Decorators and Metaclasses (#120)</a></li></ul>There are many different wonderful topics being covered at PyCon this year -- this just happens to be the list that converges most closely with my own interests :-) No offense if I've left you out!<br /><br />I will be sorry to have to miss these, but I will greatly look forward to their audio or video recordings as well as the presenters' published slides and papers.<br /><br /><br /></div>
+<div><br />This year's PyCon talks look absolutely fabulous, and should be a
+real treat for attendees. I'm probably not going to be able to make it
+(working for a startup last year put me in a financial position I'm only
+slowly recovering from). Since it looks like the Landscape team won't be
+sprinting there this year, Canonical won't be footing the bill.<br /><br
+/>Were I to attend, though, the talks I have my eyes on are the following
+(listed in visual scanning order of the <a
+href="http://us.pycon.org/2009/conference/schedule/">schedule</a>):<br /><ul><
+li><a class="eventinfo" id="TT28"
+href="http://us.pycon.org/2009/conference/schedule/event/28/">Twisted, AMQP
+and Thrift: Bridging messaging and RPC for building scalable distributed
+applications (#40)</a></li><li><a class="eventinfo" id="TT21"
+href="http://us.pycon.org/2009/conference/schedule/event/21/">Panel: Python
+VMs (#15)</a></li><li><a class="eventinfo" id="TT30"
+href="http://us.pycon.org/2009/conference/schedule/event/30/">Building tests
+for large, untested codebases (#112)</a></li><li><a class="eventinfo"
+id="TT31" href="http://us.pycon.org/2009/conference/schedule/event/31/">Introd
+uction to Multiprocessing in Python (#6)</a></li><li><a class="eventinfo"
+id="TT33" href="http://us.pycon.org/2009/conference/schedule/event/33/">The
+State of the Python Community: Leading the Python tribe (#118)</a></li><li><a
+class="eventinfo" id="TT59"
+href="http://us.pycon.org/2009/conference/schedule/event/59/">PyPy status
+talk. (#72)</a></li><li><a class="eventinfo" id="TT69"
+href="http://us.pycon.org/2009/conference/schedule/event/69/">Concurrency and
+Distributed Computing with Python Today (#49)</a></li><li><a class="eventinfo"
+id="TT73" href="http://us.pycon.org/2009/conference/schedule/event/73/">Batter
+ies Included! Python on Low Cost Tiny Embedded Wireless Devices
+(#28)</a></li><li><a class="eventinfo" id="TT71"
+href="http://us.pycon.org/2009/conference/schedule/event/71/">Easy AI with
+Python (#115)</a></li><li><a class="eventinfo" id="TT75"
+href="http://us.pycon.org/2009/conference/schedule/event/75/">Abstraction as
+Leverage (#110)</a></li><li><a class="eventinfo" id="TT72"
+href="http://us.pycon.org/2009/conference/schedule/event/72/">Metaprogramming 
+with Decorators and Metaclasses (#120)</a></li></ul>There are many different
+wonderful topics being covered at PyCon this year -- this just happens to be
+the list that converges most closely with my own interests :-) No offense if
+I've left you out!<br /><br />I will be sorry to have to miss these, but I
+will greatly look forward to their audio or video recordings as well as the
+presenters' published slides and papers.<br /><br /><br /></div>

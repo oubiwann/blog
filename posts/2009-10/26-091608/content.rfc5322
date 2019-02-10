@@ -11,4 +11,120 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><span style="font-weight: bold;"><br /></span>Over the last few months, I've been doing lots of work on various open source projects. I've been so burried in them that I haven't blogged (or microblogged) much about them. So much has been happening, though, that I needed to take a break from the coding and communicate some of this :-)<br /><span style="font-weight: bold;"><br />txAWS</span><br /><br />Over the last few months, <a href="http://rbtcollins.wordpress.com/">Robert Collins</a>, Thomas Herve, Jamshed Kakar and I have been putting lots of effort into improving cloud support in the async (Twisted) Python Amazon EC2 library. It's been a lot of fun to see that part of the library take shape and start getting production use from <a href="http://canonical.com/landscape">Canonical</a>. We have implemented the following functionality groups and their <a href="http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/">associated API</a> methods:<br /><ul><li>Instances</li><li>Key Pairs</li><li>Security Groups</li><li>Elastic IPs</li><li>Availability Zones</li><li>EBS</li></ul>There is a ticket for the following two groups of functionality, and branches in progress for both:<br /><ul><li>Images (<a href="https://bugs.launchpad.net/txaws/+bug/461136">ticket #461136</a> on <a href="http://launchpad.net/">Launchpad</a>)<br /></li><li>Image Attributes (<a href="https://bugs.launchpad.net/txaws/+bug/461139">ticket #461139</a> on <a href="http://launchpad.net/">Launchpad</a>)<br /></li></ul>Once those are merged, EC2 support in txAWS will be complete.<br /><br />As a bonus, we've added support for arbitrary endpoints and with that in place, have successfully tested <span style="font-family:courier new;">txaws.ec2</span> against <a href="http://www.eucalyptus.com/open/">Eucalyptus</a> clouds :-)<br /><br /><span style="font-weight: bold;">txJSON-RPC</span><br /><br />There's a new release of <a href="https://launchpad.net/txjsonrpc">txJSON-RPC</a> out now, downloadable from <a href="http://pypi.python.org/pypi/txJSON-RPC/0.3">PyPI</a>. Work on the next version has been a great deal of fun. What started out as a conversation on IRC with Terry Jones, ended up as spec-driven doctest work on trunk for implementing support for multiple versions of the JSON-RPC spec (pre-1.0, 1.0, and 2.0).<br /><br />With these changes in spec support, txJSON-RPC has really started to mature, and that's been fantastic. Even more, the jsonrpclib module that's included in txJSON-RPC (and can be used with non-Twisted projects) is getting spec version support as well.<br /><br /><span style="font-weight: bold;">SOOM in txULS</span><br /><br />As some may know, one of my computing passions is <a href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra-large-systems.html?popular">ultra large-scale systems</a>. After a phone conversation with Jamshed Kakar and some nice exchanges on the <a href="http://www.python.org/community/sigs/current/">Python ULS-SIG</a> mail <a href="http://mail.python.org/pipermail/uls-sig/2009-September/thread.html">list</a> with Alex Drahon, I started working on a set of coding experiments in self-organizing objects. The <a href="https://docs.google.com/Doc?docid=0AVGwpdQOa6W2ZGd4bjdqM3BfNmNzbXI5NmNm&amp;hl=en&amp;pli=1">Google Doc</a> informally outlines the various stages and goals.<br /><br />For now, the code is living in a <a href="https://edge.launchpad.net/txuls/soom">txULS series</a> on Launchpad. The reason for its inclusion in txULS is that ultimate goal of the SOOM (self-organizing object meshes) code is to produce an async API for building Twisted services that provide behaviours as outlined in the Google Doc (linked above).<br /><br />I would to emphasize the networking-library-agnostic nature of the ULS-SIG: Twisted comes up since I spend a lot of time with Twisted, but ever networking library is welcome. I'm personally interested in exploring (or watching other developers explore) various Stackless Python experiments in the ULS systems space.<br /><br /><span style="font-weight: bold;">txSpore</span><br /><br /><a href="https://launchpad.net/txspore">This project</a> was a spontaneous effort resulting from an evening of code review when I first discovered the official <a href="http://www.spore.com/comm/developer/python">Python API</a> from EA/Maxis for the game Spore. It's been a blast and something that <a href="http://radix.twistedmatrix.com/">Chris Armstrong</a> and I have been working on together. The API is currently feature-complete, but Chris has some excellent ideas about improving usage as well as some additional API augmentations that will make life easier for game developers.<br /><br />Already more featureful and usable than the official Spore Python API, there are great things in store for this library. Chris has come up with several very cool demo ideas that take advantage of the new API and will push it to the limits. We're both pretty excited :-)<br /><br /><span style="font-weight: bold;">Isomyr</span><br /><br />I love isometric games. I'm a freak for the classic look. One night about a month ago, Chris and I discovered <a href="http://www.webalice.it/simon.gillespie/Isotope.html">Isotope</a>, an isometric Python game engine by Simon Gillespie. It was last updated in 2005 at version 0.9, so I started working on a branch that could be released as 1.0. I never heard back from Simon after an inquiry for his permission to release as 1.0, so I forked the code to a new project: <a href="https://launchpad.net/isomyr">Isomyr</a>. I released the code rewrite work I had done to that point (plus some changes such as replacing some old code with Numpy) as <a href="http://pypi.python.org/pypi/Isomyr/">0.1</a>. At which point things just went nuts...<br /><br />Isomyr now has support for multiple worlds, customizable (per world) in-game time and calendars, and basic interactive fiction development. The latest chunk of code (that hasn't been pushed up to Launchpad yet) is adding support for general planetary simulation (e.g., axial title, varying daylight hours, seasons, and weather). As you might imagine, this has been a great deal of fun to work on!<br /><br /><span style="font-weight: bold;">PyRRD</span><br /><br /><a href="https://launchpad.net/pyrrd">PyRRD</a> has gotten some recent community love, with requests for a <a href="http://groups.google.com/group/pyrrd-users">mail list</a>, new developer-oritnted features, etc. Currently at version 0.0.7, the 0.1.0 release isn't to far away. Folks have been using trunk for a while, which added support for the RRDTool Python bindings back in March of this year. (PyRRD's focus has primarily been for users/developers who didn't have the RRDTool Python bindings installed). In the next couple weeks or months, I expect that we'll be adding a few more features, and then preparing the new release.<br /><br /><span style="font-weight: bold;">PyRTF</span><br /><br />Another fixer-upper project, <a href="https://launchpad.net/pyrtf">PyRTF</a> (mirroed on Google code as <a href="http://code.google.com/p/pyrtf-ng/">pyrtf-ng</a>) has been on hiatus for a while, due to my diminished need to manipulate and interact with RTF files. However, a new developer has joined the project and the code-cleanup and unit test development now continues. Thanks <span class="sprite person">Christian Simms!<br /><br />A while ago, Simon Cusack</span> (<span class="sprite person">the original author of <a href="http://sourceforge.net/projects/pyrtf/">PyRTF</a>) and I had some great discussions about the future development of PyRTF and his interest in merging the recent changes into trunk on SourceForge. I deferred on that action, wanting to wait until the code cleanup, unit tests, and API changes had been completed. With Christian's help, we may get there now :-)<br /><br /><span style="font-weight: bold;">Wrap-up</span><br /><br />It's been about a year since I've been so active in open source development, and it feels <span style="font-style: italic;">really</span> good to be at it again :-) Being back in Colorado seems to have helped in subtle ways, but mostly it's been the increased interaction and interest from developers in the community that I can thank for my increased activity (and thus enjoyment). You guys are awesome. You're the reason for any code I produce.<br /><br /><br /></span></div>
+<div><span style="font-weight: bold;"><br /></span>Over the last few months,
+I've been doing lots of work on various open source projects. I've been so
+burried in them that I haven't blogged (or microblogged) much about them. So
+much has been happening, though, that I needed to take a break from the coding
+and communicate some of this :-)<br /><span style="font-weight: bold;"><br
+/>txAWS</span><br /><br />Over the last few months, <a
+href="http://rbtcollins.wordpress.com/">Robert Collins</a>, Thomas Herve,
+Jamshed Kakar and I have been putting lots of effort into improving cloud
+support in the async (Twisted) Python Amazon EC2 library. It's been a lot of
+fun to see that part of the library take shape and start getting production
+use from <a href="http://canonical.com/landscape">Canonical</a>. We have
+implemented the following functionality groups and their <a
+href="http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/">ass
+ociated API</a> methods:<br /><ul><li>Instances</li><li>Key
+Pairs</li><li>Security Groups</li><li>Elastic IPs</li><li>Availability
+Zones</li><li>EBS</li></ul>There is a ticket for the following two groups of
+functionality, and branches in progress for both:<br /><ul><li>Images (<a
+href="https://bugs.launchpad.net/txaws/+bug/461136">ticket #461136</a> on <a
+href="http://launchpad.net/">Launchpad</a>)<br /></li><li>Image Attributes (<a
+href="https://bugs.launchpad.net/txaws/+bug/461139">ticket #461139</a> on <a
+href="http://launchpad.net/">Launchpad</a>)<br /></li></ul>Once those are
+merged, EC2 support in txAWS will be complete.<br /><br />As a bonus, we've
+added support for arbitrary endpoints and with that in place, have
+successfully tested <span style="font-family:courier new;">txaws.ec2</span>
+against <a href="http://www.eucalyptus.com/open/">Eucalyptus</a> clouds :-)<br
+/><br /><span style="font-weight: bold;">txJSON-RPC</span><br /><br />There's
+a new release of <a href="https://launchpad.net/txjsonrpc">txJSON-RPC</a> out
+now, downloadable from <a
+href="http://pypi.python.org/pypi/txJSON-RPC/0.3">PyPI</a>. Work on the next
+version has been a great deal of fun. What started out as a conversation on
+IRC with Terry Jones, ended up as spec-driven doctest work on trunk for
+implementing support for multiple versions of the JSON-RPC spec (pre-1.0, 1.0,
+and 2.0).<br /><br />With these changes in spec support, txJSON-RPC has really
+started to mature, and that's been fantastic. Even more, the jsonrpclib module
+that's included in txJSON-RPC (and can be used with non-Twisted projects) is
+getting spec version support as well.<br /><br /><span style="font-weight:
+bold;">SOOM in txULS</span><br /><br />As some may know, one of my computing
+passions is <a
+href="http://oubiwann.blogspot.com/2008/05/required-reading-ultra-large-system
+s.html?popular">ultra large-scale systems</a>. After a phone conversation with
+Jamshed Kakar and some nice exchanges on the <a
+href="http://www.python.org/community/sigs/current/">Python ULS-SIG</a> mail
+<a href="http://mail.python.org/pipermail/uls-sig/2009-September/thread.html">
+list</a> with Alex Drahon, I started working on a set of coding experiments in
+self-organizing objects. The <a
+href="https://docs.google.com/Doc?docid=0AVGwpdQOa6W2ZGd4bjdqM3BfNmNzbXI5NmNm&
+amp;hl=en&amp;pli=1">Google Doc</a> informally outlines the various stages and
+goals.<br /><br />For now, the code is living in a <a
+href="https://edge.launchpad.net/txuls/soom">txULS series</a> on Launchpad.
+The reason for its inclusion in txULS is that ultimate goal of the SOOM
+(self-organizing object meshes) code is to produce an async API for building
+Twisted services that provide behaviours as outlined in the Google Doc (linked
+above).<br /><br />I would to emphasize the networking-library-agnostic nature
+of the ULS-SIG: Twisted comes up since I spend a lot of time with Twisted, but
+ever networking library is welcome. I'm personally interested in exploring (or
+watching other developers explore) various Stackless Python experiments in the
+ULS systems space.<br /><br /><span style="font-weight:
+bold;">txSpore</span><br /><br /><a href="https://launchpad.net/txspore">This
+project</a> was a spontaneous effort resulting from an evening of code review
+when I first discovered the official <a
+href="http://www.spore.com/comm/developer/python">Python API</a> from EA/Maxis
+for the game Spore. It's been a blast and something that <a
+href="http://radix.twistedmatrix.com/">Chris Armstrong</a> and I have been
+working on together. The API is currently feature-complete, but Chris has some
+excellent ideas about improving usage as well as some additional API
+augmentations that will make life easier for game developers.<br /><br
+/>Already more featureful and usable than the official Spore Python API, there
+are great things in store for this library. Chris has come up with several
+very cool demo ideas that take advantage of the new API and will push it to
+the limits. We're both pretty excited :-)<br /><br /><span style="font-weight:
+bold;">Isomyr</span><br /><br />I love isometric games. I'm a freak for the
+classic look. One night about a month ago, Chris and I discovered <a
+href="http://www.webalice.it/simon.gillespie/Isotope.html">Isotope</a>, an
+isometric Python game engine by Simon Gillespie. It was last updated in 2005
+at version 0.9, so I started working on a branch that could be released as
+1.0. I never heard back from Simon after an inquiry for his permission to
+release as 1.0, so I forked the code to a new project: <a
+href="https://launchpad.net/isomyr">Isomyr</a>. I released the code rewrite
+work I had done to that point (plus some changes such as replacing some old
+code with Numpy) as <a href="http://pypi.python.org/pypi/Isomyr/">0.1</a>. At
+which point things just went nuts...<br /><br />Isomyr now has support for
+multiple worlds, customizable (per world) in-game time and calendars, and
+basic interactive fiction development. The latest chunk of code (that hasn't
+been pushed up to Launchpad yet) is adding support for general planetary
+simulation (e.g., axial title, varying daylight hours, seasons, and weather).
+As you might imagine, this has been a great deal of fun to work on!<br /><br
+/><span style="font-weight: bold;">PyRRD</span><br /><br /><a
+href="https://launchpad.net/pyrrd">PyRRD</a> has gotten some recent community
+love, with requests for a <a
+href="http://groups.google.com/group/pyrrd-users">mail list</a>, new
+developer-oritnted features, etc. Currently at version 0.0.7, the 0.1.0
+release isn't to far away. Folks have been using trunk for a while, which
+added support for the RRDTool Python bindings back in March of this year.
+(PyRRD's focus has primarily been for users/developers who didn't have the
+RRDTool Python bindings installed). In the next couple weeks or months, I
+expect that we'll be adding a few more features, and then preparing the new
+release.<br /><br /><span style="font-weight: bold;">PyRTF</span><br /><br
+/>Another fixer-upper project, <a href="https://launchpad.net/pyrtf">PyRTF</a>
+(mirroed on Google code as <a
+href="http://code.google.com/p/pyrtf-ng/">pyrtf-ng</a>) has been on hiatus for
+a while, due to my diminished need to manipulate and interact with RTF files.
+However, a new developer has joined the project and the code-cleanup and unit
+test development now continues. Thanks <span class="sprite person">Christian
+Simms!<br /><br />A while ago, Simon Cusack</span> (<span class="sprite
+person">the original author of <a
+href="http://sourceforge.net/projects/pyrtf/">PyRTF</a>) and I had some great
+discussions about the future development of PyRTF and his interest in merging
+the recent changes into trunk on SourceForge. I deferred on that action,
+wanting to wait until the code cleanup, unit tests, and API changes had been
+completed. With Christian's help, we may get there now :-)<br /><br /><span
+style="font-weight: bold;">Wrap-up</span><br /><br />It's been about a year
+since I've been so active in open source development, and it feels <span
+style="font-style: italic;">really</span> good to be at it again :-) Being
+back in Colorado seems to have helped in subtle ways, but mostly it's been the
+increased interaction and interest from developers in the community that I can
+thank for my increased activity (and thus enjoyment). You guys are awesome.
+You're the reason for any code I produce.<br /><br /><br /></span></div>

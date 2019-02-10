@@ -11,4 +11,22 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">programming :: python :: internet</i><br/><br/><p/><br /><div blog="entry"><p><br />Last night at the Hacking Society meeting in Fort Collins, I finished <br />my latest utility. I use supybot on our dev channel and the other day, <br />I learned how to write plugins for it. After writing one, I realized <br />that wasn't exactly what I needed. What I really needed was to add my <br />own daemon to run inside supybot's daemon. Then I learned the complete <br />internals of supybot. Quite an interesting experience. I wrote a <br />daemon/notification server last year that monitors arbitrary <br />directories and files for changes to contents, time stamps, etc. I <br />wanted my daemon to monitor a directory where our subversion hooks post <br />updates, see which files (updates) have been added, and then parse the <br />updates for information that is useful to post on an IRC channel. *And* <br />I wanted this daemon to run inside the supybot daemon. In less than 24 <br />hours, supybot was learned and my daemon was buried inside of it nicely <br />;-)<br /></p><br /><p>At the Hacking Society meeting, I finished up the parsing for the <br />subversion commit updates... today, the results were viewable as <br />everyone made their code changes. Ah, data is wonderful.</p><p/></div><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">programming ::
+python :: internet</i><br/><br/><p/><br /><div blog="entry"><p><br />Last
+night at the Hacking Society meeting in Fort Collins, I finished <br />my
+latest utility. I use supybot on our dev channel and the other day, <br />I
+learned how to write plugins for it. After writing one, I realized <br />that
+wasn't exactly what I needed. What I really needed was to add my <br />own
+daemon to run inside supybot's daemon. Then I learned the complete <br
+/>internals of supybot. Quite an interesting experience. I wrote a <br
+/>daemon/notification server last year that monitors arbitrary <br
+/>directories and files for changes to contents, time stamps, etc. I <br
+/>wanted my daemon to monitor a directory where our subversion hooks post <br
+/>updates, see which files (updates) have been added, and then parse the <br
+/>updates for information that is useful to post on an IRC channel. *And* <br
+/>I wanted this daemon to run inside the supybot daemon. In less than 24 <br
+/>hours, supybot was learned and my daemon was buried inside of it nicely <br
+/>;-)<br /></p><br /><p>At the Hacking Society meeting, I finished up the
+parsing for the <br />subversion commit updates... today, the results were
+viewable as <br />everyone made their code changes. Ah, data is
+wonderful.</p><p/></div><br /></div>

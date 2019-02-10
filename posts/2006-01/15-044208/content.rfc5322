@@ -11,4 +11,49 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software :: python :: webxcreta</i><br/><br/><div class="entry"><br />I recently emailed a friend about the webXcreta project, and to give <br />him some background on it, I described Eigenradio:<br /><blockquote><br />A few years ago, I came across one of the most bizarre software <br />projects I had seen on the net: a guy at MIT had created an internet <br />radio station that "consumed" Top-40 songs being played live on other <br />internet radio stations, pushed them through massive statistical <br />commutation and custom software, and then spit out "new" music from <br />these computations. The music generated was a sonic, statistical <br />average of what was popular and getting air-play. Most people found the <br />resulting "music" disturbing. I, however, couldn't stop laughing -- <br />literally. You could actually "hear" the statistics of the thing, if <br />you listened carefully. It was stunning. And hilarious.<br /></blockquote><p/>That bit about hearing the statistics is key. And it perfectly <br />describes how it felt to listen to that music. It felt like an <br />epiphany. One of Eigenradio's taglines was brilliant:<br /><blockquote><br />What you hear on Eigenradio is the best of the New Music, distilled and <br />de-correlated. One song on Eigenradio is worth at least twenty songs on <br />old radio.<br /></blockquote><p/>Now, with webXcreta, I find myself in a similar situation: I read the <br />posts, and I convulse with laughter. It's not the content so much that <br />makes it so irrepressibly funny to me, but rather what's under the <br />covers. To give you a quick sense of my humor, I laugh at truth. Truth <br />is endlessly amusing to me. I remember reading James Gleik's "Chaos" <br />book in high school, and laughing for about 15 minutes after I read his <br />description of Sierpinski Gaskets: they have zero area and infinite <br />points. It wasn't so much like a light going off in my mind, as a <br />bomb. The truth of it turned my mind upside down, and I had new eyes. <br />It was an ecstatic experience -- thus the laughter.<p/>There's something similar happening in my mind with reading theses<br /><a href="http://schrobox.blogspot.com/">Schrodinger's Box</a><br /> blog posts. There's something hidden, under the covers that is the <br />true source of my laughter; the quote above from the Eigenradio site <br />points to the answer. To explore this further, consider this: what if <br />you absolutely had to read 1000 pages of text in less than a minute, <br />what would you do? What's the cheapest alternative to a <br />massive/complete data set? A random sampling! Read a shotgun-spread of <br />statistically sampled textual data from those 1000 pages.<p/>And that's it. That's what's making me laugh. When I read<br /><a href="http://schrobox.blogspot.com/">Schrodinger's Box</a>,<br />part of my mind is actually aware that it is seeing parts of thousands <br />of data sources simultaneously, and the truth of that inspires a <br />quasi-ecstatic hilarity. Crazy truth.<p/>In my experience (and, arguably that of the entire world of science), <br />Crazy Truth is a gold-mine for discovery. It will be interesting to see <br />how this code evolves and what strange uses it gets put to...<p/></div><br/><div class="now_playing"> Now playing:<br /> <pre>Yes - Close to the Edge</pre><br/></div></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software ::
+python :: webxcreta</i><br/><br/><div class="entry"><br />I recently emailed a
+friend about the webXcreta project, and to give <br />him some background on
+it, I described Eigenradio:<br /><blockquote><br />A few years ago, I came
+across one of the most bizarre software <br />projects I had seen on the net:
+a guy at MIT had created an internet <br />radio station that "consumed"
+Top-40 songs being played live on other <br />internet radio stations, pushed
+them through massive statistical <br />commutation and custom software, and
+then spit out "new" music from <br />these computations. The music generated
+was a sonic, statistical <br />average of what was popular and getting
+air-play. Most people found the <br />resulting "music" disturbing. I,
+however, couldn't stop laughing -- <br />literally. You could actually "hear"
+the statistics of the thing, if <br />you listened carefully. It was stunning.
+And hilarious.<br /></blockquote><p/>That bit about hearing the statistics is
+key. And it perfectly <br />describes how it felt to listen to that music. It
+felt like an <br />epiphany. One of Eigenradio's taglines was brilliant:<br
+/><blockquote><br />What you hear on Eigenradio is the best of the New Music,
+distilled and <br />de-correlated. One song on Eigenradio is worth at least
+twenty songs on <br />old radio.<br /></blockquote><p/>Now, with webXcreta, I
+find myself in a similar situation: I read the <br />posts, and I convulse
+with laughter. It's not the content so much that <br />makes it so
+irrepressibly funny to me, but rather what's under the <br />covers. To give
+you a quick sense of my humor, I laugh at truth. Truth <br />is endlessly
+amusing to me. I remember reading James Gleik's "Chaos" <br />book in high
+school, and laughing for about 15 minutes after I read his <br />description
+of Sierpinski Gaskets: they have zero area and infinite <br />points. It
+wasn't so much like a light going off in my mind, as a <br />bomb. The truth
+of it turned my mind upside down, and I had new eyes. <br />It was an ecstatic
+experience -- thus the laughter.<p/>There's something similar happening in my
+mind with reading theses<br /><a
+href="http://schrobox.blogspot.com/">Schrodinger's Box</a><br /> blog posts.
+There's something hidden, under the covers that is the <br />true source of my
+laughter; the quote above from the Eigenradio site <br />points to the answer.
+To explore this further, consider this: what if <br />you absolutely had to
+read 1000 pages of text in less than a minute, <br />what would you do? What's
+the cheapest alternative to a <br />massive/complete data set? A random
+sampling! Read a shotgun-spread of <br />statistically sampled textual data
+from those 1000 pages.<p/>And that's it. That's what's making me laugh. When I
+read<br /><a href="http://schrobox.blogspot.com/">Schrodinger's Box</a>,<br
+/>part of my mind is actually aware that it is seeing parts of thousands <br
+/>of data sources simultaneously, and the truth of that inspires a <br
+/>quasi-ecstatic hilarity. Crazy truth.<p/>In my experience (and, arguably
+that of the entire world of science), <br />Crazy Truth is a gold-mine for
+discovery. It will be interesting to see <br />how this code evolves and what
+strange uses it gets put to...<p/></div><br/><div class="now_playing"> Now
+playing:<br /> <pre>Yes - Close to the Edge</pre><br/></div></div>

@@ -11,4 +11,66 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://en.wikipedia.org/wiki/File:Twisted_Logo_%28software%29.svg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Twisted_Logo_(software).svg/200px-Twisted_Logo_(software).svg.png" /></a></div>In a previous life, I spent about 25 hours a day worrying about <a href="http://en.wikipedia.org/wiki/Content_management_system">content management systems</a> written in Python. As a result of the battle scars built up during those days, I have developed a pretty strong aversion for a heavy <span id="goog_371946543"></span>CMS<span id="goog_371946544"></span> when a simple approach will do. <i>Especially</i> if the users are technologically proficient.<br /><br />At <a href="http://mindpool.io/">MindPool</a>, we're building out our infrastructure right now using <a href="http://twistedmatrix.com/trac/">Twisted</a> so that we can take advantage of the super amazing numbers of protocols that Twisted supports to provide some pretty unique combined services for our customers (among the many other types of services we are providing). For our website, we're using the <a href="http://bottlepy.org/">Bottle</a>/<a href="http://flask.pocoo.org/">Flask</a>-inspired <a href="https://github.com/twisted/klein">Klein</a> as our micro web framework, and this uses the most excellent <a href="http://twistedmatrix.com/documents/current/web/howto/twisted-templates.html">Twisted templating</a>. (We are, of course, also using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.)<br /><br />Here's the rub, though: we want to manage our content in the git repo for our site with <a href="http://docutils.sourceforge.net/rst.html">ReStructured Text</a> files, and there's no way to tell the template rendering machinery (the <a href="https://github.com/twisted/twisted/blob/master/twisted/web/_flatten.py#L97">flattener code</a>) to allow raw HTML into the mix. As such, my first attempt at ReST support was rendering HTML tags all over the user-facing content.<br /><br />This ended up being a blessing in disguise, though, as I was fairly unhappy with the third-party dependencies that had popped up as a result of getting this to work. After a couple false starts, I was hot on the trail of a good solution: convert the <a href="http://docutils.sourceforge.net/">docutils</a>-generated HTML (from the ReST source files) to <a href="https://github.com/twisted/twisted/blob/master/twisted/web/_stan.py">Twisted Stan tags</a>, and push <i>those</i> into the renderers.<br /><br />This ended up working like a champ. Here's what I did:<br /><ol><li>Created a couple of utility functions for easily getting HTML from ReST and Stan from ReST.</li><script src="https://gist.github.com/3846991.js?file=utils.py"></script><li>Wrote a custom <a href="http://twistedmatrix.com/documents/current/api/twisted.web.iweb.IRenderable.html">IRenderable</a> for ReST content (not strictly necessary, but organizationally useful, given what else will be added in the future).</li><script src="https://gist.github.com/3846991.js?file=renderer.py"></script><li>Updated the base class for "content" page templates to dispatch, depending upon content type.</li><script src="https://gist.github.com/3846991.js?file=basepages.py"></script></ol><div class="separator" style="clear: both; text-align: center;"><a href="http://farm9.staticflickr.com/8315/8061537867_a86c1d96f5_b.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="97" src="http://farm9.staticflickr.com/8315/8061537867_a86c1d96f5_b.jpg" width="320" /></a></div>Afterwards I was rewarded with some nicely rendered content on the staging MindPool site :-) (once the content text has been completed, we'll be pushing it live).<br /><br />Kudos to <a href="https://twitter.com/dreid">David Reid</a> for Klein and (as usual) to the <a href="http://twistedmatrix.com/trac/wiki/TwistedCommunity">Twisted community</a> for one hell of a framework that is the engine of <i>my</i> internet. <br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href=
+http://en.wikipedia.org/wiki/File:Twisted_Logo_%28software%29.svg" imageanchor
+="1" style="clear: left; float: left; margin-bottom: 1em; margin-right:
+1em;"><img border="0"
+src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Twisted_Logo_(so
+ftware).svg/200px-Twisted_Logo_(software).svg.png" /></a></div>In a previous
+life, I spent about 25 hours a day worrying about <a
+href="http://en.wikipedia.org/wiki/Content_management_system">content manageme
+nt systems</a> written in Python. As a result of the battle scars built up
+during those days, I have developed a pretty strong aversion for a heavy <span
+id="goog_371946543"></span>CMS<span id="goog_371946544"></span> when a simple
+approach will do. <i>Especially</i> if the users are technologically
+proficient.<br /><br />At <a href="http://mindpool.io/">MindPool</a>, we're
+building out our infrastructure right now using <a
+href="http://twistedmatrix.com/trac/">Twisted</a> so that we can take
+advantage of the super amazing numbers of protocols that Twisted supports to
+provide some pretty unique combined services for our customers (among the many
+other types of services we are providing). For our website, we're using the <a
+href="http://bottlepy.org/">Bottle</a>/<a href="http://flask.pocoo.org/">Flask
+</a>-inspired <a href="https://github.com/twisted/klein">Klein</a> as our
+micro web framework, and this uses the most excellent <a
+href="http://twistedmatrix.com/documents/current/web/howto/twisted-templates.h
+tml">Twisted templating</a>. (We are, of course, also using <a
+href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.)<br /><br
+/>Here's the rub, though: we want to manage our content in the git repo for
+our site with <a href="http://docutils.sourceforge.net/rst.html">ReStructured
+Text</a> files, and there's no way to tell the template rendering machinery
+(the <a
+href="https://github.com/twisted/twisted/blob/master/twisted/web/_flatten.py#L
+97">flattener code</a>) to allow raw HTML into the mix. As such, my first
+attempt at ReST support was rendering HTML tags all over the user-facing
+content.<br /><br />This ended up being a blessing in disguise, though, as I
+was fairly unhappy with the third-party dependencies that had popped up as a
+result of getting this to work. After a couple false starts, I was hot on the
+trail of a good solution: convert the <a
+href="http://docutils.sourceforge.net/">docutils</a>-generated HTML (from the
+ReST source files) to <a
+href="https://github.com/twisted/twisted/blob/master/twisted/web/_stan.py">Twi
+sted Stan tags</a>, and push <i>those</i> into the renderers.<br /><br />This
+ended up working like a champ. Here's what I did:<br /><ol><li>Created a
+couple of utility functions for easily getting HTML from ReST and Stan from
+ReST.</li><script src="https://gist.github.com/3846991.js?file=utils.py"></scr
+ipt><li>Wrote a custom <a
+href="http://twistedmatrix.com/documents/current/api/twisted.web.iweb.IRendera
+ble.html">IRenderable</a> for ReST content (not strictly necessary, but
+organizationally useful, given what else will be added in the
+future).</li><script src="https://gist.github.com/3846991.js?file=renderer.py"
+></script><li>Updated the base class for "content" page templates to dispatch,
+depending upon content type.</li><script
+src="https://gist.github.com/3846991.js?file=basepages.py"></script></ol><div 
+class="separator" style="clear: both; text-align: center;"><a
+href="http://farm9.staticflickr.com/8315/8061537867_a86c1d96f5_b.jpg" imageanc
+hor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left:
+1em;"><img border="0" height="97"
+src="http://farm9.staticflickr.com/8315/8061537867_a86c1d96f5_b.jpg" width="32
+0" /></a></div>Afterwards I was rewarded with some nicely rendered content on
+the staging MindPool site :-) (once the content text has been completed, we'll
+be pushing it live).<br /><br />Kudos to <a
+href="https://twitter.com/dreid">David Reid</a> for Klein and (as usual) to
+the <a href="http://twistedmatrix.com/trac/wiki/TwistedCommunity">Twisted
+community</a> for one hell of a framework that is the engine of <i>my</i>
+internet. <br /><br /><br />

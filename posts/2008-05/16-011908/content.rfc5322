@@ -11,4 +11,26 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />I've been playing with <a href="http://code.google.com/appengine/">Google App Engine</a> a bit more tonight, and I've come to some additional conclusions: <div><ol><li>For the best results, you gotta drink the whole pitcher of koolaide; and</li><li>It's really quite tasty koolaide.</li></ol><div>One of the things I really wanted to test was imaging. I use Flickr far more than Picasa, but Flickr's authentication API is kind of a pain in the ass (especially when used with App Engine). Google auth is (for obvious reasons) easier to work with. This, of course, led me to explore Picasa. To my surprise, it was delightful to use. I chopped up gdata for only the parts needed to support Picasa and was uploading images within mere minutes. And not only was the effort minimal, but the performance was outstanding.</div><div><br /></div><div>One of the things that makes application development a more efficient process is having a unified platform on which to work. This is why working with the Divmod platform is so nice when I do extensive Twisted application development: all the infrastructure is already built and ready for me to use. Today, I got to really taste that same experience with the Google platform. And I liked it.</div><div><br /></div><div>I did notice one interesting psychological side effect of working with the file count limitation: I inadvertently treated it like a game. Not unlike the rules in poetry, it provided a structure and bounds within which I was forced to operate, adjust for, and test my creativity against. I rather enjoyed this microgame, and that was a surprise :-)</div></div><br /><br /><br /></div>
+<div><br />I've been playing with <a
+href="http://code.google.com/appengine/">Google App Engine</a> a bit more
+tonight, and I've come to some additional conclusions: <div><ol><li>For the
+best results, you gotta drink the whole pitcher of koolaide; and</li><li>It's
+really quite tasty koolaide.</li></ol><div>One of the things I really wanted
+to test was imaging. I use Flickr far more than Picasa, but Flickr's
+authentication API is kind of a pain in the ass (especially when used with App
+Engine). Google auth is (for obvious reasons) easier to work with. This, of
+course, led me to explore Picasa. To my surprise, it was delightful to use. I
+chopped up gdata for only the parts needed to support Picasa and was uploading
+images within mere minutes. And not only was the effort minimal, but the
+performance was outstanding.</div><div><br /></div><div>One of the things that
+makes application development a more efficient process is having a unified
+platform on which to work. This is why working with the Divmod platform is so
+nice when I do extensive Twisted application development: all the
+infrastructure is already built and ready for me to use. Today, I got to
+really taste that same experience with the Google platform. And I liked
+it.</div><div><br /></div><div>I did notice one interesting psychological side
+effect of working with the file count limitation: I inadvertently treated it
+like a game. Not unlike the rules in poetry, it provided a structure and
+bounds within which I was forced to operate, adjust for, and test my
+creativity against. I rather enjoyed this microgame, and that was a surprise
+:-)</div></div><br /><br /><br /></div>

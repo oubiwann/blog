@@ -11,4 +11,30 @@ Comments:
 Content-Type: md
 Public?: true
 
-<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/-tZyqoLNo0Qg/TYC50doJEYI/AAAAAAAAAFU/FBpIJIwZf0s/s1600/natty-narwhal-square.jpg"><img style="float:right; margin:0 0 10px 10px;cursor:pointer; cursor:hand;width: 200px; height: 200px;" src="http://1.bp.blogspot.com/-tZyqoLNo0Qg/TYC50doJEYI/AAAAAAAAAFU/FBpIJIwZf0s/s200/natty-narwhal-square.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5584667848896745858" /></a>I was supposed to write this blog post early yesterday morning, since the first results from community testing are going to be examined today... but we're still going to need on-going data. So not all is lost :-)<br /><br />We're working very hard with chip vendors to make sure folks are getting the best experience possible running Unity in the forth-coming release of Ubuntu (Natty). Jean-Baptiste Lallement has posted to the QA mail list, asking for committed volunteers to test the nVidia drivers in Unity on a weekly basis. You can read his email here:<div><a href="https://lists.ubuntu.com/archives/ubuntu-qa/2011-March/001484.html"></a><blockquote><a href="https://lists.ubuntu.com/archives/ubuntu-qa/2011-March/001484.html">https://lists.ubuntu.com/archives/ubuntu-qa/2011-March/001484.html</a></blockquote></div><div>Jean-Baptiste links to detailed instructions in his email. The QA Tracker for this effort is here (but please be sure to read his email and follow the instructions that he links to):</div><div><a href="http://xorg.qa.ubuntu.com/qatracker/test/5154"></a><blockquote><a href="http://xorg.qa.ubuntu.com/qatracker/test/5154">http://xorg.qa.ubuntu.com/qatracker/test/5154</a></blockquote></div><div>We look forward to hearing from you!</div><div><br /></div><div><br /></div><div><b>Photo Credits</b>: <a href="http://www.flickr.com/photos/jackyalcine/5380808235/">jackyalcine</a> (slightly modified)</div><div><br /></div>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"
+href="http://1.bp.blogspot.com/-tZyqoLNo0Qg/TYC50doJEYI/AAAAAAAAAFU/FBpIJIwZf0
+s/s1600/natty-narwhal-square.jpg"><img style="float:right; margin:0 0 10px
+10px;cursor:pointer; cursor:hand;width: 200px; height: 200px;"
+src="http://1.bp.blogspot.com/-tZyqoLNo0Qg/TYC50doJEYI/AAAAAAAAAFU/FBpIJIwZf0s
+/s200/natty-narwhal-square.jpg" border="0" alt=""
+id="BLOGGER_PHOTO_ID_5584667848896745858" /></a>I was supposed to write this
+blog post early yesterday morning, since the first results from community
+testing are going to be examined today... but we're still going to need
+on-going data. So not all is lost :-)<br /><br />We're working very hard with
+chip vendors to make sure folks are getting the best experience possible
+running Unity in the forth-coming release of Ubuntu (Natty). Jean-Baptiste
+Lallement has posted to the QA mail list, asking for committed volunteers to
+test the nVidia drivers in Unity on a weekly basis. You can read his email
+here:<div><a href="https://lists.ubuntu.com/archives/ubuntu-qa/2011-March/0014
+84.html"></a><blockquote><a href="https://lists.ubuntu.com/archives/ubuntu-qa/
+2011-March/001484.html">https://lists.ubuntu.com/archives/ubuntu-qa/2011-March
+/001484.html</a></blockquote></div><div>Jean-Baptiste links to detailed
+instructions in his email. The QA Tracker for this effort is here (but please
+be sure to read his email and follow the instructions that he links
+to):</div><div><a href="http://xorg.qa.ubuntu.com/qatracker/test/5154"></a><bl
+ockquote><a href="http://xorg.qa.ubuntu.com/qatracker/test/5154">http://xorg.q
+a.ubuntu.com/qatracker/test/5154</a></blockquote></div><div>We look forward to
+hearing from you!</div><div><br /></div><div><br /></div><div><b>Photo
+Credits</b>: <a
+href="http://www.flickr.com/photos/jackyalcine/5380808235/">jackyalcine</a> (s
+lightly modified)</div><div><br /></div>

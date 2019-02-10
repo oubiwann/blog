@@ -11,4 +11,19 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />I recently got several feature requests for my <a href="http://pypi.python.org/pypi/NetCIDR/">NetCIDR</a> Python library, and in the course of a conversation with one user in particular, I was made aware of the <a href="http://code.google.com/p/netaddr">netaddr project</a>. I took some time to explore the code details and was quite impressed: drkjam did a great job. The manner in which he implemented the many features (especially the IP math) was the kind of thing I wanted to do for NetCIDR ... at some point. After about an hour of digging around, testing out the API, and pondering, I decided to retire NetCIDR and encourage my users to migrate to netaddr.<br /><br />There are a couple more esoteric features in NetCIDR that netaddr currently doesn't have, but we've started talking about adding support for those in netaddr, at which point there will be no need to use NetCIDR.<br /><br />To facilitate this, I've added a <a href="http://code.google.com/p/netaddr/wiki/NetCIDRMigration">wiki page</a> on the netaddr Google Code project for helping users make the transition from NetCIDR to the netaddr API.<br /><br /><br /></div>
+<div><br />I recently got several feature requests for my <a
+href="http://pypi.python.org/pypi/NetCIDR/">NetCIDR</a> Python library, and in
+the course of a conversation with one user in particular, I was made aware of
+the <a href="http://code.google.com/p/netaddr">netaddr project</a>. I took
+some time to explore the code details and was quite impressed: drkjam did a
+great job. The manner in which he implemented the many features (especially
+the IP math) was the kind of thing I wanted to do for NetCIDR ... at some
+point. After about an hour of digging around, testing out the API, and
+pondering, I decided to retire NetCIDR and encourage my users to migrate to
+netaddr.<br /><br />There are a couple more esoteric features in NetCIDR that
+netaddr currently doesn't have, but we've started talking about adding support
+for those in netaddr, at which point there will be no need to use NetCIDR.<br
+/><br />To facilitate this, I've added a <a
+href="http://code.google.com/p/netaddr/wiki/NetCIDRMigration">wiki page</a> on
+the netaddr Google Code project for helping users make the transition from
+NetCIDR to the netaddr API.<br /><br /><br /></div>

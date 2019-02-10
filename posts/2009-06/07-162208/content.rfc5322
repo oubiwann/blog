@@ -11,4 +11,138 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><span style="font-weight: bold;">A Sinfonia on Messaging:</span><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp.html">The Voice of Business</a><br /></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-part.html">The Voice of Architecture</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-part_18.html">A RabbitMQ and txAMQP Interlude</a></li></ol><br /><span style="font-weight: bold;">Prelude</span><br /><br />A complete messaging solution is a <a href="http://en.wikipedia.org/wiki/Inventions_and_Sinfonias_%28J._S._Bach%29">three-part invention</a> of business need, architecture, and implementation. In its final form, these three voices blend in harmony, with each one taking a dominant role depending upon which part of the solution one examines.<br /><br />Neither have I the ability nor skill to seamlessly weave three concepts together while clearly explaining their roles. Therefore, I will separate out the voices from each other and leave it as an exercise for the reader to construct an application and practice the principles involved, thus experiencing well-earned contrapuntal pleasures first-hand.<br /><br /><span style="font-weight: bold;">Introduction</span><br /><br />As computing and data exchange systems increased in complexity over the past 30 years, so has the need for improvements -- and where possible, simplifications. Some of these efforts have been focused on decentralization of communications (shared, distributed load) and decoupling of messaging from applications (removing redundancy and increasing delivery speed/throughput). The first steps towards this were made in the 1990s with explorations in "middleware" application universe.<br /><br />Messaging, as we now refer to it in the industry, arouse from those middleware adventures: out of the business drive to refactor old software as new services to wider, more sophisticated audiences. With many new services replacing a single, monolithic application, formal and well-architected solutions were needed for creating, editing, and deleting shared data.<br /><br />From <a href="http://en.wikipedia.org/wiki/Message_Oriented_Middleware">Wikipedia</a>:<br /><blockquote>Message-oriented middleware (MOM) is infrastructure focused on message sending that increases the interoperability, portability, and flexibility of an application by allowing the application to be distributed over multiple heterogeneous platforms. It reduces the complexity of developing applications that span multiple operating systems and network protocols by insulating the application developer from the details of the various operating system and network interfaces.</blockquote>AMQP (Advanced Message Queuing Protocol) is one of these protcols.<br /><br />In a <a href="http://blogs.computerworld.com/new_ubuntu_linux_server_is_for_business">recent blog post</a> about Ubuntu as a business server, Vaughan-Nichols provides evidence for Ubuntu's and Canonical's commitment to enterprise, saying "... the new [version of] Ubuntu also includes AMQP [...] support. AMQP is an important set of middleware and SOA [...] protocols."<br /><br />AMQP has demonstrated itself as a compelling protocol for messaging solutions, even to the point of being included in two Linux distributions. The code included in this blog series is <a href="https://launchpad.net/txamqp">txAMQP</a>, an asynchronous Python AMQP library built with <a href="http://twistedmatrix.com/">Twisted</a>.<br /><br />Note that <a href="http://twistedmatrix.com/pipermail/twisted-python/2008-September/018330.html">last year</a> I had planned to write a blog series on messaging with <a href="http://metajack.im/2008/09/04/get-twisted-on-xmpp---the-future-of-twisted-words/">Twisted and XMPP</a>, but was unable to as a result of time constraints. These days, I'm working with AMQP instead of XMPP, but I still hold some hope that I'll be able to write an anolog for this series from the perspective of XMPP.<br /><br /><br /><span style="font-weight: bold;">The Voice of Business</span><br /><br />Dipping into the future, <a href="http://jira.amqp.org/confluence/display/AMQP/AMQP+1-0+Business+Requirements">one of the goals</a> for AMQP as developed by a special interest group is the following:<br /><blockquote>Decentralized, Locally Governed Federated Mesh of AMQP Brokers with standardized Global Addressing. The killer application for AMQP is transacted secure business messages between corporations - e.g. send a banking confirmation message to confirms@bank.com [...]</blockquote>I find this rather exciting due to my interest in <a href="http://oubiwann.blogspot.com/search/label/uls">ultra large-scale systems</a>; scenarios like the one described above are the seeds for tomorrow's ULS systems :-)<br /><br />For now, though, let's look at a more immediate use for AMQP: a messaging protocol for shared services between departments in a small store. In this exercise, the voice of business is the primary melody; everything else (architecture and implementation) is done in support of this theme.<br /><br /><br /><span style="font-weight: bold;">An Example</span><br /><br />Fhionnlaidh MacGrudder creates hand-made kilts to order. He's got a sales guy who works with movie costume design shops and the like. He's got a web girl who wrote and maintains a custom store front app. He's got a friend who does shipping and billing for him (as well as some other local Glen Orchy artisans). Until now, these three business "groups" associated with the kilt shop have been maintaining their own records, sometimes copying and updating them manually from each others' various export files.<br /><br />Fhionnlaidh's niece Fíona is programmer, business student, and is dating shipping guy's son. Horrified by the inefficiencies in her uncle's business processes (and tired of her boyfriend's father's complaints), she has proposed the following:<br /><ul><li>sales guy will maintain customer contact info offer this as a service to the store and billing</li><li>the web store will dynamically update displayed data when sales guy changes it</li><li>the CRM will dynamically update displayed data when a web store customer updates their info</li><li>MacGrudder will have a new web page he goes to where all pending orders are presented with their full details; changes can be updated by a customer in real-time until MacGrudder has started working on the order<br /></li><li>billing/shipping guy will be notified instantly as soon as MacGrudder marks a kilt order as completed<br /></li></ul>This setup has the following benefits:<br /><ul><li>Contacts will be maintained in a single data store</li><li>There is zero latency between customer-driven updates and sales guy-driven updates</li><li>Customers have increased post-purchase flexibility with their orders</li><li>Shipping guy can plug into MacGudder's messaging and be notified when packages are ready for pickup</li><li>Everyone has more time for buttered scones and tea (especially shipping guy, who will no longer be making unneeded trips down the glen)<br /></li></ul>The following changes will be made to the current software:<br /><ul><li>Contacts will need to be merged into the CRM</li><li>A read/write data service for the contacts will need to be created</li><li>The CRM front-end will need to be upgraded to an AJAX-enabled version</li><li>The web store app will need to be updated to support AJAX</li><li>A new page will be created which displays the status of all orders and allows MacGrudder to change an order from "pending" to "in-progress" to "completed"</li><li>The current "new order" email notification code in the web app will need to be changed so that it uses the same messaging as MacGrudder's status page<br /></li><li>A new service needs to be created for shipping guy so that he can choose to be notified about pending pickups by email or he can check a web page or even make a query directly to the service, thus preventing unnecessary trips to MacGrudder's isolated little shop<br /></li><li>After all the work is done, somone's going to need to order more scones</li></ul>This example is not meant to fully justify messaging for businesses, but rather to provide a simple use case for which we can write some simple (and less than robust) code. It is a toy, but a conceptually useful one with a solid, concrete foundation.<br /><br />In the next installment, we'll review the business process (with diagrams!) and the explore the architecture of the system, before and after. Another post will take that architecture and combine it with MacGrudder's already extant infrastructure, reusing as much as possible. With that in place, we will have the opportunity to look at some RabbitMQ basics and some actual txAMQP code.<br /><br /><br /><span style="font-weight: bold;">References</span><br /><ul><li><a href="http://www.soa-in-practice.com/">SOA in Practice</a><br /></li><li><a href="http://en.wikipedia.org/wiki/Message_Oriented_Middleware">Message-oriented middleware</a> on Wikipedia<br /></li><li><a href="http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol">AMQP</a> on Wikipedia<br /></li><li>The <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?version=1">AMQP Spec</a></li><li>A <a href="http://barryp.org/software/py-amqplib/">synchronous Python library</a> for AMQP</li><li>The <a href="https://launchpad.net/txamqp">async Python library</a> for AMQP</li><li>A <a href="http://app.arat.us/blog/?p=38">txAMQP example</a></li><li>An <a href="http://blogs.digitar.com/jjww/2009/01/rabbits-and-warrens/">intro to messaging and py-amqplib</a><br /></li></ul><br /><br /><br /></div>
+<div><br /><span style="font-weight: bold;">A Sinfonia on Messaging:</span><br
+/><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-
+with-txamqp.html">The Voice of Business</a><br /></li><li><a
+href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p
+art.html">The Voice of Architecture</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p
+art_18.html">A RabbitMQ and txAMQP Interlude</a></li></ol><br /><span
+style="font-weight: bold;">Prelude</span><br /><br />A complete messaging
+solution is a <a
+href="http://en.wikipedia.org/wiki/Inventions_and_Sinfonias_%28J._S._Bach%29">
+three-part invention</a> of business need, architecture, and implementation.
+In its final form, these three voices blend in harmony, with each one taking a
+dominant role depending upon which part of the solution one examines.<br /><br
+/>Neither have I the ability nor skill to seamlessly weave three concepts
+together while clearly explaining their roles. Therefore, I will separate out
+the voices from each other and leave it as an exercise for the reader to
+construct an application and practice the principles involved, thus
+experiencing well-earned contrapuntal pleasures first-hand.<br /><br /><span
+style="font-weight: bold;">Introduction</span><br /><br />As computing and
+data exchange systems increased in complexity over the past 30 years, so has
+the need for improvements -- and where possible, simplifications. Some of
+these efforts have been focused on decentralization of communications (shared,
+distributed load) and decoupling of messaging from applications (removing
+redundancy and increasing delivery speed/throughput). The first steps towards
+this were made in the 1990s with explorations in "middleware" application
+universe.<br /><br />Messaging, as we now refer to it in the industry, arouse
+from those middleware adventures: out of the business drive to refactor old
+software as new services to wider, more sophisticated audiences. With many new
+services replacing a single, monolithic application, formal and
+well-architected solutions were needed for creating, editing, and deleting
+shared data.<br /><br />From <a
+href="http://en.wikipedia.org/wiki/Message_Oriented_Middleware">Wikipedia</a>:
+<br /><blockquote>Message-oriented middleware (MOM) is infrastructure focused
+on message sending that increases the interoperability, portability, and
+flexibility of an application by allowing the application to be distributed
+over multiple heterogeneous platforms. It reduces the complexity of developing
+applications that span multiple operating systems and network protocols by
+insulating the application developer from the details of the various operating
+system and network interfaces.</blockquote>AMQP (Advanced Message Queuing
+Protocol) is one of these protcols.<br /><br />In a <a
+href="http://blogs.computerworld.com/new_ubuntu_linux_server_is_for_business">
+recent blog post</a> about Ubuntu as a business server, Vaughan-Nichols
+provides evidence for Ubuntu's and Canonical's commitment to enterprise,
+saying "... the new [version of] Ubuntu also includes AMQP [...] support. AMQP
+is an important set of middleware and SOA [...] protocols."<br /><br />AMQP
+has demonstrated itself as a compelling protocol for messaging solutions, even
+to the point of being included in two Linux distributions. The code included
+in this blog series is <a href="https://launchpad.net/txamqp">txAMQP</a>, an
+asynchronous Python AMQP library built with <a
+href="http://twistedmatrix.com/">Twisted</a>.<br /><br />Note that <a
+href="http://twistedmatrix.com/pipermail/twisted-python/2008-September/018330.
+html">last year</a> I had planned to write a blog series on messaging with <a
+href="http://metajack.im/2008/09/04/get-twisted-on-xmpp---the-future-of-twiste
+d-words/">Twisted and XMPP</a>, but was unable to as a result of time
+constraints. These days, I'm working with AMQP instead of XMPP, but I still
+hold some hope that I'll be able to write an anolog for this series from the
+perspective of XMPP.<br /><br /><br /><span style="font-weight: bold;">The
+Voice of Business</span><br /><br />Dipping into the future, <a
+href="http://jira.amqp.org/confluence/display/AMQP/AMQP+1-0+Business+Requireme
+nts">one of the goals</a> for AMQP as developed by a special interest group is
+the following:<br /><blockquote>Decentralized, Locally Governed Federated Mesh
+of AMQP Brokers with standardized Global Addressing. The killer application
+for AMQP is transacted secure business messages between corporations - e.g.
+send a banking confirmation message to confirms@bank.com [...]</blockquote>I
+find this rather exciting due to my interest in <a
+href="http://oubiwann.blogspot.com/search/label/uls">ultra large-scale
+systems</a>; scenarios like the one described above are the seeds for
+tomorrow's ULS systems :-)<br /><br />For now, though, let's look at a more
+immediate use for AMQP: a messaging protocol for shared services between
+departments in a small store. In this exercise, the voice of business is the
+primary melody; everything else (architecture and implementation) is done in
+support of this theme.<br /><br /><br /><span style="font-weight: bold;">An
+Example</span><br /><br />Fhionnlaidh MacGrudder creates hand-made kilts to
+order. He's got a sales guy who works with movie costume design shops and the
+like. He's got a web girl who wrote and maintains a custom store front app.
+He's got a friend who does shipping and billing for him (as well as some other
+local Glen Orchy artisans). Until now, these three business "groups"
+associated with the kilt shop have been maintaining their own records,
+sometimes copying and updating them manually from each others' various export
+files.<br /><br />Fhionnlaidh's niece Fíona is programmer, business student,
+and is dating shipping guy's son. Horrified by the inefficiencies in her
+uncle's business processes (and tired of her boyfriend's father's complaints),
+she has proposed the following:<br /><ul><li>sales guy will maintain customer
+contact info offer this as a service to the store and billing</li><li>the web
+store will dynamically update displayed data when sales guy changes
+it</li><li>the CRM will dynamically update displayed data when a web store
+customer updates their info</li><li>MacGrudder will have a new web page he
+goes to where all pending orders are presented with their full details;
+changes can be updated by a customer in real-time until MacGrudder has started
+working on the order<br /></li><li>billing/shipping guy will be notified
+instantly as soon as MacGrudder marks a kilt order as completed<br
+/></li></ul>This setup has the following benefits:<br /><ul><li>Contacts will
+be maintained in a single data store</li><li>There is zero latency between
+customer-driven updates and sales guy-driven updates</li><li>Customers have
+increased post-purchase flexibility with their orders</li><li>Shipping guy can
+plug into MacGudder's messaging and be notified when packages are ready for
+pickup</li><li>Everyone has more time for buttered scones and tea (especially
+shipping guy, who will no longer be making unneeded trips down the glen)<br
+/></li></ul>The following changes will be made to the current software:<br
+/><ul><li>Contacts will need to be merged into the CRM</li><li>A read/write
+data service for the contacts will need to be created</li><li>The CRM
+front-end will need to be upgraded to an AJAX-enabled version</li><li>The web
+store app will need to be updated to support AJAX</li><li>A new page will be
+created which displays the status of all orders and allows MacGrudder to
+change an order from "pending" to "in-progress" to "completed"</li><li>The
+current "new order" email notification code in the web app will need to be
+changed so that it uses the same messaging as MacGrudder's status page<br
+/></li><li>A new service needs to be created for shipping guy so that he can
+choose to be notified about pending pickups by email or he can check a web
+page or even make a query directly to the service, thus preventing unnecessary
+trips to MacGrudder's isolated little shop<br /></li><li>After all the work is
+done, somone's going to need to order more scones</li></ul>This example is not
+meant to fully justify messaging for businesses, but rather to provide a
+simple use case for which we can write some simple (and less than robust)
+code. It is a toy, but a conceptually useful one with a solid, concrete
+foundation.<br /><br />In the next installment, we'll review the business
+process (with diagrams!) and the explore the architecture of the system,
+before and after. Another post will take that architecture and combine it with
+MacGrudder's already extant infrastructure, reusing as much as possible. With
+that in place, we will have the opportunity to look at some RabbitMQ basics
+and some actual txAMQP code.<br /><br /><br /><span style="font-weight:
+bold;">References</span><br /><ul><li><a
+href="http://www.soa-in-practice.com/">SOA in Practice</a><br /></li><li><a
+href="http://en.wikipedia.org/wiki/Message_Oriented_Middleware">Message-orient
+ed middleware</a> on Wikipedia<br /></li><li><a
+href="http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol">AMQP</a>
+on Wikipedia<br /></li><li>The <a
+href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?
+version=1">AMQP Spec</a></li><li>A <a
+href="http://barryp.org/software/py-amqplib/">synchronous Python library</a>
+for AMQP</li><li>The <a href="https://launchpad.net/txamqp">async Python
+library</a> for AMQP</li><li>A <a href="http://app.arat.us/blog/?p=38">txAMQP
+example</a></li><li>An <a
+href="http://blogs.digitar.com/jjww/2009/01/rabbits-and-warrens/">intro to
+messaging and py-amqplib</a><br /></li></ul><br /><br /><br /></div>

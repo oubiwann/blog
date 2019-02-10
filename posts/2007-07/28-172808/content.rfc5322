@@ -11,4 +11,45 @@ Comments:
 Content-Type: md
 Public?: true
 
-The last big project I'm working on for Zenoss is an OpenOffice-to-Plone publisher. Specifically, for the Zenoss Guide (combined admin and user manuals). The Guide is maintained in OpenOffice format, but in addition to .sxw/.doc and .pdf formats, they want to publish as HTML, where each section of the doc gets its own page in the Zenoss Community portal and users have the ability to comment on each section.<br />There are several things I'm using to implement this:<br /><br /><ul><li>Zope/Plone and Five</li><li><a href="http://ooopy.sourceforge.net/">OOoPy</a> (for processing sections and creating .sxw files)</li><li><a href="http://codespeak.net/lxml/">lxml.etree</a> (for preserving the original XML namespace names)</li><li><a href="http://www.hj-gym.dk/~hj/writer2latex/">writer2LaTeX</a> (for converting generated .sxw files to HTML)</li></ul>Sadly, I spent a great deal of time trying to figure out why w2l (writer2LaTeX) wasn't converting sections with images; I won't relay the horrors of debugging. Finally, I tossed in the towel and emailed the author, Henrik Just. He was phenomenally helpful... and he uncovered the underlying issue, one that I consider to be a dirty little secret (though perhaps those familiar with the combinations of Zip files, python and Java consider an openly acknowledged issue). From Henrik:<br /><blockquote>A little debugging showed that the java's zip classes causes the problem. Unfortunately they are not very tolerant with variations of the structure of zip files. With java 1.4, I cannot open the file at all. This, it turns out, is due to a bug that was fixed in java 1.4.2. But even with java 1.5 I can only read 5 of the 12 files in the zip file, which causes the odd behaviour you have seen.</blockquote>I don't know who to blame here: Python or Java. Regardless, doesn't this seem absurd? That the standard compression format used to create .zip files is not implemented completely either in Python, Java or both? Though not completely surprised, I was surely flabbergasted. Despite my frustration, Henrik was helpful in offering some alternatives, as well as using w2l with an option for splitting a doc by headings.<br /><br />Yet another example of the phenomenal goodness that is the community of open source developers (if not the languages used in that community...). Thanks Henrik!<br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/community" rel="tag">community</a>, <a href="http://www.technorati.com/tag/five" rel="tag">five</a>, <a href="http://www.technorati.com/tag/openoffice" rel="tag">openoffice</a>, <a href="http://www.technorati.com/tag/plone" rel="tag">plone</a>, <a href="http://www.technorati.com/tag/java" rel="tag">java</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/zope" rel="tag">zope</a></p><!-- technorati tags end -->
+The last big project I'm working on for Zenoss is an OpenOffice-to-Plone
+publisher. Specifically, for the Zenoss Guide (combined admin and user
+manuals). The Guide is maintained in OpenOffice format, but in addition to
+.sxw/.doc and .pdf formats, they want to publish as HTML, where each section
+of the doc gets its own page in the Zenoss Community portal and users have the
+ability to comment on each section.<br />There are several things I'm using to
+implement this:<br /><br /><ul><li>Zope/Plone and Five</li><li><a
+href="http://ooopy.sourceforge.net/">OOoPy</a> (for processing sections and
+creating .sxw files)</li><li><a
+href="http://codespeak.net/lxml/">lxml.etree</a> (for preserving the original
+XML namespace names)</li><li><a
+href="http://www.hj-gym.dk/~hj/writer2latex/">writer2LaTeX</a> (for converting
+generated .sxw files to HTML)</li></ul>Sadly, I spent a great deal of time
+trying to figure out why w2l (writer2LaTeX) wasn't converting sections with
+images; I won't relay the horrors of debugging. Finally, I tossed in the towel
+and emailed the author, Henrik Just. He was phenomenally helpful... and he
+uncovered the underlying issue, one that I consider to be a dirty little
+secret (though perhaps those familiar with the combinations of Zip files,
+python and Java consider an openly acknowledged issue). From Henrik:<br
+/><blockquote>A little debugging showed that the java's zip classes causes the
+problem. Unfortunately they are not very tolerant with variations of the
+structure of zip files. With java 1.4, I cannot open the file at all. This, it
+turns out, is due to a bug that was fixed in java 1.4.2. But even with java
+1.5 I can only read 5 of the 12 files in the zip file, which causes the odd
+behaviour you have seen.</blockquote>I don't know who to blame here: Python or
+Java. Regardless, doesn't this seem absurd? That the standard compression
+format used to create .zip files is not implemented completely either in
+Python, Java or both? Though not completely surprised, I was surely
+flabbergasted. Despite my frustration, Henrik was helpful in offering some
+alternatives, as well as using w2l with an option for splitting a doc by
+headings.<br /><br />Yet another example of the phenomenal goodness that is
+the community of open source developers (if not the languages used in that
+community...). Thanks Henrik!<br /><!-- technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/community" rel="tag">community</a>, <a
+href="http://www.technorati.com/tag/five" rel="tag">five</a>, <a
+href="http://www.technorati.com/tag/openoffice" rel="tag">openoffice</a>, <a
+href="http://www.technorati.com/tag/plone" rel="tag">plone</a>, <a
+href="http://www.technorati.com/tag/java" rel="tag">java</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a
+href="http://www.technorati.com/tag/zope" rel="tag">zope</a></p><!--
+technorati tags end -->

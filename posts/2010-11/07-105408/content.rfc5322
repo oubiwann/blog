@@ -11,4 +11,39 @@ Comments:
 Content-Type: md
 Public?: true
 
-<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_DhwcjOWryJU/TNba-7m-2fI/AAAAAAAAAFA/_2olRTlCnXs/s1600/GNOME-GNOMEFootMatrix_1024x768.png"><img style="float:left; margin:0 10px 10px 0;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="http://2.bp.blogspot.com/_DhwcjOWryJU/TNba-7m-2fI/AAAAAAAAAFA/_2olRTlCnXs/s320/GNOME-GNOMEFootMatrix_1024x768.png" border="0" alt="" id="BLOGGER_PHOTO_ID_5536853566586542578" /></a>Today is the second day of the <a href="http://live.gnome.org/BostonSummit">Boston GNOME Summit</a>, and the second day of <a href="http://www.canonical.com/">Canonical</a> providing morning sustenance for the hackers here. <a href="http://www.codethink.co.uk/">Codethink</a> and Canonical coordinated these efforts, with Codethink sponsoring food later today. It warms my heart that we can do this sort of thing. <div><br /></div><div>Yesterday Cody Russell and I held a session about getting a gesture API into GTK 3.x. There were a great many questions about the uTouch framework, how we're handling multi-touch in the absence of MT support in X (coming in XInput 2.1), and what sort of dependencies would be needed (none! if GEIS is present on the system, gesture support will be added at build-time). At the end of the session, there was a consensus for Cody to present his plans to the GTK developers list and then to start getting branches reviewed for merge. We're hoping to make it for GTK 3.2.</div><div><br /></div><div>In this vein, Cody and I have been hacking on <a href="https://launchpad.net/libgrope">libgrope</a> for GTK compatibility, and this is serving as the sandbox for the GTK 3 gesture API development. My efforts have been focused on creating the GTK 2 Python C extension for grope. Given that the last time I coded C was in 1989 (and then a bit later in the mid-90s, when I had to hack a slackware driver to get ethernet working), this has been quite an effort. However, after a night and morning of hacking, I've got a handle on C extensions and am using the example code I wrote as the basis for <a href="https://bugs.launchpad.net/libgrope/+bug/671558">pygrope</a>. I've even managed to rope <a href="http://barry.warsaw.us/">Barry Warsaw</a> into reviewing the C extension code for us, to be sure we're not doing anything too crazy :-)</div><div><br /></div><div>The Python C extension will be of immediate use to us in our test harness for gestures and exercising the stack. We will be creating a GTK app for recording user gestures for later playback and inclusion in test suites.</div>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}"
+href="http://2.bp.blogspot.com/_DhwcjOWryJU/TNba-7m-2fI/AAAAAAAAAFA/_2olRTlCnX
+s/s1600/GNOME-GNOMEFootMatrix_1024x768.png"><img style="float:left; margin:0
+10px 10px 0;cursor:pointer; cursor:hand;width: 320px; height: 240px;"
+src="http://2.bp.blogspot.com/_DhwcjOWryJU/TNba-7m-2fI/AAAAAAAAAFA/_2olRTlCnXs
+/s320/GNOME-GNOMEFootMatrix_1024x768.png" border="0" alt=""
+id="BLOGGER_PHOTO_ID_5536853566586542578" /></a>Today is the second day of the
+<a href="http://live.gnome.org/BostonSummit">Boston GNOME Summit</a>, and the
+second day of <a href="http://www.canonical.com/">Canonical</a> providing
+morning sustenance for the hackers here. <a
+href="http://www.codethink.co.uk/">Codethink</a> and Canonical coordinated
+these efforts, with Codethink sponsoring food later today. It warms my heart
+that we can do this sort of thing. <div><br /></div><div>Yesterday Cody
+Russell and I held a session about getting a gesture API into GTK 3.x. There
+were a great many questions about the uTouch framework, how we're handling
+multi-touch in the absence of MT support in X (coming in XInput 2.1), and what
+sort of dependencies would be needed (none! if GEIS is present on the system,
+gesture support will be added at build-time). At the end of the session, there
+was a consensus for Cody to present his plans to the GTK developers list and
+then to start getting branches reviewed for merge. We're hoping to make it for
+GTK 3.2.</div><div><br /></div><div>In this vein, Cody and I have been hacking
+on <a href="https://launchpad.net/libgrope">libgrope</a> for GTK
+compatibility, and this is serving as the sandbox for the GTK 3 gesture API
+development. My efforts have been focused on creating the GTK 2 Python C
+extension for grope. Given that the last time I coded C was in 1989 (and then
+a bit later in the mid-90s, when I had to hack a slackware driver to get
+ethernet working), this has been quite an effort. However, after a night and
+morning of hacking, I've got a handle on C extensions and am using the example
+code I wrote as the basis for <a
+href="https://bugs.launchpad.net/libgrope/+bug/671558">pygrope</a>. I've even
+managed to rope <a href="http://barry.warsaw.us/">Barry Warsaw</a> into
+reviewing the C extension code for us, to be sure we're not doing anything too
+crazy :-)</div><div><br /></div><div>The Python C extension will be of
+immediate use to us in our test harness for gestures and exercising the stack.
+We will be creating a GTK app for recording user gestures for later playback
+and inclusion in test suites.</div>

@@ -11,4 +11,75 @@ Comments:
 Content-Type: md
 Public?: true
 
-So, from the <a href="http://oubiwann.blogspot.com/2007/02/object-publishing-with-nevow.html">previous post</a> on object publishing in Nevow, we had the following resources:<br /><ul><li>http://localhost:8080/</li><li>http://localhost:8080/mystuff</li><li>http://localhost:8080/yourstuff</li></ul>We added <span style="font-family:monospace;font-size:9pt;">child_*</span> attributes and methods to the "root" class, thus defining the "mystuff" and "yourstuff" resources. But what if we want to do it like Django does it? In other words, how do we map paths in the URL to resources via regular expressions?<br /><br />It's actually fairly straight-forward. All we need to do is the following:<br /><ol><li>Create a tuple of patterns.</li><li>Override the <span style="font-family:monospace;font-size:9pt;">locateChild()</span> method in our "root" class.</li></ol>Working with and extending the examples from the previous post, we might create a patterns tuple like this:<br /><br /><pre>urlPatterns = (<br /> (r'/mystuff(.*)', MyStuffResource),<br /> (r'/yourstuff/blog(.*)', BlogResource),<br /> (r'/yourstuff(.*)', YourStuffResource),<br />)<br /></pre>Then, in <span style="font-family:monospace;font-size:9pt;">SiteRoot</span>, we could do something like the following:<br /><br /><pre> def locateChild(self, context, segments):<br /> path = '/'.join(('',) + segments)<br /> for regex, resource in urlPatterns:<br /> match = re.match(regex, path)<br /> if match:<br /> newPath = match.groups()[0]<br /> r = resource()<br /> if newPath in ['', '/']:<br /> return r, ()<br /> else:<br /> newSegments = newPath.split('/')[1:]<br /> return r.locateChild(context, newSegments)<br /> return super(SiteRoot, self).locateChild(context, segments)<br /></pre>What we're doing here is interrupting the "natural" flow of Nevow's path processing. If there are more segments once we've found a match, we pass the additional segments on to the child resource's <span style="font-family:monospace;font-size:9pt;">locateChild()</span> method. If not, we have a final destination and can return the resource itself.<br /><br />Here are some screenshots of this in action:<br /><br /><br /><a href="http://farm1.static.flickr.com/165/415352821_6c5cd31031_o.png" onclick="window.open('http://farm1.static.flickr.com/165/415352821_6c5cd31031_o.png','popup','width=818,height=703,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img src="http://farm1.static.flickr.com/165/415352821_6c5cd31031_o.png" height="100" width="116" border="1" align="left" hspace="4" vspace="4" alt="415352821 6C5Cd31031 O" /></a><br /><a href="http://farm1.static.flickr.com/181/415352839_64bee68a6a_o.png" onclick="window.open('http://farm1.static.flickr.com/181/415352839_64bee68a6a_o.png','popup','width=816,height=703,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img src="http://farm1.static.flickr.com/181/415352839_64bee68a6a_o.png" height="100" width="116" border="1" align="left" hspace="4" vspace="4" alt="415352839 64Bee68A6A O" /></a><br /><a href="http://farm1.static.flickr.com/155/415352871_267c96d7a0_o.png" onclick="window.open('http://farm1.static.flickr.com/155/415352871_267c96d7a0_o.png','popup','width=815,height=702,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img src="http://farm1.static.flickr.com/155/415352871_267c96d7a0_o.png" height="100" width="116" border="1" align="left" hspace="4" vspace="4" alt="415352871 267C96D7A0 O" /></a><br /><a href="http://farm1.static.flickr.com/129/415352893_73d1095e30_o.png" onclick="window.open('http://farm1.static.flickr.com/129/415352893_73d1095e30_o.png','popup','width=817,height=701,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img src="http://farm1.static.flickr.com/129/415352893_73d1095e30_o.png" height="100" width="116" border="1" hspace="4" vspace="4" alt="415352893 73D1095E30 O" /></a><br /><br />You can browse the code for this at the following links:<br /><ul><li>The example as <a href="http://projects.adytum.us/tracs/AdytumDocs/browser/trunk/nevow/objectpublishing/django/regex.tac">a single .tac file</a></li><li>The same example, <a href="http://projects.adytum.us/tracs/AdytumDocs/browser/trunk/nevow/objectpublishing/django/regex">split up into separate files</a></li></ul><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/django" rel="tag">django</a>, <a href="http://www.technorati.com/tag/nevow" rel="tag">nevow</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a>, <a href="http://www.technorati.com/tag/web" rel="tag">web</a></p><!-- technorati tags end -->
+So, from the <a
+href="http://oubiwann.blogspot.com/2007/02/object-publishing-with-nevow.html">
+previous post</a> on object publishing in Nevow, we had the following
+resources:<br /><ul><li>http://localhost:8080/</li><li>http://localhost:8080/m
+ystuff</li><li>http://localhost:8080/yourstuff</li></ul>We added <span
+style="font-family:monospace;font-size:9pt;">child_*</span> attributes and
+methods to the "root" class, thus defining the "mystuff" and "yourstuff"
+resources. But what if we want to do it like Django does it? In other words,
+how do we map paths in the URL to resources via regular expressions?<br /><br
+/>It's actually fairly straight-forward. All we need to do is the
+following:<br /><ol><li>Create a tuple of patterns.</li><li>Override the <span
+style="font-family:monospace;font-size:9pt;">locateChild()</span> method in
+our "root" class.</li></ol>Working with and extending the examples from the
+previous post, we might create a patterns tuple like this:<br /><br
+/><pre>urlPatterns = (<br /> (r'/mystuff(.*)', MyStuffResource),<br />
+(r'/yourstuff/blog(.*)', BlogResource),<br /> (r'/yourstuff(.*)',
+YourStuffResource),<br />)<br /></pre>Then, in <span
+style="font-family:monospace;font-size:9pt;">SiteRoot</span>, we could do
+something like the following:<br /><br /><pre> def locateChild(self, context,
+segments):<br /> path = '/'.join(('',) + segments)<br /> for regex, resource
+in urlPatterns:<br /> match = re.match(regex, path)<br /> if match:<br />
+newPath = match.groups()[0]<br /> r = resource()<br /> if newPath in ['',
+'/']:<br /> return r, ()<br /> else:<br /> newSegments =
+newPath.split('/')[1:]<br /> return r.locateChild(context, newSegments)<br />
+return super(SiteRoot, self).locateChild(context, segments)<br /></pre>What
+we're doing here is interrupting the "natural" flow of Nevow's path
+processing. If there are more segments once we've found a match, we pass the
+additional segments on to the child resource's <span
+style="font-family:monospace;font-size:9pt;">locateChild()</span> method. If
+not, we have a final destination and can return the resource itself.<br /><br
+/>Here are some screenshots of this in action:<br /><br /><br /><a
+href="http://farm1.static.flickr.com/165/415352821_6c5cd31031_o.png" onclick="
+window.open('http://farm1.static.flickr.com/165/415352821_6c5cd31031_o.png','p
+opup','width=818,height=703,scrollbars=no,resizable=yes,toolbar=no,directories
+=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img
+src="http://farm1.static.flickr.com/165/415352821_6c5cd31031_o.png" height="10
+0" width="116" border="1" align="left" hspace="4" vspace="4" alt="415352821
+6C5Cd31031 O" /></a><br /><a
+href="http://farm1.static.flickr.com/181/415352839_64bee68a6a_o.png" onclick="
+window.open('http://farm1.static.flickr.com/181/415352839_64bee68a6a_o.png','p
+opup','width=816,height=703,scrollbars=no,resizable=yes,toolbar=no,directories
+=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img
+src="http://farm1.static.flickr.com/181/415352839_64bee68a6a_o.png" height="10
+0" width="116" border="1" align="left" hspace="4" vspace="4" alt="415352839
+64Bee68A6A O" /></a><br /><a
+href="http://farm1.static.flickr.com/155/415352871_267c96d7a0_o.png" onclick="
+window.open('http://farm1.static.flickr.com/155/415352871_267c96d7a0_o.png','p
+opup','width=815,height=702,scrollbars=no,resizable=yes,toolbar=no,directories
+=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img
+src="http://farm1.static.flickr.com/155/415352871_267c96d7a0_o.png" height="10
+0" width="116" border="1" align="left" hspace="4" vspace="4" alt="415352871
+267C96D7A0 O" /></a><br /><a
+href="http://farm1.static.flickr.com/129/415352893_73d1095e30_o.png" onclick="
+window.open('http://farm1.static.flickr.com/129/415352893_73d1095e30_o.png','p
+opup','width=817,height=701,scrollbars=no,resizable=yes,toolbar=no,directories
+=no,location=no,menubar=no,status=yes,left=0,top=0');return false"><img
+src="http://farm1.static.flickr.com/129/415352893_73d1095e30_o.png" height="10
+0" width="116" border="1" hspace="4" vspace="4" alt="415352893 73D1095E30 O"
+/></a><br /><br />You can browse the code for this at the following links:<br
+/><ul><li>The example as <a
+href="http://projects.adytum.us/tracs/AdytumDocs/browser/trunk/nevow/objectpub
+lishing/django/regex.tac">a single .tac file</a></li><li>The same example, <a
+href="http://projects.adytum.us/tracs/AdytumDocs/browser/trunk/nevow/objectpub
+lishing/django/regex">split up into separate files</a></li></ul><br /><!--
+technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/django" rel="tag">django</a>, <a
+href="http://www.technorati.com/tag/nevow" rel="tag">nevow</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a
+href="http://www.technorati.com/tag/twisted" rel="tag">twisted</a>, <a
+href="http://www.technorati.com/tag/web" rel="tag">web</a></p><!-- technorati
+tags end -->

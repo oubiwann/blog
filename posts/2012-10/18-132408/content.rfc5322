@@ -11,4 +11,104 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s/s1600/Lambda.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s/s1600/Lambda.png" height="200" width="200" /></a></div>As some of you know, I've been a closet Lisp fan for several years. When I first joined <a href="http://www.canonical.com/">Canonical</a> in 2008, I was hacking on Lisp in Python, so that I could do <a href="http://en.wikipedia.org/wiki/Genetic_programming">genetic programming</a> in Python. In fact, my first and only lightening talk at a Canonical sprint was on genetic algorithms and programming :-)&nbsp; (This was the same set of lightening talks that <a href="https://launchpad.net/~vds">Vincenzo Di Somma</a> gave a wonderful presentation on his photography; completely unrelated: this is one of my favorite <a href="https://twimg0-a.akamaihd.net/profile_images/431392761/IoEunSaduh.jpg">pics of Vincenzo</a> :-) ).<br /><br />A few years later, I talked to <a href="https://twitter.com/jimbaker">Jim Baker</a> about Python's AST, and how one might be able to do genetic programming by manipulating it directly, instead of running a Lisp in Python.<br /><br />Throughout all this time, I've been touching in with various community projects, hacking on various Lispy Things, reading, etc., but generally doing so quite quietly. Over the past few months, however, I've really gotten into it, and Lisp has become a real force in my life, rapidly playing just as dominant a role as Python.<br /><br />Similarly, <a href="http://mindpool.io/">MindPool</a> has become active in several Lisp projects; as such, there are a great many things to share now. However, before I begin all that, I'd like to take an opportunity to get folks up and running with an example Lisp environment.<br /><br />Future posts will explore various areas of Common Lisp, Scheme dialects, I/O loops, etc., but this one will provide a basis for all future posts that relate to Common Lisp and specifically the <a href="http://www.sbcl.org/">Steel Bank implementation</a>.<br /><br /><b>Installing SBCL</b><br />If you don't have SBCL (Steel Bank Common Lisp; <a href="http://en.wikipedia.org/wiki/Steel_Bank_Common_Lisp">a pun on it's source parent</a>, CMUCL), you need to install it:<br /><ul><li>For Ubuntu (12.04 LTS has 1.0.55): <b><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">$ sudo apt-get install sbcl</span></span></b></li><li><span style="font-size: small;">Or <span style="font-size: small;">you can go to </span>the </span><a href="http://www.sbcl.org/platform-table.html">download page</a> for everyone else.<span style="font-size: x-small;"><br /></span></li></ul><b><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">apt-get</span> for Lisp</b> <br />Next, you'll need to install <a href="http://www.quicklisp.org/">Quicklisp</a> (as you might have surmised, it's like Debian <span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">apt-get</span></span> for Common Lisp). The instructions on <a href="http://www.quicklisp.org/beta/">this page</a> will get you up and running with Quicklisp.<br /><br />I like having quicklisp available when I run SBCL, so I did the following after installing Quicklisp (and you might want to as well) from the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sbcl</span></span> prompt:<br /><b><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">* (ql:add-to-init-file)</span></span></b><br /><br /><b>Readline Support</b> <br />The default installation of SBCL doesn't have readline support for the REPL, so using your arrow keys won't give you the expected result (your command history). To remedy that, you can use a readline wrapper. First, install <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">rlwrap</span></span>:<br /><ul><li>Ubuntu: <b><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">$ sudo apt-get install rlwrap</span></span></b></li><li>Mac OS X: <span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;"><b>$ brew install rlwrap</b></span></span></li></ul>Then, create <span style="font-size: small;">the</span> <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">chmod</span></span>ed 755 script <span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">~/bin</span><span style="font-size: x-small;">/start-sbcl</span></span> with the following content (make sure that <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">~/bin</span></span> is in your path):<br /><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">rlwrap sbcl</span></span><br /><br />At which point you can run the following and have access to a command history in SBCL:<br /><b><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">$ start-sbcl</span></span></b><br /><b><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;"><span style="font-size: x-small;">*</span>&nbsp;</span></span></span></b><br /><br /><b>Why Steel Bank?</b><br /><a href="http://en.wikipedia.org/wiki/CMU_Common_Lisp">CMUCL</a> gained an excellent reputation for being a highly performant, optimized implementation of Lisp. Based on CMUCL and continuing this tradition of excellent performance, SBCL's reputation preceded it. Over a range of different types of programs, SBCL not only compares favorably to other Lisp dialects, it <a href="http://shootout.alioth.debian.org/u64q/which-programs-are-fastest.php?gcc=on&amp;gpp=on&amp;java=on&amp;sbcl=on&amp;go=on&amp;ghc=on&amp;ocaml=on&amp;clojure=on&amp;hipe=on&amp;erlang=on&amp;python3=on&amp;yarv=on&amp;perl=on&amp;calc=chart">seriously kicks ass all over</a>.<br /><br />SBCL comes in at 8th place in that benchmark ranking, beating out Go in 9th place. In all the languages that made it into the Top 10, I've only ever touched C, C++, Java, Scala, Lisp, and Go. In my list, SBCL made the Top 5 :-) Regardless, of all of them, Lisp has the syntax a find most pleasurable. Given my background in Python, this is not surprising ;-)<br /><b><br /></b><b>What's next?&nbsp;</b><br />Funny that you should ask... given my background with <a href="http://twistedmatrix.com/">Twisted</a>, I'll give you one guess ;-)<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"></div><div
+class="separator" style="clear: both; text-align: center;"><a
+href="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9
+s/s1600/Lambda.png" imageanchor="1" style="clear: left; float: left;
+margin-bottom: 1em; margin-right: 1em;"><img border="0"
+src="http://3.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEY/SrJ6d2vVi9s
+/s1600/Lambda.png" height="200" width="200" /></a></div>As some of you know,
+I've been a closet Lisp fan for several years. When I first joined <a
+href="http://www.canonical.com/">Canonical</a> in 2008, I was hacking on Lisp
+in Python, so that I could do <a
+href="http://en.wikipedia.org/wiki/Genetic_programming">genetic programming</a
+> in Python. In fact, my first and only lightening talk at a Canonical sprint
+was on genetic algorithms and programming :-)&nbsp; (This was the same set of
+lightening talks that <a href="https://launchpad.net/~vds">Vincenzo Di
+Somma</a> gave a wonderful presentation on his photography; completely
+unrelated: this is one of my favorite <a
+href="https://twimg0-a.akamaihd.net/profile_images/431392761/IoEunSaduh.jpg">p
+ics of Vincenzo</a> :-) ).<br /><br />A few years later, I talked to <a
+href="https://twitter.com/jimbaker">Jim Baker</a> about Python's AST, and how
+one might be able to do genetic programming by manipulating it directly,
+instead of running a Lisp in Python.<br /><br />Throughout all this time, I've
+been touching in with various community projects, hacking on various Lispy
+Things, reading, etc., but generally doing so quite quietly. Over the past few
+months, however, I've really gotten into it, and Lisp has become a real force
+in my life, rapidly playing just as dominant a role as Python.<br /><br
+/>Similarly, <a href="http://mindpool.io/">MindPool</a> has become active in
+several Lisp projects; as such, there are a great many things to share now.
+However, before I begin all that, I'd like to take an opportunity to get folks
+up and running with an example Lisp environment.<br /><br />Future posts will
+explore various areas of Common Lisp, Scheme dialects, I/O loops, etc., but
+this one will provide a basis for all future posts that relate to Common Lisp
+and specifically the <a href="http://www.sbcl.org/">Steel Bank
+implementation</a>.<br /><br /><b>Installing SBCL</b><br />If you don't have
+SBCL (Steel Bank Common Lisp; <a
+href="http://en.wikipedia.org/wiki/Steel_Bank_Common_Lisp">a pun on it's
+source parent</a>, CMUCL), you need to install it:<br /><ul><li>For Ubuntu
+(12.04 LTS has 1.0.55): <b><span style="font-size: x-small;"><span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">$ sudo apt-get
+install sbcl</span></span></b></li><li><span style="font-size: small;">Or
+<span style="font-size: small;">you can go to </span>the </span><a
+href="http://www.sbcl.org/platform-table.html">download page</a> for everyone
+else.<span style="font-size: x-small;"><br /></span></li></ul><b><span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;">apt-get</span>
+for Lisp</b> <br />Next, you'll need to install <a
+href="http://www.quicklisp.org/">Quicklisp</a> (as you might have surmised,
+it's like Debian <span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;"><span style="font-size:
+x-small;">apt-get</span></span> for Common Lisp). The instructions on <a
+href="http://www.quicklisp.org/beta/">this page</a> will get you up and
+running with Quicklisp.<br /><br />I like having quicklisp available when I
+run SBCL, so I did the following after installing Quicklisp (and you might
+want to as well) from the <span style="font-size: x-small;"><span
+style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">sbcl</span></span> prompt:<br /><b><span
+style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">* (ql:add-to-init-file)</span></span></b><br
+/><br /><b>Readline Support</b> <br />The default installation of SBCL doesn't
+have readline support for the REPL, so using your arrow keys won't give you
+the expected result (your command history). To remedy that, you can use a
+readline wrapper. First, install <span style="font-size: x-small;"><span
+style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">rlwrap</span></span>:<br /><ul><li>Ubuntu:
+<b><span style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">$ sudo apt-get install
+rlwrap</span></span></b></li><li>Mac OS X: <span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;"><span style="font-size:
+x-small;"><b>$ brew install rlwrap</b></span></span></li></ul>Then, create
+<span style="font-size: small;">the</span> <span style="font-size:
+x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">chmod</span></span>ed 755 script <span
+style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span
+style="font-size: x-small;">~/bin</span><span style="font-size:
+x-small;">/start-sbcl</span></span> with the following content (make sure that
+<span style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">~/bin</span></span> is in your path):<br /><span
+style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;">rlwrap sbcl</span></span><br /><br />At which
+point you can run the following and have access to a command history in
+SBCL:<br /><b><span style="font-size: x-small;"><span style="font-family:
+&quot;Courier New&quot;,Courier,monospace;">$ start-sbcl</span></span></b><br
+/><b><span style="font-size: x-small;"><span style="font-family: &quot;Courier
+New&quot;,Courier,monospace;"><span style="font-size: x-small;"><span
+style="font-size: x-small;">*</span>&nbsp;</span></span></span></b><br /><br
+/><b>Why Steel Bank?</b><br /><a
+href="http://en.wikipedia.org/wiki/CMU_Common_Lisp">CMUCL</a> gained an
+excellent reputation for being a highly performant, optimized implementation
+of Lisp. Based on CMUCL and continuing this tradition of excellent
+performance, SBCL's reputation preceded it. Over a range of different types of
+programs, SBCL not only compares favorably to other Lisp dialects, it <a
+href="http://shootout.alioth.debian.org/u64q/which-programs-are-fastest.php?gc
+c=on&amp;gpp=on&amp;java=on&amp;sbcl=on&amp;go=on&amp;ghc=on&amp;ocaml=on&amp;
+clojure=on&amp;hipe=on&amp;erlang=on&amp;python3=on&amp;yarv=on&amp;perl=on&am
+p;calc=chart">seriously kicks ass all over</a>.<br /><br />SBCL comes in at
+8th place in that benchmark ranking, beating out Go in 9th place. In all the
+languages that made it into the Top 10, I've only ever touched C, C++, Java,
+Scala, Lisp, and Go. In my list, SBCL made the Top 5 :-) Regardless, of all of
+them, Lisp has the syntax a find most pleasurable. Given my background in
+Python, this is not surprising ;-)<br /><b><br /></b><b>What's
+next?&nbsp;</b><br />Funny that you should ask... given my background with <a
+href="http://twistedmatrix.com/">Twisted</a>, I'll give you one guess ;-)<br
+/><br /><br />

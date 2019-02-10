@@ -11,4 +11,9 @@ Comments:
 Content-Type: md
 Public?: true
 
-Wine<br /><br />dosbox<br /><br />Extract AoE files from .drs files with<br />DRS Explorer<br />http://artho.com/age/files/drsxplor.html<br /><br />Convert .slp files to images with SLPCNVT.EXE<br />http://artho.com/age/files/slpcnvt.html<br /><br />for FILE in `find ./ -name "*.slp"`; do dosbox -exit -c "mount c: ./" -c "c:" -c "SLPCNVT.EXE /x $FILE" dummy; done<br />
+Wine<br /><br />dosbox<br /><br />Extract AoE files from .drs files with<br
+/>DRS Explorer<br />http://artho.com/age/files/drsxplor.html<br /><br
+/>Convert .slp files to images with SLPCNVT.EXE<br
+/>http://artho.com/age/files/slpcnvt.html<br /><br />for FILE in `find ./
+-name "*.slp"`; do dosbox -exit -c "mount c: ./" -c "c:" -c "SLPCNVT.EXE /x
+$FILE" dummy; done<br />

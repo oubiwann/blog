@@ -11,4 +11,7 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">macosx :: software</i><br/><br/><p/><br />However, there is a quick fix. This is all I did, and matplotlib compiled and installed without issue:<br /><br />sudo cp -rp /sw/lib/freetype2/include/* /sw/include<br /><br />Vio la.<br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">macosx ::
+software</i><br/><br/><p/><br />However, there is a quick fix. This is all I
+did, and matplotlib compiled and installed without issue:<br /><br />sudo cp
+-rp /sw/lib/freetype2/include/* /sw/include<br /><br />Vio la.<br /></div>

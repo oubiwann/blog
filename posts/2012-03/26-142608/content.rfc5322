@@ -11,4 +11,7 @@ Comments:
 Content-Type: md
 Public?: true
 
-When reading&nbsp;Carl Hewitt's paper "The repeated demise of logic programming and why it will be reincarnated," it finally occurred to me how to sort out the arguments for and against eventually consistent data, particularly with regard to nosql databases.
+When reading&nbsp;Carl Hewitt's paper "The repeated demise of logic
+programming and why it will be reincarnated," it finally occurred to me how to
+sort out the arguments for and against eventually consistent data,
+particularly with regard to nosql databases.

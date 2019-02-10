@@ -11,4 +11,45 @@ Comments:
 Content-Type: md
 Public?: true
 
-One of the things we've wanted to do recently at Divmod is track development status of milestones as well as gain some perspective on repository history/trends in activity. The first thing I did? Looked at SQL for about 2 and a half minutes. The second thing I did? Fired up a python instance and imported <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">storm.locals</span> :-)<br /><br />With a few minutes of typing and looking stuff up (e.g., how to define compound keys for an already extant schema/db), I was up and running and was able to concentrate fully on the problem at hand (reports) and how to represent data visually (matplotlib). Now <em>that's</em> how an ORM is supposed to work :-)<br /><br />Here are the schemas I defined in python:<br /><pre></pre><script src="https://gist.github.com/3889822.js?file=model.py"></script> <br />Note the 1-to-m relationship of revision to nodes changed -- so easy :-)<br /><br />This is exactly what a (good) tool is supposed to let you do: focus on and solve the larger problem at hand, not get lost fixing tools. With the schemas defined, the queries took literal seconds to write, I had my data, and was able to start generating textual summaries as well as processing the queries for graphs.<br /><br />Wanna see some graphs? Below is a slide show of some graphs (just a few of the hundreds that are generated) representing the work of the Divmod dev team over various points in time on a secondary trac instance (not our main, Divmod trac instance). Though I haven't included them in the slide show, the code also generates graphs per-user, per-time-period.<br /><br /><iframe align="middle" frameborder="0" height="350" scrolling="no" src="http://www.flickr.com/slideShow/index.gne?group_id=&amp;user_id=45112797@N00&amp;set_id=72157602788916753&amp;text=" width="450"></iframe><br /><small>Created with <a href="http://www.admarket.se/" title="Admarket.se">Admarket's</a> <a href="http://flickrslidr.com/" title="flickrSLiDR">flickrSLiDR</a>.</small><br /><br /><b>Update</b>: Thanks <a href="http://www.travishartwell.net/blog/">Nafai</a> for poking me about the oversight of not giving shouts out for the graphing tool: <a href="http://matplotlib.sourceforge.net/">matplotlib</a> (of which I have been a huge fan of since I first heard about it years ago, having suffered through proprietary and kludgey Matlab as a physics student).<br /><br /><br /><!-- technorati tags start --><br /><div style="font-size: 10px; text-align: right;">Technorati Tags: <a href="http://www.technorati.com/tag/howto" rel="tag">howto</a>, <a href="http://www.technorati.com/tag/matplotlib" rel="tag">matplotlib</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a>, <a href="http://www.technorati.com/tag/software" rel="tag">software</a>, <a href="http://www.technorati.com/tag/storm" rel="tag">storm</a>, <a href="http://www.technorati.com/tag/work" rel="tag">work</a></div><!-- technorati tags end -->
+One of the things we've wanted to do recently at Divmod is track development
+status of milestones as well as gain some perspective on repository
+history/trends in activity. The first thing I did? Looked at SQL for about 2
+and a half minutes. The second thing I did? Fired up a python instance and
+imported <span style="font-family: Courier New, Courier, monospace; font-size:
+x-small;">storm.locals</span> :-)<br /><br />With a few minutes of typing and
+looking stuff up (e.g., how to define compound keys for an already extant
+schema/db), I was up and running and was able to concentrate fully on the
+problem at hand (reports) and how to represent data visually (matplotlib). Now
+<em>that's</em> how an ORM is supposed to work :-)<br /><br />Here are the
+schemas I defined in python:<br /><pre></pre><script
+src="https://gist.github.com/3889822.js?file=model.py"></script> <br />Note
+the 1-to-m relationship of revision to nodes changed -- so easy :-)<br /><br
+/>This is exactly what a (good) tool is supposed to let you do: focus on and
+solve the larger problem at hand, not get lost fixing tools. With the schemas
+defined, the queries took literal seconds to write, I had my data, and was
+able to start generating textual summaries as well as processing the queries
+for graphs.<br /><br />Wanna see some graphs? Below is a slide show of some
+graphs (just a few of the hundreds that are generated) representing the work
+of the Divmod dev team over various points in time on a secondary trac
+instance (not our main, Divmod trac instance). Though I haven't included them
+in the slide show, the code also generates graphs per-user,
+per-time-period.<br /><br /><iframe align="middle" frameborder="0"
+height="350" scrolling="no"
+src="http://www.flickr.com/slideShow/index.gne?group_id=&amp;user_id=45112797@
+N00&amp;set_id=72157602788916753&amp;text=" width="450"></iframe><br
+/><small>Created with <a href="http://www.admarket.se/"
+title="Admarket.se">Admarket's</a> <a href="http://flickrslidr.com/"
+title="flickrSLiDR">flickrSLiDR</a>.</small><br /><br /><b>Update</b>: Thanks
+<a href="http://www.travishartwell.net/blog/">Nafai</a> for poking me about
+the oversight of not giving shouts out for the graphing tool: <a
+href="http://matplotlib.sourceforge.net/">matplotlib</a> (of which I have been
+a huge fan of since I first heard about it years ago, having suffered through
+proprietary and kludgey Matlab as a physics student).<br /><br /><br /><!--
+technorati tags start --><br /><div style="font-size: 10px; text-align:
+right;">Technorati Tags: <a href="http://www.technorati.com/tag/howto"
+rel="tag">howto</a>, <a href="http://www.technorati.com/tag/matplotlib"
+rel="tag">matplotlib</a>, <a href="http://www.technorati.com/tag/python"
+rel="tag">python</a>, <a href="http://www.technorati.com/tag/software"
+rel="tag">software</a>, <a href="http://www.technorati.com/tag/storm"
+rel="tag">storm</a>, <a href="http://www.technorati.com/tag/work"
+rel="tag">work</a></div><!-- technorati tags end -->

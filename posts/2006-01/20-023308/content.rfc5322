@@ -11,4 +11,22 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software :: python :: webxcreta</i><br /><br /><div class="entry"><br />I'm thinking of modifying the title- and text-generating of webXcreta<br />in its generation of posts to<br /><a href="http://schrobox.blogspot.com/">Schrodinger's Box</a>.<br />Here's what may be cooking:<br /><ul><br /><li>Get all the content from the top 500 blogs like I currently am, and<br />keep using the current weighting algorithm</li><br /><li>But, also get all the content for every post to Schrodinger's Box</li><br /><li>Have the content from Schrodinger's Box contribute towards a<br />significant fraction of the material for each new post</li><br /><li>And give posts with more comments greater weights</li><br /><li>And! Include the comments from those posts as part of the source<br />material from which new posts are created (but weighted considerably<br />less than full posts)</li><br /></ul><p>Thus making Schrodinger's Box self-referential... simulating theme and<br />continuity. I think this would be very interesting, allowing<br />Schrodinger's Box to "gain momentum" as it were.</p><p></p></div><br /><span style="font-weight: bold;">Update:</span> <a href="http://schrobox.blogspot.com/">Schrödinger's Böx</a> is now occasionally generating posts based solely on the content of previous posts.<br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">software ::
+python :: webxcreta</i><br /><br /><div class="entry"><br />I'm thinking of
+modifying the title- and text-generating of webXcreta<br />in its generation
+of posts to<br /><a href="http://schrobox.blogspot.com/">Schrodinger's
+Box</a>.<br />Here's what may be cooking:<br /><ul><br /><li>Get all the
+content from the top 500 blogs like I currently am, and<br />keep using the
+current weighting algorithm</li><br /><li>But, also get all the content for
+every post to Schrodinger's Box</li><br /><li>Have the content from
+Schrodinger's Box contribute towards a<br />significant fraction of the
+material for each new post</li><br /><li>And give posts with more comments
+greater weights</li><br /><li>And! Include the comments from those posts as
+part of the source<br />material from which new posts are created (but
+weighted considerably<br />less than full posts)</li><br /></ul><p>Thus making
+Schrodinger's Box self-referential... simulating theme and<br />continuity. I
+think this would be very interesting, allowing<br />Schrodinger's Box to "gain
+momentum" as it were.</p><p></p></div><br /><span style="font-weight:
+bold;">Update:</span> <a href="http://schrobox.blogspot.com/">Schrödinger's
+Böx</a> is now occasionally generating posts based solely on the content of
+previous posts.<br /></div>

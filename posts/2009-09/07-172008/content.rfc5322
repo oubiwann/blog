@@ -11,4 +11,18 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />I just merged async (Twisted) support into the Python <a href="http://ping.fm/">ping.fm</a> library today and have just taken it for a test drive. I do love <a href="http://twistedmatrix.com/">Twisted</a> :-) The Twisted pyngfm API usage is identical to the synchronous API, with the usual exception of using deferreds and callbacks.<br /><br />Here's some example usage, the client I now use for command-line updates to Twitter, Identi.ca, Tumblr, Facebook, LinkedIn, Jaiku, and even Flickr (note that the keys are stored in an .ini-style config file):<br /><br /><script src="https://gist.github.com/3886906.js?file=pingfm.py"></script><br />There's another example in the <a href="http://code.google.com/p/pyngfm/source/browse/trunk/README">README</a> that iterates through the recents posts made to ping.fm. If you do manage to use it and come across any issues, be sure to <a href="http://code.google.com/p/pyngfm/issues/list">file a ticket</a>.<br /><br />Enjoy!<br /><br /><br /><br /></div>
+<div><br />I just merged async (Twisted) support into the Python <a
+href="http://ping.fm/">ping.fm</a> library today and have just taken it for a
+test drive. I do love <a href="http://twistedmatrix.com/">Twisted</a> :-) The
+Twisted pyngfm API usage is identical to the synchronous API, with the usual
+exception of using deferreds and callbacks.<br /><br />Here's some example
+usage, the client I now use for command-line updates to Twitter, Identi.ca,
+Tumblr, Facebook, LinkedIn, Jaiku, and even Flickr (note that the keys are
+stored in an .ini-style config file):<br /><br /><script
+src="https://gist.github.com/3886906.js?file=pingfm.py"></script><br />There's
+another example in the <a
+href="http://code.google.com/p/pyngfm/source/browse/trunk/README">README</a> t
+hat iterates through the recents posts made to ping.fm. If you do manage to
+use it and come across any issues, be sure to <a
+href="http://code.google.com/p/pyngfm/issues/list">file a ticket</a>.<br /><br
+/>Enjoy!<br /><br /><br /><br /></div>

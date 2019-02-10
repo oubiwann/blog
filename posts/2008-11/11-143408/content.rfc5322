@@ -11,4 +11,35 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><img src="https://launchpadlibrarian.net/19514686/pyLisp-NG_192.jpg" align="left" />It seems that Lisp continually comes up in various conversations (virtual and otherwise) in the context of Python. In fact, maybe we could even call such occurances the Python-Church conversations. Well, here it is again.<br /><br />Earlier this year I started working on a new project: an object-oriented genetic programming library. I had a bunch of experiments I wanted to do, but I needed to assemble parts of programs in order to do it. I had hoped to use Python, but inspecting Python's AST ended up being too much of a hassle. I wanted to distribute, process, and manage evolutionary algorithms/programs across multiple remote Twisted servers, and manipulating permutations of partial programs would be much easier to integrate with Twisted (the target "platform") if the programs themselves could be evaluated and introspected easily with Python.<br /><br />After some digging around, I eventually settled on using <a href="http://www.biostat.wisc.edu/%7Eannis/creations/PyLisp/">PyLisp</a>, mostly for the simplicity of the code and the fact that it was just a single file. Since it hadn't been maintained since 2002, I decided to roll the original file into the genetic programming code and then apply any changes as-needed, over time.<br /><br />More recently, I've wanted to use this modified PyLisp on other projects and as a result, I have split it out into it's own project: <a href="http://pypi.python.org/pypi/pyLisp-NG/">pyLisp-NG</a>. This naturally led to further code break-out, for a total of three projects:<br /><ul><li><a href="https://launchpad.net/pylisp-ng">pyLisp-NG</a> - the functional programming (and introspection) component of the original project<br /></li><li><a href="https://launchpad.net/evolver">Evolver</a> - the code that allows one to do Python-based evolutionary programming (string-based as well as source code tree node optimization/search solution discovery)</li><li><a href="https://launchpad.net/txevolver">txEvolver</a> - will enable users to distribute genetic programming operations (such as merging parallel generations of computations)</li></ul>pyLisp-NG was released earlier today and is available for download on PyPI.<br /><br /><br /></div>
+<div><br /><img
+src="https://launchpadlibrarian.net/19514686/pyLisp-NG_192.jpg" align="left"
+/>It seems that Lisp continually comes up in various conversations (virtual
+and otherwise) in the context of Python. In fact, maybe we could even call
+such occurances the Python-Church conversations. Well, here it is again.<br
+/><br />Earlier this year I started working on a new project: an
+object-oriented genetic programming library. I had a bunch of experiments I
+wanted to do, but I needed to assemble parts of programs in order to do it. I
+had hoped to use Python, but inspecting Python's AST ended up being too much
+of a hassle. I wanted to distribute, process, and manage evolutionary
+algorithms/programs across multiple remote Twisted servers, and manipulating
+permutations of partial programs would be much easier to integrate with
+Twisted (the target "platform") if the programs themselves could be evaluated
+and introspected easily with Python.<br /><br />After some digging around, I
+eventually settled on using <a
+href="http://www.biostat.wisc.edu/%7Eannis/creations/PyLisp/">PyLisp</a>, most
+ly for the simplicity of the code and the fact that it was just a single file.
+Since it hadn't been maintained since 2002, I decided to roll the original
+file into the genetic programming code and then apply any changes as-needed,
+over time.<br /><br />More recently, I've wanted to use this modified PyLisp
+on other projects and as a result, I have split it out into it's own project:
+<a href="http://pypi.python.org/pypi/pyLisp-NG/">pyLisp-NG</a>. This naturally
+led to further code break-out, for a total of three projects:<br /><ul><li><a
+href="https://launchpad.net/pylisp-ng">pyLisp-NG</a> - the functional
+programming (and introspection) component of the original project<br
+/></li><li><a href="https://launchpad.net/evolver">Evolver</a> - the code that
+allows one to do Python-based evolutionary programming (string-based as well
+as source code tree node optimization/search solution discovery)</li><li><a
+href="https://launchpad.net/txevolver">txEvolver</a> - will enable users to
+distribute genetic programming operations (such as merging parallel
+generations of computations)</li></ul>pyLisp-NG was released earlier today and
+is available for download on PyPI.<br /><br /><br /></div>

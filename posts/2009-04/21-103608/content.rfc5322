@@ -11,4 +11,156 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><span style="font-weight: bold;">After the Cloud:</span><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-prelude.html">Prelude</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-so-far.html">So Far</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-new-big.html">The New Big</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-to-atomic-computation-and.html">To Atomic Computation and Beyond</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-open-heaps.html">Open Heaps</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-heaps-of-cash.html">Heaps of Cash</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-epilogue.html">Epilogue</a></li></ol><br />To restate the problem: we've got cloud for systems and we've got cloud for a large number of applications. We don't have cloud for processes (e.g., custom, light-weight applications/long-running daemons).<br /><br />Personally, I don't want a whole virtual machine to myself, I just need a tiny process space for my daemon. When my daemon starts getting slammed, I want new instances of it started in a cloud (and then killed when they're not needed).<br /><br />What's more, over time, I want to be writing my daemon better and better... using less of everything (memory, CPU, disk) in subsequent iterations. I want this process cloud to be able to handle potentially significant changes in my software.<br /><br /><span style="font-weight: bold;">Dream Cloud</span><br /><br />So, after all that stumbling around, thinking about servers in the data center as the horsepower behind distributed services, and then user PCs/laptops as a more power-friendly alternative, the obvious hit me: phones. They are almost ubiquitous. People leave them on, plugged in, and only use them for a fraction of that time. What if we were able to construct a cloud from cell phones? Hell, let's throw in Laptops and netbooks, too. And Xboxes, Wii, and TiVos. Theoretically, anything that could support (or be hacked to support) a virtual process space could become part of this cloud.<br /><br />This could be just the platform for running small processes in a distributed environment. And making it a reality could prove to be quite lucrative.<span style="font-weight: bold;"> </span>A forthcoming blog post will explore more about the possibilities involved with phone clouds... but for now, let's push things even further.<br /><br />When I mentioned this idea to Chris Armstrong at the Ubuntu Developer Conference last December, he immediately asked me if I'd read <a href="http://www.antipope.org/charlie/blog-static/index.html">Charles Stross</a>' book <a href="http://www.amazon.com/Halting-State-Charles-Stross/dp/0441014984">Halting State</a>. I had started it, but hadn't gotten to the part about the phones. A portion of Stross' future vision in that book dealt with the ability of users to legally run programs of other's phones. I really enjoyed the tale, but afterwards I was ready to explore other possibilities.<br /><span style="font-weight: bold;"><br />Horse-buggy Virtualization</span><br /><br />So I sat down and pondered other possibilities over the course of several weeks. I kept trying to think like business visionaries, given a new resource to exploit. But finally I stopped that and tried just imagining the possibilities based on examples computing and business history.<br /><br />What's the natural thing for businesses to do when someone invents something or improves something? Put new improvements to old uses, potentially reinventing old markets in the process. That's just the sort of thing that could happen with the cloudification of mobile devices.<br /><br />For examples, imagine this:<br /><ul><li>Phone cloud becomes a reality.</li><li>Someone in a garage in Silicon Valley buys a bunch of cheap phones, gumstix, or other small ARM components, rips off the cases, and sells them in rack-mountable enclosures.</li><li>Data centers start supplementing their old hardware offering with this new one that lets them use phone cloud tech (originally built for remote, hand-held devices) to sell tiny fractions of resources to users (on new, consolidated hardware... like having hundreds of phone uses in a single room with full bars, 24/7).</li><li>With the changing hardware and continuing improvements in virtualization software, more abstraction takes place.</li><li>Virtualization slowly goes from tool to <span style="font-style: italic;">prima materia</span>, allowing designers not to focus on old-style, horse-drawn "machines" like your grandpa used to rack, but rather abstract process spaces that provide just what is needed, for example, to enable a daemon to run.</li></ul>Once you've gotten that far, you're just inches from producing a meta operating system: process spaces (and other abstracted bits) can be built up to form a traditional user space. Or they can be used to build something entirely different and new. The computing universe suddenly gets a lot more flexible and dynamic.<br /><br /><span style="font-weight: bold;">Democritus Meets Modern Software</span><br /><br />So, let's say that my dream comes true: I can now push all my tiny apps into a cloud service and turn off the big machines I've got colocated throughout the US. But once this is in place, how can we improve our applications to take even better advantage of such a system, one so capable of massively distributing our running code?<br /><br />This leads us to an almost metaphysical software engineering question: how small can you divide an application until you reach the limits of functionality, where any further division would be senseless bytes and syntax errors? In terms of running processes, what is your code atom?<br /><br />Prior to a few years ago, the most common answer would likely have been "my script" or "my application". Unless, of course, you asked a Scheme programmer. Programming languages like Scheme, Haskell, and Erlang are finding rapidly increasing acceptance as solutions for distributed programming problems because functional programming languages lend themselves easily to the problem of concurrency and parallelism.<br /><br />If we had a massive computing cloud (atmosphere, more likely!) where we could run code in virtual process spaces, we could theoretically go even further than running a daemon: we could split our daemon up into async functions. These distributed functions could be available as continuously running microthreads/greenlets/whatever. They could accept an input and produce an output. Composing distributed functions could result in a program. Programs could change, failover, improve, etc., just by adding or removing distributed functions or by changing their order.<br /><br /><span style="font-weight: bold;">From Atoms to Dynamic Programs</span><br /><br />Once we've broken down our programs into distributed functions and have broken our concept of an "Operating System" down into virtual process spaces, we can start building a whole new world of software:<br /><ul><li>Software becomes very dynamic, very distributed. </li><li>The particulars of hardware become irrelevant (it just needs to be present, somewhere).</li><li>We see an even more marked correlation between power consumption and code, where functions themselves could be measured in joules consumed per second.</li><li>Just for fun, let's throw in dynamic selection of fuctions or even genetic algorithms, and we have ourselves one of the core branches of the predicted <a href="http://www.sei.cmu.edu/uls/">Ultra-large Scale Systems</a> :-)</li></ul>I mention this not for cheap thrills, but rather because of the importance of having a vision. Even if we don't get to where we think we're going, by looking ahead and forward, we have the opportunity to influence our journey such that we increase the chances of getting to a place equal to or better than where we'd originally intended.<br /><br />From a more practical perspective: today, I'm concerned about running daemons in the cloud. Tomorrow I could very well be concerned about finer granularity than that. Why not explore the potential results of such technology? Yes, it my prove infeasible now; but even still, it could render insights... and maybe more.<br /><br /><span style="font-weight: bold;">A Parting Message</span><br /><br />Before I wind this blog post down, I'd like to paste a couple really excellent quotes. They are good not so much for their immediate content, but for the pregnant potentials they contain; for the directions they can point our musings... and engineerings. These are two similar thoughts about messaging from two radically different contexts. I leave you with these moments of Zen:<br /><br />On the Erlang mail list, four years ago, Erlang creator Joe Armstrong <a href="http://article.gmane.org/gmane.comp.lang.erlang.general/7694">posted this</a>:<br /><blockquote>In Concurrency Oriented (CO) programming you concentrate on the concurrency and the messages between the processes. There is no sharing of data.<br /><br />[A program] should be thought of thousands of little black boxes all doing things in parallel - these black boxes can send and receive messages. Black boxes can detect errors in other black boxes - that's all.<br />...<br />Erlang uses a simple functional language inside the [black boxes] - this is not particularly interesting - *any* language that does the job would do - the important bit is the concurrency.</blockquote>On the Squeak mail list in 1998, Alan Kay had <a href="http://lists.squeakfoundation.org/pipermail/squeak-dev/1998-October/017019.html">this to say</a>:<br /><blockquote>...Smalltalk is not only NOT its syntax or the class library, it is not even about classes. I'm sorry that I long ago coined the term "objects" for this topic because it gets many people to focus on the lesser idea.<br /><br />The big idea is "messaging" -- that is what the kernal of Smalltalk/Squeak is all about... The key in making great and growable systems is much more to design how its modules communicate rather than what their internal properties and behaviors should be. Think of the internet -- to live, it (a) has to allow many different kinds of ideas and realizations that are beyond any single standard and (b) to allow varying degrees of safe interoperability between these ideas.<br /><br />If you focus on just messaging -- and realize that a good metasystem can late bind the various 2nd level architectures used in objects -- then much of the language-, UI-, and OS based discussions on this thread are really quite moot.</blockquote><div><br /></div><div><span class="Apple-style-span" style="font-weight: bold;">Resources</span></div><div><ul><li><a href="http://en.wikipedia.org/wiki/Petri_net">Petri Nets</a> </li><li><a href="http://en.wikipedia.org/wiki/Pi-calculus">π-Calculus</a></li><li><a href="http://en.wikipedia.org/wiki/Ambient_calculus">Ambient Calculus</a></li></ul></div><br /><span style="font-style: italic;">Next up</span>: The Business of Computing Atmospheres<br /><br /><br /><br /></div>
+<div><br /><span style="font-weight: bold;">After the Cloud:</span><br
+/><ol><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-prelude.ht
+ml">Prelude</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cl
+oud-so-far.html">So Far</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/04/after-cloud-new-big.html">The New
+Big</a></li><li><a href="http://oubiwann.blogspot.com/2009/04/after-cloud-to-a
+tomic-computation-and.html">To Atomic Computation and Beyond</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/05/after-cloud-open-heaps.html">Open H
+eaps</a></li><li><a href="http://oubiwann.blogspot.com/2009/05/after-cloud-hea
+ps-of-cash.html">Heaps of Cash</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/05/after-cloud-epilogue.html">Epilogue
+</a></li></ol><br />To restate the problem: we've got cloud for systems and
+we've got cloud for a large number of applications. We don't have cloud for
+processes (e.g., custom, light-weight applications/long-running daemons).<br
+/><br />Personally, I don't want a whole virtual machine to myself, I just
+need a tiny process space for my daemon. When my daemon starts getting
+slammed, I want new instances of it started in a cloud (and then killed when
+they're not needed).<br /><br />What's more, over time, I want to be writing
+my daemon better and better... using less of everything (memory, CPU, disk) in
+subsequent iterations. I want this process cloud to be able to handle
+potentially significant changes in my software.<br /><br /><span
+style="font-weight: bold;">Dream Cloud</span><br /><br />So, after all that
+stumbling around, thinking about servers in the data center as the horsepower
+behind distributed services, and then user PCs/laptops as a more
+power-friendly alternative, the obvious hit me: phones. They are almost
+ubiquitous. People leave them on, plugged in, and only use them for a fraction
+of that time. What if we were able to construct a cloud from cell phones?
+Hell, let's throw in Laptops and netbooks, too. And Xboxes, Wii, and TiVos.
+Theoretically, anything that could support (or be hacked to support) a virtual
+process space could become part of this cloud.<br /><br />This could be just
+the platform for running small processes in a distributed environment. And
+making it a reality could prove to be quite lucrative.<span
+style="font-weight: bold;"> </span>A forthcoming blog post will explore more
+about the possibilities involved with phone clouds... but for now, let's push
+things even further.<br /><br />When I mentioned this idea to Chris Armstrong
+at the Ubuntu Developer Conference last December, he immediately asked me if
+I'd read <a
+href="http://www.antipope.org/charlie/blog-static/index.html">Charles Stross</
+a>' book <a
+href="http://www.amazon.com/Halting-State-Charles-Stross/dp/0441014984">Haltin
+g State</a>. I had started it, but hadn't gotten to the part about the phones.
+A portion of Stross' future vision in that book dealt with the ability of
+users to legally run programs of other's phones. I really enjoyed the tale,
+but afterwards I was ready to explore other possibilities.<br /><span
+style="font-weight: bold;"><br />Horse-buggy Virtualization</span><br /><br
+/>So I sat down and pondered other possibilities over the course of several
+weeks. I kept trying to think like business visionaries, given a new resource
+to exploit. But finally I stopped that and tried just imagining the
+possibilities based on examples computing and business history.<br /><br
+/>What's the natural thing for businesses to do when someone invents something
+or improves something? Put new improvements to old uses, potentially
+reinventing old markets in the process. That's just the sort of thing that
+could happen with the cloudification of mobile devices.<br /><br />For
+examples, imagine this:<br /><ul><li>Phone cloud becomes a
+reality.</li><li>Someone in a garage in Silicon Valley buys a bunch of cheap
+phones, gumstix, or other small ARM components, rips off the cases, and sells
+them in rack-mountable enclosures.</li><li>Data centers start supplementing
+their old hardware offering with this new one that lets them use phone cloud
+tech (originally built for remote, hand-held devices) to sell tiny fractions
+of resources to users (on new, consolidated hardware... like having hundreds
+of phone uses in a single room with full bars, 24/7).</li><li>With the
+changing hardware and continuing improvements in virtualization software, more
+abstraction takes place.</li><li>Virtualization slowly goes from tool to <span
+style="font-style: italic;">prima materia</span>, allowing designers not to
+focus on old-style, horse-drawn "machines" like your grandpa used to rack, but
+rather abstract process spaces that provide just what is needed, for example,
+to enable a daemon to run.</li></ul>Once you've gotten that far, you're just
+inches from producing a meta operating system: process spaces (and other
+abstracted bits) can be built up to form a traditional user space. Or they can
+be used to build something entirely different and new. The computing universe
+suddenly gets a lot more flexible and dynamic.<br /><br /><span
+style="font-weight: bold;">Democritus Meets Modern Software</span><br /><br
+/>So, let's say that my dream comes true: I can now push all my tiny apps into
+a cloud service and turn off the big machines I've got colocated throughout
+the US. But once this is in place, how can we improve our applications to take
+even better advantage of such a system, one so capable of massively
+distributing our running code?<br /><br />This leads us to an almost
+metaphysical software engineering question: how small can you divide an
+application until you reach the limits of functionality, where any further
+division would be senseless bytes and syntax errors? In terms of running
+processes, what is your code atom?<br /><br />Prior to a few years ago, the
+most common answer would likely have been "my script" or "my application".
+Unless, of course, you asked a Scheme programmer. Programming languages like
+Scheme, Haskell, and Erlang are finding rapidly increasing acceptance as
+solutions for distributed programming problems because functional programming
+languages lend themselves easily to the problem of concurrency and
+parallelism.<br /><br />If we had a massive computing cloud (atmosphere, more
+likely!) where we could run code in virtual process spaces, we could
+theoretically go even further than running a daemon: we could split our daemon
+up into async functions. These distributed functions could be available as
+continuously running microthreads/greenlets/whatever. They could accept an
+input and produce an output. Composing distributed functions could result in a
+program. Programs could change, failover, improve, etc., just by adding or
+removing distributed functions or by changing their order.<br /><br /><span
+style="font-weight: bold;">From Atoms to Dynamic Programs</span><br /><br
+/>Once we've broken down our programs into distributed functions and have
+broken our concept of an "Operating System" down into virtual process spaces,
+we can start building a whole new world of software:<br /><ul><li>Software
+becomes very dynamic, very distributed. </li><li>The particulars of hardware
+become irrelevant (it just needs to be present, somewhere).</li><li>We see an
+even more marked correlation between power consumption and code, where
+functions themselves could be measured in joules consumed per
+second.</li><li>Just for fun, let's throw in dynamic selection of fuctions or
+even genetic algorithms, and we have ourselves one of the core branches of the
+predicted <a href="http://www.sei.cmu.edu/uls/">Ultra-large Scale Systems</a>
+:-)</li></ul>I mention this not for cheap thrills, but rather because of the
+importance of having a vision. Even if we don't get to where we think we're
+going, by looking ahead and forward, we have the opportunity to influence our
+journey such that we increase the chances of getting to a place equal to or
+better than where we'd originally intended.<br /><br />From a more practical
+perspective: today, I'm concerned about running daemons in the cloud. Tomorrow
+I could very well be concerned about finer granularity than that. Why not
+explore the potential results of such technology? Yes, it my prove infeasible
+now; but even still, it could render insights... and maybe more.<br /><br
+/><span style="font-weight: bold;">A Parting Message</span><br /><br />Before
+I wind this blog post down, I'd like to paste a couple really excellent
+quotes. They are good not so much for their immediate content, but for the
+pregnant potentials they contain; for the directions they can point our
+musings... and engineerings. These are two similar thoughts about messaging
+from two radically different contexts. I leave you with these moments of
+Zen:<br /><br />On the Erlang mail list, four years ago, Erlang creator Joe
+Armstrong <a
+href="http://article.gmane.org/gmane.comp.lang.erlang.general/7694">posted thi
+s</a>:<br /><blockquote>In Concurrency Oriented (CO) programming you
+concentrate on the concurrency and the messages between the processes. There
+is no sharing of data.<br /><br />[A program] should be thought of thousands
+of little black boxes all doing things in parallel - these black boxes can
+send and receive messages. Black boxes can detect errors in other black boxes
+- that's all.<br />...<br />Erlang uses a simple functional language inside
+the [black boxes] - this is not particularly interesting - *any* language that
+does the job would do - the important bit is the concurrency.</blockquote>On
+the Squeak mail list in 1998, Alan Kay had <a
+href="http://lists.squeakfoundation.org/pipermail/squeak-dev/1998-October/0170
+19.html">this to say</a>:<br /><blockquote>...Smalltalk is not only NOT its
+syntax or the class library, it is not even about classes. I'm sorry that I
+long ago coined the term "objects" for this topic because it gets many people
+to focus on the lesser idea.<br /><br />The big idea is "messaging" -- that is
+what the kernal of Smalltalk/Squeak is all about... The key in making great
+and growable systems is much more to design how its modules communicate rather
+than what their internal properties and behaviors should be. Think of the
+internet -- to live, it (a) has to allow many different kinds of ideas and
+realizations that are beyond any single standard and (b) to allow varying
+degrees of safe interoperability between these ideas.<br /><br />If you focus
+on just messaging -- and realize that a good metasystem can late bind the
+various 2nd level architectures used in objects -- then much of the language-,
+UI-, and OS based discussions on this thread are really quite
+moot.</blockquote><div><br /></div><div><span class="Apple-style-span"
+style="font-weight: bold;">Resources</span></div><div><ul><li><a
+href="http://en.wikipedia.org/wiki/Petri_net">Petri Nets</a> </li><li><a
+href="http://en.wikipedia.org/wiki/Pi-calculus">π-Calculus</a></li><li><a href
+="http://en.wikipedia.org/wiki/Ambient_calculus">Ambient Calculus</a></li></ul
+></div><br /><span style="font-style: italic;">Next up</span>: The Business of
+Computing Atmospheres<br /><br /><br /><br /></div>

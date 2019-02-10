@@ -11,4 +11,177 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br /><span style="font-weight: bold;">A Sinfonia on Messaging:</span><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp.html">The Voice of Business</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-part.html">The Voice of Architecture</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-part_18.html">A RabbitMQ and txAMQP Interlude</a></li></ol><br />Before we play our third voice in this three-part invention, we need to do some finger exercises. In particular, let's take a look at the concepts and tools we'll be using to implement and run our kilt store messaging scenario.<br /><br /><br /><span style="font-weight: bold;">Messaging</span><br /><br />The <a href="http://www.rabbitmq.com/faq.html#background">RabbitMQ FAQ</a> has this to say about messaging:<br /><b> </b> <br /><blockquote>Unlike databases which manage data at rest, messaging is used to manage data in motion. Use messaging to communicate between and scale applications, within your enterprise, across the web, or in the cloud.</blockquote>Paraphasing Wikipedia's <a href="http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol">entry on AMQP</a>:<br /><blockquote>The AMQ protocol is for managing the flow of messages across an enterprise's business systems. It is middleware to provide a point of rendezvous between backend systems, such as data stores and services, and front end systems such as end user applications.</blockquote><br /><span style="font-weight: bold;">AMQP Essentials</span><br /><br />AMQP is a protocol for middleware servers ("servers" is used in the most general sense, here... anything that is capable of running a service) -- servers that accept, route, and buffer messages. The <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?version=1">AMQP specification</a> defines messaging server <a href="http://www.lego.com/">LEGO</a> blocks that can be combined in various ways and numbers, achieving any manner of messaging goals, whose final forms are as diverse as the combinations of the components.<br /><br />For the visually inclined, below is a simple diagram of the AMQ protocol. I've put multiple virtual hosts ("virtual hosts" in the AMQP sense, not Apache!) in the diagram to indicate support for multiple server "segments" (domains in the most general sense). There could just as easily be multiple exchanges and queues in each virtual host, as well. Likewise for publishers and consumers.<br /><br /><div><a href="http://farm4.static.flickr.com/3349/3634123474_298f4f3e6e_o.png"><img alt="" border="0" src="http://farm4.static.flickr.com/3349/3634123474_62b988082d.jpg" style="border: 0pt none; cursor: pointer; float: left; margin: 0pt 10px 10px 0pt;" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />I highly recommend reading <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?version=1">the spec</a>: it is exceedingly clear at both intuitive and practical levels. To better understand the diagram above, be sure to read the definition of terms at the beginning as well as the subsections in 2.1 about the messaging queue and the exhange. Don't miss the message life-cycle section either -- you'll be reminded of circuitry diagrams and electronics kits, which is what AMQP really boils down to :-)<br /><br />The Advanced Messaging Queing Protocol specifies that the the protocol can be used to create exchanges, message queues, chain them together, and do all of this dynamically. Any piece of code that has access to an API for your AMQP server can connect to it and communicate with other code -- using or creating simple messaging patterns or deeply complex ones. And everything in between.<br /><br /><br /><span style="font-weight: bold;">RabbitMQ Quickstart<br /></span><a href="http://www.rabbitmq.com/">RabbitMQ</a> is a messaging system written in <a href="http://erlang.org/">Erlang</a>, but in particular, it is an implementation of AMQP. The RabbitMQ web site provides documentation on <a href="http://www.rabbitmq.com/install.html">installing</a> and <a href="http://www.rabbitmq.com/admin-guide.html">administering</a> the messaging server. I run mine on Ubuntu, but since I've got a custom Erlang install, I didn't install the package (I dumped the source in <span style="font-family: 'courier new';">/usr/lib/erlang/lib</span>). To participate in the code play for this blog series, you'll need to install RabbitMQ.<br /><br />Once you've got it installed, you'll need to start it up. If you've used something like Ubuntu's apt-get to install RabbitMQ, starting it up is as simple as this:<br /><div class="highlight"><pre>sudo rabbitmq-server</pre></div><br />If you've got a custom setup like mine, you might need to do something like this (changing the defaults as needed):<br /><div class="highlight"><pre><span class="nv">BASE</span><span class="o">=</span>/usr/lib/erlang/lib/rabbitmq-server-1.5.5/<br /><span class="nv">BIN</span><span class="o">=</span><span class="nv">$BASE</span>/scripts/rabbitmq-server<br /><br /><span class="nv">RABBITMQ_MNESIA_BASE</span><span class="o">=</span><span class="nv">$BASE</span>/mnesia <span class="se">\</span><br /> <span class="nv">RABBITMQ_LOG_BASE</span><span class="o">=</span>/var/log/rabbitmq <span class="se">\</span><br /> <span class="nv">RABBITMQ_NODE_PORT</span><span class="o">=</span>5672 <span class="se">\</span><br /> <span class="nv">RABBITMQ_NODENAME</span><span class="o">=</span>rabbit <span class="se">\</span><br /> <span class="nv">$BIN</span> &amp;</pre></div><br /><br /><span style="font-weight: bold;">A txAMQP Example</span><br /><br />Now that we've got a messaging server running, but before we try to implement out kilt store scenarios, let's take a quick sneak peek at txAMQP with a simple example having the following components:<br /><ul><li style="color: #660000;">a RabbitMQ server</li><li style="color: #000099;">a txAMQP producer</li><li style="color: #6600cc;">a txAMQP consumer</li></ul>From reading the spec, we have a general sense of what needs to happen in our <span style="color: #000099;">producer</span>. It needs to:<br /><ul style="color: #000099;"><li>connect to the RabbitMQ server</li><li>open a channel</li><li>send a message down the channel</li></ul>Similarly, our reading lets us anticipate the needs of the <span style="color: #6600cc;">consumer</span>:<br /><ul><li style="color: #6600cc;">connect to the RabbitMQ server</li><li style="color: #6600cc;">open a channel</li><li style="color: #6600cc;">create an exchange and message queue on the RabbitMQ server, binding the two</li><li style="color: #6600cc;">check for in-coming messages and consume them</li></ul>I have refactored some examples that the author of txAMQP <a href="http://blogs.digitar.com/jjww/2009/01/rabbits-and-warrens/#comment-681">created</a> and I've put them up <a href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Docs/files/head%3A/messaging/amqp/twisted/producer-consumer/">here</a>. Once you download the three Python files (and the spec file, one directory level up), you can run them in two separate terminals. In terminal 1, start up the consumer:<br /><div class="highlight"><pre>python2.5 consumer amqp0-8.xml</pre></div>In terminal 2, fire off a message:<br /><div class="highlight"><pre>python2.5 producer amqp0-8.xml <span class="se">\</span><br /><span class="s2">"producer-to-consumer test message 1"</span></pre></div>After running the producer with that message, you should see the same text rendered in the consumer terminal window. You can also fire the message off first, then start up the consumer. The message is sitting in a queue on your RabbitMQ instance and will be available to your consumer as soon as it connects.<br /><br />Now that you see evidence of this working, you're going to be curious about the code :-) Go ahead and <a href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Docs/files/head%3A/messaging/amqp/twisted/producer-consumer/">take a look</a>. There are lots of comments in the code that give hints as to what's going on and the responsibilities that are being addressed.<br /><br />If you are familiar with Twisted, you may have noted that the code looks a little strange. If you're not, you may have noticed that the code looks normal, with the exception of extensive yield usage and the <span style="font-family: 'courier new';">inlineCallbacks</span> decorator. Let me give a quick overview:<br /><br />Ordinarily, Twisted-based libraries and applications use the asynchronous <a href="http://twistedmatrix.com/projects/core/documentation/howto/defer.html">Twisted deferred idiom</a>. However, there's a little-used bit of syntactic sugar in Twisted (for Python 2.5 and greater) that lets you write async code that looks like regular, synchronous code. This was briefly explored <a href="http://blog.mekk.waw.pl/archives/14-Twisted-inlineCallbacks-and-deferredGenerator.html">in a post</a> on another blog last year. The Twisted API docstring for <span style="font-family: 'courier new';">inlineCallbacks</span> has a <a href="http://twistedmatrix.com/documents/8.2.0/api/twisted.internet.defer.html#inlineCallbacks">concise example</a>.<br /><br />Briefly, the difference is as follows. In standard Twisted code, we assign a deferred-producing function's or method's return value to a variable and then call that deferred's methods (e.g., <span style="font-family: 'courier new';">addCallback</span>):<br /><div class="highlight"><pre><span class="k">def</span> <span class="nf">someFunc</span><span class="p">():</span><br /> <span class="n">d1</span> <span class="o">=</span> <span class="n">someAsyncCall</span><span class="p">()</span><br /> <span class="n">d1</span><span class="o">.</span><span class="n">addCallback</span><span class="p">(</span><span class="n">_someCallback</span><span class="p">)</span><br /> <span class="n">d2</span> <span class="o">=</span> <span class="n">anotherAsyncCall</span><span class="p">()</span><br /> <span class="n">d2</span><span class="o">.</span><span class="n">addCallback</span><span class="p">(</span><span class="n">_anotherCallback</span><span class="p">)</span></pre></div><br />With <span style="font-family: 'courier new';">inlineCallbacks</span>, you decorate your function (or method) and yield for every deferred-producing call:<br /><div class="highlight"><pre><span class="nd">@inlineCallbacks</span><br /><span class="k">def</span> <span class="nf">someFunc</span><span class="p">():</span><br /> <span class="n">result1</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">someAsyncCall</span><span class="p">()</span><br /> <span class="c"># work with result; no need for a callback</span><br /> <span class="n">result2</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">anotherAsyncCall</span><span class="p">()</span><br /> <span class="c"># work with second result; no need for a callback</span></pre></div><br />Visually, this flows as regular Python code. However, know that the <span style="font-family: 'courier new';">yield</span>s prevent the function from blocking (given that there is no blocking code present, e.g., file I/O) and execution resumes as soon as the deferred has a result (which is assigned to the left-hand side). Since this latter idiom is used in txAMQP, I use it in the examples as well.<br /><br />Next, we finally reach our implementation!<br /><br /><br /><span style="font-weight: bold;">References</span><br /><ul><li><a href="http://www.enterpriseintegrationpatterns.com/Chapter1.html"></a>The <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?version=1">AMQP Spec</a></li><li>The <a href="https://launchpad.net/txamqp">async Python library</a> for AMQP</li><li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li><li>A <a href="http://app.arat.us/blog/?p=38">txAMQP example</a></li></ul><br /><br /><br /></div>
+<div><br /><span style="font-weight: bold;">A Sinfonia on Messaging:</span><br
+/><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-
+with-txamqp.html">The Voice of Business</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p
+art.html">The Voice of Architecture</a></li><li><a
+href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p
+art_18.html">A RabbitMQ and txAMQP Interlude</a></li></ol><br />Before we play
+our third voice in this three-part invention, we need to do some finger
+exercises. In particular, let's take a look at the concepts and tools we'll be
+using to implement and run our kilt store messaging scenario.<br /><br /><br
+/><span style="font-weight: bold;">Messaging</span><br /><br />The <a
+href="http://www.rabbitmq.com/faq.html#background">RabbitMQ FAQ</a> has this
+to say about messaging:<br /><b> </b> <br /><blockquote>Unlike databases which
+manage data at rest, messaging is used to manage data in motion. Use messaging
+to communicate between and scale applications, within your enterprise, across
+the web, or in the cloud.</blockquote>Paraphasing Wikipedia's <a
+href="http://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol">entry on
+AMQP</a>:<br /><blockquote>The AMQ protocol is for managing the flow of
+messages across an enterprise's business systems. It is middleware to provide
+a point of rendezvous between backend systems, such as data stores and
+services, and front end systems such as end user applications.</blockquote><br
+/><span style="font-weight: bold;">AMQP Essentials</span><br /><br />AMQP is a
+protocol for middleware servers ("servers" is used in the most general sense,
+here... anything that is capable of running a service) -- servers that accept,
+route, and buffer messages. The <a
+href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?
+version=1">AMQP specification</a> defines messaging server <a
+href="http://www.lego.com/">LEGO</a> blocks that can be combined in various
+ways and numbers, achieving any manner of messaging goals, whose final forms
+are as diverse as the combinations of the components.<br /><br />For the
+visually inclined, below is a simple diagram of the AMQ protocol. I've put
+multiple virtual hosts ("virtual hosts" in the AMQP sense, not Apache!) in the
+diagram to indicate support for multiple server "segments" (domains in the
+most general sense). There could just as easily be multiple exchanges and
+queues in each virtual host, as well. Likewise for publishers and
+consumers.<br /><br /><div><a
+href="http://farm4.static.flickr.com/3349/3634123474_298f4f3e6e_o.png"><img al
+t="" border="0"
+src="http://farm4.static.flickr.com/3349/3634123474_62b988082d.jpg" style="bor
+der: 0pt none; cursor: pointer; float: left; margin: 0pt 10px 10px 0pt;"
+/></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
+/><br /><br /><br /><br /><br /><br /><br />I highly recommend reading <a
+href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?
+version=1">the spec</a>: it is exceedingly clear at both intuitive and
+practical levels. To better understand the diagram above, be sure to read the
+definition of terms at the beginning as well as the subsections in 2.1 about
+the messaging queue and the exhange. Don't miss the message life-cycle section
+either -- you'll be reminded of circuitry diagrams and electronics kits, which
+is what AMQP really boils down to :-)<br /><br />The Advanced Messaging Queing
+Protocol specifies that the the protocol can be used to create exchanges,
+message queues, chain them together, and do all of this dynamically. Any piece
+of code that has access to an API for your AMQP server can connect to it and
+communicate with other code -- using or creating simple messaging patterns or
+deeply complex ones. And everything in between.<br /><br /><br /><span
+style="font-weight: bold;">RabbitMQ Quickstart<br /></span><a
+href="http://www.rabbitmq.com/">RabbitMQ</a> is a messaging system written in
+<a href="http://erlang.org/">Erlang</a>, but in particular, it is an
+implementation of AMQP. The RabbitMQ web site provides documentation on <a
+href="http://www.rabbitmq.com/install.html">installing</a> and <a
+href="http://www.rabbitmq.com/admin-guide.html">administering</a> the
+messaging server. I run mine on Ubuntu, but since I've got a custom Erlang
+install, I didn't install the package (I dumped the source in <span
+style="font-family: 'courier new';">/usr/lib/erlang/lib</span>). To
+participate in the code play for this blog series, you'll need to install
+RabbitMQ.<br /><br />Once you've got it installed, you'll need to start it up.
+If you've used something like Ubuntu's apt-get to install RabbitMQ, starting
+it up is as simple as this:<br /><div class="highlight"><pre>sudo
+rabbitmq-server</pre></div><br />If you've got a custom setup like mine, you
+might need to do something like this (changing the defaults as needed):<br
+/><div class="highlight"><pre><span class="nv">BASE</span><span
+class="o">=</span>/usr/lib/erlang/lib/rabbitmq-server-1.5.5/<br /><span
+class="nv">BIN</span><span class="o">=</span><span
+class="nv">$BASE</span>/scripts/rabbitmq-server<br /><br /><span
+class="nv">RABBITMQ_MNESIA_BASE</span><span class="o">=</span><span
+class="nv">$BASE</span>/mnesia <span class="se">\</span><br /> <span
+class="nv">RABBITMQ_LOG_BASE</span><span class="o">=</span>/var/log/rabbitmq
+<span class="se">\</span><br /> <span
+class="nv">RABBITMQ_NODE_PORT</span><span class="o">=</span>5672 <span
+class="se">\</span><br /> <span class="nv">RABBITMQ_NODENAME</span><span
+class="o">=</span>rabbit <span class="se">\</span><br /> <span
+class="nv">$BIN</span> &amp;</pre></div><br /><br /><span style="font-weight:
+bold;">A txAMQP Example</span><br /><br />Now that we've got a messaging
+server running, but before we try to implement out kilt store scenarios, let's
+take a quick sneak peek at txAMQP with a simple example having the following
+components:<br /><ul><li style="color: #660000;">a RabbitMQ server</li><li
+style="color: #000099;">a txAMQP producer</li><li style="color: #6600cc;">a
+txAMQP consumer</li></ul>From reading the spec, we have a general sense of
+what needs to happen in our <span style="color: #000099;">producer</span>. It
+needs to:<br /><ul style="color: #000099;"><li>connect to the RabbitMQ
+server</li><li>open a channel</li><li>send a message down the
+channel</li></ul>Similarly, our reading lets us anticipate the needs of the
+<span style="color: #6600cc;">consumer</span>:<br /><ul><li style="color:
+#6600cc;">connect to the RabbitMQ server</li><li style="color: #6600cc;">open
+a channel</li><li style="color: #6600cc;">create an exchange and message queue
+on the RabbitMQ server, binding the two</li><li style="color: #6600cc;">check
+for in-coming messages and consume them</li></ul>I have refactored some
+examples that the author of txAMQP <a
+href="http://blogs.digitar.com/jjww/2009/01/rabbits-and-warrens/#comment-681">
+created</a> and I've put them up <a
+href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Docs/files/head%
+3A/messaging/amqp/twisted/producer-consumer/">here</a>. Once you download the
+three Python files (and the spec file, one directory level up), you can run
+them in two separate terminals. In terminal 1, start up the consumer:<br
+/><div class="highlight"><pre>python2.5 consumer amqp0-8.xml</pre></div>In
+terminal 2, fire off a message:<br /><div class="highlight"><pre>python2.5
+producer amqp0-8.xml <span class="se">\</span><br /><span
+class="s2">"producer-to-consumer test message 1"</span></pre></div>After
+running the producer with that message, you should see the same text rendered
+in the consumer terminal window. You can also fire the message off first, then
+start up the consumer. The message is sitting in a queue on your RabbitMQ
+instance and will be available to your consumer as soon as it connects.<br
+/><br />Now that you see evidence of this working, you're going to be curious
+about the code :-) Go ahead and <a
+href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Docs/files/head%
+3A/messaging/amqp/twisted/producer-consumer/">take a look</a>. There are lots
+of comments in the code that give hints as to what's going on and the
+responsibilities that are being addressed.<br /><br />If you are familiar with
+Twisted, you may have noted that the code looks a little strange. If you're
+not, you may have noticed that the code looks normal, with the exception of
+extensive yield usage and the <span style="font-family: 'courier
+new';">inlineCallbacks</span> decorator. Let me give a quick overview:<br
+/><br />Ordinarily, Twisted-based libraries and applications use the
+asynchronous <a
+href="http://twistedmatrix.com/projects/core/documentation/howto/defer.html">T
+wisted deferred idiom</a>. However, there's a little-used bit of syntactic
+sugar in Twisted (for Python 2.5 and greater) that lets you write async code
+that looks like regular, synchronous code. This was briefly explored <a
+href="http://blog.mekk.waw.pl/archives/14-Twisted-inlineCallbacks-and-deferred
+Generator.html">in a post</a> on another blog last year. The Twisted API
+docstring for <span style="font-family: 'courier new';">inlineCallbacks</span>
+has a <a
+href="http://twistedmatrix.com/documents/8.2.0/api/twisted.internet.defer.html
+#inlineCallbacks">concise example</a>.<br /><br />Briefly, the difference is
+as follows. In standard Twisted code, we assign a deferred-producing
+function's or method's return value to a variable and then call that
+deferred's methods (e.g., <span style="font-family: 'courier
+new';">addCallback</span>):<br /><div class="highlight"><pre><span
+class="k">def</span> <span class="nf">someFunc</span><span
+class="p">():</span><br /> <span class="n">d1</span> <span class="o">=</span>
+<span class="n">someAsyncCall</span><span class="p">()</span><br /> <span
+class="n">d1</span><span class="o">.</span><span
+class="n">addCallback</span><span class="p">(</span><span
+class="n">_someCallback</span><span class="p">)</span><br /> <span
+class="n">d2</span> <span class="o">=</span> <span
+class="n">anotherAsyncCall</span><span class="p">()</span><br /> <span
+class="n">d2</span><span class="o">.</span><span
+class="n">addCallback</span><span class="p">(</span><span
+class="n">_anotherCallback</span><span class="p">)</span></pre></div><br
+/>With <span style="font-family: 'courier new';">inlineCallbacks</span>, you
+decorate your function (or method) and yield for every deferred-producing
+call:<br /><div class="highlight"><pre><span
+class="nd">@inlineCallbacks</span><br /><span class="k">def</span> <span
+class="nf">someFunc</span><span class="p">():</span><br /> <span
+class="n">result1</span> <span class="o">=</span> <span class="k">yield</span>
+<span class="n">someAsyncCall</span><span class="p">()</span><br /> <span
+class="c"># work with result; no need for a callback</span><br /> <span
+class="n">result2</span> <span class="o">=</span> <span class="k">yield</span>
+<span class="n">anotherAsyncCall</span><span class="p">()</span><br /> <span
+class="c"># work with second result; no need for a
+callback</span></pre></div><br />Visually, this flows as regular Python code.
+However, know that the <span style="font-family: 'courier new';">yield</span>s
+prevent the function from blocking (given that there is no blocking code
+present, e.g., file I/O) and execution resumes as soon as the deferred has a
+result (which is assigned to the left-hand side). Since this latter idiom is
+used in txAMQP, I use it in the examples as well.<br /><br />Next, we finally
+reach our implementation!<br /><br /><br /><span style="font-weight:
+bold;">References</span><br /><ul><li><a
+href="http://www.enterpriseintegrationpatterns.com/Chapter1.html"></a>The <a
+href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf?
+version=1">AMQP Spec</a></li><li>The <a
+href="https://launchpad.net/txamqp">async Python library</a> for
+AMQP</li><li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li><li>A <a
+href="http://app.arat.us/blog/?p=38">txAMQP example</a></li></ul><br /><br
+/><br /></div>

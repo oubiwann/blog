@@ -11,4 +11,80 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADg/rcLT5-XGjnU/s1600/LispFlavoredErlang-medium.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADg/rcLT5-XGjnU/s200/LispFlavoredErlang-medium.png" width="168" /></a></div><br />I've flirted with Lisp since the 90s, really started getting into it around 2008 when I started playing with genetic programming, and more recently investigated Common Lisp, Scheme (<a href="http://gambitscheme.org/">Gambit</a> and <a href="http://www.call-cc.org/">Chicken</a>), and Clojure with the intent of discovering the best way to write distributed programs in Lisp. (I even seriously explored implementing chunks of <a href="http://twistedmatrix.com/">Twisted</a> in Common Lisp. If only I had more time...)<br /><br />Needless to say, I kept coming back to Erlang as it is a natural choice for the sort of concurrent programming I was interested in doing. On several occasions, I'd run across <a href="https://github.com/rvirding/lfe">Robert Virding's Lisp-2</a> that he had written on top of the Erlang VM. At first blush, this appeared quite promising. Yet faced with the perceived burden of learning Erlang, I consistently set it aside for a future date.<br /><br /><blockquote class="tr_bq"><span style="font-size: x-large;">"Excuse me, could I have some Erlang, please? Yes, just a cup. Oh, and can I get that Lisp-flavored? Thanks so much." </span></blockquote><br />After bouncing between Clojure and CL, after running into difficulties with Termite on Chicken Scheme, and finally, after being quite impressed with the efforts made by the <a href="http://elixir-lang.org/">Elixir</a> folks (who I believe took inspiration from LFE!), I decided to give LFE a chance. Within minutes of that decision, I came to two conclusions:<br /><ol><li>LFE is <i>brilliant</i>.</li><li>LFE needs docs like Elixir... and tutorials... and <i>exposure</i>! Why haven't I been using LFE all along?!</li></ol>At which point, I started hacking on some docs to see if I could stick with it. When, after a few days, I proved to myself that I could, I contacted Robert and let him know not only how much I adored his masterpiece, but that I really wanted to write tons and tons of docs for it so that <i>anyone</i> could pick it up and start using it right away. I wanted to write docs for an audience like me, that didn't know Erlang, who weren't Lisp gurus.<br /><br />This seemed like a doable goal, since I had about 5 minutes' worth of Erlang experience at the time I was having these conversations with Robert. I was learning Erlang at a rapid pace simply by virtue of the Lisp hook that LFE provided.<br /><br />Our interactions led to the publicizing of the <a href="http://lfe.github.com/">new docs site for Lisp Flavored Erlang</a> on the <a href="http://groups.google.com/group/lisp-flavoured-erlang">LFE google groups list</a>. We also created a Twitter account (we both have full access to it, but I tend to maintain it) whose sole purpose is to bring LFE to more people, keep the news around LFE fresh, etc.<br /><br /><blockquote class="tr_bq"><span style="font-size: x-large;">"I could have sworn you just said 'Lisp'..."</span></blockquote><br />A side note about Lisp: S-expressions are concise and elegant. Code and data using the same form is quite powerful. I do believe that the technology industry has the capacity to realize that old biases against Lisp are just that: old and outdated. The many dialects of Lisp are anything but. Clojure and (I believe) LFE are perfect examples of this. Whole new generations of programmers are delighting in the expressive power of a language whose roots can be traced back to <a href="http://www-formal.stanford.edu/jmc/history/lisp/node2.html">actual manipulations of memory registers</a>.<br /><br />To resume the narrative: in the course of various efforts focused on documenting LFE, asking questions on the mail list, and having various other discussions, Robert pointed out that some of my coworkers at <a href="http://www.rackspace.com/">Rackspace</a> had been <a href="http://www.rackspace.com/blog/how-rackspace-is-using-erlang/">working on Erlang projects</a>. I subsequently reached out to Phil Toland. Then, within minutes of this (and entirely coincidentally), Kai Janson emailed a group of us about <a href="http://www.erlang-factory.com/conference/SFBay2013">Erlang Factory SF</a> and his desire to provide Erlang workshops for engineers at Rackspace.<br /><br />This led to further conversations with Robert, then with Francesco, with several Rackers signing up for Erlang Factory this year, and finally, with me volunteering to put a Meetup together afterwards, hosted at Rackspace's SF office (more on that in a few hours).<br /><br />For the curious, I do continue to work in Python and Twisted; I am excited about the new <a href="http://www.python.org/dev/peps/pep-3156/">async support</a> that Guido is spearheading for Python 3 and which has electrified so many hard-core Python hackers. Similarly, I continue to hack on Common Lisp projects. However, I am quite delighted that I have found a way to interface with Erlang which matches how I think, matches my aesthics. And finally, I look forward to many fruitful years of LFE in my life :-)<br /><br />Thanks Joe! Thanks Mike! Thanks Robert!<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAADg/rcLT5-XGjn
+U/s1600/LispFlavoredErlang-medium.png" imageanchor="1" style="clear: left;
+float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+height="200" src="http://4.bp.blogspot.com/-fonndtAAXJI/UUAGF-K1LpI/AAAAAAAAAD
+g/rcLT5-XGjnU/s200/LispFlavoredErlang-medium.png" width="168" /></a></div><br
+/>I've flirted with Lisp since the 90s, really started getting into it around
+2008 when I started playing with genetic programming, and more recently
+investigated Common Lisp, Scheme (<a
+href="http://gambitscheme.org/">Gambit</a> and <a
+href="http://www.call-cc.org/">Chicken</a>), and Clojure with the intent of
+discovering the best way to write distributed programs in Lisp. (I even
+seriously explored implementing chunks of <a
+href="http://twistedmatrix.com/">Twisted</a> in Common Lisp. If only I had
+more time...)<br /><br />Needless to say, I kept coming back to Erlang as it
+is a natural choice for the sort of concurrent programming I was interested in
+doing. On several occasions, I'd run across <a
+href="https://github.com/rvirding/lfe">Robert Virding's Lisp-2</a> that he had
+written on top of the Erlang VM. At first blush, this appeared quite
+promising. Yet faced with the perceived burden of learning Erlang, I
+consistently set it aside for a future date.<br /><br /><blockquote
+class="tr_bq"><span style="font-size: x-large;">"Excuse me, could I have some
+Erlang, please? Yes, just a cup. Oh, and can I get that Lisp-flavored? Thanks
+so much." </span></blockquote><br />After bouncing between Clojure and CL,
+after running into difficulties with Termite on Chicken Scheme, and finally,
+after being quite impressed with the efforts made by the <a
+href="http://elixir-lang.org/">Elixir</a> folks (who I believe took
+inspiration from LFE!), I decided to give LFE a chance. Within minutes of that
+decision, I came to two conclusions:<br /><ol><li>LFE is
+<i>brilliant</i>.</li><li>LFE needs docs like Elixir... and tutorials... and
+<i>exposure</i>! Why haven't I been using LFE all along?!</li></ol>At which
+point, I started hacking on some docs to see if I could stick with it. When,
+after a few days, I proved to myself that I could, I contacted Robert and let
+him know not only how much I adored his masterpiece, but that I really wanted
+to write tons and tons of docs for it so that <i>anyone</i> could pick it up
+and start using it right away. I wanted to write docs for an audience like me,
+that didn't know Erlang, who weren't Lisp gurus.<br /><br />This seemed like a
+doable goal, since I had about 5 minutes' worth of Erlang experience at the
+time I was having these conversations with Robert. I was learning Erlang at a
+rapid pace simply by virtue of the Lisp hook that LFE provided.<br /><br />Our
+interactions led to the publicizing of the <a
+href="http://lfe.github.com/">new docs site for Lisp Flavored Erlang</a> on
+the <a href="http://groups.google.com/group/lisp-flavoured-erlang">LFE google
+groups list</a>. We also created a Twitter account (we both have full access
+to it, but I tend to maintain it) whose sole purpose is to bring LFE to more
+people, keep the news around LFE fresh, etc.<br /><br /><blockquote
+class="tr_bq"><span style="font-size: x-large;">"I could have sworn you just
+said 'Lisp'..."</span></blockquote><br />A side note about Lisp: S-expressions
+are concise and elegant. Code and data using the same form is quite powerful.
+I do believe that the technology industry has the capacity to realize that old
+biases against Lisp are just that: old and outdated. The many dialects of Lisp
+are anything but. Clojure and (I believe) LFE are perfect examples of this.
+Whole new generations of programmers are delighting in the expressive power of
+a language whose roots can be traced back to <a
+href="http://www-formal.stanford.edu/jmc/history/lisp/node2.html">actual manip
+ulations of memory registers</a>.<br /><br />To resume the narrative: in the
+course of various efforts focused on documenting LFE, asking questions on the
+mail list, and having various other discussions, Robert pointed out that some
+of my coworkers at <a href="http://www.rackspace.com/">Rackspace</a> had been
+<a href="http://www.rackspace.com/blog/how-rackspace-is-using-erlang/">working
+on Erlang projects</a>. I subsequently reached out to Phil Toland. Then,
+within minutes of this (and entirely coincidentally), Kai Janson emailed a
+group of us about <a
+href="http://www.erlang-factory.com/conference/SFBay2013">Erlang Factory
+SF</a> and his desire to provide Erlang workshops for engineers at
+Rackspace.<br /><br />This led to further conversations with Robert, then with
+Francesco, with several Rackers signing up for Erlang Factory this year, and
+finally, with me volunteering to put a Meetup together afterwards, hosted at
+Rackspace's SF office (more on that in a few hours).<br /><br />For the
+curious, I do continue to work in Python and Twisted; I am excited about the
+new <a href="http://www.python.org/dev/peps/pep-3156/">async support</a> that
+Guido is spearheading for Python 3 and which has electrified so many hard-core
+Python hackers. Similarly, I continue to hack on Common Lisp projects.
+However, I am quite delighted that I have found a way to interface with Erlang
+which matches how I think, matches my aesthics. And finally, I look forward to
+many fruitful years of LFE in my life :-)<br /><br />Thanks Joe! Thanks Mike!
+Thanks Robert!<br /><br /><br />

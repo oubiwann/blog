@@ -11,4 +11,49 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />Today I developed a skin for Zope3. As is evident from an earlier post, I had been exploring the Django web app dev platform, and after some intensive use and investigation, I returned to zope3. It was like a breath of fresh air. However, I sorely missed the slick interface of Django.<br /><br />So, I decided to make my own :-)<br /><a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Site/branches/2005.08.05_Z3Site/z3/lib/python/adytumadmin/">AdytumAdmin z3 skin</a><br /><br />All of my z3 projects will be using this skin (or a derivative) as the default admin skin. This will give clients something they can be happy with/proud of when they visit the ZMI to manage their site, and it will keep me and other developers happy, as we have to look at the ZMI for hours on end each day. If you've worked with z3 at all yet, you know how basic and ugly the default (non) skin is... and thus understand the need for people to start doing this kind of thing.<br /><br />I would like to note and share my gratitude of the fact that this was based on the ZopeTop skin for Zope3 (I think written by Paul Everitt). Without that work and prior development, this would have been an arduous task. With the work, it was a facile process of tweaking colors and shuffling page/zpt parts around. Simply fantastic.<br /><br />Once again, z3 shines as a rapid development platform. This was all done in less than a day :-)<br /><br /><span style="font-weight: bold;">Update:</span> This blog post originally pointed to resources that are now no longer available. However, thanks to the Wayback Machine, I've been able to rescue the old instructions from an archived version of the web page.<br /><br /><span style="font-weight: bold;">Setup</span><br /><br />There are no docs included with the tarball. You just need to do the following:<br /><ul><li> checkout the adytumadmin directory from svn</li><li> move the adytumadmin directory into you lib/python directory of your z3 instance</li><li> create a the file etc/package-includes/adytumadmin-configure.zcml in your z3 instance directory with the following contents:<span style="font-family:monospace;"></span><blockquote>&lt;include package="adytumadmin"&gt;&lt;/include&gt;</blockquote></li></ul><ul><li> restart your z3 instance</li></ul><include package="adytumadmin"><span style="font-weight: bold;">Access</span><br /><br />Access the skin by using ++skin++AdytumAdmin in your URL, e.g.:<br /><br />http://127.0.0.1:8080/++skin++AdytumAdmin/@@contents.html<br /><br />If you like this skin enough to make it your default skin and don't want to add it to the URL manually, just add this line to your etc/overrides.zcml file:<br /><blockquote>&lt;browser:defaultskin name="AdytumAdmin"&gt;</blockquote>Note that it is the skin name and not the skin package that is used.<br /><br /><span style="font-weight: bold;">Screenshots</span><br /></include><ul><li><a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Site/branches/2005.08.05_Z3Site/Resources/screen1.jpg?revision=603&amp;view=markup">Add ZPP page</a></li><li><a href="http://adytum.svn.sourceforge.net/viewvc/adytum/Site/branches/2005.08.05_Z3Site/Resources/screen2.jpg?revision=603&amp;view=markup">Folder listing</a><br /></li></ul><include package="adytumadmin"><br /><br /></include></div>
+<div><br />Today I developed a skin for Zope3. As is evident from an earlier
+post, I had been exploring the Django web app dev platform, and after some
+intensive use and investigation, I returned to zope3. It was like a breath of
+fresh air. However, I sorely missed the slick interface of Django.<br /><br
+/>So, I decided to make my own :-)<br /><a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Site/branches/2005.08.05
+_Z3Site/z3/lib/python/adytumadmin/">AdytumAdmin z3 skin</a><br /><br />All of
+my z3 projects will be using this skin (or a derivative) as the default admin
+skin. This will give clients something they can be happy with/proud of when
+they visit the ZMI to manage their site, and it will keep me and other
+developers happy, as we have to look at the ZMI for hours on end each day. If
+you've worked with z3 at all yet, you know how basic and ugly the default
+(non) skin is... and thus understand the need for people to start doing this
+kind of thing.<br /><br />I would like to note and share my gratitude of the
+fact that this was based on the ZopeTop skin for Zope3 (I think written by
+Paul Everitt). Without that work and prior development, this would have been
+an arduous task. With the work, it was a facile process of tweaking colors and
+shuffling page/zpt parts around. Simply fantastic.<br /><br />Once again, z3
+shines as a rapid development platform. This was all done in less than a day
+:-)<br /><br /><span style="font-weight: bold;">Update:</span> This blog post
+originally pointed to resources that are now no longer available. However,
+thanks to the Wayback Machine, I've been able to rescue the old instructions
+from an archived version of the web page.<br /><br /><span style="font-weight:
+bold;">Setup</span><br /><br />There are no docs included with the tarball.
+You just need to do the following:<br /><ul><li> checkout the adytumadmin
+directory from svn</li><li> move the adytumadmin directory into you lib/python
+directory of your z3 instance</li><li> create a the file
+etc/package-includes/adytumadmin-configure.zcml in your z3 instance directory
+with the following contents:<span
+style="font-family:monospace;"></span><blockquote>&lt;include package="adytuma
+dmin"&gt;&lt;/include&gt;</blockquote></li></ul><ul><li> restart your z3
+instance</li></ul><include package="adytumadmin"><span style="font-weight:
+bold;">Access</span><br /><br />Access the skin by using ++skin++AdytumAdmin
+in your URL, e.g.:<br /><br
+/>http://127.0.0.1:8080/++skin++AdytumAdmin/@@contents.html<br /><br />If you
+like this skin enough to make it your default skin and don't want to add it to
+the URL manually, just add this line to your etc/overrides.zcml file:<br
+/><blockquote>&lt;browser:defaultskin name="AdytumAdmin"&gt;</blockquote>Note
+that it is the skin name and not the skin package that is used.<br /><br
+/><span style="font-weight: bold;">Screenshots</span><br
+/></include><ul><li><a href="http://adytum.svn.sourceforge.net/viewvc/adytum/S
+ite/branches/2005.08.05_Z3Site/Resources/screen1.jpg?revision=603&amp;view=mar
+kup">Add ZPP page</a></li><li><a
+href="http://adytum.svn.sourceforge.net/viewvc/adytum/Site/branches/2005.08.05
+_Z3Site/Resources/screen2.jpg?revision=603&amp;view=markup">Folder listing</a>
+<br /></li></ul><include package="adytumadmin"><br /><br /></include></div>

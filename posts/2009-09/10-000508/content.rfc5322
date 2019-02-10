@@ -11,4 +11,45 @@ Comments:
 Content-Type: md
 Public?: true
 
-I've recently found a need to brush up on my linear algebra (due to some software projects I'm working on). It's been about 10 years since I last did quantum mechanics, where we only used a small subset of liner algebra, and 12 years since an actual linear algebra class. I've used it a bit here and there, but most of it is forgotten.<br /><br />I thought it might be nice to write up some posts as I relearn some of this material and explore areas of NumPy that I either haven't used before or haven't touched in a while. I anticipate that my approach will be essentially code samples based on problems or examples from various linear algebra texts I own. I want to keep it simple: here's Python, and here's how you solve this linear algebra problem with it.<br /><br />Solving a System of Linear Equations<br /><br />Given these equations, find a solution, if one exists:<br /><br />x - 2y + z = 0<br />2y - 8z = 8<br />-4x + 5y +9z = -9<br /><br />Keep in mind the geometry of these equations: we have three equations with three dimensions. Each equation describes a plane. By seeking a solution that these three all have in common, we are trying to find the geometric entity defined by all three planes intersecting: a point.<br /><br />Defining the coefficient and constant matrix separtely, we have:<br /><br />>>> from numpy import matrix<br />>>> a = matrix([ <br />... [1, -2, 1],<br />... [0, 2, -8],<br />... [-4, 5, 9],<br />... ])<br /><br />>>> b = matrix([<br />... [0],<br />... [8],<br />... [-9],<br />... ])<br /><br />Feel free to enter this in whichever way is most comfortable for you :-) I'm just typing it like this for clear presentation and to maintain a visual connection to the format often used in text books.<br /><br />Note that we can write the constants matrix "horizontally" and then transpose it:<br /><br />b = matrix([[0, 8, -9]]).getT()<br /><br />Now we're going to solve it :-)<br /><br />>>> from numpy.linalg import solve<br />>>> solve(a, b)<br />matrix([[ 29.],<br /> [ 16.],<br /> [ 3.]])<br /><br />To be clear, the solution for this system of equations is the point located at the coordinates x=29, y=16, and z=3.<br /><br />What happens if we've got a system of equations whose solution is inconsistent? Let's give it a try :-)<br /><br />>>> a = matrix([ <br />... [1, -3, 1],<br />... [2, -1, -2],<br />... [1, 2, -3],<br />... ])<br />>>> b = matrix([[1, 2, -1]]).transpose()<br />>>> solve(a, b)<br />Traceback (most recent call last):<br /> File "<stdin>", line 1, in <module><br /> File "/usr/lib/python2.5/site-packages/numpy/linalg/linalg.py", line 235, in solve<br /> raise LinAlgError, 'Singular matrix'<br />numpy.linalg.linalg.LinAlgError: Singular matrix<br /><br />No solution for that one!<br /><br />Network Analysis<br /><br />-a - b + 0 + 0 + 0 + 20 = 0<br /> 0 + 0 - c + d + 0 - 20 = 0<br /> 0 + b + c + 0 + 0 - 20 = 0<br /> a + 0 + 0 + 0 - e + 10 = 0<br /> 0 + 0 + 0 - d + e + 10 = 0<br /><br />a = matrix([<br />[-1, -1, 0, 0, 0],<br />[0, 0, -1, 1, 0],<br />[0, 1, 1, 0, 0],<br />[1, 0, 0, 0, -1],<br />[0, 0, 0, -1, 1],<br />])<br /><br />b = matrix([[-20, 20, 20, -10, -10]]).transpose()
+I've recently found a need to brush up on my linear algebra (due to some
+software projects I'm working on). It's been about 10 years since I last did
+quantum mechanics, where we only used a small subset of liner algebra, and 12
+years since an actual linear algebra class. I've used it a bit here and there,
+but most of it is forgotten.<br /><br />I thought it might be nice to write up
+some posts as I relearn some of this material and explore areas of NumPy that
+I either haven't used before or haven't touched in a while. I anticipate that
+my approach will be essentially code samples based on problems or examples
+from various linear algebra texts I own. I want to keep it simple: here's
+Python, and here's how you solve this linear algebra problem with it.<br /><br
+/>Solving a System of Linear Equations<br /><br />Given these equations, find
+a solution, if one exists:<br /><br />x - 2y + z = 0<br />2y - 8z = 8<br />-4x
++ 5y +9z = -9<br /><br />Keep in mind the geometry of these equations: we have
+three equations with three dimensions. Each equation describes a plane. By
+seeking a solution that these three all have in common, we are trying to find
+the geometric entity defined by all three planes intersecting: a point.<br
+/><br />Defining the coefficient and constant matrix separtely, we have:<br
+/><br />>>> from numpy import matrix<br />>>> a = matrix([ <br />... [1, -2,
+1],<br />... [0, 2, -8],<br />... [-4, 5, 9],<br />... ])<br /><br />>>> b =
+matrix([<br />... [0],<br />... [8],<br />... [-9],<br />... ])<br /><br
+/>Feel free to enter this in whichever way is most comfortable for you :-) I'm
+just typing it like this for clear presentation and to maintain a visual
+connection to the format often used in text books.<br /><br />Note that we can
+write the constants matrix "horizontally" and then transpose it:<br /><br />b
+= matrix([[0, 8, -9]]).getT()<br /><br />Now we're going to solve it :-)<br
+/><br />>>> from numpy.linalg import solve<br />>>> solve(a, b)<br />matrix([[
+29.],<br /> [ 16.],<br /> [ 3.]])<br /><br />To be clear, the solution for
+this system of equations is the point located at the coordinates x=29, y=16,
+and z=3.<br /><br />What happens if we've got a system of equations whose
+solution is inconsistent? Let's give it a try :-)<br /><br />>>> a = matrix([
+<br />... [1, -3, 1],<br />... [2, -1, -2],<br />... [1, 2, -3],<br />...
+])<br />>>> b = matrix([[1, 2, -1]]).transpose()<br />>>> solve(a, b)<br
+/>Traceback (most recent call last):<br /> File "<stdin>", line 1, in
+<module><br /> File "/usr/lib/python2.5/site-packages/numpy/linalg/linalg.py",
+line 235, in solve<br /> raise LinAlgError, 'Singular matrix'<br
+/>numpy.linalg.linalg.LinAlgError: Singular matrix<br /><br />No solution for
+that one!<br /><br />Network Analysis<br /><br />-a - b + 0 + 0 + 0 + 20 =
+0<br /> 0 + 0 - c + d + 0 - 20 = 0<br /> 0 + b + c + 0 + 0 - 20 = 0<br /> a +
+0 + 0 + 0 - e + 10 = 0<br /> 0 + 0 + 0 - d + e + 10 = 0<br /><br />a =
+matrix([<br />[-1, -1, 0, 0, 0],<br />[0, 0, -1, 1, 0],<br />[0, 1, 1, 0,
+0],<br />[1, 0, 0, 0, -1],<br />[0, 0, 0, -1, 1],<br />])<br /><br />b =
+matrix([[-20, 20, 20, -10, -10]]).transpose()

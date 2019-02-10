@@ -11,4 +11,46 @@ Comments:
 Content-Type: md
 Public?: true
 
-I know everyone is all aglow with the <a href="http://code.google.com/appengine/">new web development offering</a> from Google, but let me do the unpopular thing and put <em>some</em> things into perspective: there are limitations.<br /><br />In fact, the limitations that exist will prevent me from using App Engine with all of my projects, save one (that one being a very simple web site). First, the limitations that prevent me from using App Engine (from <a href="http://code.google.com/appengine/kb/general.html#libraries">one of their FAQs</a>):<br /><ul><li>Sockets are disabled with Google App Engine</li><li>The system does not allow you to invoke subprocesses, as a result some os module methods are disabled</li><li>Threading is not available</li></ul>This means that I can't write a deferred wrapper for their data layer, I can't use Twisted for such things as XML-RPC or <a href="http://twistedmatrix.com/trac/browser/trunk/twisted/protocols/amp.py">AMP</a>-based <a href="http://www.ripton.net/blog/?p=16">communications</a>, and I can't use an async templating system (like <a href="http://divmod.org/trac/wiki/DivmodNevow">Nevow</a>). I'm stuck with CGI and blocking code. And for all but the simplest projects, that's a big "No Thank You" from me.<br /><br />This doesn't mean that I won't use it -- I will. I have one project that this will be perfect for... but it's for someone else, not me.<br /><br />However, these limitations are actually good news :-) Here's the silver lining:<br /><br />As Glyph as alluded to in his <a href="http://glyph.twistedmatrix.com/2008/04/app-engine-of-your-internet.html">recent blog post</a> (and in <a href="http://twitter.com/glyf/statuses/783261507">our</a> <a href="http://twitter.com/oubiwann/statuses/783912833">tweets</a>), we've recently completed a massive week-long BizDev Divmod sprint in Boston. One of the results of this is based on community feedback we've had over the last year, and which culminated at PyCon 2008 in Chicago with multiple requests for particular services from <a href="http://divmod.org/trac/">The Twisted Company</a>. That result is a set of tools, features, and management options folks will be able to use with <a href="http://divmod.org/trac/wiki/DivmodProjects">our software</a> (app server, smart object db, network services, etc.). People really want to start using our stuff in cloud/grid computing environments. They need support for multiple and diverse network services, inter-store communications, massive deployments, etc. Two months before PyCon, we started working on tickets to support this, and we're making excellent progress toward providing the requested features.<br /><br />We're still unclear as to which parts of this will be open source, as that will be driven by a combination of business and community demand. Regardless, Google's lack of support for this stuff has (for now) left the field wide open for us. And that, folks, is a big "Thank You Google!" :-)<br /><br /><br /><br />
+I know everyone is all aglow with the <a
+href="http://code.google.com/appengine/">new web development offering</a> from
+Google, but let me do the unpopular thing and put <em>some</em> things into
+perspective: there are limitations.<br /><br />In fact, the limitations that
+exist will prevent me from using App Engine with all of my projects, save one
+(that one being a very simple web site). First, the limitations that prevent
+me from using App Engine (from <a
+href="http://code.google.com/appengine/kb/general.html#libraries">one of their
+FAQs</a>):<br /><ul><li>Sockets are disabled with Google App
+Engine</li><li>The system does not allow you to invoke subprocesses, as a
+result some os module methods are disabled</li><li>Threading is not
+available</li></ul>This means that I can't write a deferred wrapper for their
+data layer, I can't use Twisted for such things as XML-RPC or <a
+href="http://twistedmatrix.com/trac/browser/trunk/twisted/protocols/amp.py">AM
+P</a>-based <a href="http://www.ripton.net/blog/?p=16">communications</a>, and
+I can't use an async templating system (like <a
+href="http://divmod.org/trac/wiki/DivmodNevow">Nevow</a>). I'm stuck with CGI
+and blocking code. And for all but the simplest projects, that's a big "No
+Thank You" from me.<br /><br />This doesn't mean that I won't use it -- I
+will. I have one project that this will be perfect for... but it's for someone
+else, not me.<br /><br />However, these limitations are actually good news :-)
+Here's the silver lining:<br /><br />As Glyph as alluded to in his <a
+href="http://glyph.twistedmatrix.com/2008/04/app-engine-of-your-internet.html"
+>recent blog post</a> (and in <a
+href="http://twitter.com/glyf/statuses/783261507">our</a> <a
+href="http://twitter.com/oubiwann/statuses/783912833">tweets</a>), we've
+recently completed a massive week-long BizDev Divmod sprint in Boston. One of
+the results of this is based on community feedback we've had over the last
+year, and which culminated at PyCon 2008 in Chicago with multiple requests for
+particular services from <a href="http://divmod.org/trac/">The Twisted
+Company</a>. That result is a set of tools, features, and management options
+folks will be able to use with <a
+href="http://divmod.org/trac/wiki/DivmodProjects">our software</a> (app
+server, smart object db, network services, etc.). People really want to start
+using our stuff in cloud/grid computing environments. They need support for
+multiple and diverse network services, inter-store communications, massive
+deployments, etc. Two months before PyCon, we started working on tickets to
+support this, and we're making excellent progress toward providing the
+requested features.<br /><br />We're still unclear as to which parts of this
+will be open source, as that will be driven by a combination of business and
+community demand. Regardless, Google's lack of support for this stuff has (for
+now) left the field wide open for us. And that, folks, is a big "Thank You
+Google!" :-)<br /><br /><br /><br />

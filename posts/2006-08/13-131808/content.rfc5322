@@ -11,4 +11,39 @@ Comments:
 Content-Type: md
 Public?: true
 
-I've recently needed to profile some very subtle issues that cropped up in a customer's python application. However, when I tried to use hotshot, I consistently got tracebacks. After some digging around on the net, I saw folks saying that profiling is basically busted in python2.4 (and then I remembered Itamar saying basically the same thing at PyCon 2006 when we were looking at web2 slowness).<br /><br />To get around this, I built python2.5 from svn and copied its cProfile, _lsprof and pstats files to my python2.4 libs. This was a complete desperation move and I totally didn't expect it to work -- but it did (with only a warning about a version mismatch).<br /><br />Earlier this year, <a href="http://jcalderone.livejournal.com/">JP</a> and <a href="http://itamarst.org/">Itamar</a> updated an <a href="http://tinyurl.com/p2vva">lsprof patch</a> to work as <a href="http://tinyurl.com/mck49">a standalone</a>. However, I've never done any profiling in python, so it took a few minutes to get up to speed. Looking at the patch source and the python2.5 <a href="http://tinyurl.com/sx5ek">cProfile docs</a> and then doing the usual dir() and help() on cProfile.Profile in the python interpreter is what helped the most.<br /><br />To give others new to profiling a jumpstart, I'm including a quick little toy howto below.<br /><br />Import the junk:<br /><pre>&gt;&gt;&gt; import os<br />&gt;&gt;&gt; import cProfile<br />&gt;&gt;&gt; import lsprofcalltree<br /><br /></pre>Define a silly test function:<br /><pre>&gt;&gt;&gt; def myFunc():<br />... myPath = os.path.expanduser('~/kcrw_s')<br />... print "Hello, world! This is my home:"<br />... print myPath<br />...<br /><br /></pre>Define a profile object and run it:<br /><pre>&gt;&gt;&gt; p = cProfile.Profile()<br />&gt;&gt;&gt; p.run('myFunc()')<br />Hello, world! This is my home:<br />/home/kcrw_s/kcrw_s<br />&lt;cProfile.Profile object at 0xb7c87304&gt;<br /><br /></pre>Get the stats in a form kcachegrind can use and save it:<br /><pre>&gt;&gt;&gt; k = lsprofcalltree.KCacheGrind(p)<br />&gt;&gt;&gt; data = open('prof.kgrind', 'w+')<br />&gt;&gt;&gt; k.output(data)<br />&gt;&gt;&gt; data.close()<br /><br /></pre>You can now open up the prof.kgrind file in kcachegrind and view the (in this case, very uninteresting) results to your heart's content.<br /><br /><!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags: <a href="http://www.technorati.com/tag/profiling" rel="tag">profiling</a>, <a href="http://www.technorati.com/tag/python" rel="tag">python</a></p><!-- technorati tags end -->
+I've recently needed to profile some very subtle issues that cropped up in a
+customer's python application. However, when I tried to use hotshot, I
+consistently got tracebacks. After some digging around on the net, I saw folks
+saying that profiling is basically busted in python2.4 (and then I remembered
+Itamar saying basically the same thing at PyCon 2006 when we were looking at
+web2 slowness).<br /><br />To get around this, I built python2.5 from svn and
+copied its cProfile, _lsprof and pstats files to my python2.4 libs. This was a
+complete desperation move and I totally didn't expect it to work -- but it did
+(with only a warning about a version mismatch).<br /><br />Earlier this year,
+<a href="http://jcalderone.livejournal.com/">JP</a> and <a
+href="http://itamarst.org/">Itamar</a> updated an <a
+href="http://tinyurl.com/p2vva">lsprof patch</a> to work as <a
+href="http://tinyurl.com/mck49">a standalone</a>. However, I've never done any
+profiling in python, so it took a few minutes to get up to speed. Looking at
+the patch source and the python2.5 <a href="http://tinyurl.com/sx5ek">cProfile
+docs</a> and then doing the usual dir() and help() on cProfile.Profile in the
+python interpreter is what helped the most.<br /><br />To give others new to
+profiling a jumpstart, I'm including a quick little toy howto below.<br /><br
+/>Import the junk:<br /><pre>&gt;&gt;&gt; import os<br />&gt;&gt;&gt; import
+cProfile<br />&gt;&gt;&gt; import lsprofcalltree<br /><br /></pre>Define a
+silly test function:<br /><pre>&gt;&gt;&gt; def myFunc():<br />... myPath =
+os.path.expanduser('~/kcrw_s')<br />... print "Hello, world! This is my
+home:"<br />... print myPath<br />...<br /><br /></pre>Define a profile object
+and run it:<br /><pre>&gt;&gt;&gt; p = cProfile.Profile()<br />&gt;&gt;&gt;
+p.run('myFunc()')<br />Hello, world! This is my home:<br
+/>/home/kcrw_s/kcrw_s<br />&lt;cProfile.Profile object at 0xb7c87304&gt;<br
+/><br /></pre>Get the stats in a form kcachegrind can use and save it:<br
+/><pre>&gt;&gt;&gt; k = lsprofcalltree.KCacheGrind(p)<br />&gt;&gt;&gt; data =
+open('prof.kgrind', 'w+')<br />&gt;&gt;&gt; k.output(data)<br />&gt;&gt;&gt;
+data.close()<br /><br /></pre>You can now open up the prof.kgrind file in
+kcachegrind and view the (in this case, very uninteresting) results to your
+heart's content.<br /><br /><!-- technorati tags start --><p
+style="text-align:right;font-size:10px;">Technorati Tags: <a
+href="http://www.technorati.com/tag/profiling" rel="tag">profiling</a>, <a
+href="http://www.technorati.com/tag/python" rel="tag">python</a></p><!--
+technorati tags end -->

@@ -11,4 +11,30 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">open source :: programming</i><br/><br/><p/><br /><p><a href="http://www.j-bradford-delong.net/movable_type/2003_archives/000820.html" title="Notes: Weber (Steve, Not Max): The Success of Open Source: Archive Entry From Brad DeLong's Webjournal">Notes: Weber (Steve, Not Max): The Success of Open Source: Archive Entry From Brad DeLong's Webjournal</a></p><br /><br /><p>"People often see in the open source software movement the politics<br />that they would lke to see -- a libertarian reverie, a perfect<br />meritocracy, a utopian 'gift culture' that celebrates an economics of<br />abundance instead of scarcity, a 'virtual' or electronic existence<br />proof of communitarian ideals, a political movement aimed at replacing<br />obsolete 19th century capitalist structures with new 'relations of<br />production' more suited to the information age." "No one says that<br />hierarchical coordination is efficient, only that it is less<br />inefficient than alternatives."</p><br /><br /><p>This guy seems to address many of the questions that business<br />leaders around the world are asking themselves. The quote that Brad<br />DeLong has on his site addresses the following:</p><br /><br /><p>* Motivation: Why do highly-talented programmers voluntary allocate<br />some or a substantial portion of their time and mind-space to a joint<br />project for which they will not be compensated?</p><br /><br /><p>* Coordination: How and why do these individuals coordinate their contributions on a single 'focal point'? </p><br /><br /><p>* Complexity: Brooks's Law: in software program lines written scale<br />linearly with the number of programmers, while complexity and<br />vulnerability to mistakes scale geometrically. How does open source<br />avoid falling into the trap of Brooks's Law, and the resulting dynamic<br />toward more and more hierarchical forms of organization?</p><br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">open source ::
+programming</i><br/><br/><p/><br /><p><a
+href="http://www.j-bradford-delong.net/movable_type/2003_archives/000820.html"
+title="Notes: Weber (Steve, Not Max): The Success of Open Source: Archive
+Entry From Brad DeLong's Webjournal">Notes: Weber (Steve, Not Max): The
+Success of Open Source: Archive Entry From Brad DeLong's Webjournal</a></p><br
+/><br /><p>"People often see in the open source software movement the
+politics<br />that they would lke to see -- a libertarian reverie, a
+perfect<br />meritocracy, a utopian 'gift culture' that celebrates an
+economics of<br />abundance instead of scarcity, a 'virtual' or electronic
+existence<br />proof of communitarian ideals, a political movement aimed at
+replacing<br />obsolete 19th century capitalist structures with new 'relations
+of<br />production' more suited to the information age." "No one says that<br
+/>hierarchical coordination is efficient, only that it is less<br
+/>inefficient than alternatives."</p><br /><br /><p>This guy seems to address
+many of the questions that business<br />leaders around the world are asking
+themselves. The quote that Brad<br />DeLong has on his site addresses the
+following:</p><br /><br /><p>* Motivation: Why do highly-talented programmers
+voluntary allocate<br />some or a substantial portion of their time and
+mind-space to a joint<br />project for which they will not be
+compensated?</p><br /><br /><p>* Coordination: How and why do these
+individuals coordinate their contributions on a single 'focal point'? </p><br
+/><br /><p>* Complexity: Brooks's Law: in software program lines written
+scale<br />linearly with the number of programmers, while complexity and<br
+/>vulnerability to mistakes scale geometrically. How does open source<br
+/>avoid falling into the trap of Brooks's Law, and the resulting dynamic<br
+/>toward more and more hierarchical forms of organization?</p><br /></div>

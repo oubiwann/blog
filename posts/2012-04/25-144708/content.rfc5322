@@ -11,4 +11,57 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS8/s1600/openstack-logo512.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS8/s200/openstack-logo512.png" width="200" /></a></div>Last week's OpenStack Design Summit and Conference were pretty fantastic events. Lots of great technical discussions, some good initial planning on large tasks, incredible numbers of conversations -- all of high quality! Looking back, though, I'd have to say that the high point of the event for me was what turned into the <a href="http://folsomdesignsummit2012.sched.org/event/e176414e81687b80e00b91a7fbcdf0a6" target="_blank">DevOps community brainstorm session</a> (<a href="http://etherpad.openstack.org/FolsomDevOpsTeam" target="_blank">etherpad link</a>) at the Design Summit&nbsp;(all etherpads are <a href="http://wiki.openstack.org/FolsomSummitEtherpads" target="_blank">here</a>).<br /><br />The session was approved with the title of "OpenStack and Operations: Getting Real" with a major goal of deciding whether we needed to create a new top-level project for DevOps. So it was really "New DevOps Team?" However, all that changed once we got started, and there was some amazing feedback and enthusiasm in that room. By the end of it, we were all pretty pumped up and ready to jump in with all our hands and feet!<br /><br />The highest-level summary for me was this: The DevOps folks in the OpenStack community really need a point to rally around. Someplace they can not only talk to each other, share stories, get advice, etc., but also where they can have their voices heard by the predominantly developer-oriented OpenStack community. Jay Pipes suggested that a new section be added to the weekly IRC team leader meetings, and as <a href="https://launchpad.net/~nova-operations" target="_blank">Nova Ops subteam</a> lead (<a href="http://wiki.openstack.org/Teams" target="_blank">teams list</a>), I volunteered to collect top issues from the DevOps (sub-)community and give these some air-time in the meetings.<br /><br />Some other highlights from the session:<br /><br /><ul><li><a href="http://trystack.org/">trystack.org</a> needs volunteer admins -- a great opportunity for improving the dev &lt;-&gt; ops interface</li><li><a href="http://public.web.cern.ch/public/" target="_blank">CERN</a> is deeply invested in DevOps, and wants to share data and possibly help with defining reference architectures</li><li>The same goes for the <a href="http://www.unimelb.edu.au/" target="_blank">University of Melbourne</a>!</li><li>There was a good corporate presences in the session too, rallying around a new and improved DevOps community: HP, Yahoo, AT&amp;T, Canonical, Rackspace, DreamHost, and more (sorry if I forgot you!)&nbsp;</li></ul><br />There is a tremendous amount of information that we collected, but in written form (etherpads) as well as conversations during last week's event. As this is collected, we'll be reaching out to folks via the <a href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-operators" target="_blank">operators mail list</a>, <a href="http://planet.openstack.org/" target="_blank">blog posts</a>, <a href="https://twitter.com/#!/search/%23openstack%20AND%20%23devops" target="_blank">tweets</a>, and <a href="https://plus.google.com/s/%23openstack%20AND%20%23devops" target="_blank">Google+</a> messages. Be sure to do the same! If you've got concerns, bring them up on the mail list, we'll get some bugs filed and blueprints put together, and come up with plans for addressing these.<br /><br />Thanks again, everyone!<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS
+8/s1600/openstack-logo512.png" imageanchor="1" style="clear: left; float:
+left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200"
+src="http://1.bp.blogspot.com/-FsuR_NWrcuA/T30gslonIUI/AAAAAAAAAIA/OQhQv_zfTS8
+/s200/openstack-logo512.png" width="200" /></a></div>Last week's OpenStack
+Design Summit and Conference were pretty fantastic events. Lots of great
+technical discussions, some good initial planning on large tasks, incredible
+numbers of conversations -- all of high quality! Looking back, though, I'd
+have to say that the high point of the event for me was what turned into the
+<a href="http://folsomdesignsummit2012.sched.org/event/e176414e81687b80e00b91a
+7fbcdf0a6" target="_blank">DevOps community brainstorm session</a> (<a
+href="http://etherpad.openstack.org/FolsomDevOpsTeam" target="_blank">etherpad
+link</a>) at the Design Summit&nbsp;(all etherpads are <a
+href="http://wiki.openstack.org/FolsomSummitEtherpads" target="_blank">here</a
+>).<br /><br />The session was approved with the title of "OpenStack and
+Operations: Getting Real" with a major goal of deciding whether we needed to
+create a new top-level project for DevOps. So it was really "New DevOps Team?"
+However, all that changed once we got started, and there was some amazing
+feedback and enthusiasm in that room. By the end of it, we were all pretty
+pumped up and ready to jump in with all our hands and feet!<br /><br />The
+highest-level summary for me was this: The DevOps folks in the OpenStack
+community really need a point to rally around. Someplace they can not only
+talk to each other, share stories, get advice, etc., but also where they can
+have their voices heard by the predominantly developer-oriented OpenStack
+community. Jay Pipes suggested that a new section be added to the weekly IRC
+team leader meetings, and as <a href="https://launchpad.net/~nova-operations"
+target="_blank">Nova Ops subteam</a> lead (<a
+href="http://wiki.openstack.org/Teams" target="_blank">teams list</a>), I
+volunteered to collect top issues from the DevOps (sub-)community and give
+these some air-time in the meetings.<br /><br />Some other highlights from the
+session:<br /><br /><ul><li><a href="http://trystack.org/">trystack.org</a>
+needs volunteer admins -- a great opportunity for improving the dev &lt;-&gt;
+ops interface</li><li><a href="http://public.web.cern.ch/public/"
+target="_blank">CERN</a> is deeply invested in DevOps, and wants to share data
+and possibly help with defining reference architectures</li><li>The same goes
+for the <a href="http://www.unimelb.edu.au/" target="_blank">University of
+Melbourne</a>!</li><li>There was a good corporate presences in the session
+too, rallying around a new and improved DevOps community: HP, Yahoo, AT&amp;T,
+Canonical, Rackspace, DreamHost, and more (sorry if I forgot
+you!)&nbsp;</li></ul><br />There is a tremendous amount of information that we
+collected, but in written form (etherpads) as well as conversations during
+last week's event. As this is collected, we'll be reaching out to folks via
+the <a
+href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-operators"
+target="_blank">operators mail list</a>, <a
+href="http://planet.openstack.org/" target="_blank">blog posts</a>, <a
+href="https://twitter.com/#!/search/%23openstack%20AND%20%23devops" target="_b
+lank">tweets</a>, and <a
+href="https://plus.google.com/s/%23openstack%20AND%20%23devops" target="_blank
+">Google+</a> messages. Be sure to do the same! If you've got concerns, bring
+them up on the mail list, we'll get some bugs filed and blueprints put
+together, and come up with plans for addressing these.<br /><br />Thanks
+again, everyone!<br /><br /><br />

@@ -11,4 +11,180 @@ Comments:
 Content-Type: md
 Public?: true
 
-<table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: left; margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: center;"><a href="http://2.bp.blogspot.com/-soKhrWS6w6Y/T7FuvIlzm0I/AAAAAAAAAKg/AHpu8syxokc/s1600/Gordonfreeman.jpg" imageanchor="1" style="clear: left; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" height="200" src="http://2.bp.blogspot.com/-soKhrWS6w6Y/T7FuvIlzm0I/AAAAAAAAAKg/AHpu8syxokc/s200/Gordonfreeman.jpg" width="156" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Tim Bell preparing to get his <br />OpenStack on</td></tr></tbody></table><span style="font-family: inherit;">As <a href="http://cogitat.io/2012/04/new-life-openstack-devops-community.html" target="_blank">previously mentioned</a>, there's a growing momentum around ops-oriented&nbsp;participation&nbsp;in the <a href="http://openstack.org/" target="_blank">OpenStack</a> community. <a href="http://dreamhost.github.com/" target="_blank">DreamHost</a> is deeply invested in DevOps, seeing how that's where we're going to be living in a few months! As <a href="http://www.linkedin.com/in/simonanderson" target="_blank">Simon Anderson</a>, CEO of DreamHost, recently said:</span><br /><blockquote class="tr_bq"><span style="font-size: large;">"When we're running a complex fabric of apps on over 5,000 servers across three data centers, we need a lean and nimble approach to software development and operational implementation. Without a DevOps approach, we wouldn't be able to push code into production as fast or as efficiently as we do, and our customers would not be happy! Today's developers demand up-to-the-hour security and performance updates to Internet infrastructure, so we aim to deliver just that with DevOps."</span></blockquote><span style="font-family: inherit;">Though expressed in the context of our work, the import of DevOps that Simon's comment generally highlights is going to be increasingly important for nearly anyone running cloud services.&nbsp;</span><br /><br /><span style="font-family: inherit;">In particular, I've been following the work of the intrepid folks at CERN. As such, this post is not about DreamHost; rather, it's a mad tale of OpenStack, DevOps, and averting alien invasion.</span><br /><div><br /></div><div><span style="font-family: inherit;">After countless long-distance phone conversations, a flight to Switzerland, and spending several days buying pints for a security guard in the know (referred to from now on as "Barney"), I've uncovered some profound truths -- Mulder-style -- and have confirmed that the impact of OpenStack at CERN is huge.&nbsp;</span></div><div><span style="font-family: inherit;"><br /></span></div><div><span style="font-family: inherit;">Superficial examinations turn up the usual: CERN's planning&nbsp;</span><a href="http://cern.ch/go/Php8" style="font-family: inherit;" target="_blank">slides</a><span style="font-family: inherit;">, nice quotes, discussions of features and savings in time and money. For&nbsp;</span>instance<span style="font-family: inherit;">, i</span><span style="font-family: inherit;">n a recent email conversation with Tim "Gordon Freeman" Bell at CERN, I learned that&nbsp;</span></div><blockquote class="tr_bq"><span style="font-family: inherit; font-size: large;">"The&nbsp;<span class="il">CERN</span>&nbsp;Agile Infrastructure project aims to develop&nbsp;<span class="il">CERN</span>'s computing&nbsp;resources and processes to support the expanding needs of LHC physicists and&nbsp;the&nbsp;<span class="il">CERN</span>&nbsp;organisation."</span></blockquote><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-BkBjvrwzLJM/T7FyNTZdtpI/AAAAAAAAAKs/4a3R4_VXGiQ/s1600/Gordon%252BFreeman%252BSpotted%252BAt%252BCERN%252BOpenStack.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-BkBjvrwzLJM/T7FyNTZdtpI/AAAAAAAAAKs/4a3R4_VXGiQ/s320/Gordon%252BFreeman%252BSpotted%252BAt%252BCERN%252BOpenStack.jpg" width="320" /></a></div><div>I think these guys have been hanging out with Simon! But once you slip behind the scenes, peek at some of the whiteboards in unattended rooms, or rifle through notes lying about, you see that things are not what they appear. I've included a shot of Mr. OpenStack-at-CERN himself; this was my first clue.</div><div><br /></div><div>Publicly, he's been working with other teams at CERN to:</div><div><ul><li>modernise the data centre configuration tools and automating operations&nbsp;procedures</li><li>exploit wide scale use of virtualisation, improving flexibility and&nbsp;efficiency</li><li>enhance monitoring such that the usage of the infrastructure can be fully&nbsp;understood and tuned to maximise the resources available</li></ul></div><div>But privately, it seems that he and his team have been doing much, much more. This was alluded to in a statement made by team member Jan van Eldik: "We expect the number of requests to insert non-standard specimens into the scanning beam of the Anti-Mass Spectrometer to&nbsp;significantly&nbsp;decrease, once automation is in place and everyone is using the standard infrastructure we are setting up."<br /><br />That isn't to say there haven't been incidents...</div><div><br /></div><div>Innocuously enough, the current toolchains are based around:<br /><ul><li><span style="font-family: inherit;">OpenStack as a single Infrastructure-as-a-Service providing physics&nbsp;</span><span style="font-family: inherit;">experiment services, developer boxes, applications servers as well as the&nbsp;</span><span style="font-family: inherit;">large batch farm</span></li><li><span style="font-family: inherit;">Puppet for configuration management</span></li><li><span style="font-family: inherit;">Scientific Linux&nbsp;</span><span class="il" style="font-family: inherit;">CERN</span><span style="font-family: inherit;">&nbsp;as the dominant operating system with sizeable chunk&nbsp;</span><span style="font-family: inherit;">of Windows installs</span></li></ul></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-1q07tTpJgzk/T7F1ewUmaZI/AAAAAAAAAK4/JnP2Qqv-zHM/s1600/crowbar.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="150" src="http://4.bp.blogspot.com/-1q07tTpJgzk/T7F1ewUmaZI/AAAAAAAAAK4/JnP2Qqv-zHM/s200/crowbar.jpg" width="200" /></a></div><div>But that second bullet caught my eye, and one of Barney's pub mates confirmed a rumor that we'd heard: the Puppet instances are actually trained&nbsp;<a href="http://en.wikipedia.org/wiki/Headcrab" target="_blank">headcrabs</a>. The primary training tool? You guessed it, a crowbar. Barney said that the folks from Dell took inspiration from this and developed it further for&nbsp;<a href="http://content.dell.com/us/en/gen/d/cloud-computing/crowbar-software-framework" target="_blank">their OpenStack deployment framework</a>&nbsp;after an extended visit to CERN.<br /><br /><span style="font-family: inherit;">Although Barney hadn't seen any evidence of resonance cascades, there have been minor cross-dimensional disturbances as a result of some "cowboy" activity and folks not following DevOps best practices. This has been kept quiet for obvious reasons, but&nbsp;</span>has led to a small pest problem in some of CERN's&nbsp;<a href="http://www.cernlove.org/blog/2009/10/underground-cern-its-half-life/" target="_blank">older tunnel complexes</a>.<span style="font-family: inherit;">&nbsp;As rouge elements are discovered, CERN has been educating transgressors&nbsp;</span>aggressively.<span style="font-family: inherit;">&nbsp;(Sometimes they go as far as sending employees to <a href="http://half-life.wikia.com/wiki/Xen" target="_blank">Xen</a> training... or was it <a href="http://en.wikipedia.org/wiki/Xen" target="_blank">Xen</a> training?)</span><br /><br /></div><div><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: right; margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-4NND3kC6IVA/T7G-ZD14MJI/AAAAAAAAALQ/hIYN5o5HxRA/s1600/2008-04-02-hadron-gordon-freeman.jpg" imageanchor="1" style="clear: right; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://1.bp.blogspot.com/-4NND3kC6IVA/T7G-ZD14MJI/AAAAAAAAALQ/hIYN5o5HxRA/s320/2008-04-02-hadron-gordon-freeman.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">One artist's conception of what success will<br />look like for OpenStack at CERN</td></tr></tbody></table><span style="font-family: inherit;">Despite the minor&nbsp;</span>hiccoughs<span style="font-family: inherit;">&nbsp;along the way, CERN is aiming for success. (Given the lack of Combine</span>&nbsp;and forced relocation programs, they're already doing better than Black Mesa's&nbsp;Anomalous&nbsp;Materials team.)&nbsp;<span style="font-family: inherit;">Plans are in place for an initial&nbsp;</span>pre-production service,&nbsp;<span style="font-family: inherit;">OpenStack deployment this year. Following that, they will be moving towards 300,000&nbsp;virtual machines on 15,000 hosts spread across two data centres by 2015.</span><br /><br /><span style="font-family: inherit;">The OpenStack community is supporting them in their efforts with fantastic new features, high-quality discussions on the mail lists, and real-time interaction on the IRC channels.&nbsp;</span><span style="font-family: inherit;">In an act of reciprocity and community spirit, operators at CERN have volunteered to contribute back to the OpenStack community with regard to operations best practices, reference&nbsp;</span>architecture<span style="font-family: inherit;">&nbsp;documentation, and support on the operators' mail list.</span><br /><br />To see how other&nbsp;institutions&nbsp;were taking this news, I spent several days waiting on hold. In particular, Aperture&nbsp;Science could not be reached for comment. However, Ops team member&nbsp;<span class="gI">Belmiro Rodrigues Moreira</span>&nbsp;did say that there's an audio file being circulated at CERN of Cave Johnson threatening to "burn down OpenStack" ... with lemons. Given Aperture Science's failure record with time machine development, it's generally assumed to be a prank audio reconstruction. CloudStack developers are considered to be the prime suspects, seeing how much time they have on their hands while waiting for ant to finish compiling the latest Java contributions.<br /><br />When asked what advice he could give to shops deploying OpenStack, Tim said simply: "Remember, the cake is a lie. Don't get distracted and don't stop. Just keep hacking."<br /><br /><table cellpadding="0" cellspacing="0" class="tr-caption-container" style="float: right; margin-left: 1em; text-align: right;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-8Dcl3t-U0z4/T7F-jc0KLKI/AAAAAAAAALE/QYPV7ce7TPc/s1600/20090111171621!Eli-alyx-vance.jpg" imageanchor="1" style="clear: right; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img border="0" height="213" src="http://4.bp.blogspot.com/-8Dcl3t-U0z4/T7F-jc0KLKI/AAAAAAAAALE/QYPV7ce7TPc/s320/20090111171621!Eli-alyx-vance.jpg" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Alyx, explaining to her dad why she loves DreamHost</td></tr></tbody></table>Couldn't have said it better myself.<br /><br />In closing, and interestingly enough, one of DreamHost's employees has an uncle who works at the Black Mesa Research Facility. Though his teleportation research team was too busy for an extended interview,&nbsp;<a href="http://half-life.wikia.com/wiki/Alyx_Vance" target="_blank">his daughter</a>&nbsp;did mention that she is a DreamHost customer and can't wait to use OpenStack&nbsp;while interning at CERN next summer. After all, that's what she uses to auto-scale her WordPress blog (she's in our private beta program). <br /><br />It's a small world.<br /><br />And, thanks to Tim and the rest at CERN, a safer one, too.<br /><br /><br /></div>
+<table cellpadding="0" cellspacing="0" class="tr-caption-container"
+style="float: left; margin-right: 1em; text-align: left;"><tbody><tr><td
+style="text-align: center;"><a
+href="http://2.bp.blogspot.com/-soKhrWS6w6Y/T7FuvIlzm0I/AAAAAAAAAKg/AHpu8syxok
+c/s1600/Gordonfreeman.jpg" imageanchor="1" style="clear: left; margin-bottom:
+1em; margin-left: auto; margin-right: auto;"><img border="0" height="200"
+src="http://2.bp.blogspot.com/-soKhrWS6w6Y/T7FuvIlzm0I/AAAAAAAAAKg/AHpu8syxokc
+/s200/Gordonfreeman.jpg" width="156" /></a></td></tr><tr><td
+class="tr-caption" style="text-align: center;">Tim Bell preparing to get his
+<br />OpenStack on</td></tr></tbody></table><span style="font-family:
+inherit;">As <a
+href="http://cogitat.io/2012/04/new-life-openstack-devops-community.html" targ
+et="_blank">previously mentioned</a>, there's a growing momentum around
+ops-oriented&nbsp;participation&nbsp;in the <a href="http://openstack.org/"
+target="_blank">OpenStack</a> community. <a
+href="http://dreamhost.github.com/" target="_blank">DreamHost</a> is deeply
+invested in DevOps, seeing how that's where we're going to be living in a few
+months! As <a href="http://www.linkedin.com/in/simonanderson"
+target="_blank">Simon Anderson</a>, CEO of DreamHost, recently said:</span><br
+/><blockquote class="tr_bq"><span style="font-size: large;">"When we're
+running a complex fabric of apps on over 5,000 servers across three data
+centers, we need a lean and nimble approach to software development and
+operational implementation. Without a DevOps approach, we wouldn't be able to
+push code into production as fast or as efficiently as we do, and our
+customers would not be happy! Today's developers demand up-to-the-hour
+security and performance updates to Internet infrastructure, so we aim to
+deliver just that with DevOps."</span></blockquote><span style="font-family:
+inherit;">Though expressed in the context of our work, the import of DevOps
+that Simon's comment generally highlights is going to be increasingly
+important for nearly anyone running cloud services.&nbsp;</span><br /><br
+/><span style="font-family: inherit;">In particular, I've been following the
+work of the intrepid folks at CERN. As such, this post is not about DreamHost;
+rather, it's a mad tale of OpenStack, DevOps, and averting alien
+invasion.</span><br /><div><br /></div><div><span style="font-family:
+inherit;">After countless long-distance phone conversations, a flight to
+Switzerland, and spending several days buying pints for a security guard in
+the know (referred to from now on as "Barney"), I've uncovered some profound
+truths -- Mulder-style -- and have confirmed that the impact of OpenStack at
+CERN is huge.&nbsp;</span></div><div><span style="font-family: inherit;"><br
+/></span></div><div><span style="font-family: inherit;">Superficial
+examinations turn up the usual: CERN's planning&nbsp;</span><a
+href="http://cern.ch/go/Php8" style="font-family: inherit;"
+target="_blank">slides</a><span style="font-family: inherit;">, nice quotes,
+discussions of features and savings in time and money.
+For&nbsp;</span>instance<span style="font-family: inherit;">, i</span><span
+style="font-family: inherit;">n a recent email conversation with Tim "Gordon
+Freeman" Bell at CERN, I learned that&nbsp;</span></div><blockquote
+class="tr_bq"><span style="font-family: inherit; font-size:
+large;">"The&nbsp;<span class="il">CERN</span>&nbsp;Agile Infrastructure
+project aims to develop&nbsp;<span class="il">CERN</span>'s
+computing&nbsp;resources and processes to support the expanding needs of LHC
+physicists and&nbsp;the&nbsp;<span
+class="il">CERN</span>&nbsp;organisation."</span></blockquote><div class="sepa
+rator" style="clear: both; text-align: center;"><a
+href="http://4.bp.blogspot.com/-BkBjvrwzLJM/T7FyNTZdtpI/AAAAAAAAAKs/4a3R4_VXGi
+Q/s1600/Gordon%252BFreeman%252BSpotted%252BAt%252BCERN%252BOpenStack.jpg" imag
+eanchor="1" style="clear: right; float: right; margin-bottom: 1em;
+margin-left: 1em;"><img border="0" height="240"
+src="http://4.bp.blogspot.com/-BkBjvrwzLJM/T7FyNTZdtpI/AAAAAAAAAKs/4a3R4_VXGiQ
+/s320/Gordon%252BFreeman%252BSpotted%252BAt%252BCERN%252BOpenStack.jpg" width=
+"320" /></a></div><div>I think these guys have been hanging out with Simon!
+But once you slip behind the scenes, peek at some of the whiteboards in
+unattended rooms, or rifle through notes lying about, you see that things are
+not what they appear. I've included a shot of Mr. OpenStack-at-CERN himself;
+this was my first clue.</div><div><br /></div><div>Publicly, he's been working
+with other teams at CERN to:</div><div><ul><li>modernise the data centre
+configuration tools and automating operations&nbsp;procedures</li><li>exploit
+wide scale use of virtualisation, improving flexibility
+and&nbsp;efficiency</li><li>enhance monitoring such that the usage of the
+infrastructure can be fully&nbsp;understood and tuned to maximise the
+resources available</li></ul></div><div>But privately, it seems that he and
+his team have been doing much, much more. This was alluded to in a statement
+made by team member Jan van Eldik: "We expect the number of requests to insert
+non-standard specimens into the scanning beam of the Anti-Mass Spectrometer
+to&nbsp;significantly&nbsp;decrease, once automation is in place and everyone
+is using the standard infrastructure we are setting up."<br /><br />That isn't
+to say there haven't been incidents...</div><div><br /></div><div>Innocuously
+enough, the current toolchains are based around:<br /><ul><li><span
+style="font-family: inherit;">OpenStack as a single
+Infrastructure-as-a-Service providing physics&nbsp;</span><span
+style="font-family: inherit;">experiment services, developer boxes,
+applications servers as well as the&nbsp;</span><span style="font-family:
+inherit;">large batch farm</span></li><li><span style="font-family:
+inherit;">Puppet for configuration management</span></li><li><span
+style="font-family: inherit;">Scientific Linux&nbsp;</span><span class="il"
+style="font-family: inherit;">CERN</span><span style="font-family:
+inherit;">&nbsp;as the dominant operating system with sizeable
+chunk&nbsp;</span><span style="font-family: inherit;">of Windows
+installs</span></li></ul></div><div class="separator" style="clear: both;
+text-align: center;"></div><div class="separator" style="clear: both;
+text-align: center;"><a
+href="http://4.bp.blogspot.com/-1q07tTpJgzk/T7F1ewUmaZI/AAAAAAAAAK4/JnP2Qqv-zH
+M/s1600/crowbar.jpg" imageanchor="1" style="clear: left; float: left;
+margin-bottom: 1em; margin-right: 1em;"><img border="0" height="150"
+src="http://4.bp.blogspot.com/-1q07tTpJgzk/T7F1ewUmaZI/AAAAAAAAAK4/JnP2Qqv-zHM
+/s200/crowbar.jpg" width="200" /></a></div><div>But that second bullet caught
+my eye, and one of Barney's pub mates confirmed a rumor that we'd heard: the
+Puppet instances are actually trained&nbsp;<a
+href="http://en.wikipedia.org/wiki/Headcrab" target="_blank">headcrabs</a>.
+The primary training tool? You guessed it, a crowbar. Barney said that the
+folks from Dell took inspiration from this and developed it further
+for&nbsp;<a href="http://content.dell.com/us/en/gen/d/cloud-computing/crowbar-
+software-framework" target="_blank">their OpenStack deployment
+framework</a>&nbsp;after an extended visit to CERN.<br /><br /><span
+style="font-family: inherit;">Although Barney hadn't seen any evidence of
+resonance cascades, there have been minor cross-dimensional disturbances as a
+result of some "cowboy" activity and folks not following DevOps best
+practices. This has been kept quiet for obvious reasons, but&nbsp;</span>has
+led to a small pest problem in some of CERN's&nbsp;<a
+href="http://www.cernlove.org/blog/2009/10/underground-cern-its-half-life/" ta
+rget="_blank">older tunnel complexes</a>.<span style="font-family:
+inherit;">&nbsp;As rouge elements are discovered, CERN has been educating
+transgressors&nbsp;</span>aggressively.<span style="font-family:
+inherit;">&nbsp;(Sometimes they go as far as sending employees to <a
+href="http://half-life.wikia.com/wiki/Xen" target="_blank">Xen</a> training...
+or was it <a href="http://en.wikipedia.org/wiki/Xen" target="_blank">Xen</a>
+training?)</span><br /><br /></div><div><table cellpadding="0" cellspacing="0"
+class="tr-caption-container" style="float: right; margin-left: 1em;
+text-align: right;"><tbody><tr><td style="text-align: center;"><a
+href="http://1.bp.blogspot.com/-4NND3kC6IVA/T7G-ZD14MJI/AAAAAAAAALQ/hIYN5o5HxR
+A/s1600/2008-04-02-hadron-gordon-freeman.jpg" imageanchor="1" style="clear:
+right; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img
+border="0" height="213"
+src="http://1.bp.blogspot.com/-4NND3kC6IVA/T7G-ZD14MJI/AAAAAAAAALQ/hIYN5o5HxRA
+/s320/2008-04-02-hadron-gordon-freeman.jpg" width="320"
+/></a></td></tr><tr><td class="tr-caption" style="text-align: center;">One
+artist's conception of what success will<br />look like for OpenStack at
+CERN</td></tr></tbody></table><span style="font-family: inherit;">Despite the
+minor&nbsp;</span>hiccoughs<span style="font-family: inherit;">&nbsp;along the
+way, CERN is aiming for success. (Given the lack of Combine</span>&nbsp;and
+forced relocation programs, they're already doing better than Black
+Mesa's&nbsp;Anomalous&nbsp;Materials team.)&nbsp;<span style="font-family:
+inherit;">Plans are in place for an initial&nbsp;</span>pre-production
+service,&nbsp;<span style="font-family: inherit;">OpenStack deployment this
+year. Following that, they will be moving towards 300,000&nbsp;virtual
+machines on 15,000 hosts spread across two data centres by 2015.</span><br
+/><br /><span style="font-family: inherit;">The OpenStack community is
+supporting them in their efforts with fantastic new features, high-quality
+discussions on the mail lists, and real-time interaction on the IRC
+channels.&nbsp;</span><span style="font-family: inherit;">In an act of
+reciprocity and community spirit, operators at CERN have volunteered to
+contribute back to the OpenStack community with regard to operations best
+practices, reference&nbsp;</span>architecture<span style="font-family:
+inherit;">&nbsp;documentation, and support on the operators' mail
+list.</span><br /><br />To see how other&nbsp;institutions&nbsp;were taking
+this news, I spent several days waiting on hold. In particular,
+Aperture&nbsp;Science could not be reached for comment. However, Ops team
+member&nbsp;<span class="gI">Belmiro Rodrigues Moreira</span>&nbsp;did say
+that there's an audio file being circulated at CERN of Cave Johnson
+threatening to "burn down OpenStack" ... with lemons. Given Aperture Science's
+failure record with time machine development, it's generally assumed to be a
+prank audio reconstruction. CloudStack developers are considered to be the
+prime suspects, seeing how much time they have on their hands while waiting
+for ant to finish compiling the latest Java contributions.<br /><br />When
+asked what advice he could give to shops deploying OpenStack, Tim said simply:
+"Remember, the cake is a lie. Don't get distracted and don't stop. Just keep
+hacking."<br /><br /><table cellpadding="0" cellspacing="0"
+class="tr-caption-container" style="float: right; margin-left: 1em;
+text-align: right;"><tbody><tr><td style="text-align: center;"><a
+href="http://4.bp.blogspot.com/-8Dcl3t-U0z4/T7F-jc0KLKI/AAAAAAAAALE/QYPV7ce7TP
+c/s1600/20090111171621!Eli-alyx-vance.jpg" imageanchor="1" style="clear:
+right; margin-bottom: 1em; margin-left: auto; margin-right: auto;"><img
+border="0" height="213"
+src="http://4.bp.blogspot.com/-8Dcl3t-U0z4/T7F-jc0KLKI/AAAAAAAAALE/QYPV7ce7TPc
+/s320/20090111171621!Eli-alyx-vance.jpg" width="320" /></a></td></tr><tr><td
+class="tr-caption" style="text-align: center;">Alyx, explaining to her dad why
+she loves DreamHost</td></tr></tbody></table>Couldn't have said it better
+myself.<br /><br />In closing, and interestingly enough, one of DreamHost's
+employees has an uncle who works at the Black Mesa Research Facility. Though
+his teleportation research team was too busy for an extended
+interview,&nbsp;<a href="http://half-life.wikia.com/wiki/Alyx_Vance"
+target="_blank">his daughter</a>&nbsp;did mention that she is a DreamHost
+customer and can't wait to use OpenStack&nbsp;while interning at CERN next
+summer. After all, that's what she uses to auto-scale her WordPress blog
+(she's in our private beta program). <br /><br />It's a small world.<br /><br
+/>And, thanks to Tim and the rest at CERN, a safer one, too.<br /><br /><br
+/></div>

@@ -11,4 +11,11 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div>Tonight, I just pushed a new version of txJSON-RPC up to <a href="http://pypi.python.org/pypi/txJSON-RPC/">PyPI</a>. Let me know if you have problems with this one, as the last one had some issues with setup.py.<br /><br />The new cool feature in this version is the serialization available to the bundled jsonrpclib module (which doesn't depend on Twisted code, so anyone can use that). txjsonrpc.jsonrpclib now supports Python datetime -> JSON serialization. The date format is the same as that used by xmlrpclib: YYYYddmmTHH:MM:SS.<br /><br />Enjoy!<br /><br /><br /></div>
+<div>Tonight, I just pushed a new version of txJSON-RPC up to <a
+href="http://pypi.python.org/pypi/txJSON-RPC/">PyPI</a>. Let me know if you
+have problems with this one, as the last one had some issues with setup.py.<br
+/><br />The new cool feature in this version is the serialization available to
+the bundled jsonrpclib module (which doesn't depend on Twisted code, so anyone
+can use that). txjsonrpc.jsonrpclib now supports Python datetime -> JSON
+serialization. The date format is the same as that used by xmlrpclib:
+YYYYddmmTHH:MM:SS.<br /><br />Enjoy!<br /><br /><br /></div>

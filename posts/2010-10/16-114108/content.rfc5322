@@ -11,4 +11,81 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div><br />Last week I had a nice email exchange with a good friend of Ubuntu, Professor <a href="http://hci.uwaterloo.ca/faculty/mterry/">Michael Terry</a> at the <a href="http://uwaterloo.ca/">University of Waterloo</a>. We met at <a href="http://www.acm.org/uist/uist2010/">UIST 2010</a>, but he and <a href="http://www.ivankamajic.com/">Ivanka Majic</a> have been conferring about design and usability in Ubuntu for a while. Delighted with UIST in general and specifically with conversations Mark, John, and I had with Michael and one of his students, we invited them to <a href="http://uds.ubuntu.com/">UDS in Orlando</a> at the end of October.</div><div><br /></div><div>Coming from an academic institution (and <a href="http://hci.uwaterloo.ca/">an HCI lab</a> in particular), Micheal had some questions about UDS, how to prepare, and the ways in which it might be different from various academic conferences. I asked him if it would be alright to share our conversation with the wider open source, academic, and professional communities, many of whose members will be attending UDS in Orlando for the first time. He was only too glad our conversation might benefit others :-) </div><div><br /></div><div>I've edited the content slightly for a blog format (and for improved clarity), but it remains in essence unchanged:</div><div><br /></div><div><b>Q</b>: <i>Since we're all kind of new to UDS, could we pick your brain a bit? :-) As we plan for attending, we're trying to envision how to best use UDS.</i></div><div><br /></div><div><b>A</b>: UDS is very practical in spirit, so it's actually fairly straight-forward to make good use of it. The purpose of attendees is to:<br /><br /><ol><li>Engage with developers, community members, users, etc., on well-defined topics for software in Ubuntu, the software that builds Ubuntu, Ubuntu itself, the community, or the prominent tools and technologies that are build on Ubuntu.</li><li>Assemble and execute. After each discussion, each topic should have enough information and feedback such that the direction forward in any given project is clear. Next steps can be taken immediately (whether that's actual development, coordination, etc.).</li></ol>The enormous amount of discussion that takes place there is recorded (some sessions with video, all with shared notes), so very often folks formalize this information as a spec.<br /><br />For a list of the wide range of categories covered at UDS, check out this page (still in progress): <a href="http://uds.ubuntu.com/tracks/">http://uds.ubuntu.com/tracks/</a></div><div><br />To give you more of a sense of things:<br /><ul><li>There are lots of rooms, each with two projected screens: an IRC channel for that physical room, and a network-shared communal notes screen.</li><li>Sessions are about 50 minutes long, with breaks every few sessions.</li><li>Large monitors are placed in the halls with the schedule for the day displayed, so that folks can more easily find the sessions/rooms they want to be in.</li><li>There are topical plenaries for two hours after lunch that take place in a auditorium so that all who want to attend, can.</li></ul>In other words, it's very active :-) Lots of moving about. Lots of intense discussion in short sessions.<br /><br /></div><div><b>Q</b>: <i>What is an ideal outcome from your perspective (and from our perspective)?</i><br /></div><div><br /></div><div><b>A</b>: The ideal outcome is consensus on the discussed topics, unblocking all involved, and moving forward with a shared vision.<br /></div><div><br /></div><div><b>Q</b>: <i>What kind of work or goals do we want to accomplish while we're there? </i><br /></div><div><br /></div><div><b>A</b>: In general, you want to attend the sessions that are meaningful to you, share your views during the discussion, and hopefully convince those present of the necessity of what you envision :-) If your vision needs adjustment, then UDS is the perfect place to get it tweaked and reach a mutual agreement with community members about a form suitable for an action plan.<br /></div><div><br /></div><div><b>Q</b>: <i>You just saw us in our "native" environment -- an academic conference; how is qualitatively different from such conferences? </i><br /></div><div><br /></div><div><b>A</b>: Yes, that sort of scenario is a prototypical academic environment: disseminating of memes for processing and adoption in a particular field. The essence of that exists in the open source world: meme's are very important to us, but often implicit in nature; they arise as generalizations of practical experiences with implementation. However, they are only the first step (or a supporting factor for other steps). </div><div><br /></div><div>The <i>primary</i> focus of the attendees at UDS is pragmatic: "Let's do X." As such, UDS attendees partake in a meme-disseminating event, the object of which is to generate project plans, task lists, direction changes, etc., within each given project (be it software, governance, or others).<br /><br /></div><div><b>Q</b>: <i>Any ideas/guidance on how to think about and plan for UDS?</i></div><div><br /></div><div><b>A</b>: Hopefully what I wrote above should give you enough of an intuitive feel for the environment that you'll have a good idea of what you can do... but just in case, I'd focus on doing the obvious, like putting together notes/supporting material for the sessions that you are interested in. In addition, though, you want to spend some time thinking about how to engage session attendees such that they are motivated to attend the session(s) and speak up while attending.<br /><br /></div><div>Well, that's all there is to this Q &amp; A. I hope folks new to UDS will find this conversation useful. </div><div><br /></div><div>We look forward to seeing Micheal and the rest of you at UDS!</div><div><br /></div>
+<div><br />Last week I had a nice email exchange with a good friend of Ubuntu,
+Professor <a href="http://hci.uwaterloo.ca/faculty/mterry/">Michael Terry</a>
+at the <a href="http://uwaterloo.ca/">University of Waterloo</a>. We met at <a
+href="http://www.acm.org/uist/uist2010/">UIST 2010</a>, but he and <a
+href="http://www.ivankamajic.com/">Ivanka Majic</a> have been conferring about
+design and usability in Ubuntu for a while. Delighted with UIST in general and
+specifically with conversations Mark, John, and I had with Michael and one of
+his students, we invited them to <a href="http://uds.ubuntu.com/">UDS in
+Orlando</a> at the end of October.</div><div><br /></div><div>Coming from an
+academic institution (and <a href="http://hci.uwaterloo.ca/">an HCI lab</a> in
+particular), Micheal had some questions about UDS, how to prepare, and the
+ways in which it might be different from various academic conferences. I asked
+him if it would be alright to share our conversation with the wider open
+source, academic, and professional communities, many of whose members will be
+attending UDS in Orlando for the first time. He was only too glad our
+conversation might benefit others :-) </div><div><br /></div><div>I've edited
+the content slightly for a blog format (and for improved clarity), but it
+remains in essence unchanged:</div><div><br /></div><div><b>Q</b>: <i>Since
+we're all kind of new to UDS, could we pick your brain a bit? :-) As we plan
+for attending, we're trying to envision how to best use UDS.</i></div><div><br
+/></div><div><b>A</b>: UDS is very practical in spirit, so it's actually
+fairly straight-forward to make good use of it. The purpose of attendees is
+to:<br /><br /><ol><li>Engage with developers, community members, users, etc.,
+on well-defined topics for software in Ubuntu, the software that builds
+Ubuntu, Ubuntu itself, the community, or the prominent tools and technologies
+that are build on Ubuntu.</li><li>Assemble and execute. After each discussion,
+each topic should have enough information and feedback such that the direction
+forward in any given project is clear. Next steps can be taken immediately
+(whether that's actual development, coordination, etc.).</li></ol>The enormous
+amount of discussion that takes place there is recorded (some sessions with
+video, all with shared notes), so very often folks formalize this information
+as a spec.<br /><br />For a list of the wide range of categories covered at
+UDS, check out this page (still in progress): <a
+href="http://uds.ubuntu.com/tracks/">http://uds.ubuntu.com/tracks/</a></div><d
+iv><br />To give you more of a sense of things:<br /><ul><li>There are lots of
+rooms, each with two projected screens: an IRC channel for that physical room,
+and a network-shared communal notes screen.</li><li>Sessions are about 50
+minutes long, with breaks every few sessions.</li><li>Large monitors are
+placed in the halls with the schedule for the day displayed, so that folks can
+more easily find the sessions/rooms they want to be in.</li><li>There are
+topical plenaries for two hours after lunch that take place in a auditorium so
+that all who want to attend, can.</li></ul>In other words, it's very active
+:-) Lots of moving about. Lots of intense discussion in short sessions.<br
+/><br /></div><div><b>Q</b>: <i>What is an ideal outcome from your perspective
+(and from our perspective)?</i><br /></div><div><br /></div><div><b>A</b>: The
+ideal outcome is consensus on the discussed topics, unblocking all involved,
+and moving forward with a shared vision.<br /></div><div><br
+/></div><div><b>Q</b>: <i>What kind of work or goals do we want to accomplish
+while we're there? </i><br /></div><div><br /></div><div><b>A</b>: In general,
+you want to attend the sessions that are meaningful to you, share your views
+during the discussion, and hopefully convince those present of the necessity
+of what you envision :-) If your vision needs adjustment, then UDS is the
+perfect place to get it tweaked and reach a mutual agreement with community
+members about a form suitable for an action plan.<br /></div><div><br
+/></div><div><b>Q</b>: <i>You just saw us in our "native" environment -- an
+academic conference; how is qualitatively different from such conferences?
+</i><br /></div><div><br /></div><div><b>A</b>: Yes, that sort of scenario is
+a prototypical academic environment: disseminating of memes for processing and
+adoption in a particular field. The essence of that exists in the open source
+world: meme's are very important to us, but often implicit in nature; they
+arise as generalizations of practical experiences with implementation.
+However, they are only the first step (or a supporting factor for other
+steps). </div><div><br /></div><div>The <i>primary</i> focus of the attendees
+at UDS is pragmatic: "Let's do X." As such, UDS attendees partake in a
+meme-disseminating event, the object of which is to generate project plans,
+task lists, direction changes, etc., within each given project (be it
+software, governance, or others).<br /><br /></div><div><b>Q</b>: <i>Any
+ideas/guidance on how to think about and plan for UDS?</i></div><div><br
+/></div><div><b>A</b>: Hopefully what I wrote above should give you enough of
+an intuitive feel for the environment that you'll have a good idea of what you
+can do... but just in case, I'd focus on doing the obvious, like putting
+together notes/supporting material for the sessions that you are interested
+in. In addition, though, you want to spend some time thinking about how to
+engage session attendees such that they are motivated to attend the session(s)
+and speak up while attending.<br /><br /></div><div>Well, that's all there is
+to this Q &amp; A. I hope folks new to UDS will find this conversation useful.
+</div><div><br /></div><div>We look forward to seeing Micheal and the rest of
+you at UDS!</div><div><br /></div>

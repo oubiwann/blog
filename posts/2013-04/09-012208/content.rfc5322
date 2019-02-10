@@ -11,4 +11,89 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEU/WQTM0-l_MxA/s1600/Lambda.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEU/WQTM0-l_MxA/s1600/Lambda.png" height="200" width="200" /></a></div>Over this past weekend I took a lovely journey into the heart of the lambda calculus, and it was quite amazing. My explorations were made within the context of <a href="https://github.com/rvirding/lfe/">LFE</a>. Needless to say, this was a romp of pure delight. In fact, it was <i>so</i> much fun and helped to clarify for me so many nooks and crannies of something that I had simply not explored very thoroughly in the past, that I <i>had</i> to share :-)<br /><br />The work done over the past few days is on its way to becoming part of the <a href="http://lfe.github.io/">documentation for LFE</a>. However, this is also an excellent opportunity to share some clarity with a wider audience. As such, I will be writing a series of blog posts on λ-calculus from a very hands-on (almost practical!) perspective. There will be some overlap with the LFE documentation, but the medium is different and as such, the delivery will vary (sometimes considerably).<br /><br />This series of posts will cover the following topics:<br /><ol><li>A Brief History</li><li><a href="http://technicae.cogitat.io/2013/04/the-lambda-calculus-quick-primer.html">A Quick Primer for λ-Calculus</a></li><li>Reduction Explained</li><li>Church Numerals</li><li>Arithmetic</li><li>Logic</li><li>Pairs and Lists</li><li>Combinators</li></ol>The point of these posts is not to expound upon that which has already been written about endlessly. Rather, the hope is to give a very clear demonstration of what the lambda calculus <i>really</i> is, and to do so with clear examples and concise prose. When the gentle reader is able see the lambda calculus in action, with lines of code that clearly show what is occurring, the mystery will disappear and an intuition for the subject matter will quite naturally begin to arise. This post is the first in the series; I hope you enjoy them as much as I did rediscovering λ-calculus :-)<br /><br />Let us start at the beginning... <br /><br /><b>A Brief History</b><br /><br />The roots of functional programming languages such as Lisp, ML, Erlang, Haskell and others, can be traced to the concept of recursion in general and λ-calculus in particular. In previous posts, I touched upon <a href="http://technicae.cogitat.io/2012/12/the-secret-history-of-lambda.html">how we ended up with the lambda</a> as a symbol for the anonymous function as well as <a href="http://technicae.cogitat.io/2013/04/maths-and-programming-whence-recursion.html">how recursion came to be a going concern</a> in modern mathematics and then computer science.<br /><br />In both of those posts we saw <a href="http://en.wikipedia.org/wiki/Alonzo_Church">Alonzo Church</a> play a major role, but we didn't really spend time on what is quite probably considered his greatest contribution to computer science, if not mathematics itself: λ-calculus. Keep in mind that the <a href="http://en.wikipedia.org/wiki/Peano_axioms">Peano axioms</a> made use of recursion, that <a href="http://en.wikipedia.org/wiki/Giuseppe_Peano">Giuseppe Peano</a> played a key role in <a href="http://en.wikipedia.org/wiki/Bertrand_Russell">Bertrand Russell</a>’s development of the <a href="http://en.wikipedia.org/wiki/Principia_Mathematica">Principia</a>, that Alonzo Church sought to make improvements on the Principia, and λ-calculus eventually arose from these efforts.<br /><br />Invented in 1928, Alonzo didn't publish λ-calculus until 1932. When an inconsistency was discovered, he revised it in 1933 and republished. Furthermore, in this second paper, Church introduced a means of representing positive integers using lambda notation, now known as Church numerals. With Church and Turing both publishing papers on computability in 1936 (based respectively upon λ-calculus and the concept of <a href="http://en.wikipedia.org/wiki/Turing_machine">Turing machines</a>), they proposed solutions to the <a href="http://en.wikipedia.org/wiki/Entscheidungsproblem">Entscheidungsproblem</a>. Though <a href="http://en.wikipedia.org/wiki/Kurt_G%C3%B6del">Gödel</a> preferred Turing's approach, <a href="http://en.wikipedia.org/wiki/J._Barkley_Rosser">Rosser</a> suggested that they were equivalent definitions in 1939. A few years later, <a href="http://en.wikipedia.org/wiki/Stephen_Cole_Kleene">Kleene</a> proposed the <a href="http://en.wikipedia.org/wiki/Church%27s_thesis_%28constructive_mathematics%29">Church Thesis</a> (1943) and then later formally demonstrated the equivalence between his teacher's and Turing's approaches giving the combination the name of the <a href="http://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis">Church-Turing Thesis</a> (1952, in his <u>Introduction to Metamathematics</u>). Within eight years, <a href="http://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29">John McCarthy</a> published his now-famous paper describing the work that he had started in 1958: "Recursive Functions of Symbolic Expressions and Their Computation by Machine". In this paper, McCarthy outlined his new programming language Lisp, citing Church's 77-page book&nbsp; (1941, <u>Calculi of Lambda Conversion</u>), sending the world off in a whole new direction.<br /><br />Since that time, there has been on-going research into λ-calculus. Indisputably, λ-calculus has had a tremendous impact on research into computability as well as the practical applications of programming languages. As programmers and software engineers, we feel its impact -- directly and indirectly -- on a regular, almost daily basis.<br /><br /><br />
+<div class="separator" style="clear: both; text-align: center;"><a
+href="http://2.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEU/WQTM0-l_Mx
+A/s1600/Lambda.png" imageanchor="1" style="clear: left; float: left;
+margin-bottom: 1em; margin-right: 1em;"><img border="0"
+src="http://2.bp.blogspot.com/-6VOclHLsn8U/UWMiLE5aa0I/AAAAAAAAAEU/WQTM0-l_MxA
+/s1600/Lambda.png" height="200" width="200" /></a></div>Over this past weekend
+I took a lovely journey into the heart of the lambda calculus, and it was
+quite amazing. My explorations were made within the context of <a
+href="https://github.com/rvirding/lfe/">LFE</a>. Needless to say, this was a
+romp of pure delight. In fact, it was <i>so</i> much fun and helped to clarify
+for me so many nooks and crannies of something that I had simply not explored
+very thoroughly in the past, that I <i>had</i> to share :-)<br /><br />The
+work done over the past few days is on its way to becoming part of the <a
+href="http://lfe.github.io/">documentation for LFE</a>. However, this is also
+an excellent opportunity to share some clarity with a wider audience. As such,
+I will be writing a series of blog posts on λ-calculus from a very hands-on
+(almost practical!) perspective. There will be some overlap with the LFE
+documentation, but the medium is different and as such, the delivery will vary
+(sometimes considerably).<br /><br />This series of posts will cover the
+following topics:<br /><ol><li>A Brief History</li><li><a
+href="http://technicae.cogitat.io/2013/04/the-lambda-calculus-quick-primer.htm
+l">A Quick Primer for λ-Calculus</a></li><li>Reduction
+Explained</li><li>Church Numerals</li><li>Arithmetic</li><li>Logic</li><li>Pai
+rs and Lists</li><li>Combinators</li></ol>The point of these posts is not to
+expound upon that which has already been written about endlessly. Rather, the
+hope is to give a very clear demonstration of what the lambda calculus
+<i>really</i> is, and to do so with clear examples and concise prose. When the
+gentle reader is able see the lambda calculus in action, with lines of code
+that clearly show what is occurring, the mystery will disappear and an
+intuition for the subject matter will quite naturally begin to arise. This
+post is the first in the series; I hope you enjoy them as much as I did
+rediscovering λ-calculus :-)<br /><br />Let us start at the beginning... <br
+/><br /><b>A Brief History</b><br /><br />The roots of functional programming
+languages such as Lisp, ML, Erlang, Haskell and others, can be traced to the
+concept of recursion in general and λ-calculus in particular. In previous
+posts, I touched upon <a
+href="http://technicae.cogitat.io/2012/12/the-secret-history-of-lambda.html">h
+ow we ended up with the lambda</a> as a symbol for the anonymous function as
+well as <a
+href="http://technicae.cogitat.io/2013/04/maths-and-programming-whence-recursi
+on.html">how recursion came to be a going concern</a> in modern mathematics
+and then computer science.<br /><br />In both of those posts we saw <a
+href="http://en.wikipedia.org/wiki/Alonzo_Church">Alonzo Church</a> play a
+major role, but we didn't really spend time on what is quite probably
+considered his greatest contribution to computer science, if not mathematics
+itself: λ-calculus. Keep in mind that the <a
+href="http://en.wikipedia.org/wiki/Peano_axioms">Peano axioms</a> made use of
+recursion, that <a href="http://en.wikipedia.org/wiki/Giuseppe_Peano">Giuseppe
+Peano</a> played a key role in <a
+href="http://en.wikipedia.org/wiki/Bertrand_Russell">Bertrand Russell</a>’s
+development of the <a
+href="http://en.wikipedia.org/wiki/Principia_Mathematica">Principia</a>, that
+Alonzo Church sought to make improvements on the Principia, and λ-calculus
+eventually arose from these efforts.<br /><br />Invented in 1928, Alonzo
+didn't publish λ-calculus until 1932. When an inconsistency was discovered, he
+revised it in 1933 and republished. Furthermore, in this second paper, Church
+introduced a means of representing positive integers using lambda notation,
+now known as Church numerals. With Church and Turing both publishing papers on
+computability in 1936 (based respectively upon λ-calculus and the concept of
+<a href="http://en.wikipedia.org/wiki/Turing_machine">Turing machines</a>),
+they proposed solutions to the <a
+href="http://en.wikipedia.org/wiki/Entscheidungsproblem">Entscheidungsproblem<
+/a>. Though <a href="http://en.wikipedia.org/wiki/Kurt_G%C3%B6del">Gödel</a>
+preferred Turing's approach, <a
+href="http://en.wikipedia.org/wiki/J._Barkley_Rosser">Rosser</a> suggested
+that they were equivalent definitions in 1939. A few years later, <a
+href="http://en.wikipedia.org/wiki/Stephen_Cole_Kleene">Kleene</a> proposed
+the <a
+href="http://en.wikipedia.org/wiki/Church%27s_thesis_%28constructive_mathemati
+cs%29">Church Thesis</a> (1943) and then later formally demonstrated the
+equivalence between his teacher's and Turing's approaches giving the
+combination the name of the <a
+href="http://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis">Church-Turing
+Thesis</a> (1952, in his <u>Introduction to Metamathematics</u>). Within eight
+years, <a
+href="http://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29">Joh
+n McCarthy</a> published his now-famous paper describing the work that he had
+started in 1958: "Recursive Functions of Symbolic Expressions and Their
+Computation by Machine". In this paper, McCarthy outlined his new programming
+language Lisp, citing Church's 77-page book&nbsp; (1941, <u>Calculi of Lambda
+Conversion</u>), sending the world off in a whole new direction.<br /><br
+/>Since that time, there has been on-going research into λ-calculus.
+Indisputably, λ-calculus has had a tremendous impact on research into
+computability as well as the practical applications of programming languages.
+As programmers and software engineers, we feel its impact -- directly and
+indirectly -- on a regular, almost daily basis.<br /><br /><br />

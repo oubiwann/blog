@@ -11,4 +11,15 @@ Comments:
 Content-Type: md
 Public?: true
 
-<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">open :: business</i><br/><br/><p/><br />The new site is coming along (http://openbusinessfoundation.org). I am still running it under the old Interchange version, the one without forums. I'll need to upgrade, add forums (heavily modified - I'll use the code I developed for PBS), and then add the story publishing capability.<br /><p/><br />I have the links up, and the history (via correspondance) up. All the pages have been set with the new template, so things shouldn't look too broken.<br /><p/><br />The one problem I have been having with the story publishing code has been the IC concept of templates and components. I will need to dynamically populate the story template with components in order for this to work. I don't know if this is possible.<br /></div>
+<div xmlns="http://www.w3.org/1999/xhtml"><i class="categories">open ::
+business</i><br/><br/><p/><br />The new site is coming along
+(http://openbusinessfoundation.org). I am still running it under the old
+Interchange version, the one without forums. I'll need to upgrade, add forums
+(heavily modified - I'll use the code I developed for PBS), and then add the
+story publishing capability.<br /><p/><br />I have the links up, and the
+history (via correspondance) up. All the pages have been set with the new
+template, so things shouldn't look too broken.<br /><p/><br />The one problem
+I have been having with the story publishing code has been the IC concept of
+templates and components. I will need to dynamically populate the story
+template with components in order for this to work. I don't know if this is
+possible.<br /></div>
