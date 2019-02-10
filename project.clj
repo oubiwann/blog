@@ -22,34 +22,38 @@
   :exclusions [
     [com.cognitect/transit-clj]
     [com.fasterxml.jackson.core/jackson-core]
+    [mvxcvi/puget]
     [org.clojure/clojure]
     [org.clojure/clojurescript]
     [org.clojure/core.async]
+    [org.clojure/data.xml]
     [org.clojure/tools.analyzer.jvm]
+    [org.clojure/tools.reader]
     [org.slf4j/slf4j-nop]]
   :dependencies [
+    ;; Jarfile Collision Fixes
+    [com.fasterxml.jackson.core/jackson-core "2.9.8"]
+    [mvxcvi/puget "1.1.0"]
+    [org.clojure/tools.analyzer.jvm "0.7.2"]
+    [org.clojure/tools.reader "1.3.2"]
+    ;; Actual Dependencies
     [ch.qos.logback/logback-classic "1.2.3"]
-    [clojusc/rfc5322 "0.4.0"]
+    [clj-wrap-indent "1.0.0"]
+    [clojusc/rfc5322 "0.5.0"]
     [clojusc/system-manager "0.3.0"]
     [clojusc/trifl "0.4.2"]
     [clojusc/twig "0.4.1"]
     [com.cognitect/transit-clj "0.8.313"]
-    ;; XXX Remove the following once the next dragon snapshot is pushed to Clojars
-    [com.datomic/clj-client "0.8.606"]
-    [com.fasterxml.jackson.core/jackson-core "2.9.8"]
-    [com.taoensso/carmine "2.19.1"]
-    ;; XXX END
     [com.stuartsierra/component "0.4.0"]
-    [dragon "0.6.0-SNAPSHOT"]
+    [dragon "1.0.0-SNAPSHOT"]
     [markdown-clj "1.0.7"]
     [org.clojure/clojure "1.10.0"]
     [org.clojure/core.async "0.4.490"]
     [org.clojure/data.generators "0.1.2"]
-    [org.clojure/data.xml "0.0.8"]
+    [org.clojure/data.xml "0.2.0-alpha6"]
     [org.clojure/math.combinatorics "0.1.4"]
-    [org.clojure/tools.analyzer.jvm "0.7.2"]
     [ring/ring-core "1.7.1"]
-    [selmer "1.12.5"]
+    [selmer "1.12.6"]
     [stasis "2.4.0"]]
   :source-paths ["src"]
   :profiles {
@@ -89,7 +93,6 @@
       :resource-paths ["posts"]
       :exclusions [
         clj-http
-        clojusc/cljs-tools
         common-codec
         commons-logging
         joda-time
@@ -104,11 +107,11 @@
         [commons-codec "1.11"]
         [commons-logging "1.2"]
         [joda-time "2.10.1"]
-        [org.apache.maven.wagon/wagon-http "3.3.1"]
+        [org.apache.maven.wagon/wagon-http "3.3.2"]
         [org.clojure/data.json "0.2.6"]
         [twitter-api "1.8.0"]]}}
   :aliases {
-    "ubercompile" ["with-profile" "+ubercompile" "compile"]
+    "ubercompile" ["with-profile" "+ubercompile,+cli" "compile"]
     "check-vers" ["with-profile" "+test" "ancient" "check" ":all"]
     "check-jars" ["with-profile" "+test" "do"
       ["deps" ":tree"]
@@ -150,8 +153,8 @@
     "build"
       ^{:doc "Perform build tasks for CI/CD & releases\n\nAdditional aliases:"}
       ["with-profile" "+test,+cli" "do"
-        ;["check-deps"]
-        ;["lint"]
+        ["check-vers"]
+        ["lint"]
         ["test"]
         ["compile"]
         ["uberjar"]]})

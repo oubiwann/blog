@@ -5,5 +5,5 @@
    :paths {
      :output "blog"}
    :logging {
-     :level :trace
-     :nss [clojusc dragon oubiwann]}}
+     :level :debug
+     :nss [clojusc dragon oubiwann rfc5322]}}

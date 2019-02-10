@@ -1,10 +1,11 @@
 (ns oubiwann.blog.email.delivery
-  (:require [clojure.java.io :as io]
-            [oubiwann.blog.email.content :as email-content]
-            [oubiwann.blog.util :as util]
-            [postal.core :as postal]
-            [taoensso.timbre :as log]
-            [trifl.fs :as fs]))
+  (:require
+    [clojure.java.io :as io]
+    [oubiwann.blog.email.content :as email-content]
+    [oubiwann.blog.util :as util]
+    [postal.core :as postal]
+    [taoensso.timbre :as log]
+    [trifl.fs :as fs]))
 
 (def to "oubiwann :: blog | New Post Announcements <oubiwann-blog-new-posts@googlegroups.com>")
 (def from "oubiwann :: blog | Updates <oubiwann-blog-updates@googlegroups.com>")

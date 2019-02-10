@@ -13,7 +13,7 @@
   []
   (let [version (sys-prop "blog.version")
         build (util/get-build)]
-    (format "FRMX Blog version %s, build %s\n" version build)))
+    (format "oubiwann | blog: version %s, build %s\n" version build)))
 
 (defn generate
   [system]

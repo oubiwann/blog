@@ -16,15 +16,23 @@
     [clojusc.blogger.xml.parser.export :as blogger]
     [clojusc.system-manager.core :refer :all]
     [clojusc.twig :as logger]
+    [dragon.blog.content.core :as content]
     [dragon.blog.core :as blog]
     [dragon.blog.generator :as gen]
     [dragon.blog.post.core :as post]
+    [dragon.blog.post.util :as post-util]
+    [dragon.components.config :as config]
+    [dragon.components.db :as db-component]
+    [dragon.data.sources.impl.redis :refer [schema]]
     [dragon.config :as dragon-config]
+    [dragon.core :as dragon-core]
+    [dragon.data.sources.core :as db]
     [dragon.util :as util]
     [expound.alpha :as expound]
     [inspectable.repl :refer [why browse-spec]]
     [oubiwann.blog.cli.core :as cli]
     [oubiwann.blog.components.core]
+    [oubiwann.blog.config :as config-lib]
     [oubiwann.blog.core :as core]
     [oubiwann.blog.email.content :as email-content]
     [oubiwann.blog.email.delivery :as email-delivery]
@@ -38,6 +46,8 @@
     [oubiwann.blog.util :as ob-util]
     [oubiwann.blog.web.content.data :as data]
     [oubiwann.blog.web.content.page :as page]
+    [rfc5322.core :as rfc5322]
+    [rfc5322.parser :as rfc5322-parser]
     [selmer.parser :as selmer]
     [taoensso.timbre :as log]
     [trifl.fs :as fs]
@@ -88,3 +98,12 @@
 ;                  (post/add-post-data)
 ;                  :text))
 ;        (pprint)))
+
+(defn redis
+  "Usage:
+
+  (redis :get
+         (:metadata
+          (schema \"./posts/2017-03/04-201918/content.rfc5322\")))"
+  [& args]
+  (apply db-component/cmd (concat [(system)] args)))

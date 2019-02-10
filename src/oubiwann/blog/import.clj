@@ -1,5 +1,6 @@
 (ns oubiwann.blog.import
   (:require
+    [clj-wrap-indent.core :as wrap]
     [clojure.java.io :as io]
     [clojure.string :as string]
     [clojusc.blogger.xml.parser.export :as blogger]
@@ -52,7 +53,7 @@
 (defn write-post
   [post-data]
   (let [filedata (str (dragon-headers post-data)
-                      (:content post-data))
+                      (wrap/wrap-indent (:content post-data) 78 0))
         filename (format "posts/%s/content.rfc5322" (date-dirs post-data))]
     (log/tracef "Writing file data:\n%s\n ..." filedata)
     (log/debug "Wrote post file:" filename)

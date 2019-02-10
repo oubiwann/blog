@@ -1,11 +1,12 @@
 (ns oubiwann.blog.cli.share
-  (:require [clojure.pprint :refer [pprint]]
-            [clojusc.twig :as logger]
-            [dragon.util :as util]
-            [oubiwann.blog.email.delivery :as email-delivery]
-            [oubiwann.blog.social.twitter :as twitter]
-            [taoensso.timbre :as log]
-            [trifl.docs :as docs]))
+  (:require
+    [clojure.pprint :refer [pprint]]
+    [clojusc.twig :as logger]
+    [dragon.util :as util]
+    [oubiwann.blog.email.delivery :as email-delivery]
+    [oubiwann.blog.social.twitter :as twitter]
+    [taoensso.timbre :as log]
+    [trifl.docs :as docs]))
 
 (defn run
   "

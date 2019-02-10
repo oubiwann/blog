@@ -1,11 +1,12 @@
 (ns oubiwann.blog.email.content
-  (:require [clojure.java.io :as io]
-            [clojusc.twig :refer [pprint]]
-            [dragon.blog.core :as blog]
-            [dragon.selmer.core :as template]
-            [oubiwann.blog.web.content.data :as data]
-            [taoensso.timbre :as log]
-            [trifl.fs :as fs]))
+  (:require
+    [clojure.java.io :as io]
+    [clojusc.twig :refer [pprint]]
+    [dragon.blog.core :as blog]
+    [dragon.selmer.core :as template]
+    [oubiwann.blog.web.content.data :as data]
+    [taoensso.timbre :as log]
+    [trifl.fs :as fs]))
 
 (def new-post-file "new-post.html")
 
