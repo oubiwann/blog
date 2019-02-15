@@ -3,10 +3,18 @@
     [clojure.java.io :as io]
     [clojure.string :as string]
     [dragon.blog.content.core :as content]
+    [dragon.util :as util]
     [taoensso.timbre :as log]
+    [trifl.core :refer [sys-prop]]
     [trifl.fs :as fs])
   (:import
     (java.io ByteArrayInputStream)))
+
+(defn version
+  []
+  (let [version (sys-prop "blog.version")
+        build (util/get-build)]
+    (format "oubiwann | blog: version %s, build %s\n" version build)))
 
 (defn zip
   [& colls]
