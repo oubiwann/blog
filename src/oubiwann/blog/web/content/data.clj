@@ -163,6 +163,15 @@
                           (markdown-page)
                           (assoc :title "Content License")))))
 
+(defn code-highlight
+  [system]
+  (-> system
+      common
+      (assoc-in [:page-data :active] "design")
+      (assoc :content (-> "design/code-samples.md"
+                          (markdown-page)
+                          (assoc :title "Code Highlight Samples")))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Dynamic Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

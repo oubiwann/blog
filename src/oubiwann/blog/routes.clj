@@ -26,7 +26,8 @@
       {"/blog/about/index.html" (page/about system)
        "/blog/about/contact/index.html" (page/contact system)
        "/blog/about/powered-by/index.html" (page/powered-by system)
-       "/blog/about/license/index.html" (page/license system)})))
+       "/blog/about/license/index.html" (page/license system)
+       "/blog/design/code-highlight-samples.html" (page/code-highlight system)})))
 
 (defn design-routes
   [system posts routes]
