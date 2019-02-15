@@ -27,6 +27,7 @@
     [dragon.config :as dragon-config]
     [dragon.core :as dragon-core]
     [dragon.data.sources.core :as db]
+    [dragon.data.sources.impl.redis :as redis-db]
     [dragon.util :as util]
     [expound.alpha :as expound]
     [inspectable.repl :refer [why browse-spec]]
@@ -68,7 +69,7 @@
   This is defined in a function for re-use. For instance, when a REPL is
   reloaded, the options will be lost and need to be re-applied."
   []
-  (logger/set-level! '[oubiwann.blog dragon] :debug)
+  (logger/set-level! '[clojusc dragon oubiwann rfc5322] :debug)
   (setup-manager setup-options))
 
 (defn init-and-startup
@@ -107,3 +108,7 @@
           (schema \"./posts/2017-03/04-201918/content.rfc5322\")))"
   [& args]
   (apply db-component/cmd (concat [(system)] args)))
+
+(defn bust-post-cache
+  []
+  (blog/reset-content-checksums (system)))

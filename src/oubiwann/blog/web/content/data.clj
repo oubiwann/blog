@@ -1,11 +1,15 @@
 (ns oubiwann.blog.web.content.data
-  (:require [clojure.java.io :as io]
-            [clojure.string :as string]
-            [dragon.blog.core :as blog]
-            [dragon.blog.tags :as tags]
-            [dragon.components.config :as config]
-            [markdown.core :as markdown]
-            [taoensso.timbre :as log]))
+  (:require
+    [clojure.java.io :as io]
+    [clojure.string :as string]
+    [dragon.blog.core :as blog]
+    [dragon.blog.tags :as tags]
+    [dragon.data.sources.core :as db]
+    [dragon.components.config :as config]
+    [dragon.components.db :as db-component]
+    [markdown.core :as markdown]
+    [oubiwann.blog.util :as util]
+    [taoensso.timbre :as log]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Helper Functions & Data Helpers   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -88,9 +92,10 @@
 (defn base
   [system]
   {:page-data {
-     :base-path "/blog"
+     :base-path (config/base-path system)
      :site-title (config/name system)
      :site-description (config/description system)
+     :site-generator (util/version)
      :index "index"
      :about "about"
      :archives "archives"
@@ -100,12 +105,9 @@
      :active nil}})
 
 (defn common
-  ([system]
-    (common {}))
-  ([system posts]
-    (assoc (base system)
-           :posts-data posts
-           :posts-stats (posts-stats posts))))
+  [system]
+  (assoc (base system)
+         :blog-stats (db/get-all-stats (db-component/db-querier system))))
 
 (def generic-page
   {:title nil
@@ -126,36 +128,36 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn about
-  [system posts]
+  [system]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "about")
       (assoc :content (-> "about.md"
                           (markdown-page)
                           (assoc :title "About")))))
 
 (defn contact
-  [system posts]
+  [system]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "about")
       (assoc :content (-> "contact.md"
                           (markdown-page)
                           (assoc :title "Contact Us")))))
 
 (defn powered-by
-  [system posts]
+  [system]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "about")
       (assoc :content (-> "powered-by.md"
                           (markdown-page)
                           (assoc :title "Powered By")))))
 
 (defn license
-  [system posts]
+  [system]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "about")
       (assoc :content (-> "license.md"
                           (markdown-page)
@@ -168,7 +170,7 @@
 (defn post
   [system posts post-data]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "archives")
       (assoc :post-data post-data
              :blocks (get-blocks post-data)
@@ -205,7 +207,7 @@
 (defn archives
   [system posts]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "archives")
       (assoc :content (assoc generic-page :title "Archives")
              :posts-data (blog/group-data :archives posts))))
@@ -213,7 +215,7 @@
 (defn categories
   [system posts]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "categories")
       (assoc :content (assoc generic-page :title "Categories")
              :posts-data (blog/group-data :categories posts))))
@@ -221,7 +223,7 @@
 (defn tags
   [system posts]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "tags")
       (assoc :content (assoc generic-page :title "Tags")
              :posts-data (blog/group-data :tags posts))))
@@ -229,7 +231,7 @@
 (defn authors
   [system posts]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "authors")
       (assoc :content (assoc generic-page :title "Authors")
              :posts-data (blog/group-data :authors posts))))
@@ -241,6 +243,6 @@
 (defn design
   [system posts]
   (-> system
-      (common posts)
+      common
       (assoc-in [:page-data :active] "design")
       (assoc :content (assoc generic-page :title "Design"))))

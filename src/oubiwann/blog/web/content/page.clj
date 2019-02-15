@@ -8,28 +8,28 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn about
-  [system posts]
+  [system]
   (template/render
     "templates/pages/generic.html"
-    (data/about system posts)))
+    (data/about system)))
 
 (defn contact
-  [system posts]
+  [system]
   (template/render
     "templates/pages/generic.html"
-    (data/contact system posts)))
+    (data/contact system)))
 
 (defn powered-by
-  [system posts]
+  [system]
   (template/render
     "templates/pages/generic.html"
-    (data/powered-by system posts)))
+    (data/powered-by system)))
 
 (defn license
-  [system posts]
+  [system]
   (template/render
     "templates/pages/generic.html"
-    (data/license system posts)))
+    (data/license system)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Dynamic Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

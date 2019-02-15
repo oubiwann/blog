@@ -18,15 +18,15 @@
             [taoensso.timbre :as log]))
 
 (defn static-routes
-  ([system posts]
-    (static-routes system posts {}))
-  ([system posts routes]
+  ([system]
+    (static-routes system {}))
+  ([system routes]
     (merge
       routes
-      {"/blog/about.html" (page/about system posts)
-       "/blog/contact.html" (page/contact system posts)
-       "/blog/powered-by.html" (page/powered-by system posts)
-       "/blog/license.html" (page/license system posts)})))
+      {"/blog/about/index.html" (page/about system)
+       "/blog/about/contact/index.html" (page/contact system)
+       "/blog/about/powered-by/index.html" (page/powered-by system)
+       "/blog/about/license/index.html" (page/license system)})))
 
 (defn design-routes
   [system posts routes]
@@ -74,15 +74,14 @@
       {route (sitemapper/gen routes)})))
 
 (defn routes
-  [system posts]
-  (log/trace "Got data:" (twig/pprint (blog/data-for-logs system posts)))
+  [system]
   (event/publish system tag/generate-routes-pre)
-  (->> (static-routes system posts)
-       (design-routes system posts)
-       (post-routes system posts)
-       (index-routes system posts)
-       (reader-routes system posts)
-       (sitemaps-routes system)
+  (->> (static-routes system)
+       ; (design-routes system posts)
+       ; (post-routes system posts)
+       ; (index-routes system posts)
+       ; (reader-routes system posts)
+       ; (sitemaps-routes system)
        (event/publish->> system tag/generate-routes-post)
        vec))
 
@@ -130,15 +129,14 @@
     "\tGenerating XML for sitemap ..."))
 
 (defn gen-routes
-  [system posts]
+  [system]
   (log/info "Generating routes ...")
-  (log/trace "Got data:" (twig/pprint (blog/data-for-logs system posts)))
   (event/publish system tag/generate-routes-pre)
-  (->> (gen-static-routes system posts)
-       (gen-design-routes system posts)
-       (gen-post-routes system posts)
-       (gen-index-routes system posts)
-       (gen-reader-routes system posts)
-       (gen-sitemaps-routes system)
+  (->> (gen-static-routes system)
+       ; (gen-design-routes system posts)
+       ; (gen-post-routes system posts)
+       ; (gen-index-routes system posts)
+       ; (gen-reader-routes system posts)
+       ; (gen-sitemaps-routes system)
        (event/publish->> system tag/generate-routes-post)
        vec))
