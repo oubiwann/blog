@@ -3,7 +3,7 @@
    :domain "oubiwann.github.io/blog"
    :port 5097
    :paths {
-     :output "blog"}
+     :output "./"}
    :logging {
      :level :debug
      :nss [clojusc dragon oubiwann rfc5322]}}
