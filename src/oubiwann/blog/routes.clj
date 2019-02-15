@@ -79,7 +79,7 @@
   (let [route "/blog/sitemap.xml"]
     (merge
       routes
-      {route (sitemapper/gen routes)})))
+      {route (sitemapper/generate routes)})))
 
 (defn all
   [system]
@@ -90,6 +90,6 @@
        ; (post-routes system)
        ; (index-routes system)
        ; (reader-routes system)
-       ; (sitemaps-routes)
+       (sitemaps-routes system)
        (event/publish->> system tag/generate-routes-post)
        vec))
