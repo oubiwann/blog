@@ -1,25 +1,12 @@
-At Forgotten Roads, our greatest passion is the adventure of riding a
-motorcyle. We like heading off into the unknown on forgotten byways and
-country roads -- tying a tarp to the bike as lean-to when it's time
-to rest, and then packing up in the dawn light for another day of sights and
-smells of less-traveled lands.
+This is a mostly technical and occasionally personal blog. Topics run a full
+if narrow gamut of topics, ranging from all sorts of howtos to random (and
+brief) philosophical musings; from long articles to microblog posts more like
+a tweet. My current focus is maths, scientific computing, distributed systems,
+and Lisp-like languages.
 
-<img src="img/about.png" alt="Forgotten Roads Logo" class="about-portrait img-responsive"></span>
+In 2003, I looked Corry Doctorow for inspiration as struggled to name my blog
+-- from his "Outboard Brain", I eventually settled on "Electric Duncan".
+However, after nearly two decades of blogging (an activity which has long,
+long since lost its original novelty), it was time for a refresh.
 
-We are not alone in this, yet there aren't many places online where
-one can read stories, take inspriation, or plan for the next such adventure.
-Forgotten Roads is for *any* type of rider who's looking for kindred spirits
-of the tarmac, gravel, and dirt. We're not an MC, but rather an *MX*; not a
-club, but a resource for the *motorcycle excursionist*.
-
-Our interests cover everything from personal adventures and stories to group
-events and rides; from lessons learned and hard-one personal experience to
-focused, pertinent product reviews. In particular, we share our discoveries of
-roads as well as friendships and aquantainces we form with random fellow
-excursionists on these forgotten roads.
-
-We wrote a blog post that talks some more about why we started up this blog;
-you can read that [here](/blog/archives/2016-09/19-221343/the-beginning-of-a-new-project.html).
-
-If you are interested in how we build this site, you can read about that
-[here](powered-by.html).
+As such, the blog title is now simply a branded form of what it is: _o|b_, "oubiwann's blog".

@@ -1,15 +1,21 @@
-### Blog Content and Email
+### Email and Comments
 
-Any and all questions about the FRMX blog may be directed to
-<a href="mailto:blog@forgotten.roads.mx">blog@forgotten.roads.mx</a>.
+Any and all questions about the *o|b* may be directed to
+<a href="mailto:oubiwann@gmail.com">oubiwann@gmail.com</a>. There are
+absolutely no guarantees that I will respond, as it could be days or more
+before I even read my emails.
 
-In particular, we like to hear from readers about what we could do better or
-what content they'd like to see published which we aren't covering.
+There is no comment functionality built into the blog itself. Once upon a
+time, that used to be a deal-breaker; now, it's just become a more peaceful
+way to live :-) That being said, since the blog is now published on Github, you are _more than welcome_ to
+[create a ticket there](https://github.com/oubiwann/blog/issues/new).
+Same "response" caveats apply, as above.
+
 
 ### Physical Mail
 
-The Forgotten Roads MX blog is published by Cowboys 'N Beans Books. If you'd
-like to send us correspondance, you may do so at the following address:
+The *o|b* is now published by Cowboys 'N Beans Books. If you'd
+like to send them correspondence, you may do so at the following address:
 
 ```
 Cowboys 'N Beans Books
