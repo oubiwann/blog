@@ -9667,6 +9667,8 @@ h3 {
 
 body {
   padding: 0;
+  padding-top: 4em;
+  padding-bottom: 70px;
   margin: 0;
 }
 
@@ -9726,15 +9728,15 @@ body {
 }
 
 #footer {
-  background-color: #444;
+  background-color: #333;
   margin: 0;
   padding: 5em;
   /*
   border-radius: 5px;
-  border: 1px solid #666;
+  border: 1px solid lighten($footer-bg-color, 10%);
   */
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #4d4d4d;
   margin-bottom: 2em;
 }
 

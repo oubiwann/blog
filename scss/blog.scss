@@ -1,5 +1,7 @@
 body {
 	padding: 0;
+	padding-top: 4em;
+	padding-bottom: 70px;
 	margin: 0;
 }
 
@@ -68,9 +70,9 @@ body {
 	padding: 5em;
 	/*
 	border-radius: 5px;
-	border: 1px solid #666;
+	border: 1px solid lighten($footer-bg-color, 10%);
 	*/
-	border-top: 1px solid $footer-border-color;
-	border-bottom: 1px solid $footer-border-color;
+	border-top: 1px solid lighten($footer-bg-color, 10%);
+	border-bottom: 1px solid lighten($footer-bg-color, 10%);
 	margin-bottom: 2em;
 }
