@@ -1,3 +1,5 @@
+<img src="/blog/img/ob.png" alt="Clojure Logo" class="about-portrait img-responsive"></span>
+
 This is a mostly technical and occasionally personal blog. Topics run a full
 if narrow gamut of topics, ranging from all sorts of howtos to random (and
 brief) philosophical musings; from long articles to microblog posts more like
