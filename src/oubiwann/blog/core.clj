@@ -16,7 +16,7 @@
 
 (defn generate
   [system]
-  (let [generated-routes (routes/gen-routes system)]
+  (let [generated-routes (routes/all system)]
     (generator/run system generated-routes)
     ; (email-content/gen system)
     ; (social-content/gen system)

@@ -97,25 +97,25 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn design
-  [system posts]
+  [system]
   (template/render
-    "templates/design/main.html"
-    (data/design system posts)))
+    "templates/design/index.html"
+    (data/design system)))
 
 (defn bootstrap-theme
-  [system posts]
+  [system]
   (template/render
     "templates/design/bootstrap-theme.html"
-    (data/design system posts)))
+    (data/design system)))
 
 (defn front-page-example
-  [system posts]
+  [system]
   (template/render
     "templates/design/front-page-example.html"
-    (data/design system posts)))
+    (data/design system)))
 
-(defn blog-example
-  [system posts]
+(defn blog-post-example
+  [system]
   (template/render
-    "templates/design/blog-example.html"
-    (data/design system posts)))
+    "templates/design/blog-post-example.html"
+    (data/design system)))

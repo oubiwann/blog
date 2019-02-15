@@ -7,39 +7,43 @@
      dynamically.
    * Since the posts have already been generated and saved to disc, their
      routes should be generated dynamically as URI path / slurp call pairs."
-  (:require [clojusc.twig :as twig]
-            [dragon.blog.core :as blog]
-            [dragon.components.config :as config]
-            [dragon.event.system.core :as event]
-            [dragon.event.tag :as tag]
-            [oubiwann.blog.reader :as reader]
-            [oubiwann.blog.sitemapper :as sitemapper]
-            [oubiwann.blog.web.content.page :as page]
-            [taoensso.timbre :as log]))
+  (:require
+    [clojusc.twig :as twig]
+    [dragon.blog.core :as blog]
+    [dragon.components.config :as config]
+    [dragon.event.system.core :as event]
+    [dragon.event.tag :as tag]
+    [oubiwann.blog.reader :as reader]
+    [oubiwann.blog.sitemapper :as sitemapper]
+    [oubiwann.blog.web.content.page :as page]
+    [taoensso.timbre :as log]))
 
 (defn static-routes
   ([system]
     (static-routes system {}))
   ([system routes]
+    (log/info "Assembling routes for 'About' section (markdown) ...")
     (merge
       routes
       {"/blog/about/index.html" (page/about system)
        "/blog/about/contact/index.html" (page/contact system)
        "/blog/about/powered-by/index.html" (page/powered-by system)
-       "/blog/about/license/index.html" (page/license system)
-       "/blog/design/code-highlight-samples.html" (page/code-highlight system)})))
+       "/blog/about/license/index.html" (page/license system)})))
 
 (defn design-routes
-  [system posts routes]
+  [system routes]
+  (log/info "Assembling routes for 'Design' section (HTML + markdown) ...")
   (merge
     routes
-    {"/blog/design/index.html" (page/design system posts)
-     "/blog/design/bootstrap-theme.html" (page/bootstrap-theme system posts)
-     "/blog/design/example-blog-home.html" (page/front-page-example system posts)
-     "/blog/design/example-blog-post.html" (page/blog-example system posts)}))
+    {"/blog/design/index.html" (page/design system)
+     "/blog/design/bootstrap-theme.html" (page/bootstrap-theme system)
+     "/blog/design/front-page-example.html" (page/front-page-example system)
+     "/blog/design/blog-post-example.html" (page/blog-post-example system)
+     "/blog/design/code-highlight-samples.html" (page/code-highlight system)}))
 
 (defn post-routes
   [system posts routes]
+  (log/info "Assembling routes for all blog posts ...")
   (merge
     routes
     (blog/get-indexed-archive-routes
@@ -49,6 +53,7 @@
 
 (defn index-routes
   [system posts routes]
+  (log/info "Assembling routes for main and listing pages ...")
   (merge
     routes
     {"/blog/index.html" (page/front-page system posts)
@@ -59,6 +64,7 @@
 
 (defn reader-routes
   [system posts routes]
+  (log/info "Assembling routes for Atom/RSS ...")
   (let [route "/blog/atom.xml"]
     (merge
       routes
@@ -69,75 +75,21 @@
 
 (defn sitemaps-routes
   [system routes]
+  (log/info "Assembling routes for sitemaps ...")
   (let [route "/blog/sitemap.xml"]
     (merge
       routes
       {route (sitemapper/gen routes)})))
 
-(defn routes
+(defn all
   [system]
   (event/publish system tag/generate-routes-pre)
-  (->> (static-routes system)
-       ; (design-routes system posts)
-       ; (post-routes system posts)
-       ; (index-routes system posts)
-       ; (reader-routes system posts)
-       ; (sitemaps-routes system)
-       (event/publish->> system tag/generate-routes-post)
-       vec))
-
-;;; Generator routes
-
-(defn gen-route
-  [func msg & args]
-  (log/info msg)
-  (apply func args))
-
-(def gen-static-routes
-  (partial
-    gen-route
-    static-routes
-    "\tGenerating pages for static pages ..."))
-
-(def gen-design-routes
-  (partial
-    gen-route
-    design-routes
-    "\tGenerating pages for design pages ..."))
-
-(def gen-post-routes
-  (partial
-    gen-route
-    post-routes
-    "\tGenerating pages for blog posts ..."))
-
-(def gen-index-routes
-  (partial
-    gen-route
-    index-routes
-    "\tGenerating pages for front page, archives, categories, etc. ..."))
-
-(def gen-reader-routes
-  (partial
-    gen-route
-    reader-routes
-    "\tGenerating XML for feeds ..."))
-
-(def gen-sitemaps-routes
-  (partial
-    gen-route
-    sitemaps-routes
-    "\tGenerating XML for sitemap ..."))
-
-(defn gen-routes
-  [system]
-  (log/info "Generating routes ...")
-  (event/publish system tag/generate-routes-pre)
-  (->> (gen-static-routes system)
-       ; (gen-design-routes system posts)
-       ; (gen-post-routes system posts)
-       ; (gen-index-routes system posts)
-       ; (gen-reader-routes system posts)
-       ; (gen-sitemaps-routes system)
+  (->> system
+       (static-routes)
+       (design-routes system)
+       ; (post-routes system)
+       ; (index-routes system)
+       ; (reader-routes system)
+       ; (sitemaps-routes)
        (event/publish->> system tag/generate-routes-post)
        vec))
