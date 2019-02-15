@@ -10,7 +10,7 @@
        ns
        "\u001B[35m]\u001B[33m =>\u001B[m "))
 
-(defproject oubiwann/blog "0.1.0-SNAPSHOT"
+(defproject oubiwann/blog "5.0.0-SNAPSHOT"
   :description "A 21st century .plan for Duncan McGreggor"
   :url "https://oubiwann.github.io/blog/"
   :scm {
