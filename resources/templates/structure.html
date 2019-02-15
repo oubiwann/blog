@@ -50,13 +50,21 @@
     {% block pre-css %}
     {% endblock %}
 
+    <!-- Webfonts Setup /-->
     <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
           rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
           rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap/Custom Styles Setup /-->
     <link rel="stylesheet" href="{{ page-data.base-path }}/assets/font-awesome/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="{{ page-data.base-path }}/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
     <link rel="stylesheet" href="{{ page-data.base-path }}/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+    <link rel="stylesheet" href="{{ page-data.base-path }}/assets/highlightjs/styles/arta.css" type="text/css">
+
+    <!-- JS Setup /-->
+    <script src="{{ page-data.base-path }}/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- Favicon Setup /-->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ page-data.base-path }}/icons/apple-touch-icon.png?v=3">
@@ -90,7 +98,7 @@
     {% block main %}
     <main id="main-content">
       {% block main-content %}
-      <div class="widewrapper main">
+      <div id="main-wrapper" class="widewrapper main">
         {% block wrapped-main-content %}
         <div class="container">
           {% block contained-main-content %}
