@@ -1,207 +1,132 @@
 {% extends "templates/structure.html" %}
 
 {% block header-content %}
-<div class="widewrapper masthead">
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
   <div class="container">
-    <a href="{{ page-data.base-path }}/" id="logo">
-    {% block content-title %}
-      <img src="{{ page-data.base-path }}/img/logo-5-long-small.png" alt="Forgotten Roads Blog">
-      {% block content-subtitle %}
-      {{subtitle}}
-      {% endblock %}
-    {% endblock %}
-    </a>
-
-    <div id="mobile-nav-toggle" class="pull-right">
-      <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
-        <i class="fa fa-bars"></i>
-      </a>
+    <div class="navbar-brand-wrapper">
+      <a href="../" class="navbar-brand">o|b</a>
     </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <nav class="pull-right tales-nav">
-      <div class="collapse navbar-collapse">
-        <ul class="nav nav-pills navbar-nav navbar-right">
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ page-data.base-path }}/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ page-data.base-path }}/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ page-data.base-path }}/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ page-data.base-path }}/tag">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ page-data.base-path }}/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="{{ page-data.base-path }}/about/">The Blog</a>
+            <a class="dropdown-item" href="{{ page-data.base-path }}/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="{{ page-data.base-path }}/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ page-data.base-path }}/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
 
-          <li class="{% ifequal page-data.active page-data.index %}active{% endifequal %}">
-            <a href="{{ page-data.base-path }}/">Home</a>
-          </li>
-          <li class="{% ifequal page-data.active page-data.archives %}active{% endifequal %}">
-            <a href="{{ page-data.base-path }}/archives/">Archives</a>
-          </li>
-          <li class="{% ifequal page-data.active page-data.categories %}active{% endifequal %}">
-            <a href="{{ page-data.base-path }}/categories/">Categories</a>
-          </li>
-          <li class="{% ifequal page-data.active page-data.tags %}active{% endifequal %}">
-            <a href="{{ page-data.base-path }}/tags/">Tags</a>
-          </li>
-          <li class="{% ifequal page-data.active page-data.authors %}active{% endifequal %}">
-            <a href="{{ page-data.base-path }}/authors/">Authors</a>
-          </li>
-          <li class="dropdown {% ifequal page-data.active page-data.about %}active{% endifequal %}">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="{{ page-data.base-path }}/about.html">About FRMX</a></li>
-              <li><a href="{{ page-data.base-path }}/contact.html">Contact Us</a></li>
-              <li><a href="{{ page-data.base-path }}/powered-by.html">Powered By</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="{{ page-data.base-path }}/license.html">Content License</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="{{ page-data.base-path }}/privacy.html">Privacy Policy</a></li>
-              <li><a href="{{ page-data.base-path }}/disclosure.html">Disclosure Policy</a></li>
-            </ul>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
-
-  </div>
-</div>
-
-<div class="widewrapper subheader">
-  <div class="container">
-    {% block breadcrumb-content %}
-    <div class="sidebar-module sidebar-module-inset">
-      <ul class="social">
-        <li>
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
           <a href="{{ page-data.base-path }}/atom.xml" alt="Atom Feed">
             <i class="fa fa-feed first"></i>
           </a>
         </li>
-        <li>
-          <a href="https://twitter.com/forgottenrdsmx" alt="Twitter">
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
             <i class="fa fa-twitter"></i>
           </a>
         </li>
-        <!-- Facebook is being a pain: repeatedly asking for me to
-             upload a picture of myself in order to login. I don't
-             need that sort of grief ... -->
-        <!-- <li>
-          <a href="https://www.facebook.com/forgottenroadsmx/" alt="Facebook">
-            <i class="fa fa-facebook"></i>
-          </a>
-        </li> -->
-        <li>
+        <li class="nav-item">
           <a href="/googleplus" alt="Google+">
             <i class="fa fa-google-plus"></i>
           </a>
         </li>
-        <li>
-          <a href="https://www.flickr.com/photos/forgottenroadsmx/" alt="Flickr">
-            <i class="fa fa-flickr"></i>
-          </a>
-        </li>
-        <li>
-          <a href="/youtube" alt="YouTube">
-            <i class="fa fa-youtube"></i>
-          </a>
-        </li>
-        <li>
-          <a href="http://github.com/forgotten-roads" alt="Github">
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
             <i class="fa fa-github"></i>
           </a>
         </li>
-
-        <li>
-          <a href="https://groups.google.com/forum/#!forum/frmx-new-posts"
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
              alt="Email Notifications">
             <i class="fa fa-envelope"></i>
           </a>
         </li>
-
       </ul>
     </div>
-    {% endblock %}
   </div>
 </div>
 {% endblock %}
 
 {% block footer-content %}
-<div class="widewrapper footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 footer-widget">
-        <h3> <i class="fa fa-wpforms"></i>Statistics</h3>
+        <div class="row">
+          <div class="col-lg-6">
 
-        <span>For the geeks that track this sort of thing
-        (just for the posts themselves, not the other content):</span>
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
 
-        <div class="stats">
-          <div class="line">
-            <span class="counter">{{ posts-stats.authors }}</span>
-            <span class="caption">Authors</span>
           </div>
-          <div class="line">
-            <span class="counter">{{ posts-stats.posts }}</span>
-            <span class="caption">Articles</span>
-          </div>
-          <div class="line">
-            <span class="counter">{{ posts-stats.lines }}</span>
-            <span class="caption">Lines</span>
-          </div>
-          <div class="line">
-            <span class="counter">{{ posts-stats.words }}</span>
-            <span class="caption">Words</span>
-          </div>
-          <div class="line">
-            <span class="counter">{{ posts-stats.chars }}</span>
-            <span class="caption">Characters</span>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
           </div>
         </div>
 
-      </div>
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
 
-      <div class="col-md-4 footer-widget">
-        <h3> <i class="fa fa-star"></i>Great Resources</h3>
-        <ul class="tales-list">
-          <li><a href="https://www.fhwa.dot.gov/byways">Scenic Byways in the US</a></li>
-          <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
-          <li><a href="https://matadornetwork.com/read/mapped-optimal-road-trip-see-us-national-parks/">Optimal Roadtrip Route for All-Lower-48 National Parks</a></li>
-          <li><a href="http://www.ironbutt.com/">Iron Butt Association</a></li>
-          <li>
-            <a href="https://www.revzilla.com/common-tread/motorcycle-camping-the-basics">RevZilla's Motorcycle Camping</a> &amp;
-            <a href="http://www.motorcyclecruiser.com/tips-for-motorcycle-camping">Cruiser's Tips for Motorcycle Camping</a>
-          </li>
-        </ul>
-      </div>
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
 
-      <div class="col-md-4 footer-widget">
-        <h3> <i class="fa fa-envelope"></i>Reach Out</h3>
+            </ul>
+          </div>
+        </div>
 
-        <span>We're happy to hear from readers: thoughts, feedback,
-        content suggestions - all welcome! Drop us a line:</span>
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
 
-        <span class="email">
-          <a href="mailto:blog@forgotten.roads.mx">blog@forgotten.roads.mx</a>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="widewrapper copyright">
-  <div class="container">
-    &copy; 2016-2017, C&amp;B|Books &middot;
-    designed by <a href="http://hackerthemes.com" rel="nofollow">HackerThemes</a> and
-    <a href="http://forgotten.roads.mx">Forgotten Roads MX</a>
-    <span style="float: right">
-      <a href="{{ page-data.base-path }}/about.html">About</a>
-      &middot;
-      <a href="{{ page-data.base-path }}/contact.html">Contact</a>
-      |
-      <a href="{{ page-data.base-path }}/license.html">License</a>
-      |
-      <a href="{{ page-data.base-path }}/privacy.html">Privacy</a>
-      &middot;
-      <a href="{{ page-data.base-path }}/disclosure.html">Disclosure</a>
-    </span>
-  </div>
-
-</div>
 {% endblock %}
 
 {% block post-scripts %}
-    <script src="{{ page-data.base-path }}/assets/jquery/dist/js/jquery.min.js"></script>
-    <script src="{{ page-data.base-path }}/assets/popper.js/dist/umd/popper.min.js"></script>
-    <script src="{{ page-data.base-path }}/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ page-data.base-path }}/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="{{ page-data.base-path }}/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="{{ page-data.base-path }}/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="{{ page-data.base-path }}/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
 {% endblock %}

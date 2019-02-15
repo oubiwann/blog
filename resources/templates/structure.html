@@ -25,7 +25,7 @@
     <!-- General Metadata (site-wide) -->
     <meta name="description" content="{{ page-data.site-description }}">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="Dragon (Clojure) x.y.z">
+    <meta name="generator" content="{{ page-data.site-generator }}">
 
     <!-- Google Metadata -->
     <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
@@ -46,19 +46,18 @@
     {% block post-metadata %}
     {% endblock %}
 
-    <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="{{ page-data.base-path }}/atom.xml" />
     {% block pre-css %}
     {% endblock %}
-    <link rel="stylesheet" href="{{ page-data.base-path }}/assets/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ page-data.base-path }}/assets/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{{ page-data.base-path }}/assets/font-awesome/css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
           rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
           rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ page-data.base-path }}/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ page-data.base-path }}/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="{{ page-data.base-path }}/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
 
-    <link rel="stylesheet" href="{{ page-data.base-path }}/css/theme.css" id="theme-styles">
     <!-- Favicon Setup /-->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ page-data.base-path }}/icons/apple-touch-icon.png?v=3">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ page-data.base-path }}/icons/favicon-32x32.png?v=3">
@@ -66,7 +65,7 @@
     <link rel="manifest" href="{{ page-data.base-path }}/icons/manifest.json?v=3">
     <link rel="mask-icon" href="{{ page-data.base-path }}/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
     <link rel="shortcut icon" href="{{ page-data.base-path }}/icons/favicon.ico?v=3">
-    <meta name="apple-mobile-web-app-title" content="o|b">
+    <meta name="apple-mobile-web-app-title" content="FRMX">
     <meta name="application-name" content="o|b">
     <meta name="msapplication-config" content="{{ page-data.base-path }}/icons/browserconfig.xml?v=3">
     <meta name="theme-color" content="#ffffff">
@@ -74,21 +73,6 @@
     {% endblock %}
     {% block pre-head-scripts %}
     {% endblock %}
-    <!--[if lt IE 9]>
-        <script src="assets/respond/html5-3.6-respond-1.1.0.min.js"></script>
-    <![endif]-->
-    <script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-101039165-2', 'auto');
-      ga('send', 'pageview');
-    </script>
     {% block post-head-scripts %}
     {% endblock %}
     {% block head-postpends %}
@@ -118,7 +102,7 @@
     </main>
     {% endblock %}
     {% block footer %}
-    <footer>
+    <footer id="footer">
       {% block footer-content %}
       {% endblock %}
     </footer>
