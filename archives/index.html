@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <title>
     
-      FRMX 🛣 Blog
+      oubiwann | blog
       
       
       
@@ -23,9 +23,11 @@
     
     
     <!-- General Metadata (site-wide) -->
-    <meta name="description" content="Articles, Reviews, &amp; Explorations for the Motorcycle Excursionist &amp; Non-traditional Adventurer">
+    <meta name="description" content="A 21st century .plan for Duncan McGreggor">
     <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="Dragon (Clojure) 0.4.0-SNAPSHOT">
+    <meta name="generator" content="oubiwann | blog: version 5.0.0-SNAPSHOT, build 7fae804
+
+">
 
     <!-- Google Metadata -->
     <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
@@ -38,7 +40,7 @@
     <meta name="DC.coverage" content="2016-2017">
     <meta name="DC.rights" content="Creative Commons Attribution-ShareAlike 4.0 International License">
     <meta name="DC.publisher" content="C&amp;B|Books">
-    <meta name="DCTERMS.audience" content="Mototcycle Enthusiasts, Adventurers, Distance Riders, Campers">
+    <meta name="DCTERMS.audience" content="Developers, Software Engineers, Computer Scientists, Technologists, Programmers, Programming Language Enthusiasts, Operational Engineers">
 
     
     
@@ -49,16 +51,19 @@
     <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
     
     
-    <link rel="stylesheet" href="/blog/assets/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/blog/assets/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css">
 
+    <!-- Webfonts Setup /-->
     <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
           rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
           rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="/blog/css/styles.css" id="theme-styles">
+    <!-- Bootstrap/Custom Styles Setup /-->
+    <link rel="stylesheet" href="/blog/assets/highlightjs/styles/arta.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="/blog/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+
     <!-- Favicon Setup /-->
     <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png?v=3">
     <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png?v=3">
@@ -67,28 +72,13 @@
     <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
     <link rel="shortcut icon" href="/blog/icons/favicon.ico?v=3">
     <meta name="apple-mobile-web-app-title" content="FRMX">
-    <meta name="application-name" content="FRMX">
+    <meta name="application-name" content="o|b">
     <meta name="msapplication-config" content="/blog/icons/browserconfig.xml?v=3">
     <meta name="theme-color" content="#ffffff">
     
     
     
     
-    <!--[if lt IE 9]>
-        <script src="assets/respond/html5-3.6-respond-1.1.0.min.js"></script>
-    <![endif]-->
-    <script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-101039165-2', 'auto');
-      ga('send', 'pageview');
-    </script>
     
     
     
@@ -100,117 +90,73 @@
    
     <header class="tiny">
       
-<div class="widewrapper masthead">
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
   <div class="container">
-    <a href="/blog/" id="logo">
-    
-      <img src="/blog/img/logo-5-long-small.png" alt="Forgotten Roads Blog">
-      
-      
-      
-    
-    </a>
-
-    <div id="mobile-nav-toggle" class="pull-right">
-      <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
-        <i class="fa fa-bars"></i>
-      </a>
+    <div class="navbar-brand-wrapper">
+      <a href="../" class="navbar-brand">o|b</a>
     </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <nav class="pull-right tales-nav">
-      <div class="collapse navbar-collapse">
-        <ul class="nav nav-pills navbar-nav navbar-right">
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/tags">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="/blog/about/">The Blog</a>
+            <a class="dropdown-item" href="/blog/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="/blog/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/blog/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
 
-          <li class="">
-            <a href="/blog/">Home</a>
-          </li>
-          <li class="active">
-            <a href="/blog/archives/">Archives</a>
-          </li>
-          <li class="">
-            <a href="/blog/categories/">Categories</a>
-          </li>
-          <li class="">
-            <a href="/blog/tags/">Tags</a>
-          </li>
-          <li class="">
-            <a href="/blog/authors/">Authors</a>
-          </li>
-          <li class="dropdown ">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/blog/about.html">About FRMX</a></li>
-              <li><a href="/blog/contact.html">Contact Us</a></li>
-              <li><a href="/blog/powered-by.html">Powered By</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="/blog/license.html">Content License</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="/blog/privacy.html">Privacy Policy</a></li>
-              <li><a href="/blog/disclosure.html">Disclosure Policy</a></li>
-            </ul>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
-
-  </div>
-</div>
-
-<div class="widewrapper subheader">
-  <div class="container">
-    
-    <div class="sidebar-module sidebar-module-inset">
-      <ul class="social">
-        <li>
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
           <a href="/blog/atom.xml" alt="Atom Feed">
             <i class="fa fa-feed first"></i>
           </a>
         </li>
-        <li>
-          <a href="https://twitter.com/forgottenrdsmx" alt="Twitter">
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
             <i class="fa fa-twitter"></i>
           </a>
         </li>
-        <!-- Facebook is being a pain: repeatedly asking for me to
-             upload a picture of myself in order to login. I don't
-             need that sort of grief ... -->
-        <!-- <li>
-          <a href="https://www.facebook.com/forgottenroadsmx/" alt="Facebook">
-            <i class="fa fa-facebook"></i>
-          </a>
-        </li> -->
-        <li>
+        <li class="nav-item">
           <a href="/googleplus" alt="Google+">
             <i class="fa fa-google-plus"></i>
           </a>
         </li>
-        <li>
-          <a href="https://www.flickr.com/photos/forgottenroadsmx/" alt="Flickr">
-            <i class="fa fa-flickr"></i>
-          </a>
-        </li>
-        <li>
-          <a href="/youtube" alt="YouTube">
-            <i class="fa fa-youtube"></i>
-          </a>
-        </li>
-        <li>
-          <a href="http://github.com/forgotten-roads" alt="Github">
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
             <i class="fa fa-github"></i>
           </a>
         </li>
-
-        <li>
-          <a href="https://groups.google.com/forum/#!forum/frmx-new-posts"
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
              alt="Email Notifications">
             <i class="fa fa-envelope"></i>
           </a>
         </li>
-
       </ul>
     </div>
-    
   </div>
 </div>
 
@@ -225,7 +171,7 @@
           <div class="col-lg-12 archives">
             
             
-            <h2>Archives</h2>
+            <h1>Archives</h1>
             
             
 
@@ -236,252 +182,4184 @@
             
   <p class="lead">All previous posts are listed here by year and month.</p>
   
-  <h2>2017</h2>
+  <h2 class="archive-year">2018</h2>
     
-    <h3>December</h3>
+    <h3 class="archive-month">July</h3>
       <ul>
         
-        <li>December
-            30,
-            2017 -
-            <a href="/blog/archives/2017-12/30-123909/mn-7-mn-27.html">MN-7 & MN-27</a>:
-            A Forgotten Road</li>
-        
-        <li>December
-            26,
-            2017 -
-            <a href="/blog/archives/2017-12/26-164149/winter-dreams.html">Winter Dreams</a>:
-            New 'Forgotten Road' Category</li>
-        
-      </ul>
-    
-    <h3>November</h3>
-      <ul>
-        
-        <li>November
+        <li>07
             19,
-            2017 -
-            <a href="/blog/archives/2017-11/19-162728/autumn-colours.html">Autumn Colours</a>:
-            A wonderful farewell from the trees of Sioux Falls</li>
+            2018 -
+        <a href="/blog/archives/2018-07/19-002843/followup-new-versions-of-clojang-agent-and-api-published-on-clojars.html">
+          Followup: New Versions of Clojang Agent and API Published on Clojars
+            </a>
+        </li>
         
-        <li>November
-            19,
-            2017 -
-            <a href="/blog/archives/2017-11/19-124706/garage-makeover.html">Garage Makeover</a>:
-            The early stages of converting an old alley garage to a motorcycle workshop</li>
-        
-      </ul>
-    
-    <h3>October</h3>
-      <ul>
-        
-        <li>October
-            20,
-            2017 -
-            <a href="/blog/archives/2017-10/20-191120/preparing-for-the-frmx-move.html">Preparing for the FRMX Move</a>:
-            Obi-wan Kenobi Continues to Guide the Preparation and Packing</li>
-        
-      </ul>
-    
-    <h3>September</h3>
-      <ul>
-        
-        <li>September
-            09,
-            2017 -
-            <a href="/blog/archives/2017-09/09-214913/hand-crafted-leather-forkboots.html">Hand-crafted Leather Forkboots</a>:
-            Replacing the Tin Fork Kit with Something More Rustic</li>
-        
-      </ul>
-    
-    <h3>August</h3>
-      <ul>
-        
-        <li>August
-            21,
-            2017 -
-            <a href="/blog/archives/2017-08/21-212654/frmx-background-images.html">FRMX Background Images</a>:
-            Some Imagery for Your Desktop / Gmail Theme</li>
-        
-        <li>August
+        <li>07
             17,
-            2017 -
-            <a href="/blog/archives/2017-08/17-202020/avon-tyres-safety-mileage-mkii.html">Avon Tyres: Safety Mileage MKII</a>:
-            A Classic Tyre for a Vintage Look</li>
-        
-        <li>August
-            13,
-            2017 -
-            <a href="/blog/archives/2017-08/13-193659/it-s-a-saddle-not-a-couch.html">It's a Saddle, Not a Couch</a>:
-            Riding with a Bobber Seat</li>
+            2018 -
+        <a href="/blog/archives/2018-07/17-191932/new-versions-of-jinterface-and-jiface-published-on-clojars.html">
+          New Versions of JInterface and jiface Published on Clojars
+            </a>
+        </li>
         
       </ul>
     
-    <h3>July</h3>
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2017</h2>
+    
+    <h3 class="archive-month">October</h3>
       <ul>
         
-        <li>July
-            29,
-            2017 -
-            <a href="/blog/archives/2017-07/29-125910/online-mapping-tools-for-your-ride.html">Online Mapping Tools for Your Ride</a>:
-            An Overview of What Forgotten Roads Uses</li>
-        
-        <li>July
-            28,
-            2017 -
-            <a href="/blog/archives/2017-07/28-131226/styling-your-own-google-map.html">Styling Your Own Google Map</a>:
-            The First Step in a DIY Adventure Map</li>
-        
-        <li>July
-            21,
-            2017 -
-            <a href="/blog/archives/2017-07/21-193252/frmx-google-maps-custom-theme.html">FRMX Google Maps Custom Theme</a>:
-            A New Look for Forgotten Roads' Ride Maps</li>
-        
-        <li>July
-            16,
-            2017 -
-            <a href="/blog/archives/2017-07/16-192353/beartooth-run-2017.html">Beartooth Run, 2017</a>:
-            Day 6</li>
-        
-        <li>July
+        <li>10
             15,
             2017 -
-            <a href="/blog/archives/2017-07/15-221856/beartooth-run-2017.html">Beartooth Run, 2017</a>:
-            Day 5</li>
+        <a href="/blog/archives/2017-10/15-184209/project-split-clojang-clozhang.html">
+          Project Split: Clojang + Clozhang
+            </a>
+        </li>
         
-        <li>July
+        <li>10
             14,
             2017 -
-            <a href="/blog/archives/2017-07/14-210408/beartooth-run-2017.html">Beartooth Run, 2017</a>:
-            Day 4</li>
+        <a href="/blog/archives/2017-10/14-223227/some-ideas-for-a-clojure-pi-calculus-lab.html">
+          Some Ideas for a Clojure &amp;pi;-Calculus Lab
+            </a>
+        </li>
         
-        <li>July
+        <li>10
             13,
             2017 -
-            <a href="/blog/archives/2017-07/13-154024/beartooth-run-2017.html">Beartooth Run, 2017</a>:
-            Red Lodge, MT</li>
+        <a href="/blog/archives/2017-10/13-234242/renewed-interest-in-the-pi-calculus.html">
+          Renewed Interest in the &amp;pi;-Calculus
+            </a>
+        </li>
         
-        <li>July
-            08,
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            09,
             2017 -
-            <a href="/blog/archives/2017-07/08-220414/beartooth-run-2017.html">Beartooth Run, 2017</a>:
-            Day 3</li>
+        <a href="/blog/archives/2017-08/09-172308/nasa-eosdis-earthdata.html">
+          NASA/EOSDIS Earthdata
+            </a>
+        </li>
         
-        <li>July
-            07,
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            16,
             2017 -
-            <a href="/blog/archives/2017-07/07-212540/beartooth-run-2017.html">Beartooth Run, 2017</a>:
-            Day 2</li>
+        <a href="/blog/archives/2017-03/16-004734/new-clojang-blog.html">
+          New Clojang Blog
+            </a>
+        </li>
         
-        <li>July
-            06,
+        <li>03
+            12,
             2017 -
-            <a href="/blog/archives/2017-07/06-193659/beartooth-run-2017.html">Beartooth Run, 2017</a>:
-            Day 1</li>
+        <a href="/blog/archives/2017-03/12-212549/clojang-mail-list-slack-channel.html">
+          Clojang Mail List &amp; Slack Channel
+            </a>: New Stuff!
+        </li>
         
-        <li>July
+        <li>03
+            04,
+            2017 -
+        <a href="/blog/archives/2017-03/04-201918/clojang-is-on-twitter.html">
+          Clojang is on Twitter
+            </a>
+        </li>
+        
+        <li>03
             01,
             2017 -
-            <a href="/blog/archives/2017-07/01-123850/working-with-kml-and-geojson-files.html">Working with KML and GeoJSON Files</a>:
-            Converting File Formats for Online GPS Services</li>
+        <a href="/blog/archives/2017-03/01-235210/progress-towards-the-next-releases.html">
+          Progress Towards the Next Releases
+            </a>
+        </li>
         
       </ul>
     
-    <h3>June</h3>
+    <h3 class="archive-month">February</h3>
       <ul>
         
-        <li>June
-            29,
-            2017 -
-            <a href="/blog/archives/2017-06/29-115623/beartooth-run-fargo-h-o-g-.html">Beartooth Run, Fargo H.O.G.</a>:
-            I made it in!</li>
-        
-        <li>June
-            28,
-            2017 -
-            <a href="/blog/archives/2017-06/28-001103/themes-categories-and-tags.html">Themes, Categories, and Tags</a>:
-            A guide for our types of posts</li>
-        
-        <li>June
+        <li>02
             24,
             2017 -
-            <a href="/blog/archives/2017-06/24-105524/update-lower-48-challenge.html">Update: Lower-48 Challenge</a>:
-            Excursionists: 2ringbike</li>
+        <a href="/blog/archives/2017-02/24-014224/clojang-jinterface-core-async.html">
+          Clojang, JInterface, &amp; core.async
+            </a>: Passing Comments on Internals with Possible Future Development
+        </li>
         
-        <li>June
-            18,
-            2017 -
-            <a href="/blog/archives/2017-06/18-172828/lessons-learned-when-packing-a-cruiser-for-touring.html">Lessons Learned When Packing a Cruiser for Touring</a></li>
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
         
-        <li>June
+        <li>01
             17,
             2017 -
-            <a href="/blog/archives/2017-06/17-212757/dam-ride-2017.html">Dam Ride 2017</a>:
-            Day 3</li>
-        
-        <li>June
-            16,
-            2017 -
-            <a href="/blog/archives/2017-06/16-233523/dam-ride-2017.html">Dam Ride 2017</a>:
-            Day 2</li>
-        
-        <li>June
-            16,
-            2017 -
-            <a href="/blog/archives/2017-06/16-170908/the-lower-48-challenge.html">The Lower-48 Challenge</a>:
-            Excursionists: 2ringbike</li>
-        
-        <li>June
-            15,
-            2017 -
-            <a href="/blog/archives/2017-06/15-223122/dam-ride-2017.html">Dam Ride 2017</a>:
-            Day 1</li>
-        
-        <li>June
-            07,
-            2017 -
-            <a href="/blog/archives/2017-06/07-165957/nation-of-patriots-2017.html">Nation of Patriots 2017</a>:
-            Passing of the Flag in Sioux Falls, SD and Norfolk, NE</li>
+        <a href="/blog/archives/2017-01/17-194858/clojang-agent-v0-3-0-released.html">
+          clojang &amp; agent v0.3.0 Released
+            </a>
+        </li>
         
       </ul>
     
+    <hr class="year-grouping" />
   
-  <h2>2016</h2>
+  <h2 class="archive-year">2016</h2>
     
-    <h3>September</h3>
+    <h3 class="archive-month">April</h3>
       <ul>
         
-        <li>September
-            19,
+        <li>04
+            30,
             2016 -
-            <a href="/blog/archives/2016-09/19-221343/the-beginning-of-a-new-project.html">The Beginning of a New Project</a>:
-            A Resource for Motorcycle Excursionists</li>
+        <a href="/blog/archives/2016-04/30-214338/jiface-clojang-agent-v0-1-0-released.html">
+          jiface &amp; clojang-agent v0.1.0 Released
+            </a>
+        </li>
         
       </ul>
     
-    <h3>August</h3>
+    <h3 class="archive-month">March</h3>
       <ul>
         
-        <li>August
+        <li>03
             25,
             2016 -
-            <a href="/blog/archives/2016-08/25-174345/nation-of-patriots-2016.html">Nation of Patriots 2016</a>:
-            Passing of the Flag in Sioux Falls, SD</li>
+        <a href="/blog/archives/2016-03/25-085808/lfe-and-rebar3.html">
+          LFE and rebar3
+            </a>
+        </li>
         
       </ul>
     
-    <h3>July</h3>
+    <h3 class="archive-month">February</h3>
       <ul>
         
-        <li>July
-            31,
+        <li>02
+            15,
             2016 -
-            <a href="/blog/archives/2016-07/31-114941/knucklehead-at-sturgis.html">Knucklehead at Sturgis</a>:
-            Excursionists: Arctic Adventures</li>
+        <a href="/blog/archives/2016-02/15-020457/clojang-v0-1-0-released.html">
+          clojang v0.1.0 Released
+            </a>
+        </li>
+        
+        <li>02
+            13,
+            2016 -
+        <a href="/blog/archives/2016-02/13-121526/zhang.html">
+          Zhang
+            </a>: An Experiment in Gutting JInterface for core.async
+        </li>
         
       </ul>
     
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            19,
+            2016 -
+        <a href="/blog/archives/2016-01/19-184224/announcing-jiface-clojang-a-clojure-otp-agent.html">
+          Announcing jiface, clojang, &amp; a Clojure OTP agent
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2015</h2>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            28,
+            2015 -
+        <a href="/blog/archives/2015-11/28-211008/update-running-an-lfe-yaws-app-in-docker.html">
+          Update: Running an LFE YAWS app in Docker
+            </a>: Docker LFE/YAWS sample app has been updated
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            19,
+            2015 -
+        <a href="/blog/archives/2015-09/19-202040/lfecljapp-v0-3-0-release.html">
+          lfecljapp v0.3.0 Release
+            </a>
+        </li>
+        
+        <li>09
+            18,
+            2015 -
+        <a href="/blog/archives/2015-09/18-223008/an-interview-with-robert-virding-on-lisp.html">
+          An Interview with Robert Virding on Lisp
+            </a>
+        </li>
+        
+        <li>09
+            18,
+            2015 -
+        <a href="/blog/archives/2015-09/18-160408/distributed-lfe.html">
+          Distributed LFE
+            </a>
+        </li>
+        
+        <li>09
+            18,
+            2015 -
+        <a href="/blog/archives/2015-09/18-120308/the-lfe-blog-has-a-new-face.html">
+          The LFE Blog Has a New Face
+            </a>: First stages of a refresh for all of the LFE web properties ...
+        </li>
+        
+        <li>09
+            13,
+            2015 -
+        <a href="/blog/archives/2015-09/13-231909/clojang.html">
+          Clojang
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">July</h3>
+      <ul>
+        
+        <li>07
+            11,
+            2015 -
+        <a href="/blog/archives/2015-07/11-172008/towards-multi-methods-in-lfe.html">
+          Towards multi-methods in LFE
+            </a>: Exploring the shape of multi-methods in the LFE library LOS
+        </li>
+        
+        <li>07
+            10,
+            2015 -
+        <a href="/blog/archives/2015-07/10-123108/mastering-matplotlib-acknowledgments.html">
+          Mastering matplotlib: Acknowledgments
+            </a>
+        </li>
+        
+        <li>07
+            08,
+            2015 -
+        <a href="/blog/archives/2015-07/08-141608/freebsd-lfe-images-docker-like-functionality-with-ezjail.html">
+          FreeBSD &amp; LFE Images: Docker-like functionality with ezjail
+            </a>
+        </li>
+        
+        <li>07
+            08,
+            2015 -
+        <a href="/blog/archives/2015-07/08-134908/dragonfly-bsd-lfe.html">
+          DragonFly BSD &amp; LFE
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            28,
+            2015 -
+        <a href="/blog/archives/2015-05/28-100808/creating-lfe-servers-with-otp-part-ii.html">
+          Creating LFE Servers with OTP, Part II
+            </a>: Taking the LFE gen_server to the next level
+        </li>
+        
+        <li>05
+            26,
+            2015 -
+        <a href="/blog/archives/2015-05/26-111208/creating-lfe-servers-with-otp-part-i.html">
+          Creating LFE Servers with OTP, Part I
+            </a>: Creating a generic OTP server in LFE
+        </li>
+        
+        <li>05
+            25,
+            2015 -
+        <a href="/blog/archives/2015-05/25-092908/prelude-to-otp.html">
+          Prelude to OTP
+            </a>: A look at some examples which motivate the use of OTP
+        </li>
+        
+        <li>05
+            24,
+            2015 -
+        <a href="/blog/archives/2015-05/24-180808/what-is-otp-.html">
+          What is OTP?
+            </a>: A quick examination of OTP
+        </li>
+        
+        <li>05
+            23,
+            2015 -
+        <a href="/blog/archives/2015-05/23-172008/new-series-lfe-otp-tutorials.html">
+          New Series: LFE OTP Tutorials
+            </a>: Kicking off a series of OTP tutorials for LFE hackers
+        </li>
+        
+        <li>05
+            23,
+            2015 -
+        <a href="/blog/archives/2015-05/23-131408/lfe-t-shirts-the-great-unboxing.html">
+          LFE T-shirts: The Great Unboxing
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            05,
+            2015 -
+        <a href="/blog/archives/2015-04/05-133208/ledis-using-redis-from-lfe.html">
+          ledis: Using Redis from LFE
+            </a>: The Place of Lisp in the 21st Century
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            27,
+            2015 -
+        <a href="/blog/archives/2015-03/27-110108/the-hidden-origins-of-lisp.html">
+          The Hidden Origins of Lisp
+            </a>: The Place of Lisp in the 21st Century
+        </li>
+        
+        <li>03
+            26,
+            2015 -
+        <a href="/blog/archives/2015-03/26-111108/the-hidden-origins-of-lisp.html">
+          The Hidden Origins of Lisp
+            </a>: John McCarthy
+        </li>
+        
+        <li>03
+            25,
+            2015 -
+        <a href="/blog/archives/2015-03/25-110808/the-hidden-origins-of-lisp.html">
+          The Hidden Origins of Lisp
+            </a>: Alonzo Church
+        </li>
+        
+        <li>03
+            24,
+            2015 -
+        <a href="/blog/archives/2015-03/24-011108/the-hidden-origins-of-lisp.html">
+          The Hidden Origins of Lisp
+            </a>: Bertrand Russell
+        </li>
+        
+        <li>03
+            23,
+            2015 -
+        <a href="/blog/archives/2015-03/23-100808/the-hidden-origins-of-lisp.html">
+          The Hidden Origins of Lisp
+            </a>: Giuseppe Peano
+        </li>
+        
+        <li>03
+            22,
+            2015 -
+        <a href="/blog/archives/2015-03/22-144508/the-hidden-origins-of-lisp.html">
+          The Hidden Origins of Lisp
+            </a>: Introduction
+        </li>
+        
+        <li>03
+            22,
+            2015 -
+        <a href="/blog/archives/2015-03/22-134208/sicp-the-lfe-edition-update.html">
+          SICP: the LFE Edition - Update
+            </a>: An update on the LFE edition of SICP and a note about the new preface
+        </li>
+        
+        <li>03
+            20,
+            2015 -
+        <a href="/blog/archives/2015-03/20-125608/new-lfe-t-shirt.html">
+          New LFE T-Shirt
+            </a>: If you missed the last LFE T-shirt, you're gonna want to be in line for this one ...
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            09,
+            2015 -
+        <a href="/blog/archives/2015-01/09-100808/lfetool-1-5-0-preview-overriding-version-pinning.html">
+          lfetool 1.5.0 Preview: Overriding Version Pinning
+            </a>: Looking for volunteers to test new lfetool feature
+        </li>
+        
+        <li>01
+            03,
+            2015 -
+        <a href="/blog/archives/2015-01/03-124408/coming-soon-lfe-friday-.html">
+          Coming Soon: LFE Friday!
+            </a>: With Steven Proctor's blessing, LFE will be re-publishing Erlang Thursdays...
+        </li>
+        
+        <li>01
+            01,
+            2015 -
+        <a href="/blog/archives/2015-01/01-145608/scientific-computing-and-the-joy-of-language-interop.html">
+          Scientific Computing and the Joy of Language Interop
+            </a>
+        </li>
+        
+        <li>01
+            01,
+            2015 -
+        <a href="/blog/archives/2015-01/01-121508/scientific-computing-on-the-erlang-vm.html">
+          Scientific Computing on the Erlang VM
+            </a>: Polynomial Curve Fitting with LFE
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2014</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            27,
+            2014 -
+        <a href="/blog/archives/2014-12/27-190508/improved-python-support-in-erlang-lfe.html">
+          Improved Python Support in Erlang/LFE
+            </a>
+        </li>
+        
+        <li>12
+            27,
+            2014 -
+        <a href="/blog/archives/2014-12/27-164108/easy-python-from-lfe-erlang.html">
+          Easy Python from LFE/Erlang
+            </a>: The quickest way to use Python from LFE/Erlang
+        </li>
+        
+        <li>12
+            25,
+            2014 -
+        <a href="/blog/archives/2014-12/25-122108/happy-holidays-from-lfe.html">
+          Happy Holidays from LFE
+            </a>
+        </li>
+        
+        <li>12
+            15,
+            2014 -
+        <a href="/blog/archives/2014-12/15-184808/byte-august-1979-the-lisp-issue.html">
+          BYTE, August 1979: The LISP Issue
+            </a>: An exploration of the Ancient LISP code on the cover of BYTE, August 1972
+        </li>
+        
+        <li>12
+            14,
+            2014 -
+        <a href="/blog/archives/2014-12/14-164508/lutil-0-5-0-composition-predicates-and-core-lutil.html">
+          lutil 0.5.0: Composition, Predicates and Core lutil
+            </a>: New features in lutil 0.4.1
+        </li>
+        
+        <li>12
+            08,
+            2014 -
+        <a href="/blog/archives/2014-12/08-192908/lfest-0-0-2-is-released.html">
+          lfest 0.0.2 Is Released
+            </a>: New Version of lfest Available
+        </li>
+        
+        <li>12
+            07,
+            2014 -
+        <a href="/blog/archives/2014-12/07-183708/running-lfe-in-docker.html">
+          Running LFE in Docker
+            </a>: LFE Community is working on growing support for Docker
+        </li>
+        
+        <li>12
+            06,
+            2014 -
+        <a href="/blog/archives/2014-12/06-124408/usability-update-ierlang-notebook-a-la-ipython-.html">
+          Usability Update: IErlang Notebook (a la IPython)
+            </a>: Updated project source for IErlang makes it easier to use
+        </li>
+        
+        <li>12
+            03,
+            2014 -
+        <a href="/blog/archives/2014-12/03-182808/erlport-and-python-part-ii-making-more-calls-from-lfe.html">
+          ErlPort and Python Part II: Making More Calls from LFE
+            </a>: Part II of an Introduction to ErlPort with LFE
+        </li>
+        
+        <li>12
+            03,
+            2014 -
+        <a href="/blog/archives/2014-12/03-181008/community-generated-content.html">
+          Community Generated Content
+            </a>: Readers, submit your PRs for blog posts!
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            28,
+            2014 -
+        <a href="/blog/archives/2014-11/28-131108/scientific-computing-with-hy-and-ipython.html">
+          Scientific Computing with Hy and IPython
+            </a>
+        </li>
+        
+        <li>11
+            21,
+            2014 -
+        <a href="/blog/archives/2014-11/21-170808/erlport-using-python-from-erlang-lfe.html">
+          ErlPort: Using Python from Erlang/LFE
+            </a>
+        </li>
+        
+        <li>11
+            21,
+            2014 -
+        <a href="/blog/archives/2014-11/21-164208/a-different-take-parallel-scientific-computing-with-erlang-and-python.html">
+          A Different Take: Parallel Scientific Computing with Erlang and Python
+            </a>
+        </li>
+        
+        <li>11
+            21,
+            2014 -
+        <a href="/blog/archives/2014-11/21-150808/erlport-using-python-from-erlang-lfe.html">
+          ErlPort: Using Python from Erlang/LFE
+            </a>: A Quick Introduction to ErlPort via LFE
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            09,
+            2014 -
+        <a href="/blog/archives/2014-09/09-114408/of-ctos-and-vps-of-engineering.html">
+          Of CTOs and VPs of Engineering
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            31,
+            2014 -
+        <a href="/blog/archives/2014-08/31-202408/lfetool-v1-2-is-out-.html">
+          lfetool v1.2 Is Out!
+            </a>: Notes on the latest interim release of lfetool
+        </li>
+        
+        <li>08
+            03,
+            2014 -
+        <a href="/blog/archives/2014-08/03-142308/some-thoughts-on-sponsorships-community-and-open-source.html">
+          Some Thoughts on Sponsorships, Community, and Open Source
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">July</h3>
+      <ul>
+        
+        <li>07
+            30,
+            2014 -
+        <a href="/blog/archives/2014-07/30-011408/oscon-2014-theme-song-andrew-sorensen-s-live-coding-keynote.html">
+          OSCON 2014 Theme Song - Andrew Sorensen&#39;s Live Coding Keynote
+            </a>
+        </li>
+        
+        <li>07
+            28,
+            2014 -
+        <a href="/blog/archives/2014-07/28-080008/the-future-of-programming-adopting-the-functional-paradigm-.html">
+          The Future of Programming - Adopting The Functional Paradigm?
+            </a>
+        </li>
+        
+        <li>07
+            28,
+            2014 -
+        <a href="/blog/archives/2014-07/28-004008/the-future-of-programming-retrospective-on-paradigms.html">
+          The Future of Programming - Retrospective on Paradigms
+            </a>
+        </li>
+        
+        <li>07
+            27,
+            2014 -
+        <a href="/blog/archives/2014-07/27-162508/the-future-of-programming-themes-at-oscon-2014.html">
+          The Future of Programming - Themes at OSCON 2014
+            </a>
+        </li>
+        
+        <li>07
+            27,
+            2014 -
+        <a href="/blog/archives/2014-07/27-143308/lessons-on-distributed-systems-selections-from-joe-s-hopl-iii-paper.html">
+          Lessons on Distributed Systems: Selections from Joe&#39;s HOPL III Paper
+            </a>
+        </li>
+        
+        <li>07
+            27,
+            2014 -
+        <a href="/blog/archives/2014-07/27-130208/the-future-of-programming-an-overview.html">
+          The Future of Programming - An Overview
+            </a>
+        </li>
+        
+        <li>07
+            27,
+            2014 -
+        <a href="/blog/archives/2014-07/27-112608/redhat-openshit-erlang-lfe-and-the-cloud.html">
+          RedHat OpenShit: Erlang, LFE, and the Cloud
+            </a>
+        </li>
+        
+        <li>07
+            27,
+            2014 -
+        <a href="/blog/archives/2014-07/27-112508/the-future-of-programming-what-should-we-expect-.html">
+          The Future of Programming - What Should We Expect?
+            </a>
+        </li>
+        
+        <li>07
+            23,
+            2014 -
+        <a href="/blog/archives/2014-07/23-084908/erlang-oscon-2014.html">
+          Erlang @ OSCON 2014
+            </a>: Updates from the conference ground zero
+        </li>
+        
+        <li>07
+            05,
+            2014 -
+        <a href="/blog/archives/2014-07/05-141708/open-source-coders-as-bards.html">
+          Open Source Coders as Bards
+            </a>
+        </li>
+        
+        <li>07
+            03,
+            2014 -
+        <a href="/blog/archives/2014-07/03-095208/uncovering-inherent-structures-in-organizations.html">
+          Uncovering Inherent Structures in Organizations
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            10,
+            2014 -
+        <a href="/blog/archives/2014-06/10-092908/lfe-language-summit-review.html">
+          LFE Language Summit Review
+            </a>: A report on how the first LFE language 'summit' went
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            28,
+            2014 -
+        <a href="/blog/archives/2014-05/28-151608/the-secret-history-of-lfe.html">
+          The Secret History of LFE
+            </a>: A post to the mail list too good to just keep there :-)
+        </li>
+        
+        <li>05
+            25,
+            2014 -
+        <a href="/blog/archives/2014-05/25-152308/lfe-user-group-meeting-update.html">
+          LFE User Group Meeting: Update
+            </a>: We now have a date and time for the User Group meeting in Stockholm!
+        </li>
+        
+        <li>05
+            25,
+            2014 -
+        <a href="/blog/archives/2014-05/25-102685/lfe-docs-update-history-of-erlang-added.html">
+          LFE Docs Update: History of Erlang Added
+            </a>: Updated the docs site with a new 'History' section
+        </li>
+        
+        <li>05
+            23,
+            2014 -
+        <a href="/blog/archives/2014-05/23-111408/lfe-sunday-times.html">
+          LFE Sunday Times
+            </a>: LFE Daily moved to weekly release
+        </li>
+        
+        <li>05
+            23,
+            2014 -
+        <a href="/blog/archives/2014-05/23-081508/lfe-docs-site-overhaul.html">
+          LFE Docs Site Overhaul
+            </a>: With the new site, docs pages get better focus
+        </li>
+        
+        <li>05
+            22,
+            2014 -
+        <a href="/blog/archives/2014-05/22-230108/lfe-microblog-is-open-for-business-.html">
+          LFE Microblog is Open for Business ...
+            </a>: Another web property update
+        </li>
+        
+        <li>05
+            22,
+            2014 -
+        <a href="/blog/archives/2014-05/22-184908/new-lfe-site-.html">
+          New LFE Site!
+            </a>: LFE has a new main site
+        </li>
+        
+        <li>05
+            18,
+            2014 -
+        <a href="/blog/archives/2014-05/18-145008/lfest-a-routing-party-for-lfe-web-apps.html">
+          lfest: A Routing Party for LFE Web Apps
+            </a>
+        </li>
+        
+        <li>05
+            11,
+            2014 -
+        <a href="/blog/archives/2014-05/11-225555/a-new-project.html">
+          A New Project
+            </a>: Clojure and LFE Interop?
+        </li>
+        
+        <li>05
+            07,
+            2014 -
+        <a href="/blog/archives/2014-05/07-153108/lfe-design-summit.html">
+          LFE Design Summit
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            02,
+            2014 -
+        <a href="/blog/archives/2014-04/02-123308/hash-maps-in-lfe-request-for-comment.html">
+          Hash Maps in LFE: Request for Comment
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            19,
+            2014 -
+        <a href="/blog/archives/2014-03/19-225708/lfetool-t-shirts-.html">
+          lfetool T-Shirts?!
+            </a>
+        </li>
+        
+        <li>03
+            19,
+            2014 -
+        <a href="/blog/archives/2014-03/19-182608/hello-clojure-lfe-nuzzling-up-to-the-jvm.html">
+          Hello, Clojure: LFE nuzzling up to the JVM
+            </a>
+        </li>
+        
+        <li>03
+            18,
+            2014 -
+        <a href="/blog/archives/2014-03/18-182908/lfetool-0-2-released.html">
+          lfetool 0.2 Released
+            </a>
+        </li>
+        
+        <li>03
+            17,
+            2014 -
+        <a href="/blog/archives/2014-03/17-191108/new-web-platform-the-yaws-of-lfe.html">
+          New Web Platform: The YAWS of LFE
+            </a>
+        </li>
+        
+        <li>03
+            13,
+            2014 -
+        <a href="/blog/archives/2014-03/13-072908/the-future-of-lfe.html">
+          The Future of LFE
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            12,
+            2014 -
+        <a href="/blog/archives/2014-01/12-204708/prefix-operators-in-haskell.html">
+          Prefix Operators in Haskell
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2013</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            31,
+            2013 -
+        <a href="/blog/archives/2013-12/31-170808/joe-armstrong-s-favorite-erlang-program-in-lfe.html">
+          Joe Armstrong&#39;s Favorite Erlang Program... in LFE
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            23,
+            2013 -
+        <a href="/blog/archives/2013-04/23-185508/openstack-developer-summit-heat-followup.html">
+          OpenStack Developer Summit: Heat Followup
+            </a>
+        </li>
+        
+        <li>04
+            23,
+            2013 -
+        <a href="/blog/archives/2013-04/23-174808/tea-time-at-rackspace-sf.html">
+          Tea Time at Rackspace SF
+            </a>
+        </li>
+        
+        <li>04
+            20,
+            2013 -
+        <a href="/blog/archives/2013-04/20-183308/the-lambda-calculus-reduction.html">
+          The Lambda Calculus: Reduction
+            </a>
+        </li>
+        
+        <li>04
+            18,
+            2013 -
+        <a href="/blog/archives/2013-04/18-103208/cruising-http-with-lfe.html">
+          Cruising HTTP with LFE
+            </a>
+        </li>
+        
+        <li>04
+            14,
+            2013 -
+        <a href="/blog/archives/2013-04/14-183008/getting-started-with-lfe-on-ubuntu.html">
+          Getting Started with LFE on Ubuntu
+            </a>
+        </li>
+        
+        <li>04
+            11,
+            2013 -
+        <a href="/blog/archives/2013-04/11-105608/the-lambda-calculus-arithmetic.html">
+          The Lambda Calculus: Arithmetic
+            </a>
+        </li>
+        
+        <li>04
+            11,
+            2013 -
+        <a href="/blog/archives/2013-04/11-105508/the-lambda-calculus-combinators.html">
+          The Lambda Calculus: Combinators
+            </a>
+        </li>
+        
+        <li>04
+            10,
+            2013 -
+        <a href="/blog/archives/2013-04/10-233908/the-lambda-calculus-a-quick-primer.html">
+          The Lambda Calculus: A Quick Primer
+            </a>
+        </li>
+        
+        <li>04
+            09,
+            2013 -
+        <a href="/blog/archives/2013-04/09-162408/interview-with-erlang-co-creators.html">
+          Interview with Erlang Co-Creators
+            </a>
+        </li>
+        
+        <li>04
+            09,
+            2013 -
+        <a href="/blog/archives/2013-04/09-012208/the-lambda-calculus-a-brief-history.html">
+          The Lambda Calculus: A Brief History
+            </a>
+        </li>
+        
+        <li>04
+            03,
+            2013 -
+        <a href="/blog/archives/2013-04/03-120308/autoscale-and-orchestration-the-heat-of-openstack.html">
+          Autoscale and Orchestration: the Heat of OpenStack
+            </a>
+        </li>
+        
+        <li>04
+            02,
+            2013 -
+        <a href="/blog/archives/2013-04/02-193308/maths-and-programming-whence-recursion-.html">
+          Maths and Programming: Whence Recursion?
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            13,
+            2013 -
+        <a href="/blog/archives/2013-03/13-080708/erlang-meetup-at-rackspace-san-francisco.html">
+          Erlang Meetup at Rackspace, San Francisco
+            </a>
+        </li>
+        
+        <li>03
+            13,
+            2013 -
+        <a href="/blog/archives/2013-03/13-011708/lisp-flavored-erlang.html">
+          Lisp Flavored Erlang
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            24,
+            2013 -
+        <a href="/blog/archives/2013-01/24-104708/unbeatable-culture-at-rackspace.html">
+          Unbeatable Culture at Rackspace
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2012</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            28,
+            2012 -
+        <a href="/blog/archives/2012-12/28-113408/the-secret-history-of-lambda.html">
+          The Secret History of Lambda
+            </a>
+        </li>
+        
+        <li>12
+            18,
+            2012 -
+        <a href="/blog/archives/2012-12/18-120208/seeking-a-twisted-maintainer.html">
+          Seeking a Twisted Maintainer
+            </a>
+        </li>
+        
+        <li>12
+            12,
+            2012 -
+        <a href="/blog/archives/2012-12/12-190508/async-in-python-3.html">
+          Async in Python 3
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">October</h3>
+      <ul>
+        
+        <li>10
+            30,
+            2012 -
+        <a href="/blog/archives/2012-10/30-132208/async-in-clojure-playing-with-agents-part-ii.html">
+          Async in Clojure: Playing with Agents, Part II
+            </a>
+        </li>
+        
+        <li>10
+            29,
+            2012 -
+        <a href="/blog/archives/2012-10/29-120008/async-in-clojure-playing-with-agents-part-i.html">
+          Async in Clojure: Playing with Agents, Part I
+            </a>
+        </li>
+        
+        <li>10
+            19,
+            2012 -
+        <a href="/blog/archives/2012-10/19-121408/libevent-for-lisp-a-signal-example.html">
+          libevent for Lisp: A Signal Example
+            </a>
+        </li>
+        
+        <li>10
+            18,
+            2012 -
+        <a href="/blog/archives/2012-10/18-132408/getting-started-with-steel-bank-common-lisp.html">
+          Getting Started with Steel Bank Common Lisp
+            </a>
+        </li>
+        
+        <li>10
+            15,
+            2012 -
+        <a href="/blog/archives/2012-10/15-193408/rendering-rest-with-klein-and-twisted-templates.html">
+          Rendering ReST with Klein and Twisted Templates
+            </a>
+        </li>
+        
+        <li>10
+            13,
+            2012 -
+        <a href="/blog/archives/2012-10/13-160008/gimp-2-8-and-the-taming-of-two-decades-graphics-habits.html">
+          GIMP 2.8 and the Taming of Two Decades&#39; Graphics Habits
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            01,
+            2012 -
+        <a href="/blog/archives/2012-08/01-010808/a-possible-future-for-the-tech-industry.html">
+          A Possible Future for the Tech Industry
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            15,
+            2012 -
+        <a href="/blog/archives/2012-05/15-010008/cern-openstack-keep-resonance-cascades-at-bay.html">
+          CERN, OpenStack Keep Resonance Cascades at Bay
+            </a>
+        </li>
+        
+        <li>05
+            12,
+            2012 -
+        <a href="/blog/archives/2012-05/12-195008/twisted-ssh-rendering-a-log-in-banner-motd-in-conch.html">
+          Twisted SSH: Rendering a Log-in Banner/MOTD in Conch
+            </a>
+        </li>
+        
+        <li>05
+            06,
+            2012 -
+        <a href="/blog/archives/2012-05/06-093808/dreamjob-.html">
+          DreamJob!
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            25,
+            2012 -
+        <a href="/blog/archives/2012-04/25-144708/new-life-the-openstack-devops-community.html">
+          New Life: The OpenStack DevOps Community
+            </a>
+        </li>
+        
+        <li>04
+            12,
+            2012 -
+        <a href="/blog/archives/2012-04/12-162608/what-is-reality-s-bandwidth-.html">
+          What is Reality&#39;s Bandwidth?
+            </a>
+        </li>
+        
+        <li>04
+            06,
+            2012 -
+        <a href="/blog/archives/2012-04/06-181108/new-domain-name-for-the-blog.html">
+          New Domain Name for the Blog
+            </a>
+        </li>
+        
+        <li>04
+            04,
+            2012 -
+        <a href="/blog/archives/2012-04/04-235508/recent-stackiness.html">
+          Recent Stackiness
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            26,
+            2012 -
+        <a href="/blog/archives/2012-03/26-142608/future-shock-eventually-consistent.html">
+          Future Shock: Eventually Consistent
+            </a>
+        </li>
+        
+        <li>03
+            24,
+            2012 -
+        <a href="/blog/archives/2012-03/24-110308/a-conversation-with-guido-about-callbacks.html">
+          A Conversation with Guido about Callbacks
+            </a>
+        </li>
+        
+        <li>03
+            17,
+            2012 -
+        <a href="/blog/archives/2012-03/17-155008/python-for-ios.html">
+          Python for iOS
+            </a>
+        </li>
+        
+        <li>03
+            16,
+            2012 -
+        <a href="/blog/archives/2012-03/16-134308/pycon-2012-to-be-continued.html">
+          PyCon 2012: To Be Continued
+            </a>
+        </li>
+        
+        <li>03
+            12,
+            2012 -
+        <a href="/blog/archives/2012-03/12-160708/openstack-at-pycon-2012-sprints-.html">
+          OpenStack at PyCon 2012 Sprints!
+            </a>
+        </li>
+        
+        <li>03
+            01,
+            2012 -
+        <a href="/blog/archives/2012-03/01-195108/successful-hack-in-01-mar-2012-.html">
+          Successful Hack-In, 01 Mar 2012!
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2011</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            06,
+            2011 -
+        <a href="/blog/archives/2011-12/06-202108/openstack-at-dreamhost.html">
+          OpenStack at DreamHost
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            21,
+            2011 -
+        <a href="/blog/archives/2011-11/21-143708/occupy-s-declaration-of-independence.html">
+          Occupy&#39;s Declaration of Independence
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            23,
+            2011 -
+        <a href="/blog/archives/2011-06/23-184408/physical-beings-with-digital-lives.html">
+          Physical Beings with Digital Lives
+            </a>
+        </li>
+        
+        <li>06
+            21,
+            2011 -
+        <a href="/blog/archives/2011-06/21-123408/txstatsd-preview.html">
+          txStatsD Preview
+            </a>
+        </li>
+        
+        <li>06
+            08,
+            2011 -
+        <a href="/blog/archives/2011-06/08-112908/the-future-of-personal-data-a-followup.html">
+          The Future of Personal Data: A Followup
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            23,
+            2011 -
+        <a href="/blog/archives/2011-05/23-094008/packt-a-publishing-house-for-the-future.html">
+          Packt: A Publishing House for the Future
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            16,
+            2011 -
+        <a href="/blog/archives/2011-03/16-083308/call-for-testing-nvidia-cards-in-ubuntu-natty.html">
+          Call for Testing: nVidia Cards in Ubuntu Natty
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            21,
+            2011 -
+        <a href="/blog/archives/2011-01/21-080808/uncle-canonical-wants-u-.html">
+          Uncle Canonical Wants U!
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2010</h2>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            07,
+            2010 -
+        <a href="/blog/archives/2010-11/07-105408/canonical-and-codethink-at-bostom-gnome-summit.html">
+          Canonical and Codethink at Bostom GNOME Summit
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">October</h3>
+      <ul>
+        
+        <li>10
+            19,
+            2010 -
+        <a href="/blog/archives/2010-10/19-142708/creating-a-gesture-language.html">
+          Creating a Gesture Language
+            </a>
+        </li>
+        
+        <li>10
+            19,
+            2010 -
+        <a href="/blog/archives/2010-10/19-131008/probabilistic-input-for-utouch-.html">
+          Probabilistic Input for uTouch?
+            </a>
+        </li>
+        
+        <li>10
+            18,
+            2010 -
+        <a href="/blog/archives/2010-10/18-150408/a-visit-with-system76.html">
+          A Visit with System76
+            </a>
+        </li>
+        
+        <li>10
+            16,
+            2010 -
+        <a href="/blog/archives/2010-10/16-151708/multitouch-and-qt.html">
+          Multitouch and Qt
+            </a>
+        </li>
+        
+        <li>10
+            16,
+            2010 -
+        <a href="/blog/archives/2010-10/16-114108/q-a-the-ubuntu-developer-summits.html">
+          Q &amp; A: The Ubuntu Developer Summits
+            </a>
+        </li>
+        
+        <li>10
+            13,
+            2010 -
+        <a href="/blog/archives/2010-10/13-084508/ubuntu-10-10-multi-touch-video.html">
+          Ubuntu 10.10 Multi-touch Video
+            </a>
+        </li>
+        
+        <li>10
+            07,
+            2010 -
+        <a href="/blog/archives/2010-10/07-154108/multi-touch-at-uds-n-in-orlando-october-25th-29th.html">
+          Multi-touch at UDS-N in Orlando, October 25th-29th
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            21,
+            2010 -
+        <a href="/blog/archives/2010-09/21-073108/the-growing-linux-multi-touch-community.html">
+          The Growing Linux Multi-touch Community
+            </a>
+        </li>
+        
+        <li>09
+            02,
+            2010 -
+        <a href="/blog/archives/2010-09/02-050008/hci-at-canonical.html">
+          HCI at Canonical
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            01,
+            2010 -
+        <a href="/blog/archives/2010-06/01-150308/100-billion-views.html">
+          100 Billion Views
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            27,
+            2010 -
+        <a href="/blog/archives/2010-05/27-183908/ubuntu-foundations-and-maverick-meerkat-10-10.html">
+          Ubuntu Foundations and Maverick Meerkat 10.10
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            14,
+            2010 -
+        <a href="/blog/archives/2010-03/14-051308/one-beeellion-views.html">
+          One Beeellion Views
+            </a>
+        </li>
+        
+        <li>03
+            12,
+            2010 -
+        <a href="/blog/archives/2010-03/12-172508/some-thoughts-on-the-mobile-device-interface.html">
+          Some Thoughts on the Mobile Device Interface
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">February</h3>
+      <ul>
+        
+        <li>02
+            19,
+            2010 -
+        <a href="/blog/archives/2010-02/19-122408/7-years-of-blogasmic-action.html">
+          7 Years of Blogasmic Action
+            </a>
+        </li>
+        
+        <li>02
+            12,
+            2010 -
+        <a href="/blog/archives/2010-02/12-112408/txaws-0-0-1-released-.html">
+          txAWS 0.0.1 Released!
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2009</h2>
+    
+    <h3 class="archive-month">October</h3>
+      <ul>
+        
+        <li>10
+            26,
+            2009 -
+        <a href="/blog/archives/2009-10/26-091608/recent-work-on-various-open-source-projects.html">
+          Recent Work on Various Open Source Projects
+            </a>
+        </li>
+        
+        <li>10
+            04,
+            2009 -
+        <a href="/blog/archives/2009-10/04-213608/deconstructing-age-of-empires-in-linux.html">
+          Deconstructing Age of Empires in Linux
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            30,
+            2009 -
+        <a href="/blog/archives/2009-09/30-020108/one-no-two-things-.html">
+          One -- no! Two Things...
+            </a>
+        </li>
+        
+        <li>09
+            17,
+            2009 -
+        <a href="/blog/archives/2009-09/17-121208/pycon-2010-talks-neeed-.html">
+          PyCon 2010 Talks Neeed!
+            </a>
+        </li>
+        
+        <li>09
+            14,
+            2009 -
+        <a href="/blog/archives/2009-09/14-000508/txspore-twisted-spore.html">
+          txSpore: Twisted Spore
+            </a>
+        </li>
+        
+        <li>09
+            10,
+            2009 -
+        <a href="/blog/archives/2009-09/10-000508/python-and-linear-algebra-systems-of-linear-equations.html">
+          Python and Linear Algebra: Systems of Linear Equations
+            </a>
+        </li>
+        
+        <li>09
+            07,
+            2009 -
+        <a href="/blog/archives/2009-09/07-174708/windows-media-to-mp3-conversion-for-mac-os-x-and-linux.html">
+          Windows Media to MP3 Conversion for Mac OS X and Linux
+            </a>
+        </li>
+        
+        <li>09
+            07,
+            2009 -
+        <a href="/blog/archives/2009-09/07-172008/twisted-ping-fm-client.html">
+          Twisted Ping.fm Client
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">July</h3>
+      <ul>
+        
+        <li>07
+            05,
+            2009 -
+        <a href="/blog/archives/2009-07/05-190908/possible-directions-in-human-resource-management.html">
+          Possible Directions in Human Resource Management
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            26,
+            2009 -
+        <a href="/blog/archives/2009-06/26-010908/a-sinfonia-on-messaging-with-txamqp-part-v.html">
+          A Sinfonia on Messaging with txAMQP, Part V
+            </a>
+        </li>
+        
+        <li>06
+            24,
+            2009 -
+        <a href="/blog/archives/2009-06/24-122008/a-sinfonia-on-messaging-with-txamqp-part-iv.html">
+          A Sinfonia on Messaging with txAMQP, Part IV
+            </a>
+        </li>
+        
+        <li>06
+            20,
+            2009 -
+        <a href="/blog/archives/2009-06/20-220108/mac-os-x-execute-shell-commands-via-icon-clicks.html">
+          Mac OS X: Execute Shell Commands via Icon-Clicks
+            </a>
+        </li>
+        
+        <li>06
+            18,
+            2009 -
+        <a href="/blog/archives/2009-06/18-124008/a-sinfonia-on-messaging-with-txamqp-part-iii.html">
+          A Sinfonia on Messaging with txAMQP, Part III
+            </a>
+        </li>
+        
+        <li>06
+            11,
+            2009 -
+        <a href="/blog/archives/2009-06/11-220308/a-sinfonia-on-messaging-with-txamqp-part-ii.html">
+          A Sinfonia on Messaging with txAMQP, Part II
+            </a>
+        </li>
+        
+        <li>06
+            07,
+            2009 -
+        <a href="/blog/archives/2009-06/07-162208/a-sinfonia-on-messaging-with-txamqp-part-i.html">
+          A Sinfonia on Messaging with txAMQP, Part I
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            28,
+            2009 -
+        <a href="/blog/archives/2009-05/28-054508/after-the-cloud-epilogue.html">
+          After the Cloud: Epilogue
+            </a>
+        </li>
+        
+        <li>05
+            23,
+            2009 -
+        <a href="/blog/archives/2009-05/23-012508/canonical-s-vision.html">
+          Canonical&#39;s Vision
+            </a>
+        </li>
+        
+        <li>05
+            18,
+            2009 -
+        <a href="/blog/archives/2009-05/18-114308/after-the-cloud-heaps-of-cash.html">
+          After the Cloud: Heaps of Cash
+            </a>
+        </li>
+        
+        <li>05
+            14,
+            2009 -
+        <a href="/blog/archives/2009-05/14-170908/after-the-cloud-open-heaps.html">
+          After the Cloud: Open Heaps
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            23,
+            2009 -
+        <a href="/blog/archives/2009-04/23-132908/after-the-cloud-back-to-real.html">
+          After the Cloud: Back to Real
+            </a>
+        </li>
+        
+        <li>04
+            23,
+            2009 -
+        <a href="/blog/archives/2009-04/23-114608/generators-and-coroutines.html">
+          Generators and Coroutines
+            </a>
+        </li>
+        
+        <li>04
+            22,
+            2009 -
+        <a href="/blog/archives/2009-04/22-114508/functional-programming-in-python.html">
+          Functional Programming in Python
+            </a>
+        </li>
+        
+        <li>04
+            21,
+            2009 -
+        <a href="/blog/archives/2009-04/21-103608/after-the-cloud-to-atomic-computation-and-beyond.html">
+          After the Cloud: To Atomic Computation and Beyond
+            </a>
+        </li>
+        
+        <li>04
+            20,
+            2009 -
+        <a href="/blog/archives/2009-04/20-120708/after-the-cloud-the-new-big.html">
+          After the Cloud: The New Big
+            </a>
+        </li>
+        
+        <li>04
+            19,
+            2009 -
+        <a href="/blog/archives/2009-04/19-131408/after-the-cloud-so-far.html">
+          After the Cloud: So Far
+            </a>
+        </li>
+        
+        <li>04
+            18,
+            2009 -
+        <a href="/blog/archives/2009-04/18-023408/after-the-cloud-prelude.html">
+          After the Cloud: Prelude
+            </a>
+        </li>
+        
+        <li>04
+            17,
+            2009 -
+        <a href="/blog/archives/2009-04/17-234108/after-the-cloud-the-power-of-the-little-guy.html">
+          After the Cloud: The Power of the Little Guy
+            </a>
+        </li>
+        
+        <li>04
+            17,
+            2009 -
+        <a href="/blog/archives/2009-04/17-222508/uls-sig-new-python-special-interest-group.html">
+          ULS-SIG: New Python Special Interest Group
+            </a>
+        </li>
+        
+        <li>04
+            17,
+            2009 -
+        <a href="/blog/archives/2009-04/17-221208/areas-of-research-for-uls-systems-and-python.html">
+          Areas of Research for ULS Systems and Python
+            </a>
+        </li>
+        
+        <li>04
+            16,
+            2009 -
+        <a href="/blog/archives/2009-04/16-171608/newest-members-of-the-psf.html">
+          Newest Members of the PSF
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            27,
+            2009 -
+        <a href="/blog/archives/2009-03/27-173708/txloadbalancer-lightening-talk-.html">
+          txLoadBalancer Lightening Talk?
+            </a>
+        </li>
+        
+        <li>03
+            27,
+            2009 -
+        <a href="/blog/archives/2009-03/27-003608/new-pyrrd-release-0-0-7.html">
+          New PyRRD Release: 0.0.7
+            </a>
+        </li>
+        
+        <li>03
+            09,
+            2009 -
+        <a href="/blog/archives/2009-03/09-123008/hot-talks-at-pycon-2009.html">
+          Hot Talks at PyCon 2009
+            </a>
+        </li>
+        
+        <li>03
+            09,
+            2009 -
+        <a href="/blog/archives/2009-03/09-010108/a-champion-for-services-architecture-done-right.html">
+          A Champion for Services Architecture Done Right
+            </a>
+        </li>
+        
+        <li>03
+            08,
+            2009 -
+        <a href="/blog/archives/2009-03/08-182208/expert-python-programming-a-book-review.html">
+          Expert Python Programming, a Book Review
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            25,
+            2009 -
+        <a href="/blog/archives/2009-01/25-205908/xmonad-and-haskell.html">
+          XMonad and Haskell
+            </a>
+        </li>
+        
+        <li>01
+            25,
+            2009 -
+        <a href="/blog/archives/2009-01/25-205808/advanced-python-programming.html">
+          Advanced Python Programming
+            </a>
+        </li>
+        
+        <li>01
+            17,
+            2009 -
+        <a href="/blog/archives/2009-01/17-133208/window-maker-and-ubuntu.html">
+          Window Maker and Ubuntu
+            </a>
+        </li>
+        
+        <li>01
+            12,
+            2009 -
+        <a href="/blog/archives/2009-01/12-222708/python-and-rhythmbox.html">
+          Python and Rhythmbox
+            </a>
+        </li>
+        
+        <li>01
+            08,
+            2009 -
+        <a href="/blog/archives/2009-01/08-184408/twisted-mail-server-the-conclusion.html">
+          Twisted Mail Server: The Conclusion
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2008</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            27,
+            2008 -
+        <a href="/blog/archives/2008-12/27-132508/intellectual-property-and-open-source.html">
+          Intellectual Property and Open Source
+            </a>
+        </li>
+        
+        <li>12
+            15,
+            2008 -
+        <a href="/blog/archives/2008-12/15-100508/ubuntu-developer-summit.html">
+          Ubuntu Developer Summit
+            </a>
+        </li>
+        
+        <li>12
+            08,
+            2008 -
+        <a href="/blog/archives/2008-12/08-223508/the-state-of-graphs-in-python.html">
+          The State of Graphs in Python
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            13,
+            2008 -
+        <a href="/blog/archives/2008-11/13-120108/after-the-cloud.html">
+          After the Cloud
+            </a>
+        </li>
+        
+        <li>11
+            13,
+            2008 -
+        <a href="/blog/archives/2008-11/13-091908/full-text-search-with-storm-and-posgresql-8-3.html">
+          Full Text Search with Storm and PosgreSQL 8.3
+            </a>
+        </li>
+        
+        <li>11
+            11,
+            2008 -
+        <a href="/blog/archives/2008-11/11-143408/python-and-lisp-again.html">
+          Python and Lisp... Again
+            </a>
+        </li>
+        
+        <li>11
+            10,
+            2008 -
+        <a href="/blog/archives/2008-11/10-224808/txjson-rpc.html">
+          txJSON-RPC
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">October</h3>
+      <ul>
+        
+        <li>10
+            13,
+            2008 -
+        <a href="/blog/archives/2008-10/13-101708/xx-biggest-gripes-about-ubuntu.html">
+          XX Biggest Gripes about Ubuntu
+            </a>
+        </li>
+        
+        <li>10
+            01,
+            2008 -
+        <a href="/blog/archives/2008-10/01-133008/.html">
+          
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            28,
+            2008 -
+        <a href="/blog/archives/2008-09/28-113608/current-and-future-happenings.html">
+          Current and Future Happenings
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            27,
+            2008 -
+        <a href="/blog/archives/2008-08/27-103608/netaddr-python-library.html">
+          netaddr Python Library
+            </a>
+        </li>
+        
+        <li>08
+            26,
+            2008 -
+        <a href="/blog/archives/2008-08/26-134208/soa-in-practice-a-handbook-for-early-stage-uls-systems-part-1-.html">
+          SOA in Practice: A Handbook for Early-Stage ULS Systems (Part 1)
+            </a>
+        </li>
+        
+        <li>08
+            26,
+            2008 -
+        <a href="/blog/archives/2008-08/26-124308/soa-in-practice-a-handbook-for-early-stage-uls-systems-part-2-.html">
+          SOA in Practice: A Handbook for Early-Stage ULS Systems (Part 2)
+            </a>
+        </li>
+        
+        <li>08
+            23,
+            2008 -
+        <a href="/blog/archives/2008-08/23-204208/mysql-storm-and-relationships.html">
+          MySQL, Storm, and Relationships
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">July</h3>
+      <ul>
+        
+        <li>07
+            31,
+            2008 -
+        <a href="/blog/archives/2008-07/31-145408/new-uls-systems-blog.html">
+          New ULS Systems Blog
+            </a>
+        </li>
+        
+        <li>07
+            30,
+            2008 -
+        <a href="/blog/archives/2008-07/30-152208/twisted-and-opensolaris-success-.html">
+          Twisted and OpenSolaris: Success!
+            </a>
+        </li>
+        
+        <li>07
+            29,
+            2008 -
+        <a href="/blog/archives/2008-07/29-160608/new-directions.html">
+          New Directions
+            </a>
+        </li>
+        
+        <li>07
+            23,
+            2008 -
+        <a href="/blog/archives/2008-07/23-224108/in-memoria-the-great-work.html">
+          In Memoria: The Great Work
+            </a>
+        </li>
+        
+        <li>07
+            16,
+            2008 -
+        <a href="/blog/archives/2008-07/16-154308/oscon-2008.html">
+          OSCON 2008
+            </a>
+        </li>
+        
+        <li>07
+            05,
+            2008 -
+        <a href="/blog/archives/2008-07/05-135108/native-loadbalancing-for-twisted-apps.html">
+          Native LoadBalancing for Twisted Apps
+            </a>
+        </li>
+        
+        <li>07
+            03,
+            2008 -
+        <a href="/blog/archives/2008-07/03-072208/divmod-tech-making-the-next-gen-grade.html">
+          Divmod Tech: Making the &quot;Next Gen&quot; Grade
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            27,
+            2008 -
+        <a href="/blog/archives/2008-06/27-035108/so-you-want-your-code-to-be-asynchronous-a-twisted-interview.html">
+          So You Want Your Code to Be Asynchronous? A Twisted Interview
+            </a>
+        </li>
+        
+        <li>06
+            25,
+            2008 -
+        <a href="/blog/archives/2008-06/25-163608/safari-3-1-1-installer-hosed-on-os-x-10-5-3.html">
+          Safari 3.1.1 Installer Hosed on OS X 10.5.3
+            </a>
+        </li>
+        
+        <li>06
+            21,
+            2008 -
+        <a href="/blog/archives/2008-06/21-060408/txloadbalancer.html">
+          txLoadBalancer
+            </a>
+        </li>
+        
+        <li>06
+            20,
+            2008 -
+        <a href="/blog/archives/2008-06/20-020808/async-batching-with-twisted-a-walkthrough.html">
+          Async Batching with Twisted: A Walkthrough
+            </a>
+        </li>
+        
+        <li>06
+            16,
+            2008 -
+        <a href="/blog/archives/2008-06/16-150208/uls-notes-quotes.html">
+          ULS notes/quotes
+            </a>
+        </li>
+        
+        <li>06
+            12,
+            2008 -
+        <a href="/blog/archives/2008-06/12-232708/ultra-large-scale-systems-an-example.html">
+          Ultra Large-Scale Systems: An Example
+            </a>
+        </li>
+        
+        <li>06
+            12,
+            2008 -
+        <a href="/blog/archives/2008-06/12-141408/holden-web-divmod-seminar.html">
+          Holden Web/Divmod Seminar
+            </a>
+        </li>
+        
+        <li>06
+            10,
+            2008 -
+        <a href="/blog/archives/2008-06/10-163308/bazaar-with-subversion-and-combinator.html">
+          Bazaar with Subversion and Combinator
+            </a>
+        </li>
+        
+        <li>06
+            04,
+            2008 -
+        <a href="/blog/archives/2008-06/04-193708/tx-theory.html">
+          TX-Theory
+            </a>
+        </li>
+        
+        <li>06
+            02,
+            2008 -
+        <a href="/blog/archives/2008-06/02-212408/divmod-holden-web-partnership.html">
+          Divmod/Holden Web Partnership
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            27,
+            2008 -
+        <a href="/blog/archives/2008-05/27-215008/twisted-and-divmod-a-cheater-s-setup-guide.html">
+          Twisted and Divmod: A Cheater&#39;s Setup Guide
+            </a>
+        </li>
+        
+        <li>05
+            27,
+            2008 -
+        <a href="/blog/archives/2008-05/27-165208/mantissa-an-alternative-to-lamp.html">
+          Mantissa: An Alternative to LAMP
+            </a>
+        </li>
+        
+        <li>05
+            20,
+            2008 -
+        <a href="/blog/archives/2008-05/20-171508/darkstat-for-the-win.html">
+          darkstat, For the Win
+            </a>
+        </li>
+        
+        <li>05
+            19,
+            2008 -
+        <a href="/blog/archives/2008-05/19-145808/required-reading-ultra-large-scale-systems.html">
+          Required Reading: Ultra Large-Scale Systems
+            </a>
+        </li>
+        
+        <li>05
+            16,
+            2008 -
+        <a href="/blog/archives/2008-05/16-133208/the-twisted-think-tank.html">
+          The Twisted Think Tank
+            </a>
+        </li>
+        
+        <li>05
+            16,
+            2008 -
+        <a href="/blog/archives/2008-05/16-011908/app-engine-haiku.html">
+          App Engine Haiku
+            </a>
+        </li>
+        
+        <li>05
+            13,
+            2008 -
+        <a href="/blog/archives/2008-05/13-152908/founding-sponsor-opportunity-closing.html">
+          Founding Sponsor Opportunity Closing
+            </a>
+        </li>
+        
+        <li>05
+            01,
+            2008 -
+        <a href="/blog/archives/2008-05/01-184208/twisting-the-planet.html">
+          Twisting the Planet
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            24,
+            2008 -
+        <a href="/blog/archives/2008-04/24-001508/synthesis-studios-twisted-interview.html">
+          Synthesis Studios Twisted Interview
+            </a>
+        </li>
+        
+        <li>04
+            15,
+            2008 -
+        <a href="/blog/archives/2008-04/15-164208/tsf-founding-sponsor-round.html">
+          TSF Founding Sponsor Round
+            </a>
+        </li>
+        
+        <li>04
+            09,
+            2008 -
+        <a href="/blog/archives/2008-04/09-214808/twisted-on-nexenta-opensolaris.html">
+          Twisted on Nexenta/OpenSolaris
+            </a>
+        </li>
+        
+        <li>04
+            08,
+            2008 -
+        <a href="/blog/archives/2008-04/08-145608/the-problem-with-and-solution-to-google-s-app-engine.html">
+          The Problem with and Solution to Google&#39;s App Engine
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            27,
+            2008 -
+        <a href="/blog/archives/2008-03/27-231308/we-re-in-the-kitchen-cookin-ur-mealz-.html">
+          We&#39;re in the Kitchen, Cookin Ur Mealz...
+            </a>
+        </li>
+        
+        <li>03
+            27,
+            2008 -
+        <a href="/blog/archives/2008-03/27-030508/genshi-in-nevow-revisited.html">
+          Genshi in Nevow, Revisited
+            </a>
+        </li>
+        
+        <li>03
+            23,
+            2008 -
+        <a href="/blog/archives/2008-03/23-220908/twisted-on-solaris-fail.html">
+          Twisted on Solaris: Fail
+            </a>
+        </li>
+        
+        <li>03
+            17,
+            2008 -
+        <a href="/blog/archives/2008-03/17-123108/high-dynamic-range-imaging.html">
+          High Dynamic Range Imaging
+            </a>
+        </li>
+        
+        <li>03
+            16,
+            2008 -
+        <a href="/blog/archives/2008-03/16-173308/twisted-announces-tsf.html">
+          Twisted Announces TSF
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">February</h3>
+      <ul>
+        
+        <li>02
+            21,
+            2008 -
+        <a href="/blog/archives/2008-02/21-150108/twisted-news-resources-and-divmod-sprint-at-pycon.html">
+          Twisted News Resources and Divmod Sprint at PyCon
+            </a>
+        </li>
+        
+        <li>02
+            20,
+            2008 -
+        <a href="/blog/archives/2008-02/20-095708/zope-testbrowser-automating-the-web.html">
+          zope.testbrowser: Automating the Web
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2008 -
+        <a href="/blog/archives/2008-02/19-105008/pycon-2008-registration-discounts-expire-tomorrow-.html">
+          PyCon 2008 Registration Discounts Expire Tomorrow!
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2008 -
+        <a href="/blog/archives/2008-02/17-212108/twisted-s-filepath-module.html">
+          Twisted&#39;s filepath Module
+            </a>
+        </li>
+        
+        <li>02
+            13,
+            2008 -
+        <a href="/blog/archives/2008-02/13-173608/twisted-presence-at-pycon-2008.html">
+          Twisted Presence at PyCon 2008
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            18,
+            2008 -
+        <a href="/blog/archives/2008-01/18-180408/blendix-update.html">
+          Blendix Update
+            </a>
+        </li>
+        
+        <li>01
+            16,
+            2008 -
+        <a href="/blog/archives/2008-01/16-223208/divmod-s-new-product-blendix.html">
+          Divmod&#39;s New Product: Blendix
+            </a>
+        </li>
+        
+        <li>01
+            16,
+            2008 -
+        <a href="/blog/archives/2008-01/16-023208/new-ed-blogger-template.html">
+          New ED Blogger Template
+            </a>
+        </li>
+        
+        <li>01
+            10,
+            2008 -
+        <a href="/blog/archives/2008-01/10-172308/reflecting-on-the-future-via-thunderbird-.html">
+          Reflecting on the Future via Thunderbird...
+            </a>
+        </li>
+        
+        <li>01
+            02,
+            2008 -
+        <a href="/blog/archives/2008-01/02-073008/divmod-rocks.html">
+          Divmod Rocks
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2007</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            11,
+            2007 -
+        <a href="/blog/archives/2007-12/11-102608/rest-in-peace-twist.html">
+          Rest in Peace, Twist
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            09,
+            2007 -
+        <a href="/blog/archives/2007-11/09-115208/twisted-ajax-comet-tutorial-pre-release.html">
+          Twisted AJAX/COMET Tutorial Pre-release
+            </a>
+        </li>
+        
+        <li>11
+            01,
+            2007 -
+        <a href="/blog/archives/2007-11/01-105208/twitter.html">
+          twitter
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">October</h3>
+      <ul>
+        
+        <li>10
+            29,
+            2007 -
+        <a href="/blog/archives/2007-10/29-185008/trac-stats-gathering-with-storm.html">
+          trac Stats Gathering with Storm
+            </a>
+        </li>
+        
+        <li>10
+            17,
+            2007 -
+        <a href="/blog/archives/2007-10/17-091708/rst2a.html">
+          rst2a
+            </a>
+        </li>
+        
+        <li>10
+            09,
+            2007 -
+        <a href="/blog/archives/2007-10/09-224908/twisted-horse.html">
+          Twisted Horse
+            </a>
+        </li>
+        
+        <li>10
+            09,
+            2007 -
+        <a href="/blog/archives/2007-10/09-215808/chicago.html">
+          Chicago
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            19,
+            2007 -
+        <a href="/blog/archives/2007-09/19-100308/code-monkey.html">
+          Code Monkey
+            </a>
+        </li>
+        
+        <li>09
+            15,
+            2007 -
+        <a href="/blog/archives/2007-09/15-143708/the-schro-is-back.html">
+          The Schro is Back
+            </a>
+        </li>
+        
+        <li>09
+            13,
+            2007 -
+        <a href="/blog/archives/2007-09/13-171008/nevow-athena-ajax-comet-with-twisted.html">
+          Nevow Athena: AJAX/COMET with Twisted
+            </a>
+        </li>
+        
+        <li>09
+            04,
+            2007 -
+        <a href="/blog/archives/2007-09/04-091408/merging-new-trunk-features-to-a-development-branch.html">
+          Merging New trunk Features to a Development Branch
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            29,
+            2007 -
+        <a href="/blog/archives/2007-08/29-130508/hello-divmod.html">
+          Hello, Divmod
+            </a>
+        </li>
+        
+        <li>08
+            24,
+            2007 -
+        <a href="/blog/archives/2007-08/24-131008/skater-heaven.html">
+          Skater Heaven
+            </a>
+        </li>
+        
+        <li>08
+            24,
+            2007 -
+        <a href="/blog/archives/2007-08/24-094208/one-number-to-rule-them-all-and-in-the-phone-book-bind-them.html">
+          One Number to Rule Them All and in the Phone Book Bind Them
+            </a>
+        </li>
+        
+        <li>08
+            20,
+            2007 -
+        <a href="/blog/archives/2007-08/20-234408/ubuntu-7-04-on-imac-core-2-duo-2g.html">
+          Ubuntu 7.04 on iMac Core 2 Duo, 2G
+            </a>
+        </li>
+        
+        <li>08
+            19,
+            2007 -
+        <a href="/blog/archives/2007-08/19-004008/publish-bot-with-logging-capability.html">
+          publish-bot with logging capability
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">July</h3>
+      <ul>
+        
+        <li>07
+            31,
+            2007 -
+        <a href="/blog/archives/2007-07/31-194408/export-itunes-playlists-as-m3u-files.html">
+          Export iTunes Playlists as .m3u Files
+            </a>
+        </li>
+        
+        <li>07
+            28,
+            2007 -
+        <a href="/blog/archives/2007-07/28-172808/openoffice-python-and-plone-and-java.html">
+          OpenOffice, Python and Plone... and Java
+            </a>
+        </li>
+        
+        <li>07
+            28,
+            2007 -
+        <a href="/blog/archives/2007-07/28-121108/twisted-json-rpc-on-google-code-projects.html">
+          Twisted JSON-RPC on Google Code/Projects
+            </a>
+        </li>
+        
+        <li>07
+            23,
+            2007 -
+        <a href="/blog/archives/2007-07/23-173408/farewell-zenoss.html">
+          Farewell, Zenoss
+            </a>
+        </li>
+        
+        <li>07
+            10,
+            2007 -
+        <a href="/blog/archives/2007-07/10-143808/open-source-community-interaction-is-more-less-.html">
+          Open Source Community Interaction: Is More Less?
+            </a>
+        </li>
+        
+        <li>07
+            03,
+            2007 -
+        <a href="/blog/archives/2007-07/03-153808/it-s-been-a-long-time.html">
+          It&#39;s Been a Long Time
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            25,
+            2007 -
+        <a href="/blog/archives/2007-03/25-212608/genshi-templates-in-nevow.html">
+          Genshi Templates in Nevow
+            </a>
+        </li>
+        
+        <li>03
+            21,
+            2007 -
+        <a href="/blog/archives/2007-03/21-192708/front-range-pythoneers-meeting.html">
+          Front Range Pythoneers Meeting
+            </a>
+        </li>
+        
+        <li>03
+            15,
+            2007 -
+        <a href="/blog/archives/2007-03/15-012208/zope-3-surprise.html">
+          Zope 3 Surprise
+            </a>
+        </li>
+        
+        <li>03
+            12,
+            2007 -
+        <a href="/blog/archives/2007-03/12-114708/bouncing-balls.html">
+          Bouncing Balls
+            </a>
+        </li>
+        
+        <li>03
+            09,
+            2007 -
+        <a href="/blog/archives/2007-03/09-020408/django-esque-url-resolution-in-nevow.html">
+          Django-esque URL Resolution in Nevow
+            </a>
+        </li>
+        
+        <li>03
+            02,
+            2007 -
+        <a href="/blog/archives/2007-03/02-084308/python-will-rule-the-world.html">
+          Python Will Rule the World
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">February</h3>
+      <ul>
+        
+        <li>02
+            27,
+            2007 -
+        <a href="/blog/archives/2007-02/27-152908/object-publishing-with-nevow.html">
+          Object Publishing with Nevow
+            </a>
+        </li>
+        
+        <li>02
+            24,
+            2007 -
+        <a href="/blog/archives/2007-02/24-230108/twisted-bof-part-deux.html">
+          Twisted BoF, Part Deux
+            </a>
+        </li>
+        
+        <li>02
+            24,
+            2007 -
+        <a href="/blog/archives/2007-02/24-013208/the-twisted-conference.html">
+          The Twisted Conference
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            29,
+            2007 -
+        <a href="/blog/archives/2007-01/29-193208/ben-harper.html">
+          Ben Harper
+            </a>
+        </li>
+        
+        <li>01
+            26,
+            2007 -
+        <a href="/blog/archives/2007-01/26-130508/the-twisted-show.html">
+          The Twisted Show
+            </a>
+        </li>
+        
+        <li>01
+            12,
+            2007 -
+        <a href="/blog/archives/2007-01/12-135808/how-to-skin-a-trac.html">
+          How to Skin a Trac
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2006</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            27,
+            2006 -
+        <a href="/blog/archives/2006-12/27-235808/blogging-with-ecto.html">
+          Blogging with ecto
+            </a>
+        </li>
+        
+        <li>12
+            19,
+            2006 -
+        <a href="/blog/archives/2006-12/19-124208/back-at-zenoss-hq.html">
+          Back at Zenoss HQ
+            </a>
+        </li>
+        
+        <li>12
+            17,
+            2006 -
+        <a href="/blog/archives/2006-12/17-133108/google-projects-adds-wiki-support.html">
+          Google Projects adds Wiki Support
+            </a>
+        </li>
+        
+        <li>12
+            04,
+            2006 -
+        <a href="/blog/archives/2006-12/04-215408/twisted-web-site-gets-a-facelift.html">
+          Twisted Web Site Gets a Facelift
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            01,
+            2006 -
+        <a href="/blog/archives/2006-11/01-212608/mac-os-x-solaris-via-serial.html">
+          Mac OS X --&gt; Solaris via Serial
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">October</h3>
+      <ul>
+        
+        <li>10
+            14,
+            2006 -
+        <a href="/blog/archives/2006-10/14-185908/nevow-for-rapid-deployments.html">
+          Nevow for Rapid-Deployments
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            15,
+            2006 -
+        <a href="/blog/archives/2006-09/15-173808/a-new-experience.html">
+          A New Experience
+            </a>
+        </li>
+        
+        <li>09
+            11,
+            2006 -
+        <a href="/blog/archives/2006-09/11-185908/work-break.html">
+          Work Break
+            </a>
+        </li>
+        
+        <li>09
+            05,
+            2006 -
+        <a href="/blog/archives/2006-09/05-041208/python-and-monitoring.html">
+          Python and Monitoring
+            </a>
+        </li>
+        
+        <li>09
+            05,
+            2006 -
+        <a href="/blog/archives/2006-09/05-033908/roadtrip.html">
+          Roadtrip
+            </a>
+        </li>
+        
+        <li>09
+            05,
+            2006 -
+        <a href="/blog/archives/2006-09/05-015508/knights-of-cydonia.html">
+          Knights of Cydonia
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            13,
+            2006 -
+        <a href="/blog/archives/2006-08/13-131808/python-and-kcachegrind.html">
+          Python and kcachegrind
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">July</h3>
+      <ul>
+        
+        <li>07
+            30,
+            2006 -
+        <a href="/blog/archives/2006-07/30-174208/twisted-mail-server.html">
+          Twisted Mail Server
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            20,
+            2006 -
+        <a href="/blog/archives/2006-06/20-055708/trac-spam.html">
+          Trac Spam
+            </a>
+        </li>
+        
+        <li>06
+            19,
+            2006 -
+        <a href="/blog/archives/2006-06/19-070308/nevow-needs-a-screencast.html">
+          Nevow Needs a Screencast
+            </a>
+        </li>
+        
+        <li>06
+            03,
+            2006 -
+        <a href="/blog/archives/2006-06/03-174608/sets-as-an-elegant-alternative-to-logic.html">
+          Sets as an Elegant Alternative to Logic
+            </a>
+        </li>
+        
+        <li>06
+            03,
+            2006 -
+        <a href="/blog/archives/2006-06/03-153308/baz-camp-day-1.html">
+          Baz Camp, Day 1
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            07,
+            2006 -
+        <a href="/blog/archives/2006-05/07-201808/twisted-json-rpc-tcp-proxy-and-server.html">
+          Twisted JSON-RPC TCP Proxy and Server
+            </a>
+        </li>
+        
+        <li>05
+            05,
+            2006 -
+        <a href="/blog/archives/2006-05/05-185508/more-twisted-and-json-rpc.html">
+          More Twisted and JSON-RPC
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            28,
+            2006 -
+        <a href="/blog/archives/2006-04/28-050208/group-access-in-twisted.html">
+          Group Access in Twisted
+            </a>
+        </li>
+        
+        <li>04
+            26,
+            2006 -
+        <a href="/blog/archives/2006-04/26-003408/python-esque-imports-in-javascript.html">
+          Python-esque Imports in JavaScript
+            </a>
+        </li>
+        
+        <li>04
+            20,
+            2006 -
+        <a href="/blog/archives/2006-04/20-145608/the-joys-of-irc.html">
+          The Joys of IRC
+            </a>
+        </li>
+        
+        <li>04
+            02,
+            2006 -
+        <a href="/blog/archives/2006-04/02-224208/nevow-wysiwyg-editors.html">
+          Nevow + WYSIWYG Editors
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            25,
+            2006 -
+        <a href="/blog/archives/2006-03/25-210108/twisted-json-rpc.html">
+          Twisted JSON-RPC
+            </a>
+        </li>
+        
+        <li>03
+            24,
+            2006 -
+        <a href="/blog/archives/2006-03/24-142808/audio-fingerprinting.html">
+          Audio Fingerprinting
+            </a>
+        </li>
+        
+        <li>03
+            22,
+            2006 -
+        <a href="/blog/archives/2006-03/22-161608/twisted-web2-xmlrpc-how-to.html">
+          twisted.web2.xmlrpc How-To
+            </a>
+        </li>
+        
+        <li>03
+            18,
+            2006 -
+        <a href="/blog/archives/2006-03/18-181908/clay-shirky-at-etech.html">
+          Clay Shirky at ETech
+            </a>
+        </li>
+        
+        <li>03
+            12,
+            2006 -
+        <a href="/blog/archives/2006-03/12-123808/pymon-shell-sprint-overview.html">
+          pymon Shell Sprint Overview
+            </a>
+        </li>
+        
+        <li>03
+            01,
+            2006 -
+        <a href="/blog/archives/2006-03/01-231408/more-schrodinger-s-box.html">
+          More Schrodinger&#39;s Box
+            </a>
+        </li>
+        
+        <li>03
+            01,
+            2006 -
+        <a href="/blog/archives/2006-03/01-192908/pymon-sprinting-at-pycon-2006.html">
+          pymon Sprinting at PyCon 2006
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">February</h3>
+      <ul>
+        
+        <li>02
+            28,
+            2006 -
+        <a href="/blog/archives/2006-02/28-150908/unit-tests-no-really-you-have-to-use-them.html">
+          Unit Tests: No really, you HAVE to use them
+            </a>
+        </li>
+        
+        <li>02
+            28,
+            2006 -
+        <a href="/blog/archives/2006-02/28-082708/back-to-subversion.html">
+          Back to Subversion
+            </a>
+        </li>
+        
+        <li>02
+            25,
+            2006 -
+        <a href="/blog/archives/2006-02/25-175008/twisted-web2-xmlrpc.html">
+          twisted.web2.xmlrpc
+            </a>
+        </li>
+        
+        <li>02
+            25,
+            2006 -
+        <a href="/blog/archives/2006-02/25-171808/zope-3-components.html">
+          Zope 3 Components
+            </a>
+        </li>
+        
+        <li>02
+            21,
+            2006 -
+        <a href="/blog/archives/2006-02/21-151908/twisted-games.html">
+          Twisted Games
+            </a>
+        </li>
+        
+        <li>02
+            18,
+            2006 -
+        <a href="/blog/archives/2006-02/18-195308/accountdb.html">
+          accountdb
+            </a>
+        </li>
+        
+        <li>02
+            15,
+            2006 -
+        <a href="/blog/archives/2006-02/15-002008/subversion-to-darcs.html">
+          Subversion to Darcs
+            </a>
+        </li>
+        
+        <li>02
+            12,
+            2006 -
+        <a href="/blog/archives/2006-02/12-041908/nevow-radio.html">
+          Nevow Radio
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            29,
+            2006 -
+        <a href="/blog/archives/2006-01/29-071408/netcidr-0-1-released.html">
+          NetCIDR 0.1 Released
+            </a>
+        </li>
+        
+        <li>01
+            28,
+            2006 -
+        <a href="/blog/archives/2006-01/28-033708/coyotemonitoring-3.html">
+          CoyoteMonitoring 3
+            </a>
+        </li>
+        
+        <li>01
+            25,
+            2006 -
+        <a href="/blog/archives/2006-01/25-223708/the-future-of-content-management.html">
+          The Future of Content Management
+            </a>
+        </li>
+        
+        <li>01
+            25,
+            2006 -
+        <a href="/blog/archives/2006-01/25-024908/pyrrd-0-1-on-cheeseshop-python-org.html">
+          PyRRD 0.1 on cheeseshop.python.org
+            </a>
+        </li>
+        
+        <li>01
+            23,
+            2006 -
+        <a href="/blog/archives/2006-01/23-010508/pyrrd.html">
+          PyRRD
+            </a>
+        </li>
+        
+        <li>01
+            22,
+            2006 -
+        <a href="/blog/archives/2006-01/22-040208/ctypes-on-mac-os-x-10-4-with-gcc-4-0.html">
+          ctypes on Mac OS X 10.4 with gcc 4.0
+            </a>
+        </li>
+        
+        <li>01
+            20,
+            2006 -
+        <a href="/blog/archives/2006-01/20-023308/the-self-referenceing-cat.html">
+          The Self-Referenceing Cat
+            </a>
+        </li>
+        
+        <li>01
+            16,
+            2006 -
+        <a href="/blog/archives/2006-01/16-222108/psychohistory.html">
+          Psychohistory
+            </a>
+        </li>
+        
+        <li>01
+            15,
+            2006 -
+        <a href="/blog/archives/2006-01/15-044208/crazy-truth.html">
+          Crazy Truth
+            </a>
+        </li>
+        
+        <li>01
+            14,
+            2006 -
+        <a href="/blog/archives/2006-01/14-081708/madness-ensues-.html">
+          Madness Ensues...
+            </a>
+        </li>
+        
+        <li>01
+            13,
+            2006 -
+        <a href="/blog/archives/2006-01/13-172508/mods.html">
+          mods
+            </a>
+        </li>
+        
+        <li>01
+            13,
+            2006 -
+        <a href="/blog/archives/2006-01/13-153008/all-hail-the-wayback-machine-.html">
+          All Hail the Wayback Machine!
+            </a>
+        </li>
+        
+        <li>01
+            13,
+            2006 -
+        <a href="/blog/archives/2006-01/13-010208/sonicvault.html">
+          SonicVault
+            </a>
+        </li>
+        
+        <li>01
+            09,
+            2006 -
+        <a href="/blog/archives/2006-01/09-040608/silverton-co.html">
+          Silverton, CO
+            </a>
+        </li>
+        
+        <li>01
+            07,
+            2006 -
+        <a href="/blog/archives/2006-01/07-004708/automated-blogging-advogato-blogger.html">
+          Automated Blogging: Advogato &amp; Blogger
+            </a>
+        </li>
+        
+        <li>01
+            06,
+            2006 -
+        <a href="/blog/archives/2006-01/06-050908/test-post-via-email.html">
+          Test Post via Email
+            </a>
+        </li>
+        
+        <li>01
+            06,
+            2006 -
+        <a href="/blog/archives/2006-01/06-004908/future-blogging-changes.html">
+          Future Blogging Changes
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2005</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            31,
+            2005 -
+        <a href="/blog/archives/2005-12/31-012008/the-king-is-dead-long-live-the-kinglets-.html">
+          The King is dead! Long live the Kinglets!
+            </a>
+        </li>
+        
+        <li>12
+            19,
+            2005 -
+        <a href="/blog/archives/2005-12/19-012108/pymon-update.html">
+          pymon Update
+            </a>
+        </li>
+        
+        <li>12
+            18,
+            2005 -
+        <a href="/blog/archives/2005-12/18-012108/pymon-zconfig-nevow-and-pyparsing.html">
+          pymon, ZConfig, Nevow, and pyparsing
+            </a>
+        </li>
+        
+        <li>12
+            06,
+            2005 -
+        <a href="/blog/archives/2005-12/06-011608/twisted-network-programming-essentials.html">
+          Twisted Network Programming Essentials
+            </a>
+        </li>
+        
+        <li>12
+            04,
+            2005 -
+        <a href="/blog/archives/2005-12/04-011508/ubuntu.html">
+          Ubuntu
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            23,
+            2005 -
+        <a href="/blog/archives/2005-11/23-010608/coldplay-fix-you.html">
+          Coldplay - Fix You
+            </a>
+        </li>
+        
+        <li>11
+            22,
+            2005 -
+        <a href="/blog/archives/2005-11/22-010608/last-fm-and-musicbrainz.html">
+          Last.fm and MusicBrainz
+            </a>
+        </li>
+        
+        <li>11
+            22,
+            2005 -
+        <a href="/blog/archives/2005-11/22-010108/san-francisco.html">
+          San Francisco
+            </a>
+        </li>
+        
+        <li>11
+            13,
+            2005 -
+        <a href="/blog/archives/2005-11/13-010108/new-project.html">
+          New Project
+            </a>
+        </li>
+        
+        <li>11
+            09,
+            2005 -
+        <a href="/blog/archives/2005-11/09-010108/z3-project-starter-script-update.html">
+          z3 Project Starter Script Update
+            </a>
+        </li>
+        
+        <li>11
+            08,
+            2005 -
+        <a href="/blog/archives/2005-11/08-010108/structure-generation-and-z3.html">
+          Structure Generation and z3
+            </a>
+        </li>
+        
+        <li>11
+            08,
+            2005 -
+        <a href="/blog/archives/2005-11/08-010008/-back.html">
+          /back
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            06,
+            2005 -
+        <a href="/blog/archives/2005-08/06-020408/new-zope3-skin.html">
+          New Zope3 Skin
+            </a>
+        </li>
+        
+        <li>08
+            05,
+            2005 -
+        <a href="/blog/archives/2005-08/05-020408/django-vs-zope3-or-the-right-web-app-dev-platform-.html">
+          Django vs. Zope3, or &quot;The Right Web App Dev Platform&quot;
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">July</h3>
+      <ul>
+        
+        <li>07
+            28,
+            2005 -
+        <a href="/blog/archives/2005-07/28-020408/phillip-eby-has-changed-my-life-again-.html">
+          Phillip Eby has changed my life... again.
+            </a>
+        </li>
+        
+        <li>07
+            18,
+            2005 -
+        <a href="/blog/archives/2005-07/18-020408/solaris-returns-.html">
+          Solaris Returns?
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            20,
+            2005 -
+        <a href="/blog/archives/2005-06/20-020408/tibetan-village-project.html">
+          Tibetan Village Project
+            </a>
+        </li>
+        
+        <li>06
+            13,
+            2005 -
+        <a href="/blog/archives/2005-06/13-020408/thinking-in-twisted.html">
+          Thinking in Twisted
+            </a>
+        </li>
+        
+        <li>06
+            11,
+            2005 -
+        <a href="/blog/archives/2005-06/11-020408/pymon-nearing-0-3-3-release.html">
+          pymon Nearing 0.3.3 Release
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            08,
+            2005 -
+        <a href="/blog/archives/2005-04/08-020408/vacation.html">
+          Vacation
+            </a>
+        </li>
+        
+        <li>04
+            07,
+            2005 -
+        <a href="/blog/archives/2005-04/07-020408/accounting.html">
+          Accounting
+            </a>
+        </li>
+        
+        <li>04
+            06,
+            2005 -
+        <a href="/blog/archives/2005-04/06-020408/pymon.html">
+          pymon
+            </a>
+        </li>
+        
+        <li>04
+            06,
+            2005 -
+        <a href="/blog/archives/2005-04/06-020308/pykon.html">
+          PyKon
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            27,
+            2005 -
+        <a href="/blog/archives/2005-03/27-010308/pete-yorn.html">
+          Pete Yorn
+            </a>
+        </li>
+        
+        <li>03
+            25,
+            2005 -
+        <a href="/blog/archives/2005-03/25-010308/nevow-urldb.html">
+          Nevow: URLdb
+            </a>
+        </li>
+        
+        <li>03
+            24,
+            2005 -
+        <a href="/blog/archives/2005-03/24-010308/ruby-on-rails-vs-nevow.html">
+          Ruby on Rails vs Nevow
+            </a>
+        </li>
+        
+        <li>03
+            24,
+            2005 -
+        <a href="/blog/archives/2005-03/24-010208/python-eggs.html">
+          Python Eggs
+            </a>
+        </li>
+        
+        <li>03
+            23,
+            2005 -
+        <a href="/blog/archives/2005-03/23-011208/new-projects.html">
+          New Projects
+            </a>
+        </li>
+        
+        <li>03
+            23,
+            2005 -
+        <a href="/blog/archives/2005-03/23-011008/supybot-irc-channel-bot-and-subversion-commits.html">
+          supybot IRC Channel Bot and Subversion Commits
+            </a>
+        </li>
+        
+        <li>03
+            21,
+            2005 -
+        <a href="/blog/archives/2005-03/21-011008/living-in-an-epic-tolkien-setting.html">
+          Living in an Epic Tolkien Setting
+            </a>
+        </li>
+        
+        <li>03
+            19,
+            2005 -
+        <a href="/blog/archives/2005-03/19-011008/constantine.html">
+          Constantine
+            </a>
+        </li>
+        
+        <li>03
+            19,
+            2005 -
+        <a href="/blog/archives/2005-03/19-010808/itunes-playtlist-with-celementtree.html">
+          iTunes Playtlist with cElementTree
+            </a>
+        </li>
+        
+        <li>03
+            19,
+            2005 -
+        <a href="/blog/archives/2005-03/19-000808/nevow-twisted-or-mod_python-.html">
+          Nevow + Twisted, or mod_python?
+            </a>
+        </li>
+        
+        <li>03
+            16,
+            2005 -
+        <a href="/blog/archives/2005-03/16-002308/advogato-diary-archiver.html">
+          Advogato Diary Archiver
+            </a>
+        </li>
+        
+        <li>03
+            14,
+            2005 -
+        <a href="/blog/archives/2005-03/14-002308/america-beyond-capitalism-posters-.html">
+          America Beyond Capitalism -- Posters!
+            </a>
+        </li>
+        
+        <li>03
+            11,
+            2005 -
+        <a href="/blog/archives/2005-03/11-002308/advogato-and-bad-html.html">
+          Advogato and Bad HTML
+            </a>
+        </li>
+        
+        <li>03
+            10,
+            2005 -
+        <a href="/blog/archives/2005-03/10-002308/pymon.html">
+          pymon
+            </a>
+        </li>
+        
+        <li>03
+            07,
+            2005 -
+        <a href="/blog/archives/2005-03/07-002308/jefferson-in-the-economy-of-ideas-.html">
+          Jefferson in &quot;The Economy of Ideas&quot;
+            </a>
+        </li>
+        
+        <li>03
+            06,
+            2005 -
+        <a href="/blog/archives/2005-03/06-002308/experiment-in-community.html">
+          Experiment in Community
+            </a>
+        </li>
+        
+        <li>03
+            05,
+            2005 -
+        <a href="/blog/archives/2005-03/05-002308/generic-functions-and-rule-based-systems.html">
+          Generic Functions and Rule-Based Systems
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">January</h3>
+      <ul>
+        
+        <li>01
+            31,
+            2005 -
+        <a href="/blog/archives/2005-01/31-010408/clearance.html">
+          Clearance
+            </a>
+        </li>
+        
+        <li>01
+            14,
+            2005 -
+        <a href="/blog/archives/2005-01/14-010408/sorting-packing-and-throwing-out.html">
+          Sorting, Packing, and Throwing Out
+            </a>
+        </li>
+        
+        <li>01
+            12,
+            2005 -
+        <a href="/blog/archives/2005-01/12-010416/paul-graham-value-and-productivity-in-the-new-economy.html">
+          Paul Graham - Value and Productivity in the New Economy
+            </a>
+        </li>
+        
+        <li>01
+            12,
+            2005 -
+        <a href="/blog/archives/2005-01/12-010408/gar-and-ted-s-excellent-adventure.html">
+          Gar and Ted&#39;s Excellent Adventure
+            </a>
+        </li>
+        
+        <li>01
+            09,
+            2005 -
+        <a href="/blog/archives/2005-01/09-011708/a-random-blog.html">
+          A Random Blog
+            </a>
+        </li>
+        
+        <li>01
+            07,
+            2005 -
+        <a href="/blog/archives/2005-01/07-011708/traceroute-games.html">
+          Traceroute Games
+            </a>
+        </li>
+        
+        <li>01
+            05,
+            2005 -
+        <a href="/blog/archives/2005-01/05-011708/beyond-capitalism.html">
+          Beyond Capitalism
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2004</h2>
+    
+    <h3 class="archive-month">December</h3>
+      <ul>
+        
+        <li>12
+            31,
+            2004 -
+        <a href="/blog/archives/2004-12/31-011708/blogging-via-email-with-python.html">
+          Blogging via Email with Python
+            </a>
+        </li>
+        
+        <li>12
+            28,
+            2004 -
+        <a href="/blog/archives/2004-12/28-011808/mount-vernon.html">
+          Mount Vernon
+            </a>
+        </li>
+        
+        <li>12
+            26,
+            2004 -
+        <a href="/blog/archives/2004-12/26-011808/syntagma.html">
+          Syntagma
+            </a>
+        </li>
+        
+        <li>12
+            23,
+            2004 -
+        <a href="/blog/archives/2004-12/23-011808/support-for-mundialization.html">
+          Support for Mundialization
+            </a>
+        </li>
+        
+        <li>12
+            23,
+            2004 -
+        <a href="/blog/archives/2004-12/23-011708/new-home-for-the-obf-and-obmn.html">
+          New Home for the OBF and OBMN
+            </a>
+        </li>
+        
+        <li>12
+            17,
+            2004 -
+        <a href="/blog/archives/2004-12/17-011708/freetype2-in-fink-mac-os-x-is-hosed.html">
+          freetype2 in fink (Mac OS X) is hosed
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">November</h3>
+      <ul>
+        
+        <li>11
+            03,
+            2004 -
+        <a href="/blog/archives/2004-11/03-011708/vim-and-subversion-as-a-cms.html">
+          Vim and Subversion as a CMS
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">October</h3>
+      <ul>
+        
+        <li>10
+            21,
+            2004 -
+        <a href="/blog/archives/2004-10/21-183408/this-is-not-where-i-keep-my-stuff.html">
+          This is not where I keep my stuff
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">September</h3>
+      <ul>
+        
+        <li>09
+            27,
+            2004 -
+        <a href="/blog/archives/2004-09/27-021608/the-breakdown-of-the-tribe-and-its-anticipated-rebirth.html">
+          The Breakdown of the Tribe and Its Anticipated Rebirth
+            </a>
+        </li>
+        
+        <li>09
+            26,
+            2004 -
+        <a href="/blog/archives/2004-09/26-022108/star-wars.html">
+          Star Wars
+            </a>
+        </li>
+        
+        <li>09
+            12,
+            2004 -
+        <a href="/blog/archives/2004-09/12-021208/modeling-human-behavior.html">
+          Modeling Human Behavior
+            </a>
+        </li>
+        
+        <li>09
+            04,
+            2004 -
+        <a href="/blog/archives/2004-09/04-021408/python-linear-algebra-and-character-development-in-games.html">
+          Python, Linear Algebra, and Character Development in Games
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">August</h3>
+      <ul>
+        
+        <li>08
+            31,
+            2004 -
+        <a href="/blog/archives/2004-08/31-022108/the-file-system-as-a-database-and-the-last-post-of-summer.html">
+          The File System as a Database and the Last Post of Summer
+            </a>
+        </li>
+        
+        <li>08
+            24,
+            2004 -
+        <a href="/blog/archives/2004-08/24-020108/freemind.html">
+          Freemind
+            </a>
+        </li>
+        
+        <li>08
+            19,
+            2004 -
+        <a href="/blog/archives/2004-08/19-021108/pyhtmlwidgets.html">
+          PyHTMLWidgets
+            </a>
+        </li>
+        
+        <li>08
+            19,
+            2004 -
+        <a href="/blog/archives/2004-08/19-021008/my-dream-home-robot.html">
+          My Dream Home Robot
+            </a>
+        </li>
+        
+        <li>08
+            18,
+            2004 -
+        <a href="/blog/archives/2004-08/18-022008/-not-blogging.html">
+          ! Not Blogging
+            </a>
+        </li>
+        
+        <li>08
+            18,
+            2004 -
+        <a href="/blog/archives/2004-08/18-021908/insanely-busy-.html">
+          Insanely Busy...
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">May</h3>
+      <ul>
+        
+        <li>05
+            02,
+            2004 -
+        <a href="/blog/archives/2004-05/02-020308/everything-as-a-distributed-resource.html">
+          Everything as a Distributed Resource
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            24,
+            2004 -
+        <a href="/blog/archives/2004-04/24-020916/evolving-networks.html">
+          Evolving Networks
+            </a>
+        </li>
+        
+        <li>04
+            24,
+            2004 -
+        <a href="/blog/archives/2004-04/24-020908/political-views.html">
+          Political Views
+            </a>
+        </li>
+        
+        <li>04
+            04,
+            2004 -
+        <a href="/blog/archives/2004-04/04-010408/what-s-a-libertarian-.html">
+          What&#39;s a Libertarian?
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            28,
+            2004 -
+        <a href="/blog/archives/2004-03/28-012008/games-for-the-future.html">
+          Games for the Future
+            </a>
+        </li>
+        
+        <li>03
+            28,
+            2004 -
+        <a href="/blog/archives/2004-03/28-011608/dinosaurs-and-mammals.html">
+          Dinosaurs and Mammals
+            </a>
+        </li>
+        
+        <li>03
+            28,
+            2004 -
+        <a href="/blog/archives/2004-03/28-011508/the-printing-press-literacy-education-and-unalienable-rights.html">
+          The Printing Press, Literacy, Education, and Unalienable Rights
+            </a>
+        </li>
+        
+        <li>03
+            28,
+            2004 -
+        <a href="/blog/archives/2004-03/28-011208/a-revolutionary-s-cookbook.html">
+          A Revolutionary&#39;s Cookbook
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
+  
+  <h2 class="archive-year">2003</h2>
+    
+    <h3 class="archive-month">June</h3>
+      <ul>
+        
+        <li>06
+            06,
+            2003 -
+        <a href="/blog/archives/2003-06/06-020808/the-second-superpower-rears-its-beautiful-head.html">
+          The Second Superpower Rears its Beautiful Head
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">April</h3>
+      <ul>
+        
+        <li>04
+            20,
+            2003 -
+        <a href="/blog/archives/2003-04/20-021416/economics-entropy-and-management-theory.html">
+          Economics, Entropy, and Management Theory
+            </a>
+        </li>
+        
+        <li>04
+            20,
+            2003 -
+        <a href="/blog/archives/2003-04/20-021408/corporations-inherently-amoral-.html">
+          Corporations Inherently Amoral?
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">March</h3>
+      <ul>
+        
+        <li>03
+            18,
+            2003 -
+        <a href="/blog/archives/2003-03/18-012208/oneworld-net.html">
+          OneWorld.net
+            </a>
+        </li>
+        
+        <li>03
+            13,
+            2003 -
+        <a href="/blog/archives/2003-03/13-012232/network-architectures-in-business.html">
+          Network Architectures in Business
+            </a>
+        </li>
+        
+        <li>03
+            13,
+            2003 -
+        <a href="/blog/archives/2003-03/13-012216/internet-super-heros.html">
+          Internet Super Heros
+            </a>
+        </li>
+        
+        <li>03
+            13,
+            2003 -
+        <a href="/blog/archives/2003-03/13-012208/blue-sky-factory.html">
+          Blue Sky Factory
+            </a>
+        </li>
+        
+        <li>03
+            03,
+            2003 -
+        <a href="/blog/archives/2003-03/03-011308/content-contributor-brad-delong.html">
+          Content Contributor - Brad DeLong
+            </a>
+        </li>
+        
+      </ul>
+    
+    <h3 class="archive-month">February</h3>
+      <ul>
+        
+        <li>02
+            28,
+            2003 -
+        <a href="/blog/archives/2003-02/28-012116/the-success-of-open-source.html">
+          The Success of Open Source
+            </a>
+        </li>
+        
+        <li>02
+            28,
+            2003 -
+        <a href="/blog/archives/2003-02/28-012108/wef-in-davos-switzerland.html">
+          WEF in Davos, Switzerland
+            </a>
+        </li>
+        
+        <li>02
+            25,
+            2003 -
+        <a href="/blog/archives/2003-02/25-010108/who-s-afraid-of-adam-smith-how-the-market-got-its-soul-.html">
+          Who&#39;s Afraid of Adam Smith? How the Market Got Its Soul!
+            </a>
+        </li>
+        
+        <li>02
+            24,
+            2003 -
+        <a href="/blog/archives/2003-02/24-010808/unix-to-mac-os-x-porting.html">
+          UNIX to Mac OS X porting
+            </a>
+        </li>
+        
+        <li>02
+            22,
+            2003 -
+        <a href="/blog/archives/2003-02/22-012008/shaker-thoughts.html">
+          Shaker thoughts
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011810/consumers-republic.html">
+          Consumers&#39; Republic
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011809/building-communities-as-well-as-companies.html">
+          Building Communities as Well as Companies
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011808/the-strange-world-of-business.html">
+          The Strange World of Business
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011708/why-start-a-foundation-.html">
+          Why start a foundation?
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011608/venture-capital-goes-back-to-basics.html">
+          Venture Capital Goes Back to Basics
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011408/job-security-and-loyalty.html">
+          Job Security and Loyalty
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011308/corporate-values-.html">
+          Corporate Values?
+            </a>
+        </li>
+        
+        <li>02
+            19,
+            2003 -
+        <a href="/blog/archives/2003-02/19-011208/justification-for-the-obf.html">
+          Justification for the OBF
+            </a>
+        </li>
+        
+        <li>02
+            18,
+            2003 -
+        <a href="/blog/archives/2003-02/18-010408/in-praise-of-evolvable-systems.html">
+          In Praise of Evolvable Systems
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-012308/middlemen-versus-market-makers-a-theory-of-competitive-exchange.html">
+          Middlemen versus Market Makers: A Theory of Competitive Exchange
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-012008/speculative-microeconomics-for-tomorrow-s-economy.html">
+          Speculative Microeconomics for Tomorrow&#39;s Economy
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-011608/-napsterizing-pharmaceuticals-access-innovation-and-consumer-welfare.html">
+          &quot;Napsterizing&quot; Pharmaceuticals: Access, Innovation, and Consumer Welfare
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-011408/refinements-.html">
+          Refinements...
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-011308/obf-intro-front-page.html">
+          OBF Intro/Front Page
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-011208/eff-and-obf-.html">
+          EFF and OBF?
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-011108/cooperation.html">
+          Cooperation
+            </a>
+        </li>
+        
+        <li>02
+            17,
+            2003 -
+        <a href="/blog/archives/2003-02/17-011008/new-obf-site.html">
+          New OBF Site
+            </a>
+        </li>
+        
+      </ul>
+    
+    <hr class="year-grouping" />
   
 
           </div>
@@ -492,94 +4370,68 @@
     </main>
     
     
-    <footer>
+    <footer id="footer">
       
-<div class="widewrapper footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 footer-widget">
-        <h3> <i class="fa fa-wpforms"></i>Statistics</h3>
+        <div class="row">
+          <div class="col-lg-6">
 
-        <span>For the geeks that track this sort of thing
-        (just for the posts themselves, not the other content):</span>
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
 
-        <div class="stats">
-          <div class="line">
-            <span class="counter">3</span>
-            <span class="caption">Authors</span>
           </div>
-          <div class="line">
-            <span class="counter">32</span>
-            <span class="caption">Articles</span>
-          </div>
-          <div class="line">
-            <span class="counter">3148</span>
-            <span class="caption">Lines</span>
-          </div>
-          <div class="line">
-            <span class="counter">25013</span>
-            <span class="caption">Words</span>
-          </div>
-          <div class="line">
-            <span class="counter">172899</span>
-            <span class="caption">Characters</span>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
           </div>
         </div>
 
-      </div>
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
 
-      <div class="col-md-4 footer-widget">
-        <h3> <i class="fa fa-star"></i> Great Resources</h3>
-        <ul class="tales-list">
-          <li><a href="https://www.fhwa.dot.gov/byways">Scenic Byways in the US</a></li>
-          <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
-          <li><a href="https://matadornetwork.com/read/mapped-optimal-road-trip-see-us-national-parks/">Optimal Roadtrip Route for All-Lower-48 National Parks</a></li>
-          <li><a href="http://www.ironbutt.com/">Iron Butt Association</a></li>
-          <li>
-            <a href="https://www.revzilla.com/common-tread/motorcycle-camping-the-basics">RevZilla's Motorcycle Camping</a> &amp;
-            <a href="http://www.motorcyclecruiser.com/tips-for-motorcycle-camping">Cruiser's Tips for Motorcycle Camping</a>
-          </li>
-        </ul>
-      </div>
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-ngap-archives">nasa-ngap-archives</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
 
-      <div class="col-md-4 footer-widget">
-        <h3> <i class="fa fa-envelope"></i>Reach Out</h3>
+            </ul>
+          </div>
+        </div>
 
-        <span>We're happy to hear from readers: thoughts, feedback,
-        content suggestions - all welcome! Drop us a line:</span>
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
 
-        <span class="email">
-          <a href="mailto:blog@forgotten.roads.mx">blog@forgotten.roads.mx</a>
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="widewrapper copyright">
-  <div class="container">
-    &copy; 2016-2017, C&amp;B|Books &middot;
-    designed by <a href="http://hackerthemes.com" rel="nofollow">HackerThemes</a> and
-    <a href="http://forgotten.roads.mx">Forgotten Roads MX</a>
-    <span style="float: right">
-      <a href="/blog/about.html">About</a>
-      &middot;
-      <a href="/blog/contact.html">Contact</a>
-      |
-      <a href="/blog/license.html">License</a>
-      |
-      <a href="/blog/privacy.html">Privacy</a>
-      &middot;
-      <a href="/blog/disclosure.html">Disclosure</a>
-    </span>
-  </div>
-
-</div>
 
     </footer>
     
     
-    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/blog/assets/modernizr/modernizr-custom.js"></script>
+    <script src="/blog/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
     
     
