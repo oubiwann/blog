@@ -69,28 +69,28 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn archives
-  [system posts]
+  [system]
   (template/render
     "templates/listings/archives.html"
-    (data/archives system posts)))
+    (data/archives system)))
 
 (defn categories
-  [system posts]
+  [system]
   (template/render
     "templates/listings/categories.html"
-    (data/categories system posts)))
+    (data/categories system)))
 
 (defn tags
-  [system posts]
+  [system]
   (template/render
     "templates/listings/tags.html"
-    (data/tags system posts)))
+    (data/tags system)))
 
 (defn authors
-  [system posts]
+  [system]
   (template/render
     "templates/listings/authors.html"
-    (data/authors system posts)))
+    (data/authors system)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Design Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

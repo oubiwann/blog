@@ -106,8 +106,9 @@
 
 (defn common
   [system]
-  (assoc (base system)
-         :blog-stats (db/get-all-stats (db-component/db-querier system))))
+  (let [querier (db-component/db-querier system)]
+    (assoc (base system)
+           :blog-stats (db/get-all-stats querier))))
 
 (def generic-page
   {:title nil
@@ -122,6 +123,25 @@
                 (io/resource)
                 (slurp)
                 (markdown/md-to-html-string))}))
+
+(defn listing-data
+  "Listing pages need the following:
+
+  * year, month, day (get-post-dates)
+  * post URL (get-url-path)
+  * post title (get-post-metadata)
+  * post subtitle (get-post-metadata)"
+  [querier post-key]
+  (let [dates (db/get-post-dates querier post-key)
+        metadata (db/get-post-metadata querier post-key)]
+    {:month-name (:month dates)
+     :year (get-in dates [:date :year])
+     :month (get-in dates [:date :month])
+     :day (get-in dates [:date :day])
+     :url-path (format "/blog/archives/%s"
+                       (db/get-post-uri-path querier post-key))
+     :subtitle (:subtitle metadata)
+     :title (:title metadata)}))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Static Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -196,11 +216,7 @@
         (common all-posts)
         (assoc-in [:page-data :active] "index")
         (assoc :headlines-heading "Headlines"
-               :headlines-desc (str "We like to keep things simple at FRMX. "
-                                    "Only the most recent headlines are kept "
-                                    "on the front page -- if you want to read "
-                                    "an older post, <a href=\"/blog/archives\""
-                                    ">check out the archives</a>.")
+               :headlines-desc (str "[ XXX add note about the headlines ]")
                :tags (tags/get-stats all-posts)
                :headliner headliner
                :posts-data grouped-posts
@@ -214,36 +230,47 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn archives
-  [system posts]
+  [system]
   (-> system
       common
       (assoc-in [:page-data :active] "archives")
       (assoc :content (assoc generic-page :title "Archives")
-             :posts-data (blog/group-data :archives posts))))
+             :posts-data (blog/group-data :archives system))))
 
 (defn categories
-  [system posts]
+  [system]
   (-> system
       common
       (assoc-in [:page-data :active] "categories")
       (assoc :content (assoc generic-page :title "Categories")
-             :posts-data (blog/group-data :categories posts))))
+             :posts-data (blog/group-data :categories system))))
 
 (defn tags
-  [system posts]
+  [system]
   (-> system
       common
       (assoc-in [:page-data :active] "tags")
       (assoc :content (assoc generic-page :title "Tags")
-             :posts-data (blog/group-data :tags posts))))
+             :posts-data (blog/group-data :tags system))))
 
 (defn authors
-  [system posts]
-  (-> system
-      common
-      (assoc-in [:page-data :active] "authors")
-      (assoc :content (assoc generic-page :title "Authors")
-             :posts-data (blog/group-data :authors posts))))
+  "Get all authors, get the post-keys for each author, then query for the
+  required data for each post-key (done by the `listing-data` function)."
+  [system]
+  (let [page-data (common system)
+        querier (db-component/db-querier system)
+        section "authors"]
+    (-> page-data
+        (assoc-in [:page-data :active] section)
+        (assoc :content (assoc generic-page :title "Authors")
+               :posts-data (->> (db/get-all-authors querier)
+                                (map (fn [author]
+                                       [author (map #(listing-data
+                                                      querier %)
+                                                    (db/get-author-posts
+                                                     querier
+                                                     author))]))
+                                (into {}))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Design Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

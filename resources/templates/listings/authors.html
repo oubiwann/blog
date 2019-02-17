@@ -3,14 +3,16 @@
 {% block content-body %}
   <p class="lead">Posts presented by author, and then by year and month.</p>
   {% for author-data in posts-data %}
-  <h2>{{ author-data.author }}</h2>
+  <h2>{{ author-data|key }}</h2>
   <ul>
-    {% for post-data in author-data.posts %}
+    {% for post-data in author-data|val %}
     <li>{{ post-data.month }}
-        {{ post-data.date.day }},
-        {{ post-data.date.year }} -
-        {{ post-data.link|safe }}{% if post-data.subtitle %}:
-        {{ post-data.subtitle|safe }}{% endif %}</li>
+        {{ post-data.day }},
+        {{ post-data.year }} -
+        <a href="{{ post-data.url-path|safe }}">
+          {{ post-data.title }}
+        </a>{% if post-data.subtitle %}: {{ post-data.subtitle|safe }}{% endif %}
+    </li>
     {% endfor %}
   </ul>
   {% endfor %}

@@ -52,15 +52,16 @@
       :uri-base (config/posts-path system))))
 
 (defn index-routes
-  [system posts routes]
+  [system routes]
   (log/info "Assembling routes for main and listing pages ...")
   (merge
     routes
-    {"/blog/index.html" (page/front-page system posts)
-     "/blog/archives/index.html" (page/archives system posts)
-     "/blog/categories/index.html" (page/categories system posts)
-     "/blog/tags/index.html" (page/tags system posts)
-     "/blog/authors/index.html" (page/authors system posts)}))
+    {
+     ; "/blog/index.html" (page/front-page system)
+     ; "/blog/archives/index.html" (page/archives system)
+     ; "/blog/categories/index.html" (page/categories system)
+     ; "/blog/tags/index.html" (page/tags system)
+     "/blog/authors/index.html" (page/authors system)}))
 
 (defn reader-routes
   [system posts routes]
@@ -88,7 +89,7 @@
        (static-routes)
        (design-routes system)
        ; (post-routes system)
-       ; (index-routes system)
+       (index-routes system)
        ; (reader-routes system)
        (sitemaps-routes system)
        (event/publish->> system tag/generate-routes-post)
