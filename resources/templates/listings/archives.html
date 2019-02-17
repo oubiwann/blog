@@ -3,18 +3,21 @@
 {% block content-body %}
   <p class="lead">All previous posts are listed here by year and month.</p>
   {% for year-data in posts-data %}
-  <h2>{{ year-data.year }}</h2>
-    {% for month-data in year-data.months %}
-    <h3>{{ month-data.month }}</h3>
+  <h2 class="archive-year">{{ year-data|key }}</h2>
+    {% for month-grouping in year-data|val %}
+    <h3 class="archive-month">{{ month-grouping.1.0.month-name }}</h3>
       <ul>
-        {% for post-data in month-data.posts %}
+        {% for post-data in month-grouping|val %}
         <li>{{ post-data.month }}
-            {{ post-data.date.day }},
-            {{ post-data.date.year }} -
-            {{ post-data.link|safe }}{% if post-data.subtitle %}:
-            {{ post-data.subtitle|safe }}{% endif %}</li>
+            {{ post-data.day }},
+            {{ post-data.year }} -
+        <a href="{{ post-data.url-path|safe }}">
+          {{ post-data.title }}
+            </a>{% if post-data.subtitle %}: {{ post-data.subtitle|safe }}{% endif %}
+        </li>
         {% endfor %}
       </ul>
     {% endfor %}
+    <hr class="year-grouping" />
   {% endfor %}
 {% endblock %}

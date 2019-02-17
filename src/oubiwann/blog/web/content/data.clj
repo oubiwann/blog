@@ -143,6 +143,34 @@
      :subtitle (:subtitle metadata)
      :title (:title metadata)}))
 
+(defn desc-str
+  [a b]
+  (compare b a))
+
+(defn simple-grouping
+  [querier data-fn grouping-key]
+  [grouping-key (->> grouping-key
+                     (data-fn querier)
+                     (map #(listing-data querier %)))])
+
+(defn two-layer-grouping
+  [querier data-fn grouping-key second-level-key]
+  [grouping-key (->> grouping-key
+                     (data-fn querier)
+                     (map #(listing-data querier %))
+                     (group-by second-level-key)
+                     sort
+                     (into (sorted-map)))])
+
+(defn reversed-two-layer-grouping
+  [querier data-fn grouping-key second-level-key]
+  [grouping-key (->> grouping-key
+                     (data-fn querier)
+                     (map #(listing-data querier %))
+                     (group-by second-level-key)
+                     sort
+                     (into (sorted-map-by desc-str)))])
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Static Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -230,12 +258,20 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn archives
+  "Get all years, get the post-keys for each year, then query for the
+  required data for each post-key (done by the `listing-data` function)."
   [system]
-  (-> system
-      common
-      (assoc-in [:page-data :active] "archives")
-      (assoc :content (assoc generic-page :title "Archives")
-             :posts-data (blog/group-data :archives system))))
+  (log/info "Assembling data for archives listing page ...")
+  (let [page-data (common system)
+        querier (db-component/db-querier system)
+        section "archives"]
+    (-> page-data
+        (assoc-in [:page-data :active] section)
+        (assoc :content (assoc generic-page :title "Archives")
+               :posts-data (->> (db/get-all-years querier)
+                                (map #(reversed-two-layer-grouping
+                                       querier db/get-year-posts % :month))
+                                (into (sorted-map-by desc-str)))))))
 
 (defn categories
   "Get all categories, get the post-keys for each category, then query for the
@@ -249,21 +285,9 @@
         (assoc-in [:page-data :active] section)
         (assoc :content (assoc generic-page :title "Categories")
                :posts-data (->> (db/get-all-categories querier)
-                                (map (fn [category]
-                                       [category (map #(listing-data
-                                                        querier %)
-                                                      (db/get-category-posts
-                                                       querier
-                                                       category))]))
+                                (map #(simple-grouping
+                                       querier db/get-category-posts %))
                                 (into (sorted-map)))))))
-
-(defn tags
-  [system]
-  (-> system
-      common
-      (assoc-in [:page-data :active] "tags")
-      (assoc :content (assoc generic-page :title "Tags")
-             :posts-data (blog/group-data :tags system))))
 
 (defn tags
   "Get all tags, get the post-keys for each tag, then query for the
@@ -277,12 +301,8 @@
         (assoc-in [:page-data :active] section)
         (assoc :content (assoc generic-page :title "Tags")
                :posts-data (->> (db/get-all-tags querier)
-                                (map (fn [tag]
-                                       [tag (map #(listing-data
-                                                        querier %)
-                                                      (db/get-tag-posts
-                                                       querier
-                                                       tag))]))
+                                (map #(simple-grouping
+                                       querier db/get-tag-posts %))
                                 (into (sorted-map)))))))
 
 (defn authors
@@ -297,12 +317,8 @@
         (assoc-in [:page-data :active] section)
         (assoc :content (assoc generic-page :title "Authors")
                :posts-data (->> (db/get-all-authors querier)
-                                (map (fn [author]
-                                       [author (map #(listing-data
-                                                      querier %)
-                                                    (db/get-author-posts
-                                                     querier
-                                                     author))]))
+                                (map #(simple-grouping
+                                       querier db/get-author-posts %))
                                 (into (sorted-map)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
