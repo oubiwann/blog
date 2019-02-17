@@ -238,12 +238,23 @@
              :posts-data (blog/group-data :archives system))))
 
 (defn categories
+  "Get all authors, get the post-keys for each author, then query for the
+  required data for each post-key (done by the `listing-data` function)."
   [system]
-  (-> system
-      common
-      (assoc-in [:page-data :active] "categories")
-      (assoc :content (assoc generic-page :title "Categories")
-             :posts-data (blog/group-data :categories system))))
+  (let [page-data (common system)
+        querier (db-component/db-querier system)
+        section "categories"]
+    (-> page-data
+        (assoc-in [:page-data :active] section)
+        (assoc :content (assoc generic-page :title "Categories")
+               :posts-data (->> (db/get-all-categories querier)
+                                (map (fn [category]
+                                       [category (map #(listing-data
+                                                        querier %)
+                                                      (db/get-category-posts
+                                                       querier
+                                                       category))]))
+                                (into {}))))))
 
 (defn tags
   [system]

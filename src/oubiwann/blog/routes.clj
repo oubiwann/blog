@@ -51,7 +51,7 @@
       :gen-func (partial page/post system posts)
       :uri-base (config/posts-path system))))
 
-(defn index-routes
+(defn listing-routes
   [system routes]
   (log/info "Assembling routes for main and listing pages ...")
   (merge
@@ -59,7 +59,7 @@
     {
      ; "/blog/index.html" (page/front-page system)
      ; "/blog/archives/index.html" (page/archives system)
-     ; "/blog/categories/index.html" (page/categories system)
+     "/blog/categories/index.html" (page/categories system)
      ; "/blog/tags/index.html" (page/tags system)
      "/blog/authors/index.html" (page/authors system)}))
 
@@ -89,7 +89,7 @@
        (static-routes)
        (design-routes system)
        ; (post-routes system)
-       (index-routes system)
+       (listing-routes system)
        ; (reader-routes system)
        (sitemaps-routes system)
        (event/publish->> system tag/generate-routes-post)
