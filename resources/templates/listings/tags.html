@@ -3,15 +3,17 @@
 {% block content-body %}
   <p class="lead">Tags are listed below, alphabetically, with any posts labeled as such.</p>
   {% for tags-data in posts-data %}
-  <a name="{{ tags-data.tag }}"></a><br />
-  <h2>{{ tags-data.tag }}</h2>
+  <a name="{{ tags-data|key }}"></a><br />
+  <h2>{{ tags-data|key }}</h2>
   <ul>
-    {% for post-data in tags-data.posts %}
-    <li>{{ post-data.month }}
+    {% for post-data in tags-data|val %}
+    <li>{{ post-data.month-name }}
         {{ post-data.date.day }},
-        {{ post-data.date.year }} -
-        {{ post-data.link|safe }}{% if post-data.subtitle %}:
-        {{ post-data.subtitle|safe }}{% endif %}</li>
+        {{ post-data.year }} -
+        <a href="{{ post-data.url-path|safe }}">
+          {{ post-data.title }}
+        </a>{% if post-data.subtitle %}: {{ post-data.subtitle|safe }}{% endif %}
+    </li>
     {% endfor %}
   </ul>
   {% endfor %}

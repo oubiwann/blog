@@ -238,9 +238,10 @@
              :posts-data (blog/group-data :archives system))))
 
 (defn categories
-  "Get all authors, get the post-keys for each author, then query for the
+  "Get all categories, get the post-keys for each category, then query for the
   required data for each post-key (done by the `listing-data` function)."
   [system]
+  (log/info "Assembling data for categories listing page ...")
   (let [page-data (common system)
         querier (db-component/db-querier system)
         section "categories"]
@@ -254,7 +255,7 @@
                                                       (db/get-category-posts
                                                        querier
                                                        category))]))
-                                (into {}))))))
+                                (into (sorted-map)))))))
 
 (defn tags
   [system]
@@ -264,10 +265,31 @@
       (assoc :content (assoc generic-page :title "Tags")
              :posts-data (blog/group-data :tags system))))
 
+(defn tags
+  "Get all tags, get the post-keys for each tag, then query for the
+  required data for each post-key (done by the `listing-data` function)."
+  [system]
+  (log/info "Assembling data for tags listing page ...")
+  (let [page-data (common system)
+        querier (db-component/db-querier system)
+        section "tags"]
+    (-> page-data
+        (assoc-in [:page-data :active] section)
+        (assoc :content (assoc generic-page :title "Tags")
+               :posts-data (->> (db/get-all-tags querier)
+                                (map (fn [tag]
+                                       [tag (map #(listing-data
+                                                        querier %)
+                                                      (db/get-tag-posts
+                                                       querier
+                                                       tag))]))
+                                (into (sorted-map)))))))
+
 (defn authors
   "Get all authors, get the post-keys for each author, then query for the
   required data for each post-key (done by the `listing-data` function)."
   [system]
+  (log/info "Assembling data for authors listing page ...")
   (let [page-data (common system)
         querier (db-component/db-querier system)
         section "authors"]
@@ -281,7 +303,7 @@
                                                     (db/get-author-posts
                                                      querier
                                                      author))]))
-                                (into {}))))))
+                                (into (sorted-map)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Design Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
