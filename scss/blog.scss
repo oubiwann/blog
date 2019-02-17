@@ -102,6 +102,18 @@ h6, .h6 {
 	padding-left: 1em;
 }
 
+h2.archive-year {
+	color: $primary !important;
+}
+
+h3.archive-month {
+	color: lighten($primary, 20%) !important;
+}
+
+hr.year-grouping {
+	border: 2px dashed $year-grouping-border-color;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
