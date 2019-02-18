@@ -2,13 +2,13 @@
 
 {% block page-metadata %}
 <!-- General Metadata (per-page) -->
-<meta name="author" content="Forgotten Roads MX">
+<meta name="author" content="Duncan McGreggor">
 
 <!-- Dublic Core Metadata (per-page) -->
 <meta name="DC.title" lang="en" content="{{ page-data.site-title }}">
-<meta name="DC.creator" content="Forgotten Roads MX">
-<meta name="DC.subject" content="Site Landing Page">
-<meta name="DC.identifier" scheme="DCTERMS.URI" content="http://forgotten.roads.mx/blog/">
+<meta name="DC.creator" content="Duncan McGreggor">
+<meta name="DC.subject" content="Blog Landing Page">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="http://oubiwann.github.io/blog/">
 <meta name="DCTERMS.abstract" content="{{ page-data.site-description }}">
 
 <!-- Facebook's OpenGraph Metadata -->
@@ -28,174 +28,166 @@
 <meta name="twitter:description" content="{{ page-data.site-description }}">
 <meta name="twitter:image" content="http://forgotten.roads.mx/blog/img/roadtrip5-narrow-with-text.jpg">
 {% endblock %}
-
 {% block header-class %}{% endblock %}
-
-{% block head-postpends %}
-  <script type="text/javascript">
-    $(document).on('scroll', function() {
-      if ($(document).scrollTop() > 0) {
-        $('header').addClass('home-tiny');
-      } else {
-        $('header').removeClass('home-tiny');
-      }
-    });
-  </script>
-{% endblock %}
-
+{% block head-postpends %}{% endblock %}
 {% block contained-main-content %}
 <div class="row">
-  <div class="col-sm-8 blog-main">
+          <!-- Blog Entries Column -->
+        <div class="col-md-8">
 
-    <!-- <h1>{{ page-data.site-title }}</h1> -->
-    <p class="home-lead">{{ page-data.site-description }}</p>
-
-    <div class="row">
-      <div class="col-sm-12">
-
-        <div class="headliner well">
-
-          {% if headliner.header-image %}
-            <img src="{{ page-data.base-path }}/{{ headliner.header-image }}" />
-          {% endif %}
-          <h2>
-            <a href="{{ headliner.url }}">{{ headliner.title }}</a>
-          </h2>
-          {% if headliner.subtitle %}
-            <h3>{{ headliner.subtitle }}</h3>
-          {% endif %}
-          <div class="row">
-            <div class="col-sm-4 metadata">
-              <p>Date: {{ headliner.datestamp }}</p>
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">Post Title</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
-            <div class="col-sm-4 metadata">
-              <p>Author: <a href="/blog/authors/#{{ headliner.author }}">{{ headliner.author }}</a></p>
-            </div>
-            <div class="col-sm-4 metadata">
-              <p>Category: <a href="/blog/categories/#{{ headliner.category }}">{{ headliner.category }}</a></p>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
             </div>
           </div>
-          {% if headliner.excerpt-100 %}
-            <p class="excerpt">{{ headliner.excerpt-100|safe }}</p>
-            <div class="clearfix">
-              <a href="{{ headliner.url }}" class="btn btn-tales-one">Read More</a>
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h2 class="card-title">Post Title</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
-          {% endif %}
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h2 class="card-title">Post Title</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. &nbsp;<a href="#" class="btn btn-outline-primary btn-sm">More &rarr;</a></p>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. &nbsp;<a href="#" class="btn btn-outline-primary btn-sm">More &rarr;</a></p>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. &nbsp;<a href="#" class="btn btn-outline-primary btn-sm">More &rarr;</a></p>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item disabled">
+              <a class="page-link" href="#">&larr; Newer</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link pager-middle-link" href="{{ page-data.base-path }}/archives">Post Archives</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="{{ page-data.base-path }}/headlines/page/1">Older &rarr;</a>
+            </li>
+          </ul>
 
         </div>
 
-      </div>
-    </div>
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
 
-    {% for row in posts-data %}
-    <div class="row row-full-height subheadliner">
-      {% for column in row %}
-      <div class="col-sm-6 well subheadliner">
-
-          {% if column.header-image %}
-            <img src="{{ page-data.base-path }}/{{ column.header-image }}" />
-          {% endif %}
-          <h2>
-            <a href="{{ column.url }}">{{ column.title }}</a>
-          </h2>
-          {% if column.subtitle %}
-            <h3>{{ column.subtitle }}</h3>
-          {% endif %}
-          <div class="metadata">
-            <p>Date: {{ column.datestamp }}</p>
-            <p>Author: <a href="/blog/authors/#{{ column.author }}">{{ column.author }}</a></p>
-            <p>Category: <a href="/blog/categories/#{{ column.category }}">{{ column.category }}</a></p>
-          </div>
-          {% if column.excerpt-50 %}
-            <p class="excerpt">{{ column.excerpt-50|safe }}</p>
-            <div class="clearfix">
-              <a href="{{ column.url }}" class="btn btn-tales-one">Read More</a>
+          <!-- Search Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
             </div>
-          {% endif %}
+          </div>
 
-      </div>
-      {% endfor %}
-    </div>
-    {% endfor %}
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Web Design</a>
+                    </li>
+                    <li>
+                      <a href="#">HTML</a>
+                    </li>
+                    <li>
+                      <a href="#">Freebies</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">JavaScript</a>
+                    </li>
+                    <li>
+                      <a href="#">CSS</a>
+                    </li>
+                    <li>
+                      <a href="#">Tutorials</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="below-fold">
-      {% for post in below-fold-data %}
-      <div class="article">
-        <div class="title"><h2><a href="{{ post.url }}">{{ post.title }}</a>{% if post.subtitle %} - {{ post.subtitle }}{% endif %}</h2></div>
-        {% if post.excerpt-25 %}
-        <div class="excerpt"><p>{{ post.excerpt-50|safe }}</p></div>
-        {% endif %}
-        <div class="author"><p>By <a href="/blog/authors/#{{ post.author }}">{{ post.author }}</a></p></div>
-      </div>
-      {% endfor %}
-    </div>
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
 
-    <div>
-      <a href="/blog/archives/" class="btn btn-tales-one">View older posts</a>
-    </div>
-
-  </div>
-
-  <aside class="col-md-4 blog-aside">
-
-    <div class="aside-widget">
-      <header>
-        <h3>Featured Excursionists</h3>
-      </header>
-      <div class="body">
-        <ul class="tales-list">
-          <li><a href="/blog/archives/2017-06/16-170908/the-lower-48-challenge.html">The Lower-48 Challenge</a></li>
-          <li><a href="/blog/archives/2016-07/31-114941/knucklehead-at-sturgis.html">Knucklehead at Sturgis</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="aside-widget">
-      <header>
-        <h3>Most Read</h3>
-      </header>
-      <div class="body">
-        <ul class="tales-list">
-          <li><a href="/blog/archives/2017-06/18-172828/lessons-learned-when-packing-a-cruiser-for-touring.html">Lessons Learned When Packing a Cruiser for Touring</a></li>
-          <li><a href="/blog/archives/2017-08/13-193659/it-s-a-saddle-not-a-couch.html">It's a Saddle, Not a Couch</a></li>
-          <li><a href="/blog/archives/2017-07/21-193252/frmx-google-maps-custom-theme.html">FRMX Google Maps Custom Theme</a></li>
-          <li><a href="/blog/archives/2016-09/19-221343/the-beginning-of-a-new-project.html">The Beginning of a New Project</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="aside-widget subscribe-widget">
-      <header>
-        <h3>Subscribe</h3>
-      </header>
-      <div class="body">
-        Receive notifications when there are new Forgotten Roads blog posts published by signing up <a href="https://groups.google.com/forum/#!forum/frmx-new-posts">here</a>.
-      </div>
-    </div>
-
-    <div class="aside-widget tags-widget">
-      <header>
-        <h3>Tags</h3>
-      </header>
-      <div class="body">
-        <ul>
-          {% for tag in tags %}
-          <li>
-            <a href="{{ page-data.base-path }}/tags/#{{tag.name}}" class="tag-5star-{{ tag.five-star }}">{{ tag.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-
-    <div class="aside-widget">
-      <header>
-        <h3>FRMX on Twitter</h3>
-      </header>
-      <p>
-        <a class="twitter-timeline" data-lang="en" data-width="350" data-height="600" data-link-color="#c68533" href="https://twitter.com/ForgottenRdsMX">FRMX on Twitter</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </p>
-    </div>
-
-</div>
+        </div>
 {% endblock %}

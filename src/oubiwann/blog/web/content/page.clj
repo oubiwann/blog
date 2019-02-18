@@ -48,21 +48,21 @@
     (data/post system posts post-data)))
 
 (defn front-page
-  [system posts]
-  (let [above-fold 5
-        below-fold 5
-        headline-posts (->> posts
-                            (filter util/headline?)
-                            (take (+ above-fold below-fold)))]
+  [system]
+  ; (let [above-fold 5
+  ;       below-fold 5
+  ;       headline-posts (->> posts
+  ;                           (filter util/headline?)
+  ;                           (take (+ above-fold below-fold)))]
     (template/render
       "templates/pages/home.html"
-      (data/front-page
-        system
-        posts
-        headline-posts
-        :above-fold-count above-fold
-        :below-fold-count below-fold
-        :column-count 2))))
+      (data/front-page system)))
+        ; system
+        ; posts
+        ; headline-posts
+        ; :above-fold-count above-fold
+        ; :below-fold-count below-fold
+        ; :column-count 2))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Listings Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

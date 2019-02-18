@@ -56,8 +56,7 @@
   (log/info "Assembling routes for main and listing pages ...")
   (merge
     routes
-    {
-     ; "/blog/index.html" (page/front-page system)
+    {"/blog/index.html" (page/front-page system)
      "/blog/archives/index.html" (page/archives system)
      "/blog/categories/index.html" (page/categories system)
      "/blog/tags/index.html" (page/tags system)

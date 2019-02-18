@@ -234,24 +234,22 @@
              :tags (tags/unique post-data))))
 
 (defn front-page
-  [system all-posts top-posts & {:keys [above-fold-count below-fold-count column-count]}]
-  (let [above-posts (take above-fold-count top-posts)
-        headliner (first above-posts)
-        grouped-posts (partition column-count
-                                 (nthrest above-posts 1))
-        below-posts (nthrest top-posts above-fold-count)]
-    (-> system
-        (common all-posts)
-        (assoc-in [:page-data :active] "index")
+  [system]
+  (let [page-data (common system)
+        querier (db-component/db-querier system)
+        section "index"
+        ]
+    (-> (common system)
+        (assoc-in [:page-data :active] section)
         (assoc :headlines-heading "Headlines"
                :headlines-desc (str "[ XXX add note about the headlines ]")
-               :tags (tags/get-stats all-posts)
-               :headliner headliner
-               :posts-data grouped-posts
-               :posts-count (count top-posts)
-               :above-count (count above-posts)
-               :below-count (count below-posts)
-               :below-fold-data below-posts))))
+               :tags {}
+               :headliner {}
+               :posts-data {}
+               :posts-count 0
+               :above-count 0
+               :below-count 0
+               :below-fold-data 0))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Listings Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
