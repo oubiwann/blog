@@ -114,6 +114,10 @@ hr.year-grouping {
 	border: 2px dashed $year-grouping-border-color;
 }
 
+.page-link.pager-middle-link {
+	background-color: $primary;
+}
+
 #footer {
   position: absolute;
   bottom: 0;

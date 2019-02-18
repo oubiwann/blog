@@ -9777,6 +9777,10 @@ hr.year-grouping {
   border: 2px dashed #444;
 }
 
+.page-link.pager-middle-link {
+  background-color: #375a7f;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
