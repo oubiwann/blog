@@ -9,7 +9,9 @@
     [dragon.components.db :as db-component]
     [markdown.core :as markdown]
     [oubiwann.blog.util :as util]
-    [taoensso.timbre :as log]))
+    [taoensso.timbre :as log])
+  (:import
+    (java.util Random)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Helper Functions & Data Helpers   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -72,6 +74,7 @@
        (map get-block)
        (into {})))
 
+;; XXX remove this function and all references to it; no longer needed
 (defn posts-stats
   [posts]
   {:posts (count posts)
@@ -124,7 +127,46 @@
                 (slurp)
                 (markdown/md-to-html-string))}))
 
-(defn listing-data
+(defn random-text-idx
+  [text max-count]
+  (inc (.nextInt (new Random (.hashCode text)) max-count)))
+
+(defn common-post-data
+  [querier post-key]
+  {:url-path (format "/blog/archives/%s" ; XXX <-- put in config
+                     (db/get-post-uri-path querier post-key))})
+
+(defn archive-post-data
+  "Headline pages need the following:
+
+  * post category (get-post-category)
+  * post dates (get-post-dates)
+  * post metadata (get-post-metadata)
+  * post tags (get-post-tags)
+  * post URL (get-post-uri-path)"
+  [querier post-key]
+  (merge
+    (common-post-data querier post-key)
+    {:category (db/get-post-category querier post-key)
+     :dates (db/get-post-dates querier post-key)
+     :metadata (db/get-post-metadata querier post-key)
+     :tags (db/get-post-tags querier post-key)}))
+
+(defn headline-post-data
+  "Headline pages need the following:
+
+  * post category (get-post-category)
+  * post dates (get-post-dates)
+  * post excerpts (get-post-excerpts)
+  * post metadata (get-post-metadata)
+  * post tags (get-post-tags)
+  * post URL (get-post-uri-path)"
+  [querier post-key]
+  (merge
+    (archive-post-data querier post-key)
+    {:excerpts (db/get-post-excerpts querier post-key)}))
+
+(defn listing-post-data
   "Listing pages need the following:
 
   * year, month, day (get-post-dates)
@@ -134,14 +176,14 @@
   [querier post-key]
   (let [dates (db/get-post-dates querier post-key)
         metadata (db/get-post-metadata querier post-key)]
-    {:month-name (:month dates)
-     :year (get-in dates [:date :year])
-     :month (get-in dates [:date :month])
-     :day (get-in dates [:date :day])
-     :url-path (format "/blog/archives/%s"
-                       (db/get-post-uri-path querier post-key))
-     :subtitle (:subtitle metadata)
-     :title (:title metadata)}))
+    (merge
+      (common-post-data querier post-key)
+      {:month-name (:month dates)
+       :year (get-in dates [:date :year])
+       :month (get-in dates [:date :month])
+       :day (get-in dates [:date :day])
+       :subtitle (:subtitle metadata)
+       :title (:title metadata)})))
 
 (defn desc-str
   [a b]
@@ -151,13 +193,13 @@
   [querier data-fn grouping-key]
   [grouping-key (->> grouping-key
                      (data-fn querier)
-                     (map #(listing-data querier %)))])
+                     (map #(listing-post-data querier %)))])
 
 (defn two-layer-grouping
   [querier data-fn grouping-key second-level-key]
   [grouping-key (->> grouping-key
                      (data-fn querier)
-                     (map #(listing-data querier %))
+                     (map #(listing-post-data querier %))
                      (group-by second-level-key)
                      sort
                      (into (sorted-map)))])
@@ -166,10 +208,37 @@
   [querier data-fn grouping-key second-level-key]
   [grouping-key (->> grouping-key
                      (data-fn querier)
-                     (map #(listing-data querier %))
+                     (map #(listing-post-data querier %))
                      (group-by second-level-key)
                      sort
                      (into (sorted-map-by desc-str)))])
+
+(defn supporting-headlines
+  [system posts-data]
+  (subvec posts-data
+          1
+          (inc (config/headlines-supporting-count system))))
+
+(defn middle-headlines
+  [system posts-data]
+  (let [supporting (inc (config/headlines-supporting-count system))]
+    (log/trace "Supporting headlines:" supporting)
+    (subvec posts-data
+            supporting
+            (+ supporting
+               (config/headlines-middle-count system)))))
+
+(defn trailing-headlines
+  [system posts-data]
+  (let [supporting (inc (config/headlines-supporting-count system))
+        middle (+ supporting
+                  (config/headlines-middle-count system))]
+    (log/trace "Supporting headlines:" supporting)
+    (log/trace "Middle headlines:" middle)
+    (subvec posts-data
+            middle
+            (+ middle
+               (config/headlines-trailing-count system)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Static Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -225,31 +294,41 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn post
-  [system posts post-data]
-  (-> system
-      common
-      (assoc-in [:page-data :active] "archives")
-      (assoc :post-data post-data
-             :blocks (get-blocks post-data)
-             :tags (tags/unique post-data))))
+  [system]
+  (let [post-data {}]
+    (-> system
+        common
+        (assoc-in [:page-data :active] "archives")
+        (assoc :post-data post-data
+               :blocks (get-blocks post-data)
+               :tags (tags/unique post-data)))))
 
 (defn front-page
   [system]
+  (log/info "Assembling data for front page ...")
   (let [page-data (common system)
         querier (db-component/db-querier system)
         section "index"
-        ]
-    (-> (common system)
+        posts-data (->> (config/headlines-count system)
+                        (db/get-last-n-keys querier)
+                        (map #(headline-post-data querier %))
+                        vec)
+        headliner (first posts-data)
+        headliner-img-count (config/headlines-lead-default-image-count system)
+        headliner-img-idx (random-text-idx
+                           (get-in headliner [:metadata :title])
+                           headliner-img-count)]
+    (log/trace "Headliner data:" headliner)
+    (-> page-data
         (assoc-in [:page-data :active] section)
         (assoc :headlines-heading "Headlines"
                :headlines-desc (str "[ XXX add note about the headlines ]")
-               :tags {}
-               :headliner {}
-               :posts-data {}
-               :posts-count 0
-               :above-count 0
-               :below-count 0
-               :below-fold-data 0))))
+               :headliner (assoc headliner :img-idx headliner-img-idx)
+               :supporting (supporting-headlines system posts-data)
+               :middle (middle-headlines system posts-data)
+               :trailing (partition
+                          (config/headlines-trailing-rows system)
+                          (trailing-headlines system posts-data))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Listings Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

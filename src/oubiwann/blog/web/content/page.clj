@@ -1,7 +1,8 @@
 (ns oubiwann.blog.web.content.page
-  (:require [dragon.selmer.core :as template]
-            [dragon.util :as util]
-            [oubiwann.blog.web.content.data :as data]))
+  (:require
+    [dragon.selmer.core :as template]
+    [dragon.util :as util]
+    [oubiwann.blog.web.content.data :as data]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Static Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -42,27 +43,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn post
-  [system posts post-data]
+  [system]
   (template/render
     "templates/pages/post.html"
-    (data/post system posts post-data)))
+    (data/post system)))
 
 (defn front-page
   [system]
-  ; (let [above-fold 5
-  ;       below-fold 5
-  ;       headline-posts (->> posts
-  ;                           (filter util/headline?)
-  ;                           (take (+ above-fold below-fold)))]
-    (template/render
-      "templates/pages/home.html"
-      (data/front-page system)))
-        ; system
-        ; posts
-        ; headline-posts
-        ; :above-fold-count above-fold
-        ; :below-fold-count below-fold
-        ; :column-count 2))))
+  (template/render
+    "templates/pages/home.html"
+    (data/front-page system)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Listings Pages   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

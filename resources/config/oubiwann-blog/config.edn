@@ -6,4 +6,16 @@
      :output "./"}
    :logging {
      :level :debug
-     :nss [clojusc dragon oubiwann rfc5322]}}
+     :nss [clojusc dragon oubiwann rfc5322]}
+   :headlines {
+     :count 20
+     :lead {
+       :default-image-tmpl "/blog/img/ob-headline-%s.png"
+       :default-image-count 8}
+     :supporting {
+       :count 3}
+     :middle {
+       :count 4}
+     :trailing {
+       :count 9
+       :rows 3}}}
