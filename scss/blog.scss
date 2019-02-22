@@ -126,6 +126,29 @@ hr.year-grouping {
 	background-color: $primary;
 }
 
+.most-read > row {
+	margin-bottom: 5px;
+}
+
+.most-read > .row > .most-read-img {
+	padding-top: 10px;
+}
+
+.most-read > .row > .most-read-img img {
+	float: right;
+	width: 50px;
+	height: 50px;
+}
+
+.most-read > .row > .most-read-link {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.most-read > .row > .most-read-link a {
+	vertical-align: middle;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
