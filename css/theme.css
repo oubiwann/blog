@@ -9769,6 +9769,10 @@ div.headlines {
   margin-top: 24px;
 }
 
+.card-img-right {
+  float: right;
+}
+
 h2.archive-year {
   color: #375a7f !important;
 }
