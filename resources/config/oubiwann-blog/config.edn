@@ -7,15 +7,22 @@
    :logging {
      :level :debug
      :nss [clojusc dragon oubiwann rfc5322]}
+   :default-images {
+     :post "/blog/img/ob-post-"
+     :headliner "/blog/img/ob-headline-"
+     :small "/blog/img/ob-small-"
+     :thumb "/blog/img/ob-thumb-"
+     :count 8}
    :headlines {
      :count 20
      :lead {
-       :default-image-tmpl "/blog/img/ob-headline-%s.png"
-       :default-image-count 8}
+       }
      :supporting {
        :count 3}
      :middle {
        :count 4}
      :trailing {
        :count 9
-       :rows 3}}}
+       :rows 3}}
+   :posts {
+     }}

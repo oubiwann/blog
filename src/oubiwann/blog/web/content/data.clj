@@ -240,6 +240,13 @@
             (+ middle
                (config/headlines-trailing-count system)))))
 
+(defn update-with-img-index
+  [post-data image-count]
+  (assoc post-data
+         :img-idx
+         (random-text-idx
+          (get-in post-data [:metadata :title]) image-count)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Static Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -309,21 +316,19 @@
   (let [page-data (common system)
         querier (db-component/db-querier system)
         section "index"
+        default-img-count (config/default-images-count system)
         posts-data (->> (config/headlines-count system)
                         (db/get-last-n-keys querier)
                         (map #(headline-post-data querier %))
-                        vec)
-        headliner (first posts-data)
-        headliner-img-count (config/headlines-lead-default-image-count system)
-        headliner-img-idx (random-text-idx
-                           (get-in headliner [:metadata :title])
-                           headliner-img-count)]
-    (log/trace "Headliner data:" headliner)
+                        (map #(update-with-img-index % default-img-count))
+                        vec)]
     (-> page-data
         (assoc-in [:page-data :active] section)
-        (assoc :headlines-heading "Headlines"
-               :headlines-desc (str "[ XXX add note about the headlines ]")
-               :headliner (assoc headliner :img-idx headliner-img-idx)
+        (assoc :default-images {
+                 :headliner (config/default-images-headliner-tmpl system)
+                 :small (config/default-images-small-tmpl system)
+                 :thumb (config/default-images-thumb-tmpl system)}
+               :headliner (first posts-data)
                :supporting (supporting-headlines system posts-data)
                :middle (middle-headlines system posts-data)
                :trailing (partition

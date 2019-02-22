@@ -37,7 +37,7 @@
 
     <!-- Top Headline -->
     <div class="card mb-4">
-      <img class="card-img-top" src="{{ page-data.base-path }}/img/ob-headline-{{ headliner.img-idx }}.png" alt="Card image cap">
+      <img class="card-img-top" src="{{ default-images.headliner }}{{ headliner.img-idx }}.jpg" alt="Headline image">
       <div class="card-body">
         <h2 class="card-title">{{ headliner.metadata.title }}</h2>
         {% if headliner.metadata.subtitle %}
@@ -57,6 +57,7 @@
     {% for post-data in supporting %}
     <div class="card mb-4">
       <div class="card-body">
+        <img class="card-img-right" src="{{ default-images.small }}{{ post-data.img-idx }}.png" alt="Post image crop">
         <h3 class="card-title">{{ post-data.metadata.title}}</h3>
         {% if post-data.metadata.subtitle %}
           <h4 class="card-subtitle">{{ post-data.metadata.subtitle|safe }}</h4>
@@ -76,6 +77,7 @@
     {% for post-data in middle %}
     <div class="card mb-4">
       <div class="card-body">
+        <img class="card-img-right" src="{{ default-images.thumb }}{{ post-data.img-idx }}.png" alt="Post image crop">
         <h4 class="card-title">{{ post-data.metadata.title}}</h4>
         {% if post-data.metadata.subtitle %}
           <h5 class="card-subtitle">{{ post-data.metadata.subtitle|safe }}</h5>
