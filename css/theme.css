@@ -9856,6 +9856,50 @@ hr.year-grouping {
   background-color: rgba(0, 188, 140, 0);
 }
 
+.tag-strength-10 {
+  background-color: #375a7f;
+}
+
+.tag-strength-9 {
+  background-color: rgba(55, 90, 127, 0.9);
+}
+
+.tag-strength-8 {
+  background-color: rgba(55, 90, 127, 0.8);
+}
+
+.tag-strength-7 {
+  background-color: rgba(55, 90, 127, 0.7);
+}
+
+.tag-strength-6 {
+  background-color: rgba(55, 90, 127, 0.6);
+}
+
+.tag-strength-5 {
+  background-color: rgba(55, 90, 127, 0.5);
+}
+
+.tag-strength-4 {
+  background-color: rgba(55, 90, 127, 0.4);
+}
+
+.tag-strength-3 {
+  background-color: rgba(55, 90, 127, 0.3);
+}
+
+.tag-strength-2 {
+  background-color: rgba(55, 90, 127, 0.2);
+}
+
+.tag-strength-1 {
+  background-color: rgba(55, 90, 127, 0.1);
+}
+
+.tag-strength-0 {
+  background-color: rgba(55, 90, 127, 0);
+}
+
 #footer {
   position: absolute;
   bottom: 0;
