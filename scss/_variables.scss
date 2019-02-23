@@ -5,29 +5,56 @@ $dark-gradient-bottom: #252525;
 $footer-bg-color: #333;
 $year-grouping-border-color: #444;
 
+$gray-990: #111519 !default;
+
 $success-10: $success;
-$success-9: rgba($success, 0.90);
-$success-8: rgba($success, 0.80);
-$success-7: rgba($success, 0.70);
-$success-6: rgba($success, 0.60);
-$success-5: rgba($success, 0.50);
-$success-4: rgba($success, 0.40);
-$success-3: rgba($success, 0.30);
-$success-2: rgba($success, 0.20);
-$success-1: rgba($success, 0.10);
+$success-9: rgba($success, 0.9);
+$success-8: rgba($success, 0.8);
+$success-7: rgba($success, 0.7);
+$success-6: rgba($success, 0.6);
+$success-5: rgba($success, 0.5);
+$success-4: rgba($success, 0.4);
+$success-3: rgba($success, 0.3);
+$success-2: rgba($success, 0.2);
+$success-1: rgba($success, 0.1);
 $success-0: rgba($success, 0.0);
 
+
+// (pprint (mapv #(vector % (* (Math/pow % (* Math/E (/ 3 2))))) (range 0.6 1 0.045)))
+// [[0.6 0.12457441685621559]
+//  [0.645 0.16729942539054732]
+//  [0.6900000000000001 0.2202518766871322]
+//  [0.7350000000000001 0.2849685649667708]
+//  [0.7800000000000001 0.3630981857676955]
+//  [0.8250000000000002 0.45640188532814074]
+//  [0.8700000000000002 0.5667537796995411]
+//  [0.9150000000000003 0.6961414468743903]
+//  [0.9600000000000003 0.8466663946994865]]
+
+// $primary-10: $primary;
+// $primary-9: rgba($primary, 0.84);
+// $primary-8: rgba($primary, 0.69);
+// $primary-7: rgba($primary, 0.57);
+// $primary-6: rgba($primary, 0.46);
+// $primary-5: rgba($primary, 0.36);
+// $primary-4: rgba($primary, 0.28);
+// $primary-3: rgba($primary, 0.22);
+// $primary-2: rgba($primary, 0.16);
+// $primary-1: rgba($primary, 0.12);
+// $primary-0: rgba($primary, 0.0);
+
 $primary-10: $primary;
-$primary-9: rgba($primary, 0.90);
-$primary-8: rgba($primary, 0.80);
-$primary-7: rgba($primary, 0.70);
-$primary-6: rgba($primary, 0.60);
-$primary-5: rgba($primary, 0.50);
-$primary-4: rgba($primary, 0.40);
-$primary-3: rgba($primary, 0.30);
-$primary-2: rgba($primary, 0.20);
-$primary-1: rgba($primary, 0.10);
+$primary-9: rgba($primary, 0.9);
+$primary-8: rgba($primary, 0.8);
+$primary-7: rgba($primary, 0.7);
+$primary-6: rgba($primary, 0.6);
+$primary-5: rgba($primary, 0.5);
+$primary-4: rgba($primary, 0.4);
+$primary-3: rgba($primary, 0.3);
+$primary-2: rgba($primary, 0.2);
+$primary-1: rgba($primary, 0.1);
 $primary-0: rgba($primary, 0.0);
+
 
 // Spacing ------------------------------------------------------------------
 

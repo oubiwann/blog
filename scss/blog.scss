@@ -126,116 +126,138 @@ hr.year-grouping {
 	background-color: $primary;
 }
 
-.most-read > row {
+.featured > row {
 	margin-bottom: 5px;
 }
 
-.most-read > .row > .most-read-img {
+.featured > .row > .featured-img {
 	padding-top: 10px;
 }
 
-.most-read > .row > .most-read-img img {
+.featured > .row > .featured-img img {
 	float: right;
 	width: 50px;
 	height: 50px;
 }
 
-.most-read > .row > .most-read-link {
+.featured > .row > .featured-link {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-.most-read > .row > .most-read-link a {
+.featured > .row > .featured-link a {
 	vertical-align: middle;
 }
 
-.category-strength-10 {
+.category-strength-10, .category-strength-10 a {
 	background-color: $success-10;
+	color: $gray-900;
 }
 
-.category-strength-9 {
+.category-strength-9, .category-strength-9 a {
 	background-color: $success-9;
+	color: $gray-900;
 }
 
-.category-strength-8 {
+.category-strength-8, .category-strength-8 a {
 	background-color: $success-8;
+	color: $gray-900;
 }
 
-.category-strength-7 {
+.category-strength-7, .category-strength-7 a {
 	background-color: $success-7;
+	color: $gray-800;
 }
 
-.category-strength-6 {
+.category-strength-6, .category-strength-6 a {
 	background-color: $success-6;
+	color: $gray-800;
 }
 
-.category-strength-5 {
+.category-strength-5, .category-strength-5 a {
 	background-color: $success-5;
+	color: $gray-800;
 }
 
-.category-strength-4 {
+.category-strength-4, .category-strength-4 a {
 	background-color: $success-4;
+	color: $gray-700;
 }
 
-.category-strength-3 {
+.category-strength-3, .category-strength-3 a {
 	background-color: $success-3;
+	color: $gray-700;
 }
 
-.category-strength-2 {
+.category-strength-2, .category-strength-2 a {
 	background-color: $success-2;
+	color: $success;
 }
 
-.category-strength-1 {
+.category-strength-1, .category-strength-1 a {
 	background-color: $success-1;
+	color: $success;
 }
 
-.category-strength-0 {
+.category-strength-0, .category-strength-0 a {
 	background-color: $success-0;
+	color: $success;
 }
 
 
-.tag-strength-10 {
+.tag-strength-10, .tag-strength-10 a {
 	background-color: $primary-10;
+	color: $gray-990;
 }
 
-.tag-strength-9 {
+.tag-strength-9, .tag-strength-9 a {
 	background-color: $primary-9;
+	color: $gray-990;
 }
 
-.tag-strength-8 {
+.tag-strength-8, .tag-strength-8 a {
 	background-color: $primary-8;
+	color: $gray-990;
 }
 
-.tag-strength-7 {
+.tag-strength-7, .tag-strength-7 a {
 	background-color: $primary-7;
+	color: $gray-900;
 }
 
-.tag-strength-6 {
+.tag-strength-6, .tag-strength-6 a {
 	background-color: $primary-6;
+	color: $gray-900;
 }
 
-.tag-strength-5 {
+.tag-strength-5, .tag-strength-5 a {
 	background-color: $primary-5;
+	color: $gray-900;
 }
 
-.tag-strength-4 {
+.tag-strength-4, .tag-strength-4 a {
 	background-color: $primary-4;
+	color: $gray-800;
 }
 
-.tag-strength-3 {
+.tag-strength-3, .tag-strength-3 a {
 	background-color: $primary-3;
+	color: $gray-800;
 }
 
-.tag-strength-2 {
+.tag-strength-2, .tag-strength-2 a {
 	background-color: $primary-2;
+	color: $primary;
 }
 
-.tag-strength-1 {
+.tag-strength-1, .tag-strength-1 a {
 	background-color: $primary-1;
+	color: $primary;
 }
 
-.tag-strength-0 {
+.tag-strength-0, .tag-strength-0 a {
 	background-color: $primary-0;
+	color: $primary;
 }
 
 #footer {
