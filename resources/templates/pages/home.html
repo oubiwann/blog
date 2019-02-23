@@ -142,44 +142,67 @@
     <!-- Featured Widget -->
     <div class="card my-4">
       <h5 class="card-header">Featured</h5>
-      <div class="card-body">
-        <p>TBD</p>
+      <div class="card-body featured">
+        <div class="row">
+          <div class="col-3 featured-img">
+            <img src="/blog/img/ob-thumb-8.png" />
+          </div>
+          <div class="col-9 featured-link">
+            <a href="">An Interview with Robert Virding on Lisp</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 featured-img">
+            <img src="/blog/img/ob-thumb-7.png" />
+          </div>
+          <div class="col-9 featured-link">
+            <a href="">The Secret History of Lambda </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 featured-img">
+            <img src="/blog/img/ob-thumb-5.png" />
+          </div>
+          <div class="col-9 featured-link">
+            <a href="">Prefix Operators in Haskell </a>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Most-Read Widget -->
     <div class="card my-4">
       <h5 class="card-header">Most Read</h5>
-      <div class="card-body most-read">
+      <div class="card-body featured">
         <div class="row">
-          <div class="col-3 most-read-img">
+          <div class="col-3 featured-img">
             <img src="/blog/img/ob-thumb-4.png" />
           </div>
-          <div class="col-9 most-read-link">
+          <div class="col-9 featured-link">
             <a href="">NASA/EOSDIS Earthdata</a>
           </div>
         </div>
         <div class="row">
-          <div class="col-3 most-read-img">
+          <div class="col-3 featured-img">
             <img src="/blog/img/ob-thumb-3.png" />
           </div>
-          <div class="col-9 most-read-link">
+          <div class="col-9 featured-link">
             <a href="">Mastering matplotlib: Acknowledgments</a>
           </div>
         </div>
         <div class="row">
-          <div class="col-3 most-read-img">
+          <div class="col-3 featured-img">
             <img src="/blog/img/ob-thumb-2.png" />
           </div>
-          <div class="col-9 most-read-link">
+          <div class="col-9 featured-link">
             <a href="">Async Batching with Twisted: A Walkthrough</a>
           </div>
         </div>
         <div class="row">
-          <div class="col-3 most-read-img">
+          <div class="col-3 featured-img">
             <img src="/blog/img/ob-thumb-1.png" />
           </div>
-          <div class="col-9 most-read-link">
+          <div class="col-9 featured-link">
             <a href="">Scientific Computing with Hy and IPython</a>
           </div>
         </div>
@@ -192,7 +215,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col">
-            {% for x in blog-stats.categories.ten %}
+            {% for x in blog-stats.categories.ten|sort %}
             <span class="badge badge-success category-strength-{{ x.1 }}">
               <a href="/blog/categories#{{ x.0 }}">{{ x.0 }}</a>
             </span>
@@ -206,9 +229,9 @@
     <div class="card my-4">
       <h5 class="card-header">Tags</h5>
       <div class="card-body">
-        <d        <div class="row">
+        <div class="row">
           <div class="col">
-            {% for x in blog-stats.tags.ten %}
+            {% for x in blog-stats.tags.ten|sort %}
             <span class="badge badge-primary tag-strength-{{ x.1 }}">
               <a href="/blog/tags#{{ x.0 }}">{{ x.0 }}</a>
             </span>
@@ -222,7 +245,7 @@
     <div class="card my-4">
       <h5 class="card-header">On Twitter</h5>
       <div class="card-body">
-        <a class="twitter-timeline" data-width="338" data-height="1000" data-theme="dark" data-link-color="#00bc8c" href="https://twitter.com/oubiwann?ref_src=twsrc%5Etfw">Tweets by oubiwann</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" data-width="338" data-height="750" data-theme="dark" data-link-color="#00bc8c" href="https://twitter.com/oubiwann?ref_src=twsrc%5Etfw">Tweets by oubiwann</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </div>
 

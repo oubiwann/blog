@@ -332,7 +332,7 @@
                :supporting (supporting-headlines system posts-data)
                :middle (middle-headlines system posts-data)
                :trailing (partition
-                          (config/headlines-trailing-rows system)
+                          (config/headlines-trailing-per-row system)
                           (trailing-headlines system posts-data))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

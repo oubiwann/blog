@@ -21,7 +21,7 @@
      :middle {
        :count 4}
      :trailing {
-       :count 18
-       :rows 6}}
+       :count 12
+       :per-row 3}}
    :posts {
      }}
