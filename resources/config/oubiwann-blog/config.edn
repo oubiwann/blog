@@ -14,7 +14,6 @@
      :thumb "/blog/img/ob-thumb-"
      :count 8}
    :headlines {
-     :count 20
      :lead {
        }
      :supporting {
@@ -22,7 +21,7 @@
      :middle {
        :count 4}
      :trailing {
-       :count 9
-       :rows 3}}
+       :count 18
+       :rows 6}}
    :posts {
      }}

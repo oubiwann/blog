@@ -42,14 +42,15 @@
      "/blog/design/code-highlight-samples.html" (page/code-highlight system)}))
 
 (defn post-routes
-  [system posts routes]
+  [system routes]
   (log/info "Assembling routes for all blog posts ...")
   (merge
     routes
-    (blog/get-indexed-archive-routes
-      (map vector (iterate inc 0) posts)
-      :gen-func (partial page/post system posts)
-      :uri-base (config/posts-path system))))
+    {}))
+    ; (blog/get-indexed-archive-routes
+    ;   (map vector (iterate inc 0) posts)
+    ;   :gen-func (partial page/post system posts)
+    ;   :uri-base (config/posts-path system))))
 
 (defn listing-routes
   [system routes]
