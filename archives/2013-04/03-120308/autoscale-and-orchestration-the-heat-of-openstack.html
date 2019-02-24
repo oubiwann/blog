@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+  
+  
+  
+  <head profile="http://dublincore.org/documents/dcq-html/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1179318-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1179318-5');
+    </script>
+    <meta charset="utf-8">
+    <title>
+    
+      oubiwann | blog
+      
+      
+      
+    
+    </title>
+    
+
+    
+    
+    
+    <!-- General Metadata (site-wide) -->
+    <meta name="description" content="A 21st century .plan for Duncan McGreggor">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="oubiwann | blog: version 5.0.0-SNAPSHOT, build 19fc82f
+
+">
+
+    <!-- Google Metadata -->
+    <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
+
+    <!-- Dublic Core Metadata (site-wide) -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html">
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="DC.coverage" content="2003-2019">
+    <meta name="DC.rights" content="Creative Commons Attribution-ShareAlike 4.0 International License">
+    <meta name="DC.publisher" content="C&amp;B|Books">
+    <meta name="DCTERMS.audience" content="Developers, Software Engineers, Computer Scientists, Technologists, Programmers, Programming Language Enthusiasts, Operational Engineers">
+
+    
+    
+<!-- General Metadata (per-page) -->
+<meta name="author" content="">
+
+<!-- Dublic Core Metadata (per-page) -->
+<meta name="DC.title" lang="en" content="Autoscale and Orchestration: the Heat of OpenStack">
+<meta name="DC.creator" content="oubiwann">
+<meta name="DC.subject" content="">
+<meta name="DC.date" content="2013-04-03">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io/blog/archives/2013-04/03-120308/autoscale-and-orchestration-the-heat-of-openstack.html">
+<meta name="DCTERMS.abstract" content="">
+
+<!-- Facebook's OpenGraph Metadata -->
+<meta property="og:site_name" content="o|b">
+<meta property="og:title" content="Autoscale and Orchestration: the Heat of OpenStack">
+<meta property="og:url" content="https://oubiwann.github.io/blog/archives/2013-04/03-120308/autoscale-and-orchestration-the-heat-of-openstack.html">
+<meta property="og:type" content="blog">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://oubiwann.github.io/blog/img/ob-post-3.jpg">
+<meta property="article:author" content="">
+<meta property="article:published_time" content="2013-04-03 12:03:08">
+<meta property="article:modified_time" content="">
+<meta property="og:updated_time" content="">
+<meta property="article:section" content="">
+
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@oubiwann">
+<meta name="twitter:creator:id" content="@oubiwann">
+<meta name="twitter:title" content="Autoscale and Orchestration: the Heat of OpenStack">
+<meta name="twitter:url" content="https://oubiwann.github.io/blog/archives/2013-04/03-120308/autoscale-and-orchestration-the-heat-of-openstack.html">
+<meta name="twitter:description" content="<p><p><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-2hnHY6RH64w/UVxf7PCDPvI/AAAAAAAAAEE/baimMc7CxH M/s1600/openstack-logo52.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://2.bp.blogspot.com/-2hnHY6RH64w/UVxf7PCDPvI/AAAAAAAAAEE/baimMc7CxHM /s200/openstack-logo52.png" width="200" /></a></div>Several months before ...</p>">
+<meta name="twitter:image" content="https://oubiwann.github.io/blog/img/ob-post-3.jpg">
+
+    
+    
+
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
+    
+
+    <!-- Webfonts Setup /-->
+    <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap/Custom Styles Setup /-->
+    <link rel="stylesheet" href="/blog/assets/highlightjs/styles/arta.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="/blog/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+
+    <!-- Favicon Setup /-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png?v=3">
+    <link rel="manifest" href="/blog/icons/manifest.json?v=3">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico?v=3">
+    <meta name="apple-mobile-web-app-title" content="FRMX">
+    <meta name="application-name" content="o|b">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml?v=3">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    
+    
+  
+
+  </head>
+  
+  <body>
+  
+   
+    <header class="tiny">
+      
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand-wrapper">
+      <a href="/blog/" class="navbar-brand">o|b</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/tags">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="/blog/about/">The Blog</a>
+            <a class="dropdown-item" href="/blog/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="/blog/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/blog/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
+          <a href="/blog/atom.xml" alt="Atom Feed">
+            <i class="fa fa-feed first"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/googleplus" alt="Google+">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
+             alt="Email Notifications">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </header>
+    
+    
+    <main id="main-content">
+      
+
+    <!-- Page Content -->
+    <div class="container page-content">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+
+          <!-- Title -->
+          <h1 class="mt-4">Autoscale and Orchestration: the Heat of OpenStack</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            Posted on April 03,
+            2013 by
+            <a href="/blog/authors#oubiwann">oubiwann</a>
+          </p>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link show active" data-toggle="tab" href="#content">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" data-toggle="tab" href="#metadata">Metadata</a>
+            </li>
+          </ul>
+
+          <br/>
+
+          <div id="post-content" class="tab-content">
+            <div class="tab-pane fade active show" id="content">
+
+          <!-- Post Image -->
+          <img class="card-img-top" src="/blog/img/ob-post-3.jpg" alt="Blog post image">
+
+          <hr>
+
+          <!-- Post Content -->
+          <p><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-2hnHY6RH64w/UVxf7PCDPvI/AAAAAAAAAEE/baimMc7CxH M/s1600/openstack-logo52.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://2.bp.blogspot.com/-2hnHY6RH64w/UVxf7PCDPvI/AAAAAAAAAEE/baimMc7CxHM /s200/openstack-logo52.png" width="200" /></a></div>Several months before I joined Rackspace last year, there were efforts under way to provide an Autoscaling solution for Rackspace customers. Features that we needed in OpenStack and Heat hadn't been released yet, and there were no OpenStack experts on the Autoscaling team. As such, the engineers began developing a product that met Rackspace customer needs, integrated with the<br />existing monitoring and load-balancing infrastructure, and made calls to OpenStack Nova APIs as part of the scaling up and down process.<br /><br />At PyCon this year, Monty Taylor, Robert Collins, Clint Byrum, Devananda van der Veen, and I caught up and chatted about what their views were of the current status of autoscaling support in OpenStack Heat. It seems that the two pieces we need the most &ndash; LBaas and support for external monitoring systems (perhaps via webhooks) &ndash; are nascent and not ready for prime-time yet. Regardless, Monty and his team encouraged us to dive into Heat, contribute patches, and in general, release our work for consumption by other Stackers.<br /><br />Deeply encouraged by these interactions, we took this information to Rackspace management and, to quote Monty Python, <a href="http://www.youtube.com/watch?v=enSYlCEz5VI">there was much rejoicing</a>. Obviously OpenStack is huge for Rackspace. Even more, there is a lot of excitement about Heat, the existing autoscaling features in OpenStack, and getting our engineers involved and contributing to these efforts.<br /><br />In the course of these conversations, we discovered that Heat was getting lots of attention internally. It turns out that another internal Rackspace project had been doing something pretty cool: they were experimenting with the development of a portable syntax for application description and deployment orchestration. Their work had started to converge on some of the functionality provided by Heat, and they had a similar experience as the Autoscaling team. The timing was right to contribute what they have learned and align all of their continued efforts with adding value to Heat.<br /><br />Along these lines, we are building <a href="http://lists.openstack.org/pipermail/openstack-dev/2013-April/007126.htm l">two new teams</a> that will focus on Heat development: one <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-UTNPsMlxcvY/UQBSsj_BQWI/AAAAAAAAADA/SZjwtfYECM w/s1600/RackspaceLogoMedium.png" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="200" src="http://3.bp.blogspot.com/-UTNPsMlxcvY/UQBSsj_BQWI/AAAAAAAAADA/SZjwtfYECMw /s200/RackspaceLogoMedium.png" width="191" /></a></div>contributing to features related to autoscaling (not necessarily limited to Heat) and the other contributing to the ongoing conversations regarding the separation of concerns between orchestration and configuration management. Everyone &ndash; from engineers to management &ndash; is very excited about this new direction in which our teams are moving. Not only will it bring new developers to OpenStack, but it is aligning our teams with Rackspace's OpenStack roots and the company's vision for supporting the growing cloud community.<br /><br />Simply put: we're pretty damned pumped and looking forward to more good times with OpenStack :-)<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"></div></p>
+
+            </div>
+            <div class="tab-pane fade" id="metadata">
+
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="table-secondary">
+                    <th scope="row">Author</th>
+                    <td>oubiwann</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Date</th>
+                    <td>April 03,
+        2013</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Time</th>
+                    <td>12:03:08</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Category</th>
+                    <td>
+                        <a href="/blog/categories/#"></a>
+                    </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Tags</th>
+                    <td>
+                      
+                      <a href="/blog/tags/#autoscaling">autoscaling</a>
+                      
+                      <a href="/blog/tags/#community">community</a>
+                      
+                      <a href="/blog/tags/#configuration management">configuration management</a>
+                      
+                      <a href="/blog/tags/#heat">heat</a>
+                      
+                      <a href="/blog/tags/#open source">open source</a>
+                      
+                      <a href="/blog/tags/#openstack">openstack</a>
+                      
+                      <a href="/blog/tags/#orchestration">orchestration</a>
+                      
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Line&nbsp;Count</th>
+                    <td>1 </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Word&nbsp;Count</th>
+                    <td>485 </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Character&nbsp;Count</th>
+                    <td>3885 </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Comments Note -->
+          <div class="card my-4">
+            <h5 class="card-header">Comments?</h5>
+            <div class="card-body">
+              This blog doesn't use standard (embedded) comments; however, since
+              the site is hosted on Github, if there <emphasis>is</emphasis>
+              something you'd like to share, please do so by
+              <a href="https://github.com/oubiwann/blog/issues/new">opening a
+              "comment" ticket!</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+<!-- End main page content -->
+
+    </main>
+    
+    
+    <footer id="footer">
+      
+        <div class="row">
+          <div class="col-lg-6">
+
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
+
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-ngap-archives">nasa-ngap-archives</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
+
+
+    </footer>
+    
+    
+    <script src="/blog/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+  
+  </body>
+</html>

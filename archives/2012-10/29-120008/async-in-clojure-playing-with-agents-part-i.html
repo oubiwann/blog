@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+  
+  
+  
+  <head profile="http://dublincore.org/documents/dcq-html/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1179318-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1179318-5');
+    </script>
+    <meta charset="utf-8">
+    <title>
+    
+      oubiwann | blog
+      
+      
+      
+    
+    </title>
+    
+
+    
+    
+    
+    <!-- General Metadata (site-wide) -->
+    <meta name="description" content="A 21st century .plan for Duncan McGreggor">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="oubiwann | blog: version 5.0.0-SNAPSHOT, build 19fc82f
+
+">
+
+    <!-- Google Metadata -->
+    <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
+
+    <!-- Dublic Core Metadata (site-wide) -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html">
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="DC.coverage" content="2003-2019">
+    <meta name="DC.rights" content="Creative Commons Attribution-ShareAlike 4.0 International License">
+    <meta name="DC.publisher" content="C&amp;B|Books">
+    <meta name="DCTERMS.audience" content="Developers, Software Engineers, Computer Scientists, Technologists, Programmers, Programming Language Enthusiasts, Operational Engineers">
+
+    
+    
+<!-- General Metadata (per-page) -->
+<meta name="author" content="">
+
+<!-- Dublic Core Metadata (per-page) -->
+<meta name="DC.title" lang="en" content="Async in Clojure: Playing with Agents, Part I">
+<meta name="DC.creator" content="oubiwann">
+<meta name="DC.subject" content="">
+<meta name="DC.date" content="2012-10-29">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io/blog/archives/2012-10/29-120008/async-in-clojure-playing-with-agents-part-i.html">
+<meta name="DCTERMS.abstract" content="">
+
+<!-- Facebook's OpenGraph Metadata -->
+<meta property="og:site_name" content="o|b">
+<meta property="og:title" content="Async in Clojure: Playing with Agents, Part I">
+<meta property="og:url" content="https://oubiwann.github.io/blog/archives/2012-10/29-120008/async-in-clojure-playing-with-agents-part-i.html">
+<meta property="og:type" content="blog">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://oubiwann.github.io/blog/img/ob-post-6.jpg">
+<meta property="article:author" content="">
+<meta property="article:published_time" content="2012-10-29 12:00:08">
+<meta property="article:modified_time" content="">
+<meta property="og:updated_time" content="">
+<meta property="article:section" content="">
+
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@oubiwann">
+<meta name="twitter:creator:id" content="@oubiwann">
+<meta name="twitter:title" content="Async in Clojure: Playing with Agents, Part I">
+<meta name="twitter:url" content="https://oubiwann.github.io/blog/archives/2012-10/29-120008/async-in-clojure-playing-with-agents-part-i.html">
+<meta name="twitter:description" content="<p><p><div class="separator" style="clear: both; text-align: center;"><a</p><p>ref="http://farm9.staticflickr.com/8194/8132215505<i>bed518b214.jpg" imageanchor ="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://farm9.staticflickr.com/8194/8132215505</i>bed518b214.jpg" width="200" /></a></div><a href="http://clojure.org/">Clojure</a> has a very ...</p>">
+<meta name="twitter:image" content="https://oubiwann.github.io/blog/img/ob-post-6.jpg">
+
+    
+    
+
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
+    
+
+    <!-- Webfonts Setup /-->
+    <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap/Custom Styles Setup /-->
+    <link rel="stylesheet" href="/blog/assets/highlightjs/styles/arta.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="/blog/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+
+    <!-- Favicon Setup /-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png?v=3">
+    <link rel="manifest" href="/blog/icons/manifest.json?v=3">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico?v=3">
+    <meta name="apple-mobile-web-app-title" content="FRMX">
+    <meta name="application-name" content="o|b">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml?v=3">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    
+    
+  
+
+  </head>
+  
+  <body>
+  
+   
+    <header class="tiny">
+      
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand-wrapper">
+      <a href="/blog/" class="navbar-brand">o|b</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/tags">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="/blog/about/">The Blog</a>
+            <a class="dropdown-item" href="/blog/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="/blog/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/blog/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
+          <a href="/blog/atom.xml" alt="Atom Feed">
+            <i class="fa fa-feed first"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/googleplus" alt="Google+">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
+             alt="Email Notifications">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </header>
+    
+    
+    <main id="main-content">
+      
+
+    <!-- Page Content -->
+    <div class="container page-content">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+
+          <!-- Title -->
+          <h1 class="mt-4">Async in Clojure: Playing with Agents, Part I</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            Posted on October 29,
+            2012 by
+            <a href="/blog/authors#oubiwann">oubiwann</a>
+          </p>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link show active" data-toggle="tab" href="#content">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" data-toggle="tab" href="#metadata">Metadata</a>
+            </li>
+          </ul>
+
+          <br/>
+
+          <div id="post-content" class="tab-content">
+            <div class="tab-pane fade active show" id="content">
+
+          <!-- Post Image -->
+          <img class="card-img-top" src="/blog/img/ob-post-6.jpg" alt="Blog post image">
+
+          <hr>
+
+          <!-- Post Content -->
+          <p><div class="separator" style="clear: both; text-align: center;"><a</p><p>ref="http://farm9.staticflickr.com/8194/8132215505_bed518b214.jpg" imageanchor ="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="200" src="http://farm9.staticflickr.com/8194/8132215505_bed518b214.jpg" width="200" /></a></div><a href="http://clojure.org/">Clojure</a> has a very interesting async primitive: the <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/age nt">agent</a>. There is some good <a href="http://clojure.org/agents">documentation on agents</a>, but for those that come from a background such as mine (<a href="http://www.python.org/">Python</a> at <a href="http://twistedmatrix.com/">Twisted</a>), I thought it might be nice to present one way of using agents to mimic the familiar async + callback reactive-style programming. <br /><br />Do note, however, that Clojure agents run in one of two threadpools (one intended for CPU-intensive tasks, and the other for I/O-intensive tasks). As such, this is quite different than the event-loop approach that Twisted uses (or async frameworks that utilize libraries such as <a href="http://libevent.org/">libevent</a> or <a href="http://software.schmorp.de/pkg/libev.html">libev</a>). Twisted has the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">deferToThread</span></span> functionality, which is ... well, not exactly close, really. Regardless, let's get started.<br /><br />In the following examples, we're going to pretend we have huge files we'll be reading off a local disk.<br /><br /><b>What to Call</b><br />Clojure's <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">agent</span></span> function is very, very simple: you pass it a value (it's initial state) and some options, if needed. That's it.<br /><br /><script src="https://gist.github.com/3967254.js?file=01-agent.clj"></script> <br />To update its state, you use either the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send</span></span> or <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> functions. If you've got CPU-bound tasks whose state you want to manage with agents, then you should use the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send</span></span> function. If your tasks will be I/O-bound, then you should use<span style="font-size: small;"> <span style="font-size: small;">the </span></span><span style="font-size: small;"><span style="font-size: small;"><span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> function for updating a<span style="font-size: small;">gent state.</span></span></span> (The threadpool dedicated for use by <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send</span></span> has a fixed size, based on the number of processors on your system. The threadpool for <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> is exapandable with thread caching and keep-alives.) Since our examples are focused on disk I/O, we'll be using <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span>. (they have the same signature, though, so the following usage information applies to both).<br /><br />When you <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">send-off</span></span> something to an agent, you pass if a few things:<br /><ul><li>an agent</li><li>the action or update function</li><li>any number of additional parameters you want the action function to consume</li></ul>Here's what that looks like: <br /><br /><script src="https://gist.github.com/3967254.js?file=02-send-off.clj"></script> <br /><b>What to Write</b> <br />So, we know what an agent looks like when bound and we know how we're going to send an update to the agent, but how might we construct the update itself? Perhaps like this:<br /><br /><script src="https://gist.github.com/3967254.js?file=03-action.clj"></script> <br />As you can see, the first value that an action function takes is the "old" value of the agent &ndash; the value that the agent has prior to the action that will take place. Once this function returns, the agent's value will be set to the return value of the action function. (What's more, if we needed to access the agent itself inside the action function for any reason, we could do so using the <span style="font-size: x-small;"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><em>agent</em></span></span> variable &ndash; accessible within the scope of the action function).<br /><br />Before we go on, let's take a look at this in action from the REPL:<br /><br /><script src="https://gist.github.com/3967254.js?file=05-repl.txt"></script> <br />The first thing we do is switch from the default namespace to one dedicated to our examples (this makes managing scope in the REPL much cleaner). Then we load a file that has the agent and action function defined. Then we tell it to run our fake "big read" function, asking it to run for about 10 seconds. As you can see, send-off returns the agent immediately. We then get the current value of the agent by dereferencing it. Finally our big read finishes, and we see it print how long it took. We then look at the agent directly, and then dereference it again &ndash; both showing us what we'd expect: that the value of the agent has been updated to the return value of our big read function. Finally, we shutdown the agent threads and exit the REPL.<br /><br />(The <span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">start-clojure</span></span> script is wrapped with <a href="http://utopia.knoware.nl/~hlub/rlwrap/#rlwrap">rlwrap</a> so that I have access to a command line history, persistent over different sessions. The script boils down to this: <span style="font-family: &quot;Courier New&quot;,Courier,monospace;"><span style="font-size: x-small;">rlwrap java -cp /usr/local/clojure-1.4.0/clojure-1.4.0.jar clojure.main</span></span>.)<br /><br />We've seen the agent in action now, but there's a bit more we can do. We'll take a look at that in the next post.<br /><br /></p>
+
+            </div>
+            <div class="tab-pane fade" id="metadata">
+
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="table-secondary">
+                    <th scope="row">Author</th>
+                    <td>oubiwann</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Date</th>
+                    <td>October 29,
+        2012</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Time</th>
+                    <td>12:00:08</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Category</th>
+                    <td>
+                        <a href="/blog/categories/#"></a>
+                    </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Tags</th>
+                    <td>
+                      
+                      <a href="/blog/tags/#actors">actors</a>
+                      
+                      <a href="/blog/tags/#agents">agents</a>
+                      
+                      <a href="/blog/tags/#async">async</a>
+                      
+                      <a href="/blog/tags/#clojure">clojure</a>
+                      
+                      <a href="/blog/tags/#libev">libev</a>
+                      
+                      <a href="/blog/tags/#libevent">libevent</a>
+                      
+                      <a href="/blog/tags/#lisp">lisp</a>
+                      
+                      <a href="/blog/tags/#python">python</a>
+                      
+                      <a href="/blog/tags/#reblog">reblog</a>
+                      
+                      <a href="/blog/tags/#threadpools">threadpools</a>
+                      
+                      <a href="/blog/tags/#threads">threads</a>
+                      
+                      <a href="/blog/tags/#twisted">twisted</a>
+                      
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Line&nbsp;Count</th>
+                    <td>1 </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Word&nbsp;Count</th>
+                    <td>767 </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Character&nbsp;Count</th>
+                    <td>6671 </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Comments Note -->
+          <div class="card my-4">
+            <h5 class="card-header">Comments?</h5>
+            <div class="card-body">
+              This blog doesn't use standard (embedded) comments; however, since
+              the site is hosted on Github, if there <emphasis>is</emphasis>
+              something you'd like to share, please do so by
+              <a href="https://github.com/oubiwann/blog/issues/new">opening a
+              "comment" ticket!</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+<!-- End main page content -->
+
+    </main>
+    
+    
+    <footer id="footer">
+      
+        <div class="row">
+          <div class="col-lg-6">
+
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
+
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-ngap-archives">nasa-ngap-archives</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
+
+
+    </footer>
+    
+    
+    <script src="/blog/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+  
+  </body>
+</html>

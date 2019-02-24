@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+  
+  
+  
+  <head profile="http://dublincore.org/documents/dcq-html/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1179318-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1179318-5');
+    </script>
+    <meta charset="utf-8">
+    <title>
+    
+      oubiwann | blog
+      
+      
+      
+    
+    </title>
+    
+
+    
+    
+    
+    <!-- General Metadata (site-wide) -->
+    <meta name="description" content="A 21st century .plan for Duncan McGreggor">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="oubiwann | blog: version 5.0.0-SNAPSHOT, build 19fc82f
+
+">
+
+    <!-- Google Metadata -->
+    <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
+
+    <!-- Dublic Core Metadata (site-wide) -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html">
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="DC.coverage" content="2003-2019">
+    <meta name="DC.rights" content="Creative Commons Attribution-ShareAlike 4.0 International License">
+    <meta name="DC.publisher" content="C&amp;B|Books">
+    <meta name="DCTERMS.audience" content="Developers, Software Engineers, Computer Scientists, Technologists, Programmers, Programming Language Enthusiasts, Operational Engineers">
+
+    
+    
+<!-- General Metadata (per-page) -->
+<meta name="author" content="">
+
+<!-- Dublic Core Metadata (per-page) -->
+<meta name="DC.title" lang="en" content="Full Text Search with Storm and PosgreSQL 8.3">
+<meta name="DC.creator" content="oubiwann">
+<meta name="DC.subject" content="">
+<meta name="DC.date" content="2008-11-13">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io/blog/archives/2008-11/13-091908/full-text-search-with-storm-and-posgresql-8-3.html">
+<meta name="DCTERMS.abstract" content="">
+
+<!-- Facebook's OpenGraph Metadata -->
+<meta property="og:site_name" content="o|b">
+<meta property="og:title" content="Full Text Search with Storm and PosgreSQL 8.3">
+<meta property="og:url" content="https://oubiwann.github.io/blog/archives/2008-11/13-091908/full-text-search-with-storm-and-posgresql-8-3.html">
+<meta property="og:type" content="blog">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://oubiwann.github.io/blog/img/ob-post-2.jpg">
+<meta property="article:author" content="">
+<meta property="article:published_time" content="2008-11-13 09:19:08">
+<meta property="article:modified_time" content="">
+<meta property="og:updated_time" content="">
+<meta property="article:section" content="">
+
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@oubiwann">
+<meta name="twitter:creator:id" content="@oubiwann">
+<meta name="twitter:title" content="Full Text Search with Storm and PosgreSQL 8.3">
+<meta name="twitter:url" content="https://oubiwann.github.io/blog/archives/2008-11/13-091908/full-text-search-with-storm-and-posgresql-8-3.html">
+<meta name="twitter:description" content="<p><p><div><br /><font style="font-weight: bold;" size="3">Introduction</font><br /><br />At <a href="http://www.canonical.com/">Canonical</a>, we recently decided to provide a knowledge base in our <a href="https://landscape.canonical.com/">Landscape</a> product. The pros and ...</p>">
+<meta name="twitter:image" content="https://oubiwann.github.io/blog/img/ob-post-2.jpg">
+
+    
+    
+
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
+    
+
+    <!-- Webfonts Setup /-->
+    <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap/Custom Styles Setup /-->
+    <link rel="stylesheet" href="/blog/assets/highlightjs/styles/arta.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="/blog/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+
+    <!-- Favicon Setup /-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png?v=3">
+    <link rel="manifest" href="/blog/icons/manifest.json?v=3">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico?v=3">
+    <meta name="apple-mobile-web-app-title" content="FRMX">
+    <meta name="application-name" content="o|b">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml?v=3">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    
+    
+  
+
+  </head>
+  
+  <body>
+  
+   
+    <header class="tiny">
+      
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand-wrapper">
+      <a href="/blog/" class="navbar-brand">o|b</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/tags">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="/blog/about/">The Blog</a>
+            <a class="dropdown-item" href="/blog/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="/blog/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/blog/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
+          <a href="/blog/atom.xml" alt="Atom Feed">
+            <i class="fa fa-feed first"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/googleplus" alt="Google+">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
+             alt="Email Notifications">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </header>
+    
+    
+    <main id="main-content">
+      
+
+    <!-- Page Content -->
+    <div class="container page-content">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+
+          <!-- Title -->
+          <h1 class="mt-4">Full Text Search with Storm and PosgreSQL 8.3</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            Posted on November 13,
+            2008 by
+            <a href="/blog/authors#oubiwann">oubiwann</a>
+          </p>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link show active" data-toggle="tab" href="#content">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" data-toggle="tab" href="#metadata">Metadata</a>
+            </li>
+          </ul>
+
+          <br/>
+
+          <div id="post-content" class="tab-content">
+            <div class="tab-pane fade active show" id="content">
+
+          <!-- Post Image -->
+          <img class="card-img-top" src="/blog/img/ob-post-2.jpg" alt="Blog post image">
+
+          <hr>
+
+          <!-- Post Content -->
+          <p><div><br /><font style="font-weight: bold;" size="3">Introduction</font><br /><br />At <a href="http://www.canonical.com/">Canonical</a>, we recently decided to provide a knowledge base in our <a href="https://landscape.canonical.com/">Landscape</a> product. The pros and cons for developing this in-house were weighed judiciously, and in the end, the balance tipped to building our own. Ordinarily, one might think a team would be better off integrating 3rd party software... but our team isn't ordinary :-) There is a lot of fantastic stuff these guys have created over the last few years that can be brought to bear in just about any software project, enabling visions to reach fruition quickly.<br /><br />Last November, Twisted developer <a href="https://launchpad.net/~therve/+related-projects">Thomas Hervé</a> and I worked on the KB code together, joined by long-time <a href="https://landscape.canonical.com/">Landscape</a> developer <a href="https://launchpad.net/~jkakar/+related-projects">Jamu Kakar </a>for some sweet, sweet styles and page layouts. We made amazing progress and were able to deliver ahead of schedule. One of the reasons for this is the awesome tool chain we have, in particular, <a href="http://bazaar-vcs.org/">bzr</a> (multiple, dependent, in-progress branches easily managed and updated with each other and trunk).<br /><br />As a result of being ahead of schedule, our tech lead <a href="http://blog.labix.org/">Gustavo Niemeyer</a> had started looking for future-planned features that we could research and prepare, if not implement, immediately. One of the features that made this list was full text search.<br /><br />The <a href="http://www.postgresql.org/docs/8.3/static/textsearch-intro.html">Postgre SQL 8.3 manual, chapter 12</a>, gives an excellent definition of full text search in their opening paragraph:<br /><blockquote>Full Text Searching (or just text search) provides the capability to identify natural-language documents that satisfy a query, and optionally to sort them by relevance to the query.</blockquote>Mind you, this is not anywhere close to simple LIKE or even regex searches.<br /><br />So let's get startred :-)<br /><br /><font style="font-weight: bold;" size="3">Postgres Preparation</font><br /><br />One of the things we wanted to support with text search in our knowledge base was strong <a href="http://en.wikipedia.org/wiki/Stemming">stemming</a> (Google's search is famous for its good stemming). In order to do this, we needed some dictionary files that supported this, and the Postgres docs recommended ispell. These files needed to be converted to UTF-8, so here's what we did:<br /><br />TBD<br /><br />Martin Pitt at Canonical has been working with the Postgres folks to get this included in a future release so that you won't have to do all that work anymore.<br /><br /><font style="font-weight: bold;" size="3">Schema Changes</font><br /><br />With the proper files in place, we then needed to override the default (ASCII) text search. These requirements resulted in the following SQL:<br /><br />TBD<br /><br /><font style="font-weight: bold;" size="3">Postgres Text Search SQL</font><br /><br />The SQL that performs full text search in Postgres looks a little odd at first:<br /><br />TBD<br /><br />The parts that might jar the eyes a bit are:<br /><ul><li>the new <font face="courier new">to_tsvector</font>, <font face="courier new">to_tsquery</font>, <font face="courier new">ts<i>rank</i>cd</font>, and <font face="courier new">ts_headline</font> functions</li><li>the match operator</li><li>compound search expression<br /></li></ul> For a full and accurate understanding of these, I recommend a thorough reading of the afore-mentioned manual, Chapter 12. For now, though, here are some quick pass definitions:<br /><br /><font style="font-style: italic;">ts_vector</font> - Converts a document (text) to a preprocessed representation that is needed for text search.<br /><br /><font style="font-style: italic;">ts_query</font> - Converts and normalizes query strings to that they can be easily compared to documents in tsvector-format.<br /><br /><font style="font-style: italic;">ts<i>rank</i>cd</font> - Measures query relavance to documents; it "take[s] into account lexical, proximity, and structural information [...] consider[s] how often the query terms appear in the document, how close together the terms are in the document, and how important is the part of the document where they occur."<br /><br /><font style="font-style: italic;">ts_headline</font> - Returns an excerpt from a matched document with found search terms highlighted in markup.<br /><font style="font-style: italic;">@@</font> - The match operator is an odd-looking creature that does what you might think: returns a Boolean for the search expression as matched against a document's text search vector.<br /><font style="font-style: italic;">search terms</font> - These are single words separated by the Boolean operators <tt class="LITERAL">&amp;</tt> (AND), <tt class="LITERAL">|</tt> (OR) and <tt class="LITERAL">!</tt> (NOT) and may be grouped with parenthesis to determine proper precedence.<br /><br />The sample SQL query above does not take indexing into consideration, nor a table column that preprocesses the document title and body into a text search vector. Here is what we used to set these up:<br /><br />TBD<br /><br /><font style="font-weight: bold;" size="3">Storm Customizations</font><br /><br />Most of my Storm usage over the past couple years has been pretty tame. Probably, the most exciting thing I've done is used Thomas' <a href="https://code.launchpad.net/~therve/storm/twisted-integration">Twisted in tegration branch</a>. Or 1-to-many relationships. So when I put together the SQL we were going to need, I had to talk to the team. <a href="http://radix.twistedmatrix.com/">Chris Armstrong</a> gave me some awesome pointers, and I'm delighted to share these with a wider audience. The cleverness involved is all under the covers, making it very easy for devs to extend Storm &ndash; but I highly recommend taking a look at how Storm makes this possible... it's a delight :-)<br /><br />Chris showed me some files with examples, the end result being a few simple subclasses:<br /><br />TBD<br /><font style="font-weight: bold;" size="3"><br /></font><font style="font-weight: bold;" size="3">Storm Full Text Search</font><br /><br />With the Postgres configuration in place, the schema set up, and our text-search-specific Storm customizations made, we're ready to perform full text search with Storm:<br /><br />TBD<br /><br />I've created a storm branch with the full text search example code in it. You can browse the code here. You can also do the usual:<br /><br />bzr branch lp:~oubiwann/storm/storm-examples<br /><br /><font style="font-weight: bold;">Summary</font><br /><br />The biggest chunk of this work is DBA stuff, really. Then some sysadmin tasks. Once all that's done, the programmer only has to do a few tasks: create a class object, define the functions, and then reap the usability and productivity benefits of working with a well thought-out ORM. This is world-class search with a world-class ORM: both a user's <font style="font-style: italic;">and</font> a programmer's dream :-)<br /><br /><br /></div></p>
+
+            </div>
+            <div class="tab-pane fade" id="metadata">
+
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="table-secondary">
+                    <th scope="row">Author</th>
+                    <td>oubiwann</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Date</th>
+                    <td>November 13,
+        2008</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Time</th>
+                    <td>09:19:08</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Category</th>
+                    <td>
+                        <a href="/blog/categories/#"></a>
+                    </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Tags</th>
+                    <td>
+                      
+                      <a href="/blog/tags/#canonical">canonical</a>
+                      
+                      <a href="/blog/tags/#landscape">landscape</a>
+                      
+                      <a href="/blog/tags/#postgres">postgres</a>
+                      
+                      <a href="/blog/tags/#postgresql">postgresql</a>
+                      
+                      <a href="/blog/tags/#ubuntu">ubuntu</a>
+                      
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Line&nbsp;Count</th>
+                    <td>1 </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Word&nbsp;Count</th>
+                    <td>990 </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Character&nbsp;Count</th>
+                    <td>7328 </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Comments Note -->
+          <div class="card my-4">
+            <h5 class="card-header">Comments?</h5>
+            <div class="card-body">
+              This blog doesn't use standard (embedded) comments; however, since
+              the site is hosted on Github, if there <emphasis>is</emphasis>
+              something you'd like to share, please do so by
+              <a href="https://github.com/oubiwann/blog/issues/new">opening a
+              "comment" ticket!</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+<!-- End main page content -->
+
+    </main>
+    
+    
+    <footer id="footer">
+      
+        <div class="row">
+          <div class="col-lg-6">
+
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
+
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-ngap-archives">nasa-ngap-archives</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
+
+
+    </footer>
+    
+    
+    <script src="/blog/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+  
+  </body>
+</html>

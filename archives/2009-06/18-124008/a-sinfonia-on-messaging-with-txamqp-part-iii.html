@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+  
+  
+  
+  <head profile="http://dublincore.org/documents/dcq-html/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1179318-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1179318-5');
+    </script>
+    <meta charset="utf-8">
+    <title>
+    
+      oubiwann | blog
+      
+      
+      
+    
+    </title>
+    
+
+    
+    
+    
+    <!-- General Metadata (site-wide) -->
+    <meta name="description" content="A 21st century .plan for Duncan McGreggor">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="oubiwann | blog: version 5.0.0-SNAPSHOT, build 19fc82f
+
+">
+
+    <!-- Google Metadata -->
+    <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
+
+    <!-- Dublic Core Metadata (site-wide) -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html">
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="DC.coverage" content="2003-2019">
+    <meta name="DC.rights" content="Creative Commons Attribution-ShareAlike 4.0 International License">
+    <meta name="DC.publisher" content="C&amp;B|Books">
+    <meta name="DCTERMS.audience" content="Developers, Software Engineers, Computer Scientists, Technologists, Programmers, Programming Language Enthusiasts, Operational Engineers">
+
+    
+    
+<!-- General Metadata (per-page) -->
+<meta name="author" content="">
+
+<!-- Dublic Core Metadata (per-page) -->
+<meta name="DC.title" lang="en" content="A Sinfonia on Messaging with txAMQP, Part III">
+<meta name="DC.creator" content="oubiwann">
+<meta name="DC.subject" content="">
+<meta name="DC.date" content="2009-06-18">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io/blog/archives/2009-06/18-124008/a-sinfonia-on-messaging-with-txamqp-part-iii.html">
+<meta name="DCTERMS.abstract" content="">
+
+<!-- Facebook's OpenGraph Metadata -->
+<meta property="og:site_name" content="o|b">
+<meta property="og:title" content="A Sinfonia on Messaging with txAMQP, Part III">
+<meta property="og:url" content="https://oubiwann.github.io/blog/archives/2009-06/18-124008/a-sinfonia-on-messaging-with-txamqp-part-iii.html">
+<meta property="og:type" content="blog">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://oubiwann.github.io/blog/img/ob-post-5.jpg">
+<meta property="article:author" content="">
+<meta property="article:published_time" content="2009-06-18 12:40:08">
+<meta property="article:modified_time" content="">
+<meta property="og:updated_time" content="">
+<meta property="article:section" content="">
+
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@oubiwann">
+<meta name="twitter:creator:id" content="@oubiwann">
+<meta name="twitter:title" content="A Sinfonia on Messaging with txAMQP, Part III">
+<meta name="twitter:url" content="https://oubiwann.github.io/blog/archives/2009-06/18-124008/a-sinfonia-on-messaging-with-txamqp-part-iii.html">
+<meta name="twitter:description" content="<p><p><div><br /><span style="font-weight: bold;">A Sinfonia on Messaging:</span><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging- with-txamqp.html">The Voice of Business</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art.html">The Voice of Architecture</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art_18.html">A RabbitMQ and txAMQP Interlude</a></li></ol><br />Before ...</p>">
+<meta name="twitter:image" content="https://oubiwann.github.io/blog/img/ob-post-5.jpg">
+
+    
+    
+
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
+    
+
+    <!-- Webfonts Setup /-->
+    <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap/Custom Styles Setup /-->
+    <link rel="stylesheet" href="/blog/assets/highlightjs/styles/arta.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="/blog/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+
+    <!-- Favicon Setup /-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png?v=3">
+    <link rel="manifest" href="/blog/icons/manifest.json?v=3">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico?v=3">
+    <meta name="apple-mobile-web-app-title" content="FRMX">
+    <meta name="application-name" content="o|b">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml?v=3">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    
+    
+  
+
+  </head>
+  
+  <body>
+  
+   
+    <header class="tiny">
+      
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand-wrapper">
+      <a href="/blog/" class="navbar-brand">o|b</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/tags">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="/blog/about/">The Blog</a>
+            <a class="dropdown-item" href="/blog/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="/blog/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/blog/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
+          <a href="/blog/atom.xml" alt="Atom Feed">
+            <i class="fa fa-feed first"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/googleplus" alt="Google+">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
+             alt="Email Notifications">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </header>
+    
+    
+    <main id="main-content">
+      
+
+    <!-- Page Content -->
+    <div class="container page-content">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+
+          <!-- Title -->
+          <h1 class="mt-4">A Sinfonia on Messaging with txAMQP, Part III</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            Posted on June 18,
+            2009 by
+            <a href="/blog/authors#oubiwann">oubiwann</a>
+          </p>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link show active" data-toggle="tab" href="#content">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" data-toggle="tab" href="#metadata">Metadata</a>
+            </li>
+          </ul>
+
+          <br/>
+
+          <div id="post-content" class="tab-content">
+            <div class="tab-pane fade active show" id="content">
+
+          <!-- Post Image -->
+          <img class="card-img-top" src="/blog/img/ob-post-5.jpg" alt="Blog post image">
+
+          <hr>
+
+          <!-- Post Content -->
+          <p><div><br /><span style="font-weight: bold;">A Sinfonia on Messaging:</span><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging- with-txamqp.html">The Voice of Business</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art.html">The Voice of Architecture</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art_18.html">A RabbitMQ and txAMQP Interlude</a></li></ol><br />Before we play our third voice in this three-part invention, we need to do some finger exercises. In particular, let's take a look at the concepts and tools we'll be using to implement and run our kilt store messaging scenario.<br /><br /><br /><span style="font-weight: bold;">Messaging</span><br /><br />The <a href="http://www.rabbitmq.com/faq.html#background">RabbitMQ FAQ</a> has this to say about messaging:<br /><b> </b> <br /><blockquote>Unlike databases which manage data at rest, messaging is used to manage data in motion. Use messaging to communicate between and scale applications, within your enterprise, across the web, or in the cloud.</blockquote>Paraphasing Wikipedia's <a href="http://en.wikipedia.org/wiki/Advanced<i>Message</i>Queuing_Protocol">entry on AMQP</a>:<br /><blockquote>The AMQ protocol is for managing the flow of messages across an enterprise's business systems. It is middleware to provide a point of rendezvous between backend systems, such as data stores and services, and front end systems such as end user applications.</blockquote><br /><span style="font-weight: bold;">AMQP Essentials</span><br /><br />AMQP is a protocol for middleware servers ("servers" is used in the most general sense, here... anything that is capable of running a service) &ndash; servers that accept, route, and buffer messages. The <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf? version=1">AMQP specification</a> defines messaging server <a href="http://www.lego.com/">LEGO</a> blocks that can be combined in various ways and numbers, achieving any manner of messaging goals, whose final forms are as diverse as the combinations of the components.<br /><br />For the visually inclined, below is a simple diagram of the AMQ protocol. I've put multiple virtual hosts ("virtual hosts" in the AMQP sense, not Apache!) in the diagram to indicate support for multiple server "segments" (domains in the most general sense). There could just as easily be multiple exchanges and queues in each virtual host, as well. Likewise for publishers and consumers.<br /><br /><div><a href="http://farm4.static.flickr.com/3349/3634123474<i>298f4f3e6e</i>o.png"><img al t="" border="0" src="http://farm4.static.flickr.com/3349/3634123474_62b988082d.jpg" style="bor der: 0pt none; cursor: pointer; float: left; margin: 0pt 10px 10px 0pt;" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />I highly recommend reading <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf? version=1">the spec</a>: it is exceedingly clear at both intuitive and practical levels. To better understand the diagram above, be sure to read the definition of terms at the beginning as well as the subsections in 2.1 about the messaging queue and the exhange. Don't miss the message life-cycle section either &ndash; you'll be reminded of circuitry diagrams and electronics kits, which is what AMQP really boils down to :-)<br /><br />The Advanced Messaging Queing Protocol specifies that the the protocol can be used to create exchanges, message queues, chain them together, and do all of this dynamically. Any piece of code that has access to an API for your AMQP server can connect to it and communicate with other code &ndash; using or creating simple messaging patterns or deeply complex ones. And everything in between.<br /><br /><br /><span style="font-weight: bold;">RabbitMQ Quickstart<br /></span><a href="http://www.rabbitmq.com/">RabbitMQ</a> is a messaging system written in <a href="http://erlang.org/">Erlang</a>, but in particular, it is an implementation of AMQP. The RabbitMQ web site provides documentation on <a href="http://www.rabbitmq.com/install.html">installing</a> and <a href="http://www.rabbitmq.com/admin-guide.html">administering</a> the messaging server. I run mine on Ubuntu, but since I've got a custom Erlang install, I didn't install the package (I dumped the source in <span style="font-family: 'courier new';">/usr/lib/erlang/lib</span>). To participate in the code play for this blog series, you'll need to install RabbitMQ.<br /><br />Once you've got it installed, you'll need to start it up. If you've used something like Ubuntu's apt-get to install RabbitMQ, starting it up is as simple as this:<br /><div class="highlight"><pre>sudo rabbitmq-server</pre></div><br />If you've got a custom setup like mine, you might need to do something like this (changing the defaults as needed):<br /><div class="highlight"><pre><span class="nv">BASE</span><span class="o">=</span>/usr/lib/erlang/lib/rabbitmq-server-1.5.5/<br /><span class="nv">BIN</span><span class="o">=</span><span class="nv">$BASE</span>/scripts/rabbitmq-server<br /><br /><span class="nv">RABBITMQ<i>MNESIA</i>BASE</span><span class="o">=</span><span class="nv">$BASE</span>/mnesia <span class="se">\</span><br /> <span class="nv">RABBITMQ<i>LOG</i>BASE</span><span class="o">=</span>/var/log/rabbitmq <span class="se">\</span><br /> <span class="nv">RABBITMQ<i>NODE</i>PORT</span><span class="o">=</span>5672 <span class="se">\</span><br /> <span class="nv">RABBITMQ_NODENAME</span><span class="o">=</span>rabbit <span class="se">\</span><br /> <span class="nv">$BIN</span> &amp;</pre></div><br /><br /><span style="font-weight: bold;">A txAMQP Example</span><br /><br />Now that we've got a messaging server running, but before we try to implement out kilt store scenarios, let's take a quick sneak peek at txAMQP with a simple example having the following components:<br /><ul><li style="color: #660000;">a RabbitMQ server</li><li style="color: #000099;">a txAMQP producer</li><li style="color: #6600cc;">a txAMQP consumer</li></ul>From reading the spec, we have a general sense of what needs to happen in our <span style="color: #000099;">producer</span>. It needs to:<br /><ul style="color: #000099;"><li>connect to the RabbitMQ server</li><li>open a channel</li><li>send a message down the channel</li></ul>Similarly, our reading lets us anticipate the needs of the <span style="color: #6600cc;">consumer</span>:<br /><ul><li style="color:<h1>6600cc;">connect to the RabbitMQ server</li><li style="color: #6600cc;">open</h1> a channel</li><li style="color: #6600cc;">create an exchange and message queue on the RabbitMQ server, binding the two</li><li style="color: #6600cc;">check for in-coming messages and consume them</li></ul>I have refactored some examples that the author of txAMQP <a href="http://blogs.digitar.com/jjww/2009/01/rabbits-and-warrens/#comment-681"> created</a> and I've put them up <a href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Docs/files/head% 3A/messaging/amqp/twisted/producer-consumer/">here</a>. Once you download the three Python files (and the spec file, one directory level up), you can run them in two separate terminals. In terminal 1, start up the consumer:<br /><div class="highlight"><pre>python2.5 consumer amqp0-8.xml</pre></div>In terminal 2, fire off a message:<br /><div class="highlight"><pre>python2.5 producer amqp0-8.xml <span class="se">\</span><br /><span class="s2">"producer-to-consumer test message 1"</span></pre></div>After running the producer with that message, you should see the same text rendered in the consumer terminal window. You can also fire the message off first, then start up the consumer. The message is sitting in a queue on your RabbitMQ instance and will be available to your consumer as soon as it connects.<br /><br />Now that you see evidence of this working, you're going to be curious about the code :-) Go ahead and <a href="http://bazaar.launchpad.net/~oubiwann/adytum-collection/Docs/files/head% 3A/messaging/amqp/twisted/producer-consumer/">take a look</a>. There are lots of comments in the code that give hints as to what's going on and the responsibilities that are being addressed.<br /><br />If you are familiar with Twisted, you may have noted that the code looks a little strange. If you're not, you may have noticed that the code looks normal, with the exception of extensive yield usage and the <span style="font-family: 'courier new';">inlineCallbacks</span> decorator. Let me give a quick overview:<br /><br />Ordinarily, Twisted-based libraries and applications use the asynchronous <a href="http://twistedmatrix.com/projects/core/documentation/howto/defer.html">T wisted deferred idiom</a>. However, there's a little-used bit of syntactic sugar in Twisted (for Python 2.5 and greater) that lets you write async code that looks like regular, synchronous code. This was briefly explored <a href="http://blog.mekk.waw.pl/archives/14-Twisted-inlineCallbacks-and-deferred Generator.html">in a post</a> on another blog last year. The Twisted API docstring for <span style="font-family: 'courier new';">inlineCallbacks</span> has a <a href="http://twistedmatrix.com/documents/8.2.0/api/twisted.internet.defer.html<h1>inlineCallbacks">concise example</a>.<br /><br />Briefly, the difference is</h1> as follows. In standard Twisted code, we assign a deferred-producing function's or method's return value to a variable and then call that deferred's methods (e.g., <span style="font-family: 'courier new';">addCallback</span>):<br /><div class="highlight"><pre><span class="k">def</span> <span class="nf">someFunc</span><span class="p">():</span><br /> <span class="n">d1</span> <span class="o">=</span> <span class="n">someAsyncCall</span><span class="p">()</span><br /> <span class="n">d1</span><span class="o">.</span><span class="n">addCallback</span><span class="p">(</span><span class="n">_someCallback</span><span class="p">)</span><br /> <span class="n">d2</span> <span class="o">=</span> <span class="n">anotherAsyncCall</span><span class="p">()</span><br /> <span class="n">d2</span><span class="o">.</span><span class="n">addCallback</span><span class="p">(</span><span class="n">_anotherCallback</span><span class="p">)</span></pre></div><br />With <span style="font-family: 'courier new';">inlineCallbacks</span>, you decorate your function (or method) and yield for every deferred-producing call:<br /><div class="highlight"><pre><span class="nd">@inlineCallbacks</span><br /><span class="k">def</span> <span class="nf">someFunc</span><span class="p">():</span><br /> <span class="n">result1</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">someAsyncCall</span><span class="p">()</span><br /> <span class="c"># work with result; no need for a callback</span><br /> <span class="n">result2</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">anotherAsyncCall</span><span class="p">()</span><br /> <span class="c"># work with second result; no need for a callback</span></pre></div><br />Visually, this flows as regular Python code. However, know that the <span style="font-family: 'courier new';">yield</span>s prevent the function from blocking (given that there is no blocking code present, e.g., file I/O) and execution resumes as soon as the deferred has a result (which is assigned to the left-hand side). Since this latter idiom is used in txAMQP, I use it in the examples as well.<br /><br />Next, we finally reach our implementation!<br /><br /><br /><span style="font-weight: bold;">References</span><br /><ul><li><a href="http://www.enterpriseintegrationpatterns.com/Chapter1.html"></a>The <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf? version=1">AMQP Spec</a></li><li>The <a href="https://launchpad.net/txamqp">async Python library</a> for AMQP</li><li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li><li>A <a href="http://app.arat.us/blog/?p=38">txAMQP example</a></li></ul><br /><br /><br /></div></p>
+
+            </div>
+            <div class="tab-pane fade" id="metadata">
+
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="table-secondary">
+                    <th scope="row">Author</th>
+                    <td>oubiwann</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Date</th>
+                    <td>June 18,
+        2009</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Time</th>
+                    <td>12:40:08</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Category</th>
+                    <td>
+                        <a href="/blog/categories/#"></a>
+                    </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Tags</th>
+                    <td>
+                      
+                      <a href="/blog/tags/#amqp">amqp</a>
+                      
+                      <a href="/blog/tags/#concurrency">concurrency</a>
+                      
+                      <a href="/blog/tags/#erlang">erlang</a>
+                      
+                      <a href="/blog/tags/#python">python</a>
+                      
+                      <a href="/blog/tags/#twisted">twisted</a>
+                      
+                      <a href="/blog/tags/#txamqp">txamqp</a>
+                      
+                      <a href="/blog/tags/#txamqp-sinfonia">txamqp-sinfonia</a>
+                      
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Line&nbsp;Count</th>
+                    <td>1 </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Word&nbsp;Count</th>
+                    <td>1316 </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Character&nbsp;Count</th>
+                    <td>12218 </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Comments Note -->
+          <div class="card my-4">
+            <h5 class="card-header">Comments?</h5>
+            <div class="card-body">
+              This blog doesn't use standard (embedded) comments; however, since
+              the site is hosted on Github, if there <emphasis>is</emphasis>
+              something you'd like to share, please do so by
+              <a href="https://github.com/oubiwann/blog/issues/new">opening a
+              "comment" ticket!</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+<!-- End main page content -->
+
+    </main>
+    
+    
+    <footer id="footer">
+      
+        <div class="row">
+          <div class="col-lg-6">
+
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
+
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-ngap-archives">nasa-ngap-archives</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
+
+
+    </footer>
+    
+    
+    <script src="/blog/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+  
+  </body>
+</html>

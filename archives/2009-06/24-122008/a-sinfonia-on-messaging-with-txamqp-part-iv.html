@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+  
+  
+  
+  <head profile="http://dublincore.org/documents/dcq-html/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1179318-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1179318-5');
+    </script>
+    <meta charset="utf-8">
+    <title>
+    
+      oubiwann | blog
+      
+      
+      
+    
+    </title>
+    
+
+    
+    
+    
+    <!-- General Metadata (site-wide) -->
+    <meta name="description" content="A 21st century .plan for Duncan McGreggor">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="oubiwann | blog: version 5.0.0-SNAPSHOT, build 19fc82f
+
+">
+
+    <!-- Google Metadata -->
+    <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
+
+    <!-- Dublic Core Metadata (site-wide) -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html">
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="DC.coverage" content="2003-2019">
+    <meta name="DC.rights" content="Creative Commons Attribution-ShareAlike 4.0 International License">
+    <meta name="DC.publisher" content="C&amp;B|Books">
+    <meta name="DCTERMS.audience" content="Developers, Software Engineers, Computer Scientists, Technologists, Programmers, Programming Language Enthusiasts, Operational Engineers">
+
+    
+    
+<!-- General Metadata (per-page) -->
+<meta name="author" content="">
+
+<!-- Dublic Core Metadata (per-page) -->
+<meta name="DC.title" lang="en" content="A Sinfonia on Messaging with txAMQP, Part IV">
+<meta name="DC.creator" content="oubiwann">
+<meta name="DC.subject" content="">
+<meta name="DC.date" content="2009-06-24">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io/blog/archives/2009-06/24-122008/a-sinfonia-on-messaging-with-txamqp-part-iv.html">
+<meta name="DCTERMS.abstract" content="">
+
+<!-- Facebook's OpenGraph Metadata -->
+<meta property="og:site_name" content="o|b">
+<meta property="og:title" content="A Sinfonia on Messaging with txAMQP, Part IV">
+<meta property="og:url" content="https://oubiwann.github.io/blog/archives/2009-06/24-122008/a-sinfonia-on-messaging-with-txamqp-part-iv.html">
+<meta property="og:type" content="blog">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://oubiwann.github.io/blog/img/ob-post-3.jpg">
+<meta property="article:author" content="">
+<meta property="article:published_time" content="2009-06-24 12:20:08">
+<meta property="article:modified_time" content="">
+<meta property="og:updated_time" content="">
+<meta property="article:section" content="">
+
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@oubiwann">
+<meta name="twitter:creator:id" content="@oubiwann">
+<meta name="twitter:title" content="A Sinfonia on Messaging with txAMQP, Part IV">
+<meta name="twitter:url" content="https://oubiwann.github.io/blog/archives/2009-06/24-122008/a-sinfonia-on-messaging-with-txamqp-part-iv.html">
+<meta name="twitter:description" content="<p><p><div><br /><font style="font-weight: bold;">A Sinfonia on Messaging:</font><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging- with-txamqp.html">The Voice of Business</a><br /></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art.html">The Voice of Architecture</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art_18.html">A RabbitMQ and txAMQP Interlude</a></li><li>The ...</p>">
+<meta name="twitter:image" content="https://oubiwann.github.io/blog/img/ob-post-3.jpg">
+
+    
+    
+
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
+    
+
+    <!-- Webfonts Setup /-->
+    <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap/Custom Styles Setup /-->
+    <link rel="stylesheet" href="/blog/assets/highlightjs/styles/arta.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="/blog/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+
+    <!-- Favicon Setup /-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png?v=3">
+    <link rel="manifest" href="/blog/icons/manifest.json?v=3">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico?v=3">
+    <meta name="apple-mobile-web-app-title" content="FRMX">
+    <meta name="application-name" content="o|b">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml?v=3">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    
+    
+  
+
+  </head>
+  
+  <body>
+  
+   
+    <header class="tiny">
+      
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand-wrapper">
+      <a href="/blog/" class="navbar-brand">o|b</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/tags">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="/blog/about/">The Blog</a>
+            <a class="dropdown-item" href="/blog/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="/blog/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/blog/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
+          <a href="/blog/atom.xml" alt="Atom Feed">
+            <i class="fa fa-feed first"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/googleplus" alt="Google+">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
+             alt="Email Notifications">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </header>
+    
+    
+    <main id="main-content">
+      
+
+    <!-- Page Content -->
+    <div class="container page-content">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+
+          <!-- Title -->
+          <h1 class="mt-4">A Sinfonia on Messaging with txAMQP, Part IV</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            Posted on June 24,
+            2009 by
+            <a href="/blog/authors#oubiwann">oubiwann</a>
+          </p>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link show active" data-toggle="tab" href="#content">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" data-toggle="tab" href="#metadata">Metadata</a>
+            </li>
+          </ul>
+
+          <br/>
+
+          <div id="post-content" class="tab-content">
+            <div class="tab-pane fade active show" id="content">
+
+          <!-- Post Image -->
+          <img class="card-img-top" src="/blog/img/ob-post-3.jpg" alt="Blog post image">
+
+          <hr>
+
+          <!-- Post Content -->
+          <p><div><br /><font style="font-weight: bold;">A Sinfonia on Messaging:</font><br /><ol><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging- with-txamqp.html">The Voice of Business</a><br /></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art.html">The Voice of Architecture</a></li><li><a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art_18.html">A RabbitMQ and txAMQP Interlude</a></li><li>The Voice of Code<br /></li></ol><br />Finally, we reach the foundation, the fundament, the bass line of our <a href="http://www.music.qub.ac.uk/%7Etomita/essay/inventions.html">sinfonia</a> . First we looked at the business need (however contrived), then an architecture that fit this need. We had a little play with txAMQP and RabbitMQ &ndash; we know how to connect to RabbitMQ, create exchanges and queues and then bind them together.<br /><br />Now, with a basic understanding under our belts of messaging systems and some practical experience with Twisted AMQP consumers and producers, we can tackle unified orders. In this post we will learn how to extend our knowledge by creating some messaging pattern implementations for MacGredder's kilt store.<br /><br /><br /><font style="font-weight: bold;">Architecture Redress</font><br /><br />The outcome we expect for this part of the implementation is a single message representing a single order (with a single item per order, for simplicity) that could have come from any of the three order sources at the kilt store: web site, phone call, or sales guy. By adding a little complexity in creating a single message abstraction for the order, we will be able to simplify the system as a whole: the rest of the code we write will only have to know about one order message, not three.<br /><br />After closer inspection of the architecture, I've made some changes to the "unified orders" EIP model. In particular, I've been more specific about the patterns which we will be using, not treating any as implicit. Here's the latest:<br /><br />[diagram of new model]<br /><br />Here's a list of the patterns we've identified for use in MaGrudder's kilt store:<br /><ul><li><font size="2"><font style="font-weight: bold;">Messaging</font> (53)</font></li><li><font size="2"><font style="font-weight: bold;">Message Broker</font> (322)</font><br /></li><li><font size="2"><font style="font-weight: bold;">Message</font> (66)</font></li><li><font size="2"><font style="font-weight: bold;">Message Endpoint</font> (95)<br /></font></li><li><font size="2"><font style="font-weight: bold;">Channel Adapter</font> (127)</font><br /></li><li><font style="font-weight: bold;" size="2">Message Channel</font><font size="2"> (60)</font></li><li><font size="2"><font style="font-weight: bold;">Normalizer</font> (352)<br /></font></li><li><font style="font-weight: bold;" size="2">Message Translator</font><font size="2"> (85)</font></li><li><font style="font-weight: bold;" size="2">Point-to-Point Channel</font><font size="2"> (103)</font></li></ul>The numbers in parentheses correspond to the page number in <a href="http://www.amazon.com/dp/0321200683?tag=enterpriseint-20&amp;camp=14573& amp;creative=327641&amp;linkCode=as1&amp;creativeASIN=0321200683&amp;adid=0YAA MBS55JJB5B8PMX6Z&amp;">Enterprise Integration Patterns</a>, where you will find each pattern described. Some of these may seem rather obvious, but I don't want to take anything for granted. By keeping them in mind we don't loose sight of the big picture, and we get to appreciate the work that others have done for us!<br /><br />For instance, some of these patterns we get for free with our software:<br /><ul><li>Messaging - provided by RabbitMQ and txAMQP</li><li>Message Broker - provided by RabbitMQ</li><li>Message - specified by the AMQ protocol</li><li>Message Channel - specified by the AMQ protocol</li><li>Point-to-Point Channel - specified by the AMQ protocol</li></ul>This leaves the following that we need to actually implement:<br /><ul><li>Message Endpoint - connect an application to a messaging channel<br /></li><li>Channel Adapter - access an application's API/data, publish messages to a channel and receive messages</li><li>Message Translator - translate one data format into another</li><li>Normalizer - rewire our messaging to handle message translations better<br /></li></ul>For now, let us ignore RabbitMQ, message routing, and the rest of MacGrudder's infrastructure. All we're going to do is create message from three possible sources and ensure that a single format is used in the messaging system. We'll worry about the rest later :-)<br /><br />Let's look at how orders are created:<br /><ul><li>Web store - user hits the "place order" button</li><li>Sales guy - creates an order in the CRM</li><li>Phone call - someone in the shop writes down an order on a piece of paper<br /></li></ul>We're going to need to have web girl do the following:<br /><ul><li>add a new component to the web store code that creates a message when an order is placed by a customer (Message Endpoint)<br /></li><li>sales guy's CRM offers an XML-RPC API, so web girl will add a layer of code combining an XML-RPC client and a messaging client (Channel Adatper)<br /></li><li>either build a custom form for internal use (custom orders) or add an admin mode to the web store so that employees can create orders on behalf of non-web customers (in both cases, Message Endpoint)<br /></li></ul><br /><font style="font-weight: bold;">The Voice of Code<br /><br /></font>The web store component will be very straight-forward: we need to intercept the data during the order creation process, right after the data is successfully saved to the database.<br /><br /><font style="font-style: italic;">Web Store and Message Endpoint</font><br /><br />Let's say we have a super-simple web store like <a href="http://bazaar.launchpad.net/%7Eoubiwann/adytum-collection/Docs/annotate/ head%3A/messaging/amqp/twisted/simple-web-store/00-original/webstore.py">the o ne here</a>. At the point where the data is saved to a database, we want to also publish a message on our messaging server. We can do that by updating the <font face="courier new">ProcessOrder.render</font> method with a call to our endpoint:<br /><br />[new render method]<br /><br />Based on previous analysis, we know that we need to create a message and then send it. We create a new <font face="courier new">endpoint</font> module with the following code:<br /><br />[endpoint code]<br /><br />As is expected with the Message Endpoint pattern, we had to modify our application code, but so far, the changes have been minimal. For applications where we don't have access to the source code, we need to create a channel adapter.<br /><br /><font style="font-style: italic;">CRM and Channel Adapter</font><br /><br />Fortunately, sales guy's CRM has an XML-RPC API. To connect the CRM to our messaging system, we need to do something similar to what we did to our web store:<br /><ul><li>get new orders (with an XML-RPC client)<br /></li><li>create a new order message</li><li>send the message</li></ul>For testing purposes, I've supplied a <a href="http://bazaar.launchpad.net/%7Eoubiwann/adytum-collection/Docs/annotate/ head%3A/messaging/amqp/twisted/simple-web-store/01-orders/crmxmlrpcserver.py"> fake CRM XML-RPC server</a>. Since we've already written the code for sending messages, adding support for sending a message based on the data we get from the CRM's XML-RPC is simplicity itself:<br /><br />[code for adapter]<br /><br />With our adapter in place, we now notice that the data we get back fron the web server and the data provided by the CRM are actually not the same. These need to be correlated with a Message Translator.<br /><br /><font style="font-style: italic;">Message Translator</font><br /><br />For the message translator, I chose to put the code in a separate module and not integrate the changes directly into the two places where messages are currently created (the <a href="http://bazaar.launchpad.net/%7Eoubiwann/adytum-collection/Docs/annotate/ head%3A/messaging/amqp/twisted/simple-web-store/01-orders/adapter.py">Message  Adapter</a> and the <a href="http://bazaar.launchpad.net/%7Eoubiwann/adytum-collection/Docs/annotate/ head%3A/messaging/amqp/twisted/simple-web-store/01-orders/endpoint.py">Message Endpoint</a> implementations). For the purposes of this blog post, that decision keeps the code and concepts clear, however it has another excellent benefit: when we choose to split up the message queues (and we will!), the translator will integrate easily.<br /><br />With these thoughts in mind, I chose to write the translator using the <a href="http://twistedmatrix.com/projects/core/documentation/howto/components.ht ml">Twisted component architecture</a>. You might want to take a quick look at that link to get a sense of it (especially the bit about creating the plug socket adapters and plugging in the hairdryer). As cumbersome as a few folks may find this, it really is a good match: we've got one type of message (the unified format one) and we want to adapt other message formats to the unified format one. I did a quick mock-up of a toy implementation (fully-running code) that expresses this clearly: view it here.<br /><br />The implementation that we use for our orders isn't all that much different. Besides implementing actually useful <font face="courier new">getMessage</font> methods, it provides a convenience function, <font face="courier new">translate</font>, for doing the adaptation. To save space, I'll just show the two adapter classes:<br /><br />[adapter classes]<br /><br />This is the fatal piece of code that finally forces us to think more about how messaging should really work in this scenario. Do we follow old tendencies? Do we cobble something together and glue a little messaging in there? Or do we take full advantage of messages and queues. I bet you can guess which :-)<br /><br /><font style="font-style: italic;">Normalizer</font><br /><br />There's really no reason we can't continue with the <a href="http://bazaar.launchpad.net/%7Eoubiwann/adytum-collection/Docs/files/hea d%3A/messaging/amqp/twisted/producer-consumer/?file_id=890%40a5ecbb21-ded8-031 0-8b19-a7ee6de54fb5%3ADocs%252Fmessaging%252Famqp%252Ftwisted">messaging setup </a> we used in the example from the <a href="http://oubiwann.blogspot.com/2009/06/sinfonia-on-messaging-with-txamqp-p art_18.html">last blog post</a>. It would work. But let's look at how we would wire our messaging server such that we could keep our code loosely coupled.<br /><br />If we do so and keep our translator code separate from the message-creation code, we're going to need to think of a way for the original messages to be transformed into translated messages. So, how about this:<br /><ul><li>add a routing key for each type of source message (e.g., one for web orders, one for CRM orders, etc.)</li><li>route each received message to the appropriate translator</li><li>send unified format messages to a new queue</li><li>point other parts of the application that need order messages at this new queue<br /></li></ul>What we haven't done in this code is create a queue for every Message Translator; all<br /><br /><br /><font style="font-weight: bold;">Running the Code</font><br /><br />If you would like to see all of this in action, here's what you need to do:<br /><br />Download the <a href="http://bazaar.launchpad.net/%7Eoubiwann/adytum-collection/Docs/files/hea d%3A/messaging/amqp/twisted/simple-web-store/01-orders/">example code</a>. Ensure that you have Twisted, txAMQP, and simplejson installed. Open several terminal windows. In one of them, add the kilt store vhost to RabbitMQ and map the guest user to it:<br /><br /><span style="font-family: courier new;"> $ rabbitmqctl add_vhost kilt-store</span><br style="font-family: courier new;"><span style="font-family: courier new;"> $ rabbitmqctl map<i>user</i>vhost guest kilt-store</span><br /><br />Start the fake CRM XML-RPC server in another terminal window:<br /><br /><span style="font-family: courier new;"> $ twistd -noy ./bin/crm-xmlrpc.tac &ndash;pidfile=crm.pid</span><br /><br />Start the fake web store in another terminal window:<br /><br /><span style="font-family: courier new;"> $ twistd -noy ./bin/webstore.tac &ndash;pidfile=web.pid</span><br /><br />In another terminal window, start the fake consumer that will listen on the unified message channel. All messages that have been normalised to the unified message format we've defined will be publised here:<br /><br /> <span style="font-family: courier new;">$ python ./bin/fakeconsumer.py</span><br /><br />In yet another window, start the CRM XML-RPC Message Adapter. This will start pulling orders off the fake CRM order queue:<br /><br /><span style="font-family: courier new;"> $ python adapter.py</span><br /><br /><br />XXX With multiple processes connecting to our queue, we've got a new problem: the messages are consumed in a round-robin fashion, but what we actually want is for all the consumers to be able to read off the queue.<br /><br />With a single message, we will want to continue with our business process: order validation and billing. But that will have to wait until the next post.<br /><br /><br /><font style="font-weight: bold;">References</font><a href="http://www.amazon.com/dp/0321200683?tag=enter priseint-20&amp;camp=14573&amp;creative=327641&amp;linkCode=as1&amp;creativeAS IN=0321200683&amp;adid=0YAAMBS55JJB5B8PMX6Z&amp;"><br /></a><ul><li><a href="http://www.amazon.com/dp/0321200683?tag=enterpriseint-20&amp;camp=14573& amp;creative=327641&amp;linkCode=as1&amp;creativeASIN=0321200683&amp;adid=0YAA MBS55JJB5B8PMX6Z&amp;">Enterprise Integration Patterns</a><a href="http://www.enterpriseintegrationpatterns.com/Chapter1.html"><br /></a></ li><li>The <a href="https://launchpad.net/txamqp">async Python library</a> for AMQP</li><li>The <a href="http://jira.amqp.org/confluence/download/attachments/720900/amqp0-8.pdf? version=1">AMQP Spec</a></li><li><a href="http://www.rabbitmq.com/">RabbitMQ</a></li><li><a href="http://twistedma trix.com/projects/core/documentation/howto/components.html">Twisted Components : Interfaces and Adapters</a><br /></li></ul><br /><br /><br /></div></p>
+
+            </div>
+            <div class="tab-pane fade" id="metadata">
+
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="table-secondary">
+                    <th scope="row">Author</th>
+                    <td>oubiwann</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Date</th>
+                    <td>June 24,
+        2009</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Time</th>
+                    <td>12:20:08</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Category</th>
+                    <td>
+                        <a href="/blog/categories/#"></a>
+                    </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Tags</th>
+                    <td>
+                      
+                      <a href="/blog/tags/#adaptation">adaptation</a>
+                      
+                      <a href="/blog/tags/#amqp">amqp</a>
+                      
+                      <a href="/blog/tags/#components">components</a>
+                      
+                      <a href="/blog/tags/#python">python</a>
+                      
+                      <a href="/blog/tags/#twisted">twisted</a>
+                      
+                      <a href="/blog/tags/#txamqp">txamqp</a>
+                      
+                      <a href="/blog/tags/#txamqp-sinfonia">txamqp-sinfonia</a>
+                      
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Line&nbsp;Count</th>
+                    <td>1 </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Word&nbsp;Count</th>
+                    <td>1753 </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Character&nbsp;Count</th>
+                    <td>14342 </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Comments Note -->
+          <div class="card my-4">
+            <h5 class="card-header">Comments?</h5>
+            <div class="card-body">
+              This blog doesn't use standard (embedded) comments; however, since
+              the site is hosted on Github, if there <emphasis>is</emphasis>
+              something you'd like to share, please do so by
+              <a href="https://github.com/oubiwann/blog/issues/new">opening a
+              "comment" ticket!</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+<!-- End main page content -->
+
+    </main>
+    
+    
+    <footer id="footer">
+      
+        <div class="row">
+          <div class="col-lg-6">
+
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
+
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-ngap-archives">nasa-ngap-archives</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
+
+
+    </footer>
+    
+    
+    <script src="/blog/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+  
+  </body>
+</html>

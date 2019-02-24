@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
+  
+  
+  
+  <head profile="http://dublincore.org/documents/dcq-html/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1179318-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1179318-5');
+    </script>
+    <meta charset="utf-8">
+    <title>
+    
+      oubiwann | blog
+      
+      
+      
+    
+    </title>
+    
+
+    
+    
+    
+    <!-- General Metadata (site-wide) -->
+    <meta name="description" content="A 21st century .plan for Duncan McGreggor">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="oubiwann | blog: version 5.0.0-SNAPSHOT, build 19fc82f
+
+">
+
+    <!-- Google Metadata -->
+    <meta name="google-site-verification" content="w0pQqmlRRJk36_i3se1w2U7qwG8kS_VqiLS2hq5Wk7g" />
+
+    <!-- Dublic Core Metadata (site-wide) -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/">
+    <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html">
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+    <meta name="DC.coverage" content="2003-2019">
+    <meta name="DC.rights" content="Creative Commons Attribution-ShareAlike 4.0 International License">
+    <meta name="DC.publisher" content="C&amp;B|Books">
+    <meta name="DCTERMS.audience" content="Developers, Software Engineers, Computer Scientists, Technologists, Programmers, Programming Language Enthusiasts, Operational Engineers">
+
+    
+    
+<!-- General Metadata (per-page) -->
+<meta name="author" content="">
+
+<!-- Dublic Core Metadata (per-page) -->
+<meta name="DC.title" lang="en" content="lfetool 1.5.0 Preview: Overriding Version Pinning">
+<meta name="DC.creator" content="oubiwann">
+<meta name="DC.subject" content="LFE">
+<meta name="DC.date" content="2015-01-09">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io/blog/archives/2015-01/09-100808/lfetool-1-5-0-preview-overriding-version-pinning.html">
+<meta name="DCTERMS.abstract" content="Looking for volunteers to test new lfetool feature">
+
+<!-- Facebook's OpenGraph Metadata -->
+<meta property="og:site_name" content="o|b">
+<meta property="og:title" content="lfetool 1.5.0 Preview: Overriding Version Pinning">
+<meta property="og:url" content="https://oubiwann.github.io/blog/archives/2015-01/09-100808/lfetool-1-5-0-preview-overriding-version-pinning.html">
+<meta property="og:type" content="blog">
+<meta property="og:description" content="Looking for volunteers to test new lfetool feature">
+<meta property="og:image" content="https://oubiwann.github.io/blog/img/ob-post-7.jpg">
+<meta property="article:author" content="">
+<meta property="article:published_time" content="2015-01-09 10:08:08">
+<meta property="article:modified_time" content="">
+<meta property="og:updated_time" content="">
+<meta property="article:section" content="LFE">
+
+
+<!-- Twitter Card Metadata -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site:id" content="@oubiwann">
+<meta name="twitter:creator:id" content="@ErlangLisp">
+<meta name="twitter:title" content="lfetool 1.5.0 Preview: Overriding Version Pinning">
+<meta name="twitter:url" content="https://oubiwann.github.io/blog/archives/2015-01/09-100808/lfetool-1-5-0-preview-overriding-version-pinning.html">
+<meta name="twitter:description" content="<p><p><a href="{{ site.base<i>url }}/assets/images/posts/lfetool-logo-large-grey.png"><img class="right smallplus" src="{{ site.base</i>url }}/assets/images/posts/lfetool-logo-large-grey.png" /></a>The next version of lfetool will provide users with the flexibility to override dependencies with pinned ...</p>">
+<meta name="twitter:image" content="https://oubiwann.github.io/blog/img/ob-post-7.jpg">
+
+    
+    
+
+    <link rel="alternate" type="application/atom+xml" title="Feed" href="/blog/atom.xml" />
+    
+
+    <!-- Webfonts Setup /-->
+    <link href="https://fonts.googleapis.com/css?family=Maitree&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav&amp;subset=latin-ext"
+          rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap/Custom Styles Setup /-->
+    <link rel="stylesheet" href="/blog/assets/highlightjs/styles/arta.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/bootswatch/css/custom.min.css" rel="stylesheet" type="text/css" id="theme">
+    <link rel="stylesheet" href="/blog/css/theme.css" rel="stylesheet" type="text/css" id="theme" media="screen">
+
+    <!-- Favicon Setup /-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png?v=3">
+    <link rel="manifest" href="/blog/icons/manifest.json?v=3">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg?v=3" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico?v=3">
+    <meta name="apple-mobile-web-app-title" content="FRMX">
+    <meta name="application-name" content="o|b">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml?v=3">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    
+    
+  
+
+  </head>
+  
+  <body>
+  
+   
+    <header class="tiny">
+      
+<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand-wrapper">
+      <a href="/blog/" class="navbar-brand">o|b</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/archives">Archives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/categories">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/tags">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/authors">Authors</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="about">About <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="about">
+            <a class="dropdown-item" href="/blog/about/">The Blog</a>
+            <a class="dropdown-item" href="/blog/about/contact/">Contact Us</a>
+            <a class="dropdown-item" href="/blog/about/powered-by/">Powered By</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/blog/about/license/">License</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav ml-auto social-nav">
+        <li class="nav-item">
+          <a href="/blog/atom.xml" alt="Atom Feed">
+            <i class="fa fa-feed first"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://twitter.com/oubiwann" alt="Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/googleplus" alt="Google+">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="http://github.com/oubiwann" alt="Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://groups.google.com/forum/#!forum/oubiwann-blog-new-posts"
+             alt="Email Notifications">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    </header>
+    
+    
+    <main id="main-content">
+      
+
+    <!-- Page Content -->
+    <div class="container page-content">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+
+          <!-- Title -->
+          <h1 class="mt-4">lfetool 1.5.0 Preview: Overriding Version Pinning</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            Posted on January 09,
+            2015 by
+            <a href="/blog/authors#oubiwann">oubiwann</a>
+          </p>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link show active" data-toggle="tab" href="#content">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" data-toggle="tab" href="#metadata">Metadata</a>
+            </li>
+          </ul>
+
+          <br/>
+
+          <div id="post-content" class="tab-content">
+            <div class="tab-pane fade active show" id="content">
+
+          <!-- Post Image -->
+          <img class="card-img-top" src="/blog/img/ob-post-7.jpg" alt="Blog post image">
+
+          <hr>
+
+          <!-- Post Content -->
+          <p><a href="{{ site.base<i>url }}/assets/images/posts/lfetool-logo-large-grey.png"><img class="right smallplus" src="{{ site.base</i>url }}/assets/images/posts/lfetool-logo-large-grey.png" /></a>The next version of lfetool will provide users with the flexibility to override dependencies with pinned versions in their project's ``rebar.config`` file. This post is aimed at folks on the LFE mail list who may be interested in using this right away or helping to do QA. Of course, if others find themselves compelled to use and test the pre-release code, they are quite welcome (with open arms, even)!</p><p>lfetool 1.5.0 will do this via:</p><ul><li>An ``lfe.config`` file<ul><li>Bootstrapping LFE</li><li>Bootstrapping dependent libraries</li></ul></li></ul><p>Here's how you can try this new feature out ...</p><h2>Override Dependencies</h2><p>lfetool 1.5.0 will let you override the ``rebar.config``-declared dependency versions with either ``HEAD`` or a named branch.</p><h3>What you need</h3><ul><li>Install <a href='https://github.com/rebar/rebar#downloading'>rebar</a><ul><li>Make sure git is installed on your system</li><li>Get the development version (1.x) of lfetool:<pre><code class="bash">$ curl -L -o \
+    ./lfetool https://raw.github.com/lfe/lfetool/dev-v1/lfetool
+$ bash ./lfetool install
+   </code></pre></li><li>An LFE project (if you don't have one, you can create one with the command   ``lfetool new library my-lib``)</li></ul></li></ul><h3>Default Pinning</h3><p>To ensure greater functional longevity of projects, ``lfetool`` generates a ``rebar.config`` with specific releases. As such, if you have a recent LFE project, your ``rebar.config`` file has a ``deps`` section that probably looks something like this:</p><pre><code class="erlang">{deps, &#91;
+   {lfe, &quot;.&#42;&quot;, {git, &quot;git://github.com/rvirding/lfe.git&quot;, {tag, &quot;v0.9.0&quot;}}},
+   {lutil, &quot;.&#42;&quot;, {git, &quot;https://github.com/lfex/lutil.git&quot;, {tag, &quot;0.6.0&quot;}}},
+   {ltest, &quot;.&#42;&quot;, {git, &quot;git://github.com/lfex/ltest.git&quot;, {tag, &quot;0.4.2&quot;}}}
+  &#93;}.
+</code></pre><p>Unfortunately, due to <a href='https://github.com/rebar/rebar/issues/170'>an old bug in rebar</a>, it can be quite painful to use a different version of say, LFE, in your project if another dependency in your project wants to use a <em>different</em> version of LFE.</p><p>A common request for the lfetool project has been allowing users to use the latest version of LFE in either the ``develop`` or ``master`` branches. We can use this new feature to do that now.</p><p>Note that in order for the following to work, you need to make sure that the <em>app version</em> for all of your dependencies is not set to an explicit version, but rather to ``".*"``. For instance, if you have the following in your ``rebar.config``:</p><pre><code class="erlang">{lutil, &quot;0.4.0&quot;, {git, &quot;https://github.com/lfex/lutil.git&quot;, {tag, &quot;0.4.0&quot;}}},
+</code></pre><p>you will need to change it to this:</p><pre><code class="erlang">{lutil, &quot;.&#42;&quot;, {git, &quot;https://github.com/lfex/lutil.git&quot;, {tag, &quot;0.4.0&quot;}}},
+</code></pre><h3>Overriding</h3><p>``lfetool`` provides for overriding the defaults through an LFE config file, ``lfe.config``, and a new command:</p><pre><code class="bash">$ lfetool download deps
+</code></pre><p>If your project is using the latest release of LFE, 0.9.0, but you want to use the ``develop`` branch instead, create a file named ``lfe.config`` in your project directory with the following content:</p><pre><code class="cl">#&#40;project &#40;#&#40;deps &#40;#&#40;&quot;rvirding/lfe&quot; &quot;develop&quot;&#41;&#41;&#41;&#41;&#41;
+</code></pre><p>Then do this:</p><pre><code class="bash">$ rm -rf deps/lfe
+$ lfetool download deps
+$ make compile
+$ make repl-no-deps
+</code></pre><pre><code>&gt; &#40;lutil:get-versions&#41;
+&#40;#&#40;erlang &quot;17&quot;&#41;
+ #&#40;emulator &quot;6.2&quot;&#41;
+ #&#40;driver-version &quot;3.1&quot;&#41;
+ #&#40;lfe &quot;0.10.0-dev&quot;&#41;
+ #&#40;lutil &quot;0.6.0&quot;&#41;&#41;
+</code></pre><p>Voi la! The LFE version is that of the develop branch, not the 0.9.0 release :-)</p><p>You can make one more change for convenience: in your project, update the ``resources/make/common.mk``, changing the ``get-deps`` target from this:</p><pre><code class="make">get-deps:
+    @echo &quot;Getting dependencies ...&quot;
+    @lfetool download deps || \
+    &#40;which rebar.cmd &gt;/dev/null 2&gt;&amp;1 &amp;&amp; rebar.cmd get-deps || rebar get-deps&#41;
+</code></pre><p>to this:</p><pre><code class="make">get-deps:
+    @echo &quot;Getting dependencies ...&quot;
+    @PATH=$&#40;SCRIPT&#95;PATH&#41; ERL&#95;LIBS=$&#40;ERL&#95;LIBS&#41; $&#40;LFETOOL&#41; download deps
+</code></pre><p>(Be sure to use tabs!)</p><p>If you run across any issue, please <a href='https://github.com/lfe/lfetool/issues/new'>file a ticket</a> :-) Thanks!</p><h2>Some More Background</h2><p>As mentioned before, this feature had been requested several times in the past, both in public venues and in private conversations. It was consistently back-burnered due to the anticipated amount of work required to make it happen.</p><p>However, as more requests were made over time (and with Robert Virding casting his vote as well), it became clear that this could not be put off any longer. This came up most recently in the <a href='https://github.com/lfe/lfetool/issues/111'>lfetool 0.9.0 update ticket</a> (see <a href='https://github.com/lfe/lfetool/issues/111#issuecomment-68649788'>this comment</a>). A few points where made, and then the conversation was moved to <a href='https://github.com/lfe/lfetool/issues/135'>this ticket</a>. In some ways there was less work than expected, and in others, more. You know, the usual ;-)</p><p>That last ticket is fairly long, so we'd like to point to you <a href='https://github.com/lfe/lfetool/issues/135#issuecomment-68797570'>this comment</a>, which details the testing plan undertaken on multiple Docker containers. This section provides a set-by-step approach for most of what you need to ensure things are working on Linux.</p><p>Also, if you do find issues, that is a great place to leave some comments.</p>
+
+            </div>
+            <div class="tab-pane fade" id="metadata">
+
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="table-secondary">
+                    <th scope="row">Author</th>
+                    <td>oubiwann</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Date</th>
+                    <td>January 09,
+        2015</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Time</th>
+                    <td>10:08:08</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Category</th>
+                    <td>
+                        <a href="/blog/categories/#LFE">LFE</a>
+                    </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Tags</th>
+                    <td>
+                      
+                      <a href="/blog/tags/#announcements">announcements</a>
+                      
+                      <a href="/blog/tags/#libraries">libraries</a>
+                      
+                      <a href="/blog/tags/#qa">qa</a>
+                      
+                      <a href="/blog/tags/#testing">testing</a>
+                      
+                      <a href="/blog/tags/#tools">tools</a>
+                      
+                      <a href="/blog/tags/#utilities">utilities</a>
+                      
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Line&nbsp;Count</th>
+                    <td>30 </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Word&nbsp;Count</th>
+                    <td>697 </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Character&nbsp;Count</th>
+                    <td>6246 </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- Comments Note -->
+          <div class="card my-4">
+            <h5 class="card-header">Comments?</h5>
+            <div class="card-body">
+              This blog doesn't use standard (embedded) comments; however, since
+              the site is hosted on Github, if there <emphasis>is</emphasis>
+              something you'd like to share, please do so by
+              <a href="https://github.com/oubiwann/blog/issues/new">opening a
+              "comment" ticket!</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+<!-- End main page content -->
+
+    </main>
+    
+    
+    <footer id="footer">
+      
+        <div class="row">
+          <div class="col-lg-6">
+
+            <ul class="list-unstyled">
+              <li class="text-muted">Blogs</li>
+              <li><a href="http://oubiwann.blogspot.com">Electric Duncan</a></li>
+              <li><a href="http://blog.lfe.io/">LFE Blog</a></li>
+              <li><a href="http://clojang.lfe.io/">Clojang</a></li>
+              <li><a href="https://clozhang.github.io/blog/">Clozhang</a></li>
+            </ul>
+
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+              <li class="float-lg-right text-muted">Github orgs</li>
+              <li class="float-lg-right"><a href="https://github.com/erlsci">erlsci</a></li>
+              <li class="float-lg-right"><a href="https://github.com/lfex">lfex</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clozhang">clozhang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojang">clojang</a></li>
+              <li class="float-lg-right"><a href="https://github.com/clojusc">clojusc</a></li>
+              <li class="float-lg-right"><a href="https://github.com/hexagram30">hexagram30</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled">
+
+              <li class="float-lg-right"><a href="https://github.com/masteringmatplotlib">masteringmatplotlib</a></li>
+              <li class="float-lg-right"><a href="https://github.com/usgs-lcmap">usgs-lcmap</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-ngap-archives">nasa-ngap-archives</a></li>
+              <li class="float-lg-right"><a href="https://github.com/nasa-cmr-archives">nasa-cmr-archives</a></li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <p><a href="http://creativecommons.org/licenses/by-sa/4.0/">
+              <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+            </a></p>
+            <p class="text-muted">Content released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>.</p>
+            <p class="text-muted">Copyright &copy; Duncan McGreggor, 2003-2019</p>
+          </div>
+        </div>
+
+
+    </footer>
+    
+    
+    <script src="/blog/assets/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/bootswatch/js/custom.js" crossorigin="anonymous"></script>
+    <script src="/blog/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+  
+  </body>
+</html>
