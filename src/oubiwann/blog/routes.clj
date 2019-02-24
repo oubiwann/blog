@@ -8,6 +8,7 @@
    * Since the posts have already been generated and saved to disc, their
      routes should be generated dynamically as URI path / slurp call pairs."
   (:require
+    [clojure.string :as string]
     [clojusc.twig :as twig]
     [dragon.blog.core :as blog]
     [dragon.components.config :as config]
@@ -19,6 +20,37 @@
     [oubiwann.blog.sitemapper :as sitemapper]
     [oubiwann.blog.web.content.page :as page]
     [taoensso.timbre :as log]))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   Utility Functions   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn post-route?
+  [system route]
+  (string/starts-with? route
+                       (config/posts-path system)))
+
+(defn split-route
+  ([system route]
+    (split-route system (db-component/db-querier system) route))
+  ([system querier route]
+    (let [prefix (str (config/posts-path system) "/")]
+    (->> prefix
+         re-pattern
+         (string/split route)
+         (concat [prefix])))))
+
+(defn route->file
+  ([system route]
+    (route->file system (db-component/db-querier system) route))
+  ([system querier route]
+    (let [[prefix _ uri-path] (split-route system querier route)
+          src-file (db/uri-path->file querier uri-path)]
+      src-file)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;   Route/Content Mappers   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn static-routes
   ([system]
@@ -87,6 +119,35 @@
     (merge
       routes
       {route (sitemapper/generate routes)})))
+
+(defn static-route
+  [system route]
+  (case route
+    "/blog/index.html" {route (page/front-page system)}
+    "/blog/archives/index.html" {route (page/archives system)}
+    "/blog/categories/index.html" {route (page/categories system)}
+    "/blog/tags/index.html" {route (page/tags system)}
+    "/blog/authors/index.html" {route (page/authors system)}
+    "/blog/about/index.html" {route (page/about system)}
+    "/blog/about/contact/index.html" {route (page/contact system)}
+    "/blog/about/powered-by/index.html" {route (page/powered-by system)}
+    "/blog/about/license/index.html" {route (page/license system)}
+    "/blog/design/index.html" {route (page/design system)}
+    "/blog/design/bootswatch-theme.html" {route (page/bootstrap-theme system)}
+    "/blog/design/home.html" {route (page/front-page-example system)}
+    "/blog/design/post.html" {route (page/blog-post-example system)}
+    "/blog/design/code-highlight-samples.html" {route (page/code-highlight
+                                                       system)}))
+
+(defn post-route
+  [system route]
+  {route (page/post system (route->file system route))})
+
+(defn one
+  [system route]
+  (if (post-route? system route)
+    (post-route system route)
+    (static-route system route)))
 
 (defn all
   [system]
