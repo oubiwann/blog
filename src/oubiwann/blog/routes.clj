@@ -11,6 +11,8 @@
     [clojusc.twig :as twig]
     [dragon.blog.core :as blog]
     [dragon.components.config :as config]
+    [dragon.components.db :as db-component]
+    [dragon.data.sources.core :as db]
     [dragon.event.system.core :as event]
     [dragon.event.tag :as tag]
     [oubiwann.blog.reader :as reader]
@@ -44,13 +46,18 @@
 (defn post-routes
   [system routes]
   (log/info "Assembling routes for all blog posts ...")
-  (merge
-    routes
-    {}))
-    ; (blog/get-indexed-archive-routes
-    ;   (map vector (iterate inc 0) posts)
-    ;   :gen-func (partial page/post system posts)
-    ;   :uri-base (config/posts-path system))))
+  (let [querier (db-component/db-querier system)]
+    (merge
+      routes
+      (->> (db/get-keys querier)
+           (map #(page/post system %))
+           (interleave (->> querier
+                            (db/get-all-uri-paths)
+                            (map #(format "%s/%s"
+                                          (config/posts-path system) %))))
+           (partition 2)
+           (map vec)
+           (into {})))))
 
 (defn listing-routes
   [system routes]
@@ -88,7 +95,7 @@
   (->> system
        (static-routes)
        (design-routes system)
-       ; (post-routes system)
+       (post-routes system)
        (listing-routes system)
        ; (reader-routes system)
        (sitemaps-routes system)

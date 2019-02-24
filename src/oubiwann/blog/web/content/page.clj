@@ -43,10 +43,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn post
-  [system]
+  [system post-key]
   (template/render
     "templates/pages/post.html"
-    (data/post system)))
+    (data/post system post-key)))
 
 (defn front-page
   [system]

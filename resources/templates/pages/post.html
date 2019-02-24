@@ -1,13 +1,6 @@
 {% extends "templates/base.html" %}
 
 {% block google-ad-setup %}
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-2346536698286309",
-    enable_page_level_ads: true
-  });
-</script>
 {% endblock %}
 
 {% block page-metadata %}
@@ -15,36 +8,36 @@
 <meta name="author" content="{{ post-data.author }}">
 
 <!-- Dublic Core Metadata (per-page) -->
-<meta name="DC.title" lang="en" content="{{ post-data.title }}">
-<meta name="DC.creator" content="{{ post-data.author }}">
+<meta name="DC.title" lang="en" content="{{ post-data.metadata.title }}">
+<meta name="DC.creator" content="{{ post-data.metadata.author }}">
 <meta name="DC.subject" content="{{ post-data.category }}">
-<meta name="DC.date" content="{{ post-data.datestamp }}">
-<meta name="DC.identifier" scheme="DCTERMS.URI" content="http://forgotten.roads.mx{{ post-data.url }}">
-<meta name="DCTERMS.abstract" content="{% if post-data.subtitle %}{{ post-data.subtitle|safe }}{% endif %}">
+<meta name="DC.date" content="{{ post-data.dates.datestamp }}">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io{{ page-data.base-path }}/archives/{{ post-data.uri-path }}">
+<meta name="DCTERMS.abstract" content="{% if post-data.metadata.subtitle %}{{ post-data.metadata.subtitle|safe }}{% endif %}">
 
 <!-- Facebook's OpenGraph Metadata -->
 <meta property="og:site_name" content="{{ page-data.site-title }}">
-<meta property="og:title" content="{{ post-data.title }}">
-<meta property="og:url" content="http://forgotten.roads.mx{{ post-data.url }}">
+<meta property="og:title" content="{{ post-data.metadata.title }}">
+<meta property="og:url" content="https://oubiwann.github.io{{ page-data.base-path }}/archives/{{ post-data.uri-path }}">
 <meta property="og:type" content="blog">
-<meta property="og:description" content="{% if post-data.subtitle %}{{ post-data.subtitle|safe }}{% endif %}">
-<meta property="og:image" content="http://forgotten.roads.mx{{ page-data.base-path }}/{{ post-data.header-image }}">
+<meta property="og:description" content="{% if post-data.metadata.subtitle %}{{ post-data.metadata.subtitle|safe }}{% endif %}">
+<meta property="og:image" content="https://oubiwann.github.io{{ post-data.header-image }}">
 <meta property="article:author" content="{{ post-data.author }}">
-<meta property="article:published_time" content="{{ post-data.timestamp }}">
-<meta property="article:modified_time" content="{{ post-data.now-timestamp }}">
-<meta property="og:updated_time" content="{{ post-data.now-timestamp }}">
+<meta property="article:published_time" content="{{ post-data.dates.timestamp }}">
+<meta property="article:modified_time" content="{{ post-data.updated }}">
+<meta property="og:updated_time" content="{{ post-data.updated }}">
 <meta property="article:section" content="{{ post-data.category }}">
 {% for tag in tags %}<meta property="article:tag" content="{{ tag }}">
 {% endfor %}
 
 <!-- Twitter Card Metadata -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site:id" content="@ForgottenRdsMX">
-<meta name="twitter:creator:id" content="@{{ post-data.twitter }}">
-<meta name="twitter:title" content="{{ post-data.title }}">
-<meta name="twitter:url" content="http://forgotten.roads.mx{{ post-data.url }}">
-<meta name="twitter:description" content="{{ post-data.excerpt-25|safe }}">
-<meta name="twitter:image" content="http://forgotten.roads.mx{{ page-data.base-path }}/{{ post-data.header-image }}">
+<meta name="twitter:site:id" content="@oubiwann">
+<meta name="twitter:creator:id" content="@{{ post-data.metadata.twitter }}">
+<meta name="twitter:title" content="{{ post-data.metadata.title }}">
+<meta name="twitter:url" content="https://oubiwann.github.io{{ page-data.base-path }}/archives/{{ post-data.uri-path }}">
+<meta name="twitter:description" content="{{ post-data.excerpts.excerpt-25|safe }}">
+<meta name="twitter:image" content="https://oubiwann.github.io{{ post-data.header-image }}">
 {% endblock %}
 
 {% block pre-css %}{{ blocks.pre-css|safe }}{% endblock %}
@@ -54,185 +47,125 @@
 {% block post-head-scripts %}{{ blocks.post-head-scripts|safe }}{% endblock %}
 
 {% block head-postpends %}
- <script src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
- {{ blocks.head-postpends|safe }}
+  {{ blocks.head-postpends|safe }}
 {% endblock %}
 
 {% block post-post-scripts %}{{ blocks.post-post-scripts|safe }}{% endblock %}
 
 {% block main-content %}
-    <div class="container">
-      <div class="page-header" id="banner">
+
+    <!-- Page Content -->
+    <div class="container page-content">
 
       <div class="row">
-        <div class="col-sm-8 blog-main">
 
-          <div class="blog-post">
-            <div class="page-header">
-              {% if post-data.header-image %}
-                <img src="{{ page-data.base-path }}/{{ post-data.header-image }}" />
-              {% endif %}
-              <h2 class="blog-post-title">{{ post-data.title }}</h2>
-              {% if post-data.subtitle %}
-              <h3 class="blog-post-subtitle">{{ post-data.subtitle }}</h3>
-              {% endif %}
-              <div class="blog-post-meta">
-                <p class="date">{{ post-data.month }}
-                                {{ post-data.date.day }},
-                                {{ post-data.date.year }}</p>
-                <p class="author">by <a href="{{ page-data.base-path }}/authors/#{{ post-data.author }}">{{ post-data.author }}</a></p>
-                {% if post-data.excerpt %}
-                <p class="lead well">
-                  {{ post-data.excerpt|safe }}
-                </p>
-                {% endif %}
-              </div>
+        <!-- Post Content Column -->
+        <div class="col-lg-12">
+
+          <!-- Title -->
+          <h1 class="mt-4">{{ post-data.metadata.title}}</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            Posted on {{ post-data.dates.month }} {{ post-data.dates.date.day }},
+            {{ post-data.dates.date.year }} by
+            <a href="{{ page-data.base-path }}/authors#{{ post-data.metadata.author }}">{{ post-data.metadata.author }}</a>
+          </p>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link show active" data-toggle="tab" href="#content">Content</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" data-toggle="tab" href="#metadata">Metadata</a>
+            </li>
+          </ul>
+
+          <br/>
+
+          <div id="post-content" class="tab-content">
+            <div class="tab-pane fade active show" id="content">
+
+          <!-- Post Image -->
+          <img class="card-img-top" src="{{ post-data.header-image }}" alt="Blog post image">
+
+          <hr>
+
+          <!-- Post Content -->
+          {{ post-data.content|safe }}
+
             </div>
-            {{ post-data.body|safe }}
-            {% block article-body-ads %}{{ blocks.article-body-ads|safe }}{% endblock %}
-            {% if blocks.article-body-ads %}
-            <p>(Purchases from the links above help support Forgotten Roads -- if you buy something, thanks :-) Regardless, thanks for reading!)</p>
-            {% endif %}
+            <div class="tab-pane fade" id="metadata">
+
+              <table class="table table-hover">
+                <tbody>
+                  <tr class="table-secondary">
+                    <th scope="row">Author</th>
+                    <td>{{ post-data.metadata.author }}</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Date</th>
+                    <td>{{ post-data.dates.month }} {{ post-data.dates.date.day }},
+        {{ post-data.dates.date.year }}</td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Time</th>
+                    <td>{{ post-data.dates.time }}</td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Category</th>
+                    <td>
+                        <a href="{{ page-data.base-path }}/categories/#{{ post-data.category }}">{{ post-data.category }}</a>
+                    </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Tags</th>
+                    <td>
+                      {% for tag in post-data.tags %}
+                      <a href="{{ page-data.base-path }}/tags/#{{ tag }}">{{ tag }}</a>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Line&nbsp;Count</th>
+                    <td>{{ post-data.stats.line-count }} </td>
+                  </tr>
+                  <tr class="table-secondary">
+                    <th scope="row">Word&nbsp;Count</th>
+                    <td>{{ post-data.stats.word-count }} </td>
+                  </tr>
+                  <tr class="table-light">
+                    <th scope="row">Character&nbsp;Count</th>
+                    <td>{{ post-data.stats.char-count }} </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
           </div>
 
-          {% if post-data.char-count > 2500 %}
-          <div class="row">
-            <div class="col-xs-6">
-              {% if post-data.prev-post %}
-              <a href="{{ post-data.prev-post }}">
-                <i class="fa fa-arrow-circle-o-left fa-2x"
-                   aria-hidden="true"></i>
-              </a>
-              {% else %}
-                <i class="fa fa-arrow-circle-o-left fa-2x nav-arrow-disabled"
-                   aria-hidden="true"></i>
-              {% endif %}
-            </div>
+          <hr>
 
-            <div class="col-xs-6 text-right">
-              {% if post-data.next-post %}
-              <a href="{{ post-data.next-post }}">
-                <i class="fa fa-arrow-circle-o-right fa-2x"
-                   aria-hidden="true"></i>
-              </a>
-              {% else %}
-                <i class="fa fa-arrow-circle-o-right fa-2x nav-arrow-disabled"
-                   aria-hidden="true"></i>
-              {% endif %}
+          <!-- Comments Note -->
+          <div class="card my-4">
+            <h5 class="card-header">Comments?</h5>
+            <div class="card-body">
+              This blog doesn't use standard (embedded) comments; however, since
+              the site is hosted on Github, if there <emphasis>is</emphasis>
+              something you'd like to share, please do so by
+              <a href="https://github.com/oubiwann/blog/issues/new">opening a
+              "comment" ticket!</a>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xs-6">Previous Post</div>
-            <div class="col-xs-6 text-right">Next Post</div>
-          </div>
-          {% endif %}
 
         </div>
 
-        <aside class="col-sm-4 blog-aside">
-
-          <div class="aside-widget">
-            <header>
-              <h3>Category</h3>
-            </header>
-            <div class="body">
-              <p>
-                <a href="{{ page-data.base-path }}/categories/#{{post-data.category}}">{{ post-data.category }}</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="aside-widget tags-widget">
-            <header>
-              <h3>Tags</h3>
-            </header>
-            <div class="body">
-              <ul>
-                {% for tag in tags %}
-                <li>
-                  <a href="{{ page-data.base-path }}/tags/#{{tag}}">{{ tag }}</a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-
-          {% if blocks.article-sidebar-comments-links %}
-          <div class="aside-widget comments-widget">
-            <header>
-              <h3>Comments</h3>
-            </header>
-            <div class="body">
-              Post comments can be made for this article on:
-              <ul class="tales-list">
-                {% block article-sidebar-comments-links %}
-                  {{ blocks.article-sidebar-comments-links|safe }}
-                {% endblock %}
-              </ul>
-            </div>
-          </div>
-          {% endif %}
-
-            <div class="row">
-              <div class="col-xs-6">
-
-              </div>
-            </div>
-
-
-
-          <div class="aside-widget">
-            <header>
-              <h3>Neighboring Posts</h3>
-            </header>
-            <div class="body">
-              <div class="row">
-                <div class="col-xs-6">Previous</div>
-                <div class="col-xs-6">Next</div>
-              </div>
-              <div class="row">
-                <div class="col-xs-6">
-                  {% if post-data.prev-post %}
-                  <a href="{{ post-data.prev-post }}">
-                    <i class="fa fa-arrow-circle-o-left fa-2x"
-                       aria-hidden="true"></i>
-                  </a>
-                  {% else %}
-                    <i class="fa fa-arrow-circle-o-left fa-2x nav-arrow-disabled"
-                       aria-hidden="true"></i>
-                  {% endif %}
-                </div>
-                <div class="col-xs-6">
-                  {% if post-data.next-post %}
-                  <a href="{{ post-data.next-post }}">
-                    <i class="fa fa-arrow-circle-o-right fa-2x"
-                       aria-hidden="true"></i>
-                  </a>
-                  {% else %}
-                    <i class="fa fa-arrow-circle-o-right fa-2x nav-arrow-disabled"
-                       aria-hidden="true"></i>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="aside-widget">
-            <header>
-              <h3>Post Data</h3>
-            </header>
-            <div class="body">
-              <p>Lines: {{ post-data.line-count }}</p>
-              <p>Words: {{ post-data.word-count }}</p>
-              <p>Characters: {{ post-data.char-count }}</p>
-              </p>
-            </div>
-          </div>
-
-        </aside>
-
       </div>
+      <!-- /.row -->
 
     </div>
-    </div>
+    <!-- /.container -->
+
+<!-- End main page content -->
 {% endblock %}
+

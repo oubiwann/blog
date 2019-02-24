@@ -4,9 +4,9 @@
     [clojure.string :as string]
     [dragon.blog.core :as blog]
     [dragon.blog.tags :as tags]
-    [dragon.data.sources.core :as db]
     [dragon.components.config :as config]
     [dragon.components.db :as db-component]
+    [dragon.data.sources.core :as db]
     [markdown.core :as markdown]
     [oubiwann.blog.util :as util]
     [taoensso.timbre :as log])
@@ -133,7 +133,8 @@
 
 (defn common-post-data
   [querier post-key]
-  {:url-path (format "/blog/archives/%s" ; XXX <-- put in config
+  {:url-path (format "%s/%s"
+                     (config/posts-path (:component querier))
                      (db/get-post-uri-path querier post-key))})
 
 (defn archive-post-data
@@ -301,14 +302,25 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defn post
-  [system]
-  (let [post-data {}]
-    (-> system
-        common
+  [system post-key]
+  (let [page-data (common system)
+        querier (db-component/db-querier system)
+        default-images {
+          :post (config/default-images-post-tmpl system)
+          :small (config/default-images-small-tmpl system)
+          :thumb (config/default-images-thumb-tmpl system)}
+        images-count (config/default-images-count system)
+        post-data (update-with-img-index
+                   (db/get-all-data querier post-key)
+                   images-count)
+        header-image (format "%s%s.jpg"
+                             (:post default-images)
+                             (:img-idx post-data))]
+    (-> page-data
         (assoc-in [:page-data :active] "archives")
-        (assoc :post-data post-data
-               :blocks (get-blocks post-data)
-               :tags (tags/unique post-data)))))
+        (assoc :post-data (assoc post-data
+                                 :header-image header-image)
+               :default-images default-images))))
 
 (defn front-page
   [system]
