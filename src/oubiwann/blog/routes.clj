@@ -38,9 +38,9 @@
   (merge
     routes
     {"/blog/design/index.html" (page/design system)
-     "/blog/design/bootstrap-theme.html" (page/bootstrap-theme system)
-     "/blog/design/front-page-example.html" (page/front-page-example system)
-     "/blog/design/blog-post-example.html" (page/blog-post-example system)
+     "/blog/design/bootswatch-theme.html" (page/bootstrap-theme system)
+     "/blog/design/home.html" (page/front-page-example system)
+     "/blog/design/post.html" (page/blog-post-example system)
      "/blog/design/code-highlight-samples.html" (page/code-highlight system)}))
 
 (defn post-routes

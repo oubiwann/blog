@@ -95,17 +95,17 @@
 (defn bootstrap-theme
   [system]
   (template/render
-    "templates/design/bootstrap-theme.html"
+    "templates/design/bootswatch-theme.html"
     (data/design system)))
 
 (defn front-page-example
   [system]
   (template/render
-    "templates/design/front-page-example.html"
+    "templates/design/home.html"
     (data/design system)))
 
 (defn blog-post-example
   [system]
   (template/render
-    "templates/design/blog-post-example.html"
+    "templates/design/post.html"
     (data/design system)))
