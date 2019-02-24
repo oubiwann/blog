@@ -71,15 +71,14 @@
      "/blog/authors/index.html" (page/authors system)}))
 
 (defn reader-routes
-  [system posts routes]
+  [system routes]
   (log/info "Assembling routes for Atom/RSS ...")
   (let [route "/blog/atom.xml"]
     (merge
       routes
       {route (reader/atom-feed
                system
-               route
-               (take (config/feed-count system) posts))})))
+               route)})))
 
 (defn sitemaps-routes
   [system routes]
@@ -97,7 +96,7 @@
        (design-routes system)
        (post-routes system)
        (listing-routes system)
-       ; (reader-routes system)
+       (reader-routes system)
        (sitemaps-routes system)
        (event/publish->> system tag/generate-routes-post)
        vec))
