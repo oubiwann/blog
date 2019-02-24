@@ -37,9 +37,14 @@
 
     <!-- Top Headline -->
     <div class="card mb-4">
-      <img class="card-img-top" src="{{ default-images.headliner }}{{ headliner.img-idx }}.jpg" alt="Headline image">
+      <a href="{{ headliner.url-path }}">
+        <img class="card-img-top" src="{{ default-images.headliner }}{{ headliner.img-idx }}.jpg" alt="Headline image" />
+      </a>
       <div class="card-body">
-        <h2 class="card-title">{{ headliner.metadata.title }}</h2>
+        <h2 class="card-title">
+          <a href="{{ headliner.url-path }}">
+          {{ headliner.metadata.title }}
+        </a></h2>
         {% if headliner.metadata.subtitle %}
           <h3 class="card-subtitle">{{ headliner.metadata.subtitle|safe }}</h3>
         {% endif %}
@@ -57,8 +62,12 @@
     {% for post-data in supporting %}
     <div class="card mb-4">
       <div class="card-body">
-        <img class="card-img-right" src="{{ default-images.small }}{{ post-data.img-idx }}.png" alt="Post image crop">
-        <h3 class="card-title">{{ post-data.metadata.title}}</h3>
+        <a href="{{ post-data.url-path }}">
+          <img class="card-img-right" src="{{ default-images.small }}{{ post-data.img-idx }}.png" alt="Post image crop">
+        </a>
+        <h3 class="card-title">
+          <a href="{{ post-data.url-path }}">{{ post-data.metadata.title}}</a>
+        </h3>
         {% if post-data.metadata.subtitle %}
           <h4 class="card-subtitle">{{ post-data.metadata.subtitle|safe }}</h4>
         {% endif %}
@@ -77,8 +86,12 @@
     {% for post-data in middle %}
     <div class="card mb-4">
       <div class="card-body">
-        <img class="card-img-right" src="{{ default-images.thumb }}{{ post-data.img-idx }}.png" alt="Post image crop">
-        <h4 class="card-title">{{ post-data.metadata.title}}</h4>
+        <a href="{{ post-data.url-path }}">
+          <img class="card-img-right" src="{{ default-images.thumb }}{{ post-data.img-idx }}.png" alt="Post image crop">
+        </a>
+        <h4 class="card-title">
+          <a href="{{ post-data.url-path }}">{{ post-data.metadata.title}}</a>
+        </h4>
         {% if post-data.metadata.subtitle %}
           <h5 class="card-subtitle">{{ post-data.metadata.subtitle|safe }}</h5>
         {% endif %}
@@ -102,7 +115,9 @@
 
         <div class="card mb-4">
           <div class="card-body">
-            <h4 class="card-title">{{ post-data.metadata.title}}</h4>
+            <h4 class="card-title">
+              <a href="{{ post-data.url-path }}">{{ post-data.metadata.title}}</a>
+            </h4>
             {% if post-data.metadata.subtitle %}
               <h5 class="card-subtitle">{{ post-data.metadata.subtitle|safe }}</h5>
             {% endif %}
