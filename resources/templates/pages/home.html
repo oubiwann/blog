@@ -8,25 +8,25 @@
 <meta name="DC.title" lang="en" content="{{ page-data.site-title }}">
 <meta name="DC.creator" content="Duncan McGreggor">
 <meta name="DC.subject" content="Blog Home Page">
-<meta name="DC.identifier" scheme="DCTERMS.URI" content="http://oubiwann.github.io/blog/">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://oubiwann.github.io/blog/">
 <meta name="DCTERMS.abstract" content="{{ page-data.site-description }}">
 
 <!-- Facebook's OpenGraph Metadata -->
 <meta property="og:site_name" content="{{ page-data.site-title }}">
 <meta property="og:title" content="{{ page-data.site-title }}">
-<meta property="og:url" content="http://forgotten.roads.mx/blog/">
+<meta property="og:url" content="https://oubiwann.github.io/blog/">
 <meta property="og:type" content="blog">
 <meta property="og:description" content="{{ page-data.site-description }}">
-<meta property="og:image" content="http://forgotten.roads.mx/blog/img/roadtrip5-narrow-with-text.jpg">
+<meta property="og:image" content="https://oubiwann.github.io/blog/img/ob-post-7.jpg">
 
 <!-- Twitter Card Metadata -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@ForgottenRdsMX">
-<meta name="twitter:creator" content="@ForgottenRdsMX">
+<meta name="twitter:site" content="@oubiwann">
+<meta name="twitter:creator" content="@oubiwann">
 <meta name="twitter:title" content="{{ page-data.site-title }}">
-<meta name="twitter:url" content="http://oubiwann.github.io/blog/">
+<meta name="twitter:url" content="https://oubiwann.github.io/blog/">
 <meta name="twitter:description" content="{{ page-data.site-description }}">
-<meta name="twitter:image" content="http://forgotten.roads.mx/blog/img/roadtrip5-narrow-with-text.jpg">
+<meta name="twitter:image" content="https://oubiwann.github.io/blog/img/ob-post-7.jpg">
 {% endblock %}
 {% block header-class %}{% endblock %}
 {% block head-postpends %}{% endblock %}
@@ -38,7 +38,7 @@
     <!-- Top Headline -->
     <div class="card mb-4">
       <a href="{{ headliner.url-path }}">
-        <img class="card-img-top" src="{{ default-images.headliner }}{{ headliner.img-idx }}.jpg" alt="Headline image" />
+        <img class="card-img-top" src="{{ headliner.images.headliner }}" alt="Headline image" />
       </a>
       <div class="card-body">
         <h2 class="card-title">
@@ -63,7 +63,7 @@
     <div class="card mb-4">
       <div class="card-body">
         <a href="{{ post-data.url-path }}">
-          <img class="card-img-right" src="{{ default-images.small }}{{ post-data.img-idx }}.png" alt="Post image crop">
+          <img class="card-img-right" src="{{ post-data.images.small }}" alt="Post image crop">
         </a>
         <h3 class="card-title">
           <a href="{{ post-data.url-path }}">{{ post-data.metadata.title}}</a>
@@ -87,7 +87,7 @@
     <div class="card mb-4">
       <div class="card-body">
         <a href="{{ post-data.url-path }}">
-          <img class="card-img-right" src="{{ default-images.thumb }}{{ post-data.img-idx }}.png" alt="Post image crop">
+          <img class="card-img-right" src="{{ post-data.images.thumb }}" alt="Post image crop">
         </a>
         <h4 class="card-title">
           <a href="{{ post-data.url-path }}">{{ post-data.metadata.title}}</a>

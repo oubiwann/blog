@@ -9,9 +9,7 @@
     [dragon.data.sources.core :as db]
     [markdown.core :as markdown]
     [oubiwann.blog.util :as util]
-    [taoensso.timbre :as log])
-  (:import
-    (java.util Random)))
+    [taoensso.timbre :as log]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Helper Functions & Data Helpers   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -127,21 +125,19 @@
                 (slurp)
                 (markdown/md-to-html-string))}))
 
-(defn random-text-idx
-  [text max-count]
-  (inc (.nextInt (new Random (.hashCode text)) max-count)))
-
 (defn common-post-data
   [querier post-key]
   {:url-path (format "%s/%s"
                      (config/posts-path (:component querier))
                      (db/get-post-uri-path querier post-key))})
 
-(defn archive-post-data
+(defn headline-post-data
   "Headline pages need the following:
 
   * post category (get-post-category)
   * post dates (get-post-dates)
+  * post excerpts (get-post-excerpts)
+  * post images (get-post-images)
   * post metadata (get-post-metadata)
   * post tags (get-post-tags)
   * post URL (get-post-uri-path)"
@@ -150,22 +146,10 @@
     (common-post-data querier post-key)
     {:category (db/get-post-category querier post-key)
      :dates (db/get-post-dates querier post-key)
+     :excerpts (db/get-post-excerpts querier post-key)
+     :images (db/get-post-images querier post-key)
      :metadata (db/get-post-metadata querier post-key)
      :tags (db/get-post-tags querier post-key)}))
-
-(defn headline-post-data
-  "Headline pages need the following:
-
-  * post category (get-post-category)
-  * post dates (get-post-dates)
-  * post excerpts (get-post-excerpts)
-  * post metadata (get-post-metadata)
-  * post tags (get-post-tags)
-  * post URL (get-post-uri-path)"
-  [querier post-key]
-  (merge
-    (archive-post-data querier post-key)
-    {:excerpts (db/get-post-excerpts querier post-key)}))
 
 (defn listing-post-data
   "Listing pages need the following:
@@ -241,13 +225,6 @@
             (+ middle
                (config/headlines-trailing-count system)))))
 
-(defn update-with-img-index
-  [post-data image-count]
-  (assoc post-data
-         :img-idx
-         (random-text-idx
-          (get-in post-data [:metadata :title]) image-count)))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;   Static Pages Data   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -305,22 +282,11 @@
   [system post-key]
   (let [page-data (common system)
         querier (db-component/db-querier system)
-        default-images {
-          :post (config/default-images-post-tmpl system)
-          :small (config/default-images-small-tmpl system)
-          :thumb (config/default-images-thumb-tmpl system)}
         images-count (config/default-images-count system)
-        post-data (update-with-img-index
-                   (db/get-all-data querier post-key)
-                   images-count)
-        header-image (format "%s%s.jpg"
-                             (:post default-images)
-                             (:img-idx post-data))]
+        post-data (db/get-all-data querier post-key)]
     (-> page-data
         (assoc-in [:page-data :active] "archives")
-        (assoc :post-data (assoc post-data
-                                 :header-image header-image)
-               :default-images default-images))))
+        (assoc :post-data post-data))))
 
 (defn front-page
   [system]
@@ -328,19 +294,13 @@
   (let [page-data (common system)
         querier (db-component/db-querier system)
         section "index"
-        default-img-count (config/default-images-count system)
         posts-data (->> (config/headlines-count system)
                         (db/get-last-n-keys querier)
                         (map #(headline-post-data querier %))
-                        (map #(update-with-img-index % default-img-count))
                         vec)]
     (-> page-data
         (assoc-in [:page-data :active] section)
-        (assoc :default-images {
-                 :headliner (config/default-images-headliner-tmpl system)
-                 :small (config/default-images-small-tmpl system)
-                 :thumb (config/default-images-thumb-tmpl system)}
-               :headliner (first posts-data)
+        (assoc :headliner (first posts-data)
                :supporting (supporting-headlines system posts-data)
                :middle (middle-headlines system posts-data)
                :trailing (partition

@@ -8,10 +8,10 @@
      :level :debug
      :nss [clojusc dragon oubiwann rfc5322]}
    :default-images {
-     :post "/blog/img/ob-post-"
-     :headliner "/blog/img/ob-headline-"
-     :small "/blog/img/ob-small-"
-     :thumb "/blog/img/ob-thumb-"
+     :post "ob-post-%s.jpg"
+     :headliner "ob-headline-%s.jpg"
+     :small "ob-small-%s.png"
+     :thumb "ob-thumb-%s.png"
      :count 8}
    :headlines {
      :lead {

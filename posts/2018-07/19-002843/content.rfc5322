@@ -1,13 +1,16 @@
 Subject: Followup: New Versions of Clojang Agent and API Published on Clojars
 Subtitle:
-Header-Image: img/clojang.png
+Header-Image: clojang-header.jpg
+Headliner-Image: clojang-headliner.jpg
+Small-Image: clojang-small.png
+Thumb-Image: clojang-thumb.png
 Excerpt:
 From: oubiwann
 Twitter: clojang
 Category: Releases
 Keywords: development, erlang, clojure, announcements, libraries, java, agents
 Source: http://clojang.lfe.io/
-Comments:
+Comments: None
 Content-Type: md
 Public?: true
 

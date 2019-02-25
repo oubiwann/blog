@@ -1,6 +1,9 @@
 Subject: Scientific Computing on the Erlang VM
 Subtitle: Polynomial Curve Fitting with LFE
-Header-Image: img/lfe.png
+Header-Image: lsci-erlang-ecosystem.jpg
+Headliner-Image: lsci-erlang-ecosystem-headliner.jpg
+Small-Image: lsci-erlang-ecosystem-small.png
+Thumbnail-Image: lsci-erlang-ecosystem-thumb.png
 Excerpt:
 From: oubiwann
 Twitter: ErlangLisp
@@ -9,7 +12,7 @@ Keywords: erlang,python,howtos,libraries,numpy,scipy,erlport,py,
        ascii,plotting,maths,statistics,science,scientific computing,
        statistical analysis,linear regression,curve fitting,polynomials,tutorials
 Source: http://blog.lfe.io/
-Comments:
+Comments: None
 Content-Type: md
 Public?: true
 

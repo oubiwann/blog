@@ -20,7 +20,8 @@
 
 (defn process-route
   [system route]
-  (process-file system (routes/route->file system route)))
+  (when (routes/post-route? system route)
+    (process-file system (routes/route->file system route))))
 
 (defn generate
   ([system]
