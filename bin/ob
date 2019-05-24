@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 if [ "$1" = "run" ]; then
-    lein trampoline frmx
+    lein trampoline ob
 elif [ -z "$1" ]; then
-    lein frmx help
+    lein ob help
 else
-    lein frmx $@
+    lein ob $@
 fi
